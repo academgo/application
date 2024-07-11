@@ -1,0 +1,15 @@
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navLink {
+  color: #091728;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 125% */
+  letter-spacing: -0.8px;
+  cursor: pointer;
+}

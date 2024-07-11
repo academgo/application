@@ -1,7 +1,7 @@
 // Here we set English as the default language
 const languages = [
-  { id: 'en', title: 'English', isDefault: true },
   { id: 'ru', title: 'Russian' },
+  { id: 'en', title: 'English', isDefault: true },
 ];
 
 const i18n = {

@@ -1,5 +1,5 @@
 import { Translation } from '@/types/post';
-import LocaleSwitcher from './LocaleSwitcher';
+import LocaleSwitcher from './LocaleSwitcher/LocaleSwitcher';
 
 type Props = {
   translations?: Translation[];

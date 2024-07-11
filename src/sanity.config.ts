@@ -5,8 +5,8 @@ import { schemaTypes } from './sanity/schemaTypes'
 import { i18n } from '@/i18n.config'
 import { documentInternationalization } from '@sanity/document-internationalization'
 
-const projectId = '19hn716s';
-const dataset = 'production'
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET as string
 
 export default defineConfig({
   badePath: '/admin',
@@ -20,7 +20,7 @@ export default defineConfig({
     visionTool(),
     documentInternationalization({
       supportedLanguages: i18n.languages,
-      schemaTypes: ['post'],
+      schemaTypes: ['post', 'header', 'homepage'],
     }),
   ],
 

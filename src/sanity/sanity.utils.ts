@@ -1,6 +1,8 @@
 import { groq } from 'next-sanity';
 import { client } from './sanity.client';
 import { Post } from '@/types/post';
+import { Header } from '@/types/header';
+import { Homepage } from '@/types/homepage';
 
 
 // for the query can be adjusted to be data that you need
@@ -35,4 +37,39 @@ export async function getPostByLang(lang: string, slug: string): Promise<Post> {
   const post = await client.fetch(postQuery, { lang, slug });
 
   return post;
+}
+
+export async function getHeaderByLang(lang: string): Promise<Header> {
+  const headerQuery = groq`*[_type == 'header' && language == $lang][0] {
+    _id,
+    logo,
+    description,
+    navLinks,
+    contactLinks,
+    workingHours,
+    phoneNumber,
+    languageIcon,
+    languageLink,
+  }`;
+
+  const header = await client.fetch(headerQuery, { lang });
+
+  return header;
+}
+
+export async function getHomePageByLang(lang: string): Promise<Homepage> {
+  const homepageQuery = groq`*[_type == 'homepage' && language == $lang][0] {
+    _id,
+    title,
+    description,
+    language,
+    slug,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const homepage = await client.fetch(homepageQuery, { lang });
+
+  return homepage;
 }

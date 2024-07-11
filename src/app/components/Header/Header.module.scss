@@ -1,0 +1,73 @@
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.companyData {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.description {
+  max-width: 255px;
+  color: #8A929C;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 153.846% */
+  letter-spacing: -0.65px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.contactLinks {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.workingHours {
+  color: #8A929C;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.65px;
+}
+
+.phoneNumber {
+  color: #091728;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.5px;
+}
+
+.contactButtons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.phoneButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // padding: 17px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
