@@ -1,0 +1,25 @@
+.burgerMenu {
+  .burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 980px) {
+    .burger {
+      display: block;
+      position: absolute;
+      right: 0; /* Размещаем бургер-меню справа */
+  }
+
+    .navLinks {
+      display: none;
+
+      &.open {
+      display: block;
+      }
+    }
+  }
+}

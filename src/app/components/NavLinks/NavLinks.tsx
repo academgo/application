@@ -1,24 +1,23 @@
-'use client';
-import Link from 'next/link';
-import { Header as HeaderType } from '@/types/header';
-import styles from './NavLinks.module.scss';
-import { useEffect, useState } from 'react';
+"use client";
+import Link from "next/link";
+import { Header as HeaderType } from "@/types/header";
+import styles from "./NavLinks.module.scss";
+import { useEffect, useState } from "react";
 
 type Props = {
-  navLinks: HeaderType['navLinks'];
+  navLinks: HeaderType["navLinks"];
   params: { lang: string };
+  isMenuOpen: boolean;
 };
 
-const NavLinks: React.FC<Props> = ({ navLinks , params}) => {
+const NavLinks: React.FC<Props> = ({ navLinks, params, isMenuOpen }) => {
+  const [activeSection, setActiveSection] = useState("");
 
-  const [activeSection, setActiveSection] = useState('');
-  
-    useEffect(() => {
-
+  useEffect(() => {
     const handleScroll = () => {
-      let closestSectionId = '';
+      let closestSectionId = "";
       let smallestDistance = Infinity;
-      navLinks.forEach((navLink) => {
+      navLinks.forEach(navLink => {
         const sectionElement = document.getElementById(navLink.link);
         if (sectionElement) {
           const distance = Math.abs(sectionElement.getBoundingClientRect().top);
@@ -33,21 +32,21 @@ const NavLinks: React.FC<Props> = ({ navLinks , params}) => {
     };
 
     // Подписки
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Отписки
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-    }, []);
-  
-    const scrollToSection = (sectionId: string) => {
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       const offset = sectionElement.offsetTop;
       window.scrollTo({
         top: offset,
-        behavior: 'smooth',
+        behavior: "smooth"
       });
     }
   };
@@ -58,9 +57,9 @@ const NavLinks: React.FC<Props> = ({ navLinks , params}) => {
 
   return (
     <nav className={styles.navLinks}>
-      {navLinks.map((link) => (
+      {navLinks.map(link => (
         <div key={link.label}>
-          {link.link.startsWith('/') ? (
+          {link.link.startsWith("/") ? (
             <Link
               href={`/${params.lang}/${link.link}`}
               className={styles.navLink}
@@ -69,10 +68,10 @@ const NavLinks: React.FC<Props> = ({ navLinks , params}) => {
             </Link>
           ) : (
             <a
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 scrollToSection(link.link);
-              }} 
+              }}
               className={styles.navLink}
             >
               {link.label}
