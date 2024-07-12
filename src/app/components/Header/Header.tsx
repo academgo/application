@@ -6,7 +6,6 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import NavLinks from "../NavLinks/NavLinks";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 type Props = {
