@@ -1,16 +1,15 @@
 "use client";
 import Link from "next/link";
 import { Header as HeaderType } from "@/types/header";
-import { useEffect, useState } from "react";
 import styles from "./NavLinks.module.scss";
+import { useEffect, useState } from "react";
 
 type Props = {
   navLinks: HeaderType["navLinks"];
   params: { lang: string };
-  isMenuOpen: boolean;
 };
 
-const NavLinks: React.FC<Props> = ({ navLinks, params, isMenuOpen }) => {
+const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {

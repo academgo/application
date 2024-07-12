@@ -6,7 +6,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import NavLinks from "../NavLinks/NavLinks";
 
 type Props = {
   translations?: Translation[];
@@ -32,8 +32,7 @@ const Header = async ({ translations, params }: Props) => {
             </Link>
             <p className={styles.description}>{data.description}</p>
           </div>
-          <BurgerMenu navLinks={data.navLinks} params={params} />{" "}
-          {/* Используйте новый компонент */}
+          <NavLinks navLinks={data.navLinks} params={params} />
           <div className={styles.contacts}>
             <div className={styles.contactLinks}>
               {data.contactLinks.map(link => (

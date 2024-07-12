@@ -29,7 +29,7 @@ const BurgerMenu: React.FC<Props> = ({ navLinks, params }) => {
 
   return (
     <div className={styles.burgerMenu}>
-      {isMobile ? (
+      {/* {isMobile ? (
         <>
           <button
             className={styles.burger}
@@ -49,7 +49,7 @@ const BurgerMenu: React.FC<Props> = ({ navLinks, params }) => {
         </>
       ) : (
         <NavLinks navLinks={navLinks} params={params} isMenuOpen={isMenuOpen} />
-      )}
+      )} */}
     </div>
   );
 };
