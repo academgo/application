@@ -6,7 +6,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import NavLinks from "../NavLinks/NavLinks";
+import NavWrapper from "../NavWrapper/NavWrapper";
 
 type Props = {
   translations?: Translation[];
@@ -23,16 +23,25 @@ const Header = async ({ translations, params }: Props) => {
           <div className={styles.companyData}>
             <Link className={styles.logoLink} href={`/${params.lang}`}>
               <Image
-                alt="Logo"
+                alt="Academgo Logo"
                 src={urlFor(data.logo).url()}
                 width={200}
                 height={200}
                 className={styles.logoImage}
               />
+              <Image
+                alt="Academgo Logo"
+                src={urlFor(data.logoMobile).url()}
+                width={40}
+                height={40}
+                className={styles.logoImageMobile}
+              />
             </Link>
             <p className={styles.description}>{data.description}</p>
           </div>
-          <NavLinks navLinks={data.navLinks} params={params} />
+          <div className={styles.navWrapperParent}>
+            <NavWrapper navLinks={data.navLinks} params={params} />
+          </div>
           <div className={styles.contacts}>
             <div className={styles.contactLinks}>
               {data.contactLinks.map(link => (
@@ -41,12 +50,14 @@ const Header = async ({ translations, params }: Props) => {
                   href={link.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={styles.contactLink}
                 >
                   <Image
                     alt="Icon"
                     src={urlFor(link.icon).url()}
                     width={50}
                     height={50}
+                    className={styles.contactIcon}
                   />
                 </Link>
               ))}

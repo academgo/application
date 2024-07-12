@@ -1,25 +1,40 @@
 .burgerMenu {
-  .burger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
+  display: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+
+  @media (max-width: 768px) {
+    display: flex;
     cursor: pointer;
+    position: relative;
+    z-index: 101;
   }
+}
 
-  @media (max-width: 980px) {
-    .burger {
-      display: block;
-      position: absolute;
-      right: 0; /* Размещаем бургер-меню справа */
+.bar {
+  width: 15px;
+  height: 2px;
+  background-color: #F39708; /* Цвет полос бургер-меню */
+  transition: 0.4s; /* Анимация для перехода состояния полос */
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
   }
+}
 
-    .navLinks {
-      display: none;
+.rotateBar1 {
+  transform: rotate(-45deg) translate(-1px, 1px);
+  width: 15px;
+  // background-color: #fff;
+}
 
-      &.open {
-      display: block;
-      }
-    }
-  }
+.rotateBar2 {
+  transform: rotate(45deg) translate(-3px, -3px);
+  width: 15px;
+  // background-color: #fff;
 }

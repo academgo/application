@@ -1,55 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import NavLinks from "../NavLinks/NavLinks";
+import { useState } from "react";
 import styles from "./BurgerMenu.module.scss";
-import { Header as HeaderType } from "@/types/header";
 
 type Props = {
-  navLinks: HeaderType["navLinks"];
-  params: { lang: string };
+  onToggle: () => void;
 };
 
-const BurgerMenu: React.FC<Props> = ({ navLinks, params }) => {
+const BurgerMenu: React.FC<Props> = ({ onToggle }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 980);
-    };
-
-    handleResize(); // Проверка при загрузке компонента
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    onToggle();
+  };
 
   return (
     <div className={styles.burgerMenu}>
-      {/* {isMobile ? (
-        <>
-          <button
-            className={styles.burger}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            ☰
-          </button>
-          <div
-            className={`${styles.navLinks} ${isMenuOpen ? styles.open : ""}`}
-          >
-            <NavLinks
-              navLinks={navLinks}
-              params={params}
-              isMenuOpen={isMenuOpen}
-            />
-          </div>
-        </>
-      ) : (
-        <NavLinks navLinks={navLinks} params={params} isMenuOpen={isMenuOpen} />
-      )} */}
+      <div className={styles.burgerIcon} onClick={toggleMenu}>
+        <div
+          className={`${styles.bar} ${isMenuOpen ? styles.rotateBar1 : ""}`}
+        />
+        <div
+          className={`${styles.bar} ${isMenuOpen ? styles.rotateBar2 : ""}`}
+        />
+      </div>
     </div>
   );
 };

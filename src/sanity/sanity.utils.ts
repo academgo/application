@@ -1,9 +1,8 @@
-import { groq } from 'next-sanity';
-import { client } from './sanity.client';
-import { Post } from '@/types/post';
-import { Header } from '@/types/header';
-import { Homepage } from '@/types/homepage';
-
+import { groq } from "next-sanity";
+import { client } from "./sanity.client";
+import { Post } from "@/types/post";
+import { Header } from "@/types/header";
+import { Homepage } from "@/types/homepage";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -43,6 +42,8 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
   const headerQuery = groq`*[_type == 'header' && language == $lang][0] {
     _id,
     logo,
+    logoMobile,
+    logoMobileActive,
     description,
     navLinks,
     contactLinks,

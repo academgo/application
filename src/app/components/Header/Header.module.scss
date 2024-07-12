@@ -15,6 +15,24 @@
   gap: 30px;
 }
 
+.logoImage {
+
+  @media screen and (max-width: 1120px){
+    display: none;
+    position: relative;
+    z-index: 101;
+  }
+}
+
+.logoImageMobile {
+  position: relative;
+  z-index: 101;
+  
+  @media screen and (min-width: 1121px){
+    display: none;
+  }
+}
+
 .description {
   max-width: 255px;
   color: #8A929C;
@@ -23,18 +41,78 @@
   font-weight: 500;
   line-height: 20px; /* 153.846% */
   letter-spacing: -0.65px;
+
+  @media screen and (max-width: 1440px){
+    display: none;
+  }
+}
+
+.navWrapperParent {
+
+  @media screen and (max-width: 768px){
+    order: 5;
+  }
+}
+
+.navWrapper {
+
+  @media screen and (max-width: 768px){
+    position: absolute;
+    top: 0;
+    left: 200vw;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: #112546;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+}
+
+.navWrapperOpen {
+  left: 0;
 }
 
 .contacts {
   display: flex;
   align-items: center;
   gap: 60px;
+
+  @media screen and (max-width: 1600px){
+    gap: 30px;
+  }
 }
 
 .contactLinks {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.contactLink {
+
+  @media screen and (max-width: 768px){
+    position: relative;
+    z-index: 101;
+  }
+}
+
+.contactIcon {
+
+  @media screen and (max-width: 1120px){
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.contactData {
+
+  @media screen and (max-width: 820px){
+    display: none;
+  }
 }
 
 .workingHours {
@@ -44,6 +122,14 @@
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.65px;
+
+  @media screen and (max-width: 1120px){
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: 860px){
+    font-size: 10px;
+  }
 }
 
 .phoneNumber {
@@ -53,6 +139,14 @@
   font-weight: 600;
   line-height: normal;
   letter-spacing: -1.5px;
+
+  @media screen and (max-width: 1600px){
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 860px){
+    font-size: 18px;
+  }
 }
 
 .contactButtons {
@@ -70,11 +164,33 @@
   height: 50px;
   background-color: #fff;
   border-radius: 50%;
+
+  @media screen and (max-width: 1120px){
+    width: 35px;
+   height: 35px;
+  }
+
+  @media screen and (max-width: 768px){
+    position: relative;
+    z-index: 101;
+  }
 }
 
 .navLinks {
   display: flex;
-  gap: 10px; /* Пространство между ссылками */
+  gap: 10px;
+
+  @media screen and (max-width: 1440px) {
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    // padding-top: 100px;
+  }
 }
 
 .navLink {
@@ -85,4 +201,8 @@
   line-height: 20px; /* 125% */
   letter-spacing: -0.8px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px){
+    color: #fff;
+  }
 }

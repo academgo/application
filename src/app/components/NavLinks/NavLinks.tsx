@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { Header as HeaderType } from "@/types/header";
-// import styles from "./NavLinks.module.scss";
 import styles from "../Header/Header.module.scss";
 import { useEffect, useState } from "react";
 

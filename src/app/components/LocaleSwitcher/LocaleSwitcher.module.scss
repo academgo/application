@@ -11,4 +11,15 @@
   height: 50px;
   background-color: #fff;
   border-radius: 50%;
+
+  @media screen and (max-width: 1120px){
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 768px){
+    position: relative;
+    z-index: 101;
+  }
 }

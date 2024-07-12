@@ -1,4 +1,4 @@
-type Image = {
+export type Image = {
   _key: string;
   _ref: string;
   _type: string;
@@ -18,10 +18,12 @@ type contactLink = {
 };
 
 export type Header = {
-  _type: 'header';
+  _type: "header";
   _id: string;
   _rev: string;
   logo: Image;
+  logoMobile: Image;
+  logoMobileActive: Image;
   description: string;
   navLinks: navLink[];
   contactLinks: contactLink[];
@@ -29,4 +31,4 @@ export type Header = {
   phoneNumber: string;
   languageIcon: Image;
   languageLink: string;
-}
+};

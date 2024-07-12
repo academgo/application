@@ -8,17 +8,27 @@ const header = {
     defineField({
       name: "title",
       title: "Header title",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "logo",
       title: "Logo",
-      type: "image",
+      type: "image"
+    }),
+    defineField({
+      name: "logoMobile",
+      title: "Logo mobile",
+      type: "image"
+    }),
+    defineField({
+      name: "logoMobileActive",
+      title: "Logo mobile active",
+      type: "image"
     }),
     defineField({
       name: "description",
       title: "Short description",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "navLinks",
@@ -31,16 +41,16 @@ const header = {
             defineField({
               name: "label",
               title: "Label",
-              type: "string",
+              type: "string"
             }),
             defineField({
               name: "link",
               title: "Link",
-              type: "string",
-            }),
-          ],
-        },
-      ],
+              type: "string"
+            })
+          ]
+        }
+      ]
     }),
     defineField({
       name: "contactLinks",
@@ -54,47 +64,47 @@ const header = {
             defineField({
               name: "icon",
               title: "Icon",
-              type: "image",
+              type: "image"
             }),
             defineField({
               name: "link",
               title: "Link",
-              type: "string",
-            }),
-          ],
-        },
-      ],
+              type: "string"
+            })
+          ]
+        }
+      ]
     }),
     defineField({
-      name: 'workingHours',
-      title: 'Working hours',
-      type: 'string',
+      name: "workingHours",
+      title: "Working hours",
+      type: "string"
     }),
     defineField({
-      name: 'phoneNumber',
-      title: 'Phone number',
-      type: 'string',
-      description: 'Only numbers with spaces and special characters',
+      name: "phoneNumber",
+      title: "Phone number",
+      type: "string",
+      description: "Only numbers with spaces and special characters"
     }),
     defineField({
       name: "languageIcon",
       title: "Language icon",
       type: "image",
-      description: "Icon for language switcher",
+      description: "Icon for language switcher"
     }),
     defineField({
       name: "languageLink",
       title: "Language link",
       type: "string",
-      description: "Link to language switcher",
+      description: "Link to language switcher"
     }),
     defineField({
-      name: 'language',
-      type: 'string',
-      initialValue: 'id',
-      readOnly: true,
-    }),
-  ],
+      name: "language",
+      type: "string",
+      initialValue: "id",
+      readOnly: true
+    })
+  ]
 };
 
 export default header;
