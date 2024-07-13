@@ -4,6 +4,7 @@ import { getHomePageByLang } from "../../sanity/sanity.utils";
 import { i18n } from "@/i18n.config";
 import { Translation } from "@/types/post";
 import Hero from "../components/Hero/Hero";
+import Conditions from "../components/Conditions/Conditions";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -68,6 +69,13 @@ export default async function Home({ params }: Props) {
           heroDescription={homePage.heroDescription}
           flags={homePage.flags}
           heroTitle={homePage.heroTitle}
+        />
+        <Conditions
+          conditionsTitle={homePage.conditionsTitle}
+          conditionFirst={homePage.conditionFirst}
+          conditionSecond={homePage.conditionSecond}
+          conditionThird={homePage.conditionThird}
+          conditionFourth={homePage.conditionFourth}
         />
       </main>
     </>

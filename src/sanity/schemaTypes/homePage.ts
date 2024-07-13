@@ -97,6 +97,104 @@ export default defineType({
         }
       ]
     }),
+    defineField({
+      name: "conditionsTitle",
+      title: "Conditions Title",
+      type: "string"
+    }),
+    defineField({
+      name: "conditionFirst",
+      title: "Condition 1",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image"
+        })
+      ]
+    }),
+    defineField({
+      name: "conditionSecond",
+      title: "Condition 2",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image"
+        })
+      ]
+    }),
+    defineField({
+      name: "conditionThird",
+      title: "Condition 3",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
+      name: "conditionFourth",
+      title: "Condition 4",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        }),
+        defineField({
+          name: "linkLabel",
+          title: "Link Label",
+          type: "string"
+        }),
+        defineField({
+          name: "linkDestination",
+          title: "Link Destination",
+          type: "string"
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image"
+        })
+      ]
+    }),
     // optional
     defineField({
       name: "language",

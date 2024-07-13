@@ -1,0 +1,230 @@
+.conditionsGrid {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 20px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "conditionFirst conditionSecond conditionThird"
+    "conditionFirst conditionFourth conditionFourth";
+}
+
+.conditionFirst { 
+  grid-area: conditionFirst;
+  padding: 50px 70px;
+  background-color: #112546;
+  position: relative;
+
+  @media screen and (max-width: 980px) {
+    padding: 25px 37px
+  }
+
+  h3 {
+    color: #fff;
+    max-width: 250px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  p {
+    color: #fff;
+  } 
+
+  .posterImage {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    // width: 400px;
+    // height: auto;
+    object-fit: cover;
+  }
+}
+
+.conditionSecond { 
+  grid-area: conditionSecond;
+  padding: 50px 70px;
+  position: relative;
+
+  @media screen and (max-width: 980px) {
+    padding: 25px 37px
+  }
+
+  h3 {
+    color: #fff;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  p {
+    color: #fff;
+  } 
+
+  .bgImage {
+    z-index: -2;
+    object-fit: cover;
+  }
+  
+  .conditionOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 37, 70, 0.8);
+    z-index: -1;
+  }
+ }
+
+.conditionThird { 
+  grid-area: conditionThird;
+  padding: 50px 70px;
+  background-color: #fff;
+
+  @media screen and (max-width: 980px) {
+    padding: 25px 37px
+  }
+
+  h3 {
+    color: #091728;
+    max-width: 320px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  p {
+    color: #091728;
+  }
+ }
+
+.conditionFourth { 
+  grid-area: conditionFourth;
+  padding: 50px 70px;
+  background-color: #f39608;
+  height: 290px;
+  position: relative;
+  height: 100%;
+
+  @media screen and (max-width: 980px) {
+    padding: 25px 37px
+  }
+
+  h3 {
+    color: #fff;
+    max-width: 450px;
+  }
+
+  p {
+    color: #fff;
+  }
+
+  .posterImage {
+    position: absolute;
+    right: 80px;
+    bottom: 0;
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+  
+  }
+ }
+
+.conditionsTitle {
+  color: #091728;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px; /* 136.364% */
+  letter-spacing: -3.85px;
+  margin-bottom: clamp(1.563rem, 0.469rem + 4.38vw, 3.75rem);
+
+  @media screen and (max-width: 980px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: -1.68px;
+  }
+}
+
+.condition {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.conditionFirstContent {
+  max-width: 323px;
+}
+
+.conditionFourthContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.conditionTitle {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
+  letter-spacing: -2.8px;
+  // margin-bottom: 25px;
+
+  @media screen and (max-width: 980px) {
+    font-size: 18px;
+    line-height: 23px; /* 127.778% */
+    letter-spacing: -1.26px;
+    margin-bottom: 12px;
+  }
+}
+
+.conditionDescription {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 125% */
+  letter-spacing: -0.96px;
+
+  @media screen and (max-width: 980px) {
+    font-size: 12px;
+    line-height: 16px; /* 133.333% */
+    letter-spacing: -0.48px;
+  }
+}
+
+.conditionLink {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px; /* 125% */
+  letter-spacing: -0.6px;
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #FFF;
+    bottom: 0px;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

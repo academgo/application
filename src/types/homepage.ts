@@ -12,6 +12,15 @@ export type Flag = {
   link: string;
 };
 
+export type Condition = {
+  _key: string;
+  title: string;
+  description: string;
+  linkLabel?: string; // Сделали linkLabel необязательным
+  linkDestination?: string; // Сделали linkDestination необязательным
+  image?: Image;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -29,6 +38,11 @@ export type Homepage = {
   heroDescription: string;
   flags: Flag[];
   heroTitle: string;
+  conditionsTitle: string;
+  conditionFirst: Condition;
+  conditionSecond: Condition;
+  conditionThird: Condition;
+  conditionFourth: Condition;
   language: string;
   slug: {
     [lang: string]: {
