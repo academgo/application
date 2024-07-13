@@ -62,7 +62,18 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
   const homepageQuery = groq`*[_type == 'homepage' && language == $lang][0] {
     _id,
     title,
+    mainHeadingStart,
+    mainHeadingHighlight,
+    mainHeadingContinue,
+    mainHeadingEnd,
+    tooltip,
     description,
+    descriptionSmall,
+    heroButtonText,
+    heroImage,
+    heroDescription,
+    flags,
+    heroTitle,
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
