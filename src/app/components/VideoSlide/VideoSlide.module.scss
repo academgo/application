@@ -1,0 +1,108 @@
+.posterImageBlock {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  aspect-ratio: 1080 / 1920;
+}
+
+.posterImage {
+  width: 100%;
+  aspect-ratio: 1080 / 1920;
+  border-radius: 20px;
+  object-fit: cover;
+
+  // @media screen and (max-width: 620px){
+  //   aspect-ratio: 8/10;
+  // }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.playButton {
+  padding: 25px;
+  background-color: #F39708;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.playButton:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.playingButton {
+  padding: 25px;
+  background-color: #F39708;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.videoFrame {
+  aspect-ratio: 1080 / 1920;
+}
+
+.videoSlideContent {
+  margin-top: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  @media screen and (min-width: 768px){
+    margin-top: 30px;
+    gap: 15px;
+    padding-right: 30px;
+  }
+}
+
+.date {
+  color: #8A929C;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.4px;
+
+  @media screen and (min-width: 768px){
+    color: #8A929C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.64px;
+  }
+}
+
+.title {
+  color: #091728;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.48px;
+
+  @media screen and (min-width: 768px){
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+  }
+}

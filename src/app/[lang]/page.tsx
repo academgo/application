@@ -5,6 +5,7 @@ import { i18n } from "@/i18n.config";
 import { Translation } from "@/types/post";
 import Hero from "../components/Hero/Hero";
 import Conditions from "../components/Conditions/Conditions";
+import VideosSection from "../components/VideosSection/VideosSection";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -76,6 +77,10 @@ export default async function Home({ params }: Props) {
           conditionSecond={homePage.conditionSecond}
           conditionThird={homePage.conditionThird}
           conditionFourth={homePage.conditionFourth}
+        />
+        <VideosSection
+          videosTitle={homePage.videosTitle}
+          videos={homePage.videos}
         />
       </main>
     </>

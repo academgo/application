@@ -195,6 +195,43 @@ export default defineType({
         })
       ]
     }),
+    defineField({
+      name: "videosTitle",
+      title: "Videos Title",
+      type: "string"
+    }),
+    defineField({
+      name: "videos",
+      title: "Videos",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "videoId",
+              title: "Video ID",
+              type: "string"
+            }),
+            defineField({
+              name: "posterImage",
+              title: "Poster Image",
+              type: "image"
+            }),
+            defineField({
+              name: "date",
+              title: "Date",
+              type: "string"
+            }),
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            })
+          ]
+        }
+      ]
+    }),
     // optional
     defineField({
       name: "language",

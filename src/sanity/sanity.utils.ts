@@ -79,6 +79,8 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionSecond,
     conditionThird,
     conditionFourth,
+    videosTitle,
+    videos,
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{

@@ -21,6 +21,14 @@ export type Condition = {
   image?: Image;
 };
 
+export type Video = {
+  _key: string;
+  videoId: string;
+  posterImage: Image;
+  date: string;
+  title: string;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -43,6 +51,8 @@ export type Homepage = {
   conditionSecond: Condition;
   conditionThird: Condition;
   conditionFourth: Condition;
+  videosTitle: string;
+  videos: Video[];
   language: string;
   slug: {
     [lang: string]: {

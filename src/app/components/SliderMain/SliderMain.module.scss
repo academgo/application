@@ -1,0 +1,38 @@
+.sliderSlides {
+  margin-bottom: clamp(1.563rem, 1.406rem + 0.63vw, 1.875rem);
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+
+.swiperButton {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (min-width: 768px){
+    width: 60px;
+    height: 60px;
+  }
+
+  &:hover {
+    background-color: #F39708;
+
+    .arrow {
+      color: #fff;
+    }
+  }
+
+  .arrow {
+    color: #8A929C;
+    transition: all 0.2s ease-in-out;
+  }
+}
