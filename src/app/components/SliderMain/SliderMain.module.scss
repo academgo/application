@@ -36,3 +36,24 @@
     transition: all 0.2s ease-in-out;
   }
 }
+
+.pagination {
+  position: relative;
+
+  div {
+    text-align: right;
+    position: absolute;
+    bottom: 17px !important;
+    right: 0 !important;
+
+    @media screen and (min-width: 768px){
+      bottom: 30px !important;
+    }
+  }
+
+  span {
+    width: 10px;
+    height: 10px;
+    background-color: #091728;
+  }
+}
