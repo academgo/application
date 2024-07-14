@@ -58,10 +58,12 @@ const Conditions: FC<Props> = ({
             </p>
           </div>
           <div className={`${styles.condition} ${styles.conditionThird}`}>
-            <h3 className={styles.conditionTitle}>{conditionThird.title}</h3>
-            <p className={styles.conditionDescription}>
-              {conditionThird.description}
-            </p>
+            <div className={styles.conditionThidrContent}>
+              <h3 className={styles.conditionTitle}>{conditionThird.title}</h3>
+              <p className={styles.conditionDescription}>
+                {conditionThird.description}
+              </p>
+            </div>
           </div>
           <div className={`${styles.condition} ${styles.conditionFourth}`}>
             {conditionFourth.image && (

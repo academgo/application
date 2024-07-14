@@ -8,6 +8,24 @@
   grid-template-areas:
     "conditionFirst conditionSecond conditionThird"
     "conditionFirst conditionFourth conditionFourth";
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "conditionFirst conditionFirst"
+      "conditionSecond conditionThird"
+      "conditionFourth conditionFourth";
+  }
+
+  @media screen and (max-width: 980px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "conditionFirst"
+      "conditionSecond"
+      "conditionThird"
+      "conditionFourth";
+  }
 }
 
 .conditionFirst { 
@@ -15,9 +33,22 @@
   padding: 50px 70px;
   background-color: #112546;
   position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
 
   @media screen and (max-width: 980px) {
-    padding: 25px 37px
+    padding: 25px 37px;
+    aspect-ratio: 276/150;
+  }
+
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 276/275;
   }
 
   h3 {
@@ -27,20 +58,28 @@
 
     @media screen and (max-width: 980px) {
       margin-bottom: 12px;
+      max-width: 100%;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -1.26px;
     }
   }
 
   p {
     color: #fff;
+
+    @media screen and (max-width: 980px) {
+      font-size: 16px;
+      line-height: 120%;
+    }
   } 
 
   .posterImage {
     position: absolute;
     right: 0;
     bottom: 0;
-    // width: 400px;
-    // height: auto;
     object-fit: cover;
+    transition: all 0.3s ease;
   }
 }
 
@@ -48,9 +87,21 @@
   grid-area: conditionSecond;
   padding: 50px 70px;
   position: relative;
+  overflow: hidden;
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
 
   @media screen and (max-width: 980px) {
-    padding: 25px 37px
+    padding: 25px 37px;
+    // aspect-ratio: 276/150;
+  }
+
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 276/142;
   }
 
   h3 {
@@ -59,16 +110,25 @@
 
     @media screen and (max-width: 980px) {
       margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -1.26px;
     }
   }
 
   p {
     color: #fff;
+
+    @media screen and (max-width: 980px) {
+      font-size: 16px;
+      line-height: 120%;
+    }
   } 
 
   .bgImage {
     z-index: -2;
     object-fit: cover;
+    transition: all 0.3s ease;
   }
   
   .conditionOverlay {
@@ -90,7 +150,18 @@
   background-color: #fff;
 
   @media screen and (max-width: 980px) {
-    padding: 25px 37px
+    padding: 25px 37px;
+  }
+
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 276/142;
+  }
+
+  .conditionThidrContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 
   h3 {
@@ -100,11 +171,28 @@
 
     @media screen and (max-width: 980px) {
       margin-bottom: 12px;
+      max-width: 200px;
+      color: #091728;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 23px; /* 127.778% */
+      letter-spacing: -1.26px;
     }
   }
 
   p {
     color: #091728;
+
+    @media screen and (max-width: 980px) {
+      // max-width: 210px;
+      color: #091728;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.36px;
+    }
   }
  }
 
@@ -115,18 +203,42 @@
   height: 290px;
   position: relative;
   height: 100%;
+  overflow: hidden;
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
 
   @media screen and (max-width: 980px) {
-    padding: 25px 37px
+    padding: 25px 37px;
+    aspect-ratio: 276/90;
+  }
+
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 276/460;
   }
 
   h3 {
     color: #fff;
     max-width: 450px;
+
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+      font-size: 24px;
+      line-height: 23px; /* 127.778% */
+      letter-spacing: -1.26px;
+      font-size: 20px;
+    }
   }
 
   p {
     color: #fff;
+
+    @media screen and (max-width: 980px) {
+      font-size: 16px;
+    }
   }
 
   .posterImage {
@@ -136,6 +248,11 @@
     width: 400px;
     height: auto;
     object-fit: cover;
+    transition: all 0.3s ease;
+
+    @media screen and (max-width: 980px) {
+      right: 0;
+    }
   
   }
  }
@@ -171,6 +288,12 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
+  @media screen and (max-width: 980px) {
+    justify-content: flex-start;
+    gap: 15px;
+    // max-width: 184px;
+  }
 }
 
 .conditionTitle {
@@ -212,6 +335,13 @@
   letter-spacing: -0.6px;
   position: relative;
   width: fit-content;
+
+  @media screen and (max-width: 980px) {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: -0.36px;
+  }
 
   &::after {
     content: "";
