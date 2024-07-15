@@ -93,6 +93,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
       language,
       form
     },
+    offerButtonCustomText,
     offerAltText,
     offerContactLinks,
     language,

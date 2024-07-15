@@ -92,6 +92,7 @@ export default async function Home({ params }: Props) {
           offerDesctiption={homePage.offerDesctiption}
           offerFormTitle={homePage.offerFormTitle}
           offerForm={homePage.offerForm}
+          offerButtonCustomText={homePage.offerButtonCustomText}
           offerAltText={homePage.offerAltText}
           offerContactLinks={homePage.offerContactLinks}
         />

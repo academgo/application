@@ -75,6 +75,7 @@ export type Homepage = {
   offerDesctiption: string;
   offerFormTitle: string;
   offerForm: Form;
+  offerButtonCustomText: string;
   offerAltText: string;
   offerContactLinks: offerContactLink[];
   language: string;

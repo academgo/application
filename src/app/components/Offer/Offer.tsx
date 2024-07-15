@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
 import FormSuperLite from "../FormSuperLite/FormSuperLite";
+import FormStandard from "../FormStandard/FormStandard";
 
 type Props = {
   offerTitle: string;
@@ -16,6 +17,7 @@ type Props = {
   offerDesctiption: string;
   offerFormTitle: string;
   offerForm: Form;
+  offerButtonCustomText: string;
   offerAltText: string;
   offerContactLinks: offerContactLink[];
 };
@@ -29,10 +31,11 @@ const Offer: FC<Props> = ({
   offerDesctiption,
   offerFormTitle,
   offerForm,
+  offerButtonCustomText,
   offerAltText,
   offerContactLinks
 }) => {
-  console.log("offerForm", offerForm);
+  // console.log("offerForm", offerForm);
 
   return (
     <section className={styles.offer}>
@@ -107,7 +110,10 @@ const Offer: FC<Props> = ({
             <div className={styles.mainContenrRight}>
               <div className={styles.offerFormBlock}>
                 <h3 className={styles.offerFormTitle}>{offerFormTitle}</h3>
-                <FormSuperLite form={offerForm} />
+                <FormSuperLite
+                  form={offerForm}
+                  offerButtonCustomText={offerButtonCustomText}
+                />
               </div>
               <div className={styles.offerLinksBlock}>
                 <p className={styles.offerAltText}>{offerAltText}</p>

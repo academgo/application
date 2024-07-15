@@ -11,19 +11,26 @@
   color: rgb(55 65 81 / 70%);
   position: absolute;
   top: 50%;
-  left: 12px;
+  left: 28px;
   transform: translateY(-50%);
   transition: all 0.3s ease;
   z-index: 1;
   cursor: text; /* Add this line to make the label cursor text-like */
 }
 
+.label[for="phone"] {
+  left: 70px;
+}
+
+
+
 .inputField {
   width: 100%;
-  padding: 8px;
+  padding: 20px 28px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 311.25px;
+  background: #F5F5F5;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   -webkit-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
@@ -34,12 +41,14 @@
 .labelFocused {
   top: 5px;
   font-size: 0.75rem;
+  opacity: 0.1;
 }
 
 .inputWrapper:focus-within .label,
 .inputField:not(:placeholder-shown) + .label {
   top: 5px;
   font-size: 0.75rem;
+  opacity: 0;
 }
 
 .sentBtn {

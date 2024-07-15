@@ -279,23 +279,17 @@ export default defineType({
       title: "Offer Form Title",
       type: "string"
     }),
-    // defineField({
-    //   name: "offerForm",
-    //   title: "Offer Form",
-    //   type: "formSuperlite"
-    // }),
     defineField({
       name: "offerForm",
       title: "Offer Form",
       type: "reference", // Используйте ссылку на форму
       to: [{ type: "formStandardDocument" }]
     }),
-    // defineField({
-    //   name: "offerForm",
-    //   title: "Offer Form",
-    //   type: "array",
-    //   of: [{ type: "reference", to: [{ type: "formStandardDocument" }] }]
-    // }),
+    defineField({
+      name: "offerButtonCustomText",
+      title: "Offer Button Custom Text",
+      type: "string"
+    }),
     defineField({
       name: "offerAltText",
       title: "Offer Alternate Text",
