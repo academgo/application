@@ -21,14 +21,14 @@
   @media screen and (min-width: 768px){
     width: 60px;
     height: 60px;
-  }
 
-  &:hover {
+    &:hover {
     background-color: #F39708;
 
     .arrow {
       color: #fff;
     }
+  }
   }
 
   .arrow {

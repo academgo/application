@@ -1,0 +1,171 @@
+.inputWrapper {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: rgb(55 65 81 / 70%);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  z-index: 1;
+  cursor: text; /* Add this line to make the label cursor text-like */
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
+  -moz-box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
+}
+
+.labelFocused {
+  top: 5px;
+  font-size: 0.75rem;
+}
+
+.inputWrapper:focus-within .label,
+.inputField:not(:placeholder-shown) + .label {
+  top: 5px;
+  font-size: 0.75rem;
+}
+
+.sentBtn {
+  // width: 100%;
+  // padding: 10px;
+  // font-size: 1rem;
+  // border: 1px solid #48368d;
+  // border-radius: 4px;
+  // background-color: #48368d;
+  // color: #fff;
+  // cursor: pointer;
+  // transition: background-color 0.3s ease;
+
+  // &:hover {
+  //   background-color: #fff;
+  //   color: #25064D;
+  // }
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  // background-color: #800080;
+  color: #800080;
+  // border: 1px solid #800080;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
+  -moz-box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
+
+  &:hover {
+    background-color: #fff;
+    color: #800080;
+  }
+}
+
+.inputField:not(:placeholder-shown) + .label,
+.inputWrapper .label.filled {
+  top: 5px;
+  font-size: 0.75rem;
+}
+
+// -webkit-text-fill-color устанавливает цвет текста. Замените #fff на желаемый цвет текста.
+// -webkit-box-shadow используется для изменения фона поля. #363a3e — это цвет фона; замените его на цвет, который вы используете для полей ввода. Важно, что использование box-shadow вместо background-color позволяет обойти ограничения браузера на прямое изменение фона автозаполненных полей.
+// transition: background-color 5000s — это трюк, который замедляет любые попытки браузера изменить фон после автозаполнения, практически предотвращая его изменение.
+.inputField:-webkit-autofill,
+.inputField:-webkit-autofill:hover, 
+.inputField:-webkit-autofill:focus, 
+.inputField:-webkit-autofill:active  {
+    -webkit-text-fill-color: #000 !important; /* Цвет текста */
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset; /* Фон поля, замените на желаемый цвет */
+    transition: background-color 5000s ease-in-out 0s; /* Задержка изменения фона, чтобы предотвратить мерцание */
+}
+
+.error {
+  position: absolute;
+  z-index: 1;
+  bottom: -3px;
+  left: 15px;
+  font-size: 10px;
+  color: #800080;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #800080;
+  color: #fff;
+  padding: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  max-width: 500px;
+  font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  line-height: 1.5;
+  text-align: center;
+  filter: drop-shadow(-3px -6px 12px #000000);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  // padding-inline: 10px;
+  margin-bottom: 15px;
+}
+
+.customCheckbox input[type="checkbox"] {
+  display: none;
+}
+
+.customCheckbox label {
+  position: relative;
+  padding-left: 30px; /* Отступ для визуального индикатора */
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  color: #000;
+}
+
+.customCheckbox label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc; /* Граница неотмеченного чекбокса */
+  border-radius: 4px; /* Скругление углов для круглого чекбокса можно убрать */
+  background-color: white; /* Фон неотмеченного чекбокса */
+}
+
+.customCheckbox input[type="checkbox"]:checked + label::before {
+  background-color: #800080; /* Цвет фона при активации */
+  border-color: #800080; /* Цвет границы при активации */
+}
+
+.customCheckbox input[type="checkbox"]:checked + label::after {
+  content: '✔';
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: white; /* Цвет галочки */
+  font-size: 15px;
+}

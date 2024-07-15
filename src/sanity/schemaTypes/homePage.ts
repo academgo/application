@@ -232,6 +232,103 @@ export default defineType({
         }
       ]
     }),
+    defineField({
+      name: "offerTitle",
+      title: "Offer Title",
+      type: "string"
+    }),
+    defineField({
+      name: "offerTitleHighlight",
+      title: "Offer Title Highlight",
+      type: "string"
+    }),
+    defineField({
+      name: "offerListTitle",
+      title: "Offer List Title",
+      type: "string"
+    }),
+    defineField({
+      name: "offerList",
+      title: "Offer List",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "offerListItem",
+              title: "Offer List Item",
+              type: "string"
+            })
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: "giftText",
+      title: "Gift Text",
+      type: "string"
+    }),
+    defineField({
+      name: "offerDesctiption",
+      title: "Offer Description",
+      type: "string"
+    }),
+    defineField({
+      name: "offerFormTitle",
+      title: "Offer Form Title",
+      type: "string"
+    }),
+    // defineField({
+    //   name: "offerForm",
+    //   title: "Offer Form",
+    //   type: "formSuperlite"
+    // }),
+    defineField({
+      name: "offerForm",
+      title: "Offer Form",
+      type: "reference", // Используйте ссылку на форму
+      to: [{ type: "formStandardDocument" }]
+    }),
+    // defineField({
+    //   name: "offerForm",
+    //   title: "Offer Form",
+    //   type: "array",
+    //   of: [{ type: "reference", to: [{ type: "formStandardDocument" }] }]
+    // }),
+    defineField({
+      name: "offerAltText",
+      title: "Offer Alternate Text",
+      type: "string"
+    }),
+    defineField({
+      name: "offerContactLinks",
+      title: "Offer Contact links",
+      type: "array",
+      description: "Links to messengers",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
+              name: "icon",
+              title: "Icon",
+              type: "image"
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "string"
+            })
+          ]
+        }
+      ]
+    }),
     // optional
     defineField({
       name: "language",

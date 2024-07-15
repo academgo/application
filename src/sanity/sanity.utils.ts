@@ -81,6 +81,20 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionFourth,
     videosTitle,
     videos,
+    offerTitle,
+    offerTitleHighlight,
+    offerListTitle,
+    offerList,
+    giftText,
+    offerDesctiption,
+    offerFormTitle,
+    "offerForm": offerForm->{
+      _id,
+      language,
+      form
+    },
+    offerAltText,
+    offerContactLinks,
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{

@@ -6,6 +6,7 @@ import { Translation } from "@/types/post";
 import Hero from "../components/Hero/Hero";
 import Conditions from "../components/Conditions/Conditions";
 import VideosSection from "../components/VideosSection/VideosSection";
+import Offer from "../components/Offer/Offer";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -81,6 +82,18 @@ export default async function Home({ params }: Props) {
         <VideosSection
           videosTitle={homePage.videosTitle}
           videos={homePage.videos}
+        />
+        <Offer
+          offerTitle={homePage.offerTitle}
+          offerTitleHighlight={homePage.offerTitleHighlight}
+          offerListTitle={homePage.offerListTitle}
+          offerList={homePage.offerList}
+          giftText={homePage.giftText}
+          offerDesctiption={homePage.offerDesctiption}
+          offerFormTitle={homePage.offerFormTitle}
+          offerForm={homePage.offerForm}
+          offerAltText={homePage.offerAltText}
+          offerContactLinks={homePage.offerContactLinks}
         />
       </main>
     </>

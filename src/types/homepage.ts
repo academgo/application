@@ -1,3 +1,5 @@
+import { Form } from "./form";
+
 export type Image = {
   _key: string;
   _ref: string;
@@ -29,6 +31,18 @@ export type Video = {
   title: string;
 };
 
+export type offerListItem = {
+  _key: string;
+  offerListItem: string;
+};
+
+export type offerContactLink = {
+  _key: string;
+  title: string;
+  icon: Image;
+  link: string;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -53,6 +67,16 @@ export type Homepage = {
   conditionFourth: Condition;
   videosTitle: string;
   videos: Video[];
+  offerTitle: string;
+  offerTitleHighlight: string;
+  offerListTitle: string;
+  offerList: offerListItem[];
+  giftText: string;
+  offerDesctiption: string;
+  offerFormTitle: string;
+  offerForm: Form;
+  offerAltText: string;
+  offerContactLinks: offerContactLink[];
   language: string;
   slug: {
     [lang: string]: {
