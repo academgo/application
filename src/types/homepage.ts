@@ -43,6 +43,26 @@ export type offerContactLink = {
   link: string;
 };
 
+export type List = {
+  _key: string;
+  title: string;
+};
+
+export type Faculty = {
+  _key: string;
+  facultyName: string;
+  facultyDescription: string;
+  specialtiesTitle: string;
+  specialties: List[];
+  semesters: string;
+  cost: string;
+  universitiesTitle: string;
+  universities: List[];
+  linkLabel: string;
+  linkDestination: string;
+  hasBorder: boolean;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -78,6 +98,10 @@ export type Homepage = {
   offerButtonCustomText: string;
   offerAltText: string;
   offerContactLinks: offerContactLink[];
+  facultiesTitle: string;
+  faculties: Faculty[];
+  lastSlideTitle: string;
+  lastSlideDescription: string;
   language: string;
   slug: {
     [lang: string]: {

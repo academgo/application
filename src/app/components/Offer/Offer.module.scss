@@ -1,3 +1,7 @@
+.offer {
+  margin-bottom: clamp(2.125rem, 0.063rem + 8.25vw, 6.25rem);
+}
+
 .offerWrapper {
   position: relative;
   padding: 30px 15px;
@@ -6,6 +10,17 @@
 
   @media screen and (min-width: 768px) {
     padding: 82px 30px 37px 78px;
+  }
+}
+
+.decor {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 12%;
   }
 }
 
@@ -192,6 +207,8 @@
   @media screen and (min-width: 768px) {
     margin-top: 0;
     margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
   }
 }
 

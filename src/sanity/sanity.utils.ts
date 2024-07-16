@@ -96,6 +96,10 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     offerButtonCustomText,
     offerAltText,
     offerContactLinks,
+    facultiesTitle,
+    faculties,
+    lastSlideTitle,
+    lastSlideDescription,
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{

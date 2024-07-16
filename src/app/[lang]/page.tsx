@@ -7,6 +7,7 @@ import Hero from "../components/Hero/Hero";
 import Conditions from "../components/Conditions/Conditions";
 import VideosSection from "../components/VideosSection/VideosSection";
 import Offer from "../components/Offer/Offer";
+import Faculties from "../components/Faculties/Faculties";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -95,6 +96,12 @@ export default async function Home({ params }: Props) {
           offerButtonCustomText={homePage.offerButtonCustomText}
           offerAltText={homePage.offerAltText}
           offerContactLinks={homePage.offerContactLinks}
+        />
+        <Faculties
+          facultiesTitle={homePage.facultiesTitle}
+          faculties={homePage.faculties}
+          lastSlideTitle={homePage.lastSlideTitle}
+          lastSlideDescription={homePage.lastSlideDescription}
         />
       </main>
     </>

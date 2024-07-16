@@ -323,6 +323,122 @@ export default defineType({
         }
       ]
     }),
+    defineField({
+      name: "facultiesTitle",
+      title: "Faculties Title",
+      type: "string"
+    }),
+    defineField({
+      name: "faculties",
+      title: "Faculties",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "facultyName",
+              title: "Faculty Name",
+              type: "string"
+            }),
+            defineField({
+              name: "facultyDescription",
+              title: "Faculty Description",
+              type: "string"
+            }),
+            defineField({
+              name: "specialtiesTitle",
+              title: "Specialties Title",
+              type: "string"
+            }),
+            defineField({
+              name: "specialties",
+              title: "Specialties",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "title",
+                      title: "Speciality Name",
+                      type: "string"
+                    })
+                  ]
+                }
+              ]
+            }),
+            defineField({
+              name: "semesters",
+              title: "Semesters",
+              type: "string"
+            }),
+            defineField({
+              name: "cost",
+              title: "Cost",
+              type: "string"
+            }),
+            defineField({
+              name: "universitiesTitle",
+              title: "Universities Title",
+              type: "string"
+            }),
+            defineField({
+              name: "universities",
+              title: "Universities",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "title",
+                      title: "University Name",
+                      type: "string"
+                    })
+                  ]
+                }
+              ]
+            }),
+            defineField({
+              name: "linkLabel",
+              title: "Link Label",
+              type: "string"
+            }),
+            defineField({
+              name: "linkDestination",
+              title: "Link Destination",
+              type: "string"
+            }),
+            defineField({
+              name: "hasBorder",
+              title: "Has Border",
+              type: "boolean"
+            })
+            // defineField({
+            //   name: "bgColor",
+            //   title: "Background Color",
+            //   type: "string"
+            // }),
+            // defineField({
+            //   name: "borderColor",
+            //   title: "Border Color",
+            //   type: "string"
+            // })
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: "lastSlideTitle",
+      title: "Last Slide Title",
+      type: "string"
+    }),
+    defineField({
+      name: "lastSlideDescription",
+      title: "Last Slide Description",
+      type: "string"
+    }),
     // optional
     defineField({
       name: "language",
