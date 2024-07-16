@@ -48,6 +48,12 @@ export type List = {
   title: string;
 };
 
+export type Link = {
+  _key: string;
+  label: string;
+  destination: string;
+};
+
 export type Faculty = {
   _key: string;
   facultyName: string;
@@ -61,6 +67,26 @@ export type Faculty = {
   linkLabel: string;
   linkDestination: string;
   hasBorder: boolean;
+};
+
+export type Ceo = {
+  key: string;
+  name: string;
+  position: string;
+  image: Image;
+};
+
+export type Principle = {
+  key: string;
+  textStart: string;
+  textEnd: string;
+  boldStartOrEnd: boolean;
+};
+
+export type PrinciplesTotal = {
+  number: string;
+  descriptionBold: string;
+  description: string;
 };
 
 export type Homepage = {
@@ -103,6 +129,19 @@ export type Homepage = {
   lastSlideTitleHighlight: string;
   lastSlideTitle: string;
   lastSlideDescription: string;
+  aboutSummary: string;
+  aboutTitle: string;
+  aboutParagraphs: List[];
+  sertificateLink: Link;
+  aboutSocialsTitle: string;
+  aboutSocials: offerContactLink[];
+  aboutOffersTitle: string;
+  aboutOffers: offerContactLink[];
+  ceos: Ceo[];
+  principlesTitle: string;
+  principles: Principle[];
+  principlesTotal: PrinciplesTotal;
+  principlesFinal: string;
   language: string;
   slug: {
     [lang: string]: {

@@ -3,14 +3,26 @@
   background: #112546;
   height: 100%;
   padding: 23px 10px 21px 20px;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     padding: 47px;
   }
 }
 
+.decor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .highlight {
   color: #f39608;
+}
+
+.slideContent {
+  position: relative;
+  z-index: 1;
 }
 
 .title {

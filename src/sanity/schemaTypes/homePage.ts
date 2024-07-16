@@ -434,6 +434,204 @@ export default defineType({
       title: "Last Slide Description",
       type: "string"
     }),
+    // about block
+    defineField({
+      name: "aboutSummary",
+      title: "About Summary",
+      type: "string"
+    }),
+    defineField({
+      name: "aboutTitle",
+      title: "About Title",
+      type: "string"
+    }),
+    defineField({
+      name: "aboutParagraphs",
+      title: "About Paragraphs",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Paragraph",
+              type: "string"
+            })
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: "sertificateLink",
+      title: "Sertificate Link",
+      type: "object",
+      fields: [
+        defineField({
+          name: "label",
+          title: "Label",
+          type: "string"
+        }),
+        defineField({
+          name: "destination",
+          title: "Destination",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
+      name: "aboutSocialsTitle",
+      title: "About Socials Title",
+      type: "string"
+    }),
+    defineField({
+      name: "aboutSocials",
+      title: "About Socials",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
+              name: "icon",
+              title: "Icon",
+              type: "image"
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "string"
+            })
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: "aboutOffersTitle",
+      title: "About Offers Title",
+      type: "string"
+    }),
+    defineField({
+      name: "aboutOffers",
+      title: "About Offers",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
+              name: "icon",
+              title: "Icon",
+              type: "image"
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "string"
+            })
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: "ceos",
+      title: "CEOs",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "name",
+              title: "Name",
+              type: "string"
+            }),
+            defineField({
+              name: "position",
+              title: "Position",
+              type: "string"
+            }),
+            defineField({
+              name: "image",
+              title: "Image",
+              type: "image"
+            })
+          ]
+        }
+      ]
+    }),
+    // about block
+    // principles block
+    defineField({
+      name: "principlesTitle",
+      title: "Principles Title",
+      type: "string"
+    }),
+    defineField({
+      name: "principles",
+      title: "Principles",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "textStart",
+              title: "Text Start",
+              type: "string"
+            }),
+            defineField({
+              name: "textEnd",
+              title: "Text End",
+              type: "string"
+            }),
+            defineField({
+              name: "boldStartOrEnd",
+              title: "Bold start or end",
+              type: "boolean"
+            })
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: "principlesTotal",
+      title: "Principles Total",
+      type: "object",
+      fields: [
+        defineField({
+          name: "number",
+          title: "Number",
+          type: "string"
+        }),
+        defineField({
+          name: "descriptionBold",
+          title: "Description Bold",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
+      name: "principlesFinal",
+      title: "Principles Final",
+      type: "string"
+    }),
+    // principles block
     // optional
     defineField({
       name: "language",
