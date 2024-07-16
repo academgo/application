@@ -9,6 +9,10 @@
   }
 }
 
+.highlight {
+  color: #f39608;
+}
+
 .title {
   color: #fff;
   font-size: 16px;
@@ -34,6 +38,7 @@
   font-weight: 400;
   line-height: 14px; /* 140% */
   letter-spacing: -0.4px;
+  margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

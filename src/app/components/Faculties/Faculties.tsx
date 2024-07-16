@@ -7,6 +7,7 @@ import FacultySlide from "../FacultySlide/FacultySlide";
 type Props = {
   facultiesTitle: string;
   faculties: Faculty[];
+  lastSlideTitleHighlight: string;
   lastSlideTitle: string;
   lastSlideDescription: string;
 };
@@ -14,6 +15,7 @@ type Props = {
 const Faculties: FC<Props> = ({
   facultiesTitle,
   faculties,
+  lastSlideTitleHighlight,
   lastSlideTitle,
   lastSlideDescription
 }) => {
@@ -23,6 +25,7 @@ const Faculties: FC<Props> = ({
         <h2 className={styles.title}>{facultiesTitle}</h2>
         <SliderMain
           className={styles.videosSlider}
+          lastSlideTitleHighlight={lastSlideTitleHighlight}
           lastSlideTitle={lastSlideTitle}
           lastSlideDescription={lastSlideDescription}
         >

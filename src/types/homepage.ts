@@ -100,6 +100,7 @@ export type Homepage = {
   offerContactLinks: offerContactLink[];
   facultiesTitle: string;
   faculties: Faculty[];
+  lastSlideTitleHighlight: string;
   lastSlideTitle: string;
   lastSlideDescription: string;
   language: string;

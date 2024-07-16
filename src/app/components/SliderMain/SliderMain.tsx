@@ -11,6 +11,7 @@ import FacultySlideLast from "../FacultySlideLast/FacultySlideLast";
 
 const SliderMain = ({
   children,
+  lastSlideTitleHighlight,
   lastSlideTitle,
   lastSlideDescription
 }: any) => {
@@ -83,20 +84,23 @@ const SliderMain = ({
               </div>
             </SwiperSlide>
           ))}
-          {lastSlideTitle && lastSlideDescription && (
-            <SwiperSlide key="last-slide">
-              <div
-                ref={el => {
-                  slideRefs.current[children.length] = el;
-                }}
-              >
-                <FacultySlideLast
-                  lastSlideTitle={lastSlideTitle}
-                  lastSlideDescription={lastSlideDescription}
-                />
-              </div>
-            </SwiperSlide>
-          )}
+          {lastSlideTitle &&
+            lastSlideDescription &&
+            lastSlideTitleHighlight && (
+              <SwiperSlide key="last-slide">
+                <div
+                  ref={el => {
+                    slideRefs.current[children.length] = el;
+                  }}
+                >
+                  <FacultySlideLast
+                    lastSlideTitleHighlight={lastSlideTitleHighlight}
+                    lastSlideTitle={lastSlideTitle}
+                    lastSlideDescription={lastSlideDescription}
+                  />
+                </div>
+              </SwiperSlide>
+            )}
         </Swiper>
       </div>
       <div className={styles.sliderButtons}>

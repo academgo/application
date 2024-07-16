@@ -98,6 +98,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     offerContactLinks,
     facultiesTitle,
     faculties,
+    lastSlideTitleHighlight,
     lastSlideTitle,
     lastSlideDescription,
     language,

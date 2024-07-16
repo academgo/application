@@ -100,6 +100,7 @@ export default async function Home({ params }: Props) {
         <Faculties
           facultiesTitle={homePage.facultiesTitle}
           faculties={homePage.faculties}
+          lastSlideTitleHighlight={homePage.lastSlideTitleHighlight}
           lastSlideTitle={homePage.lastSlideTitle}
           lastSlideDescription={homePage.lastSlideDescription}
         />
