@@ -13,8 +13,8 @@ import Link from "next/link";
 
 export type FormData = {
   phone: string;
-  country: string;
-  email: string;
+  // country: string;
+  // email: string;
   agreedToPolicy: boolean;
 };
 
@@ -31,21 +31,19 @@ const FormSuperLite: FC<ContactFormProps> = ({
 }) => {
   const [message, setMessage] = useState<string | null>(null);
   const [filled, setFilled] = useState({
-    phone: false,
-    country: false,
-    email: false
+    phone: false
+    // country: false,
+    // email: false
   });
 
   const dataForm = form.form;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      ["phone", "country", "email"].forEach(field => {
-        const input = document.getElementById(field) as HTMLInputElement;
-        if (input && input.value) {
-          setFilled(f => ({ ...f, [field]: true }));
-        }
-      });
+      const input = document.getElementById("phone") as HTMLInputElement;
+      if (input && input.value) {
+        setFilled(f => ({ ...f, phone: true }));
+      }
     }, 100);
 
     return () => clearInterval(interval);
@@ -58,17 +56,11 @@ const FormSuperLite: FC<ContactFormProps> = ({
 
   const initialValues: FormData = {
     phone: "",
-    country: "",
-    email: "",
     agreedToPolicy: false
   };
 
   const validationSchema = Yup.object({
     phone: Yup.string().required(`${dataForm.validationPhoneRequired}`),
-    country: Yup.string().required(`${dataForm.validationCountryRequired}`),
-    email: Yup.string()
-      .email(`${dataForm.validationEmailRequired}`)
-      .required(`${dataForm.validationEmailInvalid}`),
     agreedToPolicy: Yup.boolean()
       .required(`${dataForm.validationAgreementRequired}`)
       .oneOf([true], `${dataForm.validationAgreementOneOf}`)
@@ -82,11 +74,9 @@ const FormSuperLite: FC<ContactFormProps> = ({
     try {
       const response = await axios.post("/api/email", values);
       if (response.data.message === "Email sent") {
-        setMessage(
-          "Otrzymałem Twoją wiadomość i wkrótce się з Tobą skontaktuję. Poczekaj chwilę :)"
-        );
+        setMessage(`${dataForm.successMessage}`);
         resetForm({});
-        setFilled({ phone: false, country: false, email: false }); // Reset the filled state
+        setFilled({ phone: false }); // Reset the filled state
         setTimeout(() => {
           onFormSubmitSuccess && onFormSubmitSuccess();
         }, 5000);
@@ -94,12 +84,12 @@ const FormSuperLite: FC<ContactFormProps> = ({
         throw new Error("Server responded with an error");
       }
     } catch (error) {
-      setMessage("Wystąpił błąd podczas wysyłania formularza");
+      setMessage(`${dataForm.errorMessage}`);
     } finally {
       setSubmitting(false);
       setTimeout(() => {
         setMessage(null);
-      }, 5000);
+      }, 7000);
     }
   };
 
@@ -134,59 +124,6 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 className={styles.error}
               />
             </div>
-            <div className={styles.inputWrapper}>
-              <label
-                htmlFor="country"
-                className={`${styles.label} ${filled.country ? styles.filled : ""}`}
-              >
-                {dataForm.inputCountry}
-              </label>
-              <Field
-                id="country"
-                name="country"
-                type="text"
-                className={`${styles.inputField} w-full rounded-md`}
-                onBlur={handleBlur}
-              />
-              <ErrorMessage
-                name="country"
-                component="div"
-                className={styles.error}
-              />
-            </div>
-            <div className={styles.inputWrapper}>
-              <label
-                htmlFor="email"
-                className={`${styles.label} ${filled.email ? styles.filled : ""}`}
-              >
-                {dataForm.inputEmail}
-              </label>
-              <Field
-                id="email"
-                name="email"
-                type="email"
-                className={`${styles.inputField} w-full rounded-md`}
-                onBlur={handleBlur}
-              />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className={styles.error}
-              />
-            </div>
-            <div className={styles.customCheckbox}>
-              <Field
-                type="checkbox"
-                name="agreedToPolicy"
-                id="agreedToPolicy"
-              />
-              <label htmlFor="agreedToPolicy">
-                {dataForm.agreementText}{" "}
-                <Link href={dataForm.agreementLinkDestination} target="_blank">
-                  {dataForm.agreementLinkLabel}
-                </Link>
-              </label>
-            </div>
             <div>
               <button
                 type="submit"
@@ -197,6 +134,23 @@ const FormSuperLite: FC<ContactFormProps> = ({
                   ? offerButtonCustomText
                   : dataForm.buttonText}
               </button>
+            </div>
+            <div className={styles.customCheckbox}>
+              <Field
+                type="checkbox"
+                name="agreedToPolicy"
+                id="agreedToPolicy"
+              />
+              <label htmlFor="agreedToPolicy">
+                {dataForm.agreementText}{" "}
+                <Link
+                  className={styles.policyLink}
+                  href={dataForm.agreementLinkDestination}
+                  target="_blank"
+                >
+                  {dataForm.agreementLinkLabel}
+                </Link>
+              </label>
             </div>
           </Form>
         )}

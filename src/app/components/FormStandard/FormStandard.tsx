@@ -4,6 +4,8 @@ import { FC, useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
@@ -22,7 +24,11 @@ export interface ContactFormProps {
   offerButtonCustomText?: string;
 }
 
-const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
+const FormStandard: FC<ContactFormProps> = ({
+  onFormSubmitSuccess,
+  form,
+  offerButtonCustomText
+}) => {
   const [message, setMessage] = useState<string | null>(null);
   const [filled, setFilled] = useState({
     phone: false,
@@ -31,8 +37,6 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
   });
 
   const dataForm = form.form;
-
-  // console.log("dataForm", dataForm);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,9 +82,7 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
     try {
       const response = await axios.post("/api/email", values);
       if (response.data.message === "Email sent") {
-        setMessage(
-          "Otrzymałem Twoją wiadomość i wkrótce się з Tobą skontaktuję. Poczekaj chwilę :)"
-        );
+        setMessage(`${dataForm.successMessage}`);
         resetForm({});
         setFilled({ phone: false, country: false, email: false }); // Reset the filled state
         setTimeout(() => {
@@ -90,12 +92,12 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
         throw new Error("Server responded with an error");
       }
     } catch (error) {
-      setMessage("Wystąpił błąd podczas wysyłania formularza");
+      setMessage(`${dataForm.errorMessage}`);
     } finally {
       setSubmitting(false);
       setTimeout(() => {
         setMessage(null);
-      }, 5000);
+      }, 7000);
     }
   };
 
@@ -107,7 +109,7 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, setFieldValue }) => (
           <Form>
             <div className={styles.inputWrapper}>
               <label
@@ -116,12 +118,13 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
               >
                 {dataForm.inputPhone}
               </label>
-              <Field
+              <PhoneInput
+                defaultCountry="PL"
                 id="phone"
                 name="phone"
-                type="tel"
-                className={`${styles.inputField} w-full rounded-md`}
+                className={`${styles.inputField}`}
                 onBlur={handleBlur}
+                onChange={value => setFieldValue("phone", value)}
               />
               <ErrorMessage
                 name="phone"
@@ -169,6 +172,17 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
                 className={styles.error}
               />
             </div>
+            <div>
+              <button
+                type="submit"
+                className={styles.sentBtn}
+                disabled={isSubmitting}
+              >
+                {offerButtonCustomText
+                  ? offerButtonCustomText
+                  : dataForm.buttonText}
+              </button>
+            </div>
             <div className={styles.customCheckbox}>
               <Field
                 type="checkbox"
@@ -177,19 +191,14 @@ const FormStandard: FC<ContactFormProps> = ({ onFormSubmitSuccess, form }) => {
               />
               <label htmlFor="agreedToPolicy">
                 {dataForm.agreementText}{" "}
-                <Link href={dataForm.agreementLinkDestination} target="_blank">
+                <Link
+                  className={styles.policyLink}
+                  href={dataForm.agreementLinkDestination}
+                  target="_blank"
+                >
                   {dataForm.agreementLinkLabel}
                 </Link>
               </label>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className={styles.sentBtn}
-                disabled={isSubmitting}
-              >
-                {dataForm.buttonText}
-              </button>
             </div>
           </Form>
         )}

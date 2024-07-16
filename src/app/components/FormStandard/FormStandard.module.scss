@@ -19,7 +19,11 @@
 }
 
 .label[for="phone"] {
-  left: 70px;
+  left: 55px;
+
+  @media screen and (min-width: 768px) {
+    left: 70px;
+  }
 }
 
 
@@ -36,6 +40,10 @@
   -webkit-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
   -moz-box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.28);
   box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
+
+  @media screen and (min-width: 768px) {
+    padding: 33px 45px;
+  }
 }
 
 .labelFocused {
@@ -52,40 +60,44 @@
 }
 
 .sentBtn {
-  // width: 100%;
-  // padding: 10px;
-  // font-size: 1rem;
-  // border: 1px solid #48368d;
-  // border-radius: 4px;
-  // background-color: #48368d;
-  // color: #fff;
-  // cursor: pointer;
-  // transition: background-color 0.3s ease;
-
-  // &:hover {
-  //   background-color: #fff;
-  //   color: #25064D;
-  // }
   width: 100%;
-  display: block;
-  margin: 0 auto;
-  padding: 10px;
-  // background-color: #800080;
-  color: #800080;
-  // border: 1px solid #800080;
-  border-radius: 4px;
+  height: 50px;
+  // display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: clamp(0.813rem, 0.594rem + 0.88vw, 1.25rem);
+  border: 1px solid #F39708;
+  border-radius: 3423.75px;
+  background: #F39708;
+  padding: 16.807px 29.88px;
+  color: #FFF;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 128.3%; /* 15.396px */
+  letter-spacing: -0.36px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
   -moz-box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.28);
   box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.28);
 
+  @media screen and (min-width: 768px) {
+    height: 90px;
+    border-radius: 5500px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 128.3%; /* 25.66px */
+    letter-spacing: -0.6px;
+  }
+
   &:hover {
-    background-color: #fff;
-    color: #800080;
+    background-color: #1A2644;
+    color: #F39708;
   }
 }
 
@@ -93,6 +105,7 @@
 .inputWrapper .label.filled {
   top: 5px;
   font-size: 0.75rem;
+  opacity: 0;
 }
 
 // -webkit-text-fill-color устанавливает цвет текста. Замените #fff на желаемый цвет текста.
@@ -110,10 +123,13 @@
 .error {
   position: absolute;
   z-index: 1;
-  bottom: -3px;
-  left: 15px;
-  font-size: 10px;
-  color: #800080;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #1A2644;
+  width: 100%;
+  text-align: center;
 }
 
 .popup {
@@ -121,16 +137,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #800080;
+  background-color: #F39708;
   color: #fff;
   padding: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
-  max-width: 500px;
+  max-width: 90%;
+  width: 85%;
   font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
   line-height: 1.5;
   text-align: center;
   filter: drop-shadow(-3px -6px 12px #000000);
   border-radius: 5px;
   z-index: 1000;
+
+  @media screen and (min-width: 768px) {
+    max-width: 700px;
+  }
 }
 
 .customCheckbox {
@@ -138,6 +159,7 @@
   align-items: center;
   // padding-inline: 10px;
   margin-bottom: 15px;
+
 }
 
 .customCheckbox input[type="checkbox"] {
@@ -148,33 +170,55 @@
   position: relative;
   padding-left: 30px; /* Отступ для визуального индикатора */
   cursor: pointer;
-  font-size: 12px;
-  line-height: 1;
-  color: #000;
+  color: #FFF;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.3px;
+
+  @media screen and (min-width: 768px) {
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+  }
 }
 
 .customCheckbox label::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
-  width: 15px;
-  height: 15px;
+  // top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
   border: 2px solid #ccc; /* Граница неотмеченного чекбокса */
   border-radius: 4px; /* Скругление углов для круглого чекбокса можно убрать */
   background-color: white; /* Фон неотмеченного чекбокса */
 }
 
 .customCheckbox input[type="checkbox"]:checked + label::before {
-  background-color: #800080; /* Цвет фона при активации */
-  border-color: #800080; /* Цвет границы при активации */
+  background-color: #F39708; /* Цвет фона при активации */
+  border-color: #F39708; /* Цвет границы при активации */
 }
 
 .customCheckbox input[type="checkbox"]:checked + label::after {
   content: '✔';
   position: absolute;
-  left: 2px;
-  top: 0;
+  left: 4px;
+  top: 1px;
   color: white; /* Цвет галочки */
   font-size: 15px;
+
+  @media screen and (min-width: 768px) {
+    top: -3px;
+  }
+}
+
+.policyLink {
+  text-decoration: underline;
 }

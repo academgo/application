@@ -21,11 +21,14 @@
 }
 
 .offerMainContent {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
 
   @media screen and (min-width: 768px) {
-    display: flex;
-    gap: 30px;
-    align-items: flex-end;
+    grid-template-columns: 6fr 2fr;
+    gap: 20px;
+    align-items: end;
   }
 
 }
@@ -44,6 +47,10 @@
   line-height: 110%; /* 101.471% */
   letter-spacing: -1.68px;
   max-width: 250px;
+
+  @media screen and (min-width: 500px) {
+    max-width: 100%;
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 65px;
@@ -160,6 +167,10 @@
   letter-spacing: -0.6px;
   max-width: 280px;
 
+  @media screen and (min-width: 500px) {
+    max-width: 100%;
+  }
+
   @media screen and (min-width: 768px) {
     color: #091728;
     font-size: 27px;
@@ -208,6 +219,7 @@
 
   @media screen and (min-width: 768px) {
     justify-content: space-between;
+    gap: 30px;
   }
 }
 
