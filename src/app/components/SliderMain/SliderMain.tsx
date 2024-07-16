@@ -7,8 +7,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import FacultySlideLast from "../FacultySlideLast/FacultySlideLast";
 
-const SliderMain = ({ children }: any) => {
+const SliderMain = ({
+  children,
+  lastSlideTitle,
+  lastSlideDescription
+}: any) => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -78,6 +83,20 @@ const SliderMain = ({ children }: any) => {
               </div>
             </SwiperSlide>
           ))}
+          {lastSlideTitle && lastSlideDescription && (
+            <SwiperSlide key="last-slide">
+              <div
+                ref={el => {
+                  slideRefs.current[children.length] = el;
+                }}
+              >
+                <FacultySlideLast
+                  lastSlideTitle={lastSlideTitle}
+                  lastSlideDescription={lastSlideDescription}
+                />
+              </div>
+            </SwiperSlide>
+          )}
         </Swiper>
       </div>
       <div className={styles.sliderButtons}>

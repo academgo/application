@@ -21,7 +21,11 @@ const Faculties: FC<Props> = ({
     <section className={styles.videosSection} id="videos">
       <div className="container">
         <h2 className={styles.title}>{facultiesTitle}</h2>
-        <SliderMain className={styles.videosSlider}>
+        <SliderMain
+          className={styles.videosSlider}
+          lastSlideTitle={lastSlideTitle}
+          lastSlideDescription={lastSlideDescription}
+        >
           {faculties.map((faculty, index) => (
             <FacultySlide
               key={index}
