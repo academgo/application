@@ -1,0 +1,117 @@
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 125% */
+  letter-spacing: -1.68px;
+
+  @media (min-width: 768px) {
+    line-height: 65px; /* 118.182% */
+    letter-spacing: -3.85px;
+  }
+}
+
+.principlesWrapper {
+  padding: 24px 42px;
+  border-radius: 25px;
+  background: #FFF;
+  gap: clamp(1.563rem, -0.156rem + 6.88vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    // padding: 46px 45px 49px 75px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1075px) {
+    padding: 46px 45px 49px 75px;
+    grid-template-columns: 10fr 7fr;
+  }
+}
+
+.principlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 1075px) {
+    flex-direction: row;
+    gap: 60px;
+  }
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.938rem, 0.781rem + 0.63vw, 1.25rem);
+}
+
+.principlesTotal {
+  // display: flex;
+  // flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+
+  @media (min-width: 768px) {
+    // flex-direction: row;
+    // align-items: center;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 5;
+  }
+
+}
+
+.number {
+  color: #091728;
+  font-size: clamp(4.688rem, 3.906rem + 3.13vw, 6.25rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 65px;
+  width: clamp(7.5rem, 6.094rem + 5.63vw, 10.313rem); 
+  text-align: center;
+}
+
+.text {
+  color: #091728;
+  font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.56px;
+
+  @media (min-width: 768px) {
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.8px;
+  }
+}
+
+.principlesFinal {
+  margin-top: clamp(4.75rem, 2.594rem + 8.63vw, 9.063rem);
+  margin-bottom: clamp(1.5rem, 0.375rem + 4.5vw, 3.75rem);
+  color: #091728;
+  font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 125% */
+  letter-spacing: -1.68px;
+
+  @media (min-width: 768px) {
+    line-height: 65px; /* 118.182% */
+    letter-spacing: -3.85px;
+  }
+}

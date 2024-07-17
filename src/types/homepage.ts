@@ -77,7 +77,7 @@ export type Ceo = {
 };
 
 export type Principle = {
-  key: string;
+  _key: string;
   textStart: string;
   textEnd: string;
   boldStartOrEnd: boolean;

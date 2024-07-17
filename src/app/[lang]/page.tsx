@@ -9,6 +9,7 @@ import VideosSection from "../components/VideosSection/VideosSection";
 import Offer from "../components/Offer/Offer";
 import Faculties from "../components/Faculties/Faculties";
 import About from "../components/About/About";
+import Principles from "../components/Principles/Principles";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -115,6 +116,12 @@ export default async function Home({ params }: Props) {
           aboutOffersTitle={homePage.aboutOffersTitle}
           aboutOffers={homePage.aboutOffers}
           ceos={homePage.ceos}
+        />
+        <Principles
+          principlesTitle={homePage.principlesTitle}
+          principles={homePage.principles}
+          principlesTotal={homePage.principlesTotal}
+          principlesFinal={homePage.principlesFinal}
         />
       </main>
     </>
