@@ -1,0 +1,45 @@
+.stepCarousel {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+  background-color: #fff;
+  padding: 10px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 23px 0;
+  }
+}
+
+.step {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.number {
+  color: #091728;
+  font-size: clamp(0.875rem, 0.563rem + 1.25vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; /* 214.286% */
+}
+
+.title {
+  color: #F39708;
+  font-size: clamp(0.875rem, 0.563rem + 1.25vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; /* 214.286% */
+}
