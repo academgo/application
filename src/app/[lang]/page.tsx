@@ -8,7 +8,7 @@ import Conditions from "../components/Conditions/Conditions";
 import VideosSection from "../components/VideosSection/VideosSection";
 import Offer from "../components/Offer/Offer";
 import Faculties from "../components/Faculties/Faculties";
-// import About from "../components/About/About";
+import About from "../components/About/About";
 import Principles from "../components/Principles/Principles";
 
 type Props = {
@@ -106,7 +106,7 @@ export default async function Home({ params }: Props) {
           lastSlideTitle={homePage.lastSlideTitle}
           lastSlideDescription={homePage.lastSlideDescription}
         />
-        {/* <About
+        <About
           aboutSummary={homePage.aboutSummary}
           aboutTitle={homePage.aboutTitle}
           aboutParagraphs={homePage.aboutParagraphs}
@@ -116,7 +116,7 @@ export default async function Home({ params }: Props) {
           aboutOffersTitle={homePage.aboutOffersTitle}
           aboutOffers={homePage.aboutOffers}
           ceos={homePage.ceos}
-        /> */}
+        />
         <Principles
           principlesTitle={homePage.principlesTitle}
           principles={homePage.principles}
