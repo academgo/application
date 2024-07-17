@@ -1,4 +1,5 @@
 import { Form } from "./form";
+import { VideoShort } from "./videoShort";
 
 export type Image = {
   _key: string;
@@ -54,6 +55,19 @@ export type Link = {
   destination: string;
 };
 
+export type TextItems = {
+  _key: string;
+  title: string;
+  description: string;
+};
+
+export type Substep = {
+  _key: string;
+  title: string;
+  description: string;
+  highlight: string;
+};
+
 export type Faculty = {
   _key: string;
   facultyName: string;
@@ -87,6 +101,39 @@ export type PrinciplesTotal = {
   number: string;
   descriptionBold: string;
   description: string;
+};
+
+export type StepOne = {
+  number: string;
+  title: string;
+  description: string;
+  resultText: string;
+  items: TextItems[];
+  buttonText: string;
+  video: VideoShort;
+};
+
+export type StepTwo = {
+  number: string;
+  title: string;
+  littleText: string;
+  description: List[];
+  video: VideoShort;
+};
+
+export type StepThree = {
+  number: string;
+  title: string;
+  substeps: Substep[];
+  video: VideoShort;
+};
+
+export type StepFour = {
+  number: string;
+  title: string;
+  littleText: List[];
+  list: List[];
+  image: Image;
 };
 
 export type Homepage = {
@@ -142,6 +189,10 @@ export type Homepage = {
   principles: Principle[];
   principlesTotal: PrinciplesTotal;
   principlesFinal: string;
+  stepOne: StepOne;
+  stepTwo: StepTwo;
+  stepThree: StepThree;
+  stepFour: StepFour;
   language: string;
   slug: {
     [lang: string]: {

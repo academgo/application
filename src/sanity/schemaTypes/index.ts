@@ -4,6 +4,7 @@ import header from "./header";
 import homePage from "./homePage";
 import localizedSlug from "./localizedSlug";
 import post from "./post";
+import videoShort from "./videoShort";
 
 export const schemaTypes = [
   header,
@@ -11,5 +12,6 @@ export const schemaTypes = [
   post,
   formStandard,
   formStandardDocument,
+  videoShort,
   localizedSlug
 ];

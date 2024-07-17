@@ -632,6 +632,219 @@ export default defineType({
       type: "string"
     }),
     // principles block
+    // steps block
+    defineField({
+      name: "stepOne",
+      title: "Step One",
+      type: "object",
+      fields: [
+        defineField({
+          name: "number",
+          title: "Number",
+          type: "string"
+        }),
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        }),
+        defineField({
+          name: "resultText",
+          title: "Result Text",
+          type: "string"
+        }),
+        defineField({
+          name: "items",
+          title: "Items",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                }),
+                defineField({
+                  name: "description",
+                  title: "Description",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "buttonText",
+          title: "Button Text",
+          type: "string"
+        }),
+        defineField({
+          name: "video",
+          title: "Video",
+          type: "videoShort"
+        })
+      ]
+    }),
+
+    defineField({
+      name: "stepTwo",
+      title: "Step Two",
+      type: "object",
+      fields: [
+        defineField({
+          name: "number",
+          title: "Number",
+          type: "string"
+        }),
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "littleText",
+          title: "Little Text",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "video",
+          title: "Video",
+          type: "videoShort"
+        })
+      ]
+    }),
+
+    defineField({
+      name: "stepThree",
+      title: "Step Three",
+      type: "object",
+      fields: [
+        defineField({
+          name: "number",
+          title: "Number",
+          type: "string"
+        }),
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "substeps",
+          title: "Substeps",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                }),
+                defineField({
+                  name: "description",
+                  title: "Description",
+                  type: "string"
+                }),
+                defineField({
+                  name: "highlight",
+                  title: "Highlight",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "video",
+          title: "Video",
+          type: "videoShort"
+        })
+      ]
+    }),
+
+    defineField({
+      name: "stepFour",
+      title: "Step Four",
+      type: "object",
+      fields: [
+        defineField({
+          name: "number",
+          title: "Number",
+          type: "string"
+        }),
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "littleText",
+          title: "Little Text",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "list",
+          title: "List",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image"
+        })
+      ]
+    }),
+    // steps block
     // optional
     defineField({
       name: "language",
