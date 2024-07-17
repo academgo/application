@@ -8,6 +8,7 @@ import Conditions from "../components/Conditions/Conditions";
 import VideosSection from "../components/VideosSection/VideosSection";
 import Offer from "../components/Offer/Offer";
 import Faculties from "../components/Faculties/Faculties";
+import About from "../components/About/About";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -103,6 +104,17 @@ export default async function Home({ params }: Props) {
           lastSlideTitleHighlight={homePage.lastSlideTitleHighlight}
           lastSlideTitle={homePage.lastSlideTitle}
           lastSlideDescription={homePage.lastSlideDescription}
+        />
+        <About
+          aboutSummary={homePage.aboutSummary}
+          aboutTitle={homePage.aboutTitle}
+          aboutParagraphs={homePage.aboutParagraphs}
+          sertificateLink={homePage.sertificateLink}
+          aboutSocialsTitle={homePage.aboutSocialsTitle}
+          aboutSocials={homePage.aboutSocials}
+          aboutOffersTitle={homePage.aboutOffersTitle}
+          aboutOffers={homePage.aboutOffers}
+          ceos={homePage.ceos}
         />
       </main>
     </>

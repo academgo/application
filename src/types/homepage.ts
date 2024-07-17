@@ -70,7 +70,7 @@ export type Faculty = {
 };
 
 export type Ceo = {
-  key: string;
+  _key: string;
   name: string;
   position: string;
   image: Image;

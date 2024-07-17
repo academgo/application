@@ -1,0 +1,219 @@
+.aboutSection {
+  margin-bottom: clamp(2.813rem, 1.094rem + 6.88vw, 6.25rem);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 0.562rem + 1.75vw, 1.875rem);
+
+  @media (min-width: 980px) {
+    flex-direction: row;
+  }
+}
+
+.aboutWrapper {
+  flex: 1;
+  padding: clamp(1.25rem, -0.563rem + 7.25vw, 4.875rem);
+  border-radius: 25px;
+  border: 3px solid #1A2644;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.625rem, 0.094rem + 2.13vw, 1.688rem);
+}
+
+.summary {
+  color: #091728;
+  font-size: clamp(1rem, 0.656rem + 1.38vw, 1.688rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  @media screen and (min-width: 768px) {
+    line-height: 37px; /* 137.037% */
+    letter-spacing: -1.08px;
+  }
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.875rem, 1.094rem + 3.13vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 125% */
+  letter-spacing: -1.68px;
+
+  @media screen and (min-width: 768px) {
+    line-height: 65px; /* 118.182% */
+    letter-spacing: -3.85px;
+  }
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 1.094rem + 0.63vw, 1.563rem);
+
+}
+
+.paragraph {
+  color: #8A929C;
+  font-size: clamp(0.875rem, 0.688rem + 0.75vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  @media screen and (min-width: 768px) {
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.8px;
+  }
+}
+
+.sertificate {
+  color: #F39708;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  position: relative;
+  width: fit-content;
+  // text-decoration-line: underline;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F39708;
+  
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    flex: 1;
+  }
+}
+
+.subtitle {
+  color: #000;
+  font-size: clamp(0.875rem, 0.813rem + 0.25vw, 1rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.6px;
+  margin-bottom: clamp(0.938rem, 0.781rem + 0.63vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.8px;
+  }
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.ceos {
+  display: flex;
+  gap: clamp(1rem, 0.562rem + 1.75vw, 1.875rem);
+}
+
+.ceo {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 130 / 250;
+  border-radius: 8.263px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media screen and (min-width: 768px) {
+    aspect-ratio: 410 / 750;
+    border-radius: 25px;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(26, 38, 68, 0.00) 56.33%, #1A2644 100%);
+}
+
+.ceoData {
+  position: absolute;
+  z-index: 2;
+  bottom: clamp(0.938rem, 0.188rem + 3vw, 2.438rem);
+  left: clamp(1rem, -0.063rem + 4.25vw, 3.125rem);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ceoName {
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: -0.6px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 33px; /* 103.125% */
+    letter-spacing: -1.6px;
+  }
+}
+
+.ceoPosition {
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.6px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+      line-height: 33px;
+      letter-spacing: -0.9px;
+    }
+}

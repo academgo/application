@@ -141,7 +141,7 @@ const Offer: FC<Props> = ({
                       className={styles.contactLink}
                     >
                       <Image
-                        alt="Icon"
+                        alt={link.title}
                         src={urlFor(link.icon).url()}
                         width={50}
                         height={50}
