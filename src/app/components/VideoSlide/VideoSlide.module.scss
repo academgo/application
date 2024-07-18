@@ -41,8 +41,10 @@
 }
 
 .playButton:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-  transition: all 0.3s ease-in-out;
+  @media screen and (min-width: 768px){
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .playingButton {

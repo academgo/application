@@ -1,0 +1,83 @@
+.posterImageBlock {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  aspect-ratio: 276 / 435;
+}
+
+.posterImage {
+  width: 100%;
+  aspect-ratio: 276 / 435;
+  border-radius: 20px;
+  object-fit: cover;
+
+  // @media screen and (max-width: 620px){
+  //   aspect-ratio: 8/10;
+  // }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(26, 38, 68, 0.00) 56.33%, #1A2644 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.playButton {
+  padding: 25px;
+  background-color: #F39708;
+  border-radius: 50%;
+  position: absolute;
+  top: clamp(1.563rem, 0.844rem + 2.88vw, 3rem);
+  left: clamp(2.125rem, 1.625rem + 2vw, 3.125rem);
+  cursor: pointer;
+}
+
+.playButton:hover {
+  @media screen and (min-width: 768px){
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.playingButton {
+  padding: 25px;
+  background-color: #F39708;
+  border-radius: 50%;
+  position: absolute;
+  top: clamp(1.563rem, 0.844rem + 2.88vw, 3rem);
+  left: clamp(2.125rem, 1.625rem + 2vw, 3.125rem);
+  cursor: pointer;
+}
+
+.videoFrame {
+  aspect-ratio: 1080 / 1920;
+}
+
+.videoStepContent {
+  position: absolute;
+  bottom: clamp(2.125rem, 1.687rem + 1.75vw, 3rem);
+  width: 100%;
+  padding-inline: clamp(2.125rem, 1.625rem + 2vw, 3.125rem);
+}
+
+.text {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.56px;
+
+  @media screen and (min-width: 768px){
+    font-size: 20px;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.8px;
+  }
+}
