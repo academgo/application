@@ -206,6 +206,7 @@
   @media screen and (min-width: 768px) {
     line-height: 23px; /* 143.75% */
     letter-spacing: -0.64px;
+    max-width: 384px;
   }
 }
 
@@ -279,4 +280,43 @@
     line-height: 30px; /* 150% */
     letter-spacing: -1.4px;
   }
+}
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 655px;
+  }
+}
+
+.stepListItem {
+  position: relative;
+  padding-left: 20px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #091728;
+
+    @media screen and (min-width: 768px) {
+      top: 15px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.imageBlock {
+  position: relative;
+  aspect-ratio: 410 / 650;
+  border-radius: 25px;
+  overflow: hidden;
 }
