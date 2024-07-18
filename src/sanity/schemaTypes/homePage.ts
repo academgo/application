@@ -898,6 +898,82 @@ export default defineType({
       ]
     }),
     // extra block
+    // price block
+    defineField({
+      name: "priceTitle",
+      title: "Price Title",
+      type: "string"
+    }),
+    defineField({
+      name: "priceBlock",
+      title: "Price Block",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "preTitle",
+              title: "Pretitle",
+              type: "string"
+            }),
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
+              name: "itemsTitle",
+              title: "Items Title",
+              type: "string"
+            }),
+            defineField({
+              name: "items",
+              title: "Items",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "title",
+                      title: "Title",
+                      type: "string"
+                    })
+                  ]
+                }
+              ]
+            }),
+            defineField({
+              name: "cost",
+              title: "Cost",
+              type: "string"
+            }),
+            defineField({
+              name: "stageCost",
+              title: "Stage Cost",
+              type: "string"
+            }),
+            defineField({
+              name: "buttonText",
+              title: "Button Text",
+              type: "string"
+            }),
+            defineField({
+              name: "hasBorder",
+              title: "Has Border",
+              type: "boolean"
+            }),
+            defineField({
+              name: "hasBg",
+              title: "Has Background",
+              type: "boolean"
+            })
+          ]
+        }
+      ]
+    }),
+    // price block
     // optional
     defineField({
       name: "language",

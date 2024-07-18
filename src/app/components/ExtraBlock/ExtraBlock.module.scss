@@ -1,3 +1,7 @@
+.extraBlock {
+  margin-bottom: clamp(2.813rem, 1.094rem + 6.88vw, 6.25rem);
+}
+
 .extra {
   position: relative;
   border-radius: clamp(0.5rem, -0.031rem + 2.13vw, 1.563rem);
@@ -102,7 +106,7 @@
 .asideContent {
   border-radius: 25px;
   background: #F39708;
-  padding: 15px 27px;
+  padding: 30px 27px;
   display: flex;
   flex-direction: column;
   gap: 20px;

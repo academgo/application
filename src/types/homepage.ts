@@ -143,6 +143,19 @@ export type ExtraBlock = {
   bgImage: Image;
 };
 
+export type PriceBlock = {
+  _key: string;
+  preTitle: string;
+  title: string;
+  itemsTitle: string;
+  items: List[];
+  cost: string;
+  stageCost: string;
+  buttonText: string;
+  hasBorder: boolean;
+  hasBg: boolean;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -201,6 +214,8 @@ export type Homepage = {
   stepThree: StepThree;
   stepFour: StepFour;
   extraBlock: ExtraBlock;
+  priceTitle: string;
+  priceBlock: PriceBlock[];
   language: string;
   slug: {
     [lang: string]: {

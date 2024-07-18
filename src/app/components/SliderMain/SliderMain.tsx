@@ -13,7 +13,8 @@ const SliderMain = ({
   children,
   lastSlideTitleHighlight,
   lastSlideTitle,
-  lastSlideDescription
+  lastSlideDescription,
+  slidesPerView = 4
 }: any) => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -70,7 +71,7 @@ const SliderMain = ({
             640: { slidesPerView: 1.5, spaceBetween: 20 },
             768: { slidesPerView: 2.5, spaceBetween: 30 },
             980: { slidesPerView: 3, spaceBetween: 30 },
-            1024: { slidesPerView: 4, spaceBetween: 30 }
+            1024: { slidesPerView, spaceBetween: 30 }
           }}
         >
           {children.map((child: any, index: number) => (
