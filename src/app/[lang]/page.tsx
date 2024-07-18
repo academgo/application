@@ -14,6 +14,7 @@ import StepOne from "../components/StepOne/StepOne";
 import StepTwo from "../components/StepTwo/StepTwo";
 import StepThree from "../components/StepThree/StepThree";
 import StepFour from "../components/StepFour/StepFour";
+import ExtraBlock from "../components/ExtraBlock/ExtraBlock";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -133,6 +134,7 @@ export default async function Home({ params }: Props) {
           <StepThree stepThree={homePage.stepThree} />
           <StepFour stepFour={homePage.stepFour} />
         </div>
+        <ExtraBlock extraBlock={homePage.extraBlock} />
       </main>
     </>
   );

@@ -845,6 +845,59 @@ export default defineType({
       ]
     }),
     // steps block
+    // extra block
+    defineField({
+      name: "extraBlock",
+      title: "Extra Block",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "items",
+          title: "Items",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "asideContent",
+          title: "Aside Content",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "Title",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "bgImage",
+          title: "Background Image",
+          type: "image"
+        })
+      ]
+    }),
+    // extra block
     // optional
     defineField({
       name: "language",

@@ -1,0 +1,132 @@
+.extra {
+  position: relative;
+  border-radius: clamp(0.5rem, -0.031rem + 2.13vw, 1.563rem);
+  overflow: hidden;
+  padding: 30px 16px;
+
+  @media (min-width: 768px) {
+    padding: 45px 30px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 103px 110px;
+  }
+}
+
+.imagePoster {
+  width: 100%;
+  // height: 100%;
+  object-fit: cover;
+  // aspect-ratio: 1730/930;  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(9, 23, 40, 0.50) 0%, rgba(9, 23, 40, 0.50) 100%);
+}
+
+.extraWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.mainContent {
+  
+  @media screen and (min-width: 768px) {
+    max-width: 424px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    gap: 45px;
+  }
+}
+
+.title {
+  color: #FFF;
+  font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24.353px; /* 101.471% */
+  letter-spacing: -1.68px;
+  margin-bottom: clamp(0.938rem, 3.75vw, 2.813rem);
+
+  @media (min-width: 768px) {
+    line-height: 65px; /* 118.182% */
+    letter-spacing: -3.85px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.938rem, 0.781rem + 0.63vw, 1.25rem);
+
+  // @media (min-width: 768px) {
+  //   max-width: 180px;
+  // }
+
+  p {
+    color: #fff;
+    font-size: clamp(1rem, 0.938rem + 0.25vw, 1.125rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.56px;
+
+    @media screen and (min-width: 768px) {
+      line-height: 23px; /* 143.75% */
+      letter-spacing: -0.64px;
+    }
+  }
+}
+
+.asideContent {
+  border-radius: 25px;
+  background: #F39708;
+  padding: 15px 27px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    padding: 40px 37px;
+    gap: 30px;
+  }
+
+  @media (min-width: 980px) {
+    max-width: 410px;
+  }
+}
+
+.asideItem {
+  color: #FFF;
+  font-size: clamp(1.25rem, 0.875rem + 1.5vw, 2rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 110% */
+  letter-spacing: -0.8px;
+
+  @media (min-width: 768px) {
+    line-height: 40px; /* 125% */
+    letter-spacing: -1.92px;
+  }
+}

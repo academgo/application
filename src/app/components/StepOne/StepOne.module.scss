@@ -258,10 +258,13 @@
 }
 
 .substep:nth-child(2) {
-  position: absolute;
-  left: 300px;
-  top: 50%;
-  transform: translateY(-50%);
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .substepTitle {

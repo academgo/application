@@ -30,7 +30,7 @@ const StepFour: FC<Props> = ({ stepFour }) => {
       <StepCarousel
         number={stepFour.number}
         title={stepFour.title}
-        style={{ animationDirection: "reverse" }}
+        // style={{ animationDirection: "reverse" }}
       >
         <div className={styles.step}>
           <p className={styles.number}>{stepFour.number}</p>

@@ -118,6 +118,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     stepTwo,
     stepThree,
     stepFour,
+    extraBlock,
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{

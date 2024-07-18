@@ -136,6 +136,13 @@ export type StepFour = {
   image: Image;
 };
 
+export type ExtraBlock = {
+  title: string;
+  items: List[];
+  asideContent: List[];
+  bgImage: Image;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -193,6 +200,7 @@ export type Homepage = {
   stepTwo: StepTwo;
   stepThree: StepThree;
   stepFour: StepFour;
+  extraBlock: ExtraBlock;
   language: string;
   slug: {
     [lang: string]: {
