@@ -1,13 +1,15 @@
 "use client";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef, ReactNode } from "react";
 import styles from "./StepCarousel.module.scss";
 
 type Props = {
   number: string;
   title: string;
+  children: ReactNode;
+  style?: any;
 };
 
-const StepCarousel: FC<Props> = ({ number, title }) => {
+const StepCarousel: FC<Props> = ({ children, style }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,95 +24,8 @@ const StepCarousel: FC<Props> = ({ number, title }) => {
   }, []);
 
   return (
-    <div className={styles.stepCarousel} ref={carouselRef}>
-      <div className={styles.step}>
-        <p className={styles.number}>{number}</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-        <h2 className={styles.title}>{title}</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-      </div>
-      <div className={styles.step}>
-        <p className={styles.number}>{number}</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-        <h2 className={styles.title}>{title}</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-      </div>
-      <div className={styles.step}>
-        <p className={styles.number}>{number}</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-        <h2 className={styles.title}>{title}</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-      </div>
-      <div className={styles.step}>
-        <p className={styles.number}>{number}</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-        <h2 className={styles.title}>{title}</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-        >
-          <circle cx="5" cy="5" r="5" fill="#091728" />
-        </svg>
-      </div>
+    <div style={style} className={styles.stepCarousel} ref={carouselRef}>
+      {children}
     </div>
   );
 };

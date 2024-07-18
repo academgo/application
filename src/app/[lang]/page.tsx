@@ -11,6 +11,8 @@ import Faculties from "../components/Faculties/Faculties";
 import About from "../components/About/About";
 import Principles from "../components/Principles/Principles";
 import StepOne from "../components/StepOne/StepOne";
+import StepTwo from "../components/StepTwo/StepTwo";
+import StepThree from "../components/StepThree/StepThree";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -126,6 +128,8 @@ export default async function Home({ params }: Props) {
         />
         <div id="admission">
           <StepOne stepOne={homePage.stepOne} />
+          <StepTwo stepTwo={homePage.stepTwo} />
+          <StepThree stepThree={homePage.stepThree} />
         </div>
       </main>
     </>
