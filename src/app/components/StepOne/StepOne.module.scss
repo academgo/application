@@ -1,3 +1,7 @@
+.stepSection {
+  position: relative;
+}
+
 .stepCarousel {
   display: flex;
   width: max-content;
@@ -319,4 +323,76 @@
   aspect-ratio: 410 / 650;
   border-radius: 25px;
   overflow: hidden;
+}
+
+.backgroundShape1 {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.backgroundShape2 {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    z-index: -1;
+  }
+}
+
+.backgroundShape3 {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.backgroundShape4 {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 32%;
+    z-index: -1;
+  }
+}
+
+.backgroundShape5 {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.backgroundShape6 {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    z-index: -1;
+  }
 }
