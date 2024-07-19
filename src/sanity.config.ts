@@ -20,7 +20,13 @@ export default defineConfig({
     visionTool(),
     documentInternationalization({
       supportedLanguages: i18n.languages,
-      schemaTypes: ["post", "header", "homepage", "formStandardDocument"]
+      schemaTypes: [
+        "post",
+        "header",
+        "homepage",
+        "formStandardDocument",
+        "footer"
+      ]
     })
   ],
 

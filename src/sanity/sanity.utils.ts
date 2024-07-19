@@ -3,6 +3,7 @@ import { client } from "./sanity.client";
 import { Post } from "@/types/post";
 import { Header } from "@/types/header";
 import { Homepage } from "@/types/homepage";
+import { Footer } from "@/types/footer";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -56,6 +57,28 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
   const header = await client.fetch(headerQuery, { lang });
 
   return header;
+}
+
+export async function getFooterByLang(lang: string): Promise<Footer> {
+  const footerQuery = groq`*[_type == 'footer' && language == $lang][0] {
+    _id,
+    logo,
+    description,
+    workingHours,
+    phoneNumber,
+    footerEmail,
+    adress,
+    navLinks,
+    contactLinksTitle,
+    contactLinks,
+    buttonText,
+    copyright,
+    privacyLink
+  }`;
+
+  const footer = await client.fetch(footerQuery, { lang });
+
+  return footer;
 }
 
 export async function getHomePageByLang(lang: string): Promise<Homepage> {
