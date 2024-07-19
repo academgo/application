@@ -1,6 +1,6 @@
 import { defineField } from "sanity";
 
-const header = {
+const footer = {
   name: "footer",
   title: "Footer",
   type: "document",
@@ -78,6 +78,11 @@ const header = {
           type: "object",
           fields: [
             defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
               name: "icon",
               title: "Icon",
               type: "image"
@@ -127,4 +132,4 @@ const header = {
   ]
 };
 
-export default header;
+export default footer;

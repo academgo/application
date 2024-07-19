@@ -17,6 +17,7 @@ import StepFour from "../components/StepFour/StepFour";
 import ExtraBlock from "../components/ExtraBlock/ExtraBlock";
 import Price from "../components/Price/Price";
 import Consultation from "../components/Consultation/Consultation";
+import Footer from "../components/Footer/Footer";
 // import Signup from "../components/Signup/Signup";
 
 type Props = {
@@ -144,6 +145,7 @@ export default async function Home({ params }: Props) {
         />
         <Consultation consultationBlock={homePage.consultationBlock} />
       </main>
+      <Footer params={params} />
     </>
   );
 }

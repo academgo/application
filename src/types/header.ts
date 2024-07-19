@@ -13,6 +13,7 @@ type navLink = {
 
 type contactLink = {
   _key: string;
+  title: string;
   icon: Image;
   link: string;
 };

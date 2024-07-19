@@ -1,0 +1,218 @@
+.wrapper {
+  padding-inline: clamp(1.438rem, -0.438rem + 7.5vw, 5.188rem);
+  padding-top: clamp(0.813rem, -0.938rem + 7vw, 4.313rem);
+  padding-bottom: clamp(0.813rem, -0.938rem + 7vw, 4.313rem);
+  border-radius: clamp(0.563rem, 0.063rem + 2vw, 1.563rem);
+  background: #091728;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.563rem, 0.938rem + 2.5vw, 2.813rem);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.companyData {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.938rem, 0.469rem + 1.88vw, 1.875rem);
+
+  @media (min-width: 768px) {
+    max-width: 255px;
+  }
+}
+
+.description {
+  color: #FFF;
+  font-size: clamp(0.625rem, 0.531rem + 0.38vw, 0.813rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 200% */
+  letter-spacing: -0.5px;
+
+  @media (min-width: 768px) {
+    line-height: 20px; /* 153.846% */
+    letter-spacing: -0.65px;
+  }
+}
+
+.workingHours {
+  color: #8A929C;
+  font-size: clamp(0.813rem, 0.75rem + 0.25vw, 0.938rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.65px;
+}
+
+.phoneNumber {
+  color: #FFF;
+  font-size: clamp(1.125rem, 0.844rem + 1.13vw, 1.688rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.9px;
+  text-decoration-line: underline;
+
+  @media screen and (min-width: 768px){
+    letter-spacing: -1.2px;
+  }
+}
+
+.email {
+  color: #FFF;
+  font-size: clamp(1.125rem, 0.938rem + 0.75vw, 1.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.9px;
+
+  @media screen and (min-width: 768px){
+    letter-spacing: -1.2px;
+  }
+}
+
+.adressBlock {
+  max-width: 130px;
+
+  @media (min-width: 768px) {
+    max-width: 173px;
+  }
+}
+
+.adress {
+  color: #FFF;
+  font-size: clamp(1.125rem, 0.938rem + 0.75vw, 1.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.9px;
+
+  @media screen and (min-width: 768px){
+    letter-spacing: -1.2px;
+  }
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.contactLinksTitle {
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+}
+
+.socialItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  border-radius: 5500px;
+  background: #F39708;
+  padding: 27px 48px;
+  color: #FFF;
+  text-align: center;
+  font-size: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 128.3%; /* 15.396px */
+  letter-spacing: -0.36px;
+
+  @media (min-width: 768px) {
+    line-height: 128.3%; /* 25.66px */
+    letter-spacing: -0.6px;
+  }
+}
+
+.dataLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: active;
+  }
+}
+
+.copyright {
+  color: #FFF;
+  font-size: clamp(0.75rem, 0.688rem + 0.25vw, 0.875rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.4px;
+
+  @media (min-width: 768px) {
+    letter-spacing: -0.56px;
+  }
+}
+
+.privacy {
+  color: #FFA800;
+  font-size: clamp(0.75rem, 0.688rem + 0.25vw, 0.875rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #FFA800;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media (min-width: 768px) {
+    letter-spacing: -0.56px;
+
+    &:hover {
+      &::after {
+        width: 0;
+      }
+    }
+  }
+}

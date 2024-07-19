@@ -42,7 +42,8 @@ const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
   const scrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      const offset = sectionElement.offsetTop;
+      const offset =
+        sectionElement.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({
         top: offset,
         behavior: "smooth"

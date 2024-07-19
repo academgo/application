@@ -1,3 +1,4 @@
+import footer from "./footer";
 import formStandard from "./formStandard";
 import formStandardDocument from "./formStandardDocument";
 import header from "./header";
@@ -13,5 +14,6 @@ export const schemaTypes = [
   formStandard,
   formStandardDocument,
   videoShort,
+  footer,
   localizedSlug
 ];

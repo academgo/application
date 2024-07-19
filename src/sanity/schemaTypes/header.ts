@@ -62,6 +62,11 @@ const header = {
           type: "object",
           fields: [
             defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
               name: "icon",
               title: "Icon",
               type: "image"

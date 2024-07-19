@@ -11,8 +11,15 @@ type NavLink = {
   link: string;
 };
 
+type FooterLink = {
+  _key: string;
+  label: string;
+  link: string;
+};
+
 type ContactLink = {
   _key: string;
+  title: string;
   icon: Image;
   link: string;
 };

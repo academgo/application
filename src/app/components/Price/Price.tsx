@@ -11,7 +11,7 @@ type Props = {
 
 const Price: FC<Props> = ({ priceTitle, priceBlock }) => {
   return (
-    <section className={styles.price}>
+    <section className={styles.price} id="price">
       <div className="container">
         <h2 className={styles.title}>{priceTitle}</h2>
         <SliderMain slidesPerView={3}>

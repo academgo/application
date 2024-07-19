@@ -20,7 +20,7 @@ const Faculties: FC<Props> = ({
   lastSlideDescription
 }) => {
   return (
-    <section className={styles.faculties}>
+    <section className={styles.faculties} id="faculties">
       <div className="container">
         <h2 className={styles.title}>{facultiesTitle}</h2>
         <SliderMain
