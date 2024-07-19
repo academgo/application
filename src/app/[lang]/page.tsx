@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Header from "../components/Header/Header";
 import { getHomePageByLang } from "../../sanity/sanity.utils";
@@ -23,6 +24,15 @@ import Footer from "../components/Footer/Footer";
 type Props = {
   params: { lang: string; slug: string };
 };
+
+// Dynamic metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const homePage = await getHomePageByLang(params.lang);
+  return {
+    title: homePage?.seo.title,
+    description: homePage?.seo.description
+  };
+}
 
 export default async function Home({ params }: Props) {
   const homePage = await getHomePageByLang(params.lang);

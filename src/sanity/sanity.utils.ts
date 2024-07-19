@@ -85,6 +85,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
   const homepageQuery = groq`*[_type == 'homepage' && language == $lang][0] {
     _id,
     title,
+    seo,
     mainHeadingStart,
     mainHeadingHighlight,
     mainHeadingContinue,

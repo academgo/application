@@ -178,11 +178,17 @@ export type Consultation = {
   contactLinks: ContactLink[];
 };
 
+export type Seo = {
+  title: string;
+  description: string;
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
   _rev: string;
   title: string;
+  seo: Seo;
   mainHeadingStart: string;
   mainHeadingHighlight: string;
   mainHeadingContinue: string;

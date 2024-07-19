@@ -16,6 +16,23 @@ export default defineType({
       type: "localizedSlug"
     }),
     defineField({
+      name: "seo",
+      title: "SEO",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
       name: "mainHeadingStart",
       title: "Main Heading Start",
       type: "string"
