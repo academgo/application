@@ -1,4 +1,5 @@
 import { Form } from "./form";
+// import { Signup } from "./signup";
 import { VideoShort } from "./videoShort";
 
 export type Image = {
@@ -156,6 +157,27 @@ export type PriceBlock = {
   hasBg: boolean;
 };
 
+export type ContactLink = {
+  _key: string;
+  title: string;
+  icon: Image;
+  link: string;
+};
+
+export type Consultation = {
+  title: string;
+  titleHighlight: string;
+  listTitle: string;
+  list: List[];
+  giftText: string;
+  description: string;
+  formTitle: string;
+  form: Form;
+  buttonCustomText: string;
+  altText: string;
+  contactLinks: ContactLink[];
+};
+
 export type Homepage = {
   _type: "homepage";
   _id: string;
@@ -216,6 +238,7 @@ export type Homepage = {
   extraBlock: ExtraBlock;
   priceTitle: string;
   priceBlock: PriceBlock[];
+  consultationBlock: Consultation;
   language: string;
   slug: {
     [lang: string]: {

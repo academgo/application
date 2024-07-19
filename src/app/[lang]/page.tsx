@@ -16,6 +16,8 @@ import StepThree from "../components/StepThree/StepThree";
 import StepFour from "../components/StepFour/StepFour";
 import ExtraBlock from "../components/ExtraBlock/ExtraBlock";
 import Price from "../components/Price/Price";
+import Consultation from "../components/Consultation/Consultation";
+// import Signup from "../components/Signup/Signup";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -140,6 +142,7 @@ export default async function Home({ params }: Props) {
           priceTitle={homePage.priceTitle}
           priceBlock={homePage.priceBlock}
         />
+        <Consultation consultationBlock={homePage.consultationBlock} />
       </main>
     </>
   );

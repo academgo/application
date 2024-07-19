@@ -1,53 +1,53 @@
 "use client";
 
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
 
 export type FormData = {
   phone: string;
-  // country: string;
-  // email: string;
   agreedToPolicy: boolean;
 };
 
 export interface ContactFormProps {
-  onFormSubmitSuccess?: () => void; // Функция обратного вызова для успешной отправки
+  onFormSubmitSuccess?: () => void;
   form: any;
   offerButtonCustomText?: string;
+  buttonCustomText?: string;
 }
 
 const FormSuperLite: FC<ContactFormProps> = ({
   onFormSubmitSuccess,
   form,
-  offerButtonCustomText
+  offerButtonCustomText,
+  buttonCustomText
 }) => {
   const [message, setMessage] = useState<string | null>(null);
   const [filled, setFilled] = useState({
     phone: false
-    // country: false,
-    // email: false
   });
 
   const dataForm = form.form;
+  const uniqueId = useId();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const input = document.getElementById("phone") as HTMLInputElement;
+      const input = document.getElementById(
+        `phone-${uniqueId}`
+      ) as HTMLInputElement;
       if (input && input.value) {
         setFilled(f => ({ ...f, phone: true }));
       }
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [uniqueId]);
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -76,7 +76,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
       if (response.data.message === "Email sent") {
         setMessage(`${dataForm.successMessage}`);
         resetForm({});
-        setFilled({ phone: false }); // Reset the filled state
+        setFilled({ phone: false });
         setTimeout(() => {
           onFormSubmitSuccess && onFormSubmitSuccess();
         }, 5000);
@@ -105,14 +105,14 @@ const FormSuperLite: FC<ContactFormProps> = ({
           <Form>
             <div className={styles.inputWrapper}>
               <label
-                htmlFor="phone"
-                className={`${styles.label} ${filled.phone ? styles.filled : ""}`}
+                htmlFor={`phone-${uniqueId}`}
+                className={`${styles.label} ${styles.labelPhone} ${filled.phone ? styles.filled : ""}`}
               >
                 {dataForm.inputPhone}
               </label>
               <PhoneInput
                 defaultCountry="PL"
-                id="phone"
+                id={`phone-${uniqueId}`}
                 name="phone"
                 className={`${styles.inputField}`}
                 onBlur={handleBlur}
@@ -130,18 +130,20 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 className={styles.sentBtn}
                 disabled={isSubmitting}
               >
-                {offerButtonCustomText
-                  ? offerButtonCustomText
-                  : dataForm.buttonText}
+                {buttonCustomText
+                  ? buttonCustomText
+                  : offerButtonCustomText
+                    ? offerButtonCustomText
+                    : dataForm.buttonText}
               </button>
             </div>
             <div className={styles.customCheckbox}>
               <Field
                 type="checkbox"
                 name="agreedToPolicy"
-                id="agreedToPolicy"
+                id={`agreedToPolicy-${uniqueId}`}
               />
-              <label htmlFor="agreedToPolicy">
+              <label htmlFor={`agreedToPolicy-${uniqueId}`}>
                 {dataForm.agreementText}{" "}
                 <Link
                   className={styles.policyLink}
