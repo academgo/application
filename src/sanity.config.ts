@@ -25,7 +25,9 @@ export default defineConfig({
         "header",
         "homepage",
         "formStandardDocument",
-        "footer"
+        "footer",
+        "category",
+        "blog"
       ]
     })
   ],
