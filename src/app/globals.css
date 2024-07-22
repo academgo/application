@@ -59,3 +59,24 @@ body {
   filter: grayscale(100%);
 }
 /* styles for the flag */
+
+/* styles for the post */
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 0.938rem + 1.25vw, 1.875rem);
+  margin-top: 100px;
+  margin-bottom: clamp(1.25rem, -1.25rem + 10vw, 6.25rem);
+}
+
+@media screen and (min-width: 980px) {
+  .post-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .post-grid {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+/* styles for the post */

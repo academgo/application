@@ -1,0 +1,135 @@
+"use client";
+import React, { useState } from "react";
+import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
+import styles from "./AccordionBlockComponent.module.scss";
+import { PortableText } from "@portabletext/react";
+import { RichText } from "../RichText/RichText";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AccordionBlock } from "@/types/blog";
+
+type AccordionItemProps = {
+  title: string;
+  content: any;
+  expanded: boolean;
+  onClick: () => void;
+};
+
+const AccordionItem: React.FC<AccordionItemProps> = ({
+  title,
+  content,
+  expanded,
+  onClick
+}) => {
+  if (!title || !content) {
+    return null;
+  }
+
+  // console.log("Rendering AccordionItem", { title, content }); // Добавление отладочной информации
+
+  return (
+    <Item
+      header={
+        <div className={styles.headerFlex}>
+          {title}
+          <span className={styles.toggleIcon}>
+            {expanded ? (
+              <svg
+                className={`${styles.accordionIcon} ${styles.rotate}`}
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.0566406"
+                  y="50"
+                  width="50"
+                  height="49.9439"
+                  rx="24.9719"
+                  transform="rotate(-90 0.0566406 50)"
+                  fill="#091728"
+                />
+                <path
+                  d="M17.8036 19.2411L31.0847 32.5222L32.5283 31.0786L19.2472 17.7975L17.8036 19.2411Z"
+                  fill="white"
+                />
+                <path
+                  d="M24.633 17.4778L24.633 19.5194L19.5699 19.5194L19.5699 24.5825L17.5283 24.5825L17.5283 17.4778L24.633 17.4778Z"
+                  fill="white"
+                />
+              </svg>
+            ) : (
+              <svg
+                className={styles.accordionIcon}
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.0566406"
+                  y="50"
+                  width="50"
+                  height="49.9439"
+                  rx="24.9719"
+                  transform="rotate(-90 0.0566406 50)"
+                  fill="#091728"
+                />
+                <path
+                  d="M17.8036 19.2411L31.0847 32.5222L32.5283 31.0786L19.2472 17.7975L17.8036 19.2411Z"
+                  fill="white"
+                />
+                <path
+                  d="M24.633 17.4778L24.633 19.5194L19.5699 19.5194L19.5699 24.5825L17.5283 24.5825L17.5283 17.4778L24.633 17.4778Z"
+                  fill="white"
+                />
+              </svg>
+            )}
+          </span>
+        </div>
+      }
+      className={styles.item}
+      buttonProps={{
+        className: `${styles.itemBtn} ${expanded ? styles.itemBtnExpanded : styles.itemBtnCollapsed}`,
+        onClick: onClick,
+        style: { borderRadius: expanded ? "30px 30px 0 0" : "30px" }
+      }}
+      contentProps={{ className: styles.itemContent }}
+      panelProps={{ className: styles.itemPanel }}
+    >
+      <PortableText value={content} components={RichText} />
+    </Item>
+  );
+};
+
+type AccordionBlockComponentProps = {
+  block: AccordionBlock;
+};
+
+export const AccordionBlockComponent: React.FC<
+  AccordionBlockComponentProps
+> = ({ block }) => {
+  // console.log("AccordionBlockComponent received block", block); // Добавление отладочной информации
+
+  const [expandedIndex, setExpandedIndex] = React.useState<number | null>(null);
+
+  return (
+    <div className={styles.accordion}>
+      <Accordion transition transitionTimeout={250} allowMultiple={false}>
+        {block.items.map((item, index) => (
+          <AccordionItem
+            key={item._key}
+            title={item.question}
+            content={item.answer}
+            expanded={index === expandedIndex}
+            onClick={() =>
+              setExpandedIndex(index === expandedIndex ? null : index)
+            }
+          />
+        ))}
+      </Accordion>
+    </div>
+  );
+};

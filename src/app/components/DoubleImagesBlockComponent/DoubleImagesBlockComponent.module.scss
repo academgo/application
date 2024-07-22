@@ -1,0 +1,29 @@
+.doubleImagesBlock {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(1.25rem, 5vw, 3.75rem);
+}
+
+.imageBlock {
+  flex: 1;
+  aspect-ratio: 1/1;
+  border-radius: clamp(1.25rem, 1.094rem + 0.63vw, 1.563rem);
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+  }
+}

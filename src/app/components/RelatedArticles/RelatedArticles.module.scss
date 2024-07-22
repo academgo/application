@@ -1,0 +1,37 @@
+.relatedArticles {
+
+  @media screen and (min-width: 980px) {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.relatedArticlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.relatedArticle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.date {
+  color: #8A929C;
+  font-size: clamp(0.875rem, 0.813rem + 0.25vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+}
+
+.link {
+  color: #091728;
+  font-size: clamp(1.125rem, 0.938rem + 0.75vw, 1.5rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 141.667% */
+  letter-spacing: -0.96px;
+}

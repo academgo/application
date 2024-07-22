@@ -4,6 +4,7 @@ import { Post } from "@/types/post";
 import { Header } from "@/types/header";
 import { Homepage } from "@/types/homepage";
 import { Footer } from "@/types/footer";
+import { Blog } from "@/types/blog";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -37,6 +38,48 @@ export async function getPostByLang(lang: string, slug: string): Promise<Post> {
   const post = await client.fetch(postQuery, { lang, slug });
 
   return post;
+}
+
+export async function getBlogPostByLang(
+  lang: string,
+  slug: string
+): Promise<Blog> {
+  const blogQuery = groq`*[_type == 'blog' && slug[$lang].current == $slug][0] {
+    _id,
+    title,
+    slug,
+    seo,
+    category->{
+      title,
+      slug
+    },
+    publishedAt,
+    firstContent,
+    previewImage,
+    contentBlocks,
+    videoBlock,
+    relatedArticles[]->{
+      title,
+      slug,
+      publishedAt
+    },
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const blog = await client.fetch(
+    blogQuery,
+    { lang, slug },
+    {
+      next: {
+        revalidate: 60
+      }
+    }
+  );
+
+  return blog;
 }
 
 export async function getHeaderByLang(lang: string): Promise<Header> {

@@ -36,9 +36,12 @@ export type DoubleImagesBlock = {
 
 export type AccordionBlock = {
   _key: string;
-  _type: string;
-  question: string;
-  answer: any;
+  _type: "accordionBlock";
+  items: Array<{
+    _key: string;
+    question: string;
+    answer: any; // Убедитесь, что поле называется 'answer', если оно содержит данные
+  }>;
 };
 
 export type TabsBlock = {
@@ -49,12 +52,33 @@ export type TabsBlock = {
   tabContent: any;
 };
 
-export type Blog = {
+export type Category = {
   _id: string;
   _type: string;
   title: string;
   slug: string;
+  language: string;
+};
+
+export type RelatedArticle = {
+  _id: string;
+  title: string;
+  slug: {
+    [lang: string]: {
+      current: string;
+    };
+  };
+  publishedAt: string;
+  previewImage: Image;
+};
+
+export type Blog = {
+  _id: string;
+  _type: string;
+  title: string;
+  // slug: string;
   seo: Seo;
+  category: Category;
   publishedAt: string;
   firstContent: any;
   previewImage: Image;
@@ -62,6 +86,20 @@ export type Blog = {
     TextContent | DoubleImagesBlock | AccordionBlock | TabsBlock
   >;
   videoBlock: VideoBlock;
-  relatedArticles: Array<Blog>;
+  relatedArticles: RelatedArticle[];
   language: string;
+  slug: {
+    [lang: string]: {
+      current: string;
+    };
+  };
+  _translations: [
+    {
+      slug: {
+        [lang: string]: {
+          current: string;
+        };
+      };
+    }
+  ];
 };
