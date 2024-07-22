@@ -80,3 +80,52 @@ body {
   }
 }
 /* styles for the post */
+
+/* styles for loader */
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #F39708;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  @media screen and (min-width: 480px){
+    width: 100px;
+    height: 100px;
+  }
+
+  @media screen and (min-width: 768px){
+    width: 150px;
+    height: 150px;
+  }
+
+  @media screen and (min-width: 980px){
+    width: 200px;
+    height: 200px;
+  }
+
+  @media screen and (min-width: 1280px){
+    width: 250px;
+    height: 250px;
+  }
+}
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    } 
+/* styles for loader */
