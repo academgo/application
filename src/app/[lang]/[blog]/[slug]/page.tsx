@@ -1,4 +1,5 @@
 import { AccordionBlockComponent } from "@/app/components/AccordionBlockComponent/AccordionBlockComponent";
+import AccordionContainer from "@/app/components/AccordionContainer/AccordionContainer";
 import BlogButtonWrapper from "@/app/components/BlogButtonWrapper/BlogButtonWrapper";
 import BlogIntro from "@/app/components/BlogIntro/BlogIntro";
 import BlogVideo from "@/app/components/BlogVideo/BlogVideo";
@@ -93,7 +94,7 @@ const PagePost = async ({ params }: Props) => {
         );
       case "accordionBlock":
         return (
-          <AccordionBlockComponent
+          <AccordionContainer
             key={block._key}
             block={block as AccordionBlock}
           />
