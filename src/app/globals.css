@@ -33,6 +33,15 @@ body {
   }
 }
 
+.container-content {
+  padding-left: max(20px,(100% - 1730px) / 2);
+
+  @media screen and (max-width: 980px){
+    padding-left: 20px;
+    padding-right: 0;
+  }
+}
+
 /* styles for the flag */
 .PhoneInputInput {
   height: 100%;

@@ -22,8 +22,7 @@ const blogPage = defineType({
     defineField({
       name: "faq",
       title: "FAQ",
-      type: "reference",
-      to: [{ type: "accordionBlock" }]
+      type: "accordionBlock"
     }),
     defineField({
       name: "slug",
