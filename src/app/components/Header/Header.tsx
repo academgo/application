@@ -65,6 +65,7 @@ const Header = async ({ translations, params }: Props) => {
             <div className={styles.contactData}>
               <p className={styles.workingHours}>{data.workingHours}</p>
               <Link
+                aria-label="Call us"
                 className={styles.phoneNumber}
                 href={`tel:${data.phoneNumber.replace(/[^\d+]/g, "")}`}
               >
@@ -73,6 +74,7 @@ const Header = async ({ translations, params }: Props) => {
             </div>
             <div className={styles.contactButtons}>
               <Link
+                aria-label="Call us"
                 className={styles.phoneButton}
                 href={`tel:${data.phoneNumber.replace(/[^\d+]/g, "")}`}
               >

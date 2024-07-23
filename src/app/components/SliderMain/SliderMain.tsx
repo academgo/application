@@ -110,6 +110,7 @@ const SliderMain = ({
             className={`swiper-main-prev ${styles.swiperMainPrev} ${styles.swiperButton}`}
           >
             <FaArrowLeftLong
+              aria-label="Previous slide"
               fontSize="1.8em"
               className={`${styles.arrow} ${styles.arrowLeft}`}
             />
@@ -118,6 +119,7 @@ const SliderMain = ({
             className={`swiper-main-next ${styles.swiperMainNext} ${styles.swiperButton}`}
           >
             <FaArrowRightLong
+              aria-label="Next slide"
               fontSize="1.8em"
               className={`${styles.arrow} ${styles.arrowRight}`}
             />
