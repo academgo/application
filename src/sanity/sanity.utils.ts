@@ -23,6 +23,7 @@ export async function getPostsByLang(lang: string): Promise<Post[]> {
 
   return posts;
 }
+
 export async function getPostByLang(lang: string, slug: string): Promise<Post> {
   const postQuery = groq`*[_type == 'post' && slug[$lang].current == $slug][0] {
         _id,
@@ -80,6 +81,39 @@ export async function getBlogPostByLang(
   );
 
   return blog;
+}
+
+export async function getFourPostsByLang(
+  lang: string,
+  currentPostId: string
+): Promise<Blog[]> {
+  const blogPostsQuery = groq`*[_type == "blog" && language == $lang && _id != $currentPostId] | order(publishedAt desc)[0...4] {
+    _id,
+    title,
+    slug,
+    previewImage,
+    category->{
+      title,
+      slug
+    },
+    publishedAt,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const blogPosts = await client.fetch(
+    blogPostsQuery,
+    { lang, currentPostId },
+    {
+      next: {
+        revalidate: 60
+      }
+    }
+  );
+
+  return blogPosts;
 }
 
 export async function getHeaderByLang(lang: string): Promise<Header> {

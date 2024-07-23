@@ -63,6 +63,7 @@ export type Category = {
 export type RelatedArticle = {
   _id: string;
   title: string;
+  category: Category;
   slug: {
     [lang: string]: {
       current: string;

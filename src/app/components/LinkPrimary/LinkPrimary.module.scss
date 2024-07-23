@@ -1,0 +1,32 @@
+.linkPrimary {
+  border-radius: 162.353px;
+  border: 1px solid #F39708;
+  background: #F39708;
+  display: flex;
+  padding: 8px 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  color: #FFF;
+  text-align: center;
+  font-size: clamp(0.875rem, 0.688rem + 0.75vw, 1.25rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    width: fit-content;
+    padding: 27px 64px;
+    border-radius: 500px;
+    letter-spacing: -0.6px;
+
+    &:hover {
+      color: #F39708;
+      background: #FFF;
+    }
+  }
+}

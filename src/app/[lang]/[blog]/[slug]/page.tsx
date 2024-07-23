@@ -1,8 +1,11 @@
 import { AccordionBlockComponent } from "@/app/components/AccordionBlockComponent/AccordionBlockComponent";
+import BlogButtonWrapper from "@/app/components/BlogButtonWrapper/BlogButtonWrapper";
 import BlogIntro from "@/app/components/BlogIntro/BlogIntro";
 import BlogVideo from "@/app/components/BlogVideo/BlogVideo";
 import DoubleImagesBlockComponent from "@/app/components/DoubleImagesBlockComponent/DoubleImagesBlockComponent";
 import Header from "@/app/components/Header/Header";
+import LastArticles from "@/app/components/LastArticles/LastArticles";
+import LinkPrimary from "@/app/components/LinkPrimary/LinkPrimary";
 import RelatedArticles from "@/app/components/RelatedArticles/RelatedArticles";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
@@ -16,6 +19,7 @@ import {
 } from "@/types/blog";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -42,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const PagePost = async ({ params }: Props) => {
   const { lang, slug } = params;
   const blog = await getBlogPostByLang(lang, slug);
+  const currentPostId = blog._id;
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
     blog?._translations.map(item => {
@@ -129,6 +134,13 @@ const PagePost = async ({ params }: Props) => {
               <article>
                 {blog.contentBlocks.map(block => renderContentBlock(block))}
               </article>
+              <BlogButtonWrapper>
+                <LinkPrimary href={`/${lang}/blog`}>
+                  {lang === "en"
+                    ? "Back to all articles"
+                    : "Вернуться ко всем статьям"}
+                </LinkPrimary>
+              </BlogButtonWrapper>
             </div>
             <div className="post-content sidebar">
               <aside className="aside">
@@ -150,6 +162,7 @@ const PagePost = async ({ params }: Props) => {
               )}
             </div>
           </div>
+          <LastArticles params={{ lang, id: currentPostId }} />
         </div>
       </main>
     </>
