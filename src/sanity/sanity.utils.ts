@@ -150,6 +150,36 @@ export async function getFourPostsByLang(
   return blogPosts;
 }
 
+export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
+  const blogPostsQuery = groq`*[_type == 'blog' && language == $lang] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    previewImage,
+    category->{
+      title,
+      slug
+    },
+    publishedAt,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const blogPosts = await client.fetch(
+    blogPostsQuery,
+    { lang },
+    {
+      next: {
+        revalidate: 60
+      }
+    }
+  );
+
+  return blogPosts;
+}
+
 export async function getHeaderByLang(lang: string): Promise<Header> {
   const headerQuery = groq`*[_type == 'header' && language == $lang][0] {
     _id,
