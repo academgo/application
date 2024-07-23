@@ -26,7 +26,7 @@ const LastArticles = async ({ params }: Props) => {
       : "#";
   };
 
-  console.log("blogPosts", blogPosts);
+  // console.log("blogPosts", blogPosts);
 
   return (
     <div className={styles.lastArticles}>

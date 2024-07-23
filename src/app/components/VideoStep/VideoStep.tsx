@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useState, useRef } from "react";
 import styles from "./VideoStep.module.scss";
-import { Image as ImageType, Video } from "@/types/homepage";
+import { Image as ImageType } from "@/types/homepage";
 import Image from "next/image";
 import { FaPlay, FaPause } from "react-icons/fa";
 import YouTube, { YouTubePlayer } from "react-youtube";
@@ -16,16 +16,19 @@ type Props = {
 const VideoStep: FC<Props> = ({ videoId, posterImage, text }) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isPlayerReady, setIsPlayerReady] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
 
   const onPlayerReady = (event: { target: YouTubePlayer }) => {
-    // console.log('Player is ready');
     playerRef.current = event.target;
     setIsPlayerReady(true);
+    if (isVideoLoaded) {
+      event.target.playVideo();
+      setIsVideoPlaying(true);
+    }
   };
 
   const onPlayerStateChange = (event: { data: number }) => {
-    // console.log("Player state changed:", event.data);
     if (event.data === 0) {
       // Video ended
       setIsVideoPlaying(false);
@@ -39,17 +42,18 @@ const VideoStep: FC<Props> = ({ videoId, posterImage, text }) => {
   };
 
   const handlePlayPause = () => {
+    if (!isVideoLoaded) {
+      setIsVideoLoaded(true);
+      return;
+    }
+
     if (isPlayerReady && playerRef.current) {
       if (isVideoPlaying) {
-        // console.log("Pausing video");
         playerRef.current.pauseVideo();
       } else {
-        // console.log("Playing video");
         playerRef.current.playVideo();
       }
       setIsVideoPlaying(!isVideoPlaying);
-    } else {
-      console.log("Player is not ready");
     }
   };
 
@@ -81,20 +85,22 @@ const VideoStep: FC<Props> = ({ videoId, posterImage, text }) => {
             <FaPlay className={styles.playIcon} color="#fff" fontSize="1em" />
           )}
         </button>
-        <YouTube
-          videoId={videoId}
-          opts={{
-            width: "100%",
-            height: "100%",
-            playerVars: {
-              autoplay: 0, // Don't autoplay when initializing
-              controls: 0
-            }
-          }}
-          onReady={onPlayerReady}
-          onStateChange={onPlayerStateChange}
-          className={styles.videoFrame}
-        />
+        {isVideoLoaded && (
+          <YouTube
+            videoId={videoId}
+            opts={{
+              width: "100%",
+              height: "100%",
+              playerVars: {
+                autoplay: 1, // Autoplay when initializing
+                controls: 0
+              }
+            }}
+            onReady={onPlayerReady}
+            onStateChange={onPlayerStateChange}
+            className={styles.videoFrame}
+          />
+        )}
         {!isVideoPlaying && (
           <div className={styles.videoStepContent}>
             <p className={styles.text}>{text}</p>

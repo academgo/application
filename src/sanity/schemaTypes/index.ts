@@ -1,5 +1,6 @@
 import accordionBlock from "./accordionBlock";
 import blog from "./blog";
+import blogPage from "./blogPage";
 import category from "./category";
 import contentBlock from "./contentBlock";
 import doubleImagesBlock from "./doubleImagesBlock";
@@ -21,6 +22,7 @@ export const schemaTypes = [
   post,
   blog,
   category,
+  blogPage,
   formStandard,
   formStandardDocument,
   videoShort,
