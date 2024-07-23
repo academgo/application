@@ -6,6 +6,7 @@ import { Translation } from "@/types/post";
 import Header from "@/app/components/Header/Header";
 import BlogPostsAll from "@/app/components/BlogPostsAll/BlogPostsAll";
 import BlogPageContent from "@/app/components/BlogPageContent/BlogPageContent";
+import Footer from "@/app/components/Footer/Footer";
 
 type Props = {
   params: { lang: string };
@@ -75,6 +76,7 @@ const PageBlog = async ({ params }: Props) => {
         <BlogPostsAll blogPosts={blogPosts} lang={params.lang} />
         <BlogPageContent faq={blogPage.faq} lang={params.lang} />
       </main>
+      <Footer params={params} />
     </>
   );
 };

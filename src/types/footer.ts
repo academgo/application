@@ -1,3 +1,5 @@
+import { Consultation } from "./homepage";
+
 type Image = {
   _key: string;
   _ref: string;
@@ -28,6 +30,7 @@ export type Footer = {
   _type: "footer";
   _id: string;
   _rev: string;
+  consultationBlock: Consultation;
   logo: Image;
   description: string;
   workingHours: string;

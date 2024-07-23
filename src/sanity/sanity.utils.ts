@@ -195,6 +195,23 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
 export async function getFooterByLang(lang: string): Promise<Footer> {
   const footerQuery = groq`*[_type == 'footer' && language == $lang][0] {
     _id,
+    "consultationBlock": consultationBlock{
+      title,
+      titleHighlight,
+      listTitle,
+      list,
+      giftText,
+      description,
+      formTitle,
+      "form": form->{
+        _id,
+        language,
+        form
+      },
+      buttonCustomText,
+      altText,
+      contactLinks
+    },
     logo,
     description,
     workingHours,

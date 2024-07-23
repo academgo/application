@@ -18,7 +18,9 @@ const BlogPageContent: FC<Props> = ({ faq, lang }) => {
             ? "FAQ"
             : "Отвечаем на частые вопросы абитуриентов и их родителей"}
         </h1>
-        <AccordionContainer block={faq} />
+        <div className={styles.pageAccordion}>
+          <AccordionContainer block={faq} />
+        </div>
       </div>
     </section>
   );

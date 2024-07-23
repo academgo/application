@@ -153,7 +153,7 @@ export default async function Home({ params }: Props) {
           priceTitle={homePage.priceTitle}
           priceBlock={homePage.priceBlock}
         />
-        <Consultation consultationBlock={homePage.consultationBlock} />
+        {/* <Consultation consultationBlock={homePage.consultationBlock} /> */}
       </main>
       <Footer params={params} />
     </>

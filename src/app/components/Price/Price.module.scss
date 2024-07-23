@@ -1,3 +1,7 @@
+.price {
+  margin-bottom: clamp(2.813rem, 1.094rem + 6.88vw, 6.25rem);
+}
+
 .title {
   color: #091728;
   font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);

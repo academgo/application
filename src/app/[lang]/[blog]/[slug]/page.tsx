@@ -4,6 +4,7 @@ import BlogButtonWrapper from "@/app/components/BlogButtonWrapper/BlogButtonWrap
 import BlogIntro from "@/app/components/BlogIntro/BlogIntro";
 import BlogVideo from "@/app/components/BlogVideo/BlogVideo";
 import DoubleImagesBlockComponent from "@/app/components/DoubleImagesBlockComponent/DoubleImagesBlockComponent";
+import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import LastArticles from "@/app/components/LastArticles/LastArticles";
 import LinkPrimary from "@/app/components/LinkPrimary/LinkPrimary";
@@ -166,6 +167,7 @@ const PagePost = async ({ params }: Props) => {
           <LastArticles params={{ lang, id: currentPostId }} />
         </div>
       </main>
+      <Footer params={params} />
     </>
   );
 };
