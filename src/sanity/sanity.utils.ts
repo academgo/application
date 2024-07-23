@@ -47,15 +47,7 @@ export async function getBlogPageByLang(lang: string): Promise<BlogPage> {
     _id,
     metaTitle,
     metaDescription,
-    faq[]->{
-      _key,
-      _type,
-      items[]{
-        _key,
-        question,
-        answer
-      }
-    },
+    faq,
     language,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
       slug,

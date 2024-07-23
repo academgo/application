@@ -5,6 +5,7 @@ import { getBlogPageByLang, getBlogPostsByLang } from "@/sanity/sanity.utils";
 import { Translation } from "@/types/post";
 import Header from "@/app/components/Header/Header";
 import BlogPostsAll from "@/app/components/BlogPostsAll/BlogPostsAll";
+import BlogPageContent from "@/app/components/BlogPageContent/BlogPageContent";
 
 type Props = {
   params: { lang: string };
@@ -23,12 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const PageBlog = async ({ params }: Props) => {
   const { lang } = params;
   const blogPosts = await getBlogPostsByLang(lang);
-  const blogPage = await getBlogPageByLang(params.lang);
+  const blogPage = await getBlogPageByLang(lang);
 
-  console.log(
-    "blogPosts",
-    blogPosts.map(post => post)
-  );
+  // console.log("blogPage", blogPage);
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
     blogPage?._translations.map(item => {
@@ -75,6 +73,7 @@ const PageBlog = async ({ params }: Props) => {
       <Header params={params} translations={translations} />
       <main>
         <BlogPostsAll blogPosts={blogPosts} lang={params.lang} />
+        <BlogPageContent faq={blogPage.faq} lang={params.lang} />
       </main>
     </>
   );

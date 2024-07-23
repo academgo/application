@@ -1,11 +1,10 @@
 "use client";
-import React, { FC, Suspense, useState } from "react";
+import React, { FC, useState } from "react";
 import styles from "./BlogPostsRenderer.module.scss";
 import { Blog } from "@/types/blog";
 import Link from "next/link";
 import { urlFor } from "@/sanity/sanity.client";
 import Image from "next/image";
-import Loading from "@/app/[lang]/loading";
 
 type Props = {
   blogPosts: Blog[];
@@ -62,42 +61,40 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
       </div>
       <div className={styles.articlesBlock}>
         <div className="container">
-          <Suspense fallback={<Loading />}>
-            <div className={styles.articles}>
-              {filteredPosts.map(post => (
-                <Link
-                  href={generateSlug(post.slug, lang)}
-                  key={post._id}
-                  className={styles.article}
-                >
-                  <div className={styles.imageBlock}>
-                    <Image
-                      alt={post.title}
-                      src={urlFor(post.previewImage).url()}
-                      fill={true}
-                      className={styles.image}
-                    />
-                  </div>
-                  <div className={styles.overlay}></div>
-                  <div className={styles.content}>
-                    <div className={styles.contentWrapper}>
-                      <div className={styles.contentTop}>
-                        <p className={styles.articleCategory}>
-                          {post.category.title}
-                        </p>
-                      </div>
-                      <div className={styles.contentBottom}>
-                        <p className={styles.articleDate}>
-                          {formatDate(post.publishedAt)}
-                        </p>
-                        <h3 className={styles.articleTitle}>{post.title}</h3>
-                      </div>
+          <div className={styles.articles}>
+            {filteredPosts.map(post => (
+              <Link
+                href={generateSlug(post.slug, lang)}
+                key={post._id}
+                className={styles.article}
+              >
+                <div className={styles.imageBlock}>
+                  <Image
+                    alt={post.title}
+                    src={urlFor(post.previewImage).url()}
+                    fill={true}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.overlay}></div>
+                <div className={styles.content}>
+                  <div className={styles.contentWrapper}>
+                    <div className={styles.contentTop}>
+                      <p className={styles.articleCategory}>
+                        {post.category.title}
+                      </p>
+                    </div>
+                    <div className={styles.contentBottom}>
+                      <p className={styles.articleDate}>
+                        {formatDate(post.publishedAt)}
+                      </p>
+                      <h3 className={styles.articleTitle}>{post.title}</h3>
                     </div>
                   </div>
-                </Link>
-              ))}
-            </div>
-          </Suspense>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
