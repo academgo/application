@@ -1,0 +1,17 @@
+.multiStepForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    margin-top: 10px;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin: 5px;
+  }
+}

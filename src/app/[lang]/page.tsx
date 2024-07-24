@@ -20,6 +20,7 @@ import Price from "../components/Price/Price";
 import Consultation from "../components/Consultation/Consultation";
 import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
+import MultiStepForm from "../components/MultiStepForm/MultiStepForm";
 // import Signup from "../components/Signup/Signup";
 
 type Props = {
@@ -126,6 +127,7 @@ export default async function Home({ params }: Props) {
           lastSlideTitle={homePage.lastSlideTitle}
           lastSlideDescription={homePage.lastSlideDescription}
         />
+        <MultiStepForm />
         <About
           aboutSummary={homePage.aboutSummary}
           aboutTitle={homePage.aboutTitle}
