@@ -5,6 +5,9 @@ import { Blog } from "@/types/blog";
 import Link from "next/link";
 import { urlFor } from "@/sanity/sanity.client";
 import Image from "next/image";
+import axios from "axios";
+import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
+import Loading from "@/app/[lang]/loading";
 
 type Props = {
   blogPosts: Blog[];
@@ -12,7 +15,9 @@ type Props = {
 };
 
 const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [posts, setPosts] = useState<Blog[]>(blogPosts);
+  const [loading, setLoading] = useState(false);
+  const [totalPosts, setTotalPosts] = useState<number | null>(null);
 
   const formatDate = (dateString: string) => {
     const parsedDate = new Date(dateString);
@@ -25,13 +30,35 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
       : "#";
   };
 
+  const loadMorePosts = async () => {
+    setLoading(true);
+    const limit = 9;
+    const offset = posts.length;
+
+    try {
+      const response = await axios.get(
+        `/api/getMorePosts?lang=${lang}&limit=${limit}&offset=${offset}`
+      );
+      const newPosts = response.data.posts;
+      const total = response.data.total;
+
+      setPosts(prevPosts => [...prevPosts, ...newPosts]);
+      setTotalPosts(total);
+    } catch (error) {
+      console.error("Error loading more posts:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const categories = Array.from(
-    new Set(blogPosts.map(post => post.category.title))
+    new Set(posts.map(post => post.category.title))
   );
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const filteredPosts = selectedCategory
-    ? blogPosts.filter(post => post.category.title === selectedCategory)
-    : blogPosts;
+    ? posts.filter(post => post.category.title === selectedCategory)
+    : posts;
 
   return (
     <div className={styles.blogPostsRenderer}>
@@ -47,10 +74,7 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
             {categories.map(category => (
               <button
                 key={category}
-                className={`
-                  ${selectedCategory === category ? styles.active : ""}
-                  ${styles.tab}
-                  `}
+                className={`${selectedCategory === category ? styles.active : ""} ${styles.tab}`}
                 onClick={() => setSelectedCategory(category)}
               >
                 {category}
@@ -94,6 +118,37 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
                 </div>
               </Link>
             ))}
+          </div>
+          <div className={styles.loadingBlock}>
+            <div className={styles.loaderWrapper}>
+              {loading && (
+                <div className={styles.loader}>
+                  <div className={styles.bar1}></div>
+                  <div className={styles.bar2}></div>
+                  <div className={styles.bar3}></div>
+                  <div className={styles.bar4}></div>
+                  <div className={styles.bar5}></div>
+                  <div className={styles.bar6}></div>
+                  <div className={styles.bar7}></div>
+                  <div className={styles.bar8}></div>
+                  <div className={styles.bar9}></div>
+                  <div className={styles.bar10}></div>
+                  <div className={styles.bar11}></div>
+                  <div className={styles.bar12}></div>
+                </div>
+              )}
+            </div>
+            {!loading && (totalPosts === null || posts.length < totalPosts) ? (
+              <ButtonPrimary
+                onClick={loadMorePosts}
+                disabled={loading}
+                className={styles.loadMoreButton}
+              >
+                {lang === "ru" ? "Загрузить еще 9 статей" : "Load more 9 posts"}
+              </ButtonPrimary>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

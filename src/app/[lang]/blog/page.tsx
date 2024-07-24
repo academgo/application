@@ -1,7 +1,11 @@
+// page.tsx
 import React from "react";
 import { Metadata } from "next";
 import { i18n } from "@/i18n.config";
-import { getBlogPageByLang, getBlogPostsByLang } from "@/sanity/sanity.utils";
+import {
+  getBlogPageByLang,
+  getBlogPostsByLangWithPagination
+} from "@/sanity/sanity.utils";
 import { Translation } from "@/types/post";
 import Header from "@/app/components/Header/Header";
 import BlogPostsAll from "@/app/components/BlogPostsAll/BlogPostsAll";
@@ -24,10 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const PageBlog = async ({ params }: Props) => {
   const { lang } = params;
-  const blogPosts = await getBlogPostsByLang(lang);
+  const initialPosts = await getBlogPostsByLangWithPagination(lang, 12, 0);
   const blogPage = await getBlogPageByLang(lang);
-
-  // console.log("blogPage", blogPage);
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
     blogPage?._translations.map(item => {
@@ -65,15 +67,11 @@ const PageBlog = async ({ params }: Props) => {
         ]
       : acc;
   }, []);
-
-  // console.log("translations", translations);
-
-  // console.log(blogPosts);
   return (
     <>
       <Header params={params} translations={translations} />
       <main>
-        <BlogPostsAll blogPosts={blogPosts} lang={params.lang} />
+        <BlogPostsAll blogPosts={initialPosts} lang={params.lang} />
         <BlogPageContent faq={blogPage.faq} lang={params.lang} />
       </main>
       <Footer params={params} />

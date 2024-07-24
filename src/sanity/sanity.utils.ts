@@ -172,6 +172,34 @@ export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
   return blogPosts;
 }
 
+export async function getBlogPostsByLangWithPagination(
+  lang: string,
+  limit: number,
+  offset: number
+): Promise<Blog[]> {
+  const blogPostsQuery = groq`
+    *[_type == "blog" && language == $lang] | order(publishedAt desc)[$offset...$offset + $limit] {
+      _id,
+      title,
+      slug,
+      previewImage,
+      category->{
+        title,
+        slug
+      },
+      publishedAt,
+      language,
+      "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+        slug,
+      },
+    }
+  `;
+
+  const blogPosts = await client.fetch(blogPostsQuery, { lang, limit, offset });
+
+  return blogPosts;
+}
+
 export async function getHeaderByLang(lang: string): Promise<Header> {
   const headerQuery = groq`*[_type == 'header' && language == $lang][0] {
     _id,
