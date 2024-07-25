@@ -85,7 +85,7 @@ const MultiStepForm = ({
   ];
 
   const handleNext = (values: FormData) => {
-    setFormData({ ...formData, ...values });
+    setFormData(prev => ({ ...prev, ...values }));
     setStep(step + 1);
   };
 
@@ -120,7 +120,7 @@ const MultiStepForm = ({
         validationSchema={validationSchema[step - 1]}
         onSubmit={step === 5 ? handleSubmit : handleNext}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, values }) => (
           <Form className={styles.customForm}>
             <div className={styles.progressBar}>
               <div
@@ -207,7 +207,7 @@ const MultiStepForm = ({
                 <div className={styles.buttonsBlock}>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -288,7 +288,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -417,7 +417,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -514,7 +514,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
