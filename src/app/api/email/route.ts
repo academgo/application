@@ -14,32 +14,49 @@ export async function POST(request: NextRequest) {
   });
 
   let mailBody = "";
-  if (data.phone && data.country && data.whatsapp) {
-    // Обработка данных из существующей формы
-    mailBody = `Email: ${data.email}\nPhone: ${data.phone}\nCountry: ${data.country}\nWhatsapp: ${data.whatsapp}`;
+  let isValid = false;
+
+  if (data.phone && !data.country && !data.whatsapp && !data.email) {
+    // Обработка формы с только телефоном
+    mailBody = `Phone: ${data.phone}`;
+    isValid = true;
+  } else if (data.phone && data.country && data.email && !data.whatsapp) {
+    // Обработка формы с телефоном, страной и email
+    mailBody = `Phone: ${data.phone}\nCountry: ${data.country}\nEmail: ${data.email}`;
+    isValid = true;
+  } else if (data.whatsapp && !data.phone && !data.country && !data.email) {
+    // Обработка формы с только Whatsapp
+    mailBody = `Whatsapp: ${data.whatsapp}`;
+    isValid = true;
   } else if (
     data.question1 &&
     data.question2 &&
     data.question3 &&
-    data.question4
+    data.question4 &&
+    data.whatsapp
   ) {
     // Обработка данных из новой многошаговой формы
     mailBody = `Who fills: ${data.question1}\nLevel of education: ${data.question2}\nStart studying 3: ${data.question3}\nBudget: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
+    isValid = true;
   } else {
     return NextResponse.json({ error: "Invalid data" }, { status: 400 });
   }
 
-  const mailOptions: Mail.Options = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `Client from Academgo`,
-    text: mailBody
-  };
+  if (isValid) {
+    const mailOptions: Mail.Options = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `Client from Academgo`,
+      text: mailBody
+    };
 
-  try {
-    await transport.sendMail(mailOptions);
-    return NextResponse.json({ message: "Email sent" });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    try {
+      await transport.sendMail(mailOptions);
+      return NextResponse.json({ message: "Email sent" });
+    } catch (err: any) {
+      return NextResponse.json({ error: err.message }, { status: 500 });
+    }
   }
+
+  return NextResponse.json({ error: "Invalid data" }, { status: 400 });
 }
