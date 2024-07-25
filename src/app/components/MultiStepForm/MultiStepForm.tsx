@@ -3,12 +3,13 @@ import React, { useEffect, useState, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./MultiStepForm.module.scss";
 
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
-import Image from "next/image";
-import Link from "next/link";
 
 type FormData = {
   question1: string;
@@ -43,6 +44,7 @@ const MultiStepForm = ({
   });
 
   const uniqueId = useId();
+  const router = useRouter();
 
   const [filled, setFilled] = useState({
     whatsapp: false
@@ -83,7 +85,7 @@ const MultiStepForm = ({
   ];
 
   const handleNext = (values: FormData) => {
-    setFormData({ ...formData, ...values });
+    setFormData(prev => ({ ...prev, ...values }));
     setStep(step + 1);
   };
 
@@ -99,12 +101,17 @@ const MultiStepForm = ({
     try {
       await axios.post("/api/email", values);
       alert("Email sent successfully!");
+      setTimeout(() => {
+        router.push("/success"); // Перенаправление на страницу success
+      }, 1000);
     } catch (error) {
       alert("Error sending email");
     } finally {
       setSubmitting(false);
     }
   };
+
+  const progressPercentage = (step > 1 ? (step - 1) / 4 : 0) * 100;
 
   return (
     <div className={styles.multiStepForm}>
@@ -113,12 +120,24 @@ const MultiStepForm = ({
         validationSchema={validationSchema[step - 1]}
         onSubmit={step === 5 ? handleSubmit : handleNext}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, values }) => (
           <Form className={styles.customForm}>
+            <div className={styles.progressBar}>
+              <div
+                className={styles.progressFill}
+                style={{ width: `${progressPercentage}%` }}
+              />
+              {step > 1 && (
+                <div className={styles.progressText}>
+                  {lang === "en"
+                    ? `Step ${step - 1} of 4`
+                    : `Шаг ${step - 1} из 4`}
+                </div>
+              )}
+            </div>
             {step === 1 && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
-                  <div className={styles.progressBar}>fff</div>
                   <fieldset>
                     <div className={styles.questionData}>
                       <div className={styles.questionNumber}>
@@ -185,19 +204,20 @@ const MultiStepForm = ({
                     <ErrorMessage name="question1" component="div" />
                   </fieldset>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => handleNext(formData)}
-                  className={styles.buttonNext}
-                >
-                  {lang === "en" ? "Next" : "Далее"}
-                </button>
+                <div className={styles.buttonsBlock}>
+                  <button
+                    type="button"
+                    onClick={() => handleNext(values)}
+                    className={styles.buttonNext}
+                  >
+                    {lang === "en" ? "Next" : "Далее"}
+                  </button>
+                </div>
               </div>
             )}
             {step === 2 && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
-                  <div className={styles.progressBar}>fff</div>
                   <fieldset>
                     <div className={styles.questionData}>
                       <div className={styles.questionNumber}>
@@ -268,7 +288,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -279,7 +299,6 @@ const MultiStepForm = ({
             {step === 3 && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
-                  <div className={styles.progressBar}>fff</div>
                   <fieldset>
                     <div className={styles.questionData}>
                       <div className={styles.questionNumber}>
@@ -398,7 +417,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -409,7 +428,6 @@ const MultiStepForm = ({
             {step === 4 && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
-                  <div className={styles.progressBar}>fff</div>
                   <fieldset>
                     <div className={styles.questionData}>
                       <div className={styles.questionNumber}>
@@ -496,7 +514,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(formData)}
+                    onClick={() => handleNext(values)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -508,7 +526,6 @@ const MultiStepForm = ({
               <>
                 <div className={styles.questionWrapper}>
                   <div className={styles.topWrapper}>
-                    <div className={styles.progressBar}>fff</div>
                     <h3 className={styles.finalTitle}>{finalTitle}</h3>
                   </div>
                   <div className={styles.formSending}>
@@ -540,7 +557,11 @@ const MultiStepForm = ({
                         className={styles.sentBtn}
                         disabled={isSubmitting}
                       >
-                        {buttonText}
+                        {isSubmitting ? (
+                          <div className={styles.loader}></div>
+                        ) : (
+                          buttonText
+                        )}
                       </button>
                       <div className={styles.customCheckbox}>
                         <Field

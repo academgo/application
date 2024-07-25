@@ -5,6 +5,8 @@ import Mail from "nodemailer/lib/mailer";
 export async function POST(request: NextRequest) {
   const data = await request.json();
 
+  console.log("Received data:", data); // Журналирование данных для отладки
+
   const transport = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -16,7 +18,18 @@ export async function POST(request: NextRequest) {
   let mailBody = "";
   let isValid = false;
 
-  if (data.phone && !data.country && !data.whatsapp && !data.email) {
+  // Проверка и формирование тела письма в зависимости от присутствующих полей
+  if (
+    data.question1 &&
+    data.question2 &&
+    data.question3 &&
+    data.question4 &&
+    data.whatsapp
+  ) {
+    // Обработка данных из новой многошаговой формы
+    mailBody = `Who fills: ${data.question1}\nLevel of education: ${data.question2}\nStart studying 3: ${data.question3}\nBudget: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
+    isValid = true;
+  } else if (data.phone && !data.country && !data.whatsapp && !data.email) {
     // Обработка формы с только телефоном
     mailBody = `Phone: ${data.phone}`;
     isValid = true;
@@ -27,16 +40,6 @@ export async function POST(request: NextRequest) {
   } else if (data.whatsapp && !data.phone && !data.country && !data.email) {
     // Обработка формы с только Whatsapp
     mailBody = `Whatsapp: ${data.whatsapp}`;
-    isValid = true;
-  } else if (
-    data.question1 &&
-    data.question2 &&
-    data.question3 &&
-    data.question4 &&
-    data.whatsapp
-  ) {
-    // Обработка данных из новой многошаговой формы
-    mailBody = `Who fills: ${data.question1}\nLevel of education: ${data.question2}\nStart studying 3: ${data.question3}\nBudget: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
     isValid = true;
   } else {
     return NextResponse.json({ error: "Invalid data" }, { status: 400 });
