@@ -451,6 +451,51 @@ export default defineType({
       title: "Last Slide Description",
       type: "string"
     }),
+    // survey block
+    defineField({
+      name: "survey",
+      title: "Survey",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image"
+        }),
+        defineField({
+          name: "quote",
+          title: "Quote",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "string"
+        }),
+        defineField({
+          name: "inputLabel",
+          title: "Input Label",
+          type: "string"
+        }),
+        defineField({
+          name: "buttonText",
+          title: "Button Text",
+          type: "string"
+        }),
+        defineField({
+          name: "form",
+          title: "Form",
+          type: "reference", // Используйте ссылку на форму
+          to: [{ type: "formStandardDocument" }]
+        })
+      ]
+    }),
+    // survey block
     // about block
     defineField({
       name: "aboutSummary",

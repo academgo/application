@@ -104,6 +104,16 @@ export type PrinciplesTotal = {
   description: string;
 };
 
+export type Survey = {
+  title: string;
+  image: Image;
+  quote: string;
+  description: string;
+  inputLabel: string;
+  buttonText: string;
+  form: Form;
+};
+
 export type StepOne = {
   number: string;
   title: string;
@@ -224,6 +234,7 @@ export type Homepage = {
   lastSlideTitleHighlight: string;
   lastSlideTitle: string;
   lastSlideDescription: string;
+  survey: Survey;
   aboutSummary: string;
   aboutTitle: string;
   aboutParagraphs: List[];

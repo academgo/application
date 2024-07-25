@@ -336,6 +336,19 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     lastSlideTitleHighlight,
     lastSlideTitle,
     lastSlideDescription,
+    "survey": survey{
+      title,
+      image,
+      quote,
+      description,
+      inputLabel,
+      buttonText,
+      "form": form->{
+        _id,
+        language,
+        form
+      },
+    },
     aboutSummary,
     aboutTitle,
     aboutParagraphs,
