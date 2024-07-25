@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     data.question4
   ) {
     // Обработка данных из новой многошаговой формы
-    mailBody = `Question 1: ${data.question1}\nQuestion 2: ${data.question2}\nQuestion 3: ${data.question3}\nQuestion 4: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
+    mailBody = `Who fills: ${data.question1}\nLevel of education: ${data.question2}\nStart studying 3: ${data.question3}\nBudget: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
   } else {
     return NextResponse.json({ error: "Invalid data" }, { status: 400 });
   }
