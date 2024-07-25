@@ -3,12 +3,13 @@ import React, { useEffect, useState, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./MultiStepForm.module.scss";
 
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
-import Image from "next/image";
-import Link from "next/link";
 
 type FormData = {
   question1: string;
@@ -43,6 +44,7 @@ const MultiStepForm = ({
   });
 
   const uniqueId = useId();
+  const router = useRouter();
 
   const [filled, setFilled] = useState({
     whatsapp: false
@@ -99,6 +101,9 @@ const MultiStepForm = ({
     try {
       await axios.post("/api/email", values);
       alert("Email sent successfully!");
+      setTimeout(() => {
+        router.push("/success"); // Перенаправление на страницу success
+      }, 1000);
     } catch (error) {
       alert("Error sending email");
     } finally {
@@ -540,7 +545,11 @@ const MultiStepForm = ({
                         className={styles.sentBtn}
                         disabled={isSubmitting}
                       >
-                        {buttonText}
+                        {isSubmitting ? (
+                          <div className={styles.loader}></div>
+                        ) : (
+                          buttonText
+                        )}
                       </button>
                       <div className={styles.customCheckbox}>
                         <Field

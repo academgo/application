@@ -76,7 +76,6 @@ const FormSuperLite: FC<ContactFormProps> = ({
     try {
       const response = await axios.post("/api/email", values);
       if (response.data.message === "Email sent") {
-        setMessage(`${dataForm.successMessage}`);
         resetForm({});
         setFilled({ phone: false });
         setTimeout(() => {
@@ -88,11 +87,11 @@ const FormSuperLite: FC<ContactFormProps> = ({
       }
     } catch (error) {
       setMessage(`${dataForm.errorMessage}`);
-    } finally {
-      setSubmitting(false);
       setTimeout(() => {
         setMessage(null);
       }, 7000);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -133,11 +132,15 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 className={styles.sentBtn}
                 disabled={isSubmitting}
               >
-                {buttonCustomText
-                  ? buttonCustomText
-                  : offerButtonCustomText
-                    ? offerButtonCustomText
-                    : dataForm.buttonText}
+                {isSubmitting ? (
+                  <div className={styles.loader}></div>
+                ) : buttonCustomText ? (
+                  buttonCustomText
+                ) : offerButtonCustomText ? (
+                  offerButtonCustomText
+                ) : (
+                  dataForm.buttonText
+                )}
               </button>
             </div>
             <div className={styles.customCheckbox}>

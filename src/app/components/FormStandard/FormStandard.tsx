@@ -10,6 +10,7 @@ import "react-phone-number-input/style.css";
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // Импортируйте useRouter из next/navigation
 
 export type FormData = {
   phone: string;
@@ -37,6 +38,7 @@ const FormStandard: FC<ContactFormProps> = ({
   });
 
   const dataForm = form.form;
+  const router = useRouter(); // Используйте useRouter из next/navigation
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -82,22 +84,22 @@ const FormStandard: FC<ContactFormProps> = ({
     try {
       const response = await axios.post("/api/email", values);
       if (response.data.message === "Email sent") {
-        setMessage(`${dataForm.successMessage}`);
         resetForm({});
         setFilled({ phone: false, country: false, email: false }); // Reset the filled state
         setTimeout(() => {
           onFormSubmitSuccess && onFormSubmitSuccess();
+          router.push("/success"); // Перенаправление на страницу success
         }, 5000);
       } else {
         throw new Error("Server responded with an error");
       }
     } catch (error) {
       setMessage(`${dataForm.errorMessage}`);
-    } finally {
-      setSubmitting(false);
       setTimeout(() => {
         setMessage(null);
       }, 7000);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -178,9 +180,13 @@ const FormStandard: FC<ContactFormProps> = ({
                 className={styles.sentBtn}
                 disabled={isSubmitting}
               >
-                {offerButtonCustomText
-                  ? offerButtonCustomText
-                  : dataForm.buttonText}
+                {isSubmitting ? (
+                  <div className={styles.loader}></div>
+                ) : offerButtonCustomText ? (
+                  offerButtonCustomText
+                ) : (
+                  dataForm.buttonText
+                )}
               </button>
             </div>
             <div className={styles.customCheckbox}>
