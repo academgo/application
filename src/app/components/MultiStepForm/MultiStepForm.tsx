@@ -101,7 +101,9 @@ const MultiStepForm = ({
     try {
       await axios.post("/api/email", values);
       // alert("Email sent successfully!");
-      router.push("/success");
+      setTimeout(() => {
+        router.push("/success"); // Перенаправление на страницу success
+      }, 1000);
     } catch (error) {
       alert("Error sending email");
     } finally {
