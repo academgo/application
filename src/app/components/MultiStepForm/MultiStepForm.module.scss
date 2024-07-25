@@ -1,17 +1,21 @@
 .multiStepForm {
   height: 100%;
+  position: relative;
 }
 
 .customForm {
-  height: 100%;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .questionWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   gap: clamp(1.563rem, 6.25vw, 4.688rem);
-  height: 100%;
+  // height: 100%;
 }
 
 .progressBar {
@@ -74,9 +78,12 @@
 
 .answerImg {
   img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
   }
 }
 
@@ -187,9 +194,15 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     justify-content: space-between;
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
   }
 }
 
@@ -253,7 +266,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: -3.85px;
+  letter-spacing: -.85px;
   max-width: 790px;
   
 
@@ -467,6 +480,42 @@
 .policyLink {
   text-decoration: underline;
 }
+
+.progressBar {
+width: 100%;
+background-color: #f3f3f3;
+border-radius: 25px;
+overflow: hidden;
+height: 25px;
+position: relative;
+}
+
+.progressFill {
+height: 100%;
+background: linear-gradient(
+-45deg,
+#F39708 25%,
+#f3b44f 25%,
+#f3b44f 50%,
+#F39708 50%,
+#F39708 75%,
+#f3b44f 75%,
+#f3b44f 100%
+);
+background-size: 50px 50px; /* Настройте размер фона */
+transition: width 0.3s ease-in-out;
+animation: slide 1s linear infinite;
+}
+
+@keyframes slide {
+0% {
+background-position: 0 0;
+}
+100% {
+background-position: 50px 50px; /* Совпадает с background-size */
+}
+}
+
 
 .loader {
   font-size: 10px;
