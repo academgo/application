@@ -341,13 +341,10 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
       image,
       quote,
       description,
+      finalTitle,
+      formTitle,
       inputLabel,
       buttonText,
-      "form": form->{
-        _id,
-        language,
-        form
-      },
     },
     aboutSummary,
     aboutTitle,

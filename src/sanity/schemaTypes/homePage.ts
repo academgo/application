@@ -478,6 +478,16 @@ export default defineType({
           type: "string"
         }),
         defineField({
+          name: "finalTitle",
+          title: "Final Title",
+          type: "string"
+        }),
+        defineField({
+          name: "formTitle",
+          title: "Form Title",
+          type: "string"
+        }),
+        defineField({
           name: "inputLabel",
           title: "Input Label",
           type: "string"
@@ -486,12 +496,6 @@ export default defineType({
           name: "buttonText",
           title: "Button Text",
           type: "string"
-        }),
-        defineField({
-          name: "form",
-          title: "Form",
-          type: "reference", // Используйте ссылку на форму
-          to: [{ type: "formStandardDocument" }]
         })
       ]
     }),

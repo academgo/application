@@ -3,6 +3,7 @@ import styles from "./Survey.module.scss";
 import { Survey as SurveyType } from "@/types/homepage";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
+import MultiStepForm from "../MultiStepForm/MultiStepForm";
 
 type Props = {
   lang: string;
@@ -16,7 +17,15 @@ const Survey: FC<Props> = ({ lang, survey }) => {
       <div className="container">
         <h2 className={styles.title}>{survey.title}</h2>
         <div className={styles.surveyWrapper}>
-          <div className={styles.multiStepForm}>left</div>
+          <div className={styles.multiStepForm}>
+            <MultiStepForm
+              lang={lang}
+              finalTitle={survey.finalTitle}
+              formTitle={survey.formTitle}
+              inputLabel={survey.inputLabel}
+              buttonText={survey.buttonText}
+            />
+          </div>
           <div className={styles.sidebar}>
             <div className={styles.sidebarWrapper}>
               <div className={styles.imageBlock}>

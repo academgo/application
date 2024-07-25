@@ -109,9 +109,10 @@ export type Survey = {
   image: Image;
   quote: string;
   description: string;
+  finalTitle: string;
+  formTitle: string;
   inputLabel: string;
   buttonText: string;
-  form: Form;
 };
 
 export type StepOne = {

@@ -17,9 +17,14 @@ export async function POST(request: NextRequest) {
   if (data.phone && data.country && data.whatsapp) {
     // Обработка данных из существующей формы
     mailBody = `Email: ${data.email}\nPhone: ${data.phone}\nCountry: ${data.country}\nWhatsapp: ${data.whatsapp}`;
-  } else if (data.question1 && data.question2) {
+  } else if (
+    data.question1 &&
+    data.question2 &&
+    data.question3 &&
+    data.question4
+  ) {
     // Обработка данных из новой многошаговой формы
-    mailBody = `Question 1: ${data.question1}\nQuestion 2: ${data.question2}\nEmail: ${data.email}`;
+    mailBody = `Question 1: ${data.question1}\nQuestion 2: ${data.question2}\nQuestion 3: ${data.question3}\nQuestion 4: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
   } else {
     return NextResponse.json({ error: "Invalid data" }, { status: 400 });
   }
