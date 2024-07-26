@@ -7,6 +7,7 @@ import { Footer } from "@/types/footer";
 import { Blog } from "@/types/blog";
 import { BlogPage } from "@/types/blogPage";
 import { SuccessPage } from "@/types/successPage";
+import { NotFoundPage } from "@/types/notFoundPage";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -419,4 +420,26 @@ export async function getSuccessPageByLang(lang: string): Promise<SuccessPage> {
   const successPage = await client.fetch(successPageQuery, { lang });
 
   return successPage;
+}
+
+export async function getNotFoundPageByLang(
+  lang: string
+): Promise<NotFoundPage> {
+  const notFoundPageQuery = groq`*[_type == "notFoundPage" && language == $lang][0] {
+    _id,
+    seo,
+    textStart,
+    textend,
+    description,
+    buttonText,
+    image,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const notFoundPage = await client.fetch(notFoundPageQuery, { lang });
+
+  return notFoundPage;
 }

@@ -10,6 +10,7 @@ import formStandardDocument from "./formStandardDocument";
 import header from "./header";
 import homePage from "./homePage";
 import localizedSlug from "./localizedSlug";
+import notFoundPage from "./notFoundPage";
 import post from "./post";
 import successPage from "./successPage";
 import tabsBlock from "./tabsBlock";
@@ -25,6 +26,7 @@ export const schemaTypes = [
   category,
   blogPage,
   successPage,
+  notFoundPage,
   formStandard,
   formStandardDocument,
   videoShort,
