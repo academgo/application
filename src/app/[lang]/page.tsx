@@ -127,6 +127,7 @@ export default async function Home({ params }: Props) {
           lastSlideTitleHighlight={homePage.lastSlideTitleHighlight}
           lastSlideTitle={homePage.lastSlideTitle}
           lastSlideDescription={homePage.lastSlideDescription}
+          form={homePage.lastSlideForm}
         />
         <Survey lang={params.lang} survey={homePage.survey} />
         <About

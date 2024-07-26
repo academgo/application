@@ -11,6 +11,7 @@ import header from "./header";
 import homePage from "./homePage";
 import localizedSlug from "./localizedSlug";
 import post from "./post";
+import successPage from "./successPage";
 import tabsBlock from "./tabsBlock";
 import textContent from "./textContent";
 import videoShort from "./videoShort";
@@ -23,6 +24,7 @@ export const schemaTypes = [
   blog,
   category,
   blogPage,
+  successPage,
   formStandard,
   formStandardDocument,
   videoShort,

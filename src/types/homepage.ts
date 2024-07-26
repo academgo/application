@@ -235,6 +235,7 @@ export type Homepage = {
   lastSlideTitleHighlight: string;
   lastSlideTitle: string;
   lastSlideDescription: string;
+  lastSlideForm: Form;
   survey: Survey;
   aboutSummary: string;
   aboutTitle: string;

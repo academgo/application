@@ -14,6 +14,7 @@ const SliderMain = ({
   lastSlideTitleHighlight,
   lastSlideTitle,
   lastSlideDescription,
+  form,
   slidesPerView = 4
 }: any) => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -87,7 +88,8 @@ const SliderMain = ({
           ))}
           {lastSlideTitle &&
             lastSlideDescription &&
-            lastSlideTitleHighlight && (
+            lastSlideTitleHighlight &&
+            form && (
               <SwiperSlide key="last-slide">
                 <div
                   ref={el => {
@@ -98,6 +100,7 @@ const SliderMain = ({
                     lastSlideTitleHighlight={lastSlideTitleHighlight}
                     lastSlideTitle={lastSlideTitle}
                     lastSlideDescription={lastSlideDescription}
+                    form={form}
                   />
                 </div>
               </SwiperSlide>

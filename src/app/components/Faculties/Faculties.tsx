@@ -3,6 +3,7 @@ import styles from "./Faculties.module.scss";
 import { Faculty } from "@/types/homepage";
 import SliderMain from "../SliderMain/SliderMain";
 import FacultySlide from "../FacultySlide/FacultySlide";
+import { Form } from "@/types/form";
 
 type Props = {
   facultiesTitle: string;
@@ -10,6 +11,7 @@ type Props = {
   lastSlideTitleHighlight: string;
   lastSlideTitle: string;
   lastSlideDescription: string;
+  form: Form;
 };
 
 const Faculties: FC<Props> = ({
@@ -17,7 +19,8 @@ const Faculties: FC<Props> = ({
   faculties,
   lastSlideTitleHighlight,
   lastSlideTitle,
-  lastSlideDescription
+  lastSlideDescription,
+  form
 }) => {
   return (
     <section className={styles.faculties} id="faculties">
@@ -28,6 +31,7 @@ const Faculties: FC<Props> = ({
           lastSlideTitleHighlight={lastSlideTitleHighlight}
           lastSlideTitle={lastSlideTitle}
           lastSlideDescription={lastSlideDescription}
+          form={form}
         >
           {faculties.map((faculty, index) => (
             <FacultySlide

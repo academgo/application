@@ -1,16 +1,20 @@
 import React, { FC } from "react";
 import styles from "./FacultySlideLast.module.scss";
+import { Form as FormType } from "@/types/form";
+import FormSuperLite from "../FormSuperLite/FormSuperLite";
 
 type Props = {
   lastSlideTitle: string;
   lastSlideDescription: string;
   lastSlideTitleHighlight: string;
+  form: FormType;
 };
 
 const FacultySlideLast: FC<Props> = ({
   lastSlideTitle,
   lastSlideDescription,
-  lastSlideTitleHighlight
+  lastSlideTitleHighlight,
+  form
 }) => {
   return (
     <div className={styles.facultySlideLast}>
@@ -35,6 +39,10 @@ const FacultySlideLast: FC<Props> = ({
           {lastSlideTitle}
         </h3>
         <p className={styles.text}>{lastSlideDescription}</p>
+        <FormSuperLite
+          form={form}
+          // offerButtonCustomText={offerButtonCustomText}
+        />
       </div>
     </div>
   );

@@ -28,12 +28,29 @@ export default defineConfig({
         "footer",
         "category",
         "blog",
-        "blogPage"
+        "blogPage",
+        "successPage"
       ]
     })
   ],
 
   schema: {
-    types: schemaTypes
+    types: schemaTypes,
+    // Filter out the default template for new type documents
+    templates: prev =>
+      prev.filter(
+        template =>
+          ![
+            "post",
+            "header",
+            "homepage",
+            "formStandardDocument",
+            "footer",
+            "category",
+            "blog",
+            "blogPage",
+            "successPage"
+          ].includes(template.id)
+      )
   }
 });

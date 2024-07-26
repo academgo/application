@@ -17,6 +17,7 @@ type FormData = {
   question3: string;
   question4: string;
   whatsapp: string;
+  agreedToPolicy: boolean;
 };
 
 type Props = {
@@ -40,7 +41,8 @@ const MultiStepForm = ({
     question2: "",
     question3: "",
     question4: "",
-    whatsapp: ""
+    whatsapp: "",
+    agreedToPolicy: false
   });
 
   const uniqueId = useId();
@@ -80,13 +82,36 @@ const MultiStepForm = ({
       question4: Yup.string().required("This field is required")
     }),
     Yup.object({
-      whatsapp: Yup.string().required("This field is required")
+      whatsapp: Yup.string().required("This field is required"),
+      agreedToPolicy: Yup.boolean()
+        .oneOf(
+          [true],
+          lang === "en"
+            ? "You must accept the terms and conditions"
+            : "Вы должны принять условия"
+        )
+        .required(
+          lang === "en"
+            ? "You must accept the terms and conditions"
+            : "Вы должны принять условия"
+        )
     })
   ];
 
-  const handleNext = (values: FormData) => {
-    setFormData(prev => ({ ...prev, ...values }));
-    setStep(step + 1);
+  const handleNext = async (values: FormData, validateForm: any) => {
+    const errors = await validateForm();
+    if (Object.keys(errors).length === 0) {
+      setFormData(prev => ({ ...prev, ...values }));
+      setStep(step + 1);
+    } else {
+      // Highlight errors
+      Object.keys(errors).forEach(key => {
+        const element = document.querySelector(`[name="${key}"]`);
+        if (element) {
+          element.classList.add(styles.errorHighlight);
+        }
+      });
+    }
   };
 
   const handlePrev = () => {
@@ -100,9 +125,8 @@ const MultiStepForm = ({
     setSubmitting(true);
     try {
       await axios.post("/api/email", values);
-      // alert("Email sent successfully!");
       setTimeout(() => {
-        router.push("/success"); // Перенаправление на страницу success
+        router.push("/success");
       }, 1000);
     } catch (error) {
       alert("Error sending email");
@@ -118,9 +142,13 @@ const MultiStepForm = ({
       <Formik
         initialValues={formData}
         validationSchema={validationSchema[step - 1]}
-        onSubmit={step === 5 ? handleSubmit : handleNext}
+        onSubmit={
+          step === 5
+            ? handleSubmit
+            : (values, actions) => handleNext(values, actions.validateForm)
+        }
       >
-        {({ isSubmitting, values }) => (
+        {({ isSubmitting, values, validateForm }) => (
           <Form className={styles.customForm}>
             <div className={styles.progressBar}>
               <div
@@ -207,7 +235,7 @@ const MultiStepForm = ({
                 <div className={styles.buttonsBlock}>
                   <button
                     type="button"
-                    onClick={() => handleNext(values)}
+                    onClick={() => handleNext(values, validateForm)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -288,7 +316,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(values)}
+                    onClick={() => handleNext(values, validateForm)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -417,7 +445,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(values)}
+                    onClick={() => handleNext(values, validateForm)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -514,7 +542,7 @@ const MultiStepForm = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNext(values)}
+                    onClick={() => handleNext(values, validateForm)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -552,17 +580,6 @@ const MultiStepForm = ({
                           className={styles.error}
                         />
                       </div>
-                      <button
-                        type="submit"
-                        className={styles.sentBtn}
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? (
-                          <div className={styles.loader}></div>
-                        ) : (
-                          buttonText
-                        )}
-                      </button>
                       <div className={styles.customCheckbox}>
                         <Field
                           type="checkbox"
@@ -588,6 +605,22 @@ const MultiStepForm = ({
                           </Link>
                         </label>
                       </div>
+                      <ErrorMessage
+                        name="agreedToPolicy"
+                        component="div"
+                        className={styles.error}
+                      />
+                      <button
+                        type="submit"
+                        className={styles.sentBtn}
+                        disabled={isSubmitting || !values.agreedToPolicy}
+                      >
+                        {isSubmitting ? (
+                          <div className={styles.loader}></div>
+                        ) : (
+                          buttonText
+                        )}
+                      </button>
                     </div>
                   </div>
                 </div>

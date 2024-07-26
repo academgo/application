@@ -213,7 +213,8 @@
   font-size: 15px;
 
   @media screen and (min-width: 768px) {
-    top: -3px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 

@@ -482,38 +482,48 @@
 }
 
 .progressBar {
-width: 100%;
-background-color: #f3f3f3;
-border-radius: 25px;
-overflow: hidden;
-height: 25px;
-position: relative;
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 25px;
+  position: relative;
 }
 
 .progressFill {
-height: 100%;
-background: linear-gradient(
--45deg,
-#F39708 25%,
-#f3b44f 25%,
-#f3b44f 50%,
-#F39708 50%,
-#F39708 75%,
-#f3b44f 75%,
-#f3b44f 100%
-);
-background-size: 50px 50px; /* Настройте размер фона */
-transition: width 0.3s ease-in-out;
-animation: slide 1s linear infinite;
+  height: 100%;
+  background: linear-gradient(
+  -45deg,
+  #F39708 25%,
+  #f3b44f 25%,
+  #f3b44f 50%,
+  #F39708 50%,
+  #F39708 75%,
+  #f3b44f 75%,
+  #f3b44f 100%
+  );
+  background-size: 50px 50px; /* Настройте размер фона */
+  transition: width 0.3s ease-in-out;
+  animation: slide 1s linear infinite;
 }
 
 @keyframes slide {
-0% {
-background-position: 0 0;
+  0% {
+  background-position: 0 0;
+  }
+  100% {
+  background-position: 50px 50px; /* Совпадает с background-size */
+  }
 }
-100% {
-background-position: 50px 50px; /* Совпадает с background-size */
-}
+
+.progressText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #091728;
 }
 
 

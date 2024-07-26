@@ -6,6 +6,7 @@ import { Homepage } from "@/types/homepage";
 import { Footer } from "@/types/footer";
 import { Blog } from "@/types/blog";
 import { BlogPage } from "@/types/blogPage";
+import { SuccessPage } from "@/types/successPage";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -336,6 +337,11 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     lastSlideTitleHighlight,
     lastSlideTitle,
     lastSlideDescription,
+    "lastSlideForm": lastSlideForm->{
+      _id,
+      language,
+      form
+    },
     "survey": survey{
       title,
       image,
@@ -393,4 +399,24 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
   const homepage = await client.fetch(homepageQuery, { lang });
 
   return homepage;
+}
+
+export async function getSuccessPageByLang(lang: string): Promise<SuccessPage> {
+  const successPageQuery = groq`*[_type == "successPage" && language == $lang][0] {
+    _id,
+    seo,
+    successTextstart,
+    successTextend,
+    description,
+    socialIcons,
+    image,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const successPage = await client.fetch(successPageQuery, { lang });
+
+  return successPage;
 }

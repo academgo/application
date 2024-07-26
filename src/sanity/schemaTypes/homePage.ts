@@ -451,6 +451,12 @@ export default defineType({
       title: "Last Slide Description",
       type: "string"
     }),
+    defineField({
+      name: "lastSlideForm",
+      title: "Last Slide Form",
+      type: "reference", // Используйте ссылку на форму
+      to: [{ type: "formStandardDocument" }]
+    }),
     // survey block
     defineField({
       name: "survey",
