@@ -68,10 +68,10 @@
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 65px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 500;
-    line-height: 75px; /* 115.385% */
+    line-height: 100%;
     letter-spacing: -4.55px;
     max-width: 100%;
   }
@@ -98,7 +98,7 @@
     font-weight: 500;
     line-height: 42px;
     letter-spacing: -2.24px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 
@@ -106,10 +106,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  @media screen and (min-width: 768px) {
-    gap: 16px;
-  }
 }
 
 .offerListItem {
@@ -123,7 +119,7 @@
   padding-left: 20px;
 
   @media screen and (min-width: 768px) {
-    font-size: 32px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -199,7 +195,7 @@
     letter-spacing: -1.89px;
     max-width: 230px;
     position: absolute;
-    top: 20px;
+    top: 35px;
     right: 150px;
   }
 }
@@ -243,7 +239,7 @@
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 30px;
-    margin-top: 73px;
+    margin-top: 50px;
   }
 
 }
