@@ -68,6 +68,7 @@ const Hero: FC<Props> = ({
                 src={urlFor(heroImage).url()}
                 fill={true}
                 className={styles.logoImage}
+                quality={100}
               />
             </div>
             <div className={styles.flagsBlock}>

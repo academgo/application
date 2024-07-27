@@ -1,7 +1,7 @@
 .success {
   margin-top: 100px;
   margin-bottom: clamp(1.563rem, 0.781rem + 3.13vw, 3.125rem);
-  height: 60lvh;
+  height: 40lvh;
 
   @media (min-width: 768px) {
     height: auto;
@@ -79,6 +79,11 @@
 .socialIcons {
   display: flex;
   gap: 10px;
+}
+
+.icon {
+  width: clamp(2.188rem, 0.938rem + 5vw, 4.688rem);
+  height: clamp(2.188rem, 0.938rem + 5vw, 4.688rem);
 }
 
 .imageBlock {

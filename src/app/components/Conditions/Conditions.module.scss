@@ -244,18 +244,42 @@
   .posterImage {
     position: absolute;
     right: 80px;
-    bottom: 0;
-    width: 400px;
+    top: -10px;
+    width: 350px;
     height: auto;
     object-fit: cover;
     transition: all 0.3s ease;
 
     @media screen and (max-width: 980px) {
       right: 0;
+      top: unset;
+      bottom: 0;
+      max-width: 330px;
     }
   
   }
- }
+
+  .decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @media screen and (max-width: 980px) {
+      display: none;
+    }
+  }
+
+  .decorMobile {
+    display: none;
+
+    @media screen and (max-width: 980px) {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
 
 .conditionsTitle {
   color: #091728;

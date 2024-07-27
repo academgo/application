@@ -169,7 +169,7 @@ export async function getNinePostsByLang(
     { lang },
     {
       next: {
-        revalidate: 3600
+        revalidate: 60
       }
     }
   );
@@ -230,7 +230,15 @@ export async function getBlogPostsByLangWithPagination(
     }
   `;
 
-  const blogPosts = await client.fetch(blogPostsQuery, { lang, limit, offset });
+  const blogPosts = await client.fetch(
+    blogPostsQuery,
+    { lang, limit, offset },
+    {
+      next: {
+        revalidate: 60
+      }
+    }
+  );
 
   return blogPosts;
 }
@@ -397,7 +405,15 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     },
   }`;
 
-  const homepage = await client.fetch(homepageQuery, { lang });
+  const homepage = await client.fetch(
+    homepageQuery,
+    { lang },
+    {
+      next: {
+        revalidate: 60
+      }
+    }
+  );
 
   return homepage;
 }

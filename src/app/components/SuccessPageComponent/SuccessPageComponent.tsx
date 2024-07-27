@@ -38,6 +38,7 @@ const SuccessPageComponent: FC<Props> = ({ successPage, lang }) => {
                       alt={icon.title}
                       width={75}
                       height={75}
+                      className={styles.icon}
                     />
                   </Link>
                 ))}
