@@ -608,7 +608,7 @@ const MultiStepForm = ({
                       <ErrorMessage
                         name="agreedToPolicy"
                         component="div"
-                        className={styles.error}
+                        className={styles.errorCheckbox}
                       />
                       <button
                         type="submit"

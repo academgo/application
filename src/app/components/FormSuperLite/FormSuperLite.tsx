@@ -149,6 +149,11 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 name="agreedToPolicy"
                 id={`agreedToPolicy-${uniqueId}`}
               />
+              <ErrorMessage
+                name="agreedToPolicy"
+                component="div"
+                className={styles.errorCheckbox}
+              />
               <label htmlFor={`agreedToPolicy-${uniqueId}`}>
                 {dataForm.agreementText}{" "}
                 <Link

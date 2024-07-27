@@ -195,6 +195,11 @@ const FormStandard: FC<ContactFormProps> = ({
                 name="agreedToPolicy"
                 id="agreedToPolicy"
               />
+              <ErrorMessage
+                name="agreedToPolicy"
+                component="div"
+                className={styles.errorCheckbox}
+              />
               <label htmlFor="agreedToPolicy">
                 {dataForm.agreementText}{" "}
                 <Link

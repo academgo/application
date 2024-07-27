@@ -125,7 +125,19 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
-  color: #1A2644;
+  color: #e61212;
+  width: 100%;
+  text-align: center;
+}
+
+.errorCheckbox {
+  position: absolute;
+  z-index: 1;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #e61212;
   width: 100%;
   text-align: center;
 }
@@ -157,6 +169,7 @@
   align-items: center;
   // padding-inline: 10px;
   margin-bottom: 15px;
+  position: relative;
 
 }
 
