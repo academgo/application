@@ -2,18 +2,6 @@
   position: relative;
 }
 
-// .stepCarousel {
-//   display: flex;
-//   width: max-content;
-//   animation: scroll 40s linear infinite;
-//   background-color: #fff;
-//   padding: 10px 0;
-
-//   @media screen and (min-width: 768px) {
-//     padding: 23px 0;
-//   }
-// }
-
 .step {
   flex: 0 0 auto;
   display: flex;
@@ -22,15 +10,6 @@
   gap: 20px;
   padding-right: 20px;
 }
-
-// @keyframes scroll {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(-50%);
-//   }
-// }
 
 .number {
   color: #091728;

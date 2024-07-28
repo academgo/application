@@ -24,8 +24,11 @@ const StepCarousel: FC<Props> = ({ children, style }) => {
   }, []);
 
   return (
-    <div style={style} className={styles.stepCarousel} ref={carouselRef}>
-      {children}
+    <div style={style} className={styles.wrapper}>
+      <div className={styles.stepCarousel} ref={carouselRef}>
+        {children}
+        {children}
+      </div>
     </div>
   );
 };

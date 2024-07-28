@@ -1,9 +1,13 @@
+.wrapper {
+  overflow: hidden;
+}
+
 .stepCarousel {
   display: flex;
-  width: max-content;
   animation: scroll 40s linear infinite;
   background-color: #fff;
   padding: 10px 0;
+  width: max-content;
 
   @media screen and (min-width: 768px) {
     padding: 23px 0;
