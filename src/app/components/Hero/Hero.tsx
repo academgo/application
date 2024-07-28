@@ -47,6 +47,7 @@ const Hero: FC<Props> = ({
                   {mainHeadingStart}{" "}
                   <span className={styles.highlight}>
                     {mainHeadingHighlight}
+                    <span className={styles.tooltip}>{tooltip}</span>
                   </span>{" "}
                   {mainHeadingContinue}{" "}
                   <PL title="Poland" className={styles.flagIcon} />{" "}

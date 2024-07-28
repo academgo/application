@@ -60,6 +60,7 @@
 .highlight {
   color: #F39708;
   position: relative;
+  cursor: pointer;
 
   &::after {
     content: '';
@@ -70,7 +71,46 @@
     height: 4px;
     background-color: #F39708;
   }
+
+  @media screen and (min-width: 768px) {
+    
+    &:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
+
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #F5F5F5;
+    color: #091728;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px 15px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    // transform: translateX(-50%);
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0;
+    transition: opacity 0.3s;
+    width: 350px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%; // Указывает на элемент снизу
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+  }
 
 .flagIcon {
   width: 50px;
