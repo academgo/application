@@ -86,10 +86,8 @@ const FormStandard: FC<ContactFormProps> = ({
       if (response.data.message === "Email sent") {
         resetForm({});
         setFilled({ phone: false, country: false, email: false }); // Reset the filled state
-        setTimeout(() => {
-          onFormSubmitSuccess && onFormSubmitSuccess();
-          router.push("/success"); // Перенаправление на страницу success
-        }, 5000);
+        onFormSubmitSuccess && onFormSubmitSuccess();
+        router.push("/success"); // Перенаправление на страницу success
       } else {
         throw new Error("Server responded with an error");
       }

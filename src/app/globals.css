@@ -158,3 +158,7 @@ body {
       }
     } 
 /* styles for loader */
+
+.no-scroll {
+  overflow: hidden;
+}

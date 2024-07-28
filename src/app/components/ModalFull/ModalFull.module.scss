@@ -40,20 +40,22 @@
   justify-content: center;
   align-items: center;
 
-  // @media (max-width: 570px) {
-  //   right: 5px;
-  // }
+  @media (max-width: 768px) {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .popupContent {
-  // width: 500px;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 
-  // @media (max-width: 505px) {
-  //   width: 350px;
-  // }
+  @media (max-width: 505px) {
+    max-width: 90%;
+  }
 
   // @media (max-width: 360px) {
   //   width: 310px;

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Modal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ModalFull.module.scss";
@@ -33,6 +33,18 @@ type Props = {
 
 const ModalFull = ({ lang, formDocument }: Props) => {
   const { isModalOpen, closeModal } = useModal(); // Используйте хук useModal для управления состоянием модального окна
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isModalOpen]);
 
   // console.log("formDocument", formDocument);
   return (
