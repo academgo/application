@@ -65,6 +65,8 @@ const SuccessPage = async ({ params }: Props) => {
       : acc;
   }, []);
 
+  if (!notFoundPage) return null;
+
   return (
     <>
       <Header params={params} translations={translations} />

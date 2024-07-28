@@ -1,0 +1,189 @@
+.modalTitle {
+  color: #091728;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 125% */
+  letter-spacing: -0.64px;
+  max-width: 350px;
+  margin-bottom: clamp(1.25rem, 0.938rem + 1.25vw, 1.875rem);
+
+  @media screen and (min-width: 570px) {
+    letter-spacing: -2.8px;
+  }
+}
+
+.modalText {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+  margin-bottom: clamp(1.25rem, 0.938rem + 1.25vw, 1.875rem);
+}
+
+.closeButton {
+  position: absolute;
+  // top: 15px;
+  // right: 15px;
+  top: 30px;
+  right: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #F6F6F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // @media (max-width: 570px) {
+  //   right: 5px;
+  // }
+}
+
+.popupContent {
+  // width: 500px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  // @media (max-width: 505px) {
+  //   width: 350px;
+  // }
+
+  // @media (max-width: 360px) {
+  //   width: 310px;
+  // }
+}
+
+.popupContentWrapper {
+  position: relative;
+  background-color: #fff;
+  border-radius: 35px;
+  overflow: hidden;
+  padding-top: clamp(1.875rem, 0.563rem + 5.25vw, 4.5rem);
+  padding-left: clamp(1.875rem, 0.563rem + 5.25vw, 4.5rem);
+  padding-right: clamp(2.813rem, 1rem + 7.25vw, 6.438rem);
+  padding-bottom: clamp(1.875rem, 0.563rem + 5.25vw, 4.5rem);
+
+  // @media (max-width: 570px) {
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
+}
+
+.imageBlock {
+  position: relative;
+}
+
+.mainImage {
+  border-radius: 15px;
+  border: 4px solid #FFA800;
+  aspect-ratio: 16/9;
+
+  @media screen and (max-width: 880px) {
+    aspect-ratio: 1/1;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px; /* Выберите высоту, которая подходит для вашего дизайна */
+  opacity: 0.8;
+  background: #032540;
+  border-radius: 15px;
+  border: 4px solid #FFA800;
+  aspect-ratio: 10/6;
+}
+
+.imageContent {
+  max-width: 350px;
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  transform: translate(-5%, -85%);
+
+  @media screen and (max-width: 880px) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    text-align: center;
+    padding: 40px 40px;
+  }
+
+  @media screen and (max-width: 570px) {
+    padding: 20px 20px;
+  }
+}
+.imageContentTitle {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 880px) {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 570px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 18px;
+  }
+}
+.imageContentLogo {
+  max-width: 188px;
+
+  @media screen and (max-width: 880px) {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 570px) {
+    max-width: 110px;
+  }
+}
+
+.formBlock {
+  position: absolute;
+  top: -20px;
+  left: 40%;
+  width: 55%;
+  border-radius: 15px;
+  border: 4px solid #FFA800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 40px;
+  background: #143258;
+
+  @media screen and (max-width: 880px) {
+    width: 100%;
+    top: 30%;
+    left: 0;
+  }
+
+  @media screen and (max-width: 570px) {
+    padding: 10px 10px;
+  }
+}
+
+.formInner label {
+  color: #091728 !important;
+}

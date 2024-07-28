@@ -64,6 +64,26 @@ body {
   display: none !important;
 }
 
+.PhoneInputInternationalIconPhone {
+  stroke: #F39708; /* Цвет линии */
+  fill: #F39708; /* Цвет заливки */
+  stroke-width: 3px; /* Толщина линии */
+  width: 32px; /* Ширина значка */
+  height: 32px; /* Высота значка */
+}
+
+.PhoneInputInternationalIconGlobe {
+  stroke: #F39708; /* Цвет линии */
+  stroke-width: 3px; /* Толщина линии */
+  width: 32px; /* Ширина значка */
+  height: 32px; /* Высота значка */
+}
+
+.PhoneInputCountryIcon {
+  margin-right: 8px; /* Отступ справа */
+}
+
+
 .grayscale-flag img {
   filter: grayscale(100%);
 }

@@ -1,0 +1,25 @@
+.buttonModal {
+  padding: 8px 20px;
+  color: #FFF;
+  border: 1px solid #F39708;
+  border-radius: 162.353px;
+  background: #F39708;
+  text-align: center;
+  font-size: clamp(0.875rem, 0.688rem + 0.75vw, 1.25rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  transition: all 0.2s ease;
+
+  @media screen and (min-width: 768px){
+    border-radius: 500px;
+    padding: 27px 64px;
+    letter-spacing: -0.6px;
+
+    &:hover {
+      background: #fff;
+      color: #F39708;
+    }
+  }
+}

@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Header from "../components/Header/Header";
-import { getHomePageByLang } from "../../sanity/sanity.utils";
+import {
+  getFormStandardDocumentByLang,
+  getHomePageByLang
+} from "../../sanity/sanity.utils";
 import { i18n } from "@/i18n.config";
 import { Translation } from "@/types/post";
 import Hero from "../components/Hero/Hero";
@@ -22,6 +25,8 @@ import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
 import MultiStepForm from "../components/MultiStepForm/MultiStepForm";
 import Survey from "../components/Survey/Survey";
+import ModalFull from "../components/ModalFull/ModalFull";
+import { FormStandardDocument } from "@/types/formStandardDocument";
 // import Signup from "../components/Signup/Signup";
 
 type Props = {
@@ -39,6 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Home({ params }: Props) {
   const homePage = await getHomePageByLang(params.lang);
+
+  const formDocument: FormStandardDocument =
+    await getFormStandardDocumentByLang(params.lang);
 
   // console.log("homePage", homePage);
 
@@ -162,6 +170,7 @@ export default async function Home({ params }: Props) {
         {/* <Consultation consultationBlock={homePage.consultationBlock} /> */}
       </main>
       <Footer params={params} />
+      <ModalFull lang={params.lang} formDocument={formDocument} />
     </>
   );
 }

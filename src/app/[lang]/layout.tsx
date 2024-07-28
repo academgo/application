@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { ModalProvider } from "../context/ModalContext";
+import ModalFull from "../components/ModalFull/ModalFull";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +28,10 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <Header params={params} /> */}
         {/* <main>{children}</main> */}
-        {children}
+        <ModalProvider>
+          {children}
+          {/* <ModalFull lang={params.lang} /> */}
+        </ModalProvider>
         {/* <Footer params={params} /> */}
       </body>
     </html>

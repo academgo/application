@@ -14,7 +14,7 @@ type Props = {
 const Footer = async ({ params }: Props) => {
   const data = await getFooterByLang(params.lang);
 
-  // console.log("Footer data", data);
+  // console.log("Footer data", data.consultationBlock);
 
   return (
     <>

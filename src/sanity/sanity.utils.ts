@@ -8,6 +8,7 @@ import { Blog } from "@/types/blog";
 import { BlogPage } from "@/types/blogPage";
 import { SuccessPage } from "@/types/successPage";
 import { NotFoundPage } from "@/types/notFoundPage";
+import { FormStandardDocument } from "@/types/formStandardDocument";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -458,4 +459,20 @@ export async function getNotFoundPageByLang(
   const notFoundPage = await client.fetch(notFoundPageQuery, { lang });
 
   return notFoundPage;
+}
+
+export async function getFormStandardDocumentByLang(
+  lang: string
+): Promise<FormStandardDocument> {
+  const formStandardDocumentQuery = groq`*[_type == "formStandardDocument" && language == $lang][0] {
+  _id,
+  form,
+  language
+  }`;
+
+  const formStandardDocument = await client.fetch(formStandardDocumentQuery, {
+    lang
+  });
+
+  return formStandardDocument;
 }

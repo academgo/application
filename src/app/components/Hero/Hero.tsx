@@ -5,6 +5,7 @@ import { PL } from "country-flag-icons/react/1x1";
 import FlagsCarousel from "../FlagsCarousel/FlagsCarousel";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
+import { ButtonModal } from "../ButtonModal/ButtonModal";
 
 type Props = {
   mainHeadingStart: string;
@@ -57,7 +58,8 @@ const Hero: FC<Props> = ({
                 <p className={styles.descriptionSmall}>{descriptionSmall}</p>
               </div>
               <div className={styles.buttonBlock}>
-                <button className={styles.heroButton}>{heroButtonText}</button>
+                <ButtonModal>{heroButtonText}</ButtonModal>
+                {/* <button className={styles.heroButton}>{heroButtonText}</button> */}
               </div>
             </div>
           </div>

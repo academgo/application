@@ -116,12 +116,12 @@ const FormStandard: FC<ContactFormProps> = ({
             <div className={styles.inputWrapper}>
               <label
                 htmlFor="phone"
-                className={`${styles.label} ${filled.phone ? styles.filled : ""}`}
+                className={`${styles.label} ${styles.labelPhone} ${filled.phone ? styles.filled : ""}`}
               >
                 {dataForm.inputPhone}
               </label>
               <PhoneInput
-                defaultCountry="PL"
+                // defaultCountry="PL"
                 id="phone"
                 name="phone"
                 className={`${styles.inputField}`}
