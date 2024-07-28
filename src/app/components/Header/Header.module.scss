@@ -33,6 +33,7 @@
 .logoImageMobile {
   position: relative;
   z-index: 101;
+  transition: all 0.3s ease;
   
   @media screen and (min-width: 1121px){
     display: none;
@@ -65,8 +66,8 @@
   @media screen and (max-width: 768px){
     position: absolute;
     top: 0;
-    left: 200vw;
-    right: 0;
+    right: 200vw;
+    left: 0;
     bottom: 0;
     z-index: 100;
     background: #112546;
@@ -80,7 +81,7 @@
 }
 
 .navWrapperOpen {
-  left: 0;
+  right: 0;
 }
 
 .contacts {
@@ -90,6 +91,10 @@
 
   @media screen and (max-width: 1600px){
     gap: 30px;
+  }
+
+  @media screen and (max-width: 325px){
+    gap: 15px;
   }
 }
 

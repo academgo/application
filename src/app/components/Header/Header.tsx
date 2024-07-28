@@ -34,7 +34,14 @@ const Header = async ({ translations, params }: Props) => {
                 src={urlFor(data.logoMobile).url()}
                 width={40}
                 height={40}
-                className={styles.logoImageMobile}
+                className={`${styles.logoImageMobile} logoImageMobile`}
+              />
+              <Image
+                alt="Academgo Logo"
+                src={urlFor(data.logoMobileActive).url()}
+                width={40}
+                height={40}
+                className={`${styles.logoImageMobile} logoImageMobileActive`}
               />
             </Link>
             <p className={styles.description}>{data.description}</p>

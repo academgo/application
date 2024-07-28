@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./BurgerMenu.module.scss";
 
 type Props = {
@@ -14,6 +14,14 @@ const BurgerMenu: React.FC<Props> = ({ onToggle }) => {
     setIsMenuOpen(!isMenuOpen);
     onToggle();
   };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  }, [isMenuOpen]);
 
   return (
     <div className={styles.burgerMenu}>
