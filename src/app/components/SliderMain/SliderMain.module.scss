@@ -18,17 +18,27 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    background-color: #F39708;
-
-    .arrow {
-      color: #fff;
-    }
-  }
-
   @media screen and (min-width: 768px){
     width: 60px;
     height: 60px;
+
+    &:hover {
+      background-color: #F39708;
+
+      .arrow {
+        color: #fff;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    &:focus {
+      background-color: #F39708;
+
+      .arrow {
+        color: #fff;
+      }
+    }
   }
 
   .arrow {

@@ -40,6 +40,14 @@ const NavLink = ({ href, children }: Props) => {
     };
   }, []);
 
+  useEffect(() => {
+    // Прокрутка к элементу при загрузке страницы, если есть хэш в URL
+    if (window.location.hash) {
+      const sectionId = window.location.hash.substring(1);
+      scrollToSection(sectionId);
+    }
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
