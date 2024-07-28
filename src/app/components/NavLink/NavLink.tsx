@@ -10,8 +10,12 @@ type Props = {
 
 const NavLink = ({ href, children }: Props) => {
   const [activeSection, setActiveSection] = useState("");
+  const [isHomePage, setIsHomePage] = useState(false);
 
   useEffect(() => {
+    // Проверяем, находимся ли мы на главной странице
+    setIsHomePage(window.location.pathname === "/");
+
     const handleScroll = () => {
       let closestSectionId = "";
       let smallestDistance = Infinity;
@@ -45,6 +49,9 @@ const NavLink = ({ href, children }: Props) => {
         top: offset,
         behavior: "smooth"
       });
+    } else if (!isHomePage) {
+      // Перенаправление на главную страницу, если элемент не найден и не на главной странице
+      window.location.href = `/#${sectionId}`;
     }
   };
 

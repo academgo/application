@@ -1,3 +1,5 @@
+// NavWrapper.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -18,14 +20,18 @@ const NavWrapper: React.FC<Props> = ({ navLinks, params }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       <div
         className={`${styles.navWrapper} ${isMenuOpen ? styles.navWrapperOpen : ""}`}
       >
-        <NavLinks navLinks={navLinks} params={params} />
+        <NavLinks navLinks={navLinks} params={params} closeMenu={closeMenu} />
       </div>
-      <BurgerMenu onToggle={toggleMenu} />
+      <BurgerMenu isMenuOpen={isMenuOpen} onToggle={toggleMenu} />
     </>
   );
 };

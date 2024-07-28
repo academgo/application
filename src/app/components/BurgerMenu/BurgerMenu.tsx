@@ -1,17 +1,17 @@
+// BurgerMenu.tsx
+
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "./BurgerMenu.module.scss";
 
 type Props = {
+  isMenuOpen: boolean;
   onToggle: () => void;
 };
 
-const BurgerMenu: React.FC<Props> = ({ onToggle }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const BurgerMenu: React.FC<Props> = ({ isMenuOpen, onToggle }) => {
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
     onToggle();
   };
 

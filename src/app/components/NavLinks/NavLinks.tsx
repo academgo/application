@@ -7,12 +7,17 @@ import { useEffect, useState } from "react";
 type Props = {
   navLinks: HeaderType["navLinks"];
   params: { lang: string };
+  closeMenu: () => void;
 };
 
-const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
+const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
   const [activeSection, setActiveSection] = useState("");
+  const [isHomePage, setIsHomePage] = useState(false);
 
   useEffect(() => {
+    // Проверяем, находимся ли мы на главной странице
+    setIsHomePage(window.location.pathname === `/${params.lang}`);
+
     const handleScroll = () => {
       let closestSectionId = "";
       let smallestDistance = Infinity;
@@ -30,14 +35,12 @@ const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
       setActiveSection(closestSectionId);
     };
 
-    // Подписки
     window.addEventListener("scroll", handleScroll);
 
-    // Отписки
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [navLinks, params.lang]);
 
   const scrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
@@ -48,6 +51,9 @@ const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
         top: offset,
         behavior: "smooth"
       });
+    } else if (!isHomePage) {
+      // Перенаправление на главную страницу, если элемент не найден и не на главной странице
+      window.location.href = `/${params.lang}/#${sectionId}`;
     }
   };
 
@@ -63,6 +69,7 @@ const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
             <Link
               href={`/${params.lang}/${link.link}`}
               className={styles.navLink}
+              onClick={closeMenu}
             >
               {link.label}
             </Link>
@@ -71,6 +78,7 @@ const NavLinks: React.FC<Props> = ({ navLinks, params }) => {
               onClick={e => {
                 e.preventDefault();
                 scrollToSection(link.link);
+                closeMenu();
               }}
               className={styles.navLink}
             >
