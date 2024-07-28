@@ -24,6 +24,7 @@
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
+    "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.2.1",
     "react-modal": "^3.16.1",
     "react-phone-number-input": "^3.4.3",
