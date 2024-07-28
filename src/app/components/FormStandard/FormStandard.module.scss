@@ -1,6 +1,8 @@
 .inputWrapper {
   margin-bottom: 10px;
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .label {
@@ -69,7 +71,7 @@
   border: 1px solid #F39708;
   border-radius: 3423.75px;
   background: #F39708;
-  padding: 16.807px 29.88px;
+  padding: 20px 28px;
   color: #FFF;
   text-align: center;
   font-size: 12px;

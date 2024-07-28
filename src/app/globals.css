@@ -83,6 +83,12 @@ body {
   margin-right: 8px; /* Отступ справа */
 }
 
+.PhoneInputInput {
+  width: 100% !important;
+  box-sizing: border-box;
+  font-size: transparent;
+}
+
 
 .grayscale-flag img {
   filter: grayscale(100%);

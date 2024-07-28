@@ -314,7 +314,9 @@
 
 .inputField {
   width: 100%;
-  padding: 20px 28px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-inline: clamp(0.313rem, -0.256rem + 2.84vw, 1.875rem);
   font-size: 1rem;
   // border: 1px solid #ccc;
   border-radius: 311.25px;

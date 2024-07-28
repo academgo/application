@@ -110,6 +110,10 @@
       border-style: solid;
       border-color: black transparent transparent transparent;
     }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
 .flagIcon {
