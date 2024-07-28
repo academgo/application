@@ -27,6 +27,7 @@ import MultiStepForm from "../components/MultiStepForm/MultiStepForm";
 import Survey from "../components/Survey/Survey";
 import ModalFull from "../components/ModalFull/ModalFull";
 import { FormStandardDocument } from "@/types/formStandardDocument";
+import Universities from "../components/Universities/Universities";
 // import Signup from "../components/Signup/Signup";
 
 type Props = {
@@ -112,6 +113,7 @@ export default async function Home({ params }: Props) {
           conditionThird={homePage.conditionThird}
           conditionFourth={homePage.conditionFourth}
         />
+        <Universities data={homePage.universitiesBlock} />
         <VideosSection
           videosTitle={homePage.videosTitle}
           videos={homePage.videos}

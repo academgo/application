@@ -1,0 +1,17 @@
+.title {
+  color: #091728;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px; /* 136.364% */
+  letter-spacing: -3.85px;
+  margin-bottom: clamp(1.563rem, 0.469rem + 4.38vw, 3.75rem);
+  max-width: 1000px;
+
+  @media screen and (max-width: 980px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: -1.68px;
+  }
+}

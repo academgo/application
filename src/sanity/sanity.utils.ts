@@ -325,6 +325,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionSecond,
     conditionThird,
     conditionFourth,
+    universitiesBlock,
     videosTitle,
     videos,
     offerTitle,

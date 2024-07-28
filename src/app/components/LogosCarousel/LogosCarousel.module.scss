@@ -1,0 +1,76 @@
+.scrollContainer {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+
+.carouselPrimary,
+.carouselSecondary {
+  top: 26%;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.carouselPrimary {
+  display: flex;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+.carouselSecondary {
+  animation: scroll-horizontal 20s linear infinite;
+  animation-delay: 10s;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.carouselPrimary:hover,
+.carouselPrimary:hover~.carouselSecondary {
+  animation-play-state: paused;
+}
+
+.carouselSecondary:hover {
+  animation-play-state: paused;
+}
+
+.scrollContainer:hover > .carouselPrimary:not(:hover) {
+  animation-play-state: paused;
+}
+
+.flagLink {
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+  // position: relative;
+  flex-shrink: 0;
+  margin-left: 20px;
+  display: block;
+  margin-left: 30px;
+  aspect-ratio: 500/208;
+  opacity: 0.2;
+  transition: opacity 0.2s ease-in-out;
+
+  @media screen and (min-width: 980px) {
+    margin-left: clamp(1.875rem, 0.284rem + 7.95vw, 6.25rem);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

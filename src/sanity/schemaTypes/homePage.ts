@@ -213,6 +213,82 @@ export default defineType({
       ]
     }),
     defineField({
+      name: "universitiesBlock",
+      title: "Universities Block",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "universities",
+          title: "Universities",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "title",
+                  title: "University Name",
+                  type: "string"
+                }),
+                defineField({
+                  name: "logo",
+                  title: "Logo",
+                  type: "image"
+                }),
+                defineField({
+                  name: "link",
+                  title: "Link",
+                  type: "string"
+                })
+              ]
+            }
+          ]
+        }),
+        defineField({
+          name: "programHighlight",
+          title: "Program Highlight",
+          type: "string"
+        }),
+        defineField({
+          name: "programTitle",
+          title: "Program Title",
+          type: "string"
+        }),
+        defineField({
+          name: "programs",
+          title: "Programs",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                defineField({
+                  name: "textStart",
+                  title: "Text Start",
+                  type: "string"
+                }),
+                defineField({
+                  name: "textEnd",
+                  title: "Text End",
+                  type: "string"
+                }),
+                defineField({
+                  name: "boldStartOrEnd",
+                  title: "Bold start or end",
+                  type: "boolean"
+                })
+              ]
+            }
+          ]
+        })
+      ]
+    }),
+    defineField({
       name: "videosTitle",
       title: "Videos Title",
       type: "string"

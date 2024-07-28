@@ -84,6 +84,18 @@ export type Faculty = {
   hasBorder: boolean;
 };
 
+export type University = {
+  _key: string;
+  title: string;
+  logo: Image;
+  link: string;
+};
+
+export type Program = {
+  programText: string;
+  programTextBold: string;
+};
+
 export type Ceo = {
   _key: string;
   name: string;
@@ -102,6 +114,15 @@ export type PrinciplesTotal = {
   number: string;
   descriptionBold: string;
   description: string;
+};
+
+export type UniversitiesBlock = {
+  _key: string;
+  title: string;
+  universities: University[];
+  programHighlight: string;
+  programTitle: string;
+  programs: Principle[];
 };
 
 export type Survey = {
@@ -217,6 +238,7 @@ export type Homepage = {
   conditionSecond: Condition;
   conditionThird: Condition;
   conditionFourth: Condition;
+  universitiesBlock: UniversitiesBlock;
   videosTitle: string;
   videos: Video[];
   offerTitle: string;
