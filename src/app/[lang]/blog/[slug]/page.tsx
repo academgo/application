@@ -8,17 +8,22 @@ import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import LastArticles from "@/app/components/LastArticles/LastArticles";
 import LinkPrimary from "@/app/components/LinkPrimary/LinkPrimary";
+import ModalFull from "@/app/components/ModalFull/ModalFull";
 import RelatedArticles from "@/app/components/RelatedArticles/RelatedArticles";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import { i18n } from "@/i18n.config";
-import { getBlogPostByLang } from "@/sanity/sanity.utils";
+import {
+  getBlogPostByLang,
+  getFormStandardDocumentByLang
+} from "@/sanity/sanity.utils";
 import {
   AccordionBlock,
   DoubleImagesBlock,
   TabsBlock,
   TextContent
 } from "@/types/blog";
+import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -49,6 +54,9 @@ const PagePost = async ({ params }: Props) => {
   const { lang, slug } = params;
   const blog = await getBlogPostByLang(lang, slug);
   const currentPostId = blog._id;
+
+  const formDocument: FormStandardDocument =
+    await getFormStandardDocumentByLang(params.lang);
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
     blog?._translations.map(item => {
@@ -168,6 +176,7 @@ const PagePost = async ({ params }: Props) => {
         </div>
       </main>
       <Footer params={params} />
+      <ModalFull lang={params.lang} formDocument={formDocument} />
     </>
   );
 };

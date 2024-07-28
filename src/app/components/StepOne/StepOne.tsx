@@ -3,6 +3,7 @@ import styles from "./StepOne.module.scss";
 import { StepOne as StepOneType } from "@/types/homepage";
 import StepCarousel from "../StepCarousel/StepCarousel";
 import VideoStep from "../VideoStep/VideoStep";
+import { ButtonModal } from "../ButtonModal/ButtonModal";
 
 type Props = {
   stepOne: StepOneType;
@@ -114,7 +115,8 @@ const StepOne: FC<Props> = ({ stepOne }) => {
                   ))}
                 </div>
               </div>
-              <button className={styles.button}>{stepOne.buttonText}</button>
+              <ButtonModal>{stepOne.buttonText}</ButtonModal>
+              {/* <button className={styles.button}>{stepOne.buttonText}</button> */}
             </div>
           </div>
         </div>

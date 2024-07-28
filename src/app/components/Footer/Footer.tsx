@@ -6,6 +6,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
 import NavLink from "../NavLink/NavLink";
 import Consultation from "../Consultation/Consultation";
+import { ButtonModal } from "../ButtonModal/ButtonModal";
 
 type Props = {
   params: { lang: string };
@@ -93,7 +94,8 @@ const Footer = async ({ params }: Props) => {
                 </div>
               </div>
               <div className={styles.bottomRight}>
-                <button className={styles.button}>{data.buttonText}</button>
+                <ButtonModal>{data.buttonText}</ButtonModal>
+                {/* <button className={styles.button}>{data.buttonText}</button> */}
               </div>
             </div>
             <div className={styles.dataLinks}>

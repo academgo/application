@@ -4,13 +4,16 @@ import { Metadata } from "next";
 import { i18n } from "@/i18n.config";
 import {
   getBlogPageByLang,
-  getBlogPostsByLangWithPagination
+  getBlogPostsByLangWithPagination,
+  getFormStandardDocumentByLang
 } from "@/sanity/sanity.utils";
 import { Translation } from "@/types/post";
 import Header from "@/app/components/Header/Header";
 import BlogPostsAll from "@/app/components/BlogPostsAll/BlogPostsAll";
 import BlogPageContent from "@/app/components/BlogPageContent/BlogPageContent";
 import Footer from "@/app/components/Footer/Footer";
+import { FormStandardDocument } from "@/types/formStandardDocument";
+import ModalFull from "@/app/components/ModalFull/ModalFull";
 
 type Props = {
   params: { lang: string };
@@ -30,6 +33,9 @@ const PageBlog = async ({ params }: Props) => {
   const { lang } = params;
   const initialPosts = await getBlogPostsByLangWithPagination(lang, 12, 0);
   const blogPage = await getBlogPageByLang(lang);
+
+  const formDocument: FormStandardDocument =
+    await getFormStandardDocumentByLang(params.lang);
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
     blogPage?._translations.map(item => {
@@ -75,6 +81,7 @@ const PageBlog = async ({ params }: Props) => {
         <BlogPageContent faq={blogPage.faq} lang={params.lang} />
       </main>
       <Footer params={params} />
+      <ModalFull lang={params.lang} formDocument={formDocument} />
     </>
   );
 };

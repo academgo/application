@@ -28,10 +28,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <Header params={params} /> */}
         {/* <main>{children}</main> */}
-        <ModalProvider>
-          {children}
-          {/* <ModalFull lang={params.lang} /> */}
-        </ModalProvider>
+        <ModalProvider>{children}</ModalProvider>
         {/* <Footer params={params} /> */}
       </body>
     </html>
