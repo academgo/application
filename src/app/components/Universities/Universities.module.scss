@@ -15,3 +15,68 @@
     letter-spacing: -1.68px;
   }
 }
+
+.logos {
+  margin-bottom: clamp(1.563rem, 0.469rem + 4.38vw, 3.75rem);
+}
+
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 980px) {
+    flex-direction: row;
+    align-items: stretch; /* Изменено на stretch */
+  }
+}
+
+.subtitle {
+  color: #091728;
+  font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 125% */
+  letter-spacing: -1.68px;
+
+  @media (min-width: 768px) {
+    line-height: 65px; /* 118.182% */
+    letter-spacing: -3.85px;
+  }
+}
+
+.highlight {
+  color: #F39708;
+}
+
+.principlesWrapper {
+  flex: 1 0 75%;
+  padding: 24px 42px;
+  border-radius: 25px;
+  background: #FFF;
+  display: flex; /* Добавлено для возможности растяжения содержимого */
+  flex-direction: column; /* Добавлено для растяжения содержимого по вертикали */
+  justify-content: center; /* Опционально, для центрирования содержимого */
+}
+
+.principlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: 1075px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+  }
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.938rem, 0.781rem + 0.63vw, 1.25rem);
+}
+
+.text {
+  max-width: 231px;
+}
