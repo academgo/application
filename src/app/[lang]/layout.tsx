@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
-
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -29,6 +29,8 @@ export default function RootLayout({
         {/* <Header params={params} /> */}
         {/* <main>{children}</main> */}
         <ModalProvider>{children}</ModalProvider>
+        <GoogleAnalytics gaId="G-XTMLVRC9RR" />
+        <GoogleTagManager gtmId="G-XTMLVRC9RR" />
         {/* <Footer params={params} /> */}
       </body>
     </html>
