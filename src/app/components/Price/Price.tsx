@@ -14,7 +14,7 @@ const Price: FC<Props> = ({ priceTitle, priceBlock }) => {
     <section className={styles.price} id="price">
       <div className="container">
         <h2 className={styles.title}>{priceTitle}</h2>
-        <SliderMain slidesPerView={3}>
+        <SliderMain slidesPerView={3} uniqueId="price-slider">
           {priceBlock.map((priceBlock, index) => (
             <PriceSlide
               key={index}

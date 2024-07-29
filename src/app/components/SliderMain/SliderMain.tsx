@@ -15,7 +15,8 @@ const SliderMain = ({
   lastSlideTitle,
   lastSlideDescription,
   form,
-  slidesPerView = 4
+  slidesPerView = 4,
+  uniqueId
 }: any) => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -61,12 +62,12 @@ const SliderMain = ({
           spaceBetween={15}
           slidesPerView={1.5}
           navigation={{
-            nextEl: ".swiper-main-next",
-            prevEl: ".swiper-main-prev"
+            nextEl: `.swiper-main-next-${uniqueId}`,
+            prevEl: `.swiper-main-prev-${uniqueId}`
           }}
           pagination={{
             clickable: true,
-            el: ".swiper-pagination"
+            el: `.swiper-pagination-${uniqueId}`
           }}
           breakpoints={{
             640: { slidesPerView: 1.5, spaceBetween: 20 },
@@ -110,7 +111,7 @@ const SliderMain = ({
       <div className={styles.sliderButtons}>
         <div className={styles.navigation}>
           <button
-            className={`swiper-main-prev ${styles.swiperMainPrev} ${styles.swiperButton}`}
+            className={`swiper-main-prev-${uniqueId} ${styles.swiperMainPrev} ${styles.swiperButton}`}
           >
             <FaArrowLeftLong
               aria-label="Previous slide"
@@ -119,7 +120,7 @@ const SliderMain = ({
             />
           </button>
           <button
-            className={`swiper-main-next ${styles.swiperMainNext} ${styles.swiperButton}`}
+            className={`swiper-main-next-${uniqueId} ${styles.swiperMainNext} ${styles.swiperButton}`}
           >
             <FaArrowRightLong
               aria-label="Next slide"
@@ -129,7 +130,7 @@ const SliderMain = ({
           </button>
         </div>
         <div className={styles.pagination}>
-          <div className="swiper-pagination">
+          <div className={`swiper-pagination-${uniqueId}`}>
             <span className="swiper-pagination-bullet"></span>
           </div>
         </div>

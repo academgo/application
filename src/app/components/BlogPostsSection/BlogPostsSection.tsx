@@ -44,7 +44,10 @@ const BlogPostsSection = async ({ params }: Props) => {
             ? "Щедро делимся актуальной информацией в блоге"
             : "We generously share up-to-date information in the blog"}
         </h2>
-        <SliderMain className={styles.blogPostsSlider}>
+        <SliderMain
+          className={styles.blogPostsSlider}
+          uniqueId="blog-posts-slider"
+        >
           {blogPosts.map(post => (
             <Link
               href={generateSlug(post.slug, params.lang)}
