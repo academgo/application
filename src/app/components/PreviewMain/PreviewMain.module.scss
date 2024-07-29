@@ -1,0 +1,19 @@
+.previewMain {
+  position: relative;
+  aspect-ratio: 10/3;
+  overflow: hidden;
+  margin-bottom: clamp(2.813rem, 2.472rem + 1.7vw, 3.75rem);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(26, 38, 68, 0.00) 10.33%, #1A2644 100%);
+}

@@ -21,13 +21,14 @@ export default defineConfig({
     documentInternationalization({
       supportedLanguages: i18n.languages,
       schemaTypes: [
-        "post",
+        // "post",
         "header",
         "homepage",
         "formStandardDocument",
         "footer",
         "category",
         "blog",
+        "singlepage",
         "blogPage",
         "successPage",
         "notFoundPage"
@@ -42,13 +43,14 @@ export default defineConfig({
       prev.filter(
         template =>
           ![
-            "post",
+            // "post",
             "header",
             "homepage",
             "formStandardDocument",
             "footer",
             "category",
             "blog",
+            "singlepage",
             "blogPage",
             "successPage",
             "notFoundPage"

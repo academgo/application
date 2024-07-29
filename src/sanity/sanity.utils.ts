@@ -9,6 +9,7 @@ import { BlogPage } from "@/types/blogPage";
 import { SuccessPage } from "@/types/successPage";
 import { NotFoundPage } from "@/types/notFoundPage";
 import { FormStandardDocument } from "@/types/formStandardDocument";
+import { Singlepage } from "@/types/singlepage";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -476,4 +477,26 @@ export async function getFormStandardDocumentByLang(
   });
 
   return formStandardDocument;
+}
+
+export async function getSinglePageByLang(
+  lang: string,
+  slug: string
+): Promise<Singlepage> {
+  const singlePageQuery = groq`*[_type == 'singlepage' && slug[$lang].current == $slug][0] {
+    _id,
+    title,
+    slug,
+    seo,
+    previewImage,
+    contentBlocks,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const singlePage = await client.fetch(singlePageQuery, { lang, slug });
+
+  return singlePage;
 }

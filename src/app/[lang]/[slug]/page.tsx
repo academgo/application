@@ -1,22 +1,17 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import AccordionContainer from "@/app/components/AccordionContainer/AccordionContainer";
-import BlogButtonWrapper from "@/app/components/BlogButtonWrapper/BlogButtonWrapper";
-import BlogIntro from "@/app/components/BlogIntro/BlogIntro";
-import BlogVideo from "@/app/components/BlogVideo/BlogVideo";
 import DoubleImagesBlockComponent from "@/app/components/DoubleImagesBlockComponent/DoubleImagesBlockComponent";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
-import LastArticles from "@/app/components/LastArticles/LastArticles";
-import LinkPrimary from "@/app/components/LinkPrimary/LinkPrimary";
 import ModalFull from "@/app/components/ModalFull/ModalFull";
-import RelatedArticles from "@/app/components/RelatedArticles/RelatedArticles";
+import PreviewMain from "@/app/components/PreviewMain/PreviewMain";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import { i18n } from "@/i18n.config";
 import {
-  getBlogPostByLang,
   getFormStandardDocumentByLang,
+  getSinglePageByLang,
   getNotFoundPageByLang
 } from "@/sanity/sanity.utils";
 import {
@@ -28,7 +23,12 @@ import {
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
+import { Main } from "next/document";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
+
+const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
+  ssr: false
+});
 
 type Props = {
   params: { lang: string; slug: string };
@@ -43,7 +43,7 @@ type ContentBlock =
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = params;
-  const data = await getBlogPostByLang(lang, slug);
+  const data = await getSinglePageByLang(lang, slug);
 
   return {
     title: data?.seo.metaTitle,
@@ -51,11 +51,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const PagePost = async ({ params }: Props) => {
+const SinglePage = async ({ params }: Props) => {
   const { lang, slug } = params;
-  const blog = await getBlogPostByLang(lang, slug);
+  const page = await getSinglePageByLang(lang, slug);
 
-  if (!blog) {
+  if (!page) {
     const notFoundPage = await getNotFoundPageByLang(lang);
     return (
       <>
@@ -69,8 +69,8 @@ const PagePost = async ({ params }: Props) => {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
-  const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
-    blog?._translations.map(item => {
+  const singlePageTranslationSlugs: { [key: string]: { current: string } }[] =
+    page?._translations.map(item => {
       const newItem: { [key: string]: { current: string } } = {};
 
       for (const key in item.slug) {
@@ -82,7 +82,7 @@ const PagePost = async ({ params }: Props) => {
     });
 
   const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
-    const translationSlug = blogPageTranslationSlugs
+    const translationSlug = singlePageTranslationSlugs
       ?.reduce(
         (acc: string[], slug: { [key: string]: { current: string } }) => {
           const current = slug[lang.id]?.current;
@@ -100,7 +100,7 @@ const PagePost = async ({ params }: Props) => {
           ...acc,
           {
             language: lang.id,
-            path: `/${lang.id}/blog/${translationSlug}`
+            path: `/${lang.id}/${translationSlug}`
           }
         ]
       : acc;
@@ -124,7 +124,7 @@ const PagePost = async ({ params }: Props) => {
           <DoubleImagesBlockComponent
             key={block._key}
             block={block as DoubleImagesBlock}
-            title={blog.title}
+            title={page.title}
           />
         );
       case "tabsBlock":
@@ -136,54 +136,15 @@ const PagePost = async ({ params }: Props) => {
     }
   };
 
-  const currentPostId = blog._id;
+  const currentPostId = page._id;
 
   return (
     <>
       <Header params={params} translations={translations} />
       <main>
+        <PreviewMain previewImage={page.previewImage} title={page.title} />
         <div className="container">
-          <div className="post-grid">
-            <div className="post-content">
-              <BlogIntro
-                title={blog.title}
-                categoryTitle={blog.category.title}
-                date={blog.publishedAt}
-                previewImage={blog.previewImage}
-                firstContent={blog.firstContent}
-              />
-              <article>
-                {blog.contentBlocks.map(block => renderContentBlock(block))}
-              </article>
-              <BlogButtonWrapper>
-                <LinkPrimary href={`/${lang}/blog`}>
-                  {lang === "en"
-                    ? "Back to all articles"
-                    : "Вернуться ко всем статьям"}
-                </LinkPrimary>
-              </BlogButtonWrapper>
-            </div>
-            <div className="post-content sidebar">
-              <aside className="aside">
-                {blog.videoBlock &&
-                  blog.videoBlock.videoId &&
-                  blog.videoBlock.posterImage && (
-                    <BlogVideo
-                      videoId={blog.videoBlock.videoId}
-                      posterImage={blog.videoBlock.posterImage}
-                      title={blog.title}
-                    />
-                  )}
-              </aside>
-              {blog.relatedArticles && blog.relatedArticles.length > 0 && (
-                <RelatedArticles
-                  language={lang}
-                  relatedArticles={blog.relatedArticles}
-                />
-              )}
-            </div>
-          </div>
-          <LastArticles params={{ lang, id: currentPostId }} />
+          {page.contentBlocks.map(block => renderContentBlock(block))}
         </div>
       </main>
       <Footer params={params} />
@@ -192,4 +153,4 @@ const PagePost = async ({ params }: Props) => {
   );
 };
 
-export default PagePost;
+export default SinglePage;
