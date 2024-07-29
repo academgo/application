@@ -27,15 +27,15 @@ export async function POST(request: NextRequest) {
     data.whatsapp
   ) {
     // Обработка данных из новой многошаговой формы
-    mailBody = `Who fills: ${data.question1}\nLevel of education: ${data.question2}\nStart studying 3: ${data.question3}\nBudget: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
+    mailBody = `Кто заполняет: ${data.question1}\nУровень образования: ${data.question2}\nНачало обучения: ${data.question3}\nБюджет: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
     isValid = true;
   } else if (data.phone && !data.country && !data.whatsapp && !data.email) {
     // Обработка формы с только телефоном
-    mailBody = `Phone: ${data.phone}`;
+    mailBody = `Телефон: ${data.phone}`;
     isValid = true;
   } else if (data.phone && data.country && data.email && !data.whatsapp) {
     // Обработка формы с телефоном, страной и email
-    mailBody = `Phone: ${data.phone}\nCountry: ${data.country}\nEmail: ${data.email}`;
+    mailBody = `Телефон: ${data.phone}\nСтрана: ${data.country}\nEmail: ${data.email}`;
     isValid = true;
   } else if (data.whatsapp && !data.phone && !data.country && !data.email) {
     // Обработка формы с только Whatsapp
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     const mailOptions: Mail.Options = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: `Client from Academgo`,
+      subject: `Запрос с Academgo`,
       text: mailBody
     };
 
