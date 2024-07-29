@@ -2,10 +2,9 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import { ModalProvider } from "../context/ModalContext";
-import ModalFull from "../components/ModalFull/ModalFull";
+import { Suspense } from "react";
+import { FacebookPixelEvents } from "../components/pixel-events";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,12 +25,12 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body className={inter.className}>
-        {/* <Header params={params} /> */}
-        {/* <main>{children}</main> */}
         <ModalProvider>{children}</ModalProvider>
         <GoogleAnalytics gaId="G-XTMLVRC9RR" />
         <GoogleTagManager gtmId="G-XTMLVRC9RR" />
-        {/* <Footer params={params} /> */}
+        <Suspense fallback={null}>
+          <FacebookPixelEvents />
+        </Suspense>
       </body>
     </html>
   );

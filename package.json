@@ -25,6 +25,7 @@
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
+    "react-facebook-pixel": "^1.0.4",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.2.1",
     "react-modal": "^3.16.1",
