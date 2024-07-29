@@ -13,13 +13,14 @@
 
   @media screen and (max-width: 768px){
     line-height: 75px; /* 136.364% */
-    letter-spacing: -3.85px;
+    letter-spacing: unset;
   }
 }
 
 .articles {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 
   @media screen and (min-width: 768px){
     gap: 30px;
@@ -27,13 +28,13 @@
 }
 
 .article {
-  flex: 0 1 calc(100% / 2);
+  flex: 0 1 calc(100% / 2 - 5px);
   position: relative;
   overflow: hidden;
   border-radius: clamp(1.25rem, 1.094rem + 0.63vw, 1.563rem);
 
   @media screen and (min-width: 768px){
-    // flex: 0 1 calc(100% / 3 - 30px);
+    flex: 1 0 auto;
 
     &:hover {
       .imageBlock img {
