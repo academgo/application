@@ -9,10 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Academgo",
-  description: "Academgo",
-  icons: {
-    icon: "/favicon.svg"
-  }
+  description: "Academgo"
 };
 
 export default function RootLayout({
