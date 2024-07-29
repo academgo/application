@@ -1,9 +1,3 @@
-// import {
-//   getBlogPostsByLang,
-//   getMainPageByLang,
-//   getBlogPageByLang
-// } from "@/libs/sanityQueries";
-
 import {
   getBlogPageByLang,
   getBlogPostsByLang,
@@ -18,7 +12,7 @@ const generateSlug = (slug: any, language: string) => {
 
 async function generateSitemap() {
   const langs = ["en", "ru"]; // Получите список поддерживаемых языков из вашего i18n конфигурации или другого источника
-  const websiteUrl = "https://academgo.com/sitemap.xml";
+  const websiteUrl = "https://academgo.com";
 
   const pages = [];
 
