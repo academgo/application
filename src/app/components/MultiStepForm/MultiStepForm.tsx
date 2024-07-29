@@ -592,8 +592,8 @@ const MultiStepForm = ({
                             className={styles.policyLink}
                             href={
                               lang === "en"
-                                ? "/privacy-policy"
-                                : "/politika-konfidencialnosti"
+                                ? "/en/privacy-policy"
+                                : "/ru/politika-konfidencialnosti"
                             }
                             target="_blank"
                           >
