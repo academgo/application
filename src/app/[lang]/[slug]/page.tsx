@@ -24,6 +24,7 @@ import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
+import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -143,6 +144,7 @@ const SinglePage = async ({ params }: Props) => {
       <main>
         <PreviewMain previewImage={page.previewImage} title={page.title} />
         <div className="container">
+          <SinglePageIntroBlock title={page.title} />
           {page.contentBlocks.map(block => renderContentBlock(block))}
         </div>
       </main>
