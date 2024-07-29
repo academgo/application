@@ -60,7 +60,6 @@ const Hero: FC<Props> = ({
               </div>
               <div className={styles.buttonBlock}>
                 <ButtonModal>{heroButtonText}</ButtonModal>
-                {/* <button className={styles.heroButton}>{heroButtonText}</button> */}
               </div>
             </div>
           </div>
@@ -69,9 +68,10 @@ const Hero: FC<Props> = ({
               <Image
                 alt={description}
                 src={urlFor(heroImage).url()}
-                fill={true}
-                className={styles.logoImage}
-                quality={100}
+                width={850}
+                height={700}
+                sizes="(max-width: 768px) 100vw, 850px"
+                className={styles.heroImage}
               />
             </div>
             <div className={styles.flagsBlock}>
