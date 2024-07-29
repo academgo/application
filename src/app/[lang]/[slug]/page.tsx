@@ -23,7 +23,6 @@ import {
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
-import { Main } from "next/document";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
