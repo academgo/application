@@ -7,11 +7,11 @@ type Props = {
   facultyName: string;
   facultyDescription: string;
   specialtiesTitle: string;
-  specialties: ListType[];
+  specialties?: ListType[]; // Сделаем это поле необязательным
   semesters: string;
   cost: string;
   universitiesTitle: string;
-  universities: ListType[];
+  universities?: ListType[]; // Сделаем это поле необязательным
   linkLabel: string;
   linkDestination: string;
   hasBorder: boolean;
@@ -21,11 +21,11 @@ const FacultySlide: FC<Props> = ({
   facultyName,
   facultyDescription,
   specialtiesTitle,
-  specialties,
+  specialties = [], // Значение по умолчанию
   semesters,
   cost,
   universitiesTitle,
-  universities,
+  universities = [], // Значение по умолчанию
   linkLabel,
   linkDestination,
   hasBorder
@@ -43,7 +43,7 @@ const FacultySlide: FC<Props> = ({
         {facultyDescription && (
           <p className={styles.text}>{facultyDescription}</p>
         )}
-        {specialtiesTitle && (
+        {specialtiesTitle && specialties.length > 0 && (
           <div className={styles.specialties}>
             <h4 className={styles.subtitle}>{specialtiesTitle}</h4>
             <ul className={styles.list}>
@@ -57,7 +57,7 @@ const FacultySlide: FC<Props> = ({
         )}
         {semesters && <p className={styles.textMark}>{semesters}</p>}
         {cost && <p className={styles.textMark}>{cost}</p>}
-        {universitiesTitle && (
+        {universitiesTitle && universities.length > 0 && (
           <div className={styles.universities}>
             <h4 className={styles.subtitle}>{universitiesTitle}</h4>
             <ul className={styles.list}>
