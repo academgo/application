@@ -9,7 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Academgo",
-  description: "Academgo"
+  description: "Academgo",
+  other: {
+    "google-site-verification": "y26kx-fqwQmu8vSsuIo8zW09MIp0pnOQNHnGFNggnmQ"
+  }
 };
 
 export default function RootLayout({
