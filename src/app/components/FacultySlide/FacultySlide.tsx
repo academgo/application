@@ -39,35 +39,43 @@ const FacultySlide: FC<Props> = ({
       }}
     >
       <div className={styles.textBlock}>
-        <h3 className={styles.title}>{facultyName}</h3>
-        <p className={styles.text}>{facultyDescription}</p>
-        <div className={styles.specialties}>
-          <h4 className={styles.subtitle}>{specialtiesTitle}</h4>
-          <ul className={styles.list}>
-            {specialties.map((specialty, index) => (
-              <li key={index} className={styles.listItem}>
-                {specialty.title}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <p className={styles.textMark}>{semesters}</p>
-        <p className={styles.textMark}>{cost}</p>
-        <div className={styles.universities}>
-          <h4 className={styles.subtitle}>{universitiesTitle}</h4>
-          <ul className={styles.list}>
-            {universities.map((university, index) => (
-              <li key={index} className={styles.listItem}>
-                {university.title}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {facultyName && <h3 className={styles.title}>{facultyName}</h3>}
+        {facultyDescription && (
+          <p className={styles.text}>{facultyDescription}</p>
+        )}
+        {specialtiesTitle && (
+          <div className={styles.specialties}>
+            <h4 className={styles.subtitle}>{specialtiesTitle}</h4>
+            <ul className={styles.list}>
+              {specialties.map((specialty, index) => (
+                <li key={index} className={styles.listItem}>
+                  {specialty.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {semesters && <p className={styles.textMark}>{semesters}</p>}
+        {cost && <p className={styles.textMark}>{cost}</p>}
+        {universitiesTitle && (
+          <div className={styles.universities}>
+            <h4 className={styles.subtitle}>{universitiesTitle}</h4>
+            <ul className={styles.list}>
+              {universities.map((university, index) => (
+                <li key={index} className={styles.listItem}>
+                  {university.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div className={styles.buttonBlock}>
-        <Link href={linkDestination} className={styles.button}>
-          {linkLabel}
-        </Link>
+        {linkLabel && linkDestination && (
+          <Link href={linkDestination} className={styles.button}>
+            {linkLabel}
+          </Link>
+        )}
       </div>
     </div>
   );

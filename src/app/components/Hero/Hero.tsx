@@ -55,8 +55,12 @@ const Hero: FC<Props> = ({
                 </h1>
               </div>
               <div className={styles.descriptionBlock}>
-                <p className={styles.description}>{description}</p>
-                <p className={styles.descriptionSmall}>{descriptionSmall}</p>
+                {description && (
+                  <p className={styles.description}>{description}</p>
+                )}
+                {descriptionSmall && (
+                  <p className={styles.descriptionSmall}>{descriptionSmall}</p>
+                )}
               </div>
               <div className={styles.buttonBlock}>
                 <ButtonModal>{heroButtonText}</ButtonModal>
@@ -64,19 +68,23 @@ const Hero: FC<Props> = ({
             </div>
           </div>
           <div className={styles.flexChild}>
-            <div className={styles.imageWrapper}>
-              <Image
-                alt={description}
-                src={urlFor(heroImage).url()}
-                width={850}
-                height={700}
-                sizes="(max-width: 768px) 100vw, 850px"
-                className={styles.heroImage}
-              />
-            </div>
+            {heroImage && (
+              <div className={styles.imageWrapper}>
+                <Image
+                  alt={description}
+                  src={urlFor(heroImage).url()}
+                  width={850}
+                  height={700}
+                  sizes="(max-width: 768px) 100vw, 850px"
+                  className={styles.heroImage}
+                />
+              </div>
+            )}
             <div className={styles.flagsBlock}>
-              <p className={styles.heroDescription}>{heroDescription}</p>
-              <h2 className={styles.heroTitle}>{heroTitle}</h2>
+              {heroDescription && (
+                <p className={styles.heroDescription}>{heroDescription}</p>
+              )}
+              {heroTitle && <h2 className={styles.heroTitle}>{heroTitle}</h2>}
               <FlagsCarousel flags={flags} />
             </div>
           </div>

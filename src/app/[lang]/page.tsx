@@ -38,8 +38,8 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const homePage = await getHomePageByLang(params.lang);
   return {
-    title: homePage?.seo.title,
-    description: homePage?.seo.description
+    title: homePage?.seo?.title,
+    description: homePage?.seo?.description
   };
 }
 
