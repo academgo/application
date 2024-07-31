@@ -279,7 +279,6 @@ export type Homepage = {
   extraBlock: ExtraBlock;
   priceTitle: string;
   priceBlock: PriceBlock[];
-  consultationBlock: Consultation;
   language: string;
   slug: {
     [lang: string]: {
