@@ -312,6 +312,14 @@
   cursor: text; /* Add this line to make the label cursor text-like */
 }
 
+.labelPhone {
+  left: 55px;
+
+  @media screen and (min-width: 768px) {
+    left: 70px;
+  }
+}
+
 .inputField {
   width: 100%;
   padding-top: 20px;

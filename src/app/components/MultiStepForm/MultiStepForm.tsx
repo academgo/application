@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./MultiStepForm.module.scss";
-
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
 
@@ -146,7 +147,7 @@ const MultiStepForm = ({
             : (values, actions) => handleNext(values, actions.validateForm)
         }
       >
-        {({ isSubmitting, values, validateForm }) => (
+        {({ isSubmitting, values, validateForm, setFieldValue }) => (
           <Form className={styles.customForm}>
             <div className={styles.progressBar}>
               <div
@@ -332,7 +333,7 @@ const MultiStepForm = ({
                       </div>
                       <legend className={styles.questionTitle}>
                         {lang === "en"
-                          ? "When are you planning to start studying?"
+                          ? "When are you planning to start your studies?"
                           : "Когда планируете начать учебу?"}
                       </legend>
                     </div>
@@ -477,7 +478,7 @@ const MultiStepForm = ({
                           <Field
                             type="radio"
                             name="question4"
-                            value={lang === "en" ? "up to 2000€" : "до 2000€"}
+                            value={lang === "en" ? "up to 3000€" : "до 3000€"}
                           />
                           <div className={styles.pseudoRadioData}>
                             <div
@@ -485,7 +486,7 @@ const MultiStepForm = ({
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "up to 2000€" : "до 2000€"}
+                              {lang === "en" ? "up to 3000€" : "до 3000€"}
                             </p>
                           </div>
                         </label>
@@ -497,7 +498,7 @@ const MultiStepForm = ({
                           <Field
                             type="radio"
                             name="question4"
-                            value="2000€-4000€"
+                            value="3000€-5000€"
                           />
                           <div className={styles.pseudoRadioData}>
                             <div
@@ -505,7 +506,7 @@ const MultiStepForm = ({
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "2000€-4000€" : "2000€-4000€"}
+                              {lang === "en" ? "3000€-5000€" : "3000€-5000€"}
                             </p>
                           </div>
                         </label>
@@ -514,14 +515,14 @@ const MultiStepForm = ({
                         className={`${styles.customRadio} ${styles.radioGray}`}
                       >
                         <label>
-                          <Field type="radio" name="question4" value="4000€+" />
+                          <Field type="radio" name="question4" value="5000€+" />
                           <div className={styles.pseudoRadioData}>
                             <div
                               className={styles.pseudoRadio}
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "4000€+" : "4000€+"}
+                              {lang === "en" ? "5000€+" : "5000€+"}
                             </p>
                           </div>
                         </label>
@@ -560,17 +561,19 @@ const MultiStepForm = ({
                       <div className={styles.inputWrapper}>
                         <label
                           htmlFor="whatsapp"
-                          className={`${styles.label} 
+                          className={`${styles.label} ${styles.labelPhone} 
                           ${filled.whatsapp ? styles.filled : ""}`}
                         >
                           {inputLabel}
                         </label>
-                        <Field
+                        <PhoneInput
                           id="whatsapp"
                           name="whatsapp"
-                          type="text"
-                          className={`${styles.inputField} w-full rounded-md`}
+                          className={`${styles.inputField}`}
                           onBlur={handleBlur}
+                          onChange={value => {
+                            setFieldValue("whatsapp", value); // Обновляем значение в Formik
+                          }}
                         />
                         <ErrorMessage
                           name="whatsapp"

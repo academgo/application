@@ -111,7 +111,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 {dataForm.inputPhone}
               </label>
               <PhoneInput
-                defaultCountry="PL"
+                // defaultCountry="PL"
                 id={`phone-${uniqueId}`}
                 name="phone"
                 className={`${styles.inputField}`}
