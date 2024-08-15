@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className={inter.className}>
         <ModalProvider>{children}</ModalProvider>
-        <GoogleAnalytics gaId="G-XTMLVRC9RR" />
+        {/* <GoogleAnalytics gaId="G-XTMLVRC9RR" /> */}
         <GoogleTagManager gtmId="GTM-NMJPFJ6N" />
         <Suspense fallback={null}>
           <FacebookPixelEvents />
