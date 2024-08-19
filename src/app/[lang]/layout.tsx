@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ModalProvider>{children}</ModalProvider>
         {/* <GoogleAnalytics gaId="G-XTMLVRC9RR" /> */}
-        <GoogleTagManager gtmId="GTM-NMJPFJ6N" />
+        <GoogleTagManager gtmId="AW-11425382784" />
         <Suspense fallback={null}>
           <FacebookPixelEvents />
         </Suspense>
