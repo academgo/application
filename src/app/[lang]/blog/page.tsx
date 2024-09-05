@@ -73,6 +73,7 @@ const PageBlog = async ({ params }: Props) => {
         ]
       : acc;
   }, []);
+
   return (
     <>
       <Header params={params} translations={translations} />
