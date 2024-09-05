@@ -1,5 +1,4 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import AccordionContainer from "@/app/components/AccordionContainer/AccordionContainer";
 import BlogButtonWrapper from "@/app/components/BlogButtonWrapper/BlogButtonWrapper";
 import BlogIntro from "@/app/components/BlogIntro/BlogIntro";

@@ -1,10 +1,9 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import Header from "../components/Header/Header";
 import {
   getFormStandardDocumentByLang,
   getHomePageByLang
-} from "../../sanity/sanity.utils";
+} from "@/sanity/sanity.utils";
 import { i18n } from "@/i18n.config";
 import { Translation } from "@/types/post";
 import Hero from "../components/Hero/Hero";
@@ -20,15 +19,12 @@ import StepThree from "../components/StepThree/StepThree";
 import StepFour from "../components/StepFour/StepFour";
 import ExtraBlock from "../components/ExtraBlock/ExtraBlock";
 import Price from "../components/Price/Price";
-import Consultation from "../components/Consultation/Consultation";
 import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
-import MultiStepForm from "../components/MultiStepForm/MultiStepForm";
 import Survey from "../components/Survey/Survey";
 import ModalFull from "../components/ModalFull/ModalFull";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
-// import Signup from "../components/Signup/Signup";
 
 type Props = {
   params: { lang: string; slug: string };
