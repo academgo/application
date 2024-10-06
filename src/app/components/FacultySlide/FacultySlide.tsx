@@ -39,13 +39,13 @@ const FacultySlide: FC<Props> = ({
       }}
     >
       <div className={styles.textBlock}>
-        {facultyName && <h3 className={styles.title}>{facultyName}</h3>}
+        {facultyName && <p className={styles.title}>{facultyName}</p>}
         {facultyDescription && (
           <p className={styles.text}>{facultyDescription}</p>
         )}
         {specialtiesTitle && specialties.length > 0 && (
           <div className={styles.specialties}>
-            <h4 className={styles.subtitle}>{specialtiesTitle}</h4>
+            <p className={styles.subtitle}>{specialtiesTitle}</p>
             <ul className={styles.list}>
               {specialties.map((specialty, index) => (
                 <li key={index} className={styles.listItem}>
@@ -59,7 +59,7 @@ const FacultySlide: FC<Props> = ({
         {cost && <p className={styles.textMark}>{cost}</p>}
         {universitiesTitle && universities.length > 0 && (
           <div className={styles.universities}>
-            <h4 className={styles.subtitle}>{universitiesTitle}</h4>
+            <p className={styles.subtitle}>{universitiesTitle}</p>
             <ul className={styles.list}>
               {universities.map((university, index) => (
                 <li key={index} className={styles.listItem}>

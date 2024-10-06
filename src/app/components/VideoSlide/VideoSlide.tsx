@@ -105,7 +105,7 @@ const VideoSlide: FC<Props> = ({ videoId, posterImage, date, title }) => {
       </div>
       <div className={styles.videoSlideContent}>
         <p className={styles.date}>{date}</p>
-        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.title}>{title}</p>
       </div>
     </div>
   );

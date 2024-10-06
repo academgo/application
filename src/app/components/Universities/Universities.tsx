@@ -21,10 +21,10 @@ const Universities: FC<Props> = ({ data }) => {
       </div>
       <div className="container">
         <div className={styles.principles}>
-          <h3 className={styles.subtitle}>
+          <p className={styles.subtitle}>
             <span className={styles.highlight}>{programHighlight}</span>{" "}
             {programTitle}
-          </h3>
+          </p>
           <div className={styles.principlesWrapper}>
             <div className={styles.principlesList}>
               {programs.map(program => (

@@ -22,7 +22,7 @@ const ExtraBlock: FC<Props> = ({ extraBlock }) => {
           <div className={styles.overlay}></div>
           <div className={styles.extraWrapper}>
             <div className={styles.mainContent}>
-              <h2 className={styles.title}>{extraBlock.title}</h2>
+              <p className={styles.title}>{extraBlock.title}</p>
               <div className={styles.items}>
                 {extraBlock.items.map(item => (
                   <div key={item._key} className={styles.item}>

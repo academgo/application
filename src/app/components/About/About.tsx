@@ -40,7 +40,7 @@ const About: FC<Props> = ({
           <div className={styles.aboutWrapper}>
             <div className={styles.textContent}>
               <p className={styles.summary}>{aboutSummary}</p>
-              <h2 className={styles.title}>{aboutTitle}</h2>
+              <p className={styles.title}>{aboutTitle}</p>
               <div className={styles.paragraphs}>
                 {aboutParagraphs.map((paragraph, index) => (
                   <p className={styles.paragraph} key={paragraph._key}>
@@ -57,7 +57,7 @@ const About: FC<Props> = ({
             </div>
             <div className={styles.contacts}>
               <div className={styles.subscribe}>
-                <h3 className={styles.subtitle}>{aboutSocialsTitle}</h3>
+                <p className={styles.subtitle}>{aboutSocialsTitle}</p>
                 <ul className={styles.icons}>
                   {aboutSocials.map(social => (
                     <li key={social._key}>
@@ -75,7 +75,7 @@ const About: FC<Props> = ({
                 </ul>
               </div>
               <div className={styles.write}>
-                <h3 className={styles.subtitle}>{aboutOffersTitle}</h3>
+                <p className={styles.subtitle}>{aboutOffersTitle}</p>
                 <ul className={styles.icons}>
                   {aboutOffers.map(offer => (
                     <li key={offer._key}>
@@ -107,7 +107,7 @@ const About: FC<Props> = ({
                   className={styles.ceoImage}
                 />
                 <div className={styles.ceoData}>
-                  <h3 className={styles.ceoName}>{ceo.name}</h3>
+                  <p className={styles.ceoName}>{ceo.name}</p>
                   <p className={styles.ceoPosition}>{ceo.position}</p>
                 </div>
               </div>

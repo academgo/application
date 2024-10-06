@@ -44,14 +44,14 @@ const PriceSlide: FC<Props> = ({
           >
             {preTitle}
           </p>
-          <h3
+          <p
             style={{
               color: hasBg ? "#fff" : ""
             }}
             className={styles.title}
           >
             {title}
-          </h3>
+          </p>
           <div
             style={{
               color: hasBg ? "#fff" : ""

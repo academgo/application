@@ -13,7 +13,7 @@ const VideosSection: FC<Props> = ({ videosTitle, videos }) => {
   return (
     <section className={styles.videosSection} id="videos">
       <div className="container">
-        <h2 className={styles.videosSectionTitle}>{videosTitle}</h2>
+        <p className={styles.videosSectionTitle}>{videosTitle}</p>
         <SliderMain className={styles.videosSlider}>
           {videos.map((video, index) => (
             <VideoSlide

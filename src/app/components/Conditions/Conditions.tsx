@@ -34,7 +34,7 @@ const Conditions: FC<Props> = ({
               className={styles.posterImage}
             />
             <div className={styles.conditionFirstContent}>
-              <h3 className={styles.conditionTitle}>{conditionFirst.title}</h3>
+              <p className={styles.conditionTitle}>{conditionFirst.title}</p>
               <p className={styles.conditionDescription}>
                 {conditionFirst.description}
               </p>
@@ -52,14 +52,14 @@ const Conditions: FC<Props> = ({
                 />
               </div>
             )}
-            <h3 className={styles.conditionTitle}>{conditionSecond.title}</h3>
+            <p className={styles.conditionTitle}>{conditionSecond.title}</p>
             <p className={styles.conditionDescription}>
               {conditionSecond.description}
             </p>
           </div>
           <div className={`${styles.condition} ${styles.conditionThird}`}>
             <div className={styles.conditionThidrContent}>
-              <h3 className={styles.conditionTitle}>{conditionThird.title}</h3>
+              <p className={styles.conditionTitle}>{conditionThird.title}</p>
               <p className={styles.conditionDescription}>
                 {conditionThird.description}
               </p>
@@ -102,7 +102,7 @@ const Conditions: FC<Props> = ({
               />
             )}
             <div className={styles.conditionFourthContent}>
-              <h3 className={styles.conditionTitle}>{conditionFourth.title}</h3>
+              <p className={styles.conditionTitle}>{conditionFourth.title}</p>
               <p className={styles.conditionDescription}>
                 {conditionFourth.description}
               </p>

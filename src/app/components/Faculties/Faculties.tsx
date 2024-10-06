@@ -25,7 +25,7 @@ const Faculties: FC<Props> = ({
   return (
     <section className={styles.faculties} id="faculties">
       <div className="container">
-        <h2 className={styles.title}>{facultiesTitle}</h2>
+        <p className={styles.title}>{facultiesTitle}</p>
         <SliderMain
           className={styles.videosSlider}
           lastSlideTitleHighlight={lastSlideTitleHighlight}

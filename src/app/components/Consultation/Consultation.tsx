@@ -55,12 +55,12 @@ const Consultation: FC<Props> = ({ consultationBlock }) => {
           <div className={styles.offerMainContent}>
             <div className={styles.mainContentLeft}>
               <div className={styles.offerFlexBlock}>
-                <h2 className={styles.offerTitle}>
+                <p className={styles.offerTitle}>
                   {title}{" "}
                   <span className={styles.offerTitleHighlight}>
                     {titleHighlight}
                   </span>
-                </h2>
+                </p>
                 <div className={styles.listBlock}>
                   <p className={styles.offerListTitle}>{listTitle}</p>
                   <ul className={styles.offerList}>
@@ -120,7 +120,7 @@ const Consultation: FC<Props> = ({ consultationBlock }) => {
             </div>
             <div className={styles.mainContenrRight}>
               <div className={styles.offerFormBlock}>
-                <h3 className={styles.offerFormTitle}>{formTitle}</h3>
+                <p className={styles.offerFormTitle}>{formTitle}</p>
                 <FormSuperLite
                   form={form}
                   buttonCustomText={buttonCustomText}

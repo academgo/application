@@ -39,11 +39,11 @@ const BlogPostsSection = async ({ params }: Props) => {
   return (
     <section className={styles.blogPosts}>
       <div className="container">
-        <h2 className={styles.title}>
+        <p className={styles.title}>
           {params.lang === "ru"
             ? "Щедро делимся актуальной информацией в блоге"
             : "We generously share up-to-date information in the blog"}
-        </h2>
+        </p>
         <SliderMain
           className={styles.blogPostsSlider}
           uniqueId="blog-posts-slider"
@@ -74,7 +74,7 @@ const BlogPostsSection = async ({ params }: Props) => {
                     <p className={styles.articleDate}>
                       {formatDate(post.publishedAt)}
                     </p>
-                    <h3 className={styles.articleTitle}>{post.title}</h3>
+                    <p className={styles.articleTitle}>{post.title}</p>
                   </div>
                 </div>
               </div>

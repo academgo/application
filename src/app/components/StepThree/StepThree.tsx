@@ -51,7 +51,7 @@ const StepThree: FC<Props> = ({ stepThree }) => {
           >
             <circle cx="5" cy="5" r="5" fill="#091728" />
           </svg>
-          <h2 className={styles.title}>{stepThree.title}</h2>
+          <p className={styles.title}>{stepThree.title}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
@@ -73,7 +73,7 @@ const StepThree: FC<Props> = ({ stepThree }) => {
           >
             <circle cx="5" cy="5" r="5" fill="#091728" />
           </svg>
-          <h2 className={styles.title}>{stepThree.title}</h2>
+          <p className={styles.title}>{stepThree.title}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
@@ -98,7 +98,7 @@ const StepThree: FC<Props> = ({ stepThree }) => {
             <div className={styles.substeps}>
               {stepThree.substeps.map(substep => (
                 <div key={substep._key} className={styles.substep}>
-                  <h3 className={styles.substepTitle}>{substep.title}</h3>
+                  <p className={styles.substepTitle}>{substep.title}</p>
                   <p className={styles.substepText}>
                     {substep.description}
                     {""}

@@ -30,11 +30,11 @@ const LastArticles = async ({ params }: Props) => {
 
   return (
     <div className={styles.lastArticles}>
-      <h2 className={styles.title}>
+      <p className={styles.title}>
         {params.lang === "en"
           ? "Last articles"
           : "Вам также может быть актуально"}
-      </h2>
+      </p>
       <div className={styles.articles}>
         {blogPosts.map(post => (
           <Link
@@ -62,7 +62,7 @@ const LastArticles = async ({ params }: Props) => {
                   <p className={styles.articleDate}>
                     {formatDate(post.publishedAt)}
                   </p>
-                  <h3 className={styles.articleTitle}>{post.title}</h3>
+                  <p className={styles.articleTitle}>{post.title}</p>
                 </div>
               </div>
             </div>

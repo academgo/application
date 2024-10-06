@@ -15,7 +15,7 @@ const Survey: FC<Props> = ({ lang, survey }) => {
   return (
     <section className={styles.survey}>
       <div className="container">
-        <h2 className={styles.title}>{survey.title}</h2>
+        <p className={styles.title}>{survey.title}</p>
         <div className={styles.surveyWrapper}>
           <div className={styles.multiStepForm}>
             <MultiStepForm

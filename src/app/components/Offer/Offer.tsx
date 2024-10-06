@@ -123,7 +123,7 @@ const Offer: FC<Props> = ({
             </div>
             <div className={styles.mainContenrRight}>
               <div className={styles.offerFormBlock}>
-                <h3 className={styles.offerFormTitle}>{offerFormTitle}</h3>
+                <p className={styles.offerFormTitle}>{offerFormTitle}</p>
                 <FormSuperLite
                   form={offerForm}
                   offerButtonCustomText={offerButtonCustomText}
