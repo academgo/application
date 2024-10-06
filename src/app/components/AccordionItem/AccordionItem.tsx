@@ -1,12 +1,37 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { AccordionItem as Item } from "@szhsin/react-accordion";
 import styles from "./AccordionItem.module.scss";
 import { PortableText } from "@portabletext/react";
 import { RichText } from "../RichText/RichText";
 
+// Типы для блоков и детей
+interface Block {
+  _type: string;
+  children?: Child[];
+}
+
+interface Child {
+  _type: string;
+  text?: string;
+}
+
+// Вспомогательная функция для извлечения текста из PortableText
+const extractPlainTextFromPortableText = (content: Block[]): string => {
+  return content
+    .map(block => {
+      if (block._type === "block" && block.children) {
+        return block.children
+          .map(child => (child.text ? child.text : ""))
+          .join("");
+      }
+      return "";
+    })
+    .join(" ");
+};
+
 type AccordionItemProps = {
   title: string;
-  content: any;
+  content: Block[]; // Типизируем контент как массив блоков
   expanded: boolean;
   onClick: () => void;
 };
@@ -21,6 +46,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     return null;
   }
 
+  // Преобразуем content в текст для JSON-LD
+  const extractedPlainText = extractPlainTextFromPortableText(content);
+
   // Создаем JSON-LD разметку для FAQ
   const faqSchema = {
     "@context": "https://schema.org",
@@ -31,7 +59,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         name: title, // Вопрос из заголовка аккордеона
         acceptedAnswer: {
           "@type": "Answer",
-          text: content // Ответ из содержимого аккордеона
+          text: extractedPlainText // Извлеченный текст для разметки
         }
       }
     ]
@@ -119,6 +147,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         contentProps={{ className: styles.itemContent }}
         panelProps={{ className: styles.itemPanel }}
       >
+        {/* Сохраняем форматирование с RichText */}
         <PortableText value={content} components={RichText} />
       </Item>
     </>
