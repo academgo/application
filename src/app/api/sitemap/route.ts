@@ -5,9 +5,12 @@ import {
 } from "@/sanity/sanity.utils";
 
 const generateSlug = (slug: any, language: string) => {
-  return slug && slug[language]?.current
-    ? `/${language}/blog/${slug[language].current}`
-    : "#";
+  if (!slug || !slug[language]?.current) return "#";
+
+  // Если язык "en", не добавляем /en/
+  return language === "en"
+    ? `/blog/${slug[language].current}`
+    : `/${language}/blog/${slug[language].current}`;
 };
 
 async function generateSitemap() {
@@ -24,13 +27,15 @@ async function generateSitemap() {
     pages.push(
       {
         route: "/",
-        url: `${websiteUrl}/${lang}`,
+        // Если язык "en", не добавляем /en/
+        url: lang === "en" ? `${websiteUrl}/` : `${websiteUrl}/${lang}`,
         changefreq: "weekly",
         priority: 1
       },
       {
         route: "/blog",
-        url: `${websiteUrl}/${lang}/blog`,
+        url:
+          lang === "en" ? `${websiteUrl}/blog` : `${websiteUrl}/${lang}/blog`,
         changefreq: "weekly",
         priority: 0.9
       },
