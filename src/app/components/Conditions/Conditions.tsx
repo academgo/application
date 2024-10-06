@@ -6,6 +6,8 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
 
 type Props = {
+  mainHeadingH1: string;
+  mainHeadingH1Highlight: string;
   conditionsTitle: string;
   conditionFirst: Condition;
   conditionSecond: Condition;
@@ -14,6 +16,8 @@ type Props = {
 };
 
 const Conditions: FC<Props> = ({
+  mainHeadingH1,
+  mainHeadingH1Highlight,
   conditionsTitle,
   conditionFirst,
   conditionSecond,
@@ -23,6 +27,15 @@ const Conditions: FC<Props> = ({
   return (
     <section className={styles.conditions}>
       <div className="container">
+        <h1 className={styles.mainHeadingH1}>
+          {mainHeadingH1}
+          {mainHeadingH1Highlight && (
+            <span className={styles.mainHeadingH1Highlight}>
+              &nbsp;
+              {mainHeadingH1Highlight}
+            </span>
+          )}
+        </h1>
         <h2 className={styles.conditionsTitle}>{conditionsTitle}</h2>
         <div className={styles.conditionsGrid}>
           <div className={`${styles.condition} ${styles.conditionFirst}`}>

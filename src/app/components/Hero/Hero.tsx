@@ -43,7 +43,7 @@ const Hero: FC<Props> = ({
           <div className={styles.flexChild}>
             <div className={styles.heroTitleWrapper}>
               <div className={styles.headingBlock}>
-                <h1 className={styles.mainHeading}>
+                <p className={styles.mainHeading}>
                   {mainHeadingStart}{" "}
                   <span className={styles.highlight}>
                     {mainHeadingHighlight}
@@ -52,7 +52,7 @@ const Hero: FC<Props> = ({
                   {mainHeadingContinue}{" "}
                   <PL title="Poland" className={styles.flagIcon} />{" "}
                   {mainHeadingEnd}{" "}
-                </h1>
+                </p>
               </div>
               <div className={styles.descriptionBlock}>
                 {description && (

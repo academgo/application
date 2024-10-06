@@ -103,6 +103,8 @@ export default async function Home({ params }: Props) {
           heroTitle={homePage.heroTitle}
         />
         <Conditions
+          mainHeadingH1={homePage.mainHeadingH1}
+          mainHeadingH1Highlight={homePage.mainHeadingH1Highlight}
           conditionsTitle={homePage.conditionsTitle}
           conditionFirst={homePage.conditionFirst}
           conditionSecond={homePage.conditionSecond}

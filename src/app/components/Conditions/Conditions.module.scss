@@ -285,6 +285,26 @@
   }
 }
 
+.mainHeadingH1 {
+  color: #091728;
+  font-size: clamp(2rem, 1.273rem + 3.64vw, 4rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px; /* 136.364% */
+  letter-spacing: -3.85px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 980px) {
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: -1.68px;
+  }
+
+  span {
+    color: #F39708;
+  }
+}
+
 .conditionsTitle {
   color: #091728;
   font-size: 55px;

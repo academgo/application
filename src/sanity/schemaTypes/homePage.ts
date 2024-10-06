@@ -115,6 +115,16 @@ export default defineType({
       ]
     }),
     defineField({
+      name: "mainHeadingH1",
+      title: "Main Heading H1",
+      type: "string"
+    }),
+    defineField({
+      name: "mainHeadingH1Highlight",
+      title: "Main Heading H1 Highlight",
+      type: "string"
+    }),
+    defineField({
       name: "conditionsTitle",
       title: "Conditions Title",
       type: "string"

@@ -233,6 +233,8 @@ export type Homepage = {
   heroDescription: string;
   flags: Flag[];
   heroTitle: string;
+  mainHeadingH1: string;
+  mainHeadingH1Highlight: string;
   conditionsTitle: string;
   conditionFirst: Condition;
   conditionSecond: Condition;
