@@ -6,9 +6,20 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/ru/success", "/en/success"]
+        disallow: [
+          "/admin",
+          "/ru/success",
+          "/en/success",
+          "*?gtm",
+          "*?utm",
+          "*?gclid",
+          "*?from",
+          " *?gbraid",
+          "*?matchtype="
+        ]
       }
     ],
-    sitemap: "https://academgo.com/sitemap.xml"
+    sitemap: "https://academgo.com/sitemap.xml",
+    host: "https://academgo.com"
   };
 }
