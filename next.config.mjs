@@ -132,18 +132,6 @@ const nextConfig = {
         destination: '/en/blog/study-in-poland-from-philippines',
         permanent: true,
       },
-      // Редирект с HTTP на HTTPS
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'academgo.com',
-          },
-        ],
-        destination: 'https://academgo.com/:path*',
-        permanent: true,
-      },
     ];
   },
 };
