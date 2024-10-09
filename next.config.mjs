@@ -132,11 +132,6 @@ const nextConfig = {
         destination: '/en/blog/study-in-poland-from-philippines',
         permanent: true,
       },
-      {
-        source: '/:path*',
-        destination: 'https://academgo.com/:path*',
-        permanent: true,
-      }
     ];
   },
 };
