@@ -6,16 +6,6 @@ const blog = {
   type: "document",
   fields: [
     defineField({
-      name: "title",
-      title: "Title",
-      type: "string"
-    }),
-    defineField({
-      name: "slug",
-      title: "Slug",
-      type: "localizedSlug"
-    }),
-    defineField({
       name: "seo",
       title: "SEO",
       type: "object",
@@ -31,6 +21,16 @@ const blog = {
           type: "string"
         })
       ]
+    }),
+    defineField({
+      name: "title",
+      title: "H1 | Title of the article",
+      type: "string"
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "localizedSlug"
     }),
     defineField({
       name: "publishedAt",
