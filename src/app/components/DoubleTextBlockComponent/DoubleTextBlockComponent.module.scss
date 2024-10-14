@@ -1,0 +1,16 @@
+.doubleTextBlock {
+  margin-bottom: 70px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 50px;
+
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+  }
+}
+
+.textBlock {
+  flex: 1;
+}

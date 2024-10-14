@@ -18,7 +18,8 @@ import {
   AccordionBlock,
   DoubleImagesBlock,
   TabsBlock,
-  TextContent
+  TextContent,
+  DoubleTextBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -38,7 +39,8 @@ type ContentBlock =
   | TextContent
   | DoubleImagesBlock
   | AccordionBlock
-  | TabsBlock;
+  | TabsBlock
+  | DoubleTextBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

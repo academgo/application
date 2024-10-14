@@ -3,7 +3,8 @@ import {
   DoubleImagesBlock,
   Seo,
   TabsBlock,
-  TextContent
+  TextContent,
+  DoubleTextBlock
 } from "./blog";
 import { Image } from "./homepage";
 
@@ -23,7 +24,11 @@ export type Singlepage = {
   coverBlock: Coverblock;
   previewImage: Image;
   contentBlocks: Array<
-    TextContent | DoubleImagesBlock | AccordionBlock | TabsBlock
+    | TextContent
+    | DoubleImagesBlock
+    | AccordionBlock
+    | TabsBlock
+    | DoubleTextBlock
   >;
   language: string;
   slug: {

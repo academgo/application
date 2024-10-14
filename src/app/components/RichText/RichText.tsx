@@ -79,6 +79,12 @@ export const RichText = {
           {children}
         </Link>
       );
+    },
+    color: ({ children, value }: any) => {
+      return <span style={{ color: value.color }}>{children}</span>;
+    },
+    textSize: ({ children, value }: any) => {
+      return <span style={{ fontSize: value.size }}>{children}</span>;
     }
   }
 };

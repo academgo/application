@@ -34,6 +34,32 @@ export default defineType({
                 type: "url"
               }
             ]
+          },
+          {
+            title: "Text Color",
+            name: "color",
+            type: "object",
+            fields: [
+              {
+                title: "Color",
+                name: "color",
+                type: "string",
+                description: "Input color code (e.g., #ff0000 for red)"
+              }
+            ]
+          },
+          {
+            title: "Text Size",
+            name: "textSize",
+            type: "object",
+            fields: [
+              {
+                title: "Size",
+                name: "size",
+                type: "string",
+                description: "Input size (e.g., 16px, 1.5rem)"
+              }
+            ]
           }
         ]
       }

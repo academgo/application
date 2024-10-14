@@ -3,7 +3,8 @@ import {
   DoubleImagesBlock,
   Seo,
   TabsBlock,
-  TextContent
+  TextContent,
+  DoubleTextBlock
 } from "./blog";
 import { Image } from "./homepage";
 
@@ -21,7 +22,11 @@ export type Subpage = {
   seo: Seo;
   coverBlock: Coverblock;
   contentBlocks: Array<
-    TextContent | DoubleImagesBlock | AccordionBlock | TabsBlock
+    | TextContent
+    | DoubleImagesBlock
+    | AccordionBlock
+    | TabsBlock
+    | DoubleTextBlock
   >;
   language: string;
   slug: {

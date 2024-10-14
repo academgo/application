@@ -17,6 +17,7 @@ import subpage from "./subpage";
 import successPage from "./successPage";
 import tabsBlock from "./tabsBlock";
 import textContent from "./textContent";
+import doubleTextBlock from "./doubleTextBlock";
 import videoShort from "./videoShort";
 
 export const schemaTypes = [
@@ -36,6 +37,7 @@ export const schemaTypes = [
   videoShort,
   contentBlock,
   textContent,
+  doubleTextBlock,
   doubleImagesBlock,
   accordionBlock,
   tabsBlock,

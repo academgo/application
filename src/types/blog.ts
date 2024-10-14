@@ -44,6 +44,16 @@ export type AccordionBlock = {
   }>;
 };
 
+export type DoubleTextBlock = {
+  _key: string;
+  _type: string;
+  doubleTextBlockTitle: string;
+  leftTextBlock: TextContent;
+  rightTextBlock: TextContent;
+  backgroundColor: string;
+  border: string;
+};
+
 export type TabsBlock = {
   _key: string;
   _type: string;
@@ -84,7 +94,11 @@ export type Blog = {
   firstContent: any;
   previewImage: Image;
   contentBlocks: Array<
-    TextContent | DoubleImagesBlock | AccordionBlock | TabsBlock
+    | TextContent
+    | DoubleImagesBlock
+    | AccordionBlock
+    | TabsBlock
+    | DoubleTextBlock
   >;
   videoBlock: VideoBlock;
   relatedArticles: RelatedArticle[];

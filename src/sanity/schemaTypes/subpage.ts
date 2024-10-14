@@ -75,6 +75,7 @@ const subpage = {
       type: "array",
       of: [
         { type: "textContent" },
+        { type: "doubleTextBlock" },
         { type: "accordionBlock" },
         { type: "doubleImagesBlock" },
         { type: "tabsBlock" }
