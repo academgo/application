@@ -10,6 +10,7 @@ import { SuccessPage } from "@/types/successPage";
 import { NotFoundPage } from "@/types/notFoundPage";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Singlepage } from "@/types/singlepage";
+import { Subpage } from "@/types/subpage";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -484,4 +485,34 @@ export async function getSinglePageByLang(
   const singlePage = await client.fetch(singlePageQuery, { lang, slug });
 
   return singlePage;
+}
+
+export async function getSingleSubPageBySlug(
+  lang: string,
+  subslug: string
+): Promise<Subpage | null> {
+  const subPageQuery = groq`*[_type == 'subpage' && slug[$lang].current == $subslug][0] {
+    _id,
+    title,
+    slug,
+    seo,
+    contentBlocks,
+    parentPage->{
+      _id,
+      title,
+      slug
+    },
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  try {
+    const subPage = await client.fetch(subPageQuery, { lang, subslug });
+    return subPage;
+  } catch (error) {
+    console.error("Error fetching subpage:", error);
+    return null;
+  }
 }

@@ -29,6 +29,7 @@ export default defineConfig({
         "category",
         "blog",
         "singlepage",
+        "subpage",
         "blogPage",
         "successPage",
         "notFoundPage"
@@ -51,6 +52,7 @@ export default defineConfig({
             "category",
             "blog",
             "singlepage",
+            "subpage",
             "blogPage",
             "successPage",
             "notFoundPage"

@@ -13,6 +13,7 @@ import localizedSlug from "./localizedSlug";
 import notFoundPage from "./notFoundPage";
 import post from "./post";
 import singlepage from "./singlepage";
+import subpage from "./subpage";
 import successPage from "./successPage";
 import tabsBlock from "./tabsBlock";
 import textContent from "./textContent";
@@ -25,6 +26,7 @@ export const schemaTypes = [
   // post,
   blog,
   singlepage,
+  subpage,
   category,
   blogPage,
   successPage,
