@@ -6,6 +6,23 @@ const subpage = {
   type: "document",
   fields: [
     defineField({
+      name: "seo",
+      title: "SEO",
+      type: "object",
+      fields: [
+        defineField({
+          name: "metaTitle",
+          title: "Meta Title",
+          type: "string"
+        }),
+        defineField({
+          name: "metaDescription",
+          title: "Meta Description",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
       name: "title",
       title: "Title",
       type: "string"
@@ -23,6 +40,36 @@ const subpage = {
       description: "Select the parent page for this subpage"
     }),
     defineField({
+      name: "coverBlock",
+      title: "Cover Block",
+      type: "object",
+      fields: [
+        defineField({
+          name: "coverImage",
+          title: "Cover Image",
+          type: "image",
+          options: {
+            hotspot: true
+          }
+        }),
+        defineField({
+          name: "coverImageAlt",
+          title: "Cover Image Alt",
+          type: "string"
+        }),
+        defineField({
+          name: "coverTitle",
+          title: "H1 | Cover Title",
+          type: "string"
+        }),
+        defineField({
+          name: "coverText",
+          title: "Cover Text",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
       name: "contentBlocks",
       title: "Main Content",
       type: "array",
@@ -31,23 +78,6 @@ const subpage = {
         { type: "accordionBlock" },
         { type: "doubleImagesBlock" },
         { type: "tabsBlock" }
-      ]
-    }),
-    defineField({
-      name: "seo",
-      title: "SEO",
-      type: "object",
-      fields: [
-        defineField({
-          name: "metaTitle",
-          title: "Meta Title",
-          type: "string"
-        }),
-        defineField({
-          name: "metaDescription",
-          title: "Meta Description",
-          type: "string"
-        })
       ]
     }),
     defineField({

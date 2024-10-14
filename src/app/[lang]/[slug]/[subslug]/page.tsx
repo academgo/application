@@ -25,6 +25,7 @@ import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
+import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -56,6 +57,8 @@ const Subpage = async ({ params }: Props) => {
 
   // Получаем данные подстраницы
   const subPage = await getSingleSubPageBySlug(lang, subslug);
+
+  // console.log("Cover block", subPage?.coverBlock);
 
   if (!subPage) {
     const notFoundPage = await getNotFoundPageByLang(lang);
@@ -155,6 +158,7 @@ const Subpage = async ({ params }: Props) => {
       <Header params={params} translations={translations} />
       <main>
         <div className="container">
+          <CoverBlock coverBlock={subPage.coverBlock} />
           <SinglePageIntroBlock title={subPage.title} />
           {subPage.contentBlocks.map(block => renderContentBlock(block))}
         </div>

@@ -474,6 +474,7 @@ export async function getSinglePageByLang(
     title,
     slug,
     seo,
+    coverBlock,
     previewImage,
     contentBlocks,
     language,
@@ -496,6 +497,7 @@ export async function getSingleSubPageBySlug(
     title,
     slug,
     seo,
+    coverBlock,
     contentBlocks,
     parentPage->{
       _id,
