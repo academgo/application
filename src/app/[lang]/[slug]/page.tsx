@@ -26,6 +26,7 @@ import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
+import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -127,6 +128,13 @@ const SinglePage = async ({ params }: Props) => {
             key={block._key}
             block={block as DoubleImagesBlock}
             title={page.title}
+          />
+        );
+      case "doubleTextBlock":
+        return (
+          <DoubleTextBlockComponent
+            key={block._key}
+            block={block as DoubleTextBlock}
           />
         );
       case "tabsBlock":
