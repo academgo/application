@@ -22,12 +22,14 @@ import {
   AccordionBlock,
   DoubleImagesBlock,
   TabsBlock,
-  TextContent
+  TextContent,
+  DoubleTextBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
+import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -37,7 +39,8 @@ type ContentBlock =
   | TextContent
   | DoubleImagesBlock
   | AccordionBlock
-  | TabsBlock;
+  | TabsBlock
+  | DoubleTextBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -124,6 +127,13 @@ const PagePost = async ({ params }: Props) => {
             key={block._key}
             block={block as DoubleImagesBlock}
             title={blog.title}
+          />
+        );
+      case "doubleTextBlock":
+        return (
+          <DoubleTextBlockComponent
+            key={block._key}
+            block={block as DoubleTextBlock}
           />
         );
       case "tabsBlock":
