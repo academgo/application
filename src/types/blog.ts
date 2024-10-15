@@ -33,6 +33,14 @@ export type UnknownBlock = {
   _type: string;
 };
 
+export type BlockContentWithStyle = {
+  _key: string;
+  _type: string;
+  content: any;
+  backgroundColor: string;
+  isBorder: boolean;
+};
+
 export type VideoBlock = {
   _key: string;
   videoId: string;
@@ -73,8 +81,8 @@ export type DoubleTextBlock = {
   _key: string;
   _type: string;
   doubleTextBlockTitle: string;
-  leftTextBlock: TextContent;
-  rightTextBlock: TextContent;
+  leftTextBlock: BlockContentWithStyle;
+  rightTextBlock: BlockContentWithStyle;
   backgroundColor: string;
   border: string;
 };

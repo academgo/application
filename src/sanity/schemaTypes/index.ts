@@ -23,6 +23,7 @@ import bulletsBlock from "./bulletsBlock";
 import whiteBlock from "./whiteBlock";
 import benefitsBlock from "./benefitsBlock";
 import linksBlock from "./linksBlock";
+import blockContentWithStyle from "./blockContentWithStyle";
 
 export const schemaTypes = [
   header,
@@ -41,6 +42,7 @@ export const schemaTypes = [
   videoShort,
   contentBlock,
   textContent,
+  blockContentWithStyle,
   doubleTextBlock,
   doubleImagesBlock,
   accordionBlock,

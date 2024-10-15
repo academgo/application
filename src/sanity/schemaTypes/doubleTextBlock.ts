@@ -15,12 +15,12 @@ const doubleTextBlock = defineType({
     defineField({
       name: "leftTextBlock",
       title: "Text on the left",
-      type: "contentBlock"
+      type: "blockContentWithStyle"
     }),
     defineField({
       name: "rightTextBlock",
       title: "Text on the right",
-      type: "contentBlock"
+      type: "blockContentWithStyle"
     })
   ]
 });
