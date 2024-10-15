@@ -22,7 +22,8 @@ import {
   DoubleTextBlock,
   BulletsBlock,
   WhiteBlock,
-  BenefitsBlock
+  BenefitsBlock,
+  LinksBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -49,7 +50,8 @@ type ContentBlock =
   | DoubleTextBlock
   | BulletsBlock
   | WhiteBlock
-  | BenefitsBlock;
+  | BenefitsBlock
+  | LinksBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

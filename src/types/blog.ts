@@ -1,3 +1,5 @@
+import { Link } from "./homepage";
+
 export type Image = {
   _key: string;
   _ref: string;
@@ -41,6 +43,13 @@ export type TextContent = {
   _key: string;
   _type: string;
   content: any;
+};
+
+export type LinksBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  links: Link[];
 };
 
 export type DoubleImagesBlock = {

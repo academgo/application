@@ -1,0 +1,40 @@
+.linksBlock {
+  margin-bottom: clamp(1.875rem, 0.284rem + 7.95vw, 6.25rem);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(0.625rem, 0.398rem + 1.14vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.link {
+  display: flex;
+  padding-top: clamp(0.625rem, 0.33rem + 1.48vw, 1.438rem);
+  padding-bottom: clamp(0.625rem, 0.33rem + 1.48vw, 1.438rem);
+  padding-inline: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #112546;
+  color: #FFF;
+  text-align: center;
+  font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  transition: all 0.3s ease;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.6px;
+
+    &:hover {
+      background: #F39708;
+    }
+  }
+}
