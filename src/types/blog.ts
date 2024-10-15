@@ -13,6 +13,14 @@ export type Bullet = {
   text: string;
 };
 
+export type BenefitBullet = {
+  _key: string;
+  _type: string;
+  bulletIcon: Image;
+  bulletTitle: string;
+  bulletText: string;
+};
+
 export type Seo = {
   metaTitle: string;
   metaDescription: string;
@@ -74,6 +82,15 @@ export type WhiteBlock = {
   title: string;
   text: any;
   bullets: Bullet[];
+};
+
+export type BenefitsBlock = {
+  _key: string;
+  _type: string;
+  titleHighLight: string;
+  title: string;
+  description: string;
+  benefitsBullets: BenefitBullet[];
 };
 
 export type TabsBlock = {

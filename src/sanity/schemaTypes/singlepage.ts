@@ -83,7 +83,8 @@ const singlepage = {
         { type: "whiteBlock" },
         { type: "accordionBlock" },
         { type: "doubleImagesBlock" },
-        { type: "tabsBlock" }
+        { type: "tabsBlock" },
+        { type: "benefitsBlock" }
       ]
     }),
     defineField({

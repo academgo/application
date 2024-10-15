@@ -1,0 +1,96 @@
+.benefitsBlock {
+  margin-bottom: clamp(1.875rem, 0.284rem + 7.95vw, 6.25rem);
+}
+
+.highlight {
+  color: #F39708;
+}
+
+.description {
+  color: #091728;
+  font-size: clamp(0.75rem, 0.341rem + 2.05vw, 1.875rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  margin-bottom: clamp(0.938rem, 0.369rem + 2.84vw, 2.5rem);
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.6px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1179px;
+  }
+}
+
+.benefitsList {
+  padding-top: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+  padding-left: clamp(0.938rem, -0.494rem + 7.16vw, 4.875rem);
+  padding-right: clamp(0.938rem, -1.199rem + 10.68vw, 6.813rem);
+  padding-bottom: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+
+  @media screen and (min-width: 980px) {
+    flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; // расстояние между элементами
+  }
+}
+
+.bullet {
+  padding-top: clamp(1.875rem, 1.534rem + 1.7vw, 2.813rem);
+  padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+  padding-inline: clamp(0.813rem, 0.653rem + 0.8vw, 1.25rem);
+  // flex: 1 1 calc(20% - 20px); // Каждый элемент будет занимать 20% ширины
+  // max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
+  // box-sizing: border-box;
+
+  @media screen and (min-width: 980px) {
+    flex-grow: 1; // Элемент может расти при наличии свободного пространства
+    max-width: unset; // Сбрасываем максимальную ширину, если элементов меньше пяти
+    flex: 1 1 auto; // Каждый элемент будет занимать 20% ширины
+    // max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
+    box-sizing: border-box;
+
+    &:nth-child(n+6) {
+      margin-top: 30px; // Отступ сверху для переноса на следующую строку
+    }
+  }
+}
+
+.bulletIcon {
+  margin-bottom: clamp(0.625rem, 0.511rem + 0.57vw, 0.938rem);
+}
+
+.bulletTitle {
+  color: #091728;
+  font-size: clamp(1rem, 0.864rem + 0.68vw, 1.375rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.48px;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.75px;
+  }
+}
+
+.bulletText {
+  color: #091728;
+  font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  margin-top: clamp(0.5rem, 0.409rem + 0.45vw, 0.75rem);
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.48px;
+  }
+}

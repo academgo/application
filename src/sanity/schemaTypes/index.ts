@@ -21,6 +21,7 @@ import doubleTextBlock from "./doubleTextBlock";
 import videoShort from "./videoShort";
 import bulletsBlock from "./bulletsBlock";
 import whiteBlock from "./whiteBlock";
+import benefitsBlock from "./benefitsBlock";
 
 export const schemaTypes = [
   header,
@@ -45,5 +46,6 @@ export const schemaTypes = [
   tabsBlock,
   bulletsBlock,
   whiteBlock,
+  benefitsBlock,
   localizedSlug
 ];
