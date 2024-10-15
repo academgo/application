@@ -1,0 +1,46 @@
+.bulletsBlock {
+  margin-bottom: clamp(1.875rem, 0.284rem + 7.95vw, 6.25rem);
+}
+
+.bulletsList {
+  display: grid;
+  gap: clamp(0.313rem, -0.256rem + 2.84vw, 1.875rem);
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+.bullet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.313rem, 0.085rem + 1.14vw, 0.938rem);
+  border-radius: 25px;
+  background: #F39708;
+  color: #fff;
+  padding: clamp(0.625rem, 0.352rem + 1.36vw, 1.375rem);
+}
+
+.bulletTitle {
+  font-size: clamp(1.5rem, 0.341rem + 5.8vw, 4.688rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  display: flex;
+}
+
+.bulletText {
+  font-size: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.6px;
+  }
+}

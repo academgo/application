@@ -19,7 +19,8 @@ import {
   DoubleImagesBlock,
   TabsBlock,
   TextContent,
-  DoubleTextBlock
+  DoubleTextBlock,
+  BulletsBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -41,7 +42,8 @@ type ContentBlock =
   | DoubleImagesBlock
   | AccordionBlock
   | TabsBlock
-  | DoubleTextBlock;
+  | DoubleTextBlock
+  | BulletsBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -19,7 +19,8 @@ import {
   DoubleImagesBlock,
   TabsBlock,
   TextContent,
-  DoubleTextBlock
+  DoubleTextBlock,
+  BulletsBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -28,6 +29,7 @@ import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFou
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
+import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/BulletsBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -42,7 +44,8 @@ type ContentBlock =
   | DoubleImagesBlock
   | AccordionBlock
   | TabsBlock
-  | DoubleTextBlock;
+  | DoubleTextBlock
+  | BulletsBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -152,6 +155,13 @@ const Subpage = async ({ params }: Props) => {
           <DoubleTextBlockComponent
             key={block._key}
             block={block as DoubleTextBlock}
+          />
+        );
+      case "bulletsBlock":
+        return (
+          <BulletsBlockComponent
+            key={block._key}
+            block={block as BulletsBlock}
           />
         );
       case "tabsBlock":

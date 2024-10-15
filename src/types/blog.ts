@@ -5,6 +5,14 @@ export type Image = {
   url: string;
 };
 
+export type Bullet = {
+  _key: string;
+  _type: string;
+  number: string;
+  sign?: string;
+  text: string;
+};
+
 export type Seo = {
   metaTitle: string;
   metaDescription: string;
@@ -52,6 +60,12 @@ export type DoubleTextBlock = {
   rightTextBlock: TextContent;
   backgroundColor: string;
   border: string;
+};
+
+export type BulletsBlock = {
+  _key: string;
+  _type: string;
+  bullets: Bullet[];
 };
 
 export type TabsBlock = {
