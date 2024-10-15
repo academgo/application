@@ -68,6 +68,14 @@ export type BulletsBlock = {
   bullets: Bullet[];
 };
 
+export type WhiteBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  text: any;
+  bullets: Bullet[];
+};
+
 export type TabsBlock = {
   _key: string;
   _type: string;

@@ -1,0 +1,119 @@
+.whiteBlock {
+  margin-bottom: clamp(1.875rem, 0.284rem + 7.95vw, 6.25rem);
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 25px;
+  }
+}
+
+.content {
+  padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+
+  @media screen and (min-width: 980px) {
+    padding-top: 30px;
+    padding-left: 78px;
+    padding-right: 109px;
+    background-color: #fff;
+  }
+}
+
+.portableText {
+  p {
+    font-size: clamp(1rem, 0.682rem + 1.59vw, 1.875rem);
+    letter-spacing: -0.48px;
+
+    @media screen and (min-width: 768px) {
+      letter-spacing: -0.9px;
+    }
+  }
+}
+
+.bulletsList {
+  padding-top: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+  padding-left: clamp(0.938rem, -0.494rem + 7.16vw, 4.875rem);
+  padding-right: clamp(0.938rem, -1.199rem + 10.68vw, 6.813rem);
+  padding-bottom: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 15px 15px 0 0;
+
+  @media screen and (min-width: 980px) {
+    border-radius: unset;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; // расстояние между элементами
+  }
+}
+
+.bullet {
+  position: relative;
+  border-radius: 15px;
+  border: 2px solid #112546;
+  padding-top: clamp(1.875rem, 1.534rem + 1.7vw, 2.813rem);
+  padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+  padding-inline: clamp(0.813rem, 0.653rem + 0.8vw, 1.25rem);
+  // flex: 1 1 calc(20% - 20px); // Каждый элемент будет занимать 20% ширины
+  // max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
+  // box-sizing: border-box;
+
+  @media screen and (min-width: 980px) {
+    flex-grow: 1; // Элемент может расти при наличии свободного пространства
+    max-width: unset; // Сбрасываем максимальную ширину, если элементов меньше пяти
+    flex: 1 1 calc(20% - 20px); // Каждый элемент будет занимать 20% ширины
+    max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
+    box-sizing: border-box;
+
+    &:nth-child(n+6) {
+      margin-top: 30px; // Отступ сверху для переноса на следующую строку
+    }
+  }
+}
+
+.bulletNumber {
+  border-radius: 7px;
+  background: #112546;
+  color: #fff;
+  width: clamp(2.5rem, 2.273rem + 1.14vw, 3.125rem);
+  height: clamp(2.5rem, 2.273rem + 1.14vw, 3.125rem);
+  font-size: clamp(1.875rem, 1.761rem + 0.57vw, 2.188rem);
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -1.5rem;
+  // left: 0;
+}
+
+.bulletTitle {
+  color: #091728;
+  font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  margin-bottom: clamp(0.313rem, 0.199rem + 0.57vw, 0.625rem);
+
+  @media screen and (min-width: 980px) {
+    letter-spacing: -0.6px;
+  }
+}
+
+.bulletText {
+  color: #091728;
+  font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  @media screen and (min-width: 980px) {
+    letter-spacing: -0.32px;
+  }
+}

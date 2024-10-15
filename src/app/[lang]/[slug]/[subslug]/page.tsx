@@ -20,7 +20,8 @@ import {
   TabsBlock,
   TextContent,
   DoubleTextBlock,
-  BulletsBlock
+  BulletsBlock,
+  WhiteBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -30,6 +31,7 @@ import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePa
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/BulletsBlockComponent";
+import WhiteBlockComponent from "@/app/components/WhiteBlockComponent/WhiteBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -45,7 +47,8 @@ type ContentBlock =
   | AccordionBlock
   | TabsBlock
   | DoubleTextBlock
-  | BulletsBlock;
+  | BulletsBlock
+  | WhiteBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -163,6 +166,10 @@ const Subpage = async ({ params }: Props) => {
             key={block._key}
             block={block as BulletsBlock}
           />
+        );
+      case "whiteBlock":
+        return (
+          <WhiteBlockComponent key={block._key} block={block as WhiteBlock} />
         );
       case "tabsBlock":
         return (

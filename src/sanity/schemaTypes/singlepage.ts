@@ -80,6 +80,7 @@ const singlepage = {
       of: [
         { type: "textContent" },
         { type: "doubleTextBlock" },
+        { type: "whiteBlock" },
         { type: "accordionBlock" },
         { type: "doubleImagesBlock" },
         { type: "tabsBlock" }
