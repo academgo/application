@@ -86,7 +86,9 @@ const singlepage = {
         { type: "tabsBlock" },
         { type: "benefitsBlock" },
         { type: "linksBlock" },
-        { type: "sliderBlock" }
+        { type: "sliderBlock" },
+        { type: "cascadeBlock" },
+        { type: "pricesBlock" }
       ]
     }),
     defineField({

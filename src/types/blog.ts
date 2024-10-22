@@ -62,6 +62,12 @@ export type BlockContentWithStyle = {
   isBorder: boolean;
 };
 
+export type ContentCascadeBlock = {
+  _key: string;
+  _type: string;
+  contentBlock: BlockContentWithStyle;
+};
+
 export type VideoBlock = {
   _key: string;
   videoId: string;
@@ -113,6 +119,13 @@ export type DoubleTextBlock = {
   rightTextBlock: BlockContentWithStyle;
   backgroundColor: string;
   border: string;
+};
+
+export type CascadeBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  contentCascadeBlocks: ContentCascadeBlock[];
 };
 
 export type BulletsBlock = {

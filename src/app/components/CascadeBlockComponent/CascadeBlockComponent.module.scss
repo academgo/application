@@ -1,0 +1,54 @@
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+//   gap: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+//   grid-template-columns: 1fr;
+
+//   @media (min-width: 768px) {
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// }
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Общие стили для блоков */
+.textBlock {
+  background: #f5f5f5;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Для экранов шире 768px (десктоп) */
+@media (min-width: 768px) {
+  .textBlock {
+    flex: 1 1 calc(33.33% - 16px); /* Три колонки по умолчанию */
+  }
+
+  /* Четвертый и пятый блоки занимают по 50% ширины */
+  .textBlock:nth-child(4),
+  .textBlock:nth-child(5) {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+/* Адаптивность для планшетов и мобильных устройств */
+@media (max-width: 767px) {
+  .textBlock {
+    flex: 1 1 calc(50% - 16px); /* Два столбца на планшетах */
+  }
+}
+
+@media (max-width: 480px) {
+  .textBlock {
+    flex: 1 1 100%; /* Один столбец на мобильных */
+  }
+}
+
+.textBlock {
+  border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+  padding: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+}
