@@ -7,12 +7,33 @@ export type Image = {
   url: string;
 };
 
+export type SliderList = {
+  _key: string;
+  title: string;
+};
+
 export type Bullet = {
   _key: string;
   _type: string;
   number: string;
   sign?: string;
   text: string;
+};
+
+export type Slide = {
+  _key: string;
+  image?: Image;
+  title: string;
+  description: string;
+  subTitle: string;
+  sliderList: SliderList[];
+  semesters: string;
+  cost: string;
+  universitiesTitle?: string;
+  universities?: SliderList[];
+  linkLabel: string;
+  linkDestination: string;
+  hasBorder: boolean;
 };
 
 export type BenefitBullet = {
@@ -51,6 +72,13 @@ export type TextContent = {
   _key: string;
   _type: string;
   content: any;
+};
+
+export type SliderBlock = {
+  _key: string;
+  _type: string;
+  slides: Slide[];
+  slidesPerView: string;
 };
 
 export type LinksBlock = {

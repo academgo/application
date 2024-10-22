@@ -24,6 +24,7 @@ import whiteBlock from "./whiteBlock";
 import benefitsBlock from "./benefitsBlock";
 import linksBlock from "./linksBlock";
 import blockContentWithStyle from "./blockContentWithStyle";
+import sliderBlock from "./sliderBlock";
 
 export const schemaTypes = [
   header,
@@ -45,6 +46,7 @@ export const schemaTypes = [
   blockContentWithStyle,
   doubleTextBlock,
   doubleImagesBlock,
+  sliderBlock,
   accordionBlock,
   tabsBlock,
   bulletsBlock,

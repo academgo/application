@@ -23,7 +23,8 @@ import {
   BulletsBlock,
   WhiteBlock,
   BenefitsBlock,
-  LinksBlock
+  LinksBlock,
+  SliderBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -36,6 +37,7 @@ import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/Bullet
 import WhiteBlockComponent from "@/app/components/WhiteBlockComponent/WhiteBlockComponent";
 import BenefitsBlockComponent from "@/app/components/BenefitsBlockComponent/BenefitsBlockComponent";
 import LinksBlockComponent from "@/app/components/LinksBlockComponent/LinksBlockComponent";
+import SliderBlockComponent from "@/app/components/SliderBlockComponent/SliderBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -54,7 +56,8 @@ type ContentBlock =
   | BulletsBlock
   | WhiteBlock
   | BenefitsBlock
-  | LinksBlock;
+  | LinksBlock
+  | SliderBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -73,7 +76,7 @@ const Subpage = async ({ params }: Props) => {
   // Получаем данные подстраницы
   const subPage = await getSingleSubPageBySlug(lang, subslug);
 
-  // console.log("Cover block", subPage?.coverBlock);
+  // console.log("Subpage data:", subPage);
 
   if (!subPage) {
     const notFoundPage = await getNotFoundPageByLang(lang);
@@ -139,6 +142,7 @@ const Subpage = async ({ params }: Props) => {
   }, []);
 
   const renderContentBlock = (block: ContentBlock) => {
+    // console.log("Block type", block._type);
     switch (block._type) {
       case "textContent":
         return (
@@ -191,6 +195,10 @@ const Subpage = async ({ params }: Props) => {
       case "linksBlock":
         return (
           <LinksBlockComponent key={block._key} block={block as LinksBlock} />
+        );
+      case "sliderBlock":
+        return (
+          <SliderBlockComponent key={block._key} block={block as SliderBlock} />
         );
       default:
         return <p key={block._key}>Unsupported block type</p>;

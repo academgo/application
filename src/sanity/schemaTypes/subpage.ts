@@ -82,7 +82,8 @@ const subpage = {
         { type: "tabsBlock" },
         { type: "bulletsBlock" },
         { type: "benefitsBlock" },
-        { type: "linksBlock" }
+        { type: "linksBlock" },
+        { type: "sliderBlock" }
       ]
     }),
     defineField({

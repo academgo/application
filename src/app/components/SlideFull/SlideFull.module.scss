@@ -1,0 +1,174 @@
+.slideWrapper {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.slideImage {
+  position: relative;
+  aspect-ratio: 185/119;
+  border-radius: 0 0 25px 25px;
+  overflow: hidden;
+}
+
+.slideFull {
+  padding: 23px 10px 21px 20px;
+  height: 100%;
+  padding-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    padding: 27px 46px 35px 46px;
+    padding-bottom: 110px;
+  }
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.625rem, 0.313rem + 1.25vw, 1.25rem);
+}
+
+.title {
+  color: #1A2644;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19.671px; /* 122.941% */
+  letter-spacing: -0.64px;
+  max-width: 90%;
+  // margin-bottom: clamp(0.625rem, 0.313rem + 1.25vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px; /* 125% */
+    letter-spacing: -2.24px;
+  }
+}
+.text {
+  color: #8A929C;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 140% */
+  letter-spacing: -0.4px;
+  // margin-bottom: clamp(0.625rem, 0.313rem + 1.25vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    color: #8A929C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+    letter-spacing: -0.64px;
+  }
+
+}
+
+.subtitle {
+  color: #1A2644;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  margin-bottom: clamp(0.313rem, 0.156rem + 0.63vw, 0.625rem);
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @media screen and (min-width: 768px) {
+    gap: 7px;
+  }
+}
+
+.listItem {
+  color: #8A929C;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  position: relative;
+  padding-left: 12px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #8A929C;
+
+    @media screen and (min-width: 768px) {
+      top: 6px;
+      width: 5px;
+      height: 5px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    letter-spacing: -0.64px;
+  }
+}
+
+.textMark {
+  color: #F39708;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.buttonBlock {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+
+  @media screen and (min-width: 768px) {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 245.882px;
+  background: #F39708;
+  padding: 13.278px 31.473px;
+  color: #FFF;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  width: 100%;
+  height: 50px;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 500px;
+    padding: 27px 64px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.6px;
+    height: 75px;
+  }
+}

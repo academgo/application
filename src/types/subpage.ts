@@ -4,7 +4,8 @@ import {
   Seo,
   TabsBlock,
   TextContent,
-  DoubleTextBlock
+  DoubleTextBlock,
+  SliderBlock
 } from "./blog";
 import { Image } from "./homepage";
 
@@ -27,6 +28,7 @@ export type Subpage = {
     | AccordionBlock
     | TabsBlock
     | DoubleTextBlock
+    | SliderBlock
   >;
   language: string;
   slug: {
