@@ -1,13 +1,6 @@
-// .wrapper {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-//   gap: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
-//   grid-template-columns: 1fr;
-
-//   @media (min-width: 768px) {
-//     grid-template-columns: repeat(3, 1fr);
-//   }
-// }
+.cascadeBlock {
+  margin-bottom: clamp(1.25rem, 0.568rem + 3.41vw, 3.125rem);
+}
 
 .wrapper {
   display: flex;

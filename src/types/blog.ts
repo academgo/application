@@ -151,6 +151,21 @@ export type BenefitsBlock = {
   benefitsBullets: BenefitBullet[];
 };
 
+export type PackagePriceBlock = {
+  _key: string;
+  _type: string;
+  leftSide: BlockContentWithStyle;
+  rightSide: {
+    pretitle: string;
+    title: string;
+    listTitle: string;
+    list: SliderList[];
+    price: string;
+    priceDescription: string;
+    buttonLabel: string;
+  };
+};
+
 export type TabsBlock = {
   _key: string;
   _type: string;

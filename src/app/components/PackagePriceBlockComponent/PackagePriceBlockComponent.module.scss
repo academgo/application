@@ -1,0 +1,103 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.leftSide {
+  padding: 15px;
+  border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+
+  @media screen and (min-width: 768px) {
+    padding: 50px 110px 85px 35px;
+    
+  }
+}
+
+.rightSide {
+  padding: 15px;
+  border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 50px;
+    padding-bottom: 50;
+    padding-left: 45px;
+    flex: 1 0 40%;
+  }
+}
+
+.pretitle {
+  color: #FFF;
+  font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  margin-bottom: clamp(0.313rem, -0.028rem + 1.7vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.64px;
+  }
+}
+.title {
+  color: #FFF;
+  font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.72px;
+  margin-bottom: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -1.92px;
+  }
+
+}
+.listTitle {
+  color: #FFF;
+  font-size: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  margin-bottom: 10px;
+
+}
+.list {
+  color: #fff;
+  margin-left: 20px;
+  margin-bottom: clamp(0.938rem, 0.483rem + 2.27vw, 2.188rem);
+}
+.listItem {
+  list-style-type: disc;
+
+}
+.price {
+  color:  #FFF;
+  font-size: clamp(1.5rem, 1.136rem + 1.82vw, 2.5rem);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.72px;
+  margin-bottom: clamp(0.125rem, -0.284rem + 2.05vw, 1.25rem);
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -1.6px;
+  }
+}
+
+.priceDescription {
+  color: #FFF;
+  font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.8px;
+  }
+}

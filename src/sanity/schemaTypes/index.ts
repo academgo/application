@@ -27,6 +27,7 @@ import blockContentWithStyle from "./blockContentWithStyle";
 import sliderBlock from "./sliderBlock";
 import cascadeBlock from "./cascadeBlock";
 import pricesBlock from "./pricesBlock";
+import packagePriceBlock from "./packagePriceBlock";
 
 export const schemaTypes = [
   header,
@@ -49,6 +50,7 @@ export const schemaTypes = [
   doubleTextBlock,
   doubleImagesBlock,
   sliderBlock,
+  packagePriceBlock,
   pricesBlock,
   cascadeBlock,
   accordionBlock,

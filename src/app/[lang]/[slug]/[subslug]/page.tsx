@@ -25,7 +25,8 @@ import {
   BenefitsBlock,
   LinksBlock,
   SliderBlock,
-  CascadeBlock
+  CascadeBlock,
+  PackagePriceBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -40,6 +41,7 @@ import BenefitsBlockComponent from "@/app/components/BenefitsBlockComponent/Bene
 import LinksBlockComponent from "@/app/components/LinksBlockComponent/LinksBlockComponent";
 import SliderBlockComponent from "@/app/components/SliderBlockComponent/SliderBlockComponent";
 import CascadeBlockComponent from "@/app/components/CascadeBlockComponent/CascadeBlockComponent";
+import PackagePriceBlockComponent from "@/app/components/PackagePriceBlockComponent/PackagePriceBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -60,7 +62,8 @@ type ContentBlock =
   | BenefitsBlock
   | LinksBlock
   | SliderBlock
-  | CascadeBlock;
+  | CascadeBlock
+  | PackagePriceBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -208,6 +211,13 @@ const Subpage = async ({ params }: Props) => {
           <CascadeBlockComponent
             key={block._key}
             block={block as CascadeBlock}
+          />
+        );
+      case "packagePriceBlock":
+        return (
+          <PackagePriceBlockComponent
+            key={block._key}
+            block={block as PackagePriceBlock}
           />
         );
       default:
