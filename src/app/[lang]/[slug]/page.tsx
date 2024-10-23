@@ -27,7 +27,8 @@ import {
   SliderBlock,
   PackagePriceBlock,
   ExtraBlock,
-  CompareBlock
+  CompareBlock,
+  ProcessBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -42,6 +43,7 @@ import LinksBlockComponent from "@/app/components/LinksBlockComponent/LinksBlock
 import PackagePriceBlockComponent from "@/app/components/PackagePriceBlockComponent/PackagePriceBlockComponent";
 import ExtraBlockComponent from "@/app/components/ExtraBlockComponent/ExtraBlockComponent";
 import CompareBlockComponent from "@/app/components/CompareBlockComponent/CompareBlockComponent";
+import ProcessBlockComponent from "@/app/components/ProcessBlockComponent/ProcessBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -64,7 +66,8 @@ type ContentBlock =
   | SliderBlock
   | PackagePriceBlock
   | ExtraBlock
-  | CompareBlock;
+  | CompareBlock
+  | ProcessBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -199,6 +202,13 @@ const SinglePage = async ({ params }: Props) => {
           <CompareBlockComponent
             key={block._key}
             block={block as CompareBlock}
+          />
+        );
+      case "processBlock":
+        return (
+          <ProcessBlockComponent
+            key={block._key}
+            block={block as ProcessBlock}
           />
         );
       default:

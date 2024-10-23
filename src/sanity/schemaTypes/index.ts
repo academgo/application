@@ -30,6 +30,7 @@ import pricesBlock from "./pricesBlock";
 import packagePriceBlock from "./packagePriceBlock";
 import extraBlock from "./extraBlock";
 import compareBlock from "./compareBlock";
+import processBlock from "./processBlock";
 
 export const schemaTypes = [
   header,
@@ -55,6 +56,7 @@ export const schemaTypes = [
   packagePriceBlock,
   extraBlock,
   compareBlock,
+  processBlock,
   pricesBlock,
   cascadeBlock,
   accordionBlock,

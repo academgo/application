@@ -1,0 +1,156 @@
+.processBlock {
+  margin-bottom: clamp(1.25rem, 5vw, 3.75rem);
+
+  @media screen and (min-width: 768px) {
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 58px 110px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 7rem;
+  }
+}
+
+.content {
+  
+  @media screen and (min-width: 768px) {
+    flex: 0 1 25%;
+  }
+}
+
+.description {
+  color: #091728;
+  font-size: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    letter-spacing: -0.6px;
+  }
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.5rem, 1.136rem + 1.82vw, 2.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%;
+  letter-spacing: -0.72px;
+  margin-bottom: clamp(0.625rem, 0.057rem + 2.84vw, 2.188rem);
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -1.2px;
+  }
+}
+
+.chain {
+  
+  @media screen and (min-width: 768px) {
+    flex: 1 0 60%;
+  }
+}
+
+.chain {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+
+  @media screen and (min-width: 768px) {
+    gap: 40px;
+  }
+}
+
+.chainItem {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px; // Укажите необходимую высоту
+    background-color: #112546;
+  }
+
+  &:last-child::after {
+    display: none; // Скрываем линию у последнего элемента
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 40px; // Центруем линию по середине
+      width: 2px;
+      height: calc(100% + 90px); // Укажите необходимую высоту
+      background-color: #112546;
+    }
+  }
+}
+
+.number {
+  color: #FFF;
+  font-size: clamp(1.875rem, 1.307rem + 2.84vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.9px;
+  border-radius: 7px;
+  background-color: #112546;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -1.65px;
+    width: 80px;
+    height: 80px;
+    flex: 1 0 80px;
+    position: relative;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 100%;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: 2px;
+    //   height: calc(100% + 40px); // Регулируйте значение 40px, чтобы подходило под ваш отступ
+    //   background-color: #112546;
+    // }
+
+    // // Скрываем псевдоэлемент у последнего элемента
+    // &:last-child::after {
+    //   display: none;
+    // }
+  }
+}

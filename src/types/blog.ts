@@ -68,6 +68,12 @@ export type ContentCascadeBlock = {
   contentBlock: BlockContentWithStyle;
 };
 
+export type ProcessItem = {
+  _key: string;
+  number: string;
+  content: BlockContentWithStyle;
+};
+
 export type VideoBlock = {
   _key: string;
   videoId: string;
@@ -149,6 +155,14 @@ export type BenefitsBlock = {
   title: string;
   description: string;
   benefitsBullets: BenefitBullet[];
+};
+
+export type ProcessBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  description: string;
+  items: ProcessItem[];
 };
 
 export type CompareBlock = {
