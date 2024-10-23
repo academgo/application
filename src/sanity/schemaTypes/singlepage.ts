@@ -89,7 +89,8 @@ const singlepage = {
         { type: "sliderBlock" },
         { type: "cascadeBlock" },
         { type: "pricesBlock" },
-        { type: "packagePriceBlock" }
+        { type: "packagePriceBlock" },
+        { type: "extraBlock" }
       ]
     }),
     defineField({

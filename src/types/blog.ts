@@ -166,6 +166,15 @@ export type PackagePriceBlock = {
   };
 };
 
+export type ExtraBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  description: string;
+  items: SliderList[];
+  bgImage: Image;
+};
+
 export type TabsBlock = {
   _key: string;
   _type: string;
