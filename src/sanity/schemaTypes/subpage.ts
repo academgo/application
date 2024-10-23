@@ -87,7 +87,8 @@ const subpage = {
         { type: "cascadeBlock" },
         { type: "pricesBlock" },
         { type: "packagePriceBlock" },
-        { type: "extraBlock" }
+        { type: "extraBlock" },
+        { type: "compareBlock" }
       ]
     }),
     defineField({

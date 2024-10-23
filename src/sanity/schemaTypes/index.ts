@@ -29,6 +29,7 @@ import cascadeBlock from "./cascadeBlock";
 import pricesBlock from "./pricesBlock";
 import packagePriceBlock from "./packagePriceBlock";
 import extraBlock from "./extraBlock";
+import compareBlock from "./compareBlock";
 
 export const schemaTypes = [
   header,
@@ -53,6 +54,7 @@ export const schemaTypes = [
   sliderBlock,
   packagePriceBlock,
   extraBlock,
+  compareBlock,
   pricesBlock,
   cascadeBlock,
   accordionBlock,

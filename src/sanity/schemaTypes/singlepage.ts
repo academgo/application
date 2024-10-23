@@ -84,13 +84,15 @@ const singlepage = {
         { type: "accordionBlock" },
         { type: "doubleImagesBlock" },
         { type: "tabsBlock" },
+        { type: "bulletsBlock" },
         { type: "benefitsBlock" },
         { type: "linksBlock" },
         { type: "sliderBlock" },
         { type: "cascadeBlock" },
         { type: "pricesBlock" },
         { type: "packagePriceBlock" },
-        { type: "extraBlock" }
+        { type: "extraBlock" },
+        { type: "compareBlock" }
       ]
     }),
     defineField({

@@ -151,6 +151,15 @@ export type BenefitsBlock = {
   benefitsBullets: BenefitBullet[];
 };
 
+export type CompareBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  description: string;
+  link: Link;
+  image: Image;
+};
+
 export type PackagePriceBlock = {
   _key: string;
   _type: string;

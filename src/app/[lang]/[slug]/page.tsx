@@ -25,7 +25,9 @@ import {
   BenefitsBlock,
   LinksBlock,
   SliderBlock,
-  PackagePriceBlock
+  PackagePriceBlock,
+  ExtraBlock,
+  CompareBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -38,6 +40,8 @@ import BenefitsBlockComponent from "@/app/components/BenefitsBlockComponent/Bene
 import SliderBlockComponent from "@/app/components/SliderBlockComponent/SliderBlockComponent";
 import LinksBlockComponent from "@/app/components/LinksBlockComponent/LinksBlockComponent";
 import PackagePriceBlockComponent from "@/app/components/PackagePriceBlockComponent/PackagePriceBlockComponent";
+import ExtraBlockComponent from "@/app/components/ExtraBlockComponent/ExtraBlockComponent";
+import CompareBlockComponent from "@/app/components/CompareBlockComponent/CompareBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -58,7 +62,9 @@ type ContentBlock =
   | BenefitsBlock
   | LinksBlock
   | SliderBlock
-  | PackagePriceBlock;
+  | PackagePriceBlock
+  | ExtraBlock
+  | CompareBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -182,6 +188,17 @@ const SinglePage = async ({ params }: Props) => {
           <PackagePriceBlockComponent
             key={block._key}
             block={block as PackagePriceBlock}
+          />
+        );
+      case "extraBlock":
+        return (
+          <ExtraBlockComponent key={block._key} block={block as ExtraBlock} />
+        );
+      case "compareBlock":
+        return (
+          <CompareBlockComponent
+            key={block._key}
+            block={block as CompareBlock}
           />
         );
       default:
