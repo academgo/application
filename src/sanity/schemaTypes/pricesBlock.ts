@@ -37,8 +37,8 @@ const pricesBlock = defineType({
                   type: "object",
                   fields: [
                     defineField({
-                      name: "itemTitle",
-                      title: "Item Title",
+                      name: "title",
+                      title: "Title",
                       type: "string"
                     })
                   ]
@@ -98,9 +98,26 @@ const pricesBlock = defineType({
                   type: "object",
                   fields: [
                     defineField({
-                      name: "trueOrFalse",
-                      title: "True or False",
-                      type: "boolean"
+                      name: "title",
+                      title: "Title",
+                      type: "string"
+                    }),
+                    defineField({
+                      name: "items",
+                      title: "Items",
+                      type: "array",
+                      of: [
+                        {
+                          type: "object",
+                          fields: [
+                            defineField({
+                              name: "trueOrFalse",
+                              title: "True Or False",
+                              type: "boolean"
+                            })
+                          ]
+                        }
+                      ]
                     })
                   ]
                 }
@@ -110,6 +127,16 @@ const pricesBlock = defineType({
               name: "packageButtonLabel",
               title: "Package Button Label",
               type: "string"
+            }),
+            defineField({
+              name: "isPopular",
+              title: "Is Popular",
+              type: "boolean"
+            }),
+            defineField({
+              name: "isHighlighted",
+              title: "Is Highlighted",
+              type: "boolean"
             })
           ]
         }

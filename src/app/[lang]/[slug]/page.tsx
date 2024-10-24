@@ -28,7 +28,8 @@ import {
   PackagePriceBlock,
   ExtraBlock,
   CompareBlock,
-  ProcessBlock
+  ProcessBlock,
+  PricesBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -44,6 +45,8 @@ import PackagePriceBlockComponent from "@/app/components/PackagePriceBlockCompon
 import ExtraBlockComponent from "@/app/components/ExtraBlockComponent/ExtraBlockComponent";
 import CompareBlockComponent from "@/app/components/CompareBlockComponent/CompareBlockComponent";
 import ProcessBlockComponent from "@/app/components/ProcessBlockComponent/ProcessBlockComponent";
+import PricesBlockComponent from "@/app/components/PricesBlockComponent/PricesBlockComponent";
+import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -67,7 +70,8 @@ type ContentBlock =
   | PackagePriceBlock
   | ExtraBlock
   | CompareBlock
-  | ProcessBlock;
+  | ProcessBlock
+  | PricesBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -211,6 +215,10 @@ const SinglePage = async ({ params }: Props) => {
             block={block as ProcessBlock}
           />
         );
+      case "pricesBlock":
+        return (
+          <PricesBlockComponent key={block._key} block={block as PricesBlock} />
+        );
       default:
         return <p key={block._key}>Unsupported block type</p>;
     }
@@ -222,8 +230,9 @@ const SinglePage = async ({ params }: Props) => {
     <>
       <Header params={params} translations={translations} />
       <main>
-        <PreviewMain previewImage={page.previewImage} title={page.title} />
+        {/* <PreviewMain previewImage={page.previewImage} title={page.title} /> */}
         <div className="container">
+          <CoverBlock coverBlock={page.coverBlock} />
           <SinglePageIntroBlock title={page.title} />
           {page.contentBlocks.map(block => renderContentBlock(block))}
         </div>

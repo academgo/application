@@ -24,12 +24,14 @@ const BenefitsBlockComponent: FC<Props> = ({ block }) => {
         {block.benefitsBullets.map((bullet, index) => (
           <div key={index} className={styles.bullet}>
             <div className={styles.bulletIcon}>
-              <Image
-                src={urlFor(bullet.bulletIcon).url()}
-                alt={bullet.bulletTitle}
-                width={50}
-                height={50}
-              />
+              {bullet.bulletIcon && (
+                <Image
+                  src={urlFor(bullet.bulletIcon).url()}
+                  alt={bullet.bulletTitle}
+                  width={50}
+                  height={50}
+                />
+              )}
             </div>
             <div className={styles.bulletContent}>
               {bullet.bulletTitle && (

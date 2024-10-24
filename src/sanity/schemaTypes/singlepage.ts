@@ -89,11 +89,11 @@ const singlepage = {
         { type: "linksBlock" },
         { type: "sliderBlock" },
         { type: "cascadeBlock" },
-        { type: "pricesBlock" },
         { type: "packagePriceBlock" },
         { type: "extraBlock" },
         { type: "compareBlock" },
-        { type: "processBlock" }
+        { type: "processBlock" },
+        { type: "pricesBlock" }
       ]
     }),
     defineField({

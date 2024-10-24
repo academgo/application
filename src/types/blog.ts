@@ -198,6 +198,46 @@ export type ExtraBlock = {
   bgImage: Image;
 };
 
+export type Part = {
+  partTitle: string;
+  items: SliderList[];
+};
+
+export type PackageItemSingle = {
+  _key: string;
+  _type: string;
+  trueOrFalse: boolean;
+};
+
+export type PackageItem = {
+  _key: string;
+  _type: string;
+  title: string;
+  items: PackageItemSingle[];
+};
+
+export type Package = {
+  _key: string;
+  _type: string;
+  packageTitle: string;
+  packagePrice: string;
+  packageDescription: string;
+  packageLink: Link;
+  packageItems: PackageItem[];
+  packageButtonLabel: string;
+  isPopular: boolean;
+  isHighlighted: boolean;
+};
+
+export type PricesBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  titleHighLight: string;
+  parts: Part[];
+  packages: Package[];
+};
+
 export type TabsBlock = {
   _key: string;
   _type: string;
