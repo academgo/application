@@ -62,15 +62,15 @@ const singlepage = {
         })
       ]
     }),
-    defineField({
-      name: "previewImage",
-      title: "Preview Image",
-      type: "image",
-      options: {
-        hotspot: true
-      },
-      description: "Основное изображение страницы"
-    }),
+    // defineField({
+    //   name: "previewImage",
+    //   title: "Preview Image",
+    //   type: "image",
+    //   options: {
+    //     hotspot: true
+    //   },
+    //   description: "Основное изображение страницы"
+    // }),
     defineField({
       name: "contentBlocks",
       title: "Main Content",
