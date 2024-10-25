@@ -483,7 +483,15 @@ export async function getSinglePageByLang(
     },
   }`;
 
-  const singlePage = await client.fetch(singlePageQuery, { lang, slug });
+  const singlePage = await client.fetch(
+    singlePageQuery,
+    { lang, slug },
+    {
+      next: {
+        revalidate: 60
+      }
+    }
+  );
 
   return singlePage;
 }
@@ -511,7 +519,15 @@ export async function getSingleSubPageBySlug(
   }`;
 
   try {
-    const subPage = await client.fetch(subPageQuery, { lang, subslug });
+    const subPage = await client.fetch(
+      subPageQuery,
+      { lang, subslug },
+      {
+        next: {
+          revalidate: 60
+        }
+      }
+    );
     return subPage;
   } catch (error) {
     console.error("Error fetching subpage:", error);
