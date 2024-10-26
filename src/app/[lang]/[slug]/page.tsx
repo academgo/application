@@ -47,6 +47,7 @@ import CompareBlockComponent from "@/app/components/CompareBlockComponent/Compar
 import ProcessBlockComponent from "@/app/components/ProcessBlockComponent/ProcessBlockComponent";
 import PricesBlockComponent from "@/app/components/PricesBlockComponent/PricesBlockComponent";
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
+import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/BulletsBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -165,6 +166,13 @@ const SinglePage = async ({ params }: Props) => {
           <DoubleTextBlockComponent
             key={block._key}
             block={block as DoubleTextBlock}
+          />
+        );
+      case "bulletsBlock":
+        return (
+          <BulletsBlockComponent
+            key={block._key}
+            block={block as BulletsBlock}
           />
         );
       case "whiteBlock":
