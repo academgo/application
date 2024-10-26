@@ -25,6 +25,7 @@ import {
   BenefitsBlock,
   LinksBlock,
   SliderBlock,
+  CascadeBlock,
   PackagePriceBlock,
   ExtraBlock,
   CompareBlock,
@@ -48,6 +49,7 @@ import ProcessBlockComponent from "@/app/components/ProcessBlockComponent/Proces
 import PricesBlockComponent from "@/app/components/PricesBlockComponent/PricesBlockComponent";
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/BulletsBlockComponent";
+import CascadeBlockComponent from "@/app/components/CascadeBlockComponent/CascadeBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -68,6 +70,7 @@ type ContentBlock =
   | BenefitsBlock
   | LinksBlock
   | SliderBlock
+  | CascadeBlock
   | PackagePriceBlock
   | ExtraBlock
   | CompareBlock
@@ -197,6 +200,13 @@ const SinglePage = async ({ params }: Props) => {
       case "sliderBlock":
         return (
           <SliderBlockComponent key={block._key} block={block as SliderBlock} />
+        );
+      case "cascadeBlock":
+        return (
+          <CascadeBlockComponent
+            key={block._key}
+            block={block as CascadeBlock}
+          />
         );
       case "packagePriceBlock":
         return (
