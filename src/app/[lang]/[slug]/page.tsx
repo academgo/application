@@ -32,7 +32,8 @@ import {
   ProcessBlock,
   PricesBlock,
   SliderPicturesBlock,
-  LogosBlock
+  LogosBlock,
+  ContactsBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -54,6 +55,7 @@ import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/Bullet
 import CascadeBlockComponent from "@/app/components/CascadeBlockComponent/CascadeBlockComponent";
 import SliderPictureBlockComponent from "@/app/components/SliderPictureBlockComponent/SliderPictureBlockComponent";
 import LogosBlockComponent from "@/app/components/LogosBlockComponent/LogosBlockComponent";
+import ContactsBlockComponent from "@/app/components/ContactsBlockComponent/ContactsBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -81,7 +83,8 @@ type ContentBlock =
   | ProcessBlock
   | PricesBlock
   | SliderPicturesBlock
-  | LogosBlock;
+  | LogosBlock
+  | ContactsBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -253,6 +256,13 @@ const SinglePage = async ({ params }: Props) => {
       case "logosBlock":
         return (
           <LogosBlockComponent key={block._key} block={block as LogosBlock} />
+        );
+      case "contactsBlock":
+        return (
+          <ContactsBlockComponent
+            key={block._key}
+            block={block as ContactsBlock}
+          />
         );
       default:
         return <p key={block._key}>Unsupported block type</p>;

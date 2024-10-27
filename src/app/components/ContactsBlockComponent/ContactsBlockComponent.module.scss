@@ -1,0 +1,103 @@
+.contactsBlock {
+  margin-bottom: clamp(1.25rem, 5vw, 3.75rem);
+}
+
+.wrapper {
+  display: flex;
+  gap: 50px;
+
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+  }
+}
+
+.contactFlexBlock {
+  flex: 1;
+}
+
+.whiteBlock {
+  border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+  background-color: #fff;
+  overflow: hidden;
+  padding-top: clamp(1.25rem, 0.932rem + 1.59vw, 2.125rem);
+  padding-bottom: clamp(1.25rem, 0.341rem + 4.55vw, 3.75rem);
+  padding-left: clamp(1.25rem, 0.341rem + 4.55vw, 3.75rem);
+  padding-right: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.5rem, 1.136rem + 1.82vw, 2.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.72px;
+  max-width: 708px;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -1.2px;
+  }
+}
+
+.contactBlock {
+  margin-bottom: clamp(1.25rem, 0.568rem + 3.41vw, 3.125rem);
+}
+
+.contactTitle {
+  color: #091728;
+  font-size: clamp(1.125rem, 0.966rem + 0.8vw, 1.563rem);
+  font-style: normal;
+  font-weight: 500;
+  // line-height: 1.25;
+  letter-spacing: -0.54px;
+  margin-bottom: 0.5rem;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.75px;
+  }
+}
+
+.contactText {
+  color: #091728;
+  font-size: clamp(1rem, 0.682rem + 1.59vw, 1.875rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    letter-spacing: -0.9px;
+  }
+}
+
+.socialDescription {
+  color: #091728;
+  font-size: clamp(1.125rem, 0.966rem + 0.8vw, 1.563rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.54px;
+  max-width: 460px;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -0.75px;
+  }
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+}

@@ -43,6 +43,13 @@ export type SlidePicture = {
   title: string;
 };
 
+export type SocialIcon = {
+  _key: string;
+  title: string;
+  icon: Image;
+  link: string;
+};
+
 export type Logo = {
   _key: string;
   image: Image;
@@ -263,6 +270,25 @@ export type LogosBlock = {
   _type: string;
   title: string;
   logos: University[];
+};
+
+export type ContactType = {
+  _key: string;
+  _type: string;
+  title: string;
+  type: "link" | "string";
+  linkLabel?: string;
+  linkDestination?: string;
+  text?: string;
+};
+
+export type ContactsBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  contactsContent: ContactType[];
+  socialDescription: string;
+  socialIcons: SocialIcon[];
 };
 
 export type TabsBlock = {

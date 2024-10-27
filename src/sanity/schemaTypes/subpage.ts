@@ -91,7 +91,8 @@ const subpage = {
         { type: "compareBlock" },
         { type: "processBlock" },
         { type: "pricesBlock" },
-        { type: "logosBlock" }
+        { type: "logosBlock" },
+        { type: "contactsBlock" }
       ]
     }),
     defineField({
