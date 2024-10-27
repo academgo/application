@@ -36,6 +36,13 @@ export type Slide = {
   hasBorder: boolean;
 };
 
+export type SlidePicture = {
+  _key: string;
+  image: Image;
+  alt: string;
+  title: string;
+};
+
 export type BenefitBullet = {
   _key: string;
   _type: string;
@@ -91,6 +98,13 @@ export type SliderBlock = {
   _type: string;
   slides: Slide[];
   slidesPerView: string;
+};
+
+export type SliderPicturesBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  slides: SlidePicture[];
 };
 
 export type LinksBlock = {

@@ -84,6 +84,7 @@ const subpage = {
         { type: "benefitsBlock" },
         { type: "linksBlock" },
         { type: "sliderBlock" },
+        { type: "sliderPicturesBlock" },
         { type: "cascadeBlock" },
         { type: "packagePriceBlock" },
         { type: "extraBlock" },

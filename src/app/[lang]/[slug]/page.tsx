@@ -30,7 +30,8 @@ import {
   ExtraBlock,
   CompareBlock,
   ProcessBlock,
-  PricesBlock
+  PricesBlock,
+  SliderPicturesBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -50,6 +51,7 @@ import PricesBlockComponent from "@/app/components/PricesBlockComponent/PricesBl
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 import BulletsBlockComponent from "@/app/components/BulletsBlockComponent/BulletsBlockComponent";
 import CascadeBlockComponent from "@/app/components/CascadeBlockComponent/CascadeBlockComponent";
+import SliderPictureBlockComponent from "@/app/components/SliderPictureBlockComponent/SliderPictureBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -75,7 +77,8 @@ type ContentBlock =
   | ExtraBlock
   | CompareBlock
   | ProcessBlock
-  | PricesBlock;
+  | PricesBlock
+  | SliderPicturesBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -236,6 +239,13 @@ const SinglePage = async ({ params }: Props) => {
       case "pricesBlock":
         return (
           <PricesBlockComponent key={block._key} block={block as PricesBlock} />
+        );
+      case "sliderPicturesBlock":
+        return (
+          <SliderPictureBlockComponent
+            key={block._key}
+            block={block as SliderPicturesBlock}
+          />
         );
       default:
         return <p key={block._key}>Unsupported block type</p>;
