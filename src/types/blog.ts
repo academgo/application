@@ -1,4 +1,4 @@
-import { Link } from "./homepage";
+import { Link, University } from "./homepage";
 
 export type Image = {
   _key: string;
@@ -41,6 +41,12 @@ export type SlidePicture = {
   image: Image;
   alt: string;
   title: string;
+};
+
+export type Logo = {
+  _key: string;
+  image: Image;
+  alt: string;
 };
 
 export type BenefitBullet = {
@@ -250,6 +256,13 @@ export type PricesBlock = {
   titleHighLight: string;
   parts: Part[];
   packages: Package[];
+};
+
+export type LogosBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  logos: University[];
 };
 
 export type TabsBlock = {

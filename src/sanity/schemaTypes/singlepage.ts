@@ -94,7 +94,8 @@ const singlepage = {
         { type: "extraBlock" },
         { type: "compareBlock" },
         { type: "processBlock" },
-        { type: "pricesBlock" }
+        { type: "pricesBlock" },
+        { type: "logosBlock" }
       ]
     }),
     defineField({
