@@ -2,7 +2,7 @@ import { defineType, defineField } from "sanity";
 
 const whiteBlock = defineType({
   name: "whiteBlock",
-  title: "White Block",
+  title: "Process Horizontal Block",
   type: "object",
   fields: [
     defineField({
