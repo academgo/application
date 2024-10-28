@@ -2,7 +2,7 @@ import { defineType, defineField } from "sanity";
 
 const cascadeBlock = defineType({
   name: "cascadeBlock",
-  title: "Cascade Block",
+  title: "Tile Text Block",
   type: "object",
   fields: [
     defineField({
