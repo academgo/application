@@ -45,8 +45,8 @@
     border-radius: unset;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px; // расстояние между элементами
+    gap: 20px;
+    justify-content: space-between; // Равномерное распределение свободного пространства
   }
 }
 
@@ -57,22 +57,14 @@
   padding-top: clamp(1.875rem, 1.534rem + 1.7vw, 2.813rem);
   padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
   padding-inline: clamp(0.813rem, 0.653rem + 0.8vw, 1.25rem);
-  // flex: 1 1 calc(20% - 20px); // Каждый элемент будет занимать 20% ширины
-  // max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
-  // box-sizing: border-box;
 
   @media screen and (min-width: 980px) {
-    flex-grow: 1; // Элемент может расти при наличии свободного пространства
-    max-width: unset; // Сбрасываем максимальную ширину, если элементов меньше пяти
-    flex: 1 1 calc(20% - 20px); // Каждый элемент будет занимать 20% ширины
-    max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
-    box-sizing: border-box;
-
-    &:nth-child(n+6) {
-      margin-top: 30px; // Отступ сверху для переноса на следующую строку
-    }
+    flex-grow: 1; // Позволяет элементу расти, заполняя свободное пространство
+    flex-basis: 0; // Начальная ширина элемента равна нулю
+    max-width: 100%; // Элемент может занимать всю доступную ширину
   }
 }
+
 
 .bulletNumber {
   border-radius: 7px;
