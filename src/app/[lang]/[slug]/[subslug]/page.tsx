@@ -58,6 +58,7 @@ import SliderPictureBlockComponent from "@/app/components/SliderPictureBlockComp
 import LogosBlockComponent from "@/app/components/LogosBlockComponent/LogosBlockComponent";
 import ContactsBlockComponent from "@/app/components/ContactsBlockComponent/ContactsBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
+import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -303,6 +304,14 @@ const Subpage = async ({ params }: Props) => {
       <main>
         <div className="container">
           <CoverBlock coverBlock={subPage.coverBlock} />
+          <Breadcrumbs
+            lang={lang}
+            slug={slug}
+            subslug={subslug}
+            title={subPage.title}
+            parentTitle={subPage.parentPage.title}
+            parentSlug={subPage.parentPage.slug[lang]?.current}
+          />
           <SinglePageIntroBlock title={subPage.title} />
           {subPage.contentBlocks.map(block => renderContentBlock(block))}
         </div>
