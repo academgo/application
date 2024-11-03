@@ -33,7 +33,8 @@ import {
   PricesBlock,
   SliderPicturesBlock,
   LogosBlock,
-  ContactsBlock
+  ContactsBlock,
+  SurveyBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -56,6 +57,7 @@ import CascadeBlockComponent from "@/app/components/CascadeBlockComponent/Cascad
 import SliderPictureBlockComponent from "@/app/components/SliderPictureBlockComponent/SliderPictureBlockComponent";
 import LogosBlockComponent from "@/app/components/LogosBlockComponent/LogosBlockComponent";
 import ContactsBlockComponent from "@/app/components/ContactsBlockComponent/ContactsBlockComponent";
+import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -84,7 +86,8 @@ type ContentBlock =
   | PricesBlock
   | SliderPicturesBlock
   | LogosBlock
-  | ContactsBlock;
+  | ContactsBlock
+  | SurveyBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -262,6 +265,14 @@ const SinglePage = async ({ params }: Props) => {
           <ContactsBlockComponent
             key={block._key}
             block={block as ContactsBlock}
+          />
+        );
+      case "surveyBlock":
+        return (
+          <SurveyBlockComponent
+            lang={params.lang}
+            key={block._key}
+            block={block as SurveyBlock}
           />
         );
       default:

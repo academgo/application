@@ -92,7 +92,8 @@ const subpage = {
         { type: "processBlock" },
         { type: "pricesBlock" },
         { type: "logosBlock" },
-        { type: "contactsBlock" }
+        { type: "contactsBlock" },
+        { type: "surveyBlock" }
       ]
     }),
     defineField({

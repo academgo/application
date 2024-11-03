@@ -82,6 +82,21 @@ export type BlockContentWithStyle = {
   isBorder: boolean;
 };
 
+export type SurveyBlock = {
+  _key: string;
+  _type: string;
+  survey: {
+    title: string;
+    image: Image;
+    quote: string;
+    description: string;
+    finalTitle: string;
+    formTitle: string;
+    inputLabel: string;
+    buttonText: string;
+  };
+};
+
 export type ContentCascadeBlock = {
   _key: string;
   _type: string;
