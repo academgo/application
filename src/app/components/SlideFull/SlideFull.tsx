@@ -43,16 +43,16 @@ const SlideFull: FC<Props> = ({
         backgroundColor: hasBorder ? "" : "#fff"
       }}
     >
-      <div className={styles.slideImage}>
-        {image && (
+      {image && (
+        <div className={styles.slideImage}>
           <Image
             alt={title}
             src={urlFor(image).url()}
             fill={true}
             className={styles.image}
           />
-        )}
-      </div>
+        </div>
+      )}
 
       <div className={styles.slideFull}>
         <div className={styles.textBlock}>
