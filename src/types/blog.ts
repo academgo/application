@@ -159,14 +159,23 @@ export type AccordionBlock = {
   }>;
 };
 
+export type ContentChoice = {
+  type: "text" | "image";
+  blockContent?: BlockContentWithStyle;
+  image?: Image;
+};
+
 export type DoubleTextBlock = {
   _key: string;
   _type: string;
-  doubleTextBlockTitle: string;
-  leftTextBlock: BlockContentWithStyle;
-  rightTextBlock: BlockContentWithStyle;
-  backgroundColor: string;
-  border: string;
+  doubleTextBlockTitle?: string;
+  leftContent: ContentChoice;
+  rightContent: ContentChoice;
+  // doubleTextBlockTitle: string;
+  // leftTextBlock: BlockContentWithStyle;
+  // rightTextBlock: BlockContentWithStyle;
+  // backgroundColor: string;
+  // border: string;
 };
 
 export type CascadeBlock = {

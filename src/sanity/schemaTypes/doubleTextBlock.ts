@@ -13,14 +13,64 @@ const doubleTextBlock = defineType({
         "This title will be displayed above the text blocks. If you don't need it, just leave it empty."
     }),
     defineField({
-      name: "leftTextBlock",
-      title: "Text on the left",
-      type: "blockContentWithStyle"
+      name: "leftContent",
+      title: "Left Content",
+      type: "object",
+      fields: [
+        defineField({
+          name: "type",
+          title: "Type",
+          type: "string",
+          options: {
+            list: [
+              { title: "Text", value: "text" },
+              { title: "Image", value: "image" }
+            ]
+          }
+        }),
+        defineField({
+          name: "blockContent",
+          title: "Block Content",
+          type: "blockContentWithStyle",
+          hidden: ({ parent }) => parent?.type !== "text"
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image",
+          hidden: ({ parent }) => parent?.type !== "image"
+        })
+      ]
     }),
     defineField({
-      name: "rightTextBlock",
-      title: "Text on the right",
-      type: "blockContentWithStyle"
+      name: "rightContent",
+      title: "Right Content",
+      type: "object",
+      fields: [
+        defineField({
+          name: "type",
+          title: "Type",
+          type: "string",
+          options: {
+            list: [
+              { title: "Text", value: "text" },
+              { title: "Image", value: "image" }
+            ]
+          }
+        }),
+        defineField({
+          name: "blockContent",
+          title: "Block Content",
+          type: "blockContentWithStyle",
+          hidden: ({ parent }) => parent?.type !== "text"
+        }),
+        defineField({
+          name: "image",
+          title: "Image",
+          type: "image",
+          hidden: ({ parent }) => parent?.type !== "image"
+        })
+      ]
     })
   ]
 });

@@ -11,6 +11,7 @@
   }
 }
 
-.textBlock {
-  flex: 1;
+.textBlock,
+.imageBlock {
+  flex: 1; // Обеспечивает равное распределение
 }
