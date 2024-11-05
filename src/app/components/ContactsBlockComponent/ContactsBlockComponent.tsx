@@ -45,13 +45,15 @@ const ContactsBlockComponent: FC<Props> = ({ block }) => {
                 rel="noreferrer"
                 className={styles.socialLink}
               >
-                <Image
-                  alt={socialIcon.title || "Academgo social icon"}
-                  src={urlFor(socialIcon.icon).url()}
-                  className={styles.socialIcon}
-                  width={50}
-                  height={50}
-                />
+                {socialIcon.icon && (
+                  <Image
+                    alt={socialIcon.title || "Academgo social icon"}
+                    src={urlFor(socialIcon.icon).url()}
+                    className={styles.socialIcon}
+                    width={50}
+                    height={50}
+                  />
+                )}
               </Link>
             ))}
           </div>

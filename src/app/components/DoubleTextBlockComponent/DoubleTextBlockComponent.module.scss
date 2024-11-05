@@ -15,3 +15,8 @@
 .imageBlock {
   flex: 1; // Обеспечивает равное распределение
 }
+
+.imageBlock {
+  border-radius: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
+  overflow: hidden;
+}
