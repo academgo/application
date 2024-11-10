@@ -7,10 +7,14 @@
 
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     svg {
-      margin-right: 11px; /* расстояние между SVG и текстом */
+      flex-shrink: 0; /* Фиксирует размер SVG */
+      width: 12px; /* Задает фиксированную ширину */
+      height: 8px; /* Задает фиксированную высоту */
+      margin-right: 9px; /* расстояние между SVG и текстом */
+      margin-top: 9px;
     }
   }
 }
