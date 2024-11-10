@@ -46,33 +46,8 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     return null;
   }
 
-  // Преобразуем content в текст для JSON-LD
-  const extractedPlainText = extractPlainTextFromPortableText(content);
-
-  // Создаем JSON-LD разметку для FAQ
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: title, // Вопрос из заголовка аккордеона
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: extractedPlainText // Извлеченный текст для разметки
-        }
-      }
-    ]
-  };
-
   return (
     <>
-      {/* Микроразметка FAQ */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       <Item
         header={
           <div className={styles.headerFlex}>
