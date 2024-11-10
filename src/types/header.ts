@@ -5,10 +5,17 @@ export type Image = {
   url: string;
 };
 
+export type Sublink = {
+  _key: string;
+  label: string;
+  link: string;
+};
+
 type navLink = {
   _key: string;
   label: string;
   link: string;
+  subLinks: Sublink[];
 };
 
 type contactLink = {

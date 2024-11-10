@@ -127,6 +127,26 @@ const nextConfig = {
         destination: '/blog/study-in-poland-from-philippines',
         permanent: true,
       },
+      {
+        source: '/index.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.htm',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/en',
+        permanent: true,
+      }
     ];
   },
 };
