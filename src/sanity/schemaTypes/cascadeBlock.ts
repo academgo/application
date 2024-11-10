@@ -19,6 +19,11 @@ const cascadeBlock = defineType({
           type: "object",
           fields: [
             defineField({
+              name: "title",
+              title: "Title",
+              type: "string"
+            }),
+            defineField({
               name: "contentBlock",
               title: "Content Block",
               type: "blockContentWithStyle"
