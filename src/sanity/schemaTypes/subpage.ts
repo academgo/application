@@ -92,6 +92,7 @@ const subpage = {
         { type: "processBlock" },
         { type: "pricesBlock" },
         { type: "logosBlock" },
+        { type: "offerBlock" },
         { type: "contactsBlock" },
         { type: "surveyBlock" }
       ]

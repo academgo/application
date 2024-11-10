@@ -6,6 +6,11 @@ const textContent = defineType({
   type: "object",
   fields: [
     defineField({
+      name: "title",
+      title: "Title",
+      type: "string"
+    }),
+    defineField({
       name: "content",
       title: "Content Editor",
       type: "contentBlock"

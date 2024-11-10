@@ -1,4 +1,5 @@
-import { Link, University } from "./homepage";
+import { Form } from "./form";
+import { Link, offerContactLink, University } from "./homepage";
 
 export type Image = {
   _key: string;
@@ -95,6 +96,21 @@ export type SurveyBlock = {
     inputLabel: string;
     buttonText: string;
   };
+};
+
+export type OfferBlock = {
+  _key: string;
+  _type: string;
+  title: string;
+  titleHighlight: string;
+  blockContent: BlockContentWithStyle;
+  giftText: string;
+  offerDescription: string;
+  offerFormTitle: string;
+  offerForm: Form;
+  offerButtonCustomText: string;
+  offerAltText: string;
+  offerContactLinks: offerContactLink[];
 };
 
 export type ContentCascadeBlock = {

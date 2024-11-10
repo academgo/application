@@ -6,6 +6,11 @@ const accordionBlock = defineType({
   type: "object", // Change to object
   fields: [
     defineField({
+      name: "title",
+      title: "Title",
+      type: "string"
+    }),
+    defineField({
       name: "items",
       title: "Items",
       type: "array",

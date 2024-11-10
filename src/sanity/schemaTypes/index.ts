@@ -35,6 +35,7 @@ import sliderPicturesBlock from "./sliderPicturesBlock";
 import logosBlock from "./logosBlock";
 import contactsBlock from "./contactsBlock";
 import surveyBlock from "./surveyBlock";
+import offerBlock from "./offerBlock";
 
 export const schemaTypes = [
   header,
@@ -69,6 +70,7 @@ export const schemaTypes = [
   accordionBlock,
   tabsBlock,
   surveyBlock,
+  offerBlock,
   bulletsBlock,
   whiteBlock,
   benefitsBlock,

@@ -34,7 +34,8 @@ import {
   SliderPicturesBlock,
   LogosBlock,
   ContactsBlock,
-  SurveyBlock
+  SurveyBlock,
+  OfferBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -59,6 +60,7 @@ import LogosBlockComponent from "@/app/components/LogosBlockComponent/LogosBlock
 import ContactsBlockComponent from "@/app/components/ContactsBlockComponent/ContactsBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
+import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -88,7 +90,8 @@ type ContentBlock =
   | SliderPicturesBlock
   | LogosBlock
   | ContactsBlock
-  | SurveyBlock;
+  | SurveyBlock
+  | OfferBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -134,6 +137,7 @@ const Subpage = async ({ params }: Props) => {
 
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
+  // console.log("formDocument", formDocument);
 
   const subPageTranslationSlugs: { [key: string]: { current: string } }[] =
     subPage?._translations.map(item => {
@@ -292,6 +296,10 @@ const Subpage = async ({ params }: Props) => {
             key={block._key}
             block={block as SurveyBlock}
           />
+        );
+      case "offerBlock":
+        return (
+          <OfferBlockComponent key={block._key} block={block as OfferBlock} />
         );
       default:
         return <p key={block._key}>Unsupported block type</p>;
