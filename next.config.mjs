@@ -147,12 +147,6 @@ const nextConfig = {
         destination: '/en',
         permanent: true,
       },
-      // правило для удаления завершающего слеша
-      {
-        source: '/:path*/',
-        destination: '/:path*',
-        permanent: true,
-      },
     ];
   },
 };
