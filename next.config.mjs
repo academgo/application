@@ -147,6 +147,19 @@ const nextConfig = {
         destination: '/en',
         permanent: true,
       },
+      // Удаление завершающего слеша, исключая корень сайта
+      {
+        source: '/:path*/',
+        has: [
+          {
+            type: 'query',
+            key: 'path',
+            value: '^((?!^$).)*$', // исключает корневой маршрут
+          },
+        ],
+        destination: '/:path*',
+        permanent: true,
+      },
     ];
   },
 };
