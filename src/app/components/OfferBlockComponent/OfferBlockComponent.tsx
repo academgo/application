@@ -20,8 +20,8 @@ const OfferBlockComponent: FC<Props> = ({ block }) => {
     borderRadius: textBlock?.backgroundColor ? "20px" : "0"
   });
 
-  console.log("OfferBlock data:", block);
-  console.log("OfferForm:", block.offerForm);
+  // console.log("OfferBlock data:", block);
+  // console.log("OfferForm:", block.offerForm);
 
   return (
     <section className={styles.offer}>

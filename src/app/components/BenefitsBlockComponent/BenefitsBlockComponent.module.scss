@@ -39,14 +39,14 @@
     flex-direction: row;
     // flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px; // расстояние между элементами
+    gap: 50px; // расстояние между элементами
   }
 }
 
 .bullet {
-  padding-top: clamp(1.875rem, 1.534rem + 1.7vw, 2.813rem);
-  padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
-  padding-inline: clamp(0.813rem, 0.653rem + 0.8vw, 1.25rem);
+  // padding-top: clamp(1.875rem, 1.534rem + 1.7vw, 2.813rem);
+  // padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+  // padding-inline: clamp(0.813rem, 0.653rem + 0.8vw, 1.25rem);
   // flex: 1 1 calc(20% - 20px); // Каждый элемент будет занимать 20% ширины
   // max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
   // box-sizing: border-box;
