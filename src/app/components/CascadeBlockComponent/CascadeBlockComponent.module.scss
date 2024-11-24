@@ -3,9 +3,24 @@
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 16px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(6, 1fr); /* Сетка с тремя колонками */
+    grid-auto-rows: auto;
+
+    /* Настройка расположения первых двух блоков */
+    & > :nth-child(1) {
+      grid-column: span 3; /* Первый блок занимает две колонки */
+    }
+    & > :nth-child(2) {
+      grid-column: span 3; /* Второй блок в оставшейся колонке */
+    }
+    & > :nth-child(n+3) {
+      grid-column: span 2; /* Блоки занимают по 2 из 6 колонок */
+    }
+  }
 }
 
 /* Общие стили для блоков */
@@ -14,9 +29,4 @@
   padding: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
   box-sizing: border-box;
   border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
-
-  @media screen and (min-width: 768px) {
-    flex: 1 1 calc(50% - 16px); /* Две колонки по умолчанию */
-    max-width: calc(50% - 16px);
-  }
 }
