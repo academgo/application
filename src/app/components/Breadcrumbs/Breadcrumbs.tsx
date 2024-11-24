@@ -33,24 +33,29 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
           <Link href={basePath}>{homeTitle}</Link>
         </li>
 
-        {/* Ссылка на родительскую страницу */}
-        <li
-          className={`${styles.breadcrumbItem} ${
-            !subslug ? styles.breadcrumbItemActive : ""
-          }`}
-          aria-current={!subslug ? "page" : undefined}
-        >
-          <Link href={`${basePath}/${slug}`}>{title}</Link>
-        </li>
-
-        {/* Заголовок текущей страницы (только для подстраниц) */}
-        {subslug && (
+        {/* Для родительской страницы */}
+        {!subslug && (
           <li
             className={`${styles.breadcrumbItem} ${styles.breadcrumbItemActive}`}
             aria-current="page"
           >
             {title}
           </li>
+        )}
+
+        {/* Для подстраницы */}
+        {subslug && (
+          <>
+            <li className={styles.breadcrumbItem}>
+              <Link href={`${basePath}/${parentSlug}`}>{parentTitle}</Link>
+            </li>
+            <li
+              className={`${styles.breadcrumbItem} ${styles.breadcrumbItemActive}`}
+              aria-current="page"
+            >
+              {title}
+            </li>
+          </>
         )}
       </ol>
     </nav>
