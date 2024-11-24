@@ -8,6 +8,32 @@ export type Image = {
   url: string;
 };
 
+export type PlanFeature = {
+  _key: string;
+  featureName: string;
+  availability: "available" | "unavailable";
+};
+
+export type PricingPlan = {
+  _key: string;
+  planPretitle: string;
+  planName: string;
+  planPrice: string;
+  promoText?: string;
+  planLink: Link;
+  features: PlanFeature[];
+  buttonText: string;
+  isHighlighted?: boolean; // Добавлено свойство
+};
+
+export type PricingTable = {
+  _key: string;
+  _type: "pricingTable";
+  title: string;
+  description: string;
+  plans: PricingPlan[];
+};
+
 export type SliderList = {
   _key: string;
   title: string;

@@ -1,0 +1,188 @@
+.pricingTable {
+  margin-bottom: clamp(1.25rem, 5vw, 3.75rem);
+
+  .pricingTableTitle {
+    color: #000;
+    font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: clamp(-0.103rem, -0.132rem + 0.12vw, -0.045rem);
+    text-align: left;
+  }
+
+  .highlightedText {
+    color: #f39708;
+  }
+
+    .pretitle {
+    font-size: clamp(0.5rem, 0.25rem + 1vw, 1rem);
+    color: #8A929C;
+    max-width: 30em;
+    margin-inline: auto;
+    margin-bottom: clamp(0.313rem, 1.25vw, 0.938rem);
+  }
+
+  .planName {
+    color: #1A2644;
+    text-align: center;
+    font-size: clamp(0.5rem, -0.25rem + 3vw, 2rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: clamp(0.313rem, -0.469rem + 3.13vw, 1.875rem);
+  }
+
+  .price {
+    color: #f39708;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.3px;
+    margin-bottom: clamp(0.313rem, -0.469rem + 3.13vw, 1.875rem);
+
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+      letter-spacing: -1.6px;
+    }
+  }
+
+  .tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    table {
+      width: 100%;
+      margin-top: 4rem;
+      border-collapse: collapse;
+
+      thead {
+        th {
+          padding: 2rem 1rem;
+          text-align: center;
+          font-size: 0.875rem;
+          font-weight: 500;
+          background-color: transparent;
+          color: #1f2937;
+
+          &:first-child {
+            width: 40%; /* Features block takes 40% of the width */
+          }
+
+          &:not(:first-child) {
+            width: 20%; /* Each pricing block takes 15% */
+          }
+
+          &.highlighted {
+            background-color: #1f2937;
+            color: #ffffff;
+            border-radius: 25px 25px 0 0;
+
+            .planName {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: rgba(243, 151, 8, 0.10);
+          }
+
+          td {
+            padding: 1rem;
+            text-align: center;
+            color: #1f2937;
+            font-size: clamp(0.625rem, 0.313rem + 1.25vw, 1.25rem);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.3px;
+            border-bottom: 1px solid #e5e7eb;
+
+            &:first-child {
+              width: 40%; /* Ensure features block is wider */
+              text-align: left; /* Align text to the left */
+              padding-left: 2rem; /* Add spacing for better alignment */
+            }
+
+            &:not(:first-child) {
+              width: 15%; /* Ensure each pricing block is narrower */
+              text-align: center;
+            }
+
+            @media screen and (min-width: 768px) {
+              letter-spacing: -0.6px;
+            }
+
+            &.highlighted {
+              background-color: #1f2937;
+              color: #ffffff;
+
+              svg {
+                path {
+                  stroke: #fff;
+                }
+              }
+            }
+
+            svg {
+              display: block;
+              margin: 0 auto;
+              width: 1.25rem;
+              height: 1.25rem;
+            }
+          }
+        }
+      }
+
+      tfoot {
+        td {
+          padding: 1.5rem 1rem;
+          text-align: center;
+
+          &.highlighted {
+            background-color: #1f2937;
+            color: #ffffff;
+            border-radius: 0 0 25px 25px;
+          }
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            color: #1f2937;
+            text-decoration: none;
+
+            &.highlighted {
+              color: #ffffff;
+            }
+
+            &:hover {
+              color: #1d4ed8;
+            }
+
+            svg {
+              margin-left: 0.25rem;
+              width: 1rem;
+              height: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .buttonWrapper {
+    button {
+      width: 100%;
+    }
+  }
+}

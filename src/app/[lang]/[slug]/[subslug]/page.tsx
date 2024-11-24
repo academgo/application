@@ -35,7 +35,8 @@ import {
   LogosBlock,
   ContactsBlock,
   SurveyBlock,
-  OfferBlock
+  OfferBlock,
+  PricingTable
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -61,6 +62,7 @@ import ContactsBlockComponent from "@/app/components/ContactsBlockComponent/Cont
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlockComponent";
+import PricingTableComponent from "@/app/components/PricingTableComponent/PricingTableComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -91,7 +93,8 @@ type ContentBlock =
   | LogosBlock
   | ContactsBlock
   | SurveyBlock
-  | OfferBlock;
+  | OfferBlock
+  | PricingTable;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -267,9 +270,12 @@ const Subpage = async ({ params }: Props) => {
             block={block as ProcessBlock}
           />
         );
-      case "pricesBlock":
+      case "pricingTable":
         return (
-          <PricesBlockComponent key={block._key} block={block as PricesBlock} />
+          <PricingTableComponent
+            key={block._key}
+            block={block as PricingTable}
+          />
         );
       case "sliderPicturesBlock":
         return (

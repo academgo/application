@@ -26,7 +26,6 @@ import linksBlock from "./linksBlock";
 import blockContentWithStyle from "./blockContentWithStyle";
 import sliderBlock from "./sliderBlock";
 import cascadeBlock from "./cascadeBlock";
-import pricesBlock from "./pricesBlock";
 import packagePriceBlock from "./packagePriceBlock";
 import extraBlock from "./extraBlock";
 import compareBlock from "./compareBlock";
@@ -36,6 +35,7 @@ import logosBlock from "./logosBlock";
 import contactsBlock from "./contactsBlock";
 import surveyBlock from "./surveyBlock";
 import offerBlock from "./offerBlock";
+import pricingTable from "./pricingTable";
 
 export const schemaTypes = [
   header,
@@ -65,9 +65,9 @@ export const schemaTypes = [
   contactsBlock,
   logosBlock,
   sliderPicturesBlock,
-  pricesBlock,
   cascadeBlock,
   accordionBlock,
+  pricingTable,
   tabsBlock,
   surveyBlock,
   offerBlock,

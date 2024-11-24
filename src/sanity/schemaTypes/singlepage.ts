@@ -94,7 +94,7 @@ const singlepage = {
         { type: "extraBlock" },
         { type: "compareBlock" },
         { type: "processBlock" },
-        { type: "pricesBlock" },
+        { type: "pricingTable" },
         { type: "logosBlock" },
         { type: "offerBlock" },
         { type: "contactsBlock" },
