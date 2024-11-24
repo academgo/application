@@ -71,6 +71,19 @@ const doubleTextBlock = defineType({
           hidden: ({ parent }) => parent?.type !== "image"
         })
       ]
+    }),
+    defineField({
+      name: "marginBottom",
+      title: "Margin Bottom",
+      type: "string",
+      options: {
+        list: [
+          { title: "Small", value: "small" },
+          { title: "Medium", value: "medium" },
+          { title: "Large", value: "large" }
+        ]
+      },
+      description: "Select the margin size (small, medium, large)."
     })
   ]
 });

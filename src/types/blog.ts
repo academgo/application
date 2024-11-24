@@ -214,11 +214,7 @@ export type DoubleTextBlock = {
   doubleTextBlockTitle?: string;
   leftContent: ContentChoice;
   rightContent: ContentChoice;
-  // doubleTextBlockTitle: string;
-  // leftTextBlock: BlockContentWithStyle;
-  // rightTextBlock: BlockContentWithStyle;
-  // backgroundColor: string;
-  // border: string;
+  marginBottom?: "small" | "medium" | "large";
 };
 
 export type CascadeBlock = {

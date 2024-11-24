@@ -14,6 +14,12 @@ type Props = {
   block: DoubleTextBlock;
 };
 
+const marginValues: Record<string, string> = {
+  small: "clamp(0.625rem, 2.5vw, 1.875rem)",
+  medium: "clamp(1.25rem, 0.5rem + 3vw, 2.75rem)",
+  large: "clamp(1.25rem, 5vw, 3.75rem)"
+};
+
 const getBlockStyle = (textBlock?: BlockContentWithStyle) => ({
   background: textBlock?.backgroundColor || "transparent",
   border: textBlock?.isBorder ? "1px solid #000" : "none",
@@ -22,6 +28,13 @@ const getBlockStyle = (textBlock?: BlockContentWithStyle) => ({
 });
 
 const DoubleTextBlockComponent: FC<Props> = ({ block }) => {
+  const { marginBottom } = block;
+
+  const computedMargin =
+    marginBottom && marginValues[marginBottom]
+      ? marginValues[marginBottom]
+      : "0";
+
   const renderContent = (content?: ContentChoice) => {
     if (!content) return null; // Проверка на наличие контента
 
@@ -55,7 +68,12 @@ const DoubleTextBlockComponent: FC<Props> = ({ block }) => {
   };
 
   return (
-    <div className={styles.doubleTextBlock}>
+    <div
+      className={styles.doubleTextBlock}
+      style={{
+        marginBottom: computedMargin
+      }}
+    >
       {block.doubleTextBlockTitle && (
         <h2 className="h2-main mb-h2">{block.doubleTextBlockTitle}</h2>
       )}
