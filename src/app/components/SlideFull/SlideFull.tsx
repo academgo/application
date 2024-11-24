@@ -62,11 +62,14 @@ const SlideFull: FC<Props> = ({
             <div className={styles.specialties}>
               <p className={styles.subtitle}>{subTitle}</p>
               <ul className={styles.list}>
-                {sliderList.map((specialty, index) => (
-                  <li key={index} className={styles.listItem}>
-                    {specialty.title}
-                  </li>
-                ))}
+                {sliderList.map(
+                  (specialty, index) =>
+                    specialty.title && ( // Проверяем, есть ли title
+                      <li key={index} className={styles.listItem}>
+                        {specialty.title}
+                      </li>
+                    )
+                )}
               </ul>
             </div>
           )}
@@ -76,11 +79,14 @@ const SlideFull: FC<Props> = ({
             <div className={styles.universities}>
               <p className={styles.subtitle}>{universitiesTitle}</p>
               <ul className={styles.list}>
-                {universities.map((university, index) => (
-                  <li key={index} className={styles.listItem}>
-                    {university.title}
-                  </li>
-                ))}
+                {universities.map(
+                  (university, index) =>
+                    university.title && (
+                      <li key={index} className={styles.listItem}>
+                        {university.title}
+                      </li>
+                    )
+                )}
               </ul>
             </div>
           )}
