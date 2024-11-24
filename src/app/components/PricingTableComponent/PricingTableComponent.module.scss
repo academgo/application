@@ -125,6 +125,8 @@
             &.highlighted {
               background-color: #1f2937;
               color: #ffffff;
+              position: relative;
+              z-index: -1;
 
               svg {
                 path {
