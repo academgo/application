@@ -14,6 +14,19 @@ const textContent = defineType({
       name: "content",
       title: "Content Editor",
       type: "contentBlock"
+    }),
+    defineField({
+      name: "marginBottom",
+      title: "Margin Bottom",
+      type: "string",
+      options: {
+        list: [
+          { title: "Small", value: "small" },
+          { title: "Medium", value: "medium" },
+          { title: "Large", value: "large" }
+        ]
+      },
+      description: "Select the margin size (small, medium, large)."
     })
   ]
 });

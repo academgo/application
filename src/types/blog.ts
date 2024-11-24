@@ -161,6 +161,7 @@ export type TextContent = {
   _key: string;
   _type: string;
   content: any;
+  marginBottom?: "small" | "medium" | "large";
 };
 
 export type SliderBlock = {
