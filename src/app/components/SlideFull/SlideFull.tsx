@@ -61,16 +61,18 @@ const SlideFull: FC<Props> = ({
           {subTitle && subTitle.length > 0 && (
             <div className={styles.specialties}>
               <p className={styles.subtitle}>{subTitle}</p>
-              <ul className={styles.list}>
-                {sliderList.map(
-                  (specialty, index) =>
-                    specialty.title && ( // Проверяем, есть ли title
-                      <li key={index} className={styles.listItem}>
-                        {specialty.title}
-                      </li>
-                    )
-                )}
-              </ul>
+              {sliderList?.length > 0 && (
+                <ul className={styles.list}>
+                  {sliderList.map(
+                    (specialty, index) =>
+                      specialty.title && (
+                        <li key={index} className={styles.listItem}>
+                          {specialty.title}
+                        </li>
+                      )
+                  )}
+                </ul>
+              )}
             </div>
           )}
           {semesters && <p className={styles.textMark}>{semesters}</p>}
