@@ -58,7 +58,9 @@ const PackagePriceBlockComponent: FC<Props> = ({ block }) => {
             <div className={styles.priceDescription}>
               {rightSide.priceDescription}
             </div>
-            <ButtonModal>{rightSide.buttonLabel}</ButtonModal>
+            <div className={styles.buttonWrapper}>
+              <ButtonModal>{rightSide.buttonLabel}</ButtonModal>
+            </div>
           </div>
         </div>
       </div>

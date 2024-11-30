@@ -120,3 +120,14 @@
     letter-spacing: -0.8px;
   }
 }
+
+.buttonWrapper {
+  
+  button {
+    width: 75%;
+
+    @media screen and (min-width: 768px) {
+      width: 60%;
+    }
+  }
+}
