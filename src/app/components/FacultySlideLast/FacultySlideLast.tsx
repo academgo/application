@@ -33,11 +33,11 @@ const FacultySlideLast: FC<Props> = ({
         />
       </svg>
       <div className={styles.slideContent}>
-        <h3 className={styles.title}>
+        <p className={styles.title}>
           <span className={styles.highlight}>{lastSlideTitleHighlight} </span>
           <br />
           {lastSlideTitle}
-        </h3>
+        </p>
         <p className={styles.text}>{lastSlideDescription}</p>
         <FormSuperLite
           form={form}

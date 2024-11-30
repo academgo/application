@@ -84,7 +84,7 @@ const Hero: FC<Props> = ({
               {heroDescription && (
                 <p className={styles.heroDescription}>{heroDescription}</p>
               )}
-              {heroTitle && <h2 className={styles.heroTitle}>{heroTitle}</h2>}
+              {heroTitle && <p className={styles.heroTitle}>{heroTitle}</p>}
               <FlagsCarousel flags={flags} />
             </div>
           </div>

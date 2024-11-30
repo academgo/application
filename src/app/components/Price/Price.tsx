@@ -13,7 +13,7 @@ const Price: FC<Props> = ({ priceTitle, priceBlock }) => {
   return (
     <section className={styles.price} id="price">
       <div className="container">
-        <h2 className={styles.title}>{priceTitle}</h2>
+        <p className={styles.title}>{priceTitle}</p>
         <SliderMain slidesPerView={3} uniqueId="price-slider">
           {priceBlock.map((priceBlock, index) => (
             <PriceSlide
