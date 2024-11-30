@@ -122,7 +122,7 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
                 <motion.div
                   className={styles.subLinks}
                   initial={{ maxHeight: 0, overflow: "hidden" }}
-                  animate={{ maxHeight: 500, overflow: "hidden" }}
+                  animate={{ maxHeight: "35vh", overflow: "auto" }}
                   exit={{ maxHeight: 0, overflow: "hidden" }}
                   transition={{ duration: 0.5 }}
                 >

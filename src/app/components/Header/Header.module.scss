@@ -273,6 +273,26 @@
     margin-top: 0;
     padding-top: 30px;
   }
+
+  @media (max-width: 768px) {
+    max-height: 35vh; /* Ограничиваем высоту на мобильных устройствах */
+    overflow-y: auto; /* Включаем вертикальный скролл */
+
+    /* Стилизация скроллбара */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #F39708;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #F39708;
+    }
+  }
 }
 
 .subLinksWrapper {
