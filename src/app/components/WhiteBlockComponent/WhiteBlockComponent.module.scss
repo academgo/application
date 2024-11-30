@@ -21,12 +21,13 @@
 
 .portableText {
   p {
-    font-size: clamp(1rem, 0.682rem + 1.59vw, 1.875rem);
+    font-size: clamp(1rem, 0.562rem + 1.75vw, 1.875rem);
+    font-weight: 400;
     letter-spacing: -0.48px;
-    line-height: 1.2;
+    line-height: normal;
 
     @media screen and (min-width: 768px) {
-      letter-spacing: unset;
+      letter-spacing: -0.9px;
     }
   }
 }
