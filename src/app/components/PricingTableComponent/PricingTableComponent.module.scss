@@ -66,7 +66,7 @@
           font-size: 0.875rem;
           font-weight: 500;
           background-color: transparent;
-          color: #1f2937;
+          color: #112546;
 
           &:first-child {
             width: 40%; /* Features block takes 40% of the width */
@@ -77,7 +77,7 @@
           }
 
           &.highlighted {
-            background-color: #1f2937;
+            background-color: #112546;
             color: #ffffff;
             border-radius: 25px 25px 0 0;
 
@@ -99,7 +99,7 @@
           td {
             padding: 1rem;
             text-align: center;
-            color: #1f2937;
+            color: #112546;
             font-size: clamp(0.625rem, 0.313rem + 1.25vw, 1.25rem);
             font-style: normal;
             font-weight: 500;
@@ -123,7 +123,7 @@
             }
 
             &.highlighted {
-              background-color: #1f2937;
+              background-color: #112546;
               color: #ffffff;
               position: relative;
               z-index: -1;
@@ -151,7 +151,7 @@
           text-align: center;
 
           &.highlighted {
-            background-color: #1f2937;
+            background-color: #112546;
             color: #ffffff;
             border-radius: 0 0 25px 25px;
           }
@@ -160,7 +160,7 @@
             display: inline-flex;
             align-items: center;
             font-weight: 500;
-            color: #1f2937;
+            color: #112546;
             text-decoration: none;
 
             &.highlighted {
