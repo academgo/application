@@ -326,7 +326,7 @@ const Subpage = async ({ params }: Props) => {
             parentTitle={subPage.parentPage.title}
             parentSlug={subPage.parentPage.slug[lang]?.current}
           />
-          <SinglePageIntroBlock title={subPage.title} />
+          {/* <SinglePageIntroBlock title={subPage.title} /> */}
           {subPage.contentBlocks.map(block => renderContentBlock(block))}
         </div>
       </main>

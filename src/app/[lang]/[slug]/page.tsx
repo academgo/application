@@ -304,7 +304,7 @@ const SinglePage = async ({ params }: Props) => {
         <div className="container">
           <CoverBlock coverBlock={page.coverBlock} />
           <Breadcrumbs lang={lang} slug={slug} title={page.title} />
-          <SinglePageIntroBlock title={page.title} />
+          {/* <SinglePageIntroBlock title={page.title} /> */}
           {/* breadcrumbs here */}
           {page.contentBlocks.map(block => renderContentBlock(block))}
         </div>
