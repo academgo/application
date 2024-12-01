@@ -40,7 +40,7 @@
 }
 
 .description {
-  max-width: 255px;
+  max-width: 230px;
   color: #8A929C;
   font-size: 13px;
   font-style: normal;
@@ -48,7 +48,7 @@
   line-height: 20px; /* 153.846% */
   letter-spacing: -0.65px;
 
-  @media screen and (max-width: 1440px){
+  @media screen and (max-width: 1720px){
     display: none;
   }
 }
