@@ -27,9 +27,9 @@ const PricingTableComponent: FC<Props> = ({ block }) => {
   return (
     <section className={styles.pricingTable}>
       <div className={styles.container}>
-        <p className={styles.pricingTableTitle}>
+        {/* <p className={styles.pricingTableTitle}>
           {formatTitleWithHighlightedWords(block.title)}
-        </p>
+        </p> */}
         <div className={styles.tableWrapper}>
           <table>
             <thead>

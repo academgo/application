@@ -11,11 +11,6 @@ const pricingTable = defineType({
       type: "string"
     }),
     defineField({
-      name: "description",
-      title: "Description",
-      type: "text"
-    }),
-    defineField({
       name: "plans",
       title: "Plans",
       type: "array",
@@ -37,29 +32,6 @@ const pricingTable = defineType({
               name: "planPrice",
               title: "Plan Price",
               type: "string"
-            }),
-            defineField({
-              name: "promoText",
-              title: "Promo Text",
-              type: "string",
-              description: "Optional promotional text, e.g., 'Most popular!'"
-            }),
-            defineField({
-              name: "planLink",
-              title: "Plan Link",
-              type: "object",
-              fields: [
-                defineField({
-                  name: "label",
-                  title: "Label",
-                  type: "string"
-                }),
-                defineField({
-                  name: "destination",
-                  title: "Destination",
-                  type: "url"
-                })
-              ]
             }),
             defineField({
               name: "features",
