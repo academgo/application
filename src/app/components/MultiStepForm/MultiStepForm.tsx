@@ -221,7 +221,7 @@ const MultiStepForm = ({
                           </div>
                           <div className={styles.pseudoRadioData}>
                             <div className={styles.pseudoRadio}></div>
-                            <p>
+                            <p className={styles.pseudoRadioText}>
                               {lang === "en" ? "Enrollee" : "Сам абитуриент"}
                             </p>
                           </div>
