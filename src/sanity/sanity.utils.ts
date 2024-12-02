@@ -246,6 +246,13 @@ export async function getBlogPostsByLangWithPagination(
   return blogPosts;
 }
 
+// Новый запрос для подсчета общего количества постов
+export async function getTotalBlogPostsByLang(lang: string): Promise<number> {
+  const totalPostsQuery = groq`count(*[_type == "blog" && language == $lang])`;
+  const total = await client.fetch(totalPostsQuery, { lang });
+  return total;
+}
+
 export async function getHeaderByLang(lang: string): Promise<Header> {
   const headerQuery = groq`*[_type == 'header' && language == $lang][0] {
     _id,

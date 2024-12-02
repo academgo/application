@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getBlogPostsByLangWithPagination } from "@/sanity/sanity.utils";
+import {
+  getBlogPostsByLangWithPagination,
+  getTotalBlogPostsByLang
+} from "@/sanity/sanity.utils";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -20,10 +23,11 @@ export async function GET(req: NextRequest) {
       parseInt(limit),
       parseInt(offset)
     );
-    const total = posts.length; // Предположим, что вы можете получить общее количество постов
+    const total = await getTotalBlogPostsByLang(lang); // Общее количество постов
 
     return NextResponse.json({ posts, total }, { status: 200 });
   } catch (error) {
+    console.error("Error fetching posts:", error);
     return NextResponse.json(
       { error: "Failed to load posts" },
       { status: 500 }
