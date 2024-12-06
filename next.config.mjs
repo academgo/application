@@ -104,7 +104,22 @@ const nextConfig = {
       },
       {
         source: '/ru/blog/polushenie-studencheskoi-vizy',
-        destination: '/ru/studencheskaya-viza ',
+        destination: '/ru/studencheskaya-viza',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/kak-postupit-v-polshu ',
+        destination: '/ru/obuchenie-v-polshe',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/obuchenie-v-polshe',
+        destination: '/ru/obuchenie-v-polshe',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/postuplenie-v-polshu-v-2024-godu',
+        destination: '/ru/obuchenie-v-polshe',
         permanent: true,
       },
       {
