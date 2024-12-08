@@ -144,6 +144,16 @@
   }
 }
 
+.contentBlock {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+
+  p {
+    color: #fff;
+  }
+}
+
 .giftBlock {
   display: flex;
   align-items: center;
@@ -268,4 +278,14 @@
 .contactIcon {
   width: clamp(2.188rem, 0.938rem + 5vw, 4.688rem);
   height: clamp(2.188rem, 0.938rem + 5vw, 4.688rem);
+}
+
+.buttonBlock {
+  button {
+    padding: 15px 30px;
+
+    @media screen and (min-width: 768px) {
+      padding: 20px 40px;
+    }
+  }
 }

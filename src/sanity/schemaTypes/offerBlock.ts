@@ -26,21 +26,21 @@ const offerBlock = defineType({
       type: "string"
     }),
     defineField({
-      name: "offerDesctiption",
+      name: "offerDescription",
       title: "Offer Description",
       type: "string"
     }),
-    defineField({
-      name: "offerFormTitle",
-      title: "Form Title",
-      type: "string"
-    }),
-    defineField({
-      name: "offerForm",
-      title: "Offer Form",
-      type: "reference", // Используйте ссылку на форму
-      to: [{ type: "formStandardDocument" }]
-    }),
+    // defineField({
+    //   name: "offerFormTitle",
+    //   title: "Form Title",
+    //   type: "string"
+    // }),
+    // defineField({
+    //   name: "offerForm",
+    //   title: "Offer Form",
+    //   type: "reference", // Используйте ссылку на форму
+    //   to: [{ type: "formStandardDocument" }]
+    // }),
     defineField({
       name: "offerButtonCustomText",
       title: "Button Text",

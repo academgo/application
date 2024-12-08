@@ -7,6 +7,7 @@ import FormSuperLite from "../FormSuperLite/FormSuperLite";
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
+import { ButtonModal } from "../ButtonModal/ButtonModal";
 
 type Props = {
   block: OfferBlock;
@@ -112,6 +113,9 @@ const OfferBlockComponent: FC<Props> = ({ block }) => {
                   form={block.offerForm}
                   offerButtonCustomText={block.offerButtonCustomText}
                 /> */}
+                <div className={styles.buttonBlock}>
+                  <ButtonModal>{block.offerButtonCustomText}</ButtonModal>
+                </div>
               </div>
               <div className={styles.offerLinksBlock}>
                 <p className={styles.offerAltText}>{block.offerAltText}</p>
