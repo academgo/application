@@ -10,13 +10,13 @@ const BOARD_ID = "1741411541";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, phone, email } = body;
+    const { country, phone, email } = body;
 
     const query = `
       mutation {
         create_item (
           board_id: ${BOARD_ID},
-          item_name: "${name}",
+          item_name: "${country}",
           column_values: ${JSON.stringify(
             JSON.stringify({
               lead_phone: phone, // Указание идентификатора колонки телефона
