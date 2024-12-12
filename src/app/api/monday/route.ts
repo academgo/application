@@ -4,7 +4,7 @@ import Mail from "nodemailer/lib/mailer";
 
 const MONDAY_API_URL = "https://api.monday.com/v2";
 const MONDAY_API_KEY =
-  "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0NzcxNDExMiwiYWFpIjoxMSwidWlkIjo2OTYwNTY3NywiaWFkIjoiMjAyNC0xMi0xMlQyMDo1NzoyMC4yMjhaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjY5NTE0NTYsInJnbiI6ImV1YzEifQ.u8FRD_sus0o43AqGNgWMstYyT5L8VA0ZKbm8HJrYupM";
+  "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0NzcxNDExMiwiYWFpIjoxMSwidWlkIjo2OTYwNTY3NywiaWFkIjoiMjAyNC0xMi0xMlQyMDo1NzoyMC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjY5NTE0NTYsInJnbiI6ImV1YzEifQ.5appzlAWV8Xdym-rMbHDvFJQjGIF44UHHMRBnqZxrpY";
 const BOARD_ID = "1741411541";
 
 export async function POST(request: Request) {
