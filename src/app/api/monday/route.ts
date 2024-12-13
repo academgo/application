@@ -4,8 +4,8 @@ import Mail from "nodemailer/lib/mailer";
 
 const MONDAY_API_URL = "https://api.monday.com/v2";
 const MONDAY_API_KEY =
-  "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0NzcxNDExMiwiYWFpIjoxMSwidWlkIjo2OTYwNTY3NywiaWFkIjoiMjAyNC0xMi0xMlQyMDo1NzoyMC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjY5NTE0NTYsInJnbiI6ImV1YzEifQ.5appzlAWV8Xdym-rMbHDvFJQjGIF44UHHMRBnqZxrpY";
-const BOARD_ID = "1741411541";
+  "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0NzQ2MTI0NCwiYWFpIjoxMSwidWlkIjo2OTYwMTEyOCwiaWFkIjoiMjAyNC0xMi0xMlQxMjo0MjoxMS4yOTZaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjY5NDk0MzgsInJnbiI6ImV1YzEifQ.L636NyAGC0pzHD24_d2g-OAgLEnKL5ljTfWgD6lKRds";
+const BOARD_ID = "1741071358";
 
 export async function POST(request: Request) {
   try {
@@ -19,8 +19,8 @@ export async function POST(request: Request) {
           item_name: "${country}",
           column_values: ${JSON.stringify(
             JSON.stringify({
-              lead_phone: phone, // Указание идентификатора колонки телефона
-              lead_email: email // Убедитесь, что колонка email совпадает с её идентификатором в Monday.com
+              tekst_Mjj5PRDd: phone, // Указание идентификатора колонки телефона
+              tekst_Mjj5fnLd: email
             })
           )}
         ) {
