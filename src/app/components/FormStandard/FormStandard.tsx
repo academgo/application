@@ -82,7 +82,7 @@ const FormStandard: FC<ContactFormProps> = ({
   ) => {
     setSubmitting(true);
     try {
-      const response = await axios.post("/api/monday", values);
+      const response = await axios.post("/api/email", values);
       if (response.data.message === "Email sent") {
         resetForm({});
         setFilled({ phone: false, country: false, email: false }); // Reset the filled state

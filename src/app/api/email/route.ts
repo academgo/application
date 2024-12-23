@@ -8,7 +8,10 @@ export async function POST(request: NextRequest) {
   console.log("Received data:", data); // Журналирование данных для отладки
 
   const transport = nodemailer.createTransport({
-    service: "gmail",
+    // service: "gmail",
+    host: "smtp.hostinger.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD
