@@ -253,6 +253,13 @@
     &:not(:last-of-type) {
       border-bottom: 1px solid rgba(255, 255, 255, 0.50);
     }
+
+    &:has(.chevron) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
   }
 
   @media screen and (min-width: 768px){
@@ -362,6 +369,18 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
+}
+
+.chevron {
+  font-size: 16px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  color: #fff;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: #F39708;
 }
 
 

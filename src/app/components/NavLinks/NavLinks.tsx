@@ -4,6 +4,7 @@ import { Header as HeaderType } from "@/types/header";
 import styles from "../Header/Header.module.scss";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FiChevronDown } from "react-icons/fi"; // Иконка стрелки
 
 type Props = {
   navLinks: HeaderType["navLinks"];
@@ -15,34 +16,23 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
   const [activeSection, setActiveSection] = useState("");
   const [isHomePage, setIsHomePage] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState<number | null>(null);
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false); // Отслеживаем ширину экрана
 
   useEffect(() => {
     setIsHomePage(window.location.pathname === `/${params.lang}`);
 
-    const handleScroll = () => {
-      let closestSectionId = "";
-      let smallestDistance = Infinity;
-      navLinks.forEach(navLink => {
-        const sectionElement = document.getElementById(navLink.link);
-        if (sectionElement) {
-          const distance = Math.abs(sectionElement.getBoundingClientRect().top);
-          if (distance < smallestDistance) {
-            smallestDistance = distance;
-            closestSectionId = navLink.link;
-          }
-        }
-      });
-
-      setActiveSection(closestSectionId);
+    // Определяем, мобильное ли устройство
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleResize(); // Устанавливаем состояние при загрузке
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [navLinks, params.lang]);
+  }, [params.lang]);
 
   const toggleSubMenu = (index: number) => {
     setOpenSubMenuIndex(openSubMenuIndex === index ? null : index);
@@ -79,46 +69,39 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
           onMouseEnter={() => !isMobile && setOpenSubMenuIndex(index)}
           onMouseLeave={() => !isMobile && setOpenSubMenuIndex(null)}
         >
-          {link.link.startsWith("/") ? (
+          <div
+            className={`${styles.navLink} ${
+              isMobile && openSubMenuIndex === index ? styles.activeNavLink : ""
+            }`}
+            onClick={
+              isMobile && link.subLinks
+                ? e => {
+                    e.preventDefault();
+                    toggleSubMenu(index);
+                  }
+                : closeMenu
+            }
+          >
             <Link
               href={`/${params.lang}/${link.link}`}
-              className={`${styles.navLink} ${
-                isMobile && openSubMenuIndex === index
-                  ? styles.activeNavLink
-                  : ""
-              }`}
-              onClick={
-                isMobile && link.subLinks
-                  ? e => {
-                      e.preventDefault();
-                      toggleSubMenu(index);
-                    }
-                  : closeMenu
-              }
+              className={styles.navLinkText}
             >
               {link.label}
             </Link>
-          ) : (
-            <a
-              onClick={e => {
-                e.preventDefault();
-                scrollToSection(link.link);
-                closeMenu();
-              }}
-              className={`${styles.navLink} ${
-                isMobile && openSubMenuIndex === index
-                  ? styles.activeNavLink
-                  : ""
-              }`}
-            >
-              {link.label}
-            </a>
-          )}
+            {isMobile && link.subLinks && (
+              <FiChevronDown
+                className={`${styles.chevron} ${
+                  openSubMenuIndex === index ? styles.chevronOpen : ""
+                }`}
+              />
+            )}
+          </div>
           {/* Подменю */}
           <AnimatePresence>
             {link.subLinks &&
               link.subLinks.length > 0 &&
-              openSubMenuIndex === index && (
+              openSubMenuIndex === index &&
+              (isMobile ? (
                 <motion.div
                   className={styles.subLinks}
                   initial={{ maxHeight: 0, overflow: "hidden" }}
@@ -139,7 +122,22 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
                     ))}
                   </div>
                 </motion.div>
-              )}
+              ) : (
+                <div className={styles.subLinks}>
+                  <div className={styles.subLinksWrapper}>
+                    {link.subLinks.map(subLink => (
+                      <Link
+                        key={subLink.label}
+                        href={`/${params.lang}/${subLink.link}`}
+                        className={styles.subLink}
+                        onClick={closeMenu}
+                      >
+                        {subLink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
           </AnimatePresence>
         </div>
       ))}
