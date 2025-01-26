@@ -198,6 +198,61 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/ru/blog/besplatnoe-obrazovanie-v-polshe-dlya-kazakhstancev',
+        destination: '/ru/obuchenie-v-polshe/besplatnoe-obrazovanie-v-polshe-dlya-kazakhstancev',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/universitety-v-polshe-dla-inostrancev',
+        destination: '/ru/vuzy-polshi',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/stoimost-obucheniya-v-polshe',
+        destination: '/ru/stoimost-obucheniya-v-polshe',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/postuplenie-v-polshu-dlya-belorusov',
+        destination: '/ru/obuchenie-v-polshe/obuchenie-dlya-belorusov-v-polshe',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/postuplenie-v-polshu-dlya-kazakhstancev',
+        destination: '/ru/obuchenie-v-polshe/obuchenie-v-polshe-dlya-kazakhstancev',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/postuplenie-v-polshu-dlya-ukraincev',
+        destination: '/ru/obuchenie-v-polshe/ucheba-v-polshe-dlya-ukraincev',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/postuplenie-v-polshu-s-kartoi-polyaka',
+        destination: '/ru/obuchenie-v-polshe/postuplenie-v-polshu-po-karte-polyaka',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/studencheskaya-viza-v-polshu-dlya-belorusov',
+        destination: '/ru/studencheskaya-viza/studencheskaya-viza-v-polshu-dlya-belorusov',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/yuridicheskoe-obrazovanie-v-polshe',
+        destination: '/ru/vuzy-polshi/yuridicheskoe-obrazovanie-v-polshe',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/studencheskaya-viza-v-polshu-dlya-ukraincev',
+        destination: '/studencheskaya-viza/studencheskaya-viza-v-polshu-dlya-ukraincev',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/polushenie-studencheskoi-vizy',
+        destination: '/ru/studencheskaya-viza',
+        permanent: true,
+      },
+      {
         source: '/index.php',
         destination: '/',
         permanent: true,
