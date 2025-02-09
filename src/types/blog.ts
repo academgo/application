@@ -380,6 +380,7 @@ export type Category = {
 
 export type RelatedArticle = {
   _id: string;
+  _type: "blog" | "singlepage" | "subpage"; // добавлено поле _type
   title: string;
   category: Category;
   slug: {
@@ -389,7 +390,28 @@ export type RelatedArticle = {
   };
   publishedAt: string;
   previewImage: Image;
+  // Для subpage добавляем родительскую страницу (опционально)
+  parentPage?: {
+    slug: {
+      [lang: string]: {
+        current: string;
+      };
+    };
+  };
 };
+
+// export type RelatedArticle = {
+//   _id: string;
+//   title: string;
+//   category: Category;
+//   slug: {
+//     [lang: string]: {
+//       current: string;
+//     };
+//   };
+//   publishedAt: string;
+//   previewImage: Image;
+// };
 
 export type Blog = {
   _id: string;

@@ -105,7 +105,20 @@ const blog = {
       name: "relatedArticles",
       title: "Related Articles",
       type: "array",
-      of: [{ type: "reference", to: [{ type: "blog" }] }]
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "blog" }, { type: "singlepage" }, { type: "subpage" }],
+          options: {
+            filter: ({ document }) => {
+              return {
+                filter: "language == $language",
+                params: { language: document.language }
+              };
+            }
+          }
+        }
+      ]
     }),
     defineField({
       name: "language",

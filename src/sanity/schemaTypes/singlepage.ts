@@ -102,6 +102,11 @@ const singlepage = {
       ]
     }),
     defineField({
+      name: "publishedAt",
+      title: "Date of publication",
+      type: "datetime"
+    }),
+    defineField({
       name: "language",
       type: "string",
       initialValue: "id",

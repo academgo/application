@@ -91,9 +91,14 @@ export async function getBlogPostByLang(
     contentBlocks,
     videoBlock,
     relatedArticles[]->{
+      _id,
+      _type,
       title,
       slug,
-      publishedAt
+      publishedAt,
+      parentPage->{
+        slug
+      }
     },
     language,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
