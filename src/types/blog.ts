@@ -29,6 +29,7 @@ export type PricingPlan = {
   planPretitle: string;
   planName: string;
   planPrice: string;
+  detailsLink: Link;
   features: PlanFeature[];
   buttonText: string;
   isHighlighted?: boolean; // Добавлено свойство

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { PricingTable } from "@/types/blog";
 import styles from "./PricingTableComponent.module.scss";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
+import Link from "next/link";
 
 type Props = {
   block: PricingTable;
@@ -27,9 +28,12 @@ const PricingTableComponent: FC<Props> = ({ block }) => {
   return (
     <section className={styles.pricingTable}>
       <div className={styles.container}>
-        {/* <p className={styles.pricingTableTitle}>
+        <p className={`${styles.pricingTableTitle} ${styles.mobileTitle}`}>
           {formatTitleWithHighlightedWords(block.title)}
-        </p> */}
+        </p>
+        <p className={`${styles.pricingTableTitle} ${styles.desktopTitle}`}>
+          {formatTitleWithHighlightedWords(block.title)}
+        </p>
         <div className={styles.tableWrapper}>
           <table>
             <thead>
@@ -43,6 +47,13 @@ const PricingTableComponent: FC<Props> = ({ block }) => {
                     <p className={styles.pretitle}>{plan.planPretitle}</p>
                     <p className={styles.planName}>{plan.planName}</p>
                     <p className={styles.price}>{plan.planPrice}</p>
+                    <Link
+                      href={plan.detailsLink.destination}
+                      className={styles.detailsLink}
+                      target="_blank"
+                    >
+                      {plan.detailsLink.label}
+                    </Link>
                   </th>
                 ))}
               </tr>

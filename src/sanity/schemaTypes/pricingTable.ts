@@ -34,6 +34,23 @@ const pricingTable = defineType({
               type: "string"
             }),
             defineField({
+              name: "detailsLink",
+              title: "Details Link",
+              type: "object",
+              fields: [
+                defineField({
+                  name: "label",
+                  title: "Label",
+                  type: "string"
+                }),
+                defineField({
+                  name: "destination",
+                  title: "Destination",
+                  type: "string"
+                })
+              ]
+            }),
+            defineField({
               name: "features",
               title: "Features",
               type: "array",
