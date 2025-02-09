@@ -12,7 +12,7 @@ const WhiteBlockComponent: FC<Props> = ({ block }) => {
   return (
     <section className={styles.whiteBlock}>
       <div className={styles.content}>
-        <h2 className="h2-main mb20">{block.title}</h2>
+        <h3 className="h2-main mb20">{block.title}</h3>
         <div className={styles.portableText}>
           <PortableText value={block.text} components={RichText} />
         </div>

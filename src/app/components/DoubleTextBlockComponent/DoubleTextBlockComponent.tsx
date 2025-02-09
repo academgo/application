@@ -52,8 +52,7 @@ const DoubleTextBlockComponent: FC<Props> = ({ block }) => {
       );
     } else if (content.type === "image" && content.image) {
       const imageUrl = urlFor(content.image).url();
-      const imageAlt = content.image.alt || "Academgo Image ту";
-      console.log(imageAlt);
+      const imageAlt = content.image.alt || "Academgo Image";
       return (
         <div className={styles.imageBlock}>
           <Image
