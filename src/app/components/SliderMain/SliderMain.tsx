@@ -72,7 +72,7 @@ const SliderMain = ({
       <div className={styles.sliderSlides}>
         <Swiper
           modules={[Pagination, Navigation]}
-          spaceBetween={15}
+          spaceBetween={20}
           slidesPerView={1.5}
           onSwiper={swiper => (swiperRef.current = swiper)}
           navigation={{
