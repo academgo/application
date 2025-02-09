@@ -20,17 +20,19 @@ const ContactsBlockComponent: FC<Props> = ({ block }) => {
           {block.contactsContent.map(contact => (
             <div key={contact._key} className={styles.contactBlock}>
               <p className={styles.contactTitle}>{contact.title}</p>
-              {contact.linkLabel && contact.linkDestination && (
-                <Link
-                  href={contact.linkDestination}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.contactText}
-                >
-                  {contact.linkLabel}
-                </Link>
-              )}
-              {contact.text && (
+              {contact.type === "link" &&
+                contact.linkLabel &&
+                contact.linkDestination && (
+                  <Link
+                    href={contact.linkDestination}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.contactText}
+                  >
+                    {contact.linkLabel}
+                  </Link>
+                )}
+              {contact.type === "string" && contact.text && (
                 <p className={styles.contactText}>{contact.text}</p>
               )}
             </div>
