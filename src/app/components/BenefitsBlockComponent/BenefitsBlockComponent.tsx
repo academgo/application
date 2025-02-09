@@ -12,10 +12,10 @@ const BenefitsBlockComponent: FC<Props> = ({ block }) => {
   return (
     <section className={styles.benefitsBlock}>
       <h2 className="h2-main mb20">
-        {block.titleHighLight && (
-          <span className={styles.highlight}>{block.titleHighLight} </span>
-        )}
         {block.title && <span>{block.title}</span>}
+        {block.titleHighLight && (
+          <span className={styles.highlight}> {block.titleHighLight}</span>
+        )}
       </h2>
       {block.description && (
         <p className={styles.description}>{block.description}</p>

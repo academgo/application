@@ -6,13 +6,13 @@ const benefitsBlock = defineType({
   type: "object",
   fields: [
     defineField({
-      name: "titleHighLight",
-      title: "Title Highlight",
+      name: "title",
+      title: "Title",
       type: "string"
     }),
     defineField({
-      name: "title",
-      title: "Title",
+      name: "titleHighLight",
+      title: "Title Highlight",
       type: "string"
     }),
     defineField({
