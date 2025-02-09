@@ -52,11 +52,13 @@ const DoubleTextBlockComponent: FC<Props> = ({ block }) => {
       );
     } else if (content.type === "image" && content.image) {
       const imageUrl = urlFor(content.image).url();
+      const imageAlt = content.image.alt || "Academgo Image ту";
+      console.log(imageAlt);
       return (
         <div className={styles.imageBlock}>
           <Image
             src={imageUrl}
-            alt="Academgo Image"
+            alt={imageAlt}
             layout="responsive"
             width={500}
             height={300}

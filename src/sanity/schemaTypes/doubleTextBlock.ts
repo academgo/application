@@ -38,7 +38,14 @@ const doubleTextBlock = defineType({
           name: "image",
           title: "Image",
           type: "image",
-          hidden: ({ parent }) => parent?.type !== "image"
+          hidden: ({ parent }) => parent?.type !== "image",
+          fields: [
+            {
+              name: "alt",
+              title: "Alt Text",
+              type: "string"
+            }
+          ]
         })
       ]
     }),
@@ -68,7 +75,14 @@ const doubleTextBlock = defineType({
           name: "image",
           title: "Image",
           type: "image",
-          hidden: ({ parent }) => parent?.type !== "image"
+          hidden: ({ parent }) => parent?.type !== "image",
+          fields: [
+            {
+              name: "alt",
+              title: "Alt Text",
+              type: "string"
+            }
+          ]
         })
       ]
     }),

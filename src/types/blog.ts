@@ -8,6 +8,16 @@ export type Image = {
   url: string;
 };
 
+export type ImageAlt = {
+  _key: string;
+  _type: "image";
+  alt?: string; // Добавлено поле alt для текстового описания изображения
+  asset: {
+    _ref: string;
+    _type: "reference";
+  };
+};
+
 export type PlanFeature = {
   _key: string;
   featureName: string;
@@ -203,7 +213,7 @@ export type AccordionBlock = {
 export type ContentChoice = {
   type: "text" | "image";
   blockContent?: BlockContentWithStyle;
-  image?: Image;
+  image?: ImageAlt;
 };
 
 export type DoubleTextBlock = {
