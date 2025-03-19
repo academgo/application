@@ -266,7 +266,6 @@ export type Homepage = {
   aboutSummary: string;
   aboutTitle: string;
   aboutParagraphs: List[];
-  sertificateLink: Link;
   aboutSocialsTitle: string;
   aboutSocials: offerContactLink[];
   aboutOffersTitle: string;

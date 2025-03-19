@@ -48,12 +48,6 @@ const About: FC<Props> = ({
                   </p>
                 ))}
               </div>
-              <Link
-                className={styles.sertificate}
-                href={sertificateLink.destination}
-              >
-                {sertificateLink.label}
-              </Link>
             </div>
             <div className={styles.contacts}>
               <div className={styles.subscribe}>

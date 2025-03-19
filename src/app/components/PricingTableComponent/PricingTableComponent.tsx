@@ -78,8 +78,8 @@ const PricingTableComponent: FC<Props> = ({ block }) => {
                         >
                           <path
                             d="M1.63672 15.0239L10.4244 23.8116L32.3936 1.84241"
-                            stroke="#091728"
-                            strokeWidth="2"
+                            stroke="green"
+                            strokeWidth="5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />
@@ -94,14 +94,14 @@ const PricingTableComponent: FC<Props> = ({ block }) => {
                         >
                           <path
                             d="M1.68945 1.95129L24.3422 24.6035"
-                            stroke="black"
-                            strokeWidth="2"
+                            stroke="red"
+                            strokeWidth="5"
                             strokeLinecap="round"
                           />
                           <path
                             d="M1.69141 24.6038L24.3436 1.95105"
-                            stroke="black"
-                            strokeWidth="2"
+                            stroke="red"
+                            strokeWidth="5"
                             strokeLinecap="round"
                           />
                         </svg>

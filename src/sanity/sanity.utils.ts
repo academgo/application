@@ -382,7 +382,6 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     aboutSummary,
     aboutTitle,
     aboutParagraphs,
-    sertificateLink,
     aboutSocialsTitle,
     aboutSocials,
     aboutOffersTitle,

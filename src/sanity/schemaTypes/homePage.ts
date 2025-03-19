@@ -621,23 +621,6 @@ export default defineType({
       ]
     }),
     defineField({
-      name: "sertificateLink",
-      title: "Sertificate Link",
-      type: "object",
-      fields: [
-        defineField({
-          name: "label",
-          title: "Label",
-          type: "string"
-        }),
-        defineField({
-          name: "destination",
-          title: "Destination",
-          type: "string"
-        })
-      ]
-    }),
-    defineField({
       name: "aboutSocialsTitle",
       title: "About Socials Title",
       type: "string"
