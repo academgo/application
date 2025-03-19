@@ -126,9 +126,13 @@ const MultiStepForm = ({
     setSubmitting(true);
     try {
       await axios.post("/api/email", values);
-      router.push("/success");
+      router.push(lang === "ru" ? "/ru/success" : "/success");
     } catch (error) {
-      alert("Error sending email");
+      alert(
+        lang === "ru"
+          ? "Ошибка отправки электронной почты"
+          : "Error sending email"
+      );
     } finally {
       setSubmitting(false);
     }
