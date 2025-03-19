@@ -25,6 +25,7 @@ const Price: FC<Props> = ({ priceTitle, priceBlock }) => {
               cost={priceBlock.cost}
               stageCost={priceBlock.stageCost}
               buttonText={priceBlock.buttonText}
+              buttonLink={priceBlock.buttonLink}
               hasBorder={priceBlock.hasBorder}
               hasBg={priceBlock.hasBg}
             />
