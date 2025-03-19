@@ -36,10 +36,9 @@
   border-radius: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
 
   @media screen and (min-width: 980px) {
-    flex-direction: row;
-    // flex-wrap: wrap;
-    justify-content: space-between;
     gap: 50px; // расстояние между элементами
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 2 элемента в строке
   }
 }
 
@@ -52,9 +51,9 @@
   // box-sizing: border-box;
 
   @media screen and (min-width: 980px) {
-    flex-grow: 1; // Элемент может расти при наличии свободного пространства
+    // flex-grow: 1; // Элемент может расти при наличии свободного пространства
     max-width: unset; // Сбрасываем максимальную ширину, если элементов меньше пяти
-    flex: 1 1 auto; // Каждый элемент будет занимать 20% ширины
+    // flex: 1 1 auto; // Каждый элемент будет занимать 20% ширины
     // max-width: calc(20% - 20px); // Максимальная ширина для 5 элементов на строке
     box-sizing: border-box;
 
