@@ -268,6 +268,21 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/ru/blog/10-prichin-uchitsya-v-polshe',
+        destination: '/ru/obuchenie-v-polshe',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/specialnosti-v-universitetakh-polshi',
+        destination: '/ru/obuchenie-v-polshe/specialnosti-v-universitetakh-polshi',
+        permanent: true,
+      },
+      {
+        source: '/ru/blog/stoimost-obucheniya-v-polshe-dlya-inostrancev',
+        destination: '/ru/stoimost-obucheniya-v-polshe',
+        permanent: true,
+      },
+      {
         source: '/stoimost-uslug',
         destination: '/ru/stoimost-uslug',
         permanent: true,
