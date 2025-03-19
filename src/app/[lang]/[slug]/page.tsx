@@ -36,7 +36,8 @@ import {
   ContactsBlock,
   SurveyBlock,
   OfferBlock,
-  PricingTable
+  PricingTable,
+  PackagesBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -63,6 +64,7 @@ import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBl
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlockComponent";
 import PricingTableComponent from "@/app/components/PricingTableComponent/PricingTableComponent";
+import PackagesBlockComponent from "@/app/components/PackagesBlockComponent/PackagesBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -94,7 +96,8 @@ type ContentBlock =
   | ContactsBlock
   | SurveyBlock
   | OfferBlock
-  | PricingTable;
+  | PricingTable
+  | PackagesBlock;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -288,6 +291,13 @@ const SinglePage = async ({ params }: Props) => {
       case "offerBlock":
         return (
           <OfferBlockComponent key={block._key} block={block as OfferBlock} />
+        );
+      case "packagesBlock":
+        return (
+          <PackagesBlockComponent
+            key={block._key}
+            block={block as PackagesBlock}
+          />
         );
       default:
         return <p key={block._key}>Unsupported block type</p>;
