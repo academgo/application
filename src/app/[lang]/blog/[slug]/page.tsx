@@ -72,16 +72,18 @@ const PagePost = async ({ params }: Props) => {
     await getFormStandardDocumentByLang(params.lang);
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
-    blog?._translations.map(item => {
-      const newItem: { [key: string]: { current: string } } = {};
+    blog?._translations
+      ?.filter(item => item && item.slug)
+      .map(item => {
+        const newItem: { [key: string]: { current: string } } = {};
 
-      for (const key in item.slug) {
-        if (key !== "_type") {
-          newItem[key] = { current: item.slug[key].current };
+        for (const key in item.slug) {
+          if (key !== "_type" && item.slug[key]) {
+            newItem[key] = { current: item.slug[key].current };
+          }
         }
-      }
-      return newItem;
-    });
+        return newItem;
+      }) || [];
 
   const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
     const translationSlug = blogPageTranslationSlugs
