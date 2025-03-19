@@ -204,6 +204,7 @@ export type DoubleImagesBlock = {
 export type AccordionBlock = {
   _key: string;
   _type: "accordionBlock";
+  title?: string;
   items: Array<{
     _key: string;
     question: string;

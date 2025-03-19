@@ -55,6 +55,21 @@ body {
   }
 }
 
+.title-accordion {
+  color: #091728;
+  font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 125% */
+  letter-spacing: -1.44px;
+  margin-bottom: clamp(1.875rem, 1.563rem + 1.25vw, 2.5rem);
+
+  @media (min-width: 768px) {
+    line-height: 75px; /* 136.364% */
+    letter-spacing: -3.85px;
+  }
+}
+
 .mb20 {
   margin-bottom: 20px;
 }

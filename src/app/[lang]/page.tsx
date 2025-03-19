@@ -166,13 +166,14 @@ export default async function Home({ params }: Props) {
           priceTitle={homePage.priceTitle}
           priceBlock={homePage.priceBlock}
         />
-        <BlogPostsSection params={{ lang: params.lang }} />
         {/* <Consultation consultationBlock={homePage.consultationBlock} /> */}
         {homePage.faq && homePage.faq && (
           <div className="container">
+            <h2 className="title-accordion">{homePage.faq.title}</h2>
             <AccordionContainer block={homePage.faq} />
           </div>
         )}
+        <BlogPostsSection params={{ lang: params.lang }} />
       </main>
       <Footer params={params} />
       <ModalFull lang={params.lang} formDocument={formDocument} />
