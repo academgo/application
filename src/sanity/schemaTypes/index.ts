@@ -36,6 +36,7 @@ import contactsBlock from "./contactsBlock";
 import surveyBlock from "./surveyBlock";
 import offerBlock from "./offerBlock";
 import pricingTable from "./pricingTable";
+import packagesBlock from "./packagesBlock";
 
 export const schemaTypes = [
   header,
@@ -74,6 +75,7 @@ export const schemaTypes = [
   bulletsBlock,
   whiteBlock,
   benefitsBlock,
+  packagesBlock,
   linksBlock,
   localizedSlug
 ];

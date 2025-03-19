@@ -1,5 +1,5 @@
 import { Form } from "./form";
-import { Link, offerContactLink, University } from "./homepage";
+import { Link, List, offerContactLink, University } from "./homepage";
 
 export type Image = {
   _key: string;
@@ -400,6 +400,34 @@ export type RelatedArticle = {
     };
   };
 };
+
+export interface PriceItem {
+  _key: string;
+  _type?: string;
+  title: string;
+}
+
+export interface PriceBlockItem {
+  _key?: string;
+  _type?: string;
+  preTitle: string;
+  title: string;
+  itemsTitle: string;
+  items: PriceItem[];
+  cost: string;
+  stageCost: string;
+  buttonText: string;
+  buttonLink: string;
+  hasBorder: boolean;
+  hasBg: boolean;
+}
+
+export interface PackagesBlock {
+  _key?: string;
+  _type?: "packagesBlock";
+  title: string;
+  priceBlock: PriceBlockItem[];
+}
 
 // export type RelatedArticle = {
 //   _id: string;
