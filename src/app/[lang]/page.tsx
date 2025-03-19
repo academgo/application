@@ -143,7 +143,6 @@ export default async function Home({ params }: Props) {
           aboutSummary={homePage.aboutSummary}
           aboutTitle={homePage.aboutTitle}
           aboutParagraphs={homePage.aboutParagraphs}
-          sertificateLink={homePage.sertificateLink}
           aboutSocialsTitle={homePage.aboutSocialsTitle}
           aboutSocials={homePage.aboutSocials}
           aboutOffersTitle={homePage.aboutOffersTitle}

@@ -14,7 +14,6 @@ type Props = {
   aboutSummary: string;
   aboutTitle: string;
   aboutParagraphs: ListType[];
-  sertificateLink: LinkType;
   aboutSocialsTitle: string;
   aboutSocials: offerContactLink[];
   aboutOffersTitle: string;
@@ -26,7 +25,6 @@ const About: FC<Props> = ({
   aboutSummary,
   aboutTitle,
   aboutParagraphs,
-  sertificateLink,
   aboutSocialsTitle,
   aboutSocials,
   aboutOffersTitle,
