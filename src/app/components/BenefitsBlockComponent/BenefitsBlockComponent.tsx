@@ -9,6 +9,8 @@ type Props = {
 };
 
 const BenefitsBlockComponent: FC<Props> = ({ block }) => {
+  const itemsCount = block.benefitsBullets.length; // Вычисляем количество элементов
+
   return (
     <section className={styles.benefitsBlock}>
       <h2 className="h2-main mb20">
@@ -20,7 +22,12 @@ const BenefitsBlockComponent: FC<Props> = ({ block }) => {
       {block.description && (
         <p className={styles.description}>{block.description}</p>
       )}
-      <div className={styles.benefitsList}>
+
+      {/* Применяем data-items с количеством элементов */}
+      <div
+        className={`${styles.benefitsList} ${itemsCount === 5 ? styles.fiveColumns : ""}`} // Динамическая класс для 5 элементов
+        data-items={itemsCount} // Передаем количество элементов через data-items
+      >
         {block.benefitsBullets.map((bullet, index) => (
           <div key={index} className={styles.bullet}>
             <div className={styles.bulletIcon}>

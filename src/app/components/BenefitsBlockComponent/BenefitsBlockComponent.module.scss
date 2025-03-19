@@ -42,6 +42,18 @@
   }
 }
 
+.benefitsList[data-items="5"] {
+  @media screen and (min-width: 980px) {
+    grid-template-columns: repeat(5, 1fr); // 5 элементов в строке
+  }
+}
+
+.benefitsList[data-items="6"] {
+  @media screen and (min-width: 980px) {
+    grid-template-columns: repeat(3, 1fr); // 3 элемента в строке
+  }
+}
+
 .bullet {
   // padding-top: clamp(1.875rem, 1.534rem + 1.7vw, 2.813rem);
   // padding-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
