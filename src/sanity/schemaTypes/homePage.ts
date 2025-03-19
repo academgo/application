@@ -1118,6 +1118,11 @@ export default defineType({
               type: "string"
             }),
             defineField({
+              name: "buttonLink",
+              title: "Button Link",
+              type: "string"
+            }),
+            defineField({
               name: "hasBorder",
               title: "Has Border",
               type: "boolean"

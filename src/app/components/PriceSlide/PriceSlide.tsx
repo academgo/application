@@ -11,6 +11,7 @@ type Props = {
   cost: string;
   stageCost: string;
   buttonText: string;
+  buttonLink: string;
   hasBorder: boolean;
   hasBg: boolean;
 };
@@ -23,6 +24,7 @@ const PriceSlide: FC<Props> = ({
   cost,
   stageCost,
   buttonText,
+  buttonLink,
   hasBorder,
   hasBg
 }) => {
@@ -83,7 +85,11 @@ const PriceSlide: FC<Props> = ({
           <p className={styles.cost}>{cost}</p>
           <p className={styles.stageCost}>{stageCost}</p>
         </div>
-        <button className={styles.button}>{buttonText}</button>
+        {buttonLink && (
+          <Link className={styles.button} href={buttonLink}>
+            {buttonText}
+          </Link>
+        )}
       </div>
     </div>
   );

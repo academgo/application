@@ -185,6 +185,7 @@ export type PriceBlock = {
   cost: string;
   stageCost: string;
   buttonText: string;
+  buttonLink: string;
   hasBorder: boolean;
   hasBg: boolean;
 };
