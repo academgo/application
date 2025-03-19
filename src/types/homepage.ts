@@ -1,3 +1,4 @@
+import { AccordionBlock } from "./blog";
 import { Form } from "./form";
 // import { Signup } from "./signup";
 import { VideoShort } from "./videoShort";
@@ -282,6 +283,7 @@ export type Homepage = {
   extraBlock: ExtraBlock;
   priceTitle: string;
   priceBlock: PriceBlock[];
+  faq: AccordionBlock;
   language: string;
   slug: {
     [lang: string]: {

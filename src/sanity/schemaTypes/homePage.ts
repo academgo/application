@@ -1137,6 +1137,13 @@ export default defineType({
       ]
     }),
     // price block
+    // accordion block
+    defineField({
+      name: "faq",
+      title: "FAQ",
+      type: "accordionBlock"
+    }),
+    // accordion block
     // optional
     defineField({
       name: "language",

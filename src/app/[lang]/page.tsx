@@ -25,6 +25,7 @@ import Survey from "../components/Survey/Survey";
 import ModalFull from "../components/ModalFull/ModalFull";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
+import AccordionContainer from "../components/AccordionContainer/AccordionContainer";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -168,6 +169,11 @@ export default async function Home({ params }: Props) {
         />
         <BlogPostsSection params={{ lang: params.lang }} />
         {/* <Consultation consultationBlock={homePage.consultationBlock} /> */}
+        {homePage.faq && homePage.faq && (
+          <div className="container">
+            <AccordionContainer block={homePage.faq} />
+          </div>
+        )}
       </main>
       <Footer params={params} />
       <ModalFull lang={params.lang} formDocument={formDocument} />

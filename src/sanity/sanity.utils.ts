@@ -399,6 +399,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     extraBlock,
     priceTitle,
     priceBlock,
+    faq,
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
