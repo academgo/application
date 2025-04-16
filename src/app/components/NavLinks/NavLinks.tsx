@@ -18,6 +18,15 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false); // Отслеживаем ширину экрана
 
+  const getNormalizedHref = (lang: string, link: string) => {
+    // Удаляем ведущий слэш, если он есть
+    const normalizedLink = link.startsWith("/") ? link.slice(1) : link;
+    // Для английского языка (дефолтного) префикс не добавляем
+    const languagePrefix = lang === "en" ? "" : `/${lang}`;
+    // Собираем финальную ссылку
+    return `${languagePrefix}/${normalizedLink}`;
+  };
+
   useEffect(() => {
     setIsHomePage(window.location.pathname === `/${params.lang}`);
 
@@ -83,7 +92,7 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
             }
           >
             <Link
-              href={`/${params.lang}/${link.link}`}
+              href={getNormalizedHref(params.lang, link.link)}
               className={styles.navLinkText}
             >
               {link.label}
@@ -113,7 +122,7 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
                     {link.subLinks.map(subLink => (
                       <Link
                         key={subLink.label}
-                        href={`/${params.lang}/${subLink.link}`}
+                        href={getNormalizedHref(params.lang, subLink.link)}
                         className={styles.subLink}
                         onClick={closeMenu}
                       >
