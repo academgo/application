@@ -10,7 +10,7 @@ import "react-phone-number-input/style.css";
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Импортируйте useRouter из next/navigation
+import { useRouter, useParams } from "next/navigation";
 
 export type FormData = {
   phone: string;
@@ -39,6 +39,7 @@ const FormStandard: FC<ContactFormProps> = ({
 
   const dataForm = form.form;
   const router = useRouter(); // Используйте useRouter из next/navigation
+  const { lang } = useParams();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -87,7 +88,8 @@ const FormStandard: FC<ContactFormProps> = ({
         resetForm({});
         setFilled({ phone: false, country: false, email: false }); // Reset the filled state
         onFormSubmitSuccess && onFormSubmitSuccess();
-        router.push("/success"); // Перенаправление на страницу success
+        const redirectPath = lang === "en" ? "/success" : `/${lang}/success`;
+        router.push(redirectPath);
       } else {
         throw new Error("Server responded with an error");
       }
