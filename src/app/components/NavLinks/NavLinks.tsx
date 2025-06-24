@@ -134,10 +134,10 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
               ) : (
                 <div className={styles.subLinks}>
                   <div className={styles.subLinksWrapper}>
-                    {link.subLinks.map(subLink => (
+                    {link.subLinks.map((subLink: { label: any; link: any }) => (
                       <Link
                         key={subLink.label}
-                        href={`/${params.lang}/${subLink.link}`}
+                        href={getNormalizedHref(params.lang, subLink.link)}
                         className={styles.subLink}
                         onClick={closeMenu}
                       >
