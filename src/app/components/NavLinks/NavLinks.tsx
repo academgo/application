@@ -22,7 +22,7 @@ const NavLinks: React.FC<Props> = ({ navLinks, params, closeMenu }) => {
     // Удаляем ведущий слэш, если он есть
     const normalizedLink = link.startsWith("/") ? link.slice(1) : link;
     // Для английского языка (дефолтного) префикс не добавляем
-    const languagePrefix = lang === "en" ? "" : `/${lang}`;
+    const languagePrefix = lang === "en" ? "" : `/`;
     // Собираем финальную ссылку
     return `${languagePrefix}/${normalizedLink}`;
   };
