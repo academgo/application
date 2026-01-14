@@ -32,6 +32,11 @@ const sliderPicturesBlock = defineType({
               name: "title",
               title: "Title",
               type: "string"
+            }),
+            defineField({
+              name: "url",
+              title: "URL",
+              type: "string"
             })
           ]
         }

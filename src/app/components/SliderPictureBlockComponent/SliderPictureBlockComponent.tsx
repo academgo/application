@@ -17,6 +17,7 @@ const SliderPictureBlockComponent: FC<Props> = ({ block }) => {
             image={slide.image}
             alt={slide.alt}
             title={slide.title}
+            url={slide.url}
           />
         ))}
       </SliderMain>

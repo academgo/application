@@ -77,6 +77,7 @@ export type SlidePicture = {
   image: Image;
   alt: string;
   title: string;
+  url?: string;
 };
 
 export type SocialIcon = {
