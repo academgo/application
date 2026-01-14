@@ -4,7 +4,7 @@
 }
 
 .customForm {
-  // height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,9 +13,13 @@
 .questionWrapper {
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
+  justify-content: space-between;
   gap: clamp(1.563rem, 6.25vw, 4.688rem);
-  // height: 100%;
+  height: 100%;
+
+
+
+
 }
 
 .progressBar {
