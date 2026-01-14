@@ -20,7 +20,7 @@ const ProcessBlockComponent: FC<Props> = ({ block }) => {
     <section className={styles.processBlock}>
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <h2 className={styles.title}>{block.title}</h2>
+          <h3 className={styles.title}>{block.title}</h3>
           <p className={styles.description}>{block.description}</p>
         </div>
         <div className={styles.chain}>
