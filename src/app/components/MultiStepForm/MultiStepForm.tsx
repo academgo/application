@@ -380,7 +380,7 @@ const MultiStepForm = ({
                             type="radio"
                             name="question3"
                             value={
-                              lang === "en" ? "October 2025" : "Октябрь 2025"
+                              lang === "en" ? "October 2026" : "Октябрь 2026"
                             }
                           />
                           <div className={styles.pseudoRadioData}>
@@ -389,7 +389,7 @@ const MultiStepForm = ({
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "October 2025" : "Октябрь 2025"}
+                              {lang === "en" ? "October 2026" : "Октябрь 2026"}
                             </p>
                           </div>
                         </label>
@@ -401,7 +401,7 @@ const MultiStepForm = ({
                           <Field
                             type="radio"
                             name="question3"
-                            value={lang === "en" ? "March 2026" : "Март 2026"}
+                            value={lang === "en" ? "March 2027" : "Март 2027"}
                           />
                           <div className={styles.pseudoRadioData}>
                             <div
@@ -409,7 +409,7 @@ const MultiStepForm = ({
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "March 2026" : "Март 2026"}
+                              {lang === "en" ? "March 2027" : "Март 2027"}
                             </p>
                           </div>
                         </label>
