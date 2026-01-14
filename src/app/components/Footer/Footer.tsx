@@ -7,6 +7,7 @@ import { urlFor } from "@/sanity/sanity.client";
 import NavLink from "../NavLink/NavLink";
 import Consultation from "../Consultation/Consultation";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
+import FooterRating from "../FooterRating/FooterRating";
 
 type Props = {
   params: { lang: string };
@@ -98,6 +99,7 @@ const Footer = async ({ params }: Props) => {
                 {/* <button className={styles.button}>{data.buttonText}</button> */}
               </div>
             </div>
+            <FooterRating lang={params.lang} />
             <div className={styles.dataLinks}>
               <p className={styles.copyright}>{data.copyright}</p>
               <Link href={data.privacyLink.link} className={styles.privacy}>

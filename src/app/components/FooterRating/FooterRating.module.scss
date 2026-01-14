@@ -1,0 +1,31 @@
+/* components/FooterRating/FooterRating.module.scss */
+.footerRating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  /* чтобы визуально было похоже на скрин (звезды + текст) */
+  // margin-top: 14px;
+
+  /* если в футере тёмный фон — будет ок */
+}
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star {
+  color: #f39708;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  /* цвет текста подстрой под ваш футер */
+  color: #fff;
+}
