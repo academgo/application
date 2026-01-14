@@ -559,7 +559,7 @@ const MultiStepForm = ({
                   <div className={styles.topWrapper}>
                     <h3 className={styles.finalTitle}>{finalTitle}</h3>
                   </div>
-                  <div className={`${styles.formSending} ${styles.finalStep}`}>
+                  <div className={styles.formSending}>
                     <p className={styles.formTitle}>{formTitle}</p>
                     <div className={styles.finalForm}>
                       <div className={styles.inputWrapper}>
