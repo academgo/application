@@ -69,7 +69,7 @@ const Header = async ({ translations, params }: Props) => {
                 </Link>
               ))}
             </div>
-            <div className={styles.contactData}>
+            {/* <div className={styles.contactData}>
               <p className={styles.workingHours}>{data.workingHours}</p>
               <Link
                 aria-label="Call us"
@@ -78,7 +78,7 @@ const Header = async ({ translations, params }: Props) => {
               >
                 {data.phoneNumber}
               </Link>
-            </div>
+            </div> */}
             <div className={styles.contactButtons}>
               <Link
                 aria-label="Call us"
