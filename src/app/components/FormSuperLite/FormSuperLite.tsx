@@ -9,7 +9,7 @@ import "react-phone-number-input/style.css";
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Импортируйте useRouter из next/navigation
+import { useRouter, useParams } from "next/navigation"; // Импортируйте useRouter из next/navigation
 
 export type FormData = {
   phone: string;
@@ -37,6 +37,8 @@ const FormSuperLite: FC<ContactFormProps> = ({
   const dataForm = form.form;
   const uniqueId = useId();
   const router = useRouter(); // Используйте useRouter из next/navigation
+  const params = useParams();
+  const lang = (params?.lang as "ru" | "en") ?? "en";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,6 +77,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
     setSubmitting(true);
     try {
       const response = await axios.post("/api/email", values);
+      router.push(lang === "ru" ? "/ru/success" : "/success");
       if (response.data.message === "Email sent") {
         resetForm({});
         setFilled({ phone: false });
