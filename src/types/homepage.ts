@@ -168,6 +168,7 @@ export type StepFour = {
   littleText: List[];
   list: List[];
   image: Image;
+  video?: VideoShort;
 };
 
 export type ExtraBlock = {

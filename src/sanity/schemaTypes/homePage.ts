@@ -982,6 +982,11 @@ export default defineType({
           name: "image",
           title: "Image",
           type: "image"
+        }),
+        defineField({
+          name: "video",
+          title: "Video",
+          type: "videoShort"
         })
       ]
     }),

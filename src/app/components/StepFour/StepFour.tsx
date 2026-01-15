@@ -102,12 +102,20 @@ const StepFour: FC<Props> = ({ stepFour }) => {
           </div>
           <div className={styles.videoBlock}>
             <div className={styles.imageBlock}>
-              <Image
-                alt={stepFour.title}
-                src={urlFor(stepFour.image).url()}
-                fill={true}
-                className={styles.imagePoster}
-              />
+              {stepFour.video ? (
+                <VideoStep
+                  videoId={stepFour.video.videoId}
+                  posterImage={stepFour.video.posterImage}
+                  text={stepFour.video.text}
+                />
+              ) : (
+                <Image
+                  alt={stepFour.title}
+                  src={urlFor(stepFour.image).url()}
+                  fill={true}
+                  className={styles.imagePoster}
+                />
+              )}
             </div>
           </div>
         </div>
