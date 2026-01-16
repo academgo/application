@@ -633,3 +633,36 @@ export async function getSingleSubPageBySlug(
     return null;
   }
 }
+
+// ✅ NEW: получаем список всех singlepage по языку (для sitemap)
+export async function getSinglePagesByLang(
+  lang: string
+): Promise<Array<Pick<Singlepage, "slug">>> {
+  const q = groq`*[
+    _type == "singlepage" &&
+    language == $lang &&
+    !(_id in path("drafts.**"))
+  ]{
+    slug
+  }`;
+
+  return client.fetch(q, { lang }, { next: { revalidate: 60 } });
+}
+
+// ✅ NEW: получаем список всех subpage по языку (для sitemap)
+export async function getSubPagesByLang(
+  lang: string
+): Promise<Array<Pick<Subpage, "slug" | "parentPage">>> {
+  const q = groq`*[
+    _type == "subpage" &&
+    language == $lang &&
+    !(_id in path("drafts.**"))
+  ]{
+    slug,
+    parentPage->{
+      slug
+    }
+  }`;
+
+  return client.fetch(q, { lang }, { next: { revalidate: 60 } });
+}
