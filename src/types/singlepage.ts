@@ -4,7 +4,8 @@ import {
   Seo,
   TabsBlock,
   TextContent,
-  DoubleTextBlock
+  DoubleTextBlock,
+  TableBlock
 } from "./blog";
 import { Image } from "./homepage";
 
@@ -29,6 +30,7 @@ export type Singlepage = {
     | AccordionBlock
     | TabsBlock
     | DoubleTextBlock
+    | TableBlock
   >;
   language: string;
   slug: {

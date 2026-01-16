@@ -37,7 +37,8 @@ import {
   SurveyBlock,
   OfferBlock,
   PricingTable,
-  PackagesBlock
+  PackagesBlock,
+  TableBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -65,6 +66,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlockComponent";
 import PricingTableComponent from "@/app/components/PricingTableComponent/PricingTableComponent";
 import PackagesBlockComponent from "@/app/components/PackagesBlockComponent/PackagesBlockComponent";
+import TableBlockComponent from "@/app/components/TableBlockComponent/TableBlockComponent";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -97,6 +99,7 @@ type ContentBlock =
   | SurveyBlock
   | OfferBlock
   | PricingTable
+  | TableBlock
   | PackagesBlock;
 
 // Dynamic metadata for SEO
@@ -268,6 +271,12 @@ const SinglePage = async ({ params }: Props) => {
             key={block._key}
             block={block as SliderPicturesBlock}
           />
+        );
+      case "tableBlock":
+        return (
+          <div className="container-table">
+            <TableBlockComponent key={block._key} block={block as TableBlock} />
+          </div>
         );
       case "logosBlock":
         return (

@@ -95,7 +95,8 @@ const subpage = {
         { type: "offerBlock" },
         { type: "contactsBlock" },
         { type: "surveyBlock" },
-        { type: "packagesBlock" }
+        { type: "packagesBlock" },
+        { type: "tableBlock" }
       ]
     }),
     defineField({
