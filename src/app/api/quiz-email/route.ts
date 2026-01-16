@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
-    subject: "Quiz lead (Academgo)",
+    subject: "Новый лид",
     text: mailBody
   };
 
