@@ -10,7 +10,7 @@ export default defineType({
       title: "Column headings",
       type: "array",
       of: [{ type: "string" }],
-      description: "Заголовки колонок",
+      description: "Заголовки колонок"
     }),
     defineField({
       name: "rows",
@@ -26,24 +26,24 @@ export default defineType({
               name: "cells",
               title: "Cells",
               type: "array",
-              of: [{ type: "string" }],
-              description: "Значения ячеек в этой строке",
-            }),
+              of: [{ type: "blockContentWithStyle" }],
+              description: "Значения ячеек в этой строке"
+            })
           ],
           preview: {
             select: {
-              cells: "cells",
+              cells: "cells"
             },
             prepare(selection) {
               const preview = (selection.cells as string[]).join(" | ");
               return {
-                title: preview.slice(0, 50) + (preview.length > 50 ? "…" : ""),
+                title: preview.slice(0, 50) + (preview.length > 50 ? "…" : "")
               };
-            },
-          },
-        },
+            }
+          }
+        }
       ],
-      description: "Строки таблицы",
+      description: "Строки таблицы"
     }),
     defineField({
       name: "marginTop",
@@ -53,9 +53,9 @@ export default defineType({
         list: [
           { title: "Small", value: "small" },
           { title: "Medium", value: "medium" },
-          { title: "Large", value: "large" },
-        ],
-      },
+          { title: "Large", value: "large" }
+        ]
+      }
     }),
     defineField({
       name: "marginBottom",
@@ -65,9 +65,9 @@ export default defineType({
         list: [
           { title: "Small", value: "small" },
           { title: "Medium", value: "medium" },
-          { title: "Large", value: "large" },
-        ],
-      },
-    }),
-  ],
+          { title: "Large", value: "large" }
+        ]
+      }
+    })
+  ]
 });

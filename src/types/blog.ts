@@ -124,7 +124,7 @@ export type BlockContentWithStyle = {
 export type TableRow = {
   _key: string;
   _type: "tableRow";
-  cells: string[];
+  cells: any[];
 };
 
 export type TableBlock = {

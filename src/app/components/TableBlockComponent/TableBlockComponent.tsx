@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./TableBlockComponent.module.scss";
 import { TableBlock } from "@/types/blog";
+import { RichText } from "../RichText/RichText";
+import { PortableText } from "@portabletext/react";
 
 interface Props {
   block: TableBlock;
@@ -9,7 +11,7 @@ interface Props {
 const marginValues: Record<string, string> = {
   small: "clamp(0.625rem, 2.5vw, 1.875rem)",
   medium: "clamp(1.25rem, 0.5rem + 3vw, 2.75rem)",
-  large: "clamp(1.25rem, 5vw, 3.75rem)",
+  large: "clamp(1.25rem, 5vw, 3.75rem)"
 };
 
 const TableBlockComponent: React.FC<Props> = ({ block }) => {
@@ -28,7 +30,7 @@ const TableBlockComponent: React.FC<Props> = ({ block }) => {
       className={styles.tableBlockComponent}
       style={{
         marginTop: computedMarginTop,
-        marginBottom: computedMarginBottom,
+        marginBottom: computedMarginBottom
       }}
     >
       <div className="container">
@@ -43,11 +45,20 @@ const TableBlockComponent: React.FC<Props> = ({ block }) => {
             </tr>
           </thead>
           <tbody>
-            {block.rows.map((row) => (
+            {block.rows.map(row => (
               <tr key={row._key}>
                 {row.cells.map((cell, j) => (
                   <td key={j} className={styles.td}>
-                    {cell}
+                    <PortableText
+                      value={
+                        Array.isArray(cell?.content)
+                          ? cell.content
+                          : Array.isArray(cell)
+                            ? cell
+                            : []
+                      }
+                      components={RichText}
+                    />
                   </td>
                 ))}
               </tr>
