@@ -1,5 +1,6 @@
 import { AccordionBlock } from "./blog";
 import { Form } from "./form";
+import { QuizBlock } from "./quizBlock";
 // import { Signup } from "./signup";
 import { VideoShort } from "./videoShort";
 
@@ -128,13 +129,13 @@ export type UniversitiesBlock = {
 
 export type Survey = {
   title: string;
-  image: Image;
-  quote: string;
-  description: string;
-  finalTitle: string;
-  formTitle: string;
-  inputLabel: string;
-  buttonText: string;
+  // image: Image;
+  // quote: string;
+  // description: string;
+  // finalTitle: string;
+  // formTitle: string;
+  // inputLabel: string;
+  // buttonText: string;
 };
 
 export type StepOne = {
@@ -264,6 +265,7 @@ export type Homepage = {
   lastSlideDescription: string;
   lastSlideForm: Form;
   survey: Survey;
+  quizBlock?: QuizBlock;
   aboutSummary: string;
   aboutTitle: string;
   aboutParagraphs: List[];

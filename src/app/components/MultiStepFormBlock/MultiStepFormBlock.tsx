@@ -1,64 +1,113 @@
 "use client";
-import React, { useEffect, useState, useId } from "react";
+
+import React, { useEffect, useMemo, useState, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./MultiStepFormBlock.module.scss";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+
+import styles from "./MultiStepFormBlock.module.scss";
+import { QuizBlock } from "@/types/quizBlock";
+
+// ✅ фиксированные картинки для шага 1
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
 
-type FormData = {
+type Props = {
+  lang: string;
+  quizBlock: QuizBlock;
+};
+
+type DynamicFormValues = Record<string, any> & {
   question1: string;
-  question2: string;
-  question3: string;
-  question4: string;
   whatsapp: string;
   agreedToPolicy: boolean;
 };
 
-type Props = {
-  lang: string;
-  formTitle: string;
-  inputLabel: string;
-  buttonText: string;
-  finalTitle: string;
-};
-
-const MultiStepFormBlock = ({
-  lang,
-  inputLabel,
-  buttonText,
-  finalTitle,
-  formTitle
-}: Props) => {
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<FormData>({
-    question1: "",
-    question2: "",
-    question3: "",
-    question4: "",
-    whatsapp: "",
-    agreedToPolicy: false
-  });
-
-  const uniqueId = useId();
+const MultiStepFormBlock: React.FC<Props> = ({ lang, quizBlock }) => {
   const router = useRouter();
+  const uniqueId = useId();
 
-  const [filled, setFilled] = useState({
-    whatsapp: false
-  });
+  const dynamicQuestions = quizBlock?.questions ?? [];
+  const dynamicCount = dynamicQuestions.length;
+
+  const TOTAL_QUESTION_STEPS = 1 + dynamicCount; // 1 фикс + N динамика
+  const LAST_STEP = TOTAL_QUESTION_STEPS + 1; // финал
+
+  const [step, setStep] = useState(1);
+
+  const initialValues = useMemo<DynamicFormValues>(() => {
+    const base: DynamicFormValues = {
+      question1: "",
+      whatsapp: "",
+      agreedToPolicy: false
+    };
+
+    for (const q of dynamicQuestions) {
+      base[`q_${q._key}`] = "";
+    }
+
+    return base;
+  }, [dynamicQuestions]);
+
+  const validationSchemaByStep = useMemo(() => {
+    const schemas: Yup.ObjectSchema<any>[] = [];
+
+    // step 1 fixed
+    schemas.push(
+      Yup.object({
+        question1: Yup.string().required(
+          lang === "en" ? "This field is required" : "Поле обязательно"
+        )
+      })
+    );
+
+    // step 2..N+1 dynamic
+    for (const q of dynamicQuestions) {
+      const fieldName = `q_${q._key}`;
+      schemas.push(
+        Yup.object({
+          [fieldName]: Yup.string().required(
+            lang === "en" ? "This field is required" : "Поле обязательно"
+          )
+        })
+      );
+    }
+
+    // final
+    schemas.push(
+      Yup.object({
+        whatsapp: Yup.string().required(
+          lang === "en" ? "This field is required" : "Поле обязательно"
+        ),
+        agreedToPolicy: Yup.boolean()
+          .oneOf(
+            [true],
+            lang === "en"
+              ? "You must accept the terms and conditions"
+              : "Вы должны принять условия"
+          )
+          .required(
+            lang === "en"
+              ? "You must accept the terms and conditions"
+              : "Вы должны принять условия"
+          )
+      })
+    );
+
+    return schemas;
+  }, [dynamicQuestions, lang]);
+
+  const [filled, setFilled] = useState({ whatsapp: false });
 
   useEffect(() => {
     const interval = setInterval(() => {
       const input = document.getElementById("whatsapp") as HTMLInputElement;
-      if (input && input.value) {
-        setFilled(f => ({ ...f, whatsapp: true }));
-      }
+      if (input && input.value) setFilled(f => ({ ...f, whatsapp: true }));
     }, 100);
 
     return () => clearInterval(interval);
@@ -69,87 +118,90 @@ const MultiStepFormBlock = ({
     setFilled(prev => ({ ...prev, [name]: value.trim() !== "" }));
   };
 
-  const validationSchema = [
-    Yup.object({
-      question1: Yup.string().required("This field is required")
-    }),
-    Yup.object({
-      question2: Yup.string().required("This field is required")
-    }),
-    Yup.object({
-      question3: Yup.string().required("This field is required")
-    }),
-    Yup.object({
-      question4: Yup.string().required("This field is required")
-    }),
-    Yup.object({
-      whatsapp: Yup.string().required("This field is required"),
-      agreedToPolicy: Yup.boolean()
-        .oneOf(
-          [true],
-          lang === "en"
-            ? "You must accept the terms and conditions"
-            : "Вы должны принять условия"
-        )
-        .required(
-          lang === "en"
-            ? "You must accept the terms and conditions"
-            : "Вы должны принять условия"
-        )
-    })
-  ];
-
-  const handleNext = async (values: FormData, validateForm: any) => {
+  const handleNext = async (
+    validateForm: () => Promise<Record<string, any>>
+  ) => {
     const errors = await validateForm();
+
     if (Object.keys(errors).length === 0) {
-      setFormData(prev => ({ ...prev, ...values }));
-      setStep(step + 1);
-    } else {
-      // Highlight errors
-      Object.keys(errors).forEach(key => {
-        const element = document.querySelector(`[name="${key}"]`);
-        if (element) {
-          element.classList.add(styles.errorHighlight);
-        }
-      });
+      setStep(s => Math.min(s + 1, LAST_STEP));
+      return;
     }
+
+    Object.keys(errors).forEach(key => {
+      const element = document.querySelector(`[name="${key}"]`);
+      if (element) element.classList.add(styles.errorHighlight);
+    });
   };
 
-  const handlePrev = () => {
-    setStep(step - 1);
-  };
+  const handlePrev = () => setStep(s => Math.max(1, s - 1));
 
   const handleSubmit = async (
-    values: FormData,
-    { setSubmitting }: FormikHelpers<FormData>
+    values: DynamicFormValues,
+    { setSubmitting }: FormikHelpers<DynamicFormValues>
   ) => {
     setSubmitting(true);
+
     try {
-      await axios.post("/api/email", values);
+      const quizAnswers = [
+        {
+          name: "question1",
+          label:
+            lang === "en" ? "Who fills out the form?" : "Кто заполняет анкету?",
+          value: values.question1 || ""
+        },
+        ...dynamicQuestions.map(q => {
+          const fieldName = `q_${q._key}`;
+          return {
+            name: fieldName, // технический ключ (стабильный)
+            label: q.questionTitle, // текст вопроса (для письма)
+            value: values[fieldName] || ""
+          };
+        })
+      ];
+
+      await axios.post("/api/quiz-email", {
+        whatsapp: values.whatsapp,
+        quizAnswers,
+        lang,
+        url: typeof window !== "undefined" ? window.location.href : ""
+      });
+
       router.push(lang === "ru" ? "/ru/success" : "/success");
     } catch (error) {
-      alert(
-        lang === "ru"
-          ? "Ошибка отправки электронной почты"
-          : "Error sending email"
-      );
+      alert(lang === "ru" ? "Ошибка отправки" : "Error sending");
     } finally {
       setSubmitting(false);
     }
   };
 
-  const progressPercentage = (step > 1 ? (step - 1) / 4 : 0) * 100;
+  const progressPercentage =
+    step > 1
+      ? (Math.min(step - 1, TOTAL_QUESTION_STEPS) / TOTAL_QUESTION_STEPS) * 100
+      : 0;
+
+  const isDynamicQuestionStep = step >= 2 && step <= TOTAL_QUESTION_STEPS;
+  const dynamicIndex = step - 2;
+  const currentDynamicQuestion = isDynamicQuestionStep
+    ? dynamicQuestions[dynamicIndex]
+    : null;
+
+  // ✅ ВАЖНО: вот здесь единственное место, где надо совпадение с типами
+  // Если у вас поле называется НЕ question — поменяйте на своё.
+  const getQuestionText = (q: any) =>
+    q.questionTitle ?? q.title ?? q.question ?? q.text ?? q.label ?? "";
+
+  const currentFieldName = currentDynamicQuestion
+    ? `q_${currentDynamicQuestion._key}`
+    : "";
 
   return (
     <div className={styles.multiStepForm}>
       <Formik
-        initialValues={formData}
-        validationSchema={validationSchema[step - 1]}
-        onSubmit={
-          step === 5
-            ? handleSubmit
-            : (values, actions) => handleNext(values, actions.validateForm)
-        }
+        initialValues={initialValues}
+        enableReinitialize
+        validationSchema={validationSchemaByStep[Math.max(0, step - 1)]}
+        onSubmit={step === LAST_STEP ? handleSubmit : async () => {}}
       >
         {({ isSubmitting, values, validateForm, setFieldValue }) => (
           <Form className={styles.customForm}>
@@ -161,11 +213,13 @@ const MultiStepFormBlock = ({
               {step > 1 && (
                 <div className={styles.progressText}>
                   {lang === "en"
-                    ? `Step ${step - 1} of 4`
-                    : `Шаг ${step - 1} из 4`}
+                    ? `Step ${Math.min(step - 1, TOTAL_QUESTION_STEPS)} of ${TOTAL_QUESTION_STEPS}`
+                    : `Шаг ${Math.min(step - 1, TOTAL_QUESTION_STEPS)} из ${TOTAL_QUESTION_STEPS}`}
                 </div>
               )}
             </div>
+
+            {/* ✅ STEP 1 (фиксированный) */}
             {step === 1 && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
@@ -180,6 +234,7 @@ const MultiStepFormBlock = ({
                           : "Кто заполняет анкету?"}
                       </legend>
                     </div>
+
                     <div
                       role="group"
                       aria-labelledby="question1"
@@ -199,13 +254,14 @@ const MultiStepFormBlock = ({
                             />
                           </div>
                           <div className={styles.pseudoRadioData}>
-                            <div className={styles.pseudoRadio}></div>
+                            <div className={styles.pseudoRadio} />
                             <p className={styles.pseudoRadioText}>
                               {lang === "en" ? "Parent" : "Родитель"}
                             </p>
                           </div>
                         </label>
                       </div>
+
                       <div className={styles.customRadio}>
                         <label>
                           <Field
@@ -224,7 +280,7 @@ const MultiStepFormBlock = ({
                             />
                           </div>
                           <div className={styles.pseudoRadioData}>
-                            <div className={styles.pseudoRadio}></div>
+                            <div className={styles.pseudoRadio} />
                             <p className={styles.pseudoRadioText}>
                               {lang === "en" ? "Enrollee" : "Сам абитуриент"}
                             </p>
@@ -232,13 +288,15 @@ const MultiStepFormBlock = ({
                         </label>
                       </div>
                     </div>
+
                     <ErrorMessage name="question1" component="div" />
                   </fieldset>
                 </div>
+
                 <div className={styles.buttonsBlock}>
                   <button
                     type="button"
-                    onClick={() => handleNext(values, validateForm)}
+                    onClick={() => handleNext(validateForm)}
                     className={styles.buttonNext}
                   >
                     {lang === "en" ? "Next" : "Далее"}
@@ -246,390 +304,157 @@ const MultiStepFormBlock = ({
                 </div>
               </div>
             )}
-            {step === 2 && (
+
+            {/* ✅ dynamic steps */}
+            {currentDynamicQuestion && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
                   <fieldset>
                     <div className={styles.questionData}>
                       <div className={styles.questionNumber}>
-                        {lang === "en" ? "Question 2" : "Вопрос 2"}
+                        {lang === "en" ? `Question ${step}` : `Вопрос ${step}`}
                       </div>
                       <legend className={styles.questionTitle}>
-                        {lang === "en"
-                          ? "What level of education are you interested in?"
-                          : "Какая степень образования вас интересует?"}
+                        {getQuestionText(currentDynamicQuestion)}
                       </legend>
                     </div>
+
                     <div
                       role="group"
-                      aria-labelledby="question2"
+                      aria-labelledby={currentFieldName}
                       className={styles.customRadios}
                     >
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question2"
-                            value={lang === "en" ? "Bachelor" : "Бакалавр"}
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "Bachelor" : "Бакалавр"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question2"
-                            value={lang === "en" ? "Master" : "Магистратура"}
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "Master" : "Магистратура"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                    <ErrorMessage name="question2" component="div" />
-                  </fieldset>
-                </div>
-                <div className={styles.buttonsBlock}>
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    className={styles.buttonBack}
-                  >
-                    {lang === "en" ? "Previous" : "Назад"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleNext(values, validateForm)}
-                    className={styles.buttonNext}
-                  >
-                    {lang === "en" ? "Next" : "Далее"}
-                  </button>
-                </div>
-              </div>
-            )}
-            {step === 3 && (
-              <div className={styles.questionWrapper}>
-                <div className={styles.topWrapper}>
-                  <fieldset>
-                    <div className={styles.questionData}>
-                      <div className={styles.questionNumber}>
-                        {lang === "en" ? "Question 3" : "Вопрос 3"}
-                      </div>
-                      <legend className={styles.questionTitle}>
-                        {lang === "en"
-                          ? "When are you planning to start your studies?"
-                          : "Когда планируете начать учебу?"}
-                      </legend>
-                    </div>
-                    <div
-                      role="group"
-                      aria-labelledby="question3"
-                      className={styles.customRadios}
-                    >
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question3"
-                            value={
-                              lang === "en"
-                                ? "As soon as possible"
-                                : "Как можно скорее"
-                            }
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en"
-                                ? "As soon as possible"
-                                : "Как можно скорее"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question3"
-                            value={
-                              lang === "en" ? "October 2026" : "Октябрь 2026"
-                            }
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "October 2026" : "Октябрь 2026"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question3"
-                            value={lang === "en" ? "March 2027" : "Март 2027"}
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "March 2027" : "Март 2027"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question3"
-                            value={lang === "en" ? "Later" : "Позже"}
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "Later" : "Позже"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                    <ErrorMessage name="question3" component="div" />
-                  </fieldset>
-                </div>
-                <div className={styles.buttonsBlock}>
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    className={styles.buttonBack}
-                  >
-                    {lang === "en" ? "Previous" : "Назад"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleNext(values, validateForm)}
-                    className={styles.buttonNext}
-                  >
-                    {lang === "en" ? "Next" : "Далее"}
-                  </button>
-                </div>
-              </div>
-            )}
-            {step === 4 && (
-              <div className={styles.questionWrapper}>
-                <div className={styles.topWrapper}>
-                  <fieldset>
-                    <div className={styles.questionData}>
-                      <div className={styles.questionNumber}>
-                        {lang === "en" ? "Question 4" : "Вопрос 4"}
-                      </div>
-                      <legend className={styles.questionTitle}>
-                        {lang === "en"
-                          ? "What is your study budget per year?"
-                          : "Какой ваш бюджет на обучение в год?"}
-                      </legend>
-                    </div>
-                    <div
-                      role="group"
-                      aria-labelledby="question4"
-                      className={styles.customRadios}
-                    >
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question4"
-                            value={lang === "en" ? "up to 3000€" : "до 3000€"}
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "up to 3000€" : "до 3000€"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question4"
-                            value="3000€-5000€"
-                          />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "3000€-5000€" : "3000€-5000€"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                      <div
-                        className={`${styles.customRadio} ${styles.radioGray}`}
-                      >
-                        <label>
-                          <Field type="radio" name="question4" value="5000€+" />
-                          <div className={styles.pseudoRadioData}>
-                            <div
-                              className={styles.pseudoRadio}
-                              style={{ backgroundColor: "#fff" }}
-                            ></div>
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "5000€+" : "5000€+"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                    <ErrorMessage name="question4" component="div" />
-                  </fieldset>
-                </div>
-                <div className={styles.buttonsBlock}>
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    className={styles.buttonBack}
-                  >
-                    {lang === "en" ? "Previous" : "Назад"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleNext(values, validateForm)}
-                    className={styles.buttonNext}
-                  >
-                    {lang === "en" ? "Next" : "Далее"}
-                  </button>
-                </div>
-              </div>
-            )}
-            {step === 5 && (
-              <>
-                <div className={styles.questionWrapper}>
-                  <div className={styles.topWrapper}>
-                    <h3 className={styles.finalTitle}>{finalTitle}</h3>
-                  </div>
-                  <div className={styles.formSending}>
-                    <p className={styles.formTitle}>{formTitle}</p>
-                    <div className={styles.finalForm}>
-                      <div className={styles.inputWrapper}>
-                        <label
-                          htmlFor="whatsapp"
-                          className={`${styles.label} ${styles.labelPhone} 
-                          ${filled.whatsapp ? styles.filled : ""}`}
+                      {currentDynamicQuestion.options?.map((opt: any) => (
+                        <div
+                          key={opt._key}
+                          className={`${styles.customRadio} ${styles.radioGray}`}
                         >
-                          {inputLabel}
-                        </label>
-                        <PhoneInput
-                          id="whatsapp"
-                          name="whatsapp"
-                          className={`${styles.inputField}`}
-                          onBlur={handleBlur}
-                          onChange={value => {
-                            setFieldValue("whatsapp", value); // Обновляем значение в Formik
-                          }}
-                        />
-                        <ErrorMessage
-                          name="whatsapp"
-                          component="div"
-                          className={styles.error}
-                        />
-                      </div>
-                      <div className={styles.customCheckbox}>
-                        <Field
-                          type="checkbox"
-                          name="agreedToPolicy"
-                          id={`agreedToPolicy-${uniqueId}`}
-                        />
-                        <label htmlFor={`agreedToPolicy-${uniqueId}`}>
-                          {lang === "en"
-                            ? "I agree to the terms"
-                            : "Согласен с условиями"}{" "}
-                          <Link
-                            className={styles.policyLink}
-                            href={
-                              lang === "en"
-                                ? "/en/privacy-policy"
-                                : "/ru/politika-konfidencialnosti"
-                            }
-                            target="_blank"
-                          >
-                            {lang === "en"
-                              ? "Privacy Policy"
-                              : "Политики конфиденциальности"}
-                          </Link>
-                        </label>
-                      </div>
-                      <ErrorMessage
-                        name="agreedToPolicy"
-                        component="div"
-                        className={styles.errorCheckbox}
-                      />
-                      <button
-                        type="submit"
-                        className={styles.sentBtn}
-                        disabled={isSubmitting || !values.agreedToPolicy}
-                      >
-                        {isSubmitting ? (
-                          <div className={styles.loader}></div>
-                        ) : (
-                          buttonText
-                        )}
-                      </button>
+                          <label>
+                            <Field
+                              type="radio"
+                              name={currentFieldName}
+                              value={opt.label}
+                            />
+                            <div className={styles.pseudoRadioData}>
+                              <div
+                                className={styles.pseudoRadio}
+                                style={{ backgroundColor: "#fff" }}
+                              />
+                              <p className={styles.pseudoRadioText}>
+                                {opt.label}
+                              </p>
+                            </div>
+                          </label>
+                        </div>
+                      ))}
                     </div>
+
+                    <ErrorMessage name={currentFieldName} component="div" />
+                  </fieldset>
+                </div>
+
+                <div className={styles.buttonsBlock}>
+                  <button
+                    type="button"
+                    onClick={handlePrev}
+                    className={styles.buttonBack}
+                  >
+                    {lang === "en" ? "Previous" : "Назад"}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleNext(validateForm)}
+                    className={styles.buttonNext}
+                  >
+                    {lang === "en" ? "Next" : "Далее"}
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* ✅ final step (фикс) */}
+            {step === LAST_STEP && (
+              <div className={styles.questionWrapper}>
+                <div className={styles.topWrapper}>
+                  <h3 className={styles.finalTitle}>{quizBlock.finalTitle}</h3>
+                </div>
+
+                <div className={styles.formSending}>
+                  <p className={styles.formTitle}>{quizBlock.formTitle}</p>
+
+                  <div className={styles.finalForm}>
+                    <div className={styles.inputWrapper}>
+                      <label
+                        htmlFor="whatsapp"
+                        className={`${styles.label} ${styles.labelPhone} ${
+                          filled.whatsapp ? styles.filled : ""
+                        }`}
+                      >
+                        {quizBlock.inputLabel}
+                      </label>
+
+                      <PhoneInput
+                        id="whatsapp"
+                        name="whatsapp"
+                        className={styles.inputField}
+                        onBlur={handleBlur}
+                        onChange={value => setFieldValue("whatsapp", value)}
+                      />
+
+                      <ErrorMessage
+                        name="whatsapp"
+                        component="div"
+                        className={styles.error}
+                      />
+                    </div>
+
+                    <div className={styles.customCheckbox}>
+                      <Field
+                        type="checkbox"
+                        name="agreedToPolicy"
+                        id={`agreedToPolicy-${uniqueId}`}
+                      />
+                      <label htmlFor={`agreedToPolicy-${uniqueId}`}>
+                        {lang === "en"
+                          ? "I agree to the terms"
+                          : "Согласен с условиями"}{" "}
+                        <Link
+                          className={styles.policyLink}
+                          href={
+                            lang === "en"
+                              ? "/en/privacy-policy"
+                              : "/ru/politika-konfidencialnosti"
+                          }
+                          target="_blank"
+                        >
+                          {lang === "en"
+                            ? "Privacy Policy"
+                            : "Политики конфиденциальности"}
+                        </Link>
+                      </label>
+                    </div>
+
+                    <ErrorMessage
+                      name="agreedToPolicy"
+                      component="div"
+                      className={styles.errorCheckbox}
+                    />
+
+                    <button
+                      type="submit"
+                      className={styles.sentBtn}
+                      disabled={isSubmitting || !values.agreedToPolicy}
+                    >
+                      {isSubmitting ? (
+                        <div className={styles.loader} />
+                      ) : (
+                        quizBlock.buttonText
+                      )}
+                    </button>
                   </div>
                 </div>
-              </>
+              </div>
             )}
           </Form>
         )}

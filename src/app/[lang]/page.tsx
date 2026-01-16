@@ -26,6 +26,7 @@ import ModalFull from "../components/ModalFull/ModalFull";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
 import AccordionContainer from "../components/AccordionContainer/AccordionContainer";
+import MultiStepFormBlock from "../components/MultiStepFormBlock/MultiStepFormBlock";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -138,7 +139,11 @@ export default async function Home({ params }: Props) {
           lastSlideDescription={homePage.lastSlideDescription}
           form={homePage.lastSlideForm}
         />
-        <Survey lang={params.lang} survey={homePage.survey} />
+        <Survey
+          lang={params.lang}
+          survey={homePage.survey}
+          quizBlock={homePage.quizBlock}
+        />
         <About
           aboutSummary={homePage.aboutSummary}
           aboutTitle={homePage.aboutTitle}

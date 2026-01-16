@@ -371,13 +371,28 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     },
     "survey": survey{
       title,
-      image,
-      quote,
-      description,
+      // image,
+      // quote,
+      // description,
+      // finalTitle,
+      // formTitle,
+      // inputLabel,
+      // buttonText,
+    },
+    "quizBlock": quizBlock{
       finalTitle,
       formTitle,
       inputLabel,
       buttonText,
+      questions[]{
+        _key,
+        name,
+        questionTitle,
+        options[]{
+          _key,
+          label
+        }
+      }
     },
     aboutSummary,
     aboutTitle,
@@ -488,7 +503,43 @@ export async function getSinglePageByLang(
     seo,
     coverBlock,
     previewImage,
-    contentBlocks,
+    contentBlocks[]{
+      ...,
+      _type == "surveyBlock" => {
+        _key,
+        _type,
+        survey{
+          title,
+          // image,
+          // quote,
+          // description,
+
+          // // это старые поля опроса (можно оставить)
+          // finalTitle,
+          // formTitle,
+          // inputLabel,
+          // buttonText,
+
+          // ✅ и главное — quizBlock
+          quizBlock{
+            finalTitle,
+            formTitle,
+            inputLabel,
+            buttonText,
+            questions[]{
+              _key,
+              questionTitle,
+              useGrayStyle,
+              options[]{
+                _key,
+                label,
+                value
+              }
+            }
+          }
+        }
+      }
+    },
     language,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
       slug,
@@ -518,7 +569,43 @@ export async function getSingleSubPageBySlug(
     slug,
     seo,
     coverBlock,
-    contentBlocks,
+    contentBlocks[]{
+      ...,
+      _type == "surveyBlock" => {
+        _key,
+        _type,
+        survey{
+          title,
+          // image,
+          // quote,
+          // description,
+
+          // // это старые поля опроса (можно оставить)
+          // finalTitle,
+          // formTitle,
+          // inputLabel,
+          // buttonText,
+
+          // ✅ и главное — quizBlock
+          quizBlock{
+            finalTitle,
+            formTitle,
+            inputLabel,
+            buttonText,
+            questions[]{
+              _key,
+              questionTitle,
+              useGrayStyle,
+              options[]{
+                _key,
+                label,
+                value
+              }
+            }
+          }
+        }
+      }
+    },
     parentPage->{
       _id,
       title,

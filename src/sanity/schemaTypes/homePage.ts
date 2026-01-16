@@ -553,45 +553,52 @@ export default defineType({
           name: "title",
           title: "Title",
           type: "string"
-        }),
-        defineField({
-          name: "image",
-          title: "Image",
-          type: "image"
-        }),
-        defineField({
-          name: "quote",
-          title: "Quote",
-          type: "string"
-        }),
-        defineField({
-          name: "description",
-          title: "Description",
-          type: "string"
-        }),
-        defineField({
-          name: "finalTitle",
-          title: "Final Title",
-          type: "string"
-        }),
-        defineField({
-          name: "formTitle",
-          title: "Form Title",
-          type: "string"
-        }),
-        defineField({
-          name: "inputLabel",
-          title: "Input Label",
-          type: "string"
-        }),
-        defineField({
-          name: "buttonText",
-          title: "Button Text",
-          type: "string"
         })
+        // defineField({
+        //   name: "image",
+        //   title: "Image",
+        //   type: "image"
+        // }),
+        // defineField({
+        //   name: "quote",
+        //   title: "Quote",
+        //   type: "string"
+        // }),
+        // defineField({
+        //   name: "description",
+        //   title: "Description",
+        //   type: "string"
+        // }),
+        // defineField({
+        //   name: "finalTitle",
+        //   title: "Final Title",
+        //   type: "string"
+        // }),
+        // defineField({
+        //   name: "formTitle",
+        //   title: "Form Title",
+        //   type: "string"
+        // }),
+        // defineField({
+        //   name: "inputLabel",
+        //   title: "Input Label",
+        //   type: "string"
+        // }),
+        // defineField({
+        //   name: "buttonText",
+        //   title: "Button Text",
+        //   type: "string"
+        // })
       ]
     }),
     // survey block
+    // quiz block
+    defineField({
+      name: "quizBlock",
+      title: "Quiz Block",
+      type: "quizBlock"
+    }),
+    // quiz block
     // about block
     defineField({
       name: "aboutSummary",

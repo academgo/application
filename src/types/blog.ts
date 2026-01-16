@@ -1,5 +1,6 @@
 import { Form } from "./form";
 import { Link, List, offerContactLink, University } from "./homepage";
+import { QuizBlock } from "./quizBlock";
 
 export type Image = {
   _key: string;
@@ -124,13 +125,14 @@ export type SurveyBlock = {
   _type: string;
   survey: {
     title: string;
-    image: Image;
-    quote: string;
-    description: string;
-    finalTitle: string;
-    formTitle: string;
-    inputLabel: string;
-    buttonText: string;
+    // image: Image;
+    // quote: string;
+    // description: string;
+    // finalTitle: string;
+    // formTitle: string;
+    // inputLabel: string;
+    // buttonText: string;
+    quizBlock?: QuizBlock;
   };
 };
 

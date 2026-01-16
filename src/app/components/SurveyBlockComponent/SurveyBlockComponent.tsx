@@ -10,7 +10,11 @@ type Props = {
 const SurveyBlockComponent: FC<Props> = ({ block, lang }) => {
   return (
     <div>
-      <Survey lang={lang} survey={block.survey} />
+      <Survey
+        lang={lang}
+        survey={block.survey}
+        quizBlock={block.survey.quizBlock}
+      />
     </div>
   );
 };

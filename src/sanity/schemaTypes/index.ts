@@ -37,6 +37,9 @@ import surveyBlock from "./surveyBlock";
 import offerBlock from "./offerBlock";
 import pricingTable from "./pricingTable";
 import packagesBlock from "./packagesBlock";
+import quizBlock from "./quizBlock";
+import quizQuestion from "./quizQuestion";
+import quizOption from "./quizOption";
 
 export const schemaTypes = [
   header,
@@ -77,5 +80,8 @@ export const schemaTypes = [
   benefitsBlock,
   packagesBlock,
   linksBlock,
+  quizBlock,
+  quizQuestion,
+  quizOption,
   localizedSlug
 ];
