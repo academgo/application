@@ -47,9 +47,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = params;
   const data = await getBlogPostByLang(lang, slug);
 
+  // localePrefix: "as-needed" => default locale (en) без /en
+  const langPrefix = lang === "en" ? "" : `/${lang}`;
+  const canonicalPath = `${langPrefix}/blog/${slug}`;
+
   return {
-    title: data?.seo.metaTitle,
-    description: data?.seo.metaDescription
+    title: data?.seo.metaTitle ?? undefined,
+    description: data?.seo.metaDescription ?? undefined,
+    alternates: {
+      canonical: canonicalPath
+    }
   };
 }
 

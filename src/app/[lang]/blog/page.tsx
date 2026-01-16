@@ -23,9 +23,18 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getBlogPageByLang(params.lang);
 
+  // default locale (en) без /en
+  const langPrefix = params.lang === "en" ? "" : `/${params.lang}`;
+
+  // У тебя реальный URL листинга: /blog (или /ru/blog)
+  const canonicalPath = `${langPrefix}/blog`;
+
   return {
-    title: data?.metaTitle,
-    description: data?.metaDescription
+    title: data?.metaTitle ?? "Academgo Blog",
+    description: data?.metaDescription ?? undefined,
+    alternates: {
+      canonical: canonicalPath
+    }
   };
 }
 

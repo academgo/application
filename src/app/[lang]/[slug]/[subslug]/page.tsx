@@ -107,9 +107,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, subslug } = params;
   const data = await getSingleSubPageBySlug(lang, subslug);
 
+  // если данных нет — пусть Next сам отдаст свою логику (или оставь как есть)
+  if (!data) {
+    return {};
+  }
+
+  // canonical строим по "истинному" parent slug из Sanity
+  const parentSlug = data.parentPage?.slug?.[lang]?.current;
+
+  // default locale (en) без /en
+  const langPrefix = lang === "en" ? "" : `/${lang}`;
+
+  // если вдруг parentSlug не найден (на всякий случай) — fallback на params.slug
+  const canonicalPath = `${langPrefix}/${parentSlug ?? params.slug}/${subslug}`;
+
   return {
-    title: data?.seo.metaTitle,
-    description: data?.seo.metaDescription
+    title: data?.seo?.metaTitle ?? data?.title ?? undefined,
+    description: data?.seo?.metaDescription ?? undefined,
+    alternates: {
+      canonical: canonicalPath
+    }
   };
 }
 

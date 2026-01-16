@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Academgo",
   description: "Academgo",
+  metadataBase: new URL("https://academgo.com"),
   other: {
     "google-site-verification": "y26kx-fqwQmu8vSsuIo8zW09MIp0pnOQNHnGFNggnmQ"
   }
@@ -25,12 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <Head>
+      {/* <Head>
         <meta
           name="google-site-verification"
           content="y26kx-fqwQmu8vSsuIo8zW09MIp0pnOQNHnGFNggnmQ"
         />
-      </Head>
+      </Head> */}
       <body className={inter.className}>
         <ModalProvider>{children}</ModalProvider>
         <GoogleAnalytics gaId="G-XTMLVRC9RR" />
