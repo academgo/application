@@ -14,7 +14,8 @@ export default function robots(): MetadataRoute.Robots {
           "*?utm",
           "*?gclid",
           "*?from",
-          " *?gbraid",
+          "*?gbraid",
+          "*?fbclid",
           "*?matchtype="
         ]
       }

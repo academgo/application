@@ -289,6 +289,16 @@ const nextConfig = {
       { source: '/ru/blog/sroki-postupleniya-v-polshu-2026', destination: '/ru/obuchenie-v-polshe/sroki-postupleniya-v-polshu-2026', permanent: true },
 
       // ===========================
+      // Hreflang cleanup
+      // ===========================
+      { source: '/ru/blog/how-to-get-a-scholarship-in-poland', destination: '/study-in-poland/scholarships-for-studying-in-poland', permanent: true },
+      { source: '/ru/blog/study-in-poland-from-vietnam', destination: '/study-in-poland/study-in-poland-from-vietnam', permanent: true },
+      { source: '/ru/blog/universities-in-poland-for-international-students', destination: '/universities-in-poland', permanent: true },
+      { source: '/ru/blog/student-visa-in-poland-how-to-get-a-student-visa-in-poland', destination: '/student-visa-to-poland', permanent: true },
+      { source: '/ru/blog/specialties-in-polish-universities', destination: '/study-in-poland/degree-programs-in-polish-universities', permanent: true },
+
+
+      // ===========================
       // Trailing slash cleanup (не трогает корень)
       // ===========================
       { source: '/:path((?!$).*)/', destination: '/:path', permanent: true },
