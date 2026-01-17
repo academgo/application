@@ -332,16 +332,19 @@
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-inline: clamp(0.313rem, -0.256rem + 2.84vw, 1.875rem);
+  padding-right: clamp(0.313rem, -0.256rem + 2.84vw, 1.875rem);
+  padding-left: 20px;
   font-size: 1rem;
   // border: 1px solid #ccc;
   border-radius: 311.25px;
   background: #F5F5F5;
   outline: none;
   transition: all 0.2s ease;
+  padding-left: 20px;
 
   @media screen and (min-width: 768px) {
-    padding: 33px 45px;
+    padding: 33px 45px 33px 30px;
+
   }
 }
 

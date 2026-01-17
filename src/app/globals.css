@@ -115,13 +115,13 @@ body.menu-open .logoImageMobileActive {
   outline: none;
 }
 
-.PhoneInputCountry {
+/* .PhoneInputCountry {
   left: 10px;
 
   @media screen and (min-width: 768px) {
     left: -20px;
   }
-}
+} */
 
 .PhoneInputCountrySelectArrow {
   display: none !important;
