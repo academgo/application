@@ -1,5 +1,5 @@
 import { Form } from "./form";
-import { Link, List, offerContactLink, University } from "./homepage";
+import { Link, List, offerContactLink, University, Video } from "./homepage";
 import { QuizBlock } from "./quizBlock";
 
 export type Image = {
@@ -100,6 +100,12 @@ export type BenefitBullet = {
   bulletIcon: Image;
   bulletTitle: string;
   bulletText: string;
+};
+
+export type VideosBlock = {
+  _key: string;
+  _type: string;
+  videos: Video[];
 };
 
 export type Seo = {

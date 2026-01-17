@@ -100,6 +100,7 @@ const singlepage = {
         { type: "contactsBlock" },
         { type: "surveyBlock" },
         { type: "packagesBlock" },
+        { type: "videosBlock" },
         { type: "tableBlock" }
       ]
     }),

@@ -96,6 +96,7 @@ const subpage = {
         { type: "contactsBlock" },
         { type: "surveyBlock" },
         { type: "packagesBlock" },
+        { type: "videosBlock" },
         { type: "tableBlock" }
       ]
     }),

@@ -41,6 +41,7 @@ import quizBlock from "./quizBlock";
 import quizQuestion from "./quizQuestion";
 import quizOption from "./quizOption";
 import tableBlock from "./tableBlock";
+import videosBlock from "./videosBlock";
 
 export const schemaTypes = [
   header,
@@ -81,6 +82,7 @@ export const schemaTypes = [
   benefitsBlock,
   packagesBlock,
   linksBlock,
+  videosBlock,
   tableBlock,
   quizBlock,
   quizQuestion,

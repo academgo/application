@@ -6,7 +6,8 @@ import {
   TextContent,
   DoubleTextBlock,
   SliderBlock,
-  TableBlock
+  TableBlock,
+  VideosBlock
 } from "./blog";
 import { Image } from "./homepage";
 
@@ -30,6 +31,7 @@ export type Subpage = {
     | TabsBlock
     | DoubleTextBlock
     | SliderBlock
+    | VideosBlock
     | TableBlock
   >;
   language: string;

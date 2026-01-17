@@ -38,7 +38,8 @@ import {
   OfferBlock,
   PricingTable,
   PackagesBlock,
-  TableBlock
+  TableBlock,
+  VideosBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
@@ -67,6 +68,7 @@ import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlock
 import PricingTableComponent from "@/app/components/PricingTableComponent/PricingTableComponent";
 import PackagesBlockComponent from "@/app/components/PackagesBlockComponent/PackagesBlockComponent";
 import TableBlockComponent from "@/app/components/TableBlockComponent/TableBlockComponent";
+import VideosSection from "@/app/components/VideosSection/VideosSection";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -100,6 +102,7 @@ type ContentBlock =
   | OfferBlock
   | PricingTable
   | TableBlock
+  | VideosBlock
   | PackagesBlock;
 
 // Dynamic metadata for SEO
@@ -268,6 +271,22 @@ const Subpage = async ({ params }: Props) => {
             block={block as CascadeBlock}
           />
         );
+      case "videosBlock": {
+        const b = block as any;
+
+        const videosTitle = b.videosTitle ?? "";
+        // b.videos — если у тебя wrapper-объект
+        // b — если вдруг сам block является массивом (на всякий случай)
+        const videos = (b.videos ?? b ?? []) as any;
+
+        return (
+          <VideosSection
+            key={b._key ?? "videos"}
+            videosTitle={videosTitle}
+            videos={videos}
+          />
+        );
+      }
       case "packagePriceBlock":
         return (
           <PackagePriceBlockComponent

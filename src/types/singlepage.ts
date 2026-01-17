@@ -5,7 +5,8 @@ import {
   TabsBlock,
   TextContent,
   DoubleTextBlock,
-  TableBlock
+  TableBlock,
+  VideosBlock
 } from "./blog";
 import { Image } from "./homepage";
 
@@ -30,6 +31,7 @@ export type Singlepage = {
     | AccordionBlock
     | TabsBlock
     | DoubleTextBlock
+    | VideosBlock
     | TableBlock
   >;
   language: string;
