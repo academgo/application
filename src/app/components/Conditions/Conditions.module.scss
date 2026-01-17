@@ -55,27 +55,8 @@
     aspect-ratio: 276/275;
   }
 
-  h3 {
+  .conditionTitle {
     color: #fff;
-    max-width: 250px;
-    margin-bottom: 25px;
-
-    @media screen and (max-width: 980px) {
-      margin-bottom: 12px;
-      max-width: 100%;
-      font-size: 24px;
-      line-height: 120%;
-      letter-spacing: -1.26px;
-    }
-  }
-
-  p {
-    color: #fff;
-
-    @media screen and (max-width: 980px) {
-      font-size: 16px;
-      line-height: 120%;
-    }
   } 
 
   .posterImage {
@@ -108,26 +89,9 @@
     aspect-ratio: 276/142;
   }
 
-  h3 {
+  .conditionTitle {
     color: #fff;
-    margin-bottom: 25px;
-
-    @media screen and (max-width: 980px) {
-      margin-bottom: 12px;
-      font-size: 24px;
-      line-height: 120%;
-      letter-spacing: -1.26px;
-    }
   }
-
-  p {
-    color: #fff;
-
-    @media screen and (max-width: 980px) {
-      font-size: 16px;
-      line-height: 120%;
-    }
-  } 
 
   .bgImage {
     z-index: -2;
@@ -186,18 +150,8 @@
     }
   }
 
-  p {
+  .conditionDescription {
     color: #091728;
-
-    @media screen and (max-width: 980px) {
-      // max-width: 210px;
-      color: #091728;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%;
-      letter-spacing: -0.36px;
-    }
   }
  }
 
@@ -225,26 +179,9 @@
     aspect-ratio: 276/460;
   }
 
-  h3 {
+  .conditionTitle {
     color: #fff;
-    max-width: 450px;
-
-    @media screen and (max-width: 980px) {
-      max-width: 100%;
-      font-size: 24px;
-      line-height: 23px; /* 127.778% */
-      letter-spacing: -1.26px;
-      font-size: 20px;
-    }
-  }
-
-  p {
-    color: #fff;
-
-    @media screen and (max-width: 980px) {
-      font-size: 16px;
-    }
-  }
+  } 
 
   .posterImage {
     position: absolute;
@@ -348,30 +285,31 @@
 }
 
 .conditionTitle {
-  font-size: 40px;
+  font-size: 34px;
   font-style: normal;
   font-weight: 500;
-  line-height: 50px; /* 125% */
+  line-height: 1.2; /* 125% */
   letter-spacing: -2.8px;
-  // margin-bottom: 25px;
+  margin-bottom: 18px;
 
   @media screen and (max-width: 980px) {
-    font-size: 18px;
-    line-height: 23px; /* 127.778% */
+    font-size: 25px;
+    line-height: 1.2;
     letter-spacing: -1.26px;
     margin-bottom: 12px;
   }
 }
 
 .conditionDescription {
+  color: #fff;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 30px; /* 125% */
+  line-height: 1.2;
   letter-spacing: -0.96px;
 
   @media screen and (max-width: 980px) {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 16px; /* 133.333% */
     letter-spacing: -0.48px;
   }
