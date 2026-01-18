@@ -7,12 +7,12 @@
   font-size: clamp(1.5rem, 0.531rem + 3.88vw, 3.438rem);
   font-style: normal;
   font-weight: 500;
-  line-height: 30px; /* 125% */
+  line-height: 75px; /* 125% */
   letter-spacing: -1.68px;
   margin-bottom: clamp(0.625rem, -0.938rem + 6.25vw, 3.75rem);
 
   @media screen and (max-width: 768px){
-    line-height: 75px; /* 136.364% */
+    line-height: 30px; /* 136.364% */
     letter-spacing: unset;
   }
 }
