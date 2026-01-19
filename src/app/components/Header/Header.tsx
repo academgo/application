@@ -61,9 +61,10 @@ const Header = async ({ translations, params }: Props) => {
                 >
                   <Image
                     alt={link.title}
-                    src={urlFor(link.icon).url()}
+                    src={urlFor(link.icon).format("png").url()}
                     width={50}
                     height={50}
+                    unoptimized
                     className={styles.contactIcon}
                   />
                 </Link>
