@@ -33,39 +33,37 @@ const TableBlockComponent: React.FC<Props> = ({ block }) => {
         marginBottom: computedMarginBottom
       }}
     >
-      <div className="container">
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              {block.columns.map((col, i) => (
-                <th key={i} className={styles.th}>
-                  {col}
-                </th>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            {block.columns.map((col, i) => (
+              <th key={i} className={styles.th}>
+                {col}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {block.rows.map(row => (
+            <tr key={row._key}>
+              {row.cells.map((cell, j) => (
+                <td key={j} className={styles.td}>
+                  <PortableText
+                    value={
+                      Array.isArray(cell?.content)
+                        ? cell.content
+                        : Array.isArray(cell)
+                          ? cell
+                          : []
+                    }
+                    components={RichText}
+                  />
+                </td>
               ))}
             </tr>
-          </thead>
-          <tbody>
-            {block.rows.map(row => (
-              <tr key={row._key}>
-                {row.cells.map((cell, j) => (
-                  <td key={j} className={styles.td}>
-                    <PortableText
-                      value={
-                        Array.isArray(cell?.content)
-                          ? cell.content
-                          : Array.isArray(cell)
-                            ? cell
-                            : []
-                      }
-                      components={RichText}
-                    />
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
