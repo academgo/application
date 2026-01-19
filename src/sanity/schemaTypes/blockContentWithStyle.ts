@@ -4,9 +4,6 @@ const blockContentWithStyle = defineType({
   name: "blockContentWithStyle",
   title: "Block Content with Style",
   type: "object",
-  initialValue: {
-    content: []
-  },
   fields: [
     defineField({
       name: "content",

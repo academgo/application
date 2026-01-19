@@ -4,6 +4,7 @@ export default defineType({
   name: "contentBlock",
   title: "Content Block",
   type: "array",
+  initialValue: [],
   of: [
     defineArrayMember({
       title: "Block",
