@@ -83,11 +83,19 @@ const FormStandard: FC<ContactFormProps> = ({
   ) => {
     setSubmitting(true);
     try {
-      const response = await axios.post("/api/email", values);
+      const payload = {
+        ...values,
+        lang,
+        url: typeof window !== "undefined" ? window.location.href : ""
+      };
+
+      const response = await axios.post("/api/email", payload);
+
       if (response.data.message === "Email sent") {
         resetForm({});
-        setFilled({ phone: false, country: false, email: false }); // Reset the filled state
+        setFilled({ phone: false, country: false, email: false });
         onFormSubmitSuccess && onFormSubmitSuccess();
+
         const redirectPath = lang === "en" ? "/success" : `/${lang}/success`;
         router.push(redirectPath);
       } else {
@@ -95,9 +103,7 @@ const FormStandard: FC<ContactFormProps> = ({
       }
     } catch (error) {
       setMessage(`${dataForm.errorMessage}`);
-      setTimeout(() => {
-        setMessage(null);
-      }, 7000);
+      setTimeout(() => setMessage(null), 7000);
     } finally {
       setSubmitting(false);
     }

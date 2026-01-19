@@ -76,8 +76,16 @@ const FormSuperLite: FC<ContactFormProps> = ({
   ) => {
     setSubmitting(true);
     try {
-      const response = await axios.post("/api/email", values);
+      const payload = {
+        ...values,
+        lang,
+        url: typeof window !== "undefined" ? window.location.href : ""
+      };
+
+      const response = await axios.post("/api/email", payload);
+
       router.push(lang === "ru" ? "/ru/success" : "/success");
+
       if (response.data.message === "Email sent") {
         resetForm({});
         setFilled({ phone: false });
@@ -87,9 +95,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
       }
     } catch (error) {
       setMessage(`${dataForm.errorMessage}`);
-      setTimeout(() => {
-        setMessage(null);
-      }, 7000);
+      setTimeout(() => setMessage(null), 7000);
     } finally {
       setSubmitting(false);
     }

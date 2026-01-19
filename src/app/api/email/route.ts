@@ -2,13 +2,13 @@ import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
+const isNonEmptyString = (v: unknown): v is string =>
+  typeof v === "string" && v.trim().length > 0;
+
 export async function POST(request: NextRequest) {
   const data = await request.json();
 
-  console.log("Received data:", data); // Журналирование данных для отладки
-
   const transport = nodemailer.createTransport({
-    // service: "gmail",
     host: "smtp.hostinger.com",
     port: 465,
     secure: true,
@@ -18,10 +18,16 @@ export async function POST(request: NextRequest) {
     }
   });
 
+  const langLine = isNonEmptyString(data.lang)
+    ? `Language: ${data.lang}\n`
+    : "";
+  const urlLine = isNonEmptyString(data.url) ? `Page URL: ${data.url}\n` : "";
+  const meta = `${langLine}${urlLine}${langLine || urlLine ? "\n" : ""}`;
+
   let mailBody = "";
   let isValid = false;
 
-  // Проверка и формирование тела письма в зависимости от присутствующих полей
+  // 1) legacy multi-step (старый формат)
   if (
     data.question1 &&
     data.question2 &&
@@ -29,40 +35,48 @@ export async function POST(request: NextRequest) {
     data.question4 &&
     data.whatsapp
   ) {
-    // Обработка данных из новой многошаговой формы
-    mailBody = `Кто заполняет: ${data.question1}\nУровень образования: ${data.question2}\nНачало обучения: ${data.question3}\nБюджет: ${data.question4}\nWhatsapp: ${data.whatsapp}`;
+    mailBody =
+      meta +
+      `Кто заполняет: ${data.question1}\n` +
+      `Уровень образования: ${data.question2}\n` +
+      `Начало обучения: ${data.question3}\n` +
+      `Бюджет: ${data.question4}\n` +
+      `Whatsapp: ${data.whatsapp}`;
     isValid = true;
-  } else if (data.phone && !data.country && !data.whatsapp && !data.email) {
-    // Обработка формы с только телефоном
-    mailBody = `Телефон: ${data.phone}`;
+  }
+  // 2) phone-only (FormSuperLite сюда попадет)
+  else if (data.phone && !data.country && !data.whatsapp && !data.email) {
+    mailBody = meta + `Телефон: ${data.phone}`;
     isValid = true;
-  } else if (data.phone && data.country && data.email && !data.whatsapp) {
-    // Обработка формы с телефоном, страной и email
-    mailBody = `Телефон: ${data.phone}\nСтрана: ${data.country}\nEmail: ${data.email}`;
+  }
+  // 3) phone+country+email
+  else if (data.phone && data.country && data.email && !data.whatsapp) {
+    mailBody =
+      meta +
+      `Телефон: ${data.phone}\n` +
+      `Страна: ${data.country}\n` +
+      `Email: ${data.email}`;
     isValid = true;
-  } else if (data.whatsapp && !data.phone && !data.country && !data.email) {
-    // Обработка формы с только Whatsapp
-    mailBody = `Whatsapp: ${data.whatsapp}`;
+  }
+  // 4) whatsapp-only
+  else if (data.whatsapp && !data.phone && !data.country && !data.email) {
+    mailBody = meta + `Whatsapp: ${data.whatsapp}`;
     isValid = true;
   } else {
     return NextResponse.json({ error: "Invalid data" }, { status: 400 });
   }
 
-  if (isValid) {
-    const mailOptions: Mail.Options = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: `Запрос с Academgo`,
-      text: mailBody
-    };
+  const mailOptions: Mail.Options = {
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_USER,
+    subject: `Запрос с Academgo`,
+    text: mailBody
+  };
 
-    try {
-      await transport.sendMail(mailOptions);
-      return NextResponse.json({ message: "Email sent" });
-    } catch (err: any) {
-      return NextResponse.json({ error: err.message }, { status: 500 });
-    }
+  try {
+    await transport.sendMail(mailOptions);
+    return NextResponse.json({ message: "Email sent" });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
-
-  return NextResponse.json({ error: "Invalid data" }, { status: 400 });
 }
