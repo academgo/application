@@ -1,11 +1,16 @@
 .surveyWrapper {
   display: grid;
   grid-template-columns: 1fr;
-  height: 80vh;
+   /* fallback */
+  height: 75vh;
+
+  /* iOS/Safari modern: фиксируемся по smallest viewport */
+  height: 75svh;
 
   @media (min-width: 980px) {
     grid-template-columns: 5fr 2fr;
     gap: clamp(0rem, -3.125rem + 12.5vw, 6.25rem);
+    height: 80vh;
   }
 }
 
