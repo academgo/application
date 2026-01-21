@@ -485,6 +485,7 @@ export type Blog = {
     | AccordionBlock
     | TabsBlock
     | DoubleTextBlock
+    | SurveyBlock
   >;
   videoBlock: VideoBlock;
   relatedArticles: RelatedArticle[];

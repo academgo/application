@@ -81,7 +81,8 @@ const blog = {
         { type: "textContent" },
         { type: "accordionBlock" },
         { type: "doubleImagesBlock" },
-        { type: "tabsBlock" }
+        { type: "tabsBlock" },
+        { type: "surveyBlock" }
       ]
     }),
     defineField({

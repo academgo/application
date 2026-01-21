@@ -23,13 +23,15 @@ import {
   DoubleImagesBlock,
   TabsBlock,
   TextContent,
-  DoubleTextBlock
+  DoubleTextBlock,
+  SurveyBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
+import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -40,6 +42,7 @@ type ContentBlock =
   | DoubleImagesBlock
   | AccordionBlock
   | TabsBlock
+  | SurveyBlock
   | DoubleTextBlock;
 
 // Dynamic metadata for SEO
@@ -143,6 +146,14 @@ const PagePost = async ({ params }: Props) => {
           <DoubleTextBlockComponent
             key={block._key}
             block={block as DoubleTextBlock}
+          />
+        );
+      case "surveyBlock":
+        return (
+          <SurveyBlockComponent
+            lang={params.lang}
+            key={block._key}
+            block={block as SurveyBlock}
           />
         );
       case "tabsBlock":
