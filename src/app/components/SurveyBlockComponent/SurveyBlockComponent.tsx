@@ -1,6 +1,6 @@
 import { SurveyBlock } from "@/types/blog";
 import React, { FC } from "react";
-import Survey from "../Survey/Survey";
+import SurveyBlog from "../SurveyBlog/SurveyBlog";
 
 type Props = {
   lang: string;
@@ -10,7 +10,7 @@ type Props = {
 const SurveyBlockComponent: FC<Props> = ({ block, lang }) => {
   return (
     <div>
-      <Survey
+      <SurveyBlog
         lang={lang}
         survey={block.survey}
         quizBlock={block.survey.quizBlock}
