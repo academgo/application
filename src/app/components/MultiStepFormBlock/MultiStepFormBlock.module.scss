@@ -82,14 +82,17 @@
 }
 
 .answerImg {
+  border-radius: 20px;
+  overflow: hidden;
+
   img {
     height: 100%;
-    max-width: 70%;
+    aspect-ratio: 10/4;
     object-fit: cover;
 
     @media screen and (min-width: 768px) {
       width: 100%;
-      max-width: unset;
+      aspect-ratio: 16/9;
     }
   }
 }
