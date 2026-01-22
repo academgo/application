@@ -308,7 +308,7 @@
 
 .label {
   display: block;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
   line-height: 1.5rem;
   font-weight: 500;
   color: rgb(55 65 81 / 70%);
