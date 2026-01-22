@@ -52,6 +52,10 @@ body {
   }
 }
 
+.survey-width {
+  max-width: 950px;
+}
+
 .h2-main {
   color: #091728;
   font-size: clamp(1.5rem, 0.795rem + 3.52vw, 3.438rem);

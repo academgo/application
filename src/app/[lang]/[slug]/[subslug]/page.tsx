@@ -345,11 +345,13 @@ const Subpage = async ({ params }: Props) => {
         );
       case "surveyBlock":
         return (
-          <SurveyBlockComponent
-            lang={params.lang}
-            key={block._key}
-            block={block as SurveyBlock}
-          />
+          <div className="survey-width">
+            <SurveyBlockComponent
+              lang={params.lang}
+              key={block._key}
+              block={block as SurveyBlock}
+            />
+          </div>
         );
       case "offerBlock":
         return (
