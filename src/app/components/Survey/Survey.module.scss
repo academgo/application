@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: 1fr;
    /* fallback */
-  height: 75vh;
-
+  min-height: 80vh;
   /* iOS/Safari modern: фиксируемся по smallest viewport */
-  height: 75svh;
+  min-height: 80svh;
+  height: auto;
 
   @media (min-width: 980px) {
     grid-template-columns: 5fr 2fr;
