@@ -84,10 +84,12 @@
 .answerImg {
   img {
     height: 100%;
+    max-width: 70%;
     object-fit: cover;
 
     @media screen and (min-width: 768px) {
       width: 100%;
+      max-width: unset;
     }
   }
 }
