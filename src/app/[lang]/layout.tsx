@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Academgo",
   metadataBase: new URL("https://academgo.com"),
   other: {
-    "google-site-verification": "y26kx-fqwQmu8vSsuIo8zW09MIp0pnOQNHnGFNggnmQ"
+    "google-site-verification": "Z9rCf2v2CEJMbcFZTAsdruuNBmLVtz6GbrNLHkLEyHM"
   }
 };
 
