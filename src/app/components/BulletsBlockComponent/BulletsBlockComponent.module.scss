@@ -4,7 +4,7 @@
 
 .bulletsList {
   display: grid;
-  gap: 5px;
+  gap: 10px;
   grid-template-columns: 1fr 1fr;
 
   @media screen and (min-width: 768px) {
