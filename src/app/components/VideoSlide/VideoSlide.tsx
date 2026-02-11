@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useState, useRef } from "react";
+import React, { FC, useMemo, useState, useRef, useEffect } from "react";
 import styles from "./VideoSlide.module.scss";
 import { Image as ImageType } from "@/types/homepage";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import YouTube, { YouTubePlayer } from "react-youtube";
 import { urlFor } from "@/sanity/sanity.client";
 
 type Props = {
-  videoId: string;
+  videoId?: string; // ✅ делаем опциональным
   posterImage: ImageType;
   date: string;
   title: string;
@@ -20,9 +20,23 @@ const VideoSlide: FC<Props> = ({ videoId, posterImage, date, title }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const playerRef = useRef<YouTubePlayer | null>(null);
 
+  const hasVideo = useMemo(() => Boolean(videoId && videoId.trim()), [videoId]);
+
+  // ✅ если videoId пропал/пустой — гарантированно сбрасываем состояния
+  useEffect(() => {
+    if (!hasVideo) {
+      setIsVideoLoaded(false);
+      setIsVideoPlaying(false);
+      setIsPlayerReady(false);
+      playerRef.current = null;
+    }
+  }, [hasVideo]);
+
   const onPlayerReady = (event: { target: YouTubePlayer }) => {
+    if (!hasVideo) return; // ✅ защита
     playerRef.current = event.target;
     setIsPlayerReady(true);
+
     if (isVideoLoaded) {
       event.target.playVideo();
       setIsVideoPlaying(true);
@@ -30,30 +44,24 @@ const VideoSlide: FC<Props> = ({ videoId, posterImage, date, title }) => {
   };
 
   const onPlayerStateChange = (event: { data: number }) => {
-    if (event.data === 0) {
-      // Video ended
-      setIsVideoPlaying(false);
-    } else if (event.data === 1) {
-      // Video playing
-      setIsVideoPlaying(true);
-    } else if (event.data === 2) {
-      // Video paused
-      setIsVideoPlaying(false);
-    }
+    if (!hasVideo) return; // ✅ защита
+    if (event.data === 0) setIsVideoPlaying(false);
+    else if (event.data === 1) setIsVideoPlaying(true);
+    else if (event.data === 2) setIsVideoPlaying(false);
   };
 
   const handlePlayPause = () => {
+    if (!hasVideo) return; // ✅ главное: ничего не делаем, если нет id
+
     if (!isVideoLoaded) {
       setIsVideoLoaded(true);
       return;
     }
 
     if (isPlayerReady && playerRef.current) {
-      if (isVideoPlaying) {
-        playerRef.current.pauseVideo();
-      } else {
-        playerRef.current.playVideo();
-      }
+      if (isVideoPlaying) playerRef.current.pauseVideo();
+      else playerRef.current.playVideo();
+
       setIsVideoPlaying(!isVideoPlaying);
     }
   };
@@ -73,29 +81,39 @@ const VideoSlide: FC<Props> = ({ videoId, posterImage, date, title }) => {
             <div className={styles.overlay}></div>
           </>
         )}
-        <button
-          className={isVideoPlaying ? styles.playingButton : styles.playButton}
-          onClick={handlePlayPause}
-          aria-label={
-            isVideoPlaying ? `Pause video: ${title}` : `Play video: ${title}`
-          }
-        >
-          {isVideoPlaying ? (
-            <FaPause className={styles.playIcon} color="#fff" fontSize="1em" />
-          ) : (
-            <FaPlay className={styles.playIcon} color="#fff" fontSize="1em" />
-          )}
-        </button>
-        {isVideoLoaded && (
+
+        {/* ✅ кнопку показываем только если есть videoId */}
+        {hasVideo && (
+          <button
+            className={
+              isVideoPlaying ? styles.playingButton : styles.playButton
+            }
+            onClick={handlePlayPause}
+            aria-label={
+              isVideoPlaying ? `Pause video: ${title}` : `Play video: ${title}`
+            }
+            type="button"
+          >
+            {isVideoPlaying ? (
+              <FaPause
+                className={styles.playIcon}
+                color="#fff"
+                fontSize="1em"
+              />
+            ) : (
+              <FaPlay className={styles.playIcon} color="#fff" fontSize="1em" />
+            )}
+          </button>
+        )}
+
+        {/* ✅ плеер рендерим только если есть videoId */}
+        {hasVideo && isVideoLoaded && (
           <YouTube
-            videoId={videoId}
+            videoId={videoId!}
             opts={{
               width: "100%",
               height: "100%",
-              playerVars: {
-                autoplay: 1, // Autoplay when initializing
-                controls: 0
-              }
+              playerVars: { autoplay: 1, controls: 0 }
             }}
             onReady={onPlayerReady}
             onStateChange={onPlayerStateChange}
@@ -103,6 +121,7 @@ const VideoSlide: FC<Props> = ({ videoId, posterImage, date, title }) => {
           />
         )}
       </div>
+
       <div className={styles.videoSlideContent}>
         <p className={styles.date}>{date}</p>
         <p className={styles.title}>{title}</p>

@@ -17,7 +17,7 @@ const VideosSection: FC<Props> = ({ videosTitle, videos }) => {
         <SliderMain className={styles.videosSlider}>
           {videos.map((video, index) => (
             <VideoSlide
-              key={index}
+              key={video._key ?? index}
               videoId={video.videoId}
               posterImage={video.posterImage}
               date={video.date}
