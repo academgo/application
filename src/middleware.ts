@@ -5,6 +5,22 @@ import { defaultLocale, locales } from "@/i18n.config";
 
 const PRIMARY_HOST = "academgo.com";
 
+/** Индексируется только основной домен — всё остальное тестовое */
+const isIndexableHost = (host: string) =>
+  host === PRIMARY_HOST || host === `www.${PRIMARY_HOST}`;
+
+/**
+ * Запрет в robots.txt закрывает обход, но не индексацию: по внешней ссылке
+ * страница превью всё равно попадёт в выдачу. Заголовок это исключает.
+ */
+const withNoindex = (response: NextResponse, host: string) => {
+  if (!isIndexableHost(host)) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
+
+  return response;
+};
+
 export default async function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
@@ -33,7 +49,7 @@ export default async function middleware(request: NextRequest) {
     localeDetection: false
   });
 
-  return handleI18nRouting(request);
+  return withNoindex(handleI18nRouting(request), host);
 }
 
 export const config = {

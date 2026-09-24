@@ -1,8 +1,15 @@
 import { MetadataRoute } from "next";
+import { headers } from "next/headers";
+
+const PRIMARY_HOST = "academgo.com";
 
 export default function robots(): MetadataRoute.Robots {
-  // Preview-деплои (ветки) закрываем от индексации целиком
-  if (process.env.VERCEL_ENV === "preview") {
+  const host = headers().get("host") || "";
+
+  // Всё, что не основной домен, — превью и тестовые домены: закрываем целиком.
+  // Обход запрещаем здесь, а саму индексацию — заголовком X-Robots-Tag
+  // из middleware: одного robots.txt для этого недостаточно.
+  if (host !== PRIMARY_HOST && host !== `www.${PRIMARY_HOST}`) {
     return {
       rules: [{ userAgent: "*", disallow: "/" }]
     };
