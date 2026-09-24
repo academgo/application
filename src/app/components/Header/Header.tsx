@@ -1,6 +1,6 @@
 import { Translation } from "@/types/post";
 import LocaleSwitcher from "../LocaleSwitcher/LocaleSwitcher";
-import { getHeaderByLang } from "@/sanity/sanity.utils";
+import { getCountriesByLang, getHeaderByLang } from "@/sanity/sanity.utils";
 import { Header as HeaderType } from "@/types/header";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
@@ -14,7 +14,10 @@ type Props = {
 };
 
 const Header = async ({ translations, params }: Props) => {
-  const data = await getHeaderByLang(params.lang);
+  const [data, countries] = await Promise.all([
+    getHeaderByLang(params.lang),
+    getCountriesByLang(params.lang)
+  ]);
 
   return (
     <header className={styles.header}>
@@ -47,7 +50,11 @@ const Header = async ({ translations, params }: Props) => {
             <p className={styles.description}>{data.description}</p>
           </div>
           <div className={styles.navWrapperParent}>
-            <NavWrapper navLinks={data.navLinks} params={params} />
+            <NavWrapper
+              navLinks={data.navLinks}
+              params={params}
+              countries={countries}
+            />
           </div>
           <div className={styles.contacts}>
             <div className={styles.contactLinks}>

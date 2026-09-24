@@ -1,0 +1,147 @@
+.countriesSection {
+  padding: clamp(2.5rem, 1.8rem + 3.5vw, 5rem) 0;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(1.5rem, 1.1rem + 2vw, 2.5rem);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.75rem, 1.3rem + 2.25vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 12px;
+}
+
+.highlight {
+  color: #f39708;
+}
+
+.description {
+  color: #4c5a6d;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.5;
+  max-width: 640px;
+  margin: 0;
+}
+
+.compareLink {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 24px;
+  border-radius: 10px 10px 10px 0;
+  background: #112546;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background ease-in-out 0.2s;
+
+  &:hover {
+    background: #f39708;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+
+  @media screen and (max-width: 1320px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  @media screen and (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 20px;
+  border-radius: 15px 15px 15px 0;
+  background: #f5f7fa;
+  text-decoration: none;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    background: #112546;
+    transform: translateY(-4px);
+
+    .countryTitle,
+    .cardText,
+    .tuition {
+      color: #fff;
+    }
+
+    .cardLink {
+      color: #f39708;
+    }
+  }
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag {
+  width: 36px;
+  height: 27px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.countryTitle {
+  color: #091728;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: color ease-in-out 0.2s;
+}
+
+.cardText {
+  color: #4c5a6d;
+  font-size: 15px;
+  line-height: 1.45;
+  transition: color ease-in-out 0.2s;
+}
+
+.tuition {
+  color: #091728;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color ease-in-out 0.2s;
+}
+
+.cardLink {
+  margin-top: auto;
+  color: #f39708;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color ease-in-out 0.2s;
+}

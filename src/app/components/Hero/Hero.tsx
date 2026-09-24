@@ -1,7 +1,6 @@
 import styles from "./Hero.module.scss";
 import React, { FC } from "react";
 import { Image as ImageType, Flag } from "@/types/homepage";
-import { PL } from "country-flag-icons/react/1x1";
 import FlagsCarousel from "../FlagsCarousel/FlagsCarousel";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.client";
@@ -49,9 +48,7 @@ const Hero: FC<Props> = ({
                     {mainHeadingHighlight}
                     <span className={styles.tooltip}>{tooltip}</span>
                   </span>{" "}
-                  {mainHeadingContinue}{" "}
-                  <PL title="Poland" className={styles.flagIcon} />{" "}
-                  {mainHeadingEnd}{" "}
+                  {mainHeadingContinue} {mainHeadingEnd}{" "}
                 </p>
               </div>
               <div className={styles.descriptionBlock}>

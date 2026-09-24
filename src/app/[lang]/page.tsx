@@ -1,6 +1,9 @@
 import { Metadata } from "next";
+import { homeLanguageAlternates } from "@/lib/hreflang";
 import Header from "../components/Header/Header";
 import {
+  getCountriesByLang,
+  getCountryNamesByLang,
   getFormStandardDocumentByLang,
   getHomePageByLang
 } from "@/sanity/sanity.utils";
@@ -27,6 +30,7 @@ import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
 import AccordionContainer from "../components/AccordionContainer/AccordionContainer";
 import MultiStepFormBlock from "../components/MultiStepFormBlock/MultiStepFormBlock";
+import CountriesSection from "../components/CountriesSection/CountriesSection";
 
 type Props = {
   params: { lang: string; slug: string };
@@ -37,7 +41,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const homePage = await getHomePageByLang(params.lang);
   return {
     title: homePage?.seo?.title,
-    description: homePage?.seo?.description
+    description: homePage?.seo?.description,
+    alternates: {
+      canonical: params.lang === "en" ? "/" : `/${params.lang}`,
+      languages: homeLanguageAlternates()
+    }
   };
 }
 
@@ -46,6 +54,9 @@ export default async function Home({ params }: Props) {
 
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
+
+  const countries = await getCountriesByLang(params.lang);
+  const countryNames = await getCountryNamesByLang(params.lang);
 
   // console.log("homePage", homePage);
 
@@ -113,6 +124,10 @@ export default async function Home({ params }: Props) {
           conditionThird={homePage.conditionThird}
           conditionFourth={homePage.conditionFourth}
         />
+        <CountriesSection
+          block={homePage.countriesBlock}
+          countries={countries}
+        />
         <Universities data={homePage.universitiesBlock} />
         <VideosSection
           videosTitle={homePage.videosTitle}
@@ -142,7 +157,8 @@ export default async function Home({ params }: Props) {
         <Survey
           lang={params.lang}
           survey={homePage.survey}
-          quizBlock={homePage.quizBlock}
+          quizBlock={homePage.quizDocumentBlock || homePage.quizBlock}
+          countryOptions={countryNames}
         />
         <About
           aboutSummary={homePage.aboutSummary}
