@@ -49,6 +49,14 @@ const header = {
               type: "string"
             }),
             defineField({
+              name: "showCountries",
+              title: "Show countries menu",
+              type: "boolean",
+              initialValue: false,
+              description:
+                "Если включено, под этим пунктом автоматически выводятся все страны из раздела Country со своими ссылками. Ручные Sub links тогда не нужны."
+            }),
+            defineField({
               name: "subLinks",
               title: "Sub links",
               type: "array",

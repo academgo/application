@@ -11,6 +11,8 @@ import { NotFoundPage } from "@/types/notFoundPage";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Singlepage } from "@/types/singlepage";
 import { Subpage } from "@/types/subpage";
+import { Country, University } from "@/types/country";
+import { pageHref } from "@/lib/pageHref";
 
 // for the query can be adjusted to be data that you need
 export async function getPostsByLang(lang: string): Promise<Post[]> {
@@ -54,7 +56,7 @@ export async function getBlogPageByLang(lang: string): Promise<BlogPage> {
     metaDescription,
     faq,
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -79,6 +81,7 @@ export async function getBlogPostByLang(
   const blogQuery = groq`*[_type == 'blog' && slug[$lang].current == $slug][0] {
     _id,
     title,
+    shortTitle,
     slug,
     seo,
     category->{
@@ -101,7 +104,7 @@ export async function getBlogPostByLang(
       }
     },
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -134,7 +137,7 @@ export async function getFourPostsByLang(
     },
     publishedAt,
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -167,7 +170,7 @@ export async function getNinePostsByLang(
     },
     publishedAt,
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -197,7 +200,7 @@ export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
     },
     publishedAt,
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -341,6 +344,25 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionSecond,
     conditionThird,
     conditionFourth,
+    countriesBlock,
+    "quizDocumentBlock": quizDocument->quiz{
+          finalTitle,
+          formTitle,
+          inputLabel,
+          buttonText,
+          questions[]{
+            _key,
+            questionTitle,
+            useGrayStyle,
+            optionsSource,
+            extraOption,
+            options[]{
+              _key,
+              label,
+              value
+            }
+          }
+        },
     universitiesBlock,
     videosTitle,
     videos,
@@ -416,7 +438,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     faq,
     language,
     slug,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -444,7 +466,7 @@ export async function getSuccessPageByLang(lang: string): Promise<SuccessPage> {
     socialIcons,
     image,
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -466,7 +488,7 @@ export async function getNotFoundPageByLang(
     buttonText,
     image,
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -499,15 +521,42 @@ export async function getSinglePageByLang(
   const singlePageQuery = groq`*[_type == 'singlepage' && slug[$lang].current == $slug][0] {
     _id,
     title,
+    shortTitle,
     slug,
     seo,
     coverBlock,
     previewImage,
+    pageType,
+    "countryCode": country->code,
+    "countryTitle": country->title,
     contentBlocks[]{
       ...,
+      _type == "leadMagnetBlock" => {
+        ...,
+        "fileUrl": file.asset->url,
+        "coverUrl": coverImage.asset->url
+      },
       _type == "surveyBlock" => {
         _key,
         _type,
+        "quiz": survey.quizDocument->quiz{
+          finalTitle,
+          formTitle,
+          inputLabel,
+          buttonText,
+          questions[]{
+            _key,
+            questionTitle,
+            useGrayStyle,
+            optionsSource,
+            extraOption,
+            options[]{
+              _key,
+              label,
+              value
+            }
+          }
+        },
         survey{
           title,
           // image,
@@ -541,7 +590,7 @@ export async function getSinglePageByLang(
       }
     },
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
     },
   }`;
@@ -566,14 +615,41 @@ export async function getSingleSubPageBySlug(
   const subPageQuery = groq`*[_type == 'subpage' && slug[$lang].current == $subslug][0] {
     _id,
     title,
+    shortTitle,
     slug,
     seo,
     coverBlock,
+    pageType,
+    "countryCode": country->code,
+    "countryTitle": country->title,
     contentBlocks[]{
       ...,
+      _type == "leadMagnetBlock" => {
+        ...,
+        "fileUrl": file.asset->url,
+        "coverUrl": coverImage.asset->url
+      },
       _type == "surveyBlock" => {
         _key,
         _type,
+        "quiz": survey.quizDocument->quiz{
+          finalTitle,
+          formTitle,
+          inputLabel,
+          buttonText,
+          questions[]{
+            _key,
+            questionTitle,
+            useGrayStyle,
+            optionsSource,
+            extraOption,
+            options[]{
+              _key,
+              label,
+              value
+            }
+          }
+        },
         survey{
           title,
           // image,
@@ -609,11 +685,15 @@ export async function getSingleSubPageBySlug(
     parentPage->{
       _id,
       title,
+      shortTitle,
       slug
     },
     language,
-    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+    "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
       slug,
+      parentPage->{
+        slug
+      },
     },
   }`;
 
@@ -665,4 +745,183 @@ export async function getSubPagesByLang(
   }`;
 
   return client.fetch(q, { lang }, { next: { revalidate: 60 } });
+}
+
+// ✅ NEW: страны для мега-меню, главной и страницы сравнения
+export async function getCountriesByLang(lang: string): Promise<Country[]> {
+  const q = groq`*[
+    _type == "country" &&
+    language == $lang
+  ] | order(order asc) {
+    _id,
+    title,
+    code,
+    flag,
+    "flagUrl": flag.asset->url,
+    order,
+    isFeatured,
+    shortDescription,
+    comparison,
+    hubPage->{
+      _type,
+      slug
+    },
+    menuLinks[]{
+      _key,
+      label,
+      page->{
+        _type,
+        slug,
+        parentPage->{
+          slug
+        }
+      }
+    }
+  }`;
+
+  const countries = await client.fetch(q, { lang }, { next: { revalidate: 60 } });
+
+  if (!countries) return [];
+
+  return countries.map((country: any) => ({
+    _id: country._id,
+    title: country.title,
+    code: country.code,
+    flag: country.flag,
+    flagUrl: country.flagUrl,
+    order: country.order,
+    isFeatured: country.isFeatured,
+    shortDescription: country.shortDescription,
+    comparison: country.comparison,
+    hubHref: pageHref(lang, country.hubPage),
+    menuLinks: (country.menuLinks || [])
+      .map((item: any) => ({
+        _key: item._key,
+        label: item.label,
+        href: pageHref(lang, item.page)
+      }))
+      .filter((item: any) => item.label && item.href)
+  }));
+}
+
+// ✅ NEW: университеты страны (блок «Похожие университеты», списки на хабе)
+export async function getUniversitiesByLang(
+  lang: string,
+  countryCode?: string
+): Promise<University[]> {
+  const q = groq`*[
+    _type == "university" &&
+    language == $lang
+    ${countryCode ? "&& country->code == $countryCode" : ""}
+  ] | order(order asc) {
+    _id,
+    title,
+    titleLocal,
+    city,
+    type,
+    logo,
+    "logoUrl": logo.asset->url,
+    tuitionFrom,
+    programsLanguage,
+    highlight,
+    order,
+    "countryCode": country->code,
+    "countryTitle": country->title,
+    "pageId": page->_id,
+    page->{
+      _type,
+      slug,
+      parentPage->{
+        slug
+      }
+    }
+  }`;
+
+  // countryCode в params только когда он есть: undefined уходит строкой "undefined"
+  const universities = await client.fetch(
+    q,
+    countryCode ? { lang, countryCode } : { lang },
+    { next: { revalidate: 60 } }
+  );
+
+  if (!universities) return [];
+
+  return universities.map((university: any) => ({
+    ...university,
+    href: pageHref(lang, university.page)
+  }));
+}
+
+// ✅ NEW: список стран для вопроса квиза «куда хотите поехать»
+export async function getCountryNamesByLang(lang: string): Promise<string[]> {
+  const q = groq`*[
+    _type == "country" &&
+    language == $lang
+  ] | order(order asc).title`;
+
+  const names = await client.fetch(q, { lang }, { next: { revalidate: 60 } });
+
+  return (names || []).filter(Boolean);
+}
+
+type SitemapEntry = {
+  slug: any;
+  _updatedAt: string;
+  parentPage?: { slug: any } | null;
+  _translations?: Array<{ slug: any; parentPage?: { slug: any } | null }>;
+};
+
+const TRANSLATIONS_PROJECTION = groq`*[
+  _type == "translation.metadata" &&
+  references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))
+].translations[].value->{
+  slug,
+  parentPage->{ slug }
+}`;
+
+/**
+ * Страницы для sitemap: свой слаг, дата обновления и слаги языковых версий —
+ * из них собираются hreflang-альтернативы прямо в карте сайта.
+ */
+export async function getPagesForSitemap(
+  type: "singlepage" | "subpage",
+  lang: string
+): Promise<SitemapEntry[]> {
+  const q = groq`*[
+    _type == $type &&
+    language == $lang &&
+    !(_id in path("drafts.**"))
+  ]{
+    slug,
+    _updatedAt,
+    parentPage->{ slug },
+    "_translations": ${TRANSLATIONS_PROJECTION}
+  }`;
+
+  const pages = await client.fetch(
+    q,
+    { type, lang },
+    { next: { revalidate: 60 } }
+  );
+
+  return pages || [];
+}
+
+/** Посты блога для sitemap — с датой обновления и языковыми версиями */
+export async function getBlogPostsForSitemap(
+  lang: string
+): Promise<SitemapEntry[]> {
+  const q = groq`*[
+    _type == "blog" &&
+    language == $lang &&
+    !(_id in path("drafts.**"))
+  ]{
+    slug,
+    _updatedAt,
+    "_translations": ${TRANSLATIONS_PROJECTION}
+  }`;
+
+  const posts = await client.fetch(q, { lang }, { next: { revalidate: 60 } });
+
+  return posts || [];
 }

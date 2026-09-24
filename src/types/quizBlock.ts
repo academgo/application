@@ -9,6 +9,10 @@ export type QuizQuestion = {
   name: string; // stable field key for Formik
   questionTitle: string;
   options: QuizOption[];
+  /** "countries" — варианты подставляются из списка стран обучения */
+  optionsSource?: "manual" | "countries";
+  /** последний вариант для списка стран: «Ещё не выбрал(а)» */
+  extraOption?: string;
 };
 
 export type QuizBlock = {

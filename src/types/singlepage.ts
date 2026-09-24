@@ -18,6 +18,10 @@ export type Coverblock = {
 };
 
 export type Singlepage = {
+  shortTitle?: string;
+  countryCode?: string;
+  countryTitle?: string;
+  pageType?: string;
   _id: string;
   _type: string;
   title: string;

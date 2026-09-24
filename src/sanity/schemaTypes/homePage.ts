@@ -223,6 +223,48 @@ export default defineType({
       ]
     }),
     defineField({
+      name: "countriesBlock",
+      title: "Countries Block",
+      type: "object",
+      description:
+        "Блок «Страны обучения» на главной. Сами страны берутся из раздела Country (те, у которых включено Show on homepage).",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string"
+        }),
+        defineField({
+          name: "titleHighlight",
+          title: "Title highlight",
+          type: "string"
+        }),
+        defineField({
+          name: "description",
+          title: "Description",
+          type: "text",
+          rows: 3
+        }),
+        defineField({
+          name: "cardLinkLabel",
+          title: "Card link label",
+          type: "string",
+          description: "Текст ссылки в карточке страны: «Подробнее» / «Learn more»"
+        }),
+        defineField({
+          name: "compareLabel",
+          title: "Compare link label",
+          type: "string"
+        }),
+        defineField({
+          name: "compareLink",
+          title: "Compare link",
+          type: "string",
+          description: "Ссылка на страницу сравнения стран"
+        })
+      ]
+    }),
+    defineField({
       name: "universitiesBlock",
       title: "Universities Block",
       type: "object",
@@ -594,8 +636,16 @@ export default defineType({
     // survey block
     // quiz block
     defineField({
+      name: "quizDocument",
+      title: "Quiz",
+      type: "reference",
+      to: [{ type: "quizDocument" }],
+      description:
+        "Общий квиз из раздела Quiz. Если заполнено, вопросы ниже не используются."
+    }),
+    defineField({
       name: "quizBlock",
-      title: "Quiz Block",
+      title: "Quiz Block (свои вопросы для главной)",
       type: "quizBlock"
     }),
     // quiz block

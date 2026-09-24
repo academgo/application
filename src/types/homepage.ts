@@ -219,7 +219,18 @@ export type Seo = {
   description: string;
 };
 
+export type CountriesBlock = {
+  title?: string;
+  titleHighlight?: string;
+  description?: string;
+  cardLinkLabel?: string;
+  compareLabel?: string;
+  compareLink?: string;
+};
+
 export type Homepage = {
+  countriesBlock?: CountriesBlock;
+  quizDocumentBlock?: QuizBlock;
   _type: "homepage";
   _id: string;
   _rev: string;

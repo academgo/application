@@ -2,6 +2,8 @@ import accordionBlock from "./accordionBlock";
 import blog from "./blog";
 import blogPage from "./blogPage";
 import category from "./category";
+import country from "./country";
+import university from "./university";
 import contentBlock from "./contentBlock";
 import doubleImagesBlock from "./doubleImagesBlock";
 import footer from "./footer";
@@ -38,10 +40,15 @@ import offerBlock from "./offerBlock";
 import pricingTable from "./pricingTable";
 import packagesBlock from "./packagesBlock";
 import quizBlock from "./quizBlock";
+import quizDocument from "./quizDocument";
 import quizQuestion from "./quizQuestion";
 import quizOption from "./quizOption";
 import tableBlock from "./tableBlock";
 import videosBlock from "./videosBlock";
+import countriesCompareBlock from "./countriesCompareBlock";
+import countriesLinksBlock from "./countriesLinksBlock";
+import countryUniversitiesBlock from "./countryUniversitiesBlock";
+import leadMagnetBlock from "./leadMagnetBlock";
 
 export const schemaTypes = [
   header,
@@ -51,6 +58,8 @@ export const schemaTypes = [
   blog,
   singlepage,
   subpage,
+  country,
+  university,
   category,
   blogPage,
   successPage,
@@ -84,6 +93,11 @@ export const schemaTypes = [
   linksBlock,
   videosBlock,
   tableBlock,
+  countriesCompareBlock,
+  countriesLinksBlock,
+  countryUniversitiesBlock,
+  leadMagnetBlock,
+  quizDocument,
   quizBlock,
   quizQuestion,
   quizOption,

@@ -19,6 +19,10 @@ type Coverblock = {
 };
 
 export type Subpage = {
+  shortTitle?: string;
+  countryCode?: string;
+  countryTitle?: string;
+  pageType?: string;
   _id: string;
   _type: string;
   title: string;
@@ -43,6 +47,7 @@ export type Subpage = {
   parentPage: {
     _id: string;
     title: string;
+    shortTitle?: string;
     slug: {
       [lang: string]: {
         current: string;

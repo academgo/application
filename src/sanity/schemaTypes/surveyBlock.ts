@@ -52,8 +52,16 @@ const surveyBlock = defineType({
         //   type: "string"
         // }),
         defineField({
+          name: "quizDocument",
+          title: "Quiz",
+          type: "reference",
+          to: [{ type: "quizDocument" }],
+          description:
+            "Общий квиз: вопросы редактируются один раз в разделе Quiz. Если поле заполнено, вопросы ниже не используются."
+        }),
+        defineField({
           name: "quizBlock",
-          title: "Quiz Block",
+          title: "Quiz Block (свои вопросы для этой страницы)",
           type: "quizBlock"
         })
       ]

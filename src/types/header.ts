@@ -16,6 +16,7 @@ type navLink = {
   label: string;
   link: string;
   subLinks: Sublink[];
+  showCountries?: boolean;
 };
 
 type contactLink = {
