@@ -8,7 +8,11 @@ const PRIMARY_HOST = "academgo.com";
 export default async function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
-  if (host.endsWith(".vercel.app")) {
+  // На production-домене vercel.app уводим на основной домен,
+  // а preview-деплои (ветки) оставляем доступными — на них смотрим новые страны
+  const isPreviewDeployment = process.env.VERCEL_ENV === "preview";
+
+  if (host.endsWith(".vercel.app") && !isPreviewDeployment) {
     const url = request.nextUrl.clone();
     url.hostname = PRIMARY_HOST;
     url.protocol = "https";
@@ -34,7 +38,9 @@ export default async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|admin|structure|_next/image|favicon.ico).*)",
+    // robots.txt и sitemap.xml обязаны отдаваться как есть: middleware
+    // перехватывал их раньше rewrite, и поисковики получали HTML вместо файла
+    "/((?!api|_next/static|admin|structure|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
     "/(en|ru)/:path*"
   ]
 };

@@ -1,6 +1,13 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  // Preview-деплои (ветки) закрываем от индексации целиком
+  if (process.env.VERCEL_ENV === "preview") {
+    return {
+      rules: [{ userAgent: "*", disallow: "/" }]
+    };
+  }
+
   return {
     rules: [
       {
@@ -8,6 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [
           "/admin",
+          "/single-page",
           "/ru/success",
           "/en/success",
           "*?gtm",

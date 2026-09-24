@@ -29,6 +29,7 @@ import {
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
+import { buildLanguageAlternates } from "@/lib/hreflang";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
@@ -58,7 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: data?.seo.metaTitle ?? undefined,
     description: data?.seo.metaDescription ?? undefined,
     alternates: {
-      canonical: canonicalPath
+      canonical: canonicalPath,
+      languages: buildLanguageAlternates(data?._translations, "blog")
     }
   };
 }

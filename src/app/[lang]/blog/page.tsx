@@ -33,7 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: data?.metaTitle ?? "Academgo Blog",
     description: data?.metaDescription ?? undefined,
     alternates: {
-      canonical: canonicalPath
+      canonical: canonicalPath,
+      languages: {
+        en: "/blog",
+        ru: "/ru/blog",
+        "x-default": "/blog"
+      }
     }
   };
 }
