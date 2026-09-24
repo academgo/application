@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# import artifacts
+content/import/out/
+
+# исследования клиента: большие исходники, в сборке не нужны
+docs/
