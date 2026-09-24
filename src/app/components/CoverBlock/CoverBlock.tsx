@@ -11,18 +11,40 @@ type Props = {
 
 const CoverBlock: FC<Props> = ({ coverBlock }) => {
   // console.log("Cover block", coverBlock);
+  if (!coverBlock) return null;
+
   const { coverImage, coverImageAlt, coverTitle, coverText } = coverBlock;
+
+  // Обложка может быть ещё не загружена — тогда показываем блок без картинки,
+  // иначе urlFor падает и ломает рендер всей страницы
+  const coverImageUrl = coverImage ? urlFor(coverImage).url() : null;
+
   return (
-    <section className={styles.coverBlock}>
-      <div className={styles.overlay}></div>
-      <Image
-        alt={coverImageAlt || coverTitle}
-        src={urlFor(coverImage).url()}
-        fill={true}
-        className={styles.image}
-      />
+    <section
+      className={`${styles.coverBlock} ${
+        coverImageUrl ? "" : styles.coverBlockPlain
+      }`}
+    >
+      {coverImageUrl && (
+        <>
+          <div className={styles.overlay}></div>
+          <Image
+            alt={coverImageAlt || coverTitle}
+            src={coverImageUrl}
+            fill={true}
+            className={styles.image}
+          />
+        </>
+      )}
       <div className={styles.textBlock}>
-        <h1 className={styles.title}>{coverTitle}</h1>
+        {/* длинные заголовки капсом занимают пол-экрана — им уменьшаем кегль */}
+        <h1
+          className={`${styles.title} ${
+            (coverTitle || "").length > 55 ? styles.titleLong : ""
+          }`}
+        >
+          {coverTitle}
+        </h1>
         {coverText && <p className={styles.text}>{coverText}</p>}
       </div>
     </section>

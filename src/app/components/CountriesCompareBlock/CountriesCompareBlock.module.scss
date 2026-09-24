@@ -1,0 +1,118 @@
+.compareBlock {
+  margin: clamp(2rem, 1.6rem + 2vw, 3.5rem) 0;
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.description {
+  color: #4c5a6d;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  max-width: 760px;
+}
+
+.tableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #f39708;
+    border-radius: 4px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  font-size: 15px;
+
+  th,
+  td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e3e8ef;
+    vertical-align: top;
+    color: #091728;
+  }
+
+  thead th {
+    background: #112546;
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &:first-child {
+      border-radius: 10px 0 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 10px 0 0;
+    }
+  }
+
+  tbody tr:hover {
+    background: #f5f7fa;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 740px;
+  }
+}
+
+.countryCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  a {
+    color: #091728;
+    text-decoration: none;
+
+    &:hover {
+      color: #f39708;
+    }
+  }
+}
+
+.flag {
+  width: 28px;
+  height: 21px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.link {
+  color: #f39708;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.note {
+  color: #6b7789;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 14px 0 0;
+}

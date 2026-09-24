@@ -1,0 +1,140 @@
+.leadMagnet {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin: clamp(2rem, 1.6rem + 2vw, 3.5rem) 0;
+  padding: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+  border-radius: 20px 20px 20px 0;
+  background: #112546;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.content {
+  color: #fff;
+}
+
+.title {
+  color: #fff;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+}
+
+.marker {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: #f39708;
+}
+
+.cover {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.form {
+  align-self: start;
+  padding: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  border-radius: 15px 15px 15px 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.formTitle {
+  /* как offerFormTitle в блоке оффера, но на шаг компактнее */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.64px;
+  margin: 0 0 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+    letter-spacing: -1.2px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Поля и кнопка приходят из стилей обычных форм сайта — они рассчитаны
+   на крупный блок оффера. В лид-магните уменьшаем их, сохраняя вид. */
+.form {
+  :global(input[type="text"]),
+  :global(input[type="email"]) {
+    padding: 14px 22px;
+    font-size: 15px;
+  }
+
+  button[type="submit"] {
+    height: 52px;
+    padding: 14px 22px;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    :global(input[type="text"]),
+    :global(input[type="email"]) {
+      padding: 16px 26px;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      height: 58px;
+      font-size: 16px;
+    }
+  }
+}
+
+.success {
+  color: #7ce0a0;
+  font-size: 14px;
+  margin: 0;
+
+  a {
+    color: #f39708;
+  }
+}
+
+.error {
+  color: #ff9b91;
+  font-size: 14px;
+  margin: 0;
+}

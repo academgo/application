@@ -1,0 +1,113 @@
+.universitiesBlock {
+  margin: clamp(2rem, 1.6rem + 2vw, 3.5rem) 0;
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.description {
+  color: #4c5a6d;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 15px 15px 15px 0;
+  background: #f5f7fa;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.logoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #112546;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.name {
+  color: #091728;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.city {
+  color: #6b7789;
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+.highlight {
+  color: #4c5a6d;
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaRow {
+  dd {
+    margin: 0;
+    color: #091728;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.link {
+  margin-top: auto;
+  color: #f39708;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

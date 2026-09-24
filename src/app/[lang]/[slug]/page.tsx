@@ -44,6 +44,7 @@ import {
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
+import { buildLanguageAlternates } from "@/lib/hreflang";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
@@ -69,6 +70,19 @@ import PricingTableComponent from "@/app/components/PricingTableComponent/Pricin
 import PackagesBlockComponent from "@/app/components/PackagesBlockComponent/PackagesBlockComponent";
 import TableBlockComponent from "@/app/components/TableBlockComponent/TableBlockComponent";
 import VideosSection from "@/app/components/VideosSection/VideosSection";
+import StudyCountryTracker from "@/app/components/Analytics/StudyCountryTracker";
+import LeadMagnetBlock, {
+  LeadMagnetBlockType
+} from "@/app/components/LeadMagnetBlock/LeadMagnetBlock";
+import CountriesCompareBlock, {
+  CountriesCompareBlockType
+} from "@/app/components/CountriesCompareBlock/CountriesCompareBlock";
+import CountriesLinksBlock, {
+  CountriesLinksBlockType
+} from "@/app/components/CountriesLinksBlock/CountriesLinksBlock";
+import CountryUniversitiesBlock, {
+  CountryUniversitiesBlockType
+} from "@/app/components/CountryUniversitiesBlock/CountryUniversitiesBlock";
 
 const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
   ssr: false
@@ -103,7 +117,11 @@ type ContentBlock =
   | PricingTable
   | TableBlock
   | VideosBlock
-  | PackagesBlock;
+  | PackagesBlock
+  | CountriesCompareBlockType
+  | CountriesLinksBlockType
+  | CountryUniversitiesBlockType
+  | LeadMagnetBlockType;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -118,7 +136,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: data?.seo.metaTitle ?? undefined,
     description: data?.seo.metaDescription ?? undefined,
     alternates: {
-      canonical: canonicalPath
+      canonical: canonicalPath,
+      languages: buildLanguageAlternates(data?._translations)
     }
   };
 }
@@ -300,7 +319,7 @@ const SinglePage = async ({ params }: Props) => {
         );
       case "tableBlock":
         return (
-          <div className="container-table">
+          <div className="container-table" key={block._key}>
             <TableBlockComponent key={block._key} block={block as TableBlock} />
           </div>
         );
@@ -336,6 +355,46 @@ const SinglePage = async ({ params }: Props) => {
             block={block as PackagesBlock}
           />
         );
+      case "countriesCompareBlock":
+        return (
+          <CountriesCompareBlock
+            key={block._key}
+            block={block as CountriesCompareBlockType}
+            lang={params.lang}
+          />
+        );
+      case "countriesLinksBlock":
+        return (
+          <CountriesLinksBlock
+            key={block._key}
+            block={block as CountriesLinksBlockType}
+            lang={params.lang}
+            currentCountryCode={page.countryCode}
+          />
+        );
+      case "countryUniversitiesBlock":
+        return (
+          <CountryUniversitiesBlock
+            key={block._key}
+            block={block as CountryUniversitiesBlockType}
+            lang={params.lang}
+            currentCountryCode={page.countryCode}
+            currentPageId={page._id}
+          />
+        );
+      case "leadMagnetBlock":
+        return (
+          <LeadMagnetBlock
+            key={block._key}
+            block={block as LeadMagnetBlockType}
+            lang={params.lang}
+            policy={{
+              text: formDocument?.form?.agreementText,
+              linkLabel: formDocument?.form?.agreementLinkLabel,
+              linkDestination: formDocument?.form?.agreementLinkDestination
+            }}
+          />
+        );
       default:
         return <p key={block._key}>Unsupported block type</p>;
     }
@@ -346,11 +405,20 @@ const SinglePage = async ({ params }: Props) => {
   return (
     <>
       <Header params={params} translations={translations} />
+      <StudyCountryTracker
+        countryCode={page.countryCode}
+        countryTitle={page.countryTitle}
+        pageType={page.pageType}
+      />
       <main>
         {/* <PreviewMain previewImage={page.previewImage} title={page.title} /> */}
         <div className="container">
           <CoverBlock coverBlock={page.coverBlock} />
-          <Breadcrumbs lang={lang} slug={slug} title={page.title} />
+          <Breadcrumbs
+            lang={lang}
+            slug={slug}
+            title={page.shortTitle || page.title}
+          />
           {/* <SinglePageIntroBlock title={page.title} /> */}
           {/* breadcrumbs here */}
           {page.contentBlocks.map(block => renderContentBlock(block))}

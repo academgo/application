@@ -64,6 +64,16 @@
   }
 }
 
+.titleLong {
+  font-size: clamp(1.25rem, 0.6rem + 3.2vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: -1.5px;
+  }
+}
+
 .text {
   color: #FFF;
   font-size: clamp(0.75rem, 0.455rem + 1.48vw, 1.563rem);
@@ -74,5 +84,44 @@
 
   @media screen and (min-width: 768px) {
     letter-spacing: -0.75px;
+  }
+}
+/* Обложка без картинки: пока фото не загружено, блок выглядит как
+   осмысленная шапка страницы, а не как пустая серая полоса */
+.coverBlockPlain {
+  aspect-ratio: auto;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #112546 0%, #1b3760 55%, #24508f 100%);
+  padding: clamp(2rem, 1.4rem + 3vw, 4rem) clamp(1.25rem, 1rem + 2vw, 3rem);
+
+  @media screen and (min-width: 768px) {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+
+  .textBlock {
+    position: static;
+    transform: none;
+    text-align: left;
+    width: 100%;
+    max-width: 1120px;
+    padding: 0;
+  }
+
+  .title {
+    font-size: clamp(1.625rem, 1.1rem + 2.4vw, 3rem);
+    line-height: 1.15;
+    text-transform: none;
+    font-weight: 700;
+    margin-bottom: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+  }
+
+  .text {
+    font-size: clamp(0.9375rem, 0.85rem + 0.5vw, 1.25rem);
+    line-height: 1.5;
+    letter-spacing: 0;
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.85);
   }
 }

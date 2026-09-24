@@ -58,9 +58,10 @@ const DoubleTextBlockComponent: FC<Props> = ({ block }) => {
           <Image
             src={imageUrl}
             alt={imageAlt}
-            layout="responsive"
             width={500}
             height={300}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
       );

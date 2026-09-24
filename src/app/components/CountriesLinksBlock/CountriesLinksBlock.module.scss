@@ -1,0 +1,95 @@
+.countriesLinks {
+  margin: clamp(2rem, 1.6rem + 2vw, 3.5rem) 0;
+}
+
+.title {
+  color: #091728;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.description {
+  color: #4c5a6d;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 24px;
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  /* min(260px, 100%) не даёт колонке распирать страницу на узких экранах */
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid #e3e8ef;
+  border-radius: 15px 15px 15px 0;
+  background: #fff;
+  text-decoration: none;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    border-color: #f39708;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(17, 37, 70, 0.08);
+
+    .arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.flag {
+  width: 28px;
+  height: 21px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.name {
+  color: #091728;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.arrow {
+  margin-left: auto;
+  color: #f39708;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all ease-in-out 0.2s;
+}
+
+.tuition {
+  color: #6b7789;
+  font-size: 14px;
+  line-height: 1.45;
+  /* длинная строка с ценой не должна распирать карточку */
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

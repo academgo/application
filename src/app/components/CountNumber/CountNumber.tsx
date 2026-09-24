@@ -20,7 +20,8 @@ const CountNumber: FC<Props> = ({ children }) => {
 
     let start = 0;
     const end = targetNumber;
-    if (start === end) return;
+    // Без числа (или с нечисловым значением) счётчик крутился бы бесконечно
+    if (!Number.isFinite(end) || start === end) return;
 
     const incrementTime = Math.abs(Math.floor(1500 / (end as number))); // duration of animation (1.5 seconds)
 
@@ -36,7 +37,7 @@ const CountNumber: FC<Props> = ({ children }) => {
     return () => clearInterval(timer);
   }, [targetNumber, isVisible, hasCounted]);
 
-  return <p ref={ref}>{count}</p>;
+  return <p ref={ref}>{Number.isFinite(targetNumber) ? count : children}</p>;
 };
 
 export default CountNumber;
