@@ -11,6 +11,7 @@ import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
+import { trackLead } from "@/lib/trackLead";
 
 export type FormData = {
   phone: string;
@@ -92,6 +93,7 @@ const FormStandard: FC<ContactFormProps> = ({
       const response = await axios.post("/api/email", payload);
 
       if (response.data.message === "Email sent") {
+        trackLead("standard", typeof lang === "string" ? lang : undefined);
         resetForm({});
         setFilled({ phone: false, country: false, email: false });
         onFormSubmitSuccess && onFormSubmitSuccess();

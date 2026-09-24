@@ -16,10 +16,13 @@ import { QuizBlock } from "@/types/quizBlock";
 // ✅ фиксированные картинки для шага 1
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
+import { trackLead } from "@/lib/trackLead";
 
 type Props = {
   lang: string;
   quizBlock: QuizBlock;
+  /** Названия стран для вопроса, где варианты берутся из раздела Country */
+  countryOptions?: string[];
 };
 
 type DynamicFormValues = Record<string, any> & {
@@ -28,11 +31,32 @@ type DynamicFormValues = Record<string, any> & {
   agreedToPolicy: boolean;
 };
 
-const MultiStepFormBlock: React.FC<Props> = ({ lang, quizBlock }) => {
+const MultiStepFormBlock: React.FC<Props> = ({
+  lang,
+  quizBlock,
+  countryOptions = []
+}) => {
   const router = useRouter();
   const uniqueId = useId();
 
-  const dynamicQuestions = quizBlock?.questions ?? [];
+  const dynamicQuestions = useMemo(
+    () =>
+      (quizBlock?.questions ?? []).map(question => {
+        if (question.optionsSource !== "countries") return question;
+
+        const labels = [...countryOptions];
+        if (question.extraOption) labels.push(question.extraOption);
+
+        return {
+          ...question,
+          options: labels.map((label, index) => ({
+            _key: `${question._key}-c${index}`,
+            label
+          }))
+        };
+      }),
+    [quizBlock?.questions, countryOptions]
+  );
   const dynamicCount = dynamicQuestions.length;
 
   const TOTAL_QUESTION_STEPS = 1 + dynamicCount; // 1 фикс + N динамика
@@ -167,6 +191,7 @@ const MultiStepFormBlock: React.FC<Props> = ({ lang, quizBlock }) => {
         url: typeof window !== "undefined" ? window.location.href : ""
       });
 
+      trackLead("quiz", lang);
       router.push(lang === "ru" ? "/ru/success" : "/success");
     } catch (error) {
       alert(lang === "ru" ? "Ошибка отправки" : "Error sending");

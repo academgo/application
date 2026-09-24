@@ -11,6 +11,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
+import { trackLead } from "@/lib/trackLead";
 
 type FormData = {
   question1: string;
@@ -126,6 +127,7 @@ const MultiStepForm = ({
     setSubmitting(true);
     try {
       await axios.post("/api/email", values);
+      trackLead("multi-step", lang);
       router.push(lang === "ru" ? "/ru/success" : "/success");
     } catch (error) {
       alert(

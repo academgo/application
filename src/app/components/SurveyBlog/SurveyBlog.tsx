@@ -9,19 +9,29 @@ import { QuizBlock } from "@/types/quizBlock";
 
 type Props = {
   lang: string;
-  survey: SurveyType;
+  survey?: SurveyType;
   quizBlock?: QuizBlock;
+  countryOptions?: string[];
 };
 
-const SurveyBlog: FC<Props> = ({ lang, survey, quizBlock }) => {
+const SurveyBlog: FC<Props> = ({
+  lang,
+  survey,
+  quizBlock,
+  countryOptions
+}) => {
   // console.log("survey", survey);
   return (
     <section className={styles.survey}>
-      <p className={styles.title}>{survey.title}</p>
+      {survey?.title && <p className={styles.title}>{survey.title}</p>}
       <div className={styles.surveyWrapper}>
         <div className={styles.multiStepForm}>
           {quizBlock && (
-            <MultiStepFormBlock lang={lang} quizBlock={quizBlock} />
+            <MultiStepFormBlock
+              lang={lang}
+              quizBlock={quizBlock}
+              countryOptions={countryOptions}
+            />
           )}
         </div>
       </div>

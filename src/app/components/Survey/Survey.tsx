@@ -11,9 +11,10 @@ type Props = {
   lang: string;
   survey: SurveyType;
   quizBlock?: QuizBlock;
+  countryOptions?: string[];
 };
 
-const Survey: FC<Props> = ({ lang, survey, quizBlock }) => {
+const Survey: FC<Props> = ({ lang, survey, quizBlock, countryOptions }) => {
   // console.log("survey", survey);
   return (
     <section className={styles.survey}>
@@ -29,7 +30,11 @@ const Survey: FC<Props> = ({ lang, survey, quizBlock }) => {
               buttonText={survey.buttonText}
             /> */}
             {quizBlock && (
-              <MultiStepFormBlock lang={lang} quizBlock={quizBlock} />
+              <MultiStepFormBlock
+                lang={lang}
+                quizBlock={quizBlock}
+                countryOptions={countryOptions}
+              />
             )}
           </div>
           <div className={styles.sidebar}>

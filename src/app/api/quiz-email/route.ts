@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { detectStudyDestination } from "@/lib/studyDestination";
 import type Mail from "nodemailer/lib/mailer";
 
 type QuizAnswer = {
@@ -31,6 +32,13 @@ const isQuizAnswerArray = (v: unknown): v is QuizAnswer[] =>
     );
   });
 
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
 export async function POST(request: NextRequest) {
   const data = (await request.json()) as Partial<QuizPayload>;
 
@@ -54,22 +62,71 @@ export async function POST(request: NextRequest) {
     }
   });
 
-  const lines = data.quizAnswers
-    .filter(a => a.value)
-    .map(a => `${a.label}: ${a.value}`);
+  const destination = detectStudyDestination(data.url, data.lang);
 
-  const langLine = isNonEmptyString(data.lang)
-    ? `Language: ${data.lang}\n\n`
-    : "";
-  const urlLine = isNonEmptyString(data.url) ? `Page URL: ${data.url}\n\n` : "";
+  // В письмо идут все вопросы анкеты в том порядке, в каком их видел человек,
+  // включая те, что добавили в Sanity уже после запуска
+  const answers = data.quizAnswers.map((answer, index) => ({
+    number: index + 1,
+    label: isNonEmptyString(answer.label) ? answer.label : answer.name,
+    value: isNonEmptyString(answer.value) ? answer.value : "—"
+  }));
 
-  const mailBody = `${langLine}${urlLine}${lines.join("\n")}\n\nWhatsapp: ${data.whatsapp}`;
+  const meta = [
+    destination ? `Страна обучения: ${destination}` : "",
+    isNonEmptyString(data.lang) ? `Язык сайта: ${data.lang}` : "",
+    isNonEmptyString(data.url) ? `Страница: ${data.url}` : ""
+  ].filter(Boolean);
+
+  const text = [
+    "Заявка с квиза",
+    "",
+    ...meta,
+    "",
+    `WhatsApp: ${data.whatsapp}`,
+    "",
+    "Ответы:",
+    ...answers.map(answer => `${answer.number}. ${answer.label}: ${answer.value}`)
+  ].join("\n");
+
+  const html = `
+    <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #091728;">
+      <h2 style="margin: 0 0 12px; font-size: 18px;">Заявка с квиза</h2>
+      ${
+        meta.length
+          ? `<p style="margin: 0 0 12px; color: #4c5a6d;">${meta
+              .map(escapeHtml)
+              .join("<br/>")}</p>`
+          : ""
+      }
+      <p style="margin: 0 0 16px;"><strong>WhatsApp:</strong> ${escapeHtml(
+        data.whatsapp
+      )}</p>
+      <table cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+        <tbody>
+          ${answers
+            .map(
+              answer => `<tr>
+            <td style="border-bottom: 1px solid #e3e8ef; color: #4c5a6d;">${
+              answer.number
+            }. ${escapeHtml(answer.label)}</td>
+            <td style="border-bottom: 1px solid #e3e8ef;"><strong>${escapeHtml(
+              answer.value
+            )}</strong></td>
+          </tr>`
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
 
   const mailOptions: Mail.Options = {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
-    subject: "Новый лид",
-    text: mailBody
+    subject: destination ? `Заявка с квиза — ${destination}` : "Заявка с квиза",
+    text,
+    html
   };
 
   try {

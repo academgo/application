@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { detectStudyDestination } from "@/lib/studyDestination";
 import Mail from "nodemailer/lib/mailer";
 
 const isNonEmptyString = (v: unknown): v is string =>
@@ -22,7 +23,13 @@ export async function POST(request: NextRequest) {
     ? `Language: ${data.lang}\n`
     : "";
   const urlLine = isNonEmptyString(data.url) ? `Page URL: ${data.url}\n` : "";
-  const meta = `${langLine}${urlLine}${langLine || urlLine ? "\n" : ""}`;
+  const destination = detectStudyDestination(data.url, data.lang);
+  const destinationLine = destination
+    ? `Страна обучения: ${destination}\n`
+    : "";
+  const meta = `${destinationLine}${langLine}${urlLine}${
+    destinationLine || langLine || urlLine ? "\n" : ""
+  }`;
 
   let mailBody = "";
   let isValid = false;

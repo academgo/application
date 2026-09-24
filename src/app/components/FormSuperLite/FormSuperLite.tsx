@@ -10,6 +10,7 @@ import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation"; // Импортируйте useRouter из next/navigation
+import { trackLead } from "@/lib/trackLead";
 
 export type FormData = {
   phone: string;
@@ -87,6 +88,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
       router.push(lang === "ru" ? "/ru/success" : "/success");
 
       if (response.data.message === "Email sent") {
+        trackLead("super-lite", lang);
         resetForm({});
         setFilled({ phone: false });
         onFormSubmitSuccess && onFormSubmitSuccess();
