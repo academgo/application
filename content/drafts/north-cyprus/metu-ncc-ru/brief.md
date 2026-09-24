@@ -1,0 +1,33 @@
+# Бриф: карточка METU Northern Cyprus Campus (RU)
+
+- **URL:** `/ru/ucheba-na-severnom-kipre/metu-northern-cyprus-campus`
+- **Тип:** university-card
+- **Аудитория:** абитуриенты и родители из Казахстана, Узбекистана, Азербайджана, Кыргызстана, России, Беларуси, которых привлекают цена и обучение на английском.
+- **Сводки фактов:** `content/facts/ncyprus-metu-ncc.md` (вуз) + `content/facts/north-cyprus.md`, `content/facts/north-cyprus-recognition.md` (страна: виза, документы, жизнь). Других черновиков не читать.
+
+## Ключевые слова
+
+малый спрос. RU-аудитория ищет вуз латиницей: название латиницей — в H1, meta title и первом абзаце.
+
+## Структура
+
+1. **Вступление** (без H2): что это за вуз в 3 предложениях + кому подходит и кому нет.
+2. **Таблица ключевых фактов** (только ✅).
+3. **H2: Стоимость обучения** — таблица по программам с годом прайса; если цен нет в сводке — честно «уточняем под вашу программу».
+4. **H2: Программы и какой диплом вы получаете**.
+5. **video slot:** «Кампус METU Northern Cyprus Campus», 60–90 сек.
+6. **H2: Как поступить из СНГ** — processBlock: требования, английский, документы и их заверение, сроки 2027 (без выдуманных дат).
+7. **H2: Что важно знать заранее** — честные ограничения вуза и страны.
+8. **surveyBlock**
+9. **H2: Рейтинги и аккредитация** — только ✅.
+10. **H2: Жильё и жизнь студента**.
+11. **H2: Виза** — коротко, ссылка на страницу о визе.
+12. **H2: Другие варианты** — 1 абзац со ссылками на другие карточки.
+13. **accordionBlock** — FAQ 6–8.
+14. **cta** — проверим документы под требования METU Northern Cyprus Campus и сравним с 2–3 альтернативами.
+
+Если сводка говорит, что вуз не работает с агентствами, — действуй по правилу системного промпта.
+
+## Внутренние ссылки (не ссылаться на саму себя)
+
+`/ru/ucheba-na-severnom-kipre`, `/ru/ucheba-na-severnom-kipre/priznanie-diploma`, `/ru/ucheba-na-severnom-kipre/viza-i-vnzh`, `/ru/ucheba-na-severnom-kipre/stoimost-obucheniya`, `/ru/ucheba-na-severnom-kipre/postuplenie`, `/ru/ucheba-na-severnom-kipre/cyprus-international-university`, `/ru/ucheba-na-severnom-kipre/near-east-university`, `/ru/ucheba-na-severnom-kipre/girne-american-university`, `/ru/ucheba-na-severnom-kipre/eastern-mediterranean-university`, `/ru/ucheba-na-severnom-kipre/metu-northern-cyprus-campus`, `/ru/kontakty`

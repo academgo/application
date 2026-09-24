@@ -1,0 +1,700 @@
+{
+  "date": "2026-09-24",
+  "target": "academgo.com",
+  "labs": [
+    {
+      "market": {
+        "name": "Казахстан",
+        "location_code": 2398,
+        "language_code": "ru"
+      },
+      "items": [
+        {
+          "keyword": "польша университеты",
+          "volume": 90,
+          "position": 12,
+          "url": "/ru/obuchenie-v-polshe/obuchenie-dlya-belorusov-v-polshe"
+        },
+        {
+          "keyword": "warsaw university",
+          "volume": 110,
+          "position": 16,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "виза в польшу для казахстанцев",
+          "volume": 140,
+          "position": 32,
+          "url": "/ru/studencheskaya-viza/studencheskaya-viza-v-polshu-dlya-kazakhstancev"
+        },
+        {
+          "keyword": "vistula university",
+          "volume": 320,
+          "position": 33,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "university of warsaw technology",
+          "volume": 170,
+          "position": 35,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "warsaw university of technology",
+          "volume": 170,
+          "position": 36,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "ягеллонский университет",
+          "volume": 90,
+          "position": 36,
+          "url": "/ru/vuzy-polshi/yagellonskii-universitet-v-krakove"
+        }
+      ],
+      "cost": 0.01284
+    },
+    {
+      "market": {
+        "name": "Азербайджан",
+        "location_code": 2031,
+        "language_code": "az"
+      },
+      "items": [
+        {
+          "keyword": "uehs",
+          "volume": 40,
+          "position": 10,
+          "url": "/universities-in-poland/university-of-economics-and-human-sciences"
+        },
+        {
+          "keyword": "nawa syrena",
+          "volume": 70,
+          "position": 12,
+          "url": "/blog/new-nostrification-rules-for-studying-in-poland"
+        },
+        {
+          "keyword": "poland universities",
+          "volume": 90,
+          "position": 25,
+          "url": "/universities-in-poland"
+        },
+        {
+          "keyword": "warsaw technical university",
+          "volume": 170,
+          "position": 26,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "jagiellonian university",
+          "volume": 170,
+          "position": 28,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "university of warsaw",
+          "volume": 320,
+          "position": 28,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "warsaw university of technology",
+          "volume": 170,
+          "position": 29,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "warsaw technology university",
+          "volume": 170,
+          "position": 33,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "warsaw university",
+          "volume": 140,
+          "position": 35,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "universities in warsaw",
+          "volume": 140,
+          "position": 36,
+          "url": "/universities-in-poland/universities-in-warsaw"
+        },
+        {
+          "keyword": "warsaw universities",
+          "volume": 140,
+          "position": 41,
+          "url": "/universities-in-poland/universities-in-warsaw"
+        },
+        {
+          "keyword": "vistula university",
+          "volume": 480,
+          "position": 43,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "university in warsaw",
+          "volume": 140,
+          "position": 44,
+          "url": "/universities-in-poland/university-of-warsaw"
+        }
+      ],
+      "cost": 0.01356
+    },
+    {
+      "market": {
+        "name": "Индия",
+        "location_code": 2356,
+        "language_code": "en"
+      },
+      "items": [
+        {
+          "keyword": "jagiellonian university in kraków",
+          "volume": 1900,
+          "position": 15,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "jagiellonian university of krakow",
+          "volume": 1900,
+          "position": 17,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "wsb merito university",
+          "volume": 210,
+          "position": 17,
+          "url": "/universities-in-poland/wsb-merito-university"
+        },
+        {
+          "keyword": "warsaw university of technology",
+          "volume": 2900,
+          "position": 18,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "jagiellonian university in krakow poland",
+          "volume": 1900,
+          "position": 21,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "jagiellonian university poland",
+          "volume": 1900,
+          "position": 23,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "poland warsaw university of technology",
+          "volume": 2900,
+          "position": 23,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "jagiellonian university",
+          "volume": 1900,
+          "position": 24,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "jagiellonian university in poland",
+          "volume": 1900,
+          "position": 24,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "adam mickiewicz university",
+          "volume": 590,
+          "position": 26,
+          "url": "/universities-in-poland/adam-mickiewicz-university"
+        },
+        {
+          "keyword": "university of warsaw poland",
+          "volume": 5400,
+          "position": 26,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "poland university of warsaw",
+          "volume": 5400,
+          "position": 27,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "warsaw university of technology poland",
+          "volume": 2900,
+          "position": 28,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "poland student visa",
+          "volume": 390,
+          "position": 29,
+          "url": "/student-visa-to-poland"
+        },
+        {
+          "keyword": "vistula university",
+          "volume": 2900,
+          "position": 30,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "poland top universities",
+          "volume": 480,
+          "position": 31,
+          "url": "/universities-in-poland"
+        },
+        {
+          "keyword": "study visa poland",
+          "volume": 390,
+          "position": 31,
+          "url": "/student-visa-to-poland"
+        },
+        {
+          "keyword": "university of lodz",
+          "volume": 880,
+          "position": 33,
+          "url": "/universities-in-poland/universities-in-lodz-for-international-students"
+        },
+        {
+          "keyword": "poland study visa",
+          "volume": 390,
+          "position": 34,
+          "url": "/student-visa-to-poland"
+        },
+        {
+          "keyword": "vistula university poland",
+          "volume": 2900,
+          "position": 35,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "lazarski university",
+          "volume": 390,
+          "position": 38,
+          "url": "/universities-in-poland/lazarski-university-in-poland"
+        },
+        {
+          "keyword": "university of warsaw",
+          "volume": 5400,
+          "position": 39,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "warsaw university",
+          "volume": 880,
+          "position": 39,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "masters in poland",
+          "volume": 210,
+          "position": 41,
+          "url": "/study-in-poland/study-for-a-masters-degree-in-poland"
+        },
+        {
+          "keyword": "vistula poland",
+          "volume": 480,
+          "position": 54,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "study in poland",
+          "volume": 720,
+          "position": 64,
+          "url": "/study-in-poland"
+        }
+      ],
+      "cost": 0.01512
+    },
+    {
+      "market": {
+        "name": "Нигерия",
+        "location_code": 2566,
+        "language_code": "en"
+      },
+      "items": [
+        {
+          "keyword": "poland universities for international students",
+          "volume": 260,
+          "position": 14,
+          "url": "/universities-in-poland/most-affordable-universities-in-poland"
+        },
+        {
+          "keyword": "university of warsaw",
+          "volume": 1600,
+          "position": 24,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "vincent pol university",
+          "volume": 210,
+          "position": 24,
+          "url": "/universities-in-poland/vincent-pol-university-in-lublin"
+        },
+        {
+          "keyword": "adam mickiewicz university",
+          "volume": 320,
+          "position": 30,
+          "url": "/universities-in-poland/adam-mickiewicz-university"
+        },
+        {
+          "keyword": "poland university",
+          "volume": 480,
+          "position": 31,
+          "url": "/universities-in-poland"
+        }
+      ],
+      "cost": 0.0126
+    },
+    {
+      "market": {
+        "name": "Пакистан",
+        "location_code": 2586,
+        "language_code": "en"
+      },
+      "items": [
+        {
+          "keyword": "jagiellonian university",
+          "volume": 390,
+          "position": 24,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "vistula university poland",
+          "volume": 590,
+          "position": 25,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "universities in poland",
+          "volume": 320,
+          "position": 29,
+          "url": "/universities-in-poland"
+        },
+        {
+          "keyword": "vistula university",
+          "volume": 590,
+          "position": 35,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "university of warsaw",
+          "volume": 1300,
+          "position": 36,
+          "url": "/universities-in-poland/university-of-warsaw"
+        },
+        {
+          "keyword": "warsaw university of technology",
+          "volume": 590,
+          "position": 37,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "poland universities",
+          "volume": 320,
+          "position": 39,
+          "url": "/universities-in-poland"
+        },
+        {
+          "keyword": "university of poland",
+          "volume": 320,
+          "position": 47,
+          "url": "/universities-in-poland/university-of-warsaw"
+        }
+      ],
+      "cost": 0.01296
+    },
+    {
+      "market": {
+        "name": "Польша",
+        "location_code": 2616,
+        "language_code": "pl"
+      },
+      "items": [
+        {
+          "keyword": "vincent pol university",
+          "volume": 880,
+          "position": 11,
+          "url": "/universities-in-poland/vincent-pol-university-in-lublin"
+        },
+        {
+          "keyword": "nawa syrena",
+          "volume": 1600,
+          "position": 15,
+          "url": "/blog/new-nostrification-rules-for-studying-in-poland"
+        },
+        {
+          "keyword": "syrena nawa",
+          "volume": 1000,
+          "position": 16,
+          "url": "/blog/new-nostrification-rules-for-studying-in-poland"
+        },
+        {
+          "keyword": "vistula university",
+          "volume": 18100,
+          "position": 17,
+          "url": "/universities-in-poland/vistula-university-in-warsaw"
+        },
+        {
+          "keyword": "wsb merito university",
+          "volume": 260,
+          "position": 22,
+          "url": "/universities-in-poland/wsb-merito-university"
+        },
+        {
+          "keyword": "polish japanese academy",
+          "volume": 210,
+          "position": 23,
+          "url": "/universities-in-poland/polish-japanese-academy-of-it"
+        },
+        {
+          "keyword": "jagiellonian university",
+          "volume": 6600,
+          "position": 24,
+          "url": "/universities-in-poland/jagiellonian-university-in-krakow"
+        },
+        {
+          "keyword": "swps university",
+          "volume": 1000,
+          "position": 27,
+          "url": "/universities-in-poland/swps-university-in-warsaw"
+        },
+        {
+          "keyword": "university of economics and human sciences",
+          "volume": 390,
+          "position": 29,
+          "url": "/universities-in-poland/university-of-economics-and-human-sciences"
+        },
+        {
+          "keyword": "polish-japanese academy of information technology",
+          "volume": 12100,
+          "position": 30,
+          "url": "/universities-in-poland/polish-japanese-academy-of-it"
+        },
+        {
+          "keyword": "polish japanese academy of information technology",
+          "volume": 12100,
+          "position": 31,
+          "url": "/universities-in-poland/polish-japanese-academy-of-it"
+        },
+        {
+          "keyword": "polish universities",
+          "volume": 260,
+          "position": 32,
+          "url": "/universities-in-poland"
+        },
+        {
+          "keyword": "poland university",
+          "volume": 260,
+          "position": 34,
+          "url": "/universities-in-poland"
+        },
+        {
+          "keyword": "warsaw university of technology",
+          "volume": 6600,
+          "position": 34,
+          "url": "/universities-in-poland/warsaw-university-of-technology"
+        },
+        {
+          "keyword": "masters degree in poland",
+          "volume": 320,
+          "position": 35,
+          "url": "/study-in-poland/study-for-a-masters-degree-in-poland"
+        },
+        {
+          "keyword": "study in poland",
+          "volume": 590,
+          "position": 41,
+          "url": "/study-in-poland"
+        },
+        {
+          "keyword": "biomedical engineering",
+          "volume": 390,
+          "position": 62,
+          "url": "/study-in-poland/biomedical-engineering-studies-in-poland"
+        },
+        {
+          "keyword": "tuition fee",
+          "volume": 320,
+          "position": 68,
+          "url": "/cost-of-studying-in-poland"
+        }
+      ],
+      "cost": 0.01416
+    }
+  ],
+  "serp": [
+    {
+      "keyword": "учеба за границей",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.012
+    },
+    {
+      "keyword": "образование за рубежом",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "обучение за рубежом",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "мотивационное письмо",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.018
+    },
+    {
+      "keyword": "учеба в турции",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в оаэ",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в малайзии",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в италии",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в испании",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в венгрии",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в грузии",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба на северном кипре",
+      "market": "Узбекистан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба за границей",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "образование за рубежом",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "обучение за рубежом",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "мотивационное письмо",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.016
+    },
+    {
+      "keyword": "учеба в турции",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в оаэ",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в малайзии",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в италии",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в испании",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в венгрии",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба в грузии",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    },
+    {
+      "keyword": "учеба на северном кипре",
+      "market": "Кыргызстан",
+      "position": null,
+      "url": null,
+      "cost": 0.02
+    }
+  ],
+  "covered": [],
+  "cost": 0.5472400000000002
+}

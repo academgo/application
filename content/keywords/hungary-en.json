@@ -1,0 +1,86 @@
+{
+ "study in hungary": {
+  "2356": 320,
+  "2566": 90,
+  "2586": 480,
+  "world": 2900
+ },
+ "universities in hungary": {
+  "2356": 590,
+  "2566": 390,
+  "2586": 720,
+  "world": 6600
+ },
+ "stipendium hungaricum": {
+  "2356": 1900,
+  "2566": 1600,
+  "2586": 4400,
+  "world": 49500
+ },
+ "stipendium hungaricum 2027": {
+  "2356": 0,
+  "2566": 0,
+  "2586": 0,
+  "world": 0
+ },
+ "medicine in hungary": {
+  "2356": 30,
+  "2566": 10,
+  "2586": 10,
+  "world": 210
+ },
+ "mbbs in hungary": {
+  "2356": 140,
+  "2566": 10,
+  "2586": 40,
+  "world": 260
+ },
+ "hungary student visa": {
+  "2356": 170,
+  "2566": 20,
+  "2586": 70,
+  "world": 880
+ },
+ "cost of studying in hungary": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 10
+ },
+ "semmelweis university": {
+  "2356": 1300,
+  "2566": 390,
+  "2586": 720,
+  "world": 27100
+ },
+ "university of debrecen": {
+  "2356": 2900,
+  "2566": 1900,
+  "2586": 4400,
+  "world": 40500
+ },
+ "metropolitan university budapest": {
+  "2356": 20,
+  "2566": 10,
+  "2586": 40,
+  "world": 880
+ },
+ "ibs budapest": {
+  "2356": 0,
+  "2566": 0,
+  "2586": 0,
+  "world": 0
+ },
+ "mcdaniel college budapest": {
+  "2356": 0,
+  "2566": 0,
+  "2586": 0,
+  "world": 0
+ },
+ "university of pecs": {
+  "2356": 2400,
+  "2566": 1300,
+  "2586": 2400,
+  "world": 33100
+ }
+}

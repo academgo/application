@@ -1,0 +1,122 @@
+{
+ "medipol university": {
+  "2356": 140,
+  "2566": 110,
+  "2586": 880,
+  "world": 9900
+ },
+ "istanbul medipol university": {
+  "2356": 170,
+  "2566": 90,
+  "2586": 590,
+  "world": 3600
+ },
+ "medipol university fees": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 90
+ },
+ "medipol university tuition fees": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 30,
+  "world": 210
+ },
+ "medipol university fees for international students": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 20
+ },
+ "medipol university medicine fees": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 30
+ },
+ "medipol university mbbs fees": {
+  "2356": 0,
+  "2566": 0,
+  "2586": 0,
+  "world": 0
+ },
+ "medipol university dentistry fees": {
+  "2356": 10,
+  "2566": 0,
+  "2586": 10,
+  "world": 10
+ },
+ "medipol university ranking": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 70,
+  "world": 390
+ },
+ "medipol university admission requirements": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 10
+ },
+ "medipol university scholarship": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 30,
+  "world": 70
+ },
+ "medipol university international students": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 10
+ },
+ "medipol university courses": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 10
+ },
+ "medipol university acceptance rate": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 40
+ },
+ "medipol mega hospital": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 590
+ },
+ "mbbs in turkey": {
+  "2356": 140,
+  "2566": 10,
+  "2586": 90,
+  "world": 260
+ },
+ "study medicine in turkey": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 90
+ },
+ "medicine in turkey for international students": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 40
+ },
+ "private medical universities in turkey": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 10
+ },
+ "dentistry in turkey for international students": {
+  "2356": 10,
+  "2566": 0,
+  "2586": 10,
+  "world": 40
+ }
+}

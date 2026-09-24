@@ -1,0 +1,98 @@
+{
+ "study in spain": {
+  "2356": 480,
+  "2566": 110,
+  "2586": 320,
+  "world": 4400
+ },
+ "universities in spain": {
+  "2356": 1000,
+  "2566": 480,
+  "2586": 590,
+  "world": 12100
+ },
+ "masters in spain": {
+  "2356": 260,
+  "2566": 40,
+  "2586": 70,
+  "world": 2900
+ },
+ "spain student visa": {
+  "2356": 720,
+  "2566": 50,
+  "2586": 320,
+  "world": 6600
+ },
+ "study and work in spain": {
+  "2356": 10,
+  "2566": 10,
+  "2586": 10,
+  "world": 320
+ },
+ "cost of studying in spain": {
+  "2356": 20,
+  "2566": 10,
+  "2586": 10,
+  "world": 50
+ },
+ "spanish language courses in spain": {
+  "2356": 70,
+  "2566": 10,
+  "2586": 50,
+  "world": 5400
+ },
+ "spain job seeker visa": {
+  "2356": 480,
+  "2566": 90,
+  "2586": 260,
+  "world": 2900
+ },
+ "study in spain for international students": {
+  "2356": 40,
+  "2566": 40,
+  "2586": 30,
+  "world": 590
+ },
+ "universidad complutense de madrid": {
+  "2356": 320,
+  "2566": 50,
+  "2586": 70,
+  "world": 135000
+ },
+ "university of barcelona": {
+  "2356": 2900,
+  "2566": 720,
+  "2586": 1300,
+  "world": 33100
+ },
+ "ucam": {
+  "2356": 1000,
+  "2566": 170,
+  "2586": 70,
+  "world": 135000
+ },
+ "universidad europea": {
+  "2356": 720,
+  "2566": 90,
+  "2586": 110,
+  "world": 74000
+ },
+ "ceu san pablo university": {
+  "2356": 40,
+  "2566": 20,
+  "2586": 10,
+  "world": 1300
+ },
+ "ie university": {
+  "2356": 4400,
+  "2566": 320,
+  "2586": 390,
+  "world": 90500
+ },
+ "esade": {
+  "2356": 1600,
+  "2566": 140,
+  "2586": 70,
+  "world": 60500
+ }
+}
