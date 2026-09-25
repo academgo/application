@@ -11,14 +11,14 @@
   margin-bottom: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
 }
 
-// Анкета и панель — две равные колонки: анкета не шире половины экрана
+// Анкета — 65% ширины, панель — 35%; на телефоне панели нет, анкета на всю ширину
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 
   @media screen and (min-width: 980px) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 65fr) minmax(0, 35fr);
     align-items: stretch;
   }
 }

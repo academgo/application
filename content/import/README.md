@@ -69,7 +69,7 @@ node content/import/infographics.mjs --apply
 Контуры стран для карт — `src/app/components/CountryMapBlock/countryShapes.ts`
 (Natural Earth, 50m).
 
-Квиз на новых страницах — блок `QuizSection`: анкета на половину ширины
+Квиз на новых страницах — блок `QuizSection`: анкета на 65% ширины
 и панель рядом (что даст анкета, мессенджеры). Панель задаётся один раз
 в документе квиза (поле Sidebar) — скрипт `quiz-sidebar.mjs`.
 
