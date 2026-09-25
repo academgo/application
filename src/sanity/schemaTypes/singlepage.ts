@@ -133,7 +133,10 @@ const singlepage = {
         { type: "countriesLinksBlock" },
         { type: "countryUniversitiesBlock" },
         { type: "leadMagnetBlock" },
-        { type: "consultationFormBlock" }
+        { type: "consultationFormBlock" },
+        { type: "barChartBlock" },
+        { type: "timelineBlock" },
+        { type: "countryMapBlock" }
       ]
     }),
     defineField({

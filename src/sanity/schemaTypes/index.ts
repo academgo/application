@@ -50,6 +50,9 @@ import countriesLinksBlock from "./countriesLinksBlock";
 import countryUniversitiesBlock from "./countryUniversitiesBlock";
 import leadMagnetBlock from "./leadMagnetBlock";
 import consultationFormBlock from "./consultationFormBlock";
+import barChartBlock from "./barChartBlock";
+import timelineBlock from "./timelineBlock";
+import countryMapBlock from "./countryMapBlock";
 
 export const schemaTypes = [
   header,
@@ -99,6 +102,9 @@ export const schemaTypes = [
   countryUniversitiesBlock,
   leadMagnetBlock,
   consultationFormBlock,
+  barChartBlock,
+  timelineBlock,
+  countryMapBlock,
   quizDocument,
   quizBlock,
   quizQuestion,

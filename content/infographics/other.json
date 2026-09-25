@@ -1,0 +1,216 @@
+{
+  "academgo.compare.ru": {
+    "afterHeading": "С чего начать выбор страны",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год обучения в евро",
+      "subtitle": "Обучение, EUR за учебный год, прайсы 2025/26–2026/27",
+      "items": [
+        {
+          "label": "Южный Кипр, частные вузы",
+          "value": 9000,
+          "valueMax": 11820,
+          "valueLabel": "примерно €9 000–11 820"
+        },
+        {
+          "label": "Венгрия, программы на английском",
+          "value": 6000,
+          "valueMax": 10000,
+          "valueLabel": "примерно €6 000–10 000"
+        },
+        {
+          "label": "Северный Кипр, частные вузы со скидкой",
+          "value": 2800,
+          "valueMax": 4500,
+          "valueLabel": "€2 800–4 500"
+        },
+        {
+          "label": "Польша, частные вузы",
+          "value": 1500,
+          "valueLabel": "от €1 500"
+        },
+        {
+          "label": "Испания, государственные вузы",
+          "value": 1200,
+          "valueMax": 8200,
+          "valueLabel": "примерно €1 200–8 200"
+        },
+        {
+          "label": "Италия, государственные вузы",
+          "value": 160,
+          "valueLabel": "от €160"
+        }
+      ],
+      "note": "Только страны с ценами в евро. Цены Грузии, Турции, Малайзии, ОАЭ и госвуза EMU на Северном Кипре — в таблице выше. В Италии плата в госвузах зависит от дохода (ISEE)."
+    }
+  },
+  "academgo.compare.en": {
+    "afterHeading": "Where to start",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year of tuition costs in euros",
+      "subtitle": "Tuition, EUR per academic year, 2025/26–2026/27 price lists",
+      "items": [
+        {
+          "label": "Cyprus, private universities",
+          "value": 9000,
+          "valueMax": 11820,
+          "valueLabel": "about €9,000–11,820"
+        },
+        {
+          "label": "Hungary, English-taught programmes",
+          "value": 6000,
+          "valueMax": 10000,
+          "valueLabel": "about €6,000–10,000"
+        },
+        {
+          "label": "North Cyprus, private after discount",
+          "value": 2800,
+          "valueMax": 4500,
+          "valueLabel": "€2,800–4,500"
+        },
+        {
+          "label": "Poland, private universities",
+          "value": 1500,
+          "valueLabel": "from €1,500"
+        },
+        {
+          "label": "Spain, public universities",
+          "value": 1200,
+          "valueMax": 8200,
+          "valueLabel": "about €1,200–8,200"
+        },
+        {
+          "label": "Italy, public universities",
+          "value": 160,
+          "valueLabel": "from €160"
+        }
+      ],
+      "note": "Euro-priced destinations only. Georgia, Türkiye, Malaysia, the UAE and EMU in North Cyprus are in the table above. Italian public fees are income-based (ISEE)."
+    }
+  },
+  "academgo.magnet.documents.ru": {
+    "afterHeading": "Апостиль или консульская легализация",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "В каком порядке готовить документы",
+      "subtitle": "Апостиль, перевод и признание занимают от двух недель до трёх месяцев",
+      "items": [
+        {
+          "period": "Дома, до отъезда",
+          "title": "Апостиль или легализация",
+          "text": "В ряде стран апостиль ставят только лично или по доверенности, а в ТРСК его поставить нельзя."
+        },
+        {
+          "period": "После легализации",
+          "title": "Заверенный перевод",
+          "text": "Перевод делается с уже легализованного документа — поменяете порядок, платить придётся дважды."
+        },
+        {
+          "period": "До оплаты депозита",
+          "title": "Проверка признания",
+          "text": "Denklik, омологация, CIMEA или NCEQE — проверьте признание заранее: депозит почти всегда невозвратный."
+        }
+      ]
+    }
+  },
+  "academgo.magnet.documents.en": {
+    "afterHeading": "Apostille or consular legalisation",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "The order to prepare documents in",
+      "subtitle": "Apostille, translation and recognition take from two weeks to three months",
+      "items": [
+        {
+          "period": "At home, before you leave",
+          "title": "Apostille or legalisation",
+          "text": "In several countries it can only be obtained in person or by proxy, and it cannot be issued inside the TRNC."
+        },
+        {
+          "period": "After legalisation",
+          "title": "Certified translation",
+          "text": "The translation is made from the legalised document — change the order and you pay twice."
+        },
+        {
+          "period": "Before paying the deposit",
+          "title": "Recognition check",
+          "text": "Denklik, homologación, CIMEA or NCEQE — check recognition first: deposits are almost always non-refundable."
+        }
+      ]
+    }
+  },
+  "academgo.magnet.ielts.ru": {
+    "afterHeading": "Ориентиры по баллам",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Какой балл IELTS нужен",
+      "subtitle": "Типичный минимальный общий балл IELTS Academic",
+      "items": [
+        {
+          "label": "Бакалавриат в Малайзии и на Северном Кипре",
+          "value": 5,
+          "valueMax": 5.5,
+          "valueLabel": "5.0–5.5"
+        },
+        {
+          "label": "Филиалы британских вузов в Дубае",
+          "value": 6,
+          "valueLabel": "6.0"
+        },
+        {
+          "label": "Медицина в Малайзии и на Северном Кипре",
+          "value": 6,
+          "valueLabel": "6.0"
+        },
+        {
+          "label": "Istanbul Medipol, Bocconi, McDaniel",
+          "value": 6.5,
+          "valueLabel": "6.5"
+        },
+        {
+          "label": "Магистратура на Южном Кипре",
+          "value": 6.5,
+          "valueLabel": "6.5"
+        }
+      ],
+      "note": "Порог 5.0–5.5 — и в части итальянских вузов. Bocconi требует 6.5 при минимуме 6.0 в каждой части, Middlesex в Дубае — 6.0 при минимуме 5.5. METU в Турции не принимает IELTS с декабря 2022 года."
+    }
+  },
+  "academgo.magnet.ielts.en": {
+    "afterHeading": "What the thresholds look like",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What IELTS score you need",
+      "subtitle": "Typical minimum overall IELTS Academic band",
+      "items": [
+        {
+          "label": "Bachelor's in Malaysia and North Cyprus",
+          "value": 5,
+          "valueMax": 5.5,
+          "valueLabel": "5.0–5.5"
+        },
+        {
+          "label": "UK branch campuses in Dubai",
+          "value": 6,
+          "valueLabel": "6.0"
+        },
+        {
+          "label": "Medicine in Malaysia and North Cyprus",
+          "value": 6,
+          "valueLabel": "6.0"
+        },
+        {
+          "label": "Istanbul Medipol, Bocconi, McDaniel",
+          "value": 6.5,
+          "valueLabel": "6.5"
+        },
+        {
+          "label": "Master's programmes in Cyprus",
+          "value": 6.5,
+          "valueLabel": "6.5"
+        }
+      ],
+      "note": "5.0–5.5 also applies at several Italian universities. Bocconi asks 6.5 with at least 6.0 in every part, Middlesex Dubai 6.0 with at least 5.5. METU in Türkiye has not accepted IELTS since December 2022."
+    }
+  }
+}

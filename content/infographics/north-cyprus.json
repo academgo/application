@@ -1,0 +1,332 @@
+{
+  "academgo.north-cyprus.hub.ru": {
+    "afterHeading": "Какие бывают университеты Северного Кипра",
+    "block": {
+      "_type": "countryMapBlock",
+      "country": "north-cyprus",
+      "title": "Где находятся вузы Северного Кипра",
+      "subtitle": "Города пяти вузов, с которыми мы работаем",
+      "points": [
+        { "city": "Никосия", "lat": 35.19, "lon": 33.36, "universities": [
+          { "name": "Near East University (NEU)", "href": "/ru/ucheba-na-severnom-kipre/near-east-university" },
+          { "name": "Cyprus International University (CIU)", "href": "/ru/ucheba-na-severnom-kipre/cyprus-international-university" }
+        ] },
+        { "city": "Фамагуста", "lat": 35.12, "lon": 33.94, "universities": [
+          { "name": "Eastern Mediterranean University (EMU)", "href": "/ru/ucheba-na-severnom-kipre/eastern-mediterranean-university" }
+        ] },
+        { "city": "Кирения (Гирне)", "lat": 35.34, "lon": 33.32, "universities": [
+          { "name": "Girne American University (GAU)", "href": "/ru/ucheba-na-severnom-kipre/girne-american-university" }
+        ] },
+        { "city": "Гюзельюрт", "lat": 35.20, "lon": 32.99, "universities": [
+          { "name": "METU Northern Cyprus Campus", "href": "/ru/ucheba-na-severnom-kipre/metu-northern-cyprus-campus" }
+        ] }
+      ]
+    }
+  },
+  "academgo.north-cyprus.hub.en": {
+    "afterHeading": "Types of universities in North Cyprus",
+    "block": {
+      "_type": "countryMapBlock",
+      "country": "north-cyprus",
+      "title": "Where North Cyprus universities are",
+      "subtitle": "Cities of the five universities we work with",
+      "points": [
+        { "city": "Nicosia", "lat": 35.19, "lon": 33.36, "universities": [
+          { "name": "Near East University (NEU)", "href": "/study-in-north-cyprus/near-east-university" },
+          { "name": "Cyprus International University (CIU)", "href": "/study-in-north-cyprus/cyprus-international-university" }
+        ] },
+        { "city": "Famagusta", "lat": 35.12, "lon": 33.94, "universities": [
+          { "name": "Eastern Mediterranean University (EMU)", "href": "/study-in-north-cyprus/eastern-mediterranean-university" }
+        ] },
+        { "city": "Kyrenia (Girne)", "lat": 35.34, "lon": 33.32, "universities": [
+          { "name": "Girne American University (GAU)", "href": "/study-in-north-cyprus/girne-american-university" }
+        ] },
+        { "city": "Güzelyurt", "lat": 35.20, "lon": 32.99, "universities": [
+          { "name": "METU Northern Cyprus Campus", "href": "/study-in-north-cyprus/metu-northern-cyprus-campus" }
+        ] }
+      ]
+    }
+  },
+  "academgo.north-cyprus.cost.ru": {
+    "afterHeading": "Пример бюджета на первый год",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Из чего складывается первый год в EMU",
+      "subtitle": "USD за учебный год, бакалавриат EMU, цены 2026/27",
+      "items": [
+        { "label": "Обучение со стипендией и сборами", "value": 4450, "valueMax": 6400, "valueLabel": "$4 450–6 400" },
+        { "label": "Общежитие EMU, 4-местная, оплата за год", "value": 1420, "valueLabel": "$1 420" },
+        { "label": "Итого обучение и жильё", "value": 5870, "valueMax": 7820, "valueLabel": "$5 870–7 820", "highlight": true }
+      ],
+      "note": "Официальные таблицы EMU 2026/27. Без ВНЖ (1 015 TL + 38,70 TL), взноса в Фонд здравоохранения, питания, транспорта и перелёта."
+    }
+  },
+  "academgo.north-cyprus.cost.en": {
+    "afterHeading": "Sample annual budget: what the cost of studying in Cyprus's north adds up to",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Fixed first-year costs at EMU",
+      "subtitle": "USD per year, tuition and dorm, 2026/27 prices",
+      "items": [
+        { "label": "Bachelor's tuition, paid annually", "value": 4450, "valueMax": 6400, "valueLabel": "$4,450–6,400" },
+        { "label": "Medicine tuition, paid annually", "value": 14510, "valueMax": 18140, "valueLabel": "$14,510–18,140" },
+        { "label": "4-person dorm room, paid upfront", "value": 1420, "valueLabel": "$1,420" },
+        { "label": "Total: bachelor's + dorm", "value": 5870, "valueMax": 7820, "valueLabel": "$5,870–7,820" },
+        { "label": "Total: medicine + dorm", "value": 15930, "valueMax": 19560, "valueLabel": "$15,930–19,560" }
+      ],
+      "note": "EMU's official 2026/27 tuition and dorm prices. Not included: residence permit (1,015 TL + 38.70 TL stamp duty), Health Fund, living costs and a prep year if needed."
+    }
+  },
+  "academgo.north-cyprus.ciu.ru": {
+    "afterHeading": "Стоимость обучения в CIU Cyprus",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Базовые цены программ в CIU",
+      "subtitle": "EUR в год до скидки, ориентир агрегаторов на 2026/27",
+      "items": [
+        { "label": "Бакалавриат (большинство программ)", "value": 7100, "valueLabel": "около €7 100" },
+        { "label": "Фармация", "value": 9400, "valueLabel": "около €9 400" },
+        { "label": "Стоматология", "value": 12600, "valueLabel": "около €12 600" },
+        { "label": "Медицина", "value": 15300, "valueLabel": "около €15 300" }
+      ],
+      "note": "Официальной таблицы цен у CIU нет, точная сумма — в письме о зачислении. Скидка 50% для бакалавров подтверждена вузом (после неё около €3 550–3 950); для фармации, стоматологии и медицины не уточняется."
+    }
+  },
+  "academgo.north-cyprus.ciu.en": {
+    "afterHeading": "Cyprus International University tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "CIU base fees by program",
+      "subtitle": "EUR per year before the scholarship, aggregator estimates",
+      "items": [
+        { "label": "Most bachelor's programs", "value": 7100, "valueLabel": "about €7,100" },
+        { "label": "Pharmacy", "value": 9400, "valueLabel": "about €9,400" },
+        { "label": "Dentistry", "value": 12600, "valueLabel": "about €12,600" },
+        { "label": "Medicine", "value": 15300, "valueLabel": "about €15,300" }
+      ],
+      "note": "CIU does not publish a fee table; the exact amount is in your acceptance letter. The 50% scholarship for bachelor's students is official (about €3,550 after it); for pharmacy, dentistry and medicine it is not confirmed."
+    }
+  },
+  "academgo.north-cyprus.emu.ru": {
+    "afterHeading": "Стоимость обучения в EMU",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Цены программ EMU за год",
+      "subtitle": "USD за учебный год со стипендией и сборами, прайс 2026/27",
+      "items": [
+        { "label": "Ассоциированные программы (2–3 года)", "value": 3409, "valueMax": 4734, "valueLabel": "$3 409–4 734" },
+        { "label": "Большинство программ", "value": 4450, "valueMax": 6400, "valueLabel": "$4 450–6 400" },
+        { "label": "Gastronomy", "value": 4530, "valueMax": 6527, "valueLabel": "$4 530–6 527" },
+        { "label": "Инженерия", "value": 4700, "valueMax": 6799, "valueLabel": "$4 700–6 799" },
+        { "label": "Фармация", "value": 5485, "valueMax": 7629, "valueLabel": "$5 485–7 629" },
+        { "label": "Стоматология", "value": 10000, "valueMax": 12400, "valueLabel": "$10 000–12 400" },
+        { "label": "Медицина", "value": 14510, "valueMax": 18140, "valueLabel": "$14 510–18 140" }
+      ],
+      "note": "Официальный прайс EMU 2026/27 при оплате за год вперёд. Стипендия 60–75%, на стоматологию и медицину — 30–45%. Прайс на 2027/28 не опубликован."
+    }
+  },
+  "academgo.north-cyprus.emu.en": {
+    "afterHeading": "Tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "EMU tuition by program",
+      "subtitle": "USD per year after the scholarship, fees included, 2026/27",
+      "items": [
+        { "label": "Associate programs (2–3 years)", "value": 3409, "valueMax": 4734, "valueLabel": "$3,409–4,734" },
+        { "label": "Most programs", "value": 4450, "valueMax": 6400, "valueLabel": "$4,450–6,400" },
+        { "label": "Gastronomy", "value": 4530, "valueMax": 6527, "valueLabel": "$4,530–6,527" },
+        { "label": "Engineering", "value": 4700, "valueMax": 6799, "valueLabel": "$4,700–6,799" },
+        { "label": "Pharmacy", "value": 5485, "valueMax": 7629, "valueLabel": "$5,485–7,629" },
+        { "label": "Dentistry", "value": 10000, "valueMax": 12400, "valueLabel": "$10,000–12,400" },
+        { "label": "Medicine (years 1–3 at EMU)", "value": 14510, "valueMax": 18140, "valueLabel": "$14,510–18,140" }
+      ],
+      "note": "EMU's official 2026/27 prices when paying a full year in advance. Scholarship 60–75%, or 30–45% for medicine and dentistry. The 2027/28 price list is not yet published."
+    }
+  },
+  "academgo.north-cyprus.gau.ru": {
+    "afterHeading": "Стоимость обучения в Girne American University",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Базовые цены программ GAU",
+      "subtitle": "EUR в год до скидки, прайс 2025/26",
+      "items": [
+        { "label": "Ассоциированная степень", "value": 6500, "valueLabel": "€6 500" },
+        { "label": "Бизнес, коммуникации, образование и др.", "value": 7700, "valueLabel": "€7 700" },
+        { "label": "Инженерия, архитектура, право, туризм и др.", "value": 8000, "valueLabel": "€8 000" },
+        { "label": "Магистратура", "value": 8000, "valueLabel": "€8 000" },
+        { "label": "Фармация", "value": 11000, "valueLabel": "€11 000" },
+        { "label": "PhD", "value": 12500, "valueLabel": "€12 500" },
+        { "label": "Медицина", "value": 13000, "valueLabel": "€13 000" }
+      ],
+      "note": "Прайс 2026/27 GAU на сентябрь 2026 года не опубликовал. Иностранцам на бакалавриате и магистратуре — скидка 50%, плюс сбор €500 в год; для медицины и фармации скидка письменно не подтверждена."
+    }
+  },
+  "academgo.north-cyprus.gau.en": {
+    "afterHeading": "Girne American University tuition fees (2025/26 price list)",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "GAU base fees by program",
+      "subtitle": "EUR per year before the scholarship, 2025/26 price list",
+      "items": [
+        { "label": "Associate degree", "value": 6500, "valueLabel": "€6,500" },
+        { "label": "Business, communication, education, etc.", "value": 7700, "valueLabel": "€7,700" },
+        { "label": "Engineering, architecture, law, etc.", "value": 8000, "valueLabel": "€8,000" },
+        { "label": "Master's", "value": 8000, "valueLabel": "€8,000" },
+        { "label": "Pharmacy", "value": 11000, "valueLabel": "€11,000" },
+        { "label": "PhD", "value": 12500, "valueLabel": "€12,500" },
+        { "label": "Medicine", "value": 13000, "valueLabel": "€13,000" }
+      ],
+      "note": "GAU's 2026/27 table is not published yet. Bachelor's and master's students get a 50% scholarship; every program adds €500 a year in fees. The 50% is not confirmed for pharmacy and medicine."
+    }
+  },
+  "academgo.north-cyprus.metu-ncc.ru": {
+    "afterHeading": "Стоимость обучения в METU Northern Cyprus Campus",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в METU NCC со стипендией",
+      "subtitle": "USD за год обучения, бакалавриат по международной квоте",
+      "items": [
+        { "label": "Без стипендии", "value": 9450, "valueLabel": "$9 450" },
+        { "label": "Стипендия 25%", "value": 7087.5, "valueLabel": "$7 087,50" },
+        { "label": "Стипендия 50%", "value": 4725, "valueLabel": "$4 725" },
+        { "label": "Стипендия 75%", "value": 2362.5, "valueLabel": "$2 362,50" },
+        { "label": "Стипендия 90%", "value": 945, "valueLabel": "$945" }
+      ],
+      "note": "Базовая цена — прайс 2026/27, суммы со стипендией — со страницы стипендий 2025/26. При стипендии 100% обучение — $0. К любой сумме добавляется регистрационный сбор $500 за семестр."
+    }
+  },
+  "academgo.north-cyprus.metu-ncc.en": {
+    "afterHeading": "Tuition fees at METU NCC",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "METU NCC tuition by scholarship level",
+      "subtitle": "USD per year, undergraduate international quota",
+      "items": [
+        { "label": "No scholarship", "value": 9450, "valueLabel": "$9,450" },
+        { "label": "25% scholarship", "value": 7087.5, "valueLabel": "$7,087.50" },
+        { "label": "50% scholarship", "value": 4725, "valueLabel": "$4,725" },
+        { "label": "75% scholarship", "value": 2362.5, "valueLabel": "$2,362.50" },
+        { "label": "90% scholarship", "value": 945, "valueLabel": "$945" }
+      ],
+      "note": "Base fee from the 2026/27 price list; scholarship amounts from the page labeled 2025–2026. A 100% scholarship means $0 tuition. The $500 registration fee per semester applies at every level."
+    }
+  },
+  "academgo.north-cyprus.neu.ru": {
+    "afterHeading": "Стоимость обучения в NEU Cyprus",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в NEU",
+      "subtitle": "EUR в год, ориентировочные цены 2026/27",
+      "items": [
+        { "label": "Типичный бакалавриат (со скидкой 50%)", "value": 2700, "valueMax": 2800, "valueLabel": "около €2 700–2 800" },
+        { "label": "Фармация, ветеринария, инженерия", "value": 4700, "valueMax": 5000, "valueLabel": "около €4 700–5 000" },
+        { "label": "Медицина (скидка 50% не действует)", "value": 11400, "valueLabel": "около €11 400" }
+      ],
+      "note": "Официальную таблицу NEU открыть не удалось, суммы — ориентир на сентябрь 2026 года. По медицине источники дают до ≈ €14 000; цену стоматологии уточняем."
+    }
+  },
+  "academgo.north-cyprus.neu.en": {
+    "afterHeading": "Near East University tuition fees for 2026/27",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at NEU costs",
+      "subtitle": "EUR per year, approximate 2026/27 fees",
+      "items": [
+        { "label": "Typical bachelor's (after 50%)", "value": 2665, "valueMax": 2800, "valueLabel": "about €2,665–2,800" },
+        { "label": "Pharmacy, veterinary medicine, engineering", "value": 4700, "valueMax": 5000, "valueLabel": "about €4,700–5,000" },
+        { "label": "Medicine (no 50% scholarship)", "value": 11400, "valueLabel": "about €11,400" }
+      ],
+      "note": "NEU's official fee table was not accessible in September 2026; figures are from secondary sources. Some sources quote medicine at up to €14,000. Dentistry fee to be confirmed."
+    }
+  },
+  "academgo.north-cyprus.admission.ru": {
+    "afterHeading": "После зачисления: въезд и студенческий ВНЖ",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Когда что делать при поступлении",
+      "subtitle": "Набор 2027/28: от выбора программы до первого курса",
+      "items": [
+        { "period": "До подачи документов", "title": "Решите, где будете использовать диплом", "text": "От этого зависит выбор вуза и программы; проверьте, есть ли программа в справочнике ÖSYS." },
+        { "period": "За несколько месяцев до набора", "title": "Сдайте IELTS или TOEFL", "text": "Сертификат, сданный заранее, экономит год и стоимость подготовительного года." },
+        { "period": "По прибытии", "title": "Виза ТРСК", "text": "Для граждан стран СНГ, кроме Армении, виза ТРСК оформляется по прибытии." },
+        { "period": "Около 30 дней с начала срока визы", "title": "Студенческий ВНЖ и медосмотр", "text": "Заявка онлайн в Muhaceret Dairesi, медосмотр — только в уполномоченном медучреждении ТРСК." },
+        { "period": "Первый год, если нет сертификата", "title": "Подготовительный год английского", "text": "Отдельный год и отдельная оплата: в EMU примерно $3 520–4 613 плюс $250 за семестр (2026/27)." }
+      ]
+    }
+  },
+  "academgo.north-cyprus.admission.en": {
+    "afterHeading": "Intakes and dates for 2027/28",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "When to do what for the 2027/28 intake",
+      "subtitle": "From choosing a program to your first semester",
+      "items": [
+        { "period": "Before you apply", "title": "Check the program for recognition", "text": "Bachelor's programs not in Turkey's ÖSYS guide are not considered for denklik." },
+        { "period": "Before you travel", "title": "Take IELTS or TOEFL at home", "text": "A score taken at home often saves a full preparatory year. At EMU, a certificate is valid for 2 years." },
+        { "period": "September or February", "title": "Semester starts", "text": "For reference, CIU's 2026/27 classes began on 21 September 2026; spring classes start on 8 February 2027." },
+        { "period": "Within about 30 days", "title": "Student residence permit", "text": "Apply online for the Öğrenci İkamet İzni, then complete the medical check at an authorized TRNC clinic." },
+        { "period": "Extra year without a score", "title": "Preparatory English year", "text": "A prep year means a 4-year bachelor's takes 5 years in total." }
+      ]
+    }
+  },
+  "academgo.north-cyprus.visa.ru": {
+    "afterHeading": "Когда студенческий ВНЖ аннулируют",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Сроки въезда и студенческого ВНЖ",
+      "subtitle": "Маршрут через Турцию до ВНЖ ТРСК и после выпуска",
+      "items": [
+        { "period": "До вылета", "title": "Проверьте въезд в Турцию", "text": "Таджикистану и Туркменистану нужна турецкая виза; гражданам Армении — e-Visa ТРСК до вылета." },
+        { "period": "По прибытии", "title": "Виза ТРСК", "text": "Гражданам СНГ, кроме Армении, визу выдают по прибытии — ориентировочно до 90 дней в течение 180." },
+        { "period": "30 дней с начала срока визы", "title": "Заявка на студенческий ВНЖ", "text": "Онлайн в системе Muhaceret Dairesi, затем медосмотр в ТРСК и оплата сборов." },
+        { "period": "Раз в три месяца", "title": "Вуз передаёт ваш статус", "text": "Статус студента уходит в систему GöçSis; при отчислении ВНЖ аннулируется." },
+        { "period": "60 дней после выпуска или отчисления", "title": "Законное пребывание", "text": "За это время нужно уехать или оформить другое основание для жизни в ТРСК." }
+      ]
+    }
+  },
+  "academgo.north-cyprus.visa.en": {
+    "afterHeading": "Keeping your permit valid",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Visa and residence permit deadlines",
+      "subtitle": "From the university offer to life after graduation",
+      "items": [
+        { "period": "Before booking tickets", "title": "Check Turkish rules and the e-Visa", "text": "Nigerian applicants get the e-Visa after the university offer and before booking non-refundable tickets." },
+        { "period": "On arrival", "title": "Visa on arrival", "text": "Most nationalities receive a TRNC visa on arrival, valid for up to 90 days within 180 days." },
+        { "period": "Within 30 days of the visa start", "title": "Apply for the residence permit", "text": "Apply online with Muhaceret Dairesi, pass the medical check in the TRNC and pay the fees; start in your first week." },
+        { "period": "Every three months", "title": "University reports your status", "text": "Your status goes to the GöçSis system; if you are expelled, the permit is cancelled." },
+        { "period": "60 days after graduation", "title": "Legal stay after studies", "text": "After graduation or expulsion, you have 60 days to leave or change status." }
+      ]
+    }
+  },
+  "academgo.north-cyprus.diploma-recognition.ru": {
+    "afterHeading": "Как устроено признание дипломов вузов Северного Кипра",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Как складывался статус дипломов ТРСК",
+      "subtitle": "Ключевые даты для признания дипломов вузов Северного Кипра",
+      "items": [
+        { "period": "1983", "title": "Провозглашение ТРСК", "text": "Резолюция 541 СБ ООН признала декларацию юридически недействительной; ТРСК признаёт только Турция." },
+        { "period": "2009", "title": "Соглашение Турции и ТРСК", "text": "Подписано межгосударственное соглашение о взаимном признании университетов." },
+        { "period": "2011", "title": "Соглашение вступило в силу", "text": "Турция признаёт вузы ТРСК; иностранному выпускнику для работы в Турции нужна справка denklik." },
+        { "period": "2015", "title": "Дополнительное соглашение", "text": "Стороны заключили дополнительное соглашение о признании вузов." },
+        { "period": "2020", "title": "Отказы на Ближнем Востоке", "text": "По словам ректора одного из вузов ТРСК, Иордания, Египет, Иран, Ирак и ОАЭ перестали признавать дипломы ТРСК." }
+      ]
+    }
+  },
+  "academgo.north-cyprus.diploma-recognition.en": {
+    "afterHeading": "YÖDAK and YÖK: who accredits North Cyprus universities",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "How TRNC degree recognition took shape",
+      "subtitle": "Key dates behind the recognition of North Cyprus degrees",
+      "items": [
+        { "period": "1983", "title": "TRNC declares independence", "text": "UN Security Council Resolution 541 called the declaration legally invalid; only Turkey recognizes the TRNC." },
+        { "period": "16 January 2009", "title": "Turkey–TRNC agreement signed", "text": "An intergovernmental agreement on mutual recognition of universities is signed." },
+        { "period": "24 August 2011", "title": "Agreement in force", "text": "Turkey recognizes TRNC universities through YÖK; international graduates still need denklik." },
+        { "period": "2015–2016", "title": "Supplementary agreement", "text": "Signed on 13 October 2015 and in force since 4 October 2016." },
+        { "period": "December 2020", "title": "Middle East recognition warning", "text": "GAU's founding rector said Jordan, Egypt, Iran, Iraq and the UAE had stopped recognizing TRNC degrees." }
+      ]
+    }
+  }
+}

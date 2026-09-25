@@ -610,9 +610,12 @@ export async function getSinglePageByLang(
 
 export async function getSingleSubPageBySlug(
   lang: string,
+  slug: string,
   subslug: string
 ): Promise<Subpage | null> {
-  const subPageQuery = groq`*[_type == 'subpage' && slug[$lang].current == $subslug][0] {
+  // Ищем по паре «родитель + slug»: у страниц разных стран slug может совпадать
+  // (admission-requirements есть у Грузии, Испании, Турции и Северного Кипра)
+  const subPageQuery = groq`*[_type == 'subpage' && slug[$lang].current == $subslug && parentPage->slug[$lang].current == $slug][0] {
     _id,
     title,
     shortTitle,
@@ -700,7 +703,7 @@ export async function getSingleSubPageBySlug(
   try {
     const subPage = await client.fetch(
       subPageQuery,
-      { lang, subslug },
+      { lang, slug, subslug },
       {
         next: {
           revalidate: 60

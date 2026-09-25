@@ -1,0 +1,811 @@
+{
+  "academgo.uae.hub.ru": {
+    "afterHeading": "Сколько стоит учёба в ОАЭ",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год учёбы в Дубае",
+      "subtitle": "AED за учебный год, ориентиры по действующим прайсам 2026/27",
+      "items": [
+        {
+          "label": "Бакалавриат в филиалах UK и Австралии",
+          "value": 60000,
+          "valueMax": 80000,
+          "valueLabel": "примерно 60 000–80 000 AED"
+        },
+        {
+          "label": "Бакалавриат в University of Birmingham Dubai",
+          "value": 129000,
+          "valueMax": 157000,
+          "valueLabel": "примерно 129 000–157 000 AED"
+        },
+        {
+          "label": "Магистратура в Birmingham Dubai (full-time)",
+          "value": 166000,
+          "valueMax": 175000,
+          "valueLabel": "примерно 166 000–175 000 AED"
+        }
+      ],
+      "note": "Birmingham — наборы 2026 и сентябрь 2026 / январь 2027. Магистратура и MBA в других филиалах и Foundation считаются за программу, поэтому в график не вошли. Цены на 2027/28 большинство вузов ещё не опубликовало."
+    }
+  },
+  "academgo.uae.hub.en": {
+    "afterHeading": "Types of universities in UAE",
+    "block": {
+      "_type": "countryMapBlock",
+      "country": "uae",
+      "title": "Where UAE universities are",
+      "subtitle": "Our five partner branch campuses in Dubai and federal universities outside it",
+      "points": [
+        {
+          "city": "Dubai",
+          "lat": 25.2,
+          "lon": 55.27,
+          "universities": [
+            {
+              "name": "Middlesex University Dubai",
+              "href": "/study-in-uae/middlesex-university-dubai"
+            },
+            {
+              "name": "University of Wollongong in Dubai",
+              "href": "/study-in-uae/university-of-wollongong-in-dubai"
+            },
+            {
+              "name": "Heriot-Watt University Dubai",
+              "href": "/study-in-uae/heriot-watt-university-dubai"
+            },
+            {
+              "name": "University of Birmingham Dubai",
+              "href": "/study-in-uae/university-of-birmingham-dubai"
+            },
+            {
+              "name": "Curtin University Dubai",
+              "href": "/study-in-uae/curtin-university-dubai"
+            }
+          ]
+        },
+        {
+          "city": "Al Ain",
+          "lat": 24.21,
+          "lon": 55.74,
+          "universities": [
+            {
+              "name": "UAE University"
+            }
+          ]
+        },
+        {
+          "city": "Abu Dhabi",
+          "lat": 24.45,
+          "lon": 54.38,
+          "universities": [
+            {
+              "name": "Khalifa University"
+            }
+          ]
+        }
+      ],
+      "note": "Federal universities charge international students per credit hour; free tuition is for UAE citizens only."
+    }
+  },
+  "academgo.uae.universities.ru": {
+    "afterHeading": "Университеты ОАЭ вне Дубая: федеральные вузы",
+    "block": {
+      "_type": "countryMapBlock",
+      "country": "uae",
+      "title": "Где находятся вузы из обзора",
+      "subtitle": "Пять филиалов в Дубае и федеральные университеты за его пределами",
+      "points": [
+        {
+          "city": "Дубай",
+          "lat": 25.2,
+          "lon": 55.27,
+          "universities": [
+            {
+              "name": "Middlesex University Dubai",
+              "href": "/ru/ucheba-v-oae/middlesex-university-dubai"
+            },
+            {
+              "name": "Heriot-Watt University Dubai",
+              "href": "/ru/ucheba-v-oae/heriot-watt-university-dubai"
+            },
+            {
+              "name": "University of Birmingham Dubai",
+              "href": "/ru/ucheba-v-oae/university-of-birmingham-dubai"
+            },
+            {
+              "name": "University of Wollongong in Dubai (UOWD)",
+              "href": "/ru/ucheba-v-oae/university-of-wollongong-in-dubai"
+            },
+            {
+              "name": "Curtin University Dubai",
+              "href": "/ru/ucheba-v-oae/curtin-university-dubai"
+            }
+          ]
+        },
+        {
+          "city": "Аль-Айн",
+          "lat": 24.21,
+          "lon": 55.74,
+          "universities": [
+            {
+              "name": "UAE University"
+            }
+          ]
+        },
+        {
+          "city": "Абу-Даби",
+          "lat": 24.45,
+          "lon": 54.38,
+          "universities": [
+            {
+              "name": "Khalifa University"
+            }
+          ]
+        }
+      ],
+      "note": "Бесплатное обучение по госгранту в федеральных вузах положено только гражданам ОАЭ."
+    }
+  },
+  "academgo.uae.universities.en": {
+    "afterHeading": "Universities in Dubai compared: five UK and Australian campuses",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Bachelor's tuition at five Dubai campuses",
+      "subtitle": "AED per year, latest published fees",
+      "items": [
+        {
+          "label": "University of Birmingham Dubai",
+          "value": 128695,
+          "valueMax": 156718,
+          "valueLabel": "128,695–156,718 AED"
+        },
+        {
+          "label": "Heriot-Watt University Dubai",
+          "value": 78650,
+          "valueMax": 82264,
+          "valueLabel": "78,650–82,264 AED"
+        },
+        {
+          "label": "Middlesex University Dubai",
+          "value": 64557,
+          "valueLabel": "64,557 AED"
+        },
+        {
+          "label": "University of Wollongong in Dubai",
+          "value": 63449,
+          "valueLabel": "63,449 AED"
+        },
+        {
+          "label": "Curtin University Dubai",
+          "value": 60900,
+          "valueLabel": "about 60,900 AED"
+        }
+      ],
+      "note": "Only Heriot-Watt has published 2027 prices (Jan and Sept 2027 intakes); the others are 2026/27 fees. UOWD engineering costs 68,909 AED; Curtin quotes 182,700 AED for a 3-year program."
+    }
+  },
+  "academgo.uae.cost.ru": {
+    "afterHeading": "Стоимость обучения в Дубае по вузам: бакалавриат и Foundation",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год бакалавриата в Дубае",
+      "subtitle": "AED за учебный год, по последним опубликованным прайсам",
+      "items": [
+        {
+          "label": "University of Birmingham Dubai",
+          "value": 128695,
+          "valueMax": 156718,
+          "valueLabel": "128 695–156 718 AED"
+        },
+        {
+          "label": "Heriot-Watt (менеджмент)",
+          "value": 78650,
+          "valueLabel": "78 650 AED"
+        },
+        {
+          "label": "Middlesex University Dubai",
+          "value": 64557,
+          "valueLabel": "64 557 AED"
+        },
+        {
+          "label": "UOWD",
+          "value": 63449,
+          "valueLabel": "63 449 AED"
+        },
+        {
+          "label": "Curtin University Dubai",
+          "value": 60900,
+          "valueLabel": "около 60 900 AED"
+        }
+      ],
+      "note": "Heriot-Watt — наборы январь и сентябрь 2027, у остальных — прайсы 2026/27. Curtin публикует цену за всю программу: 182 700 AED за 3 года."
+    }
+  },
+  "academgo.uae.cost.en": {
+    "afterHeading": "Tuition fees at Dubai branch campuses",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "A year of bachelor's tuition in Dubai",
+      "subtitle": "AED per year, latest published price lists",
+      "items": [
+        {
+          "label": "University of Birmingham Dubai",
+          "value": 128695,
+          "valueMax": 156718,
+          "valueLabel": "128,695–156,718 AED"
+        },
+        {
+          "label": "Heriot-Watt (management)",
+          "value": 78650,
+          "valueLabel": "78,650 AED"
+        },
+        {
+          "label": "Middlesex University Dubai",
+          "value": 64557,
+          "valueLabel": "64,557 AED"
+        },
+        {
+          "label": "University of Wollongong in Dubai",
+          "value": 63449,
+          "valueLabel": "63,449 AED"
+        },
+        {
+          "label": "Curtin University Dubai",
+          "value": 60900,
+          "valueLabel": "about 60,900 AED"
+        }
+      ],
+      "note": "Heriot-Watt: January and September 2027 intakes; others: 2026/27 intakes. Curtin quotes 182,700 AED for a 3-year degree."
+    }
+  },
+  "academgo.uae.visa.ru": {
+    "afterHeading": "Въезд и документы для абитуриентов из СНГ",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Сроки студенческой визы в ОАЭ",
+      "subtitle": "От оффера до окончания учёбы",
+      "items": [
+        {
+          "period": "Сразу после оффера",
+          "title": "Оплата обучения до визы",
+          "text": "Вуз-спонсор требует оплатить обучение до подачи на визу: Middlesex берёт 25% годовой стоимости плюс сборы и депозит."
+        },
+        {
+          "period": "Не позже чем за 8 недель до семестра",
+          "title": "Документы на визу — в вуз",
+          "text": "Начинать стоит сразу после оффера, а не за месяц до занятий."
+        },
+        {
+          "period": "Около 4–6 недель",
+          "title": "От entry permit до Emirates ID",
+          "text": "Въезд по entry permit, медосмотр и Emirates ID; сам ВНЖ GDRFA оформляет за 48 часов после подачи полного пакета."
+        },
+        {
+          "period": "Первый семестр",
+          "title": "Легализация и эквивалентность",
+          "text": "Учиться можно, пока идёт процедура: Birmingham даёт первый семестр на документы, Heriot-Watt — один семестр на эквивалентность."
+        },
+        {
+          "period": "Каждый год",
+          "title": "Продление визы",
+          "text": "Виза выдаётся на 1 год и продлевается через визовый отдел вуза вместе с Emirates ID."
+        },
+        {
+          "period": "60 дней после учёбы",
+          "title": "Выезд или смена статуса",
+          "text": "После окончания учёбы или аннулирования ВНЖ, по данным GDRFA, есть льготный период 60 дней."
+        }
+      ]
+    }
+  },
+  "academgo.uae.visa.en": {
+    "afterHeading": "Documents for a Dubai student visa",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "UAE student visa timeline",
+      "subtitle": "Key deadlines from offer to graduation",
+      "items": [
+        {
+          "period": "At least 8 weeks before the semester",
+          "title": "Entry permit application",
+          "text": "For a September 2027 start, submit your visa documents to the university by early July 2027 at the latest."
+        },
+        {
+          "period": "About 4–6 weeks",
+          "title": "From entry permit to Emirates ID",
+          "text": "You travel on the entry permit, take the medical test and give Emirates ID biometrics."
+        },
+        {
+          "period": "48 hours",
+          "title": "Residence visa issued",
+          "text": "GDRFA's service time once the file is complete."
+        },
+        {
+          "period": "First semester",
+          "title": "Legalization and equivalency",
+          "text": "Birmingham asks for the documents during the first semester; Heriot-Watt gives one semester for equivalency."
+        },
+        {
+          "period": "Every year",
+          "title": "Visa renewal",
+          "text": "The visa is usually issued for one year and renewed annually by your university, together with the Emirates ID."
+        },
+        {
+          "period": "60 days",
+          "title": "Grace period after your studies",
+          "text": "When studies end or the visa is cancelled, GDRFA gives 60 days to leave or switch to another visa."
+        }
+      ]
+    }
+  },
+  "academgo.uae.masters-mba.ru": {
+    "afterHeading": "Где учиться: магистратура в ОАЭ в пяти кампусах",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Цены магистратуры и MBA в кампусах Дубая",
+      "subtitle": "AED за всю программу, прайсы 2026/27 и наборов 2027",
+      "items": [
+        {
+          "label": "Middlesex: Executive MBA",
+          "value": 117548,
+          "valueLabel": "117 548 AED"
+        },
+        {
+          "label": "Curtin: MBA (16 мес.)",
+          "value": 115500,
+          "valueLabel": "115 500 AED"
+        },
+        {
+          "label": "Heriot-Watt: MSc IBM with Marketing",
+          "value": 99528,
+          "valueLabel": "99 528 AED"
+        },
+        {
+          "label": "Curtin: Engineering Management (16 мес.)",
+          "value": 91350,
+          "valueLabel": "91 350 AED"
+        },
+        {
+          "label": "Middlesex: MBA",
+          "value": 84872,
+          "valueLabel": "84 872 AED"
+        },
+        {
+          "label": "Curtin: Master of AI, Cyber Security",
+          "value": 84000,
+          "valueLabel": "84 000 AED"
+        },
+        {
+          "label": "Middlesex: MSc",
+          "value": 76491,
+          "valueMax": 94101,
+          "valueLabel": "76 491–94 101 AED"
+        }
+      ],
+      "note": "Birmingham указывает цену за год (International Business MSc — 166 356 AED, AI & Machine Learning MSc — 174 509 AED), UOWD — за предмет, поэтому в график они не вошли. Heriot-Watt — прайс на январь и сентябрь 2027."
+    }
+  },
+  "academgo.uae.masters-mba.en": {
+    "afterHeading": "MBA in Dubai and master's fees: 2026/27 price lists",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Master's and MBA fees at Dubai campuses",
+      "subtitle": "AED for the whole program, 2026/27 and 2027 price lists",
+      "items": [
+        {
+          "label": "Middlesex: Executive MBA",
+          "value": 117548,
+          "valueLabel": "117,548 AED"
+        },
+        {
+          "label": "Curtin: MBA (16 months)",
+          "value": 115500,
+          "valueLabel": "115,500 AED"
+        },
+        {
+          "label": "Heriot-Watt: MSc IBM with Marketing",
+          "value": 99528,
+          "valueLabel": "99,528 AED"
+        },
+        {
+          "label": "Curtin: Engineering Management (16 months)",
+          "value": 91350,
+          "valueLabel": "91,350 AED"
+        },
+        {
+          "label": "Middlesex: MBA",
+          "value": 84872,
+          "valueLabel": "84,872 AED"
+        },
+        {
+          "label": "Curtin: Master of AI or Cyber Security",
+          "value": 84000,
+          "valueLabel": "84,000 AED"
+        },
+        {
+          "label": "Middlesex: MSc",
+          "value": 76491,
+          "valueMax": 94101,
+          "valueLabel": "76,491–94,101 AED"
+        }
+      ],
+      "note": "Birmingham quotes fees per year (MSc International Business 166,356 AED; MSc AI and Machine Learning 174,509 AED) and UOWD per subject, so they are not shown. Heriot-Watt's fee covers the January and September 2027 intakes."
+    }
+  },
+  "academgo.uae.birmingham.ru": {
+    "afterHeading": "Стоимость обучения в Birmingham Dubai",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в Birmingham Dubai",
+      "subtitle": "AED за учебный год, набор сентябрь 2026 / январь 2027",
+      "items": [
+        {
+          "label": "Economics BSc",
+          "value": 128695,
+          "valueLabel": "128 695 AED"
+        },
+        {
+          "label": "Business Management BSc",
+          "value": 134922,
+          "valueLabel": "134 922 AED"
+        },
+        {
+          "label": "AI & Computer Science BSc",
+          "value": 156718,
+          "valueLabel": "156 718 AED"
+        },
+        {
+          "label": "Нулевой год: Business Management",
+          "value": 123506,
+          "valueLabel": "123 506 AED"
+        },
+        {
+          "label": "Нулевой год: AI & Computer Science",
+          "value": 134922,
+          "valueLabel": "134 922 AED"
+        },
+        {
+          "label": "International Business MSc (full-time)",
+          "value": 166356,
+          "valueLabel": "166 356 AED"
+        },
+        {
+          "label": "AI & Machine Learning MSc (full-time)",
+          "value": 174509,
+          "valueLabel": "174 509 AED"
+        }
+      ],
+      "note": "Цены на набор 2027 года вуз ещё не опубликовал. После нулевого года (Integrated Foundation Year) действует цена бакалавриата."
+    }
+  },
+  "academgo.uae.birmingham.en": {
+    "afterHeading": "University of Birmingham Dubai tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "A year at Birmingham Dubai",
+      "subtitle": "AED per year, September 2026 / January 2027 intake",
+      "items": [
+        {
+          "label": "Economics BSc",
+          "value": 128695,
+          "valueLabel": "128,695 AED"
+        },
+        {
+          "label": "Business Management BSc",
+          "value": 134922,
+          "valueLabel": "134,922 AED"
+        },
+        {
+          "label": "AI and Computer Science BSc",
+          "value": 156718,
+          "valueLabel": "156,718 AED"
+        },
+        {
+          "label": "Foundation year: Business Management",
+          "value": 123506,
+          "valueLabel": "123,506 AED"
+        },
+        {
+          "label": "Foundation year: AI and Computer Science",
+          "value": 134922,
+          "valueLabel": "134,922 AED"
+        },
+        {
+          "label": "International Business MSc (full-time)",
+          "value": 166356,
+          "valueLabel": "166,356 AED"
+        },
+        {
+          "label": "AI and Machine Learning MSc (full-time)",
+          "value": 174509,
+          "valueLabel": "174,509 AED"
+        }
+      ],
+      "note": "Fees for September 2027 have not been published yet. After the Integrated Foundation Year, the bachelor's fee applies."
+    }
+  },
+  "academgo.uae.curtin.ru": {
+    "afterHeading": "Стоимость обучения в Curtin University Dubai",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Цены программ в Curtin Dubai",
+      "subtitle": "AED за всю программу с НДС 5%, старт с сентября 2026",
+      "items": [
+        {
+          "label": "Бакалавриат: бизнес, IT, дизайн (3 года)",
+          "value": 182700,
+          "valueLabel": "182 700 AED"
+        },
+        {
+          "label": "BAppSc Architectural Science (3 года)",
+          "value": 195300,
+          "valueLabel": "195 300 AED"
+        },
+        {
+          "label": "BEng Mechanical Engineering (4 года)",
+          "value": 260400,
+          "valueLabel": "260 400 AED"
+        },
+        {
+          "label": "Foundation (8 месяцев)",
+          "value": 52500,
+          "valueMax": 54600,
+          "valueLabel": "52 500–54 600 AED"
+        },
+        {
+          "label": "Master of AI, Cyber Security (12 мес.)",
+          "value": 84000,
+          "valueLabel": "84 000 AED"
+        },
+        {
+          "label": "Master of Engineering Management (16 мес.)",
+          "value": 91350,
+          "valueLabel": "91 350 AED"
+        },
+        {
+          "label": "MBA (16 мес.)",
+          "value": 115500,
+          "valueLabel": "115 500 AED"
+        }
+      ],
+      "note": "Curtin называет цену за всю программу, а не за год. Прайса на 2027 год вуз не публиковал."
+    }
+  },
+  "academgo.uae.curtin.en": {
+    "afterHeading": "Curtin University Dubai tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Program fees at Curtin Dubai",
+      "subtitle": "AED for the whole program, students starting from September 2026",
+      "items": [
+        {
+          "label": "Foundation (2 trimesters)",
+          "value": 52500,
+          "valueMax": 54600,
+          "valueLabel": "52,500–54,600 AED"
+        },
+        {
+          "label": "Bachelor's: business, IT, design (3 years)",
+          "value": 182700,
+          "valueLabel": "182,700 AED"
+        },
+        {
+          "label": "BAppSc Architectural Science (3 years)",
+          "value": 195300,
+          "valueLabel": "195,300 AED"
+        },
+        {
+          "label": "BEng Mechanical Engineering (4 years)",
+          "value": 260400,
+          "valueLabel": "260,400 AED"
+        },
+        {
+          "label": "Master of AI / Cyber Security (12 months)",
+          "value": 84000,
+          "valueLabel": "84,000 AED"
+        },
+        {
+          "label": "Master of Engineering Management",
+          "value": 91350,
+          "valueLabel": "91,350 AED"
+        },
+        {
+          "label": "MBA, International Business (16 months)",
+          "value": 115500,
+          "valueLabel": "115,500 AED"
+        }
+      ],
+      "note": "Curtin quotes tuition for the whole program, not per year. There is no separate 2027 price list yet."
+    }
+  },
+  "academgo.uae.heriot-watt.ru": {
+    "afterHeading": "Стоимость обучения в Heriot-Watt Dubai на 2027 год",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в Heriot-Watt Dubai",
+      "subtitle": "AED за учебный год, наборы январь и сентябрь 2027",
+      "items": [
+        {
+          "label": "Foundation (Degree Entry Programme)",
+          "value": 56280,
+          "valueLabel": "56 280 AED"
+        },
+        {
+          "label": "Бакалавриат: менеджмент",
+          "value": 78650,
+          "valueLabel": "78 650 AED"
+        },
+        {
+          "label": "Бакалавриат: инженерия и computing",
+          "value": 82264,
+          "valueLabel": "82 264 AED"
+        }
+      ],
+      "note": "Цены со страниц программ. Магистратура считается за всю программу: MSc International Business Management with Marketing — 99 528 AED."
+    }
+  },
+  "academgo.uae.heriot-watt.en": {
+    "afterHeading": "Tuition fees at Heriot-Watt University Dubai for 2027",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "A year at Heriot-Watt Dubai",
+      "subtitle": "AED per year, January and September 2027 intakes",
+      "items": [
+        {
+          "label": "Foundation (Degree Entry Programme)",
+          "value": 56280,
+          "valueLabel": "56,280 AED"
+        },
+        {
+          "label": "Bachelor's, management",
+          "value": 78650,
+          "valueLabel": "78,650 AED"
+        },
+        {
+          "label": "Bachelor's, engineering and computing",
+          "value": 82264,
+          "valueLabel": "82,264 AED"
+        }
+      ],
+      "note": "Fees from program pages. The master's is priced per program: MSc International Business Management with Marketing costs 99,528 AED."
+    }
+  },
+  "academgo.uae.middlesex.ru": {
+    "afterHeading": "Стоимость обучения",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Цены программ в Middlesex Dubai",
+      "subtitle": "AED с НДС, официальный прайс 2026/27",
+      "items": [
+        {
+          "label": "International Foundation Programme (1 год)",
+          "value": 50301,
+          "valueLabel": "50 301 AED за программу"
+        },
+        {
+          "label": "Бакалавриат (Honours), 3 года",
+          "value": 193671,
+          "valueLabel": "193 671 AED за 3 года"
+        },
+        {
+          "label": "MSc",
+          "value": 76491,
+          "valueMax": 94101,
+          "valueLabel": "76 491–94 101 AED"
+        },
+        {
+          "label": "LLM",
+          "value": 76491,
+          "valueMax": 98345,
+          "valueLabel": "76 491–98 345 AED"
+        },
+        {
+          "label": "MBA",
+          "value": 84872,
+          "valueLabel": "84 872 AED"
+        },
+        {
+          "label": "Executive MBA",
+          "value": 117548,
+          "valueLabel": "117 548 AED"
+        }
+      ],
+      "note": "Бакалавриат — 64 557 AED в год. Прайс на 2027/28 вуз объявит отдельно."
+    }
+  },
+  "academgo.uae.middlesex.en": {
+    "afterHeading": "Tuition fees at Middlesex University Dubai",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Program fees at Middlesex Dubai",
+      "subtitle": "AED for the whole program incl. VAT, 2026/27 price list",
+      "items": [
+        {
+          "label": "International Foundation Programme",
+          "value": 50301,
+          "valueLabel": "50,301 AED"
+        },
+        {
+          "label": "Bachelor's (Honours), 3 years",
+          "value": 193671,
+          "valueLabel": "193,671 AED"
+        },
+        {
+          "label": "MSc",
+          "value": 76491,
+          "valueMax": 94101,
+          "valueLabel": "76,491–94,101 AED"
+        },
+        {
+          "label": "LLM",
+          "value": 76491,
+          "valueMax": 98345,
+          "valueLabel": "76,491–98,345 AED"
+        },
+        {
+          "label": "MBA",
+          "value": 84872,
+          "valueLabel": "84,872 AED"
+        },
+        {
+          "label": "Executive MBA",
+          "value": 117548,
+          "valueLabel": "117,548 AED"
+        }
+      ],
+      "note": "The bachelor's fee is 64,557 AED per year. Prices for 2027/28 intakes have not been published yet."
+    }
+  },
+  "academgo.uae.uowd.ru": {
+    "afterHeading": "Стоимость обучения в UOWD",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в UOWD",
+      "subtitle": "AED в год при полной нагрузке, набор Autumn 2026, НДС 5% включён",
+      "items": [
+        {
+          "label": "Бакалавриат: Business, CS, Media, Psychology",
+          "value": 63449,
+          "valueLabel": "63 449 AED"
+        },
+        {
+          "label": "Bachelor of Engineering (Honours)",
+          "value": 68909,
+          "valueLabel": "68 909 AED"
+        },
+        {
+          "label": "Nursing (Conversion)",
+          "value": 42466,
+          "valueLabel": "42 466 AED"
+        }
+      ],
+      "note": "UOWD берёт оплату за каждый предмет по триместрам, годовая сумма — ориентир. Прайс на 2027/28 вуз пока не опубликовал."
+    }
+  },
+  "academgo.uae.uowd.en": {
+    "afterHeading": "University of Wollongong in Dubai tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "A year at UOWD",
+      "subtitle": "AED per year on a full load, Autumn 2026 intake, 5% VAT included",
+      "items": [
+        {
+          "label": "Bachelor's: Business, CS, Media, Psychology",
+          "value": 63449,
+          "valueLabel": "63,449 AED"
+        },
+        {
+          "label": "Bachelor of Engineering (Honours)",
+          "value": 68909,
+          "valueLabel": "68,909 AED"
+        },
+        {
+          "label": "Nursing (Conversion)",
+          "value": 42466,
+          "valueLabel": "42,466 AED"
+        }
+      ],
+      "note": "UOWD charges per subject each trimester, so the yearly figure assumes a full load. 2027/28 rates are not published yet."
+    }
+  }
+}

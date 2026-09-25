@@ -1,0 +1,129 @@
+$ink: #091728;
+$muted: #5b6573;
+$land: #112546;
+$land-muted: #cdd3dd;
+$accent: #f39708;
+
+.map {
+  margin: 0 0 clamp(1.25rem, 5vw, 3.75rem);
+  padding: clamp(1.25rem, 0.8rem + 2.2vw, 3rem);
+  border-radius: 25px;
+  background-color: #fff;
+}
+
+.title {
+  color: $ink;
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  color: $muted;
+  font-size: 15px;
+  margin: 0;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  align-items: center;
+  margin-top: clamp(1.25rem, 1rem + 1vw, 2rem);
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  overflow: visible;
+}
+
+.land {
+  fill: $land;
+}
+
+// Соседняя часть острова (для Кипра) — фоном
+.landMuted {
+  fill: $land-muted;
+}
+
+// Точка города с кольцом цвета фона
+.point {
+  fill: $accent;
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+// Подпись поверх контура: белая обводка отделяет текст от суши
+.cityLabel {
+  fill: $ink;
+  font-size: 17px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  counter-reset: city;
+}
+
+.city {
+  counter-increment: city;
+}
+
+.cityName {
+  color: $ink;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 4px;
+
+  &::before {
+    content: counter(city) ". ";
+    color: $accent;
+  }
+}
+
+.universities {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: $ink;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.link {
+  color: $ink;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.note {
+  color: $muted;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: clamp(1.25rem, 1rem + 1vw, 1.75rem) 0 0;
+}

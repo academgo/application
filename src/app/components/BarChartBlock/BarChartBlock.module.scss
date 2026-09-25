@@ -1,0 +1,119 @@
+$ink: #091728;
+$muted: #5b6573;
+$bar: #112546;
+$bar-range: #b7c0ce; // светлый шаг того же синего — верхняя часть диапазона
+$accent: #f39708;
+$accent-range: #f9cf8f;
+
+.chart {
+  margin: 0 0 clamp(1.25rem, 5vw, 3.75rem);
+  padding: clamp(1.25rem, 0.8rem + 2.2vw, 3rem);
+  border-radius: 25px;
+  background-color: #fff;
+}
+
+.title {
+  color: $ink;
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  color: $muted;
+  font-size: 15px;
+  margin: 0 0 clamp(1.25rem, 1rem + 1vw, 2rem);
+}
+
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(140px, 32%) 1fr;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.label {
+  color: $ink;
+  font-size: 15px;
+  line-height: 1.35;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+// Столбик: 20px, скруглённый конец данных, прямой край у нулевой линии
+.bar,
+.range {
+  flex: none;
+  height: 20px;
+}
+
+.bar {
+  background-color: $bar;
+  border-radius: 0 4px 4px 0;
+  min-width: 4px;
+}
+
+// Диапазон «от–до»: светлое продолжение через 2px зазор
+.range {
+  margin-left: 2px;
+  background-color: $bar-range;
+  border-radius: 0 4px 4px 0;
+}
+
+.row:has(.range) .bar {
+  border-radius: 0;
+}
+
+.value {
+  flex: none;
+  margin-left: 10px;
+  color: $ink;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.highlight {
+  .bar {
+    background-color: $accent;
+  }
+
+  .range {
+    background-color: $accent-range;
+  }
+
+  .label {
+    font-weight: 600;
+  }
+}
+
+.note {
+  color: $muted;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-top: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+}

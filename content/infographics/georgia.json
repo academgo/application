@@ -1,0 +1,787 @@
+{
+  "academgo.georgia.hub.ru": {
+    "afterHeading": "Сколько стоит учёба в Грузии",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год MD в вузах Грузии",
+      "subtitle": "USD за учебный год, действующие прайсы с сайтов вузов на сентябрь 2026 года",
+      "items": [
+        {
+          "label": "TSMU, MD на английском",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "TSU, MD на английском",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "University of Georgia (UG), MD",
+          "value": 6500,
+          "valueLabel": "$6 500"
+        },
+        {
+          "label": "Alte University, MD",
+          "value": 5950,
+          "valueLabel": "$5 950"
+        },
+        {
+          "label": "SEU, MD на английском",
+          "value": 5900,
+          "valueLabel": "$5 900"
+        },
+        {
+          "label": "TSMU, MD на русском",
+          "value": 5000,
+          "valueLabel": "$5 000",
+          "highlight": true
+        }
+      ],
+      "note": "Прайсы на 2027/28 вузы ещё не опубликовали; SEU указывает цены по документу 2025 года."
+    }
+  },
+  "academgo.georgia.hub.en": {
+    "afterHeading": "How much does it cost to study in Georgia?",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "MD tuition by university in Georgia",
+      "subtitle": "USD per year, fees on university websites in September 2026",
+      "items": [
+        {
+          "label": "TSMU",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "TSU",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "UG",
+          "value": 6500,
+          "valueLabel": "$6,500"
+        },
+        {
+          "label": "Alte",
+          "value": 5950,
+          "valueLabel": "$5,950"
+        },
+        {
+          "label": "SEU",
+          "value": 5900,
+          "valueLabel": "$5,900"
+        }
+      ],
+      "note": "SEU figure is from its 2025 price list. No university had published 2027/28 price lists as of September 2026."
+    }
+  },
+  "academgo.georgia.cost.ru": {
+    "afterHeading": "Стоимость обучения в Грузии на медицине: цены вузов",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год MD на английском",
+      "subtitle": "USD за учебный год, действующие цены с сайтов вузов на 09.2026",
+      "items": [
+        {
+          "label": "TSMU",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "TSU",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "University of Georgia (UG)",
+          "value": 6500,
+          "valueLabel": "$6 500"
+        },
+        {
+          "label": "Alte University",
+          "value": 5950,
+          "valueLabel": "$5 950"
+        },
+        {
+          "label": "SEU — Georgian National University",
+          "value": 5900,
+          "valueLabel": "$5 900"
+        }
+      ],
+      "note": "У SEU — прайс 2025 года. Прайсы на набор 2027/28 вузы пока не опубликовали."
+    }
+  },
+  "academgo.georgia.cost.en": {
+    "afterHeading": "MBBS in Georgia fees by university",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "English MD tuition by university",
+      "subtitle": "USD per year, current university prices as of September 2026",
+      "items": [
+        {
+          "label": "TSMU",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "TSU",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "University of Georgia (UG)",
+          "value": 6500,
+          "valueLabel": "$6,500"
+        },
+        {
+          "label": "Alte University",
+          "value": 5950,
+          "valueLabel": "$5,950"
+        },
+        {
+          "label": "SEU – Georgian National University",
+          "value": 5900,
+          "valueLabel": "$5,900"
+        }
+      ],
+      "note": "SEU figure is from its 2025 price list. No university has published 2027/28 prices yet."
+    }
+  },
+  "academgo.georgia.medicine.ru": {
+    "afterHeading": "Сколько стоит медицина в Грузии: цены по вузам",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Цены программ MD в Грузии",
+      "subtitle": "USD за учебный год, цены с сайтов вузов на 09.2026",
+      "items": [
+        {
+          "label": "American MD, TSMU",
+          "value": 13500,
+          "valueLabel": "$13 500"
+        },
+        {
+          "label": "MD на английском, TSMU",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "MD на английском, TSU",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "MD на английском, UG",
+          "value": 6500,
+          "valueLabel": "$6 500"
+        },
+        {
+          "label": "MD на английском, Alte University",
+          "value": 5950,
+          "valueLabel": "$5 950"
+        },
+        {
+          "label": "MD на английском, SEU",
+          "value": 5900,
+          "valueLabel": "$5 900"
+        },
+        {
+          "label": "MD на русском, TSMU",
+          "value": 5000,
+          "valueLabel": "$5 000"
+        }
+      ],
+      "note": "У SEU — прайс 2025 года. Прайсы на набор 2027/28 вузы не опубликовали, цены могут измениться."
+    }
+  },
+  "academgo.georgia.medicine.en": {
+    "afterHeading": "MBBS in Georgia fees by university",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "MD fees in Georgia by program",
+      "subtitle": "USD per year, university websites checked in September 2026",
+      "items": [
+        {
+          "label": "American MD, TSMU",
+          "value": 13500,
+          "valueLabel": "$13,500"
+        },
+        {
+          "label": "English MD, TSMU",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "English MD, TSU",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "English MD, University of Georgia",
+          "value": 6500,
+          "valueLabel": "$6,500"
+        },
+        {
+          "label": "English MD, Alte University",
+          "value": 5950,
+          "valueLabel": "$5,950"
+        },
+        {
+          "label": "English MD, SEU",
+          "value": 5900,
+          "valueLabel": "$5,900"
+        }
+      ],
+      "note": "SEU figure is from its 2025 admission guidelines. 2027/28 price lists are not yet published."
+    }
+  },
+  "academgo.georgia.tsmu.ru": {
+    "afterHeading": "TSMU: стоимость обучения",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в TSMU",
+      "subtitle": "USD за учебный год, цены по сайту TSMU на 09.2026",
+      "items": [
+        {
+          "label": "American MD Program",
+          "value": 13500,
+          "valueLabel": "$13 500"
+        },
+        {
+          "label": "MD на английском",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "Стоматология на английском",
+          "value": 7000,
+          "valueLabel": "$7 000"
+        },
+        {
+          "label": "MD на русском",
+          "value": 5000,
+          "valueLabel": "$5 000",
+          "highlight": true
+        },
+        {
+          "label": "Стоматология на русском",
+          "value": 5000,
+          "valueLabel": "$5 000"
+        },
+        {
+          "label": "Pharmacy",
+          "value": 3500,
+          "valueLabel": "$3 500"
+        },
+        {
+          "label": "Physical Medicine & Rehabilitation",
+          "value": 3000,
+          "valueLabel": "$3 000"
+        },
+        {
+          "label": "Подготовительный курс",
+          "value": 2000,
+          "valueLabel": "$2 000"
+        }
+      ],
+      "note": "Цены на 2027/28 учебный год TSMU не публиковал."
+    }
+  },
+  "academgo.georgia.tsmu.en": {
+    "afterHeading": "Tbilisi State Medical University tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at TSMU costs",
+      "subtitle": "USD per year, fees on the TSMU website as of September 2026",
+      "items": [
+        {
+          "label": "American MD Program",
+          "value": 13500,
+          "valueLabel": "$13,500"
+        },
+        {
+          "label": "MD in English",
+          "value": 8000,
+          "valueLabel": "$8,000",
+          "highlight": true
+        },
+        {
+          "label": "Dental Medicine in English",
+          "value": 7000,
+          "valueLabel": "$7,000"
+        },
+        {
+          "label": "MD in Russian",
+          "value": 5000,
+          "valueLabel": "$5,000"
+        },
+        {
+          "label": "Dental Medicine in Russian",
+          "value": 5000,
+          "valueLabel": "$5,000"
+        },
+        {
+          "label": "Pharmacy",
+          "value": 3500,
+          "valueLabel": "$3,500"
+        },
+        {
+          "label": "Physical Medicine and Rehabilitation",
+          "value": 3000,
+          "valueLabel": "$3,000"
+        },
+        {
+          "label": "Preparatory Course",
+          "value": 2000,
+          "valueLabel": "$2,000"
+        }
+      ],
+      "note": "The fee page does not state the academic year. Fees for 2027/28 are not yet published."
+    }
+  },
+  "academgo.georgia.tsu.ru": {
+    "afterHeading": "Стоимость обучения в TSU",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "MD на английском: TSU и другие вузы Тбилиси",
+      "subtitle": "USD за учебный год, цены по сайтам вузов на 09.2026",
+      "items": [
+        {
+          "label": "TSU",
+          "value": 8000,
+          "valueLabel": "$8 000",
+          "highlight": true
+        },
+        {
+          "label": "University of Georgia",
+          "value": 6500,
+          "valueLabel": "$6 500"
+        },
+        {
+          "label": "Alte University",
+          "value": 5950,
+          "valueLabel": "$5 950"
+        },
+        {
+          "label": "SEU — Georgian National University",
+          "value": 5900,
+          "valueLabel": "$5 900"
+        }
+      ],
+      "note": "У SEU — прайс 2025 года. TSU определяет плату на каждый учебный год, прайс на 2027/28 ещё не опубликован."
+    }
+  },
+  "academgo.georgia.tsu.en": {
+    "afterHeading": "Tbilisi State University tuition fees",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "English MD: TSU and other Tbilisi options",
+      "subtitle": "USD per year, per each university's website in September 2026",
+      "items": [
+        {
+          "label": "Tbilisi State University (TSU)",
+          "value": 8000,
+          "valueLabel": "$8,000",
+          "highlight": true
+        },
+        {
+          "label": "Tbilisi State Medical University",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "University of Georgia",
+          "value": 6500,
+          "valueLabel": "$6,500"
+        },
+        {
+          "label": "Alte University",
+          "value": 5950,
+          "valueLabel": "$5,950"
+        },
+        {
+          "label": "SEU – Georgian National University",
+          "value": 5900,
+          "valueLabel": "$5,900"
+        }
+      ],
+      "note": "TSU sets fees each academic year; 2027/28 fees have not been published yet."
+    }
+  },
+  "academgo.georgia.ug.ru": {
+    "afterHeading": "Стоимость обучения в University of Georgia",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в University of Georgia",
+      "subtitle": "USD за год, прайс на сайте UG на 09.2026",
+      "items": [
+        {
+          "label": "Medicine (MD)",
+          "value": 6500,
+          "valueLabel": "$6 500",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 6000,
+          "valueLabel": "$6 000"
+        },
+        {
+          "label": "Бакалавриат: Cybersecurity Engineering",
+          "value": 5000,
+          "valueLabel": "$5 000"
+        },
+        {
+          "label": "Магистратура: Cybersecurity",
+          "value": 5000,
+          "valueLabel": "$5 000"
+        },
+        {
+          "label": "Бакалавриат: Pharmacy, Civil Engineering…",
+          "value": 4500,
+          "valueLabel": "$4 500"
+        },
+        {
+          "label": "Бакалавриат: Computer Science, Nursing…",
+          "value": 4000,
+          "valueLabel": "$4 000"
+        },
+        {
+          "label": "Магистратура: MBA, Computer Science…",
+          "value": 4000,
+          "valueLabel": "$4 000"
+        }
+      ],
+      "note": "Учебный год на странице прайса не указан. Прайс на 2027/28 UG отдельно не публиковал."
+    }
+  },
+  "academgo.georgia.ug.en": {
+    "afterHeading": "Tuition fees at University of Georgia Tbilisi",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at UG costs",
+      "subtitle": "USD per year, UG fees as of September 2026",
+      "items": [
+        {
+          "label": "Medicine (MD)",
+          "value": 6500,
+          "valueLabel": "$6,500",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 6000,
+          "valueLabel": "$6,000"
+        },
+        {
+          "label": "Bachelor's: Cybersecurity Engineering",
+          "value": 5000,
+          "valueLabel": "$5,000"
+        },
+        {
+          "label": "Master's: Cybersecurity",
+          "value": 5000,
+          "valueLabel": "$5,000"
+        },
+        {
+          "label": "Bachelor's: Pharmacy, Civil Engineering…",
+          "value": 4500,
+          "valueLabel": "$4,500"
+        },
+        {
+          "label": "Bachelor's: Computer Science, Nursing…",
+          "value": 4000,
+          "valueLabel": "$4,000"
+        },
+        {
+          "label": "Master's: MBA, Computer Science…",
+          "value": 4000,
+          "valueLabel": "$4,000"
+        }
+      ],
+      "note": "The price list does not name an academic year. UG has not published 2027/28 fees."
+    }
+  },
+  "academgo.georgia.seu.ru": {
+    "afterHeading": "Стоимость обучения в SEU University",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в SEU",
+      "subtitle": "USD за учебный год, прайс SEU для набора 2025/26",
+      "items": [
+        {
+          "label": "Medical Doctor (MD)",
+          "value": 5900,
+          "valueLabel": "$5 900",
+          "highlight": true
+        },
+        {
+          "label": "Doctor of Dental Medicine (DMD)",
+          "value": 4900,
+          "valueLabel": "$4 900"
+        },
+        {
+          "label": "Nursing (бакалавриат)",
+          "value": 3500,
+          "valueLabel": "$3 500"
+        },
+        {
+          "label": "Business Administration (бакалавриат)",
+          "value": 3500,
+          "valueLabel": "$3 500"
+        },
+        {
+          "label": "Global Business Management (бакалавриат)",
+          "value": 3500,
+          "valueLabel": "$3 500"
+        }
+      ],
+      "note": "Прайс опубликован в июне 2025 года. Прайс на 2027/28 на сентябрь 2026 года вуз не публиковал."
+    }
+  },
+  "academgo.georgia.seu.en": {
+    "afterHeading": "SEU Georgia tuition fees for international students",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at SEU costs",
+      "subtitle": "USD per year, SEU fee list for the 2025/26 intake",
+      "items": [
+        {
+          "label": "Medical Doctor (MD)",
+          "value": 5900,
+          "valueLabel": "$5,900",
+          "highlight": true
+        },
+        {
+          "label": "Doctor of Dental Medicine (DMD)",
+          "value": 4900,
+          "valueLabel": "$4,900"
+        },
+        {
+          "label": "Nursing (bachelor's)",
+          "value": 3500,
+          "valueLabel": "$3,500"
+        },
+        {
+          "label": "Business Administration (bachelor's)",
+          "value": 3500,
+          "valueLabel": "$3,500"
+        },
+        {
+          "label": "Global Business Management (bachelor's)",
+          "value": 3500,
+          "valueLabel": "$3,500"
+        }
+      ],
+      "note": "Fee list dated June 2025. 2027/28 fees had not been published as of September 2026."
+    }
+  },
+  "academgo.georgia.alte.ru": {
+    "afterHeading": "Стоимость обучения в Alte University",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в Alte University",
+      "subtitle": "USD за учебный год, цены по сайту Alte на 09.2026",
+      "items": [
+        {
+          "label": "Medical Doctor (MD)",
+          "value": 5950,
+          "valueLabel": "$5 950",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 4500,
+          "valueLabel": "$4 500"
+        },
+        {
+          "label": "AI and Data Analytics (бакалавриат)",
+          "value": 3950,
+          "valueLabel": "$3 950"
+        },
+        {
+          "label": "Computer Science (бакалавриат)",
+          "value": 3500,
+          "valueLabel": "$3 500"
+        }
+      ],
+      "note": "Alte не указывает, к какому набору относятся цены; прайс на 2027/28 может измениться."
+    }
+  },
+  "academgo.georgia.alte.en": {
+    "afterHeading": "Tuition fees at Alte University",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at Alte costs",
+      "subtitle": "USD per year, fees on the Alte website in September 2026",
+      "items": [
+        {
+          "label": "Medical Doctor (MD)",
+          "value": 5950,
+          "valueLabel": "$5,950",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 4500,
+          "valueLabel": "$4,500"
+        },
+        {
+          "label": "AI and Data Analytics (bachelor's)",
+          "value": 3950,
+          "valueLabel": "$3,950"
+        },
+        {
+          "label": "Computer Science (bachelor's)",
+          "value": 3500,
+          "valueLabel": "$3,500"
+        }
+      ],
+      "note": "Fee pages do not state the academic year. 2027/28 fees have not been published yet."
+    }
+  },
+  "academgo.georgia.admission.ru": {
+    "afterHeading": "Сроки поступления на 2027/28",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Когда подавать документы в Грузию",
+      "subtitle": "Ориентиры по срокам: точные даты на 2027/28 вузы публикуют ближе к набору",
+      "items": [
+        {
+          "period": "За 2–3 месяца до семестра",
+          "title": "Начало процедуры",
+          "text": "Заранее закончите с документами на родине: апостиль, если решили его ставить, и сбор справок занимают свои недели."
+        },
+        {
+          "period": "До 1 месяца",
+          "title": "Признание аттестата в NCEQE",
+          "text": "Базовый тариф — 40 GEL за 1 месяц, самый быстрый — 250 GEL за 1 рабочий день. По данным TSMU, у первокурсников около недели."
+        },
+        {
+          "period": "Около двух недель",
+          "title": "Приказ министерства",
+          "text": "По данным TSMU, после признания аттестата приказ Министерства образования выходит примерно за две недели."
+        },
+        {
+          "period": "Один полный год",
+          "title": "Въезд без визы",
+          "text": "Граждане Казахстана, Узбекистана, Кыргызстана, Азербайджана, России и Беларуси могут находиться в Грузии год без визы."
+        },
+        {
+          "period": "Не позднее чем за 40 дней до конца срока",
+          "title": "Заявление на учебный ВНЖ",
+          "text": "Решение по ВНЖ: на 30-й день за 300 GEL, на 20-й — за 450 GEL, на 10-й — за 600 GEL."
+        }
+      ],
+      "note": "Сборы — по данным NCEQE и Агентства развития госуслуг; сроки признания и приказа для первокурсников — по данным TSMU."
+    }
+  },
+  "academgo.georgia.admission.en": {
+    "afterHeading": "Timeline for the 2027/28 intake",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "When to apply to a Georgian university",
+      "subtitle": "Planning backward from the semester start for the 2027/28 intake",
+      "items": [
+        {
+          "period": "2–3 months before the semester",
+          "title": "Start the procedure",
+          "text": "Begin the NCEQE and ministry steps; universities publish exact 2027/28 dates closer to the intake."
+        },
+        {
+          "period": "1 working day to 1 month",
+          "title": "NCEQE recognition",
+          "text": "1 month costs 40 GEL; the fastest option, 1 working day, costs 250 GEL."
+        },
+        {
+          "period": "15 working days to 1 month",
+          "title": "Ministry enrollment order",
+          "text": "Enrollment without national exams costs 30 GEL for 1 month or 60 GEL for 15 working days."
+        },
+        {
+          "period": "Issued for 90 days",
+          "title": "D3 study visa",
+          "text": "Students from India, Pakistan, Nigeria and Egypt apply with the ministry order; the visa is issued for 90 days."
+        },
+        {
+          "period": "40 days before your stay ends",
+          "title": "Student residence permit",
+          "text": "File in Georgia no later than 40 calendar days before your stay ends; a decision comes on day 30, 20 or 10."
+        }
+      ],
+      "note": "Exact 2027/28 application dates are set by each university and published closer to the intake."
+    }
+  },
+  "academgo.georgia.visa.ru": {
+    "afterHeading": "ВНЖ в Грузии для студентов: сроки и сборы",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Сроки от въезда до карты ВНЖ",
+      "subtitle": "Для граждан России, Беларуси, Казахстана, Узбекистана, Кыргызстана и Азербайджана",
+      "items": [
+        {
+          "period": "1 месяц при базовом тарифе",
+          "title": "Признание аттестата в NCEQE",
+          "text": "Сбор 40 GEL при сроке 1 месяц, есть ускоренные тарифы. Затем приказ Министерства образования о зачислении."
+        },
+        {
+          "period": "До 1 года",
+          "title": "Въезд и пребывание без визы",
+          "text": "Въезжаете по паспорту и можете находиться в Грузии один полный год."
+        },
+        {
+          "period": "Не позднее чем за 40 дней до конца безвиза",
+          "title": "Заявление на учебный ВНЖ",
+          "text": "Без приказа о зачислении и справки вуза заявление не примут, поэтому откладывать не стоит."
+        },
+        {
+          "period": "10, 20 или 30 дней",
+          "title": "Решение по ВНЖ",
+          "text": "300 GEL — решение на 30-й день, 450 GEL — на 20-й, 600 GEL — на 10-й календарный день."
+        },
+        {
+          "period": "От дня обращения до 10 рабочих дней",
+          "title": "Изготовление карты ВНЖ",
+          "text": "Ориентировочно от 60 GEL за 10 рабочих дней до 150 GEL в день обращения."
+        }
+      ],
+      "note": "Тариф за карту ВНЖ ориентировочный — уточняйте в Доме юстиции при подаче."
+    }
+  },
+  "academgo.georgia.visa.en": {
+    "afterHeading": "D3 visa Georgia: documents and fees",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "D3 visa and residence permit timeline",
+      "subtitle": "For students from India, Pakistan, Nigeria and Egypt, 2027/28 intake",
+      "items": [
+        {
+          "period": "2–3 months before the semester",
+          "title": "Start the process",
+          "text": "Recognition, the ministry order and the visa all take time, so begin well before the semester."
+        },
+        {
+          "period": "Up to 1 month",
+          "title": "NCEQE recognition",
+          "text": "40 GEL for 1 month; 80 GEL for 15 working days, 120 GEL for 5, 250 GEL for one working day."
+        },
+        {
+          "period": "Valid for 90 days",
+          "title": "D3 study visa",
+          "text": "Apply with the ministry order and university order; the visa is issued for 90 days."
+        },
+        {
+          "period": "Roughly the first 50 days after arrival",
+          "title": "Residence permit application",
+          "text": "File no later than 40 calendar days before your legal stay ends."
+        },
+        {
+          "period": "Day 10, 20 or 30",
+          "title": "Residence permit decision",
+          "text": "300 GEL for a decision on the 30th calendar day, 450 GEL for the 20th, 600 GEL for the 10th."
+        }
+      ]
+    }
+  }
+}

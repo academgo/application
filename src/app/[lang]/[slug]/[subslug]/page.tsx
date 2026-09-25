@@ -77,6 +77,15 @@ import LeadMagnetBlock, {
 import ConsultationFormBlock, {
   ConsultationFormBlockType
 } from "@/app/components/ConsultationFormBlock/ConsultationFormBlock";
+import BarChartBlock, {
+  BarChartBlockType
+} from "@/app/components/BarChartBlock/BarChartBlock";
+import TimelineBlock, {
+  TimelineBlockType
+} from "@/app/components/TimelineBlock/TimelineBlock";
+import CountryMapBlock, {
+  CountryMapBlockType
+} from "@/app/components/CountryMapBlock/CountryMapBlock";
 import CountriesCompareBlock, {
   CountriesCompareBlockType
 } from "@/app/components/CountriesCompareBlock/CountriesCompareBlock";
@@ -125,12 +134,15 @@ type ContentBlock =
   | CountriesLinksBlockType
   | CountryUniversitiesBlockType
   | LeadMagnetBlockType
-  | ConsultationFormBlockType;
+  | ConsultationFormBlockType
+  | BarChartBlockType
+  | TimelineBlockType
+  | CountryMapBlockType;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang, subslug } = params;
-  const data = await getSingleSubPageBySlug(lang, subslug);
+  const { lang, slug, subslug } = params;
+  const data = await getSingleSubPageBySlug(lang, slug, subslug);
 
   // если данных нет — пусть Next сам отдаст свою логику (или оставь как есть)
   if (!data) {
@@ -160,7 +172,7 @@ const Subpage = async ({ params }: Props) => {
   const { lang, slug, subslug } = params;
 
   // Получаем данные подстраницы
-  const subPage = await getSingleSubPageBySlug(lang, subslug);
+  const subPage = await getSingleSubPageBySlug(lang, slug, subslug);
 
   // console.log("Subpage data:", subPage);
 
@@ -414,6 +426,12 @@ const Subpage = async ({ params }: Props) => {
             currentPageId={subPage._id}
           />
         );
+      case "barChartBlock":
+        return <BarChartBlock key={block._key} block={block as BarChartBlockType} />;
+      case "timelineBlock":
+        return <TimelineBlock key={block._key} block={block as TimelineBlockType} />;
+      case "countryMapBlock":
+        return <CountryMapBlock key={block._key} block={block as CountryMapBlockType} />;
       case "consultationFormBlock":
         return (
           <ConsultationFormBlock

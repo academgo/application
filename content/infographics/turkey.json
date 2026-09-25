@@ -1,0 +1,871 @@
+{
+  "academgo.turkey.hub.ru": {
+    "afterHeading": "Государственные и частные университеты Турции: в чём разница",
+    "block": {
+      "_type": "countryMapBlock",
+      "country": "turkey",
+      "title": "Вузы Турции, с которыми мы работаем",
+      "subtitle": "Частные и государственные университеты из обзора",
+      "points": [
+        {
+          "city": "Стамбул",
+          "lat": 41.01,
+          "lon": 28.98,
+          "universities": [
+            {
+              "name": "Istanbul Medipol University",
+              "href": "/ru/ucheba-v-turcii/istanbul-medipol-university"
+            },
+            {
+              "name": "Bahçeşehir University (BAU)",
+              "href": "/ru/ucheba-v-turcii/bahcesehir-university"
+            },
+            {
+              "name": "Altınbaş University",
+              "href": "/ru/ucheba-v-turcii/altinbas-university"
+            },
+            {
+              "name": "Istanbul University",
+              "href": "/ru/ucheba-v-turcii/istanbul-university"
+            }
+          ]
+        },
+        {
+          "city": "Анкара",
+          "lat": 39.93,
+          "lon": 32.86,
+          "universities": [
+            {
+              "name": "METU (ODTÜ)",
+              "href": "/ru/ucheba-v-turcii/metu"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "academgo.turkey.hub.en": {
+    "afterHeading": "Universities in Turkey: state vs private",
+    "block": {
+      "_type": "countryMapBlock",
+      "country": "turkey",
+      "title": "Universities in Turkey we work with",
+      "subtitle": "Private and state universities covered in this guide",
+      "points": [
+        {
+          "city": "Istanbul",
+          "lat": 41.01,
+          "lon": 28.98,
+          "universities": [
+            {
+              "name": "Istanbul Medipol University",
+              "href": "/study-in-turkey/istanbul-medipol-university"
+            },
+            {
+              "name": "Bahçeşehir University",
+              "href": "/study-in-turkey/bahcesehir-university"
+            },
+            {
+              "name": "Altınbaş University",
+              "href": "/study-in-turkey/altinbas-university"
+            },
+            {
+              "name": "Istanbul University",
+              "href": "/study-in-turkey/istanbul-university"
+            }
+          ]
+        },
+        {
+          "city": "Ankara",
+          "lat": 39.93,
+          "lon": 32.86,
+          "universities": [
+            {
+              "name": "METU (Middle East Technical University)",
+              "href": "/study-in-turkey/metu"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "academgo.turkey.admission.ru": {
+    "afterHeading": "Три пути поступления",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Когда поступать в Турцию на 2027/28",
+      "subtitle": "Ориентиры по модели 2026 года",
+      "items": [
+        {
+          "period": "Сентябрь — декабрь 2026",
+          "title": "Выбор вузов и осенний TR-YÖS",
+          "text": "11 октября 2026 — осенний TR-YÖS; в это же время выберите путь, поставьте апостиль и сдайте TOEFL iBT, PTE или IELTS."
+        },
+        {
+          "period": "Январь — февраль 2027",
+          "title": "Грант и заявки в частные вузы",
+          "text": "В 2026 году приём на Türkiye Bursları шёл с 10 января по 20 февраля, а Medipol открыл набор уже в начале февраля."
+        },
+        {
+          "period": "Весна 2027",
+          "title": "Весенний TR-YÖS",
+          "text": "Даты весенней сессии не объявлены; в это время вузы рассматривают заявки, а вы собираете офферы."
+        },
+        {
+          "period": "Лето 2027",
+          "title": "Зачисление, депозит и виза",
+          "text": "Условное зачисление, депозит и Official Acceptance, затем студенческая виза и заявка на e-Denklik."
+        },
+        {
+          "period": "Сентябрь 2027",
+          "title": "Приезд и регистрация",
+          "text": "Сдайте оригиналы и Denklik в срок вуза и подайте на ВНЖ; в Medipol осенний семестр 2025/26 начался 22 сентября."
+        }
+      ],
+      "note": "Точные даты 2027 года вузы и ÖSYM объявят ближе к набору."
+    }
+  },
+  "academgo.turkey.admission.en": {
+    "afterHeading": "TR-YÖS exam: format, scores, dates and fees",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "TR-YÖS dates: 2026 sessions and 2027",
+      "subtitle": "ÖSYM exam calendar, 2026 cycle",
+      "items": [
+        {
+          "period": "12 April 2026",
+          "title": "TR-YÖS/1, spring session",
+          "text": "The first 2026 session. Results stay valid for two years from the exam date."
+        },
+        {
+          "period": "August 2026",
+          "title": "Registration for TR-YÖS/2 closes",
+          "text": "Registration for the October session closed in August 2026."
+        },
+        {
+          "period": "11 October 2026",
+          "title": "TR-YÖS/2, fall session",
+          "text": "If you are registered, your score stays valid for two years and works for the 2027/28 intake."
+        },
+        {
+          "period": "2027",
+          "title": "Spring and fall sessions expected",
+          "text": "ÖSYM has not published the 2027 calendar yet; don't plan around exact dates until they're announced."
+        }
+      ]
+    }
+  },
+  "academgo.turkey.altinbas.ru": {
+    "afterHeading": "Стоимость обучения в Altınbaş University",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в Altınbaş",
+      "subtitle": "USD в год, списочная цена по прайсу 2025/26",
+      "items": [
+        {
+          "label": "Medicine (EN)",
+          "value": 25000,
+          "valueLabel": "$25 000"
+        },
+        {
+          "label": "Dentistry (30% EN / 70% TR)",
+          "value": 22000,
+          "valueLabel": "$22 000"
+        },
+        {
+          "label": "Pharmacy (EN)",
+          "value": 12000,
+          "valueLabel": "$12 000"
+        },
+        {
+          "label": "Nursing, Midwifery (TR)",
+          "value": 7500,
+          "valueLabel": "$7 500"
+        },
+        {
+          "label": "Law (TR)",
+          "value": 6500,
+          "valueLabel": "$6 500"
+        },
+        {
+          "label": "Инженерия, архитектура, психология, бизнес",
+          "value": 6000,
+          "valueLabel": "$6 000"
+        },
+        {
+          "label": "Economics, IR, Political Science (EN)",
+          "value": 5000,
+          "valueLabel": "$5 000"
+        }
+      ],
+      "note": "Прайс для поступающих в 2026/27 и 2027/28 вуз не публиковал, окончательную сумму фиксирует offer letter. При оплате двумя платежами или за год разом цена ниже списочной."
+    }
+  },
+  "academgo.turkey.altinbas.en": {
+    "afterHeading": "Altinbas University fees for international students",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at Altınbaş costs",
+      "subtitle": "USD per year, list price, 2025/26 price list",
+      "items": [
+        {
+          "label": "Medicine (English)",
+          "value": 25000,
+          "valueLabel": "$25,000"
+        },
+        {
+          "label": "Dentistry (30% English)",
+          "value": 22000,
+          "valueLabel": "$22,000"
+        },
+        {
+          "label": "Pharmacy (English)",
+          "value": 12000,
+          "valueLabel": "$12,000"
+        },
+        {
+          "label": "Nursing (Turkish)",
+          "value": 7500,
+          "valueLabel": "$7,500"
+        },
+        {
+          "label": "Law (Turkish)",
+          "value": 6500,
+          "valueLabel": "$6,500"
+        },
+        {
+          "label": "Engineering, Architecture, Psychology & more",
+          "value": 6000,
+          "valueLabel": "$6,000"
+        },
+        {
+          "label": "Economics, IR, Political Science (English)",
+          "value": 5000,
+          "valueLabel": "$5,000"
+        }
+      ],
+      "note": "Fees for 2027/28 are not published yet; the amount that applies to you is the one in your offer letter. Paying in two instalments or the year at once lowers the list price."
+    }
+  },
+  "academgo.turkey.bahcesehir.ru": {
+    "afterHeading": "Стоимость обучения в Bahcesehir University",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в BAU",
+      "subtitle": "USD в год, официальный прайс 2026/27",
+      "items": [
+        {
+          "label": "Медицина",
+          "value": 28000,
+          "valueLabel": "$28 000"
+        },
+        {
+          "label": "Стоматология",
+          "value": 24000,
+          "valueLabel": "$24 000"
+        },
+        {
+          "label": "Фармация",
+          "value": 15000,
+          "valueLabel": "$15 000"
+        },
+        {
+          "label": "Artificial Intelligence Engineering",
+          "value": 12000,
+          "valueLabel": "$12 000"
+        },
+        {
+          "label": "Право",
+          "value": 10000,
+          "valueLabel": "$10 000"
+        },
+        {
+          "label": "Engineering & Natural Sciences",
+          "value": 9000,
+          "valueLabel": "$9 000"
+        },
+        {
+          "label": "Бизнес, психология, архитектура и др.",
+          "value": 8500,
+          "valueLabel": "$8 500"
+        }
+      ],
+      "note": "Прайс на 2027/28 вуз публикует ближе к набору, поэтому цифры — ориентир для бюджета."
+    }
+  },
+  "academgo.turkey.bahcesehir.en": {
+    "afterHeading": "Bahcesehir University fees for international students (2026/27)",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at BAU costs",
+      "subtitle": "USD per year, official 2026/27 fees",
+      "items": [
+        {
+          "label": "Medicine",
+          "value": 28000,
+          "valueLabel": "$28,000"
+        },
+        {
+          "label": "Dentistry",
+          "value": 24000,
+          "valueLabel": "$24,000"
+        },
+        {
+          "label": "Pharmacy",
+          "value": 15000,
+          "valueLabel": "$15,000"
+        },
+        {
+          "label": "Artificial Intelligence Engineering",
+          "value": 12000,
+          "valueLabel": "$12,000"
+        },
+        {
+          "label": "Law",
+          "value": 10000,
+          "valueLabel": "$10,000"
+        },
+        {
+          "label": "Engineering and Natural Sciences",
+          "value": 9000,
+          "valueLabel": "$9,000"
+        },
+        {
+          "label": "Business, Psychology, Architecture and others",
+          "value": 8500,
+          "valueLabel": "$8,500"
+        }
+      ],
+      "note": "The 2027/28 price list is not out yet."
+    }
+  },
+  "academgo.turkey.burslari.ru": {
+    "afterHeading": "Как подать заявку на Turkiye Burslari: шаги и сроки",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Когда подавать на Türkiye Bursları",
+      "subtitle": "Цикл отбора по модели прошлых лет",
+      "items": [
+        {
+          "period": "Конец декабря 2026",
+          "title": "Объявление конкурса 2027 года",
+          "text": "На 21 сентября 2026 года конкурс не объявлен; официальное объявление ожидается в конце декабря."
+        },
+        {
+          "period": "10 января – 20 февраля",
+          "title": "Приём заявок в TBBS",
+          "text": "Подача бесплатная. Параллельно подавайте документы в частные вузы как план Б."
+        },
+        {
+          "period": "Март–апрель",
+          "title": "Предварительная проверка",
+          "text": "Комиссия проверяет возраст, минимальный балл и полноту документов."
+        },
+        {
+          "period": "Апрель–июнь",
+          "title": "Тест и собеседование",
+          "text": "Собеседование проходит в вашей стране и длится 15–30 минут; бакалавры в тот же день пишут тест."
+        },
+        {
+          "period": "Начало августа",
+          "title": "Результаты",
+          "text": "Если грант дали, от платного места в частном вузе нужно отказаться до зачисления."
+        },
+        {
+          "period": "Сентябрь",
+          "title": "Приезд в Турцию",
+          "text": "В августе стипендиаты подписывают соглашение, в сентябре приезжают на учёбу."
+        }
+      ],
+      "note": "Даты конкурса 2027 года сверяйте на turkiyeburslari.gov.tr."
+    }
+  },
+  "academgo.turkey.burslari.en": {
+    "afterHeading": "How to apply for Türkiye Bursları: steps and timeline",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "When to apply for Türkiye Bursları",
+      "subtitle": "Selection cycle, based on recent years",
+      "items": [
+        {
+          "period": "Late December 2026",
+          "title": "2027 call expected",
+          "text": "In recent years YTB published the call in late December; as of September 2026 it has not been announced."
+        },
+        {
+          "period": "10 January – 20 February",
+          "title": "Applications in TBBS",
+          "text": "The main call opens once a year and applying is free."
+        },
+        {
+          "period": "March – April",
+          "title": "Expert evaluation",
+          "text": "A committee reviews your record, goals and choices, then shortlists applicants for interview."
+        },
+        {
+          "period": "April – June",
+          "title": "Test and interview",
+          "text": "Face-to-face interviews of 15–30 minutes; bachelor's applicants take a 60-minute test the same day."
+        },
+        {
+          "period": "Early August",
+          "title": "Results",
+          "text": "Results come only weeks before the September start, so run a plan B in parallel."
+        },
+        {
+          "period": "September",
+          "title": "Arrival in Turkey",
+          "text": "You sign the scholarship agreement, get your student visa and arrive in September."
+        }
+      ],
+      "note": "Check the 2027 dates on turkiyeburslari.gov.tr before you apply."
+    }
+  },
+  "academgo.turkey.istanbul-university.ru": {
+    "afterHeading": "Стоимость обучения в Istanbul University (2026/27)",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в Istanbul University",
+      "subtitle": "Турецкие лиры за учебный год, цены для иностранцев на 2026/27",
+      "items": [
+        {
+          "label": "Медицина (İstanbul Tıp, TR и EN)",
+          "value": 476100,
+          "valueLabel": "476 100 TL",
+          "highlight": true
+        },
+        {
+          "label": "Стоматология",
+          "value": 309465,
+          "valueLabel": "309 465 TL"
+        },
+        {
+          "label": "Фармация",
+          "value": 238050,
+          "valueLabel": "238 050 TL"
+        },
+        {
+          "label": "Право, архитектура, сестринское дело",
+          "value": 190440,
+          "valueLabel": "190 440 TL"
+        },
+        {
+          "label": "Fen, Su Bilimleri, IT",
+          "value": 166635,
+          "valueLabel": "166 635 TL"
+        },
+        {
+          "label": "Бизнес, Siyasal Bilgiler, İletişim, логистика",
+          "value": 142830,
+          "valueLabel": "142 830 TL"
+        },
+        {
+          "label": "Экономика",
+          "value": 119025,
+          "valueLabel": "119 025 TL"
+        },
+        {
+          "label": "Филология, теология",
+          "value": 95220,
+          "valueLabel": "95 220 TL"
+        }
+      ],
+      "note": "Итог в долларах зависит от курса на дату оплаты: по курсу около 47,6 TL за $1 медицина — около $10 000. Цены на 2027/28 ещё не опубликованы."
+    }
+  },
+  "academgo.turkey.istanbul-university.en": {
+    "afterHeading": "Istanbul University fees for international students",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at Istanbul University costs",
+      "subtitle": "Turkish lira per year, 2026/27 fees for international students",
+      "items": [
+        {
+          "label": "Medicine (İstanbul Tıp)",
+          "value": 476100,
+          "valueLabel": "476,100 TL",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 309465,
+          "valueLabel": "309,465 TL"
+        },
+        {
+          "label": "Pharmacy",
+          "value": 238050,
+          "valueLabel": "238,050 TL"
+        },
+        {
+          "label": "Law, Architecture, Nursing",
+          "value": 190440,
+          "valueLabel": "190,440 TL"
+        },
+        {
+          "label": "Science, Aquatic Sciences, Computer and IT",
+          "value": 166635,
+          "valueLabel": "166,635 TL"
+        },
+        {
+          "label": "Business, Political Sciences, Communication",
+          "value": 142830,
+          "valueLabel": "142,830 TL"
+        },
+        {
+          "label": "Economics",
+          "value": 119025,
+          "valueLabel": "119,025 TL"
+        },
+        {
+          "label": "Literature, Theology",
+          "value": 95220,
+          "valueLabel": "95,220 TL"
+        }
+      ],
+      "note": "What you pay in dollars depends on the exchange rate on the payment date; at about 47.6 TL per USD, Medicine is about $10,000. Fees for 2027/28 are not published yet."
+    }
+  },
+  "academgo.turkey.medicine.ru": {
+    "afterHeading": "Сколько стоит медицина в Турции",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Цены на медицину на английском",
+      "subtitle": "USD за учебный год без скидок, прайсы 2026/27",
+      "items": [
+        {
+          "label": "Medipol (100% English)",
+          "value": 40000,
+          "valueLabel": "$40 000"
+        },
+        {
+          "label": "Acıbadem",
+          "value": 36000,
+          "valueLabel": "$36 000"
+        },
+        {
+          "label": "İstinye",
+          "value": 29000,
+          "valueLabel": "$29 000"
+        },
+        {
+          "label": "Bahçeşehir (BAU)",
+          "value": 28000,
+          "valueLabel": "$28 000"
+        },
+        {
+          "label": "Başkent (Анкара)",
+          "value": 27000,
+          "valueLabel": "$27 000"
+        },
+        {
+          "label": "Üsküdar",
+          "value": 24000,
+          "valueLabel": "$24 000"
+        }
+      ],
+      "note": "Koç ($59 000), Altınbaş ($25 000) и Hacettepe ($12 000) — по прайсам 2025/26, поэтому в график не включены. Цены на 2027/28 не опубликовал ни один вуз."
+    }
+  },
+  "academgo.turkey.medicine.en": {
+    "afterHeading": "MBBS in Turkey: total cost",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "English-taught medicine fees in Turkey",
+      "subtitle": "USD per year, list prices without discounts, 2026/27",
+      "items": [
+        {
+          "label": "Istanbul Medipol (100% English)",
+          "value": 40000,
+          "valueLabel": "$40,000"
+        },
+        {
+          "label": "Acıbadem (incl. VAT)",
+          "value": 36000,
+          "valueLabel": "$36,000"
+        },
+        {
+          "label": "İstinye",
+          "value": 29000,
+          "valueLabel": "$29,000"
+        },
+        {
+          "label": "Bahçeşehir (BAU)",
+          "value": 28000,
+          "valueLabel": "$28,000"
+        },
+        {
+          "label": "Başkent (Ankara)",
+          "value": 27000,
+          "valueLabel": "$27,000"
+        },
+        {
+          "label": "Üsküdar",
+          "value": 24000,
+          "valueLabel": "$24,000"
+        }
+      ],
+      "note": "Koç ($59,000), Altınbaş ($25,000) and Hacettepe ($12,000) are on 2025/26 price lists and are not shown. No university has published 2027/28 fees yet."
+    }
+  },
+  "academgo.turkey.medipol.ru": {
+    "afterHeading": "Стоимость обучения в Medipol University на 2026/27",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в Medipol",
+      "subtitle": "USD в год, прайс для иностранцев на 2026/27, без скидок",
+      "items": [
+        {
+          "label": "Medicine, 100% английский",
+          "value": 40000,
+          "valueLabel": "$40 000"
+        },
+        {
+          "label": "Dentistry, 100% английский",
+          "value": 36000,
+          "valueLabel": "$36 000"
+        },
+        {
+          "label": "Medicine, 30% английский",
+          "value": 34000,
+          "valueLabel": "$34 000"
+        },
+        {
+          "label": "Pharmacy, 100% английский",
+          "value": 18000,
+          "valueLabel": "$18 000"
+        },
+        {
+          "label": "Physiotherapy",
+          "value": 9000,
+          "valueLabel": "$9 000"
+        },
+        {
+          "label": "Computer / Biomedical Engineering",
+          "value": 6500,
+          "valueLabel": "$6 500"
+        },
+        {
+          "label": "Business Administration, Psychology",
+          "value": 5500,
+          "valueLabel": "$5 500"
+        },
+        {
+          "label": "Architecture",
+          "value": 5000,
+          "valueLabel": "$5 000"
+        }
+      ],
+      "note": "При оплате года целиком или до срока из offer letter — скидка 10%. Цены на 2027/28 вуз пока не опубликовал."
+    }
+  },
+  "academgo.turkey.medipol.en": {
+    "afterHeading": "Medipol University tuition fees 2026/27",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at Medipol costs",
+      "subtitle": "USD per year, 2026/27 fees for international students, before discounts",
+      "items": [
+        {
+          "label": "Medicine, 100% English",
+          "value": 40000,
+          "valueLabel": "$40,000"
+        },
+        {
+          "label": "Dentistry, 100% English",
+          "value": 36000,
+          "valueLabel": "$36,000"
+        },
+        {
+          "label": "Medicine, 30% English",
+          "value": 34000,
+          "valueLabel": "$34,000"
+        },
+        {
+          "label": "Pharmacy, 100% English",
+          "value": 18000,
+          "valueLabel": "$18,000"
+        },
+        {
+          "label": "Physiotherapy",
+          "value": 9000,
+          "valueLabel": "$9,000"
+        },
+        {
+          "label": "Computer or Biomedical Engineering",
+          "value": 6500,
+          "valueLabel": "$6,500"
+        },
+        {
+          "label": "Business Administration / Psychology",
+          "value": 5500,
+          "valueLabel": "$5,500"
+        },
+        {
+          "label": "Architecture",
+          "value": 5000,
+          "valueLabel": "$5,000"
+        }
+      ],
+      "note": "10% off if you pay the whole year at once or before the offer-letter deadline. Fees for 2027/28 are not published yet."
+    }
+  },
+  "academgo.turkey.metu.ru": {
+    "afterHeading": "Стоимость обучения в METU для иностранцев",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "Сколько стоит год в METU",
+      "subtitle": "USD в год, цены 2026/27 (не изменились с 2025/26)",
+      "items": [
+        {
+          "label": "Faculty of Engineering",
+          "value": 2400,
+          "valueLabel": "$2 400"
+        },
+        {
+          "label": "Faculty of Architecture",
+          "value": 2400,
+          "valueLabel": "$2 400"
+        },
+        {
+          "label": "Математика, физика, химия, биология",
+          "value": 2400,
+          "valueLabel": "$2 400"
+        },
+        {
+          "label": "Социология, психология, история",
+          "value": 1600,
+          "valueLabel": "$1 600"
+        },
+        {
+          "label": "Economic and Administrative Sciences",
+          "value": 1600,
+          "valueLabel": "$1 600"
+        },
+        {
+          "label": "Faculty of Education",
+          "value": 1600,
+          "valueLabel": "$1 600"
+        },
+        {
+          "label": "Магистратура и PhD",
+          "value": 750,
+          "valueLabel": "$750"
+        }
+      ],
+      "note": "Платится в лирах по курсу Центробанка Турции. Прайс на 2027/28 ещё не опубликован."
+    }
+  },
+  "academgo.turkey.metu.en": {
+    "afterHeading": "METU fees for international students",
+    "block": {
+      "_type": "barChartBlock",
+      "title": "What a year at METU costs",
+      "subtitle": "USD per year, 2026/27 fees, unchanged from 2025/26",
+      "items": [
+        {
+          "label": "Engineering and Architecture",
+          "value": 2400,
+          "valueLabel": "$2,400"
+        },
+        {
+          "label": "Mathematics, Physics, Chemistry, Biology",
+          "value": 2400,
+          "valueLabel": "$2,400"
+        },
+        {
+          "label": "Psychology, Sociology, History, Philosophy",
+          "value": 1600,
+          "valueLabel": "$1,600"
+        },
+        {
+          "label": "Economic and Administrative Sciences",
+          "value": 1600,
+          "valueLabel": "$1,600"
+        },
+        {
+          "label": "Education",
+          "value": 1600,
+          "valueLabel": "$1,600"
+        },
+        {
+          "label": "Master's and PhD",
+          "value": 750,
+          "valueLabel": "$750"
+        }
+      ],
+      "note": "Paid in Turkish lira at the Central Bank of Turkey's rate. METU has not published 2027/28 fees yet."
+    }
+  },
+  "academgo.turkey.visa.ru": {
+    "afterHeading": "Сколько стоит студенческий ВНЖ в Турции и сколько ждать решения",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Сроки студенческого ВНЖ в Турции",
+      "subtitle": "От въезда до регистрации адреса и после выпуска",
+      "items": [
+        {
+          "period": "30–90 дней после въезда",
+          "title": "Безвизовый срок",
+          "text": "Беларусь — 30 дней за поездку, Россия — 60, Казахстан и Узбекистан — 90 в любые 180. Подайте анкету до его конца."
+        },
+        {
+          "period": "3 месяца с даты зачисления",
+          "title": "Окно для GSS",
+          "text": "За это время можно оформить государственную страховку; потом остаётся только частный полис."
+        },
+        {
+          "period": "До 90 дней",
+          "title": "Рассмотрение заявления",
+          "text": "Срок считают с подачи полного комплекта. Выезжать можно, если каждая поездка короче 15 дней."
+        },
+        {
+          "period": "20 рабочих дней",
+          "title": "Регистрация адреса",
+          "text": "После одобрения первого ВНЖ зарегистрируйте адрес (adres tescil)."
+        },
+        {
+          "period": "10 дней после выпуска",
+          "title": "ВНЖ под новую цель",
+          "text": "Студенческий ВНЖ прекращается с даты выпуска; на краткосрочный ВНЖ выпускника — 6 месяцев."
+        }
+      ],
+      "note": "Данные проверены в сентябре 2026 года."
+    }
+  },
+  "academgo.turkey.visa.en": {
+    "afterHeading": "Costs and processing times",
+    "block": {
+      "_type": "timelineBlock",
+      "title": "Student residence permit deadlines",
+      "subtitle": "From entry to address registration and after graduation",
+      "items": [
+        {
+          "period": "Before your visa or visa-free period ends",
+          "title": "e-ikamet application",
+          "text": "Saudi and UAE citizens can stay visa-free up to 90 days in any 180; submit the form before the period ends."
+        },
+        {
+          "period": "Within 3 months of enrollment",
+          "title": "GSS window",
+          "text": "Register for state health insurance; if you miss the window, you need a private policy."
+        },
+        {
+          "period": "Up to 90 days",
+          "title": "Decision on the permit",
+          "text": "Counted from a complete file. You can travel if each trip is shorter than 15 days."
+        },
+        {
+          "period": "Within 20 working days",
+          "title": "Address registration",
+          "text": "Register your address (adres tescil) after your first permit is approved."
+        },
+        {
+          "period": "10 days after graduation",
+          "title": "Permit on a new basis",
+          "text": "The student permit ends on your graduation date; a graduate short-term permit needs an application within 6 months."
+        }
+      ],
+      "note": "Official figures for 2026."
+    }
+  }
+}
