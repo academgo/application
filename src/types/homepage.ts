@@ -1,4 +1,3 @@
-import { QuizSidebarType } from "@/app/components/QuizSidebar/QuizSidebar";
 import { AccordionBlock } from "./blog";
 import { Form } from "./form";
 import { QuizBlock } from "./quizBlock";
@@ -232,7 +231,6 @@ export type CountriesBlock = {
 export type Homepage = {
   countriesBlock?: CountriesBlock;
   quizDocumentBlock?: QuizBlock;
-  quizSidebar?: QuizSidebarType | null;
   _type: "homepage";
   _id: string;
   _rev: string;

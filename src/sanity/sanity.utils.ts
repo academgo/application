@@ -345,7 +345,6 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionThird,
     conditionFourth,
     countriesBlock,
-    "quizSidebar": quizDocument->sidebar,
     "quizDocumentBlock": quizDocument->quiz{
           finalTitle,
           formTitle,

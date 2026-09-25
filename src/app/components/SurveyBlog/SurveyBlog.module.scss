@@ -78,16 +78,3 @@
   line-height: 33px; /* 206.25% */
   letter-spacing: -0.8px;
 }
-// Квиз и панель «Что вы получите» в две колонки на десктопе
-.withSidebar {
-  @media screen and (min-width: 980px) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(300px, 27vw, 380px);
-    gap: 24px;
-    align-items: start;
-
-    .multiStepForm {
-      max-width: none;
-    }
-  }
-}

@@ -6,30 +6,25 @@ import { urlFor } from "@/sanity/sanity.client";
 import MultiStepForm from "../MultiStepForm/MultiStepForm";
 import MultiStepFormBlock from "../MultiStepFormBlock/MultiStepFormBlock";
 import { QuizBlock } from "@/types/quizBlock";
-import QuizSidebar, { QuizSidebarType } from "../QuizSidebar/QuizSidebar";
 
 type Props = {
   lang: string;
   survey?: SurveyType;
   quizBlock?: QuizBlock;
   countryOptions?: string[];
-  sidebar?: QuizSidebarType;
 };
 
 const SurveyBlog: FC<Props> = ({
   lang,
   survey,
   quizBlock,
-  countryOptions,
-  sidebar
+  countryOptions
 }) => {
   // console.log("survey", survey);
   return (
     <section className={styles.survey}>
       {survey?.title && <p className={styles.title}>{survey.title}</p>}
-      <div
-        className={`${styles.surveyWrapper} ${sidebar ? styles.withSidebar : ""}`}
-      >
+      <div className={styles.surveyWrapper}>
         <div className={styles.multiStepForm}>
           {quizBlock && (
             <MultiStepFormBlock
@@ -39,7 +34,6 @@ const SurveyBlog: FC<Props> = ({
             />
           )}
         </div>
-        {sidebar && <QuizSidebar sidebar={sidebar} />}
       </div>
     </section>
   );

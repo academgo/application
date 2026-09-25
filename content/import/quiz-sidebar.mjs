@@ -1,5 +1,5 @@
 /**
- * Панель справа от квиза: что человек получит, кураторы, мессенджеры.
+ * Панель рядом с квизом на новых страницах: что даст анкета и мессенджеры.
  *
  *   node content/import/quiz-sidebar.mjs            # сухой прогон
  *   node content/import/quiz-sidebar.mjs --apply    # запись в черновики квиза
@@ -41,13 +41,10 @@ const token = () => {
   return names.map(name => process.env[name]).find(Boolean);
 };
 
-const image = ref => ({ _type: "image", asset: { _type: "reference", _ref: ref } });
-
-// Фото кураторов — из блока «О нас» на главной
-const PHOTOS = {
-  ilya: "image-91a3df0c0a7cb10119c0b440dc7ba3d7ad713e42-410x750-png",
-  yan: "image-de8883c52048a1e912f0616dca41f1c31d220c71-410x750-png"
-};
+const image = ref => ({
+  _type: "image",
+  asset: { _type: "reference", _ref: ref }
+});
 
 // Иконки и ссылки — как в блоке заявки на главной
 const CONTACT_LINKS = [
@@ -65,34 +62,24 @@ const CONTACT_LINKS = [
 
 const SIDEBAR = {
   ru: {
-    title: "Что вы получите",
-    meta: "5 вопросов · около 2 минут",
+    title: "Персональная подборка вузов",
+    meta: "5 вопросов · около 2 минут · бесплатно",
     bullets: [
       "Подборку программ под ваши ответы: страна, бюджет, язык и сроки",
       "Список вузов с ценами",
       "Ответ в WhatsApp на номер из анкеты",
       "Первая консультация бесплатная"
     ],
-    teamTitle: "Кураторы AcademGo",
-    team: [
-      { name: "Илья", photo: PHOTOS.ilya },
-      { name: "Ян", photo: PHOTOS.yan }
-    ],
     contactsText: "Удобнее написать сразу?"
   },
   en: {
-    title: "What you get",
-    meta: "5 questions · about 2 minutes",
+    title: "Your personal university shortlist",
+    meta: "5 questions · about 2 minutes · free",
     bullets: [
       "A shortlist of programmes matched to your country, budget, language and timing",
       "Universities with their fees",
       "Sent to the WhatsApp number you leave",
       "Your first consultation is free"
-    ],
-    teamTitle: "AcademGo supervisors",
-    team: [
-      { name: "Ilya", photo: PHOTOS.ilya },
-      { name: "Yan", photo: PHOTOS.yan }
     ],
     contactsText: "Prefer to message us now?"
   }
@@ -102,11 +89,6 @@ const sidebarFor = lang => {
   const text = SIDEBAR[lang];
   return {
     ...text,
-    team: text.team.map(person => ({
-      _key: key(),
-      name: person.name,
-      photo: image(person.photo)
-    })),
     contactLinks: CONTACT_LINKS.map(item => ({
       _key: key(),
       title: item.title,
@@ -159,7 +141,9 @@ const main = async () => {
     mutations.push({
       patch: { id: `drafts.${id}`, set: { sidebar: sidebarFor(lang) } }
     });
-    console.log(`${id}: ${SIDEBAR[lang].title}, ${SIDEBAR[lang].bullets.length} пункта`);
+    console.log(
+      `${id}: ${SIDEBAR[lang].title}, ${SIDEBAR[lang].bullets.length} пункта`
+    );
   }
 
   if (!APPLY) {

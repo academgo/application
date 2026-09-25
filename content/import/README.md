@@ -69,8 +69,9 @@ node content/import/infographics.mjs --apply
 Контуры стран для карт — `src/app/components/CountryMapBlock/countryShapes.ts`
 (Natural Earth, 50m).
 
-Панель справа от квиза («Что вы получите», кураторы, мессенджеры) задаётся
-один раз в документе квиза (поле Sidebar) — скрипт `quiz-sidebar.mjs`.
+Квиз на новых страницах — блок `QuizSection`: анкета на половину ширины
+и панель рядом (что даст анкета, мессенджеры). Панель задаётся один раз
+в документе квиза (поле Sidebar) — скрипт `quiz-sidebar.mjs`.
 
 ## Что заполняется вручную после импорта
 

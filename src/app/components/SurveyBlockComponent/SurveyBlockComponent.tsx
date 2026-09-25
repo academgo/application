@@ -3,6 +3,7 @@ import { QuizBlock } from "@/types/quizBlock";
 import { QuizSidebarType } from "../QuizSidebar/QuizSidebar";
 import React, { FC } from "react";
 import SurveyBlog from "../SurveyBlog/SurveyBlog";
+import QuizSection from "../QuizSection/QuizSection";
 import { getCountryNamesByLang } from "@/sanity/sanity.utils";
 
 type Props = {
@@ -24,15 +25,27 @@ const SurveyBlockComponent: FC<Props> = async ({ block, lang }) => {
     ? await getCountryNamesByLang(lang)
     : [];
 
-  // С панелью квиз занимает всю ширину, без неё — не шире 950px, как раньше
+  // Общий квиз с панелью (новые страницы) — новый блок в две колонки;
+  // квиз со своими вопросами (старые страницы, блог) — как раньше
+  if (block.sidebar) {
+    return (
+      <QuizSection
+        lang={lang}
+        title={block.survey?.title}
+        quizBlock={quizBlock}
+        countryOptions={countryOptions}
+        sidebar={block.sidebar}
+      />
+    );
+  }
+
   return (
-    <div className={block.sidebar ? undefined : "survey-width"}>
+    <div className="survey-width">
       <SurveyBlog
         lang={lang}
         survey={block.survey}
         quizBlock={quizBlock}
         countryOptions={countryOptions}
-        sidebar={block.sidebar || undefined}
       />
     </div>
   );

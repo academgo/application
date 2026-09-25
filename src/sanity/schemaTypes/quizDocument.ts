@@ -23,7 +23,7 @@ const quizDocument = {
       title: "Sidebar",
       type: "object",
       description:
-        "Панель справа от квиза на десктопе: что человек получит, кто ответит, мессенджеры. Пустая — квиз показывается без панели.",
+        "Панель рядом с квизом на десктопе: что даст анкета и мессенджеры. Заполнена — на новых страницах квиз показывается новым блоком в две колонки.",
       fields: [
         defineField({ name: "title", title: "Title", type: "string" }),
         defineField({
@@ -38,34 +38,8 @@ const quizDocument = {
           name: "meta",
           title: "Meta line",
           type: "string",
-          description: "Строка под заголовком: «5 вопросов · около 2 минут»"
-        }),
-        defineField({
-          name: "teamTitle",
-          title: "Team title",
-          type: "string"
-        }),
-        defineField({
-          name: "team",
-          title: "Team",
-          type: "array",
-          of: [
-            {
-              type: "object",
-              fields: [
-                defineField({ name: "name", title: "Name", type: "string" }),
-                defineField({
-                  name: "position",
-                  title: "Position",
-                  type: "string"
-                }),
-                defineField({ name: "photo", title: "Photo", type: "image" })
-              ],
-              preview: {
-                select: { title: "name", subtitle: "position", media: "photo" }
-              }
-            }
-          ]
+          description:
+            "Строка под заголовком: «5 вопросов · около 2 минут · бесплатно»"
         }),
         defineField({
           name: "contactsText",

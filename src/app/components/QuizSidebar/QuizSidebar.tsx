@@ -8,8 +8,6 @@ export type QuizSidebarType = {
   title?: string;
   meta?: string;
   bullets?: string[];
-  teamTitle?: string;
-  team?: { _key: string; name?: string; position?: string; photo?: any }[];
   contactsText?: string;
   contactLinks?: { _key: string; title?: string; icon?: any; link?: string }[];
 };
@@ -18,58 +16,25 @@ type Props = {
   sidebar: QuizSidebarType;
 };
 
-// Панель справа от квиза: зачем проходить, кто ответит, мессенджеры
+// Панель рядом с квизом: что даст анкета и мессенджеры для тех, кто хочет сразу
 const QuizSidebar: FC<Props> = ({ sidebar }) => (
   <aside className={styles.sidebar}>
     <div className={styles.card}>
-      {sidebar.title && <p className={styles.title}>{sidebar.title}</p>}
-      {sidebar.meta && <p className={styles.meta}>{sidebar.meta}</p>}
+      <div>
+        {sidebar.title && <p className={styles.title}>{sidebar.title}</p>}
+        {sidebar.meta && <p className={styles.meta}>{sidebar.meta}</p>}
 
-      {sidebar.bullets && sidebar.bullets.length > 0 && (
-        <ul className={styles.bullets}>
-          {sidebar.bullets.map(bullet => (
-            <li key={bullet}>
-              <span className={styles.check} aria-hidden="true" />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {sidebar.team && sidebar.team.length > 0 && (
-        <div className={styles.team}>
-          {sidebar.teamTitle && (
-            <p className={styles.teamTitle}>{sidebar.teamTitle}</p>
-          )}
-          <div className={styles.people}>
-            {sidebar.team.map(person => (
-              <div key={person._key} className={styles.person}>
-                {person.photo && (
-                  <div className={styles.photo}>
-                    <Image
-                      src={urlFor(person.photo)
-                        .width(160)
-                        .height(160)
-                        .fit("crop")
-                        .crop("top")
-                        .url()}
-                      alt={person.name || ""}
-                      width={64}
-                      height={64}
-                    />
-                  </div>
-                )}
-                <div>
-                  <p className={styles.name}>{person.name}</p>
-                  {person.position && (
-                    <p className={styles.position}>{person.position}</p>
-                  )}
-                </div>
-              </div>
+        {sidebar.bullets && sidebar.bullets.length > 0 && (
+          <ul className={styles.bullets}>
+            {sidebar.bullets.map(bullet => (
+              <li key={bullet}>
+                <span className={styles.check} aria-hidden="true" />
+                <span>{bullet}</span>
+              </li>
             ))}
-          </div>
-        </div>
-      )}
+          </ul>
+        )}
+      </div>
 
       {sidebar.contactLinks && sidebar.contactLinks.length > 0 && (
         <div className={styles.contacts}>
@@ -89,8 +54,8 @@ const QuizSidebar: FC<Props> = ({ sidebar }) => (
                   <Image
                     src={urlFor(link.icon).url()}
                     alt={link.title || ""}
-                    width={48}
-                    height={48}
+                    width={52}
+                    height={52}
                     className={styles.icon}
                   />
                 </Link>

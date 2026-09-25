@@ -6,31 +6,21 @@ import { urlFor } from "@/sanity/sanity.client";
 import MultiStepForm from "../MultiStepForm/MultiStepForm";
 import MultiStepFormBlock from "../MultiStepFormBlock/MultiStepFormBlock";
 import { QuizBlock } from "@/types/quizBlock";
-import QuizSidebar, { QuizSidebarType } from "../QuizSidebar/QuizSidebar";
 
 type Props = {
   lang: string;
   survey: SurveyType;
   quizBlock?: QuizBlock;
   countryOptions?: string[];
-  sidebar?: QuizSidebarType;
 };
 
-const Survey: FC<Props> = ({
-  lang,
-  survey,
-  quizBlock,
-  countryOptions,
-  sidebar
-}) => {
+const Survey: FC<Props> = ({ lang, survey, quizBlock, countryOptions }) => {
   // console.log("survey", survey);
   return (
     <section className={styles.survey}>
       <div className="container">
         <p className={styles.title}>{survey.title}</p>
-        <div
-          className={`${styles.surveyWrapper} ${sidebar ? styles.withSidebar : ""}`}
-        >
+        <div className={styles.surveyWrapper}>
           <div className={styles.multiStepForm}>
             {/* <MultiStepForm
               lang={lang}
@@ -47,7 +37,21 @@ const Survey: FC<Props> = ({
               />
             )}
           </div>
-          {sidebar && <QuizSidebar sidebar={sidebar} />}
+          <div className={styles.sidebar}>
+            {/* <div className={styles.sidebarWrapper}>
+              <div className={styles.imageBlock}>
+                <Image
+                  alt={survey.title}
+                  src={urlFor(survey.image).url()}
+                  width={500}
+                  height={500}
+                  className={styles.contactIcon}
+                />
+              </div>
+              <p className={styles.quote}>{survey.quote}</p>
+              <p className={styles.description}>{survey.description}</p>
+            </div> */}
+          </div>
         </div>
       </div>
     </section>
