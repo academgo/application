@@ -49,6 +49,7 @@ import countriesCompareBlock from "./countriesCompareBlock";
 import countriesLinksBlock from "./countriesLinksBlock";
 import countryUniversitiesBlock from "./countryUniversitiesBlock";
 import leadMagnetBlock from "./leadMagnetBlock";
+import consultationFormBlock from "./consultationFormBlock";
 
 export const schemaTypes = [
   header,
@@ -97,6 +98,7 @@ export const schemaTypes = [
   countriesLinksBlock,
   countryUniversitiesBlock,
   leadMagnetBlock,
+  consultationFormBlock,
   quizDocument,
   quizBlock,
   quizQuestion,

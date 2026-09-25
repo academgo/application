@@ -14,9 +14,11 @@
  *    (без списков и подзаголовков) с самым длинным текстом. Заголовок
  *    остаётся в textContent, абзацы делятся на две белые плашки поровну
  *    по объёму — как на старых страницах о Польше.
- * 2. offerBlock. Встаёт перед секцией с H2 примерно на трети страницы:
- *    квиз уже стоит посередине, лид-магнит и CTA — в конце, так заявка
- *    появляется раньше, чем читатель дойдёт до квиза.
+ * 2. consultationFormBlock — баннер с формой «имя + телефон». Встаёт перед
+ *    секцией с H2 примерно на трети страницы: квиз уже стоит посередине,
+ *    лид-магнит и CTA — в конце, так заявка появляется раньше квиза.
+ *    Если на странице остался offerBlock из первой версии скрипта, форма
+ *    встаёт на его место.
  *
  * Меняются только черновики (drafts.academgo.*): основной сайт не затронут.
  */
@@ -41,7 +43,7 @@ const ONLY = (() => {
 
 // Секция уходит в плашки, только если в ней достаточно текста на две колонки
 const MIN_SECTION_CHARS = 300;
-// Блок заявки — примерно на трети страницы и не ближе двух блоков к квизу
+// Форма заявки — примерно на трети страницы и не ближе двух блоков к квизу
 const OFFER_POSITION = 1 / 3;
 const OFFER_GAP_TO_SURVEY = 2;
 
@@ -78,59 +80,49 @@ const CONTACT_LINKS = [
   }
 ];
 
-const OFFER_TEXT = {
+const FORM_TEXT = {
   ru: {
     title: "Разберём ваш случай",
     titleHighlight: "на бесплатной консультации",
-    text: "Подберём страну, вуз и программу под ваши документы и бюджет, объясним сроки подачи и визу.",
-    offerDescription: "Все консультации проводим сами",
-    offerButtonCustomText: "Оставить заявку",
-    offerAltText: "или напишите нам"
+    description:
+      "Подберём страну, вуз и программу под ваши документы и бюджет, объясним сроки подачи и визу.",
+    formTitle: "Оставьте контакты — перезвоним",
+    nameLabel: "Имя",
+    phoneLabel: "Телефон или WhatsApp",
+    buttonText: "Получить консультацию",
+    successText: "Спасибо! Свяжемся с вами в ближайшее время.",
+    errorText: "Что-то пошло не так. Попробуйте ещё раз или напишите нам.",
+    altText: "или напишите нам"
   },
   en: {
     title: "Let's review your case",
     titleHighlight: "in a free consultation",
-    text: "We will match a country, university and programme to your documents and budget, and explain deadlines and the visa.",
-    offerDescription: "We run every consultation ourselves",
-    offerButtonCustomText: "Send a request",
-    offerAltText: "or message us"
+    description:
+      "We will match a country, university and programme to your documents and budget, and explain deadlines and the visa.",
+    formTitle: "Leave your contacts and we will call you back",
+    nameLabel: "Name",
+    phoneLabel: "Phone or WhatsApp",
+    buttonText: "Get a consultation",
+    successText: "Thank you! We will contact you shortly.",
+    errorText: "Something went wrong. Please try again or message us.",
+    altText: "or message us"
   }
 };
 
-const paragraph = text => ({
-  _type: "block",
+const consultationForm = lang => ({
+  _type: "consultationFormBlock",
   _key: key(),
-  style: "normal",
-  markDefs: [],
-  children: [{ _type: "span", _key: key(), text, marks: [] }]
-});
-
-const offerBlock = lang => {
-  const text = OFFER_TEXT[lang];
-
-  return {
-    _type: "offerBlock",
+  ...FORM_TEXT[lang],
+  contactLinks: CONTACT_LINKS.map(item => ({
     _key: key(),
-    title: text.title,
-    titleHighlight: text.titleHighlight,
-    blockContent: {
-      _type: "blockContentWithStyle",
-      content: [paragraph(text.text)]
-    },
-    offerDescription: text.offerDescription,
-    offerButtonCustomText: text.offerButtonCustomText,
-    offerAltText: text.offerAltText,
-    offerContactLinks: CONTACT_LINKS.map(item => ({
-      _key: key(),
-      title: item.title,
-      link: item.link,
-      icon: {
-        _type: "image",
-        asset: { _type: "reference", _ref: item.icon }
-      }
-    }))
-  };
-};
+    title: item.title,
+    link: item.link,
+    icon: {
+      _type: "image",
+      asset: { _type: "reference", _ref: item.icon }
+    }
+  }))
+});
 
 // ------------------------------------------------------------ плашки
 
@@ -242,8 +234,19 @@ const addDoubleText = blocks => {
 const startsSection = block =>
   block._type === "textContent" && block.content?.[0]?.style === "h2";
 
-const addOffer = (blocks, lang) => {
-  if (blocks.some(block => block._type === "offerBlock")) return null;
+const addForm = (blocks, lang) => {
+  if (blocks.some(block => block._type === "consultationFormBlock")) return null;
+
+  // Первая версия ставила offerBlock с попапом — меняем его на форму на месте
+  const offerIndex = blocks.findIndex(block => block._type === "offerBlock");
+  if (offerIndex > -1) {
+    const next = [...blocks];
+    next.splice(offerIndex, 1, consultationForm(lang));
+    return {
+      blocks: next,
+      note: `заявка: offerBlock → форма, блок ${offerIndex + 1} из ${next.length}`
+    };
+  }
 
   const surveyIndex = blocks.findIndex(block => block._type === "surveyBlock");
   const target = Math.round(blocks.length * OFFER_POSITION);
@@ -262,7 +265,7 @@ const addOffer = (blocks, lang) => {
   );
 
   const next = [...blocks];
-  next.splice(position, 0, offerBlock(lang));
+  next.splice(position, 0, consultationForm(lang));
 
   return {
     blocks: next,
@@ -314,11 +317,13 @@ const main = async () => {
       skipped.doubleText.push(page._id);
     }
 
-    const offer = addOffer(blocks, page.language === "en" ? "en" : "ru");
+    const offer = addForm(blocks, page.language === "en" ? "en" : "ru");
     if (offer) {
       blocks = offer.blocks;
       notes.push(offer.note);
-    } else if (!blocks.some(block => block._type === "offerBlock")) {
+    } else if (
+      !blocks.some(block => block._type === "consultationFormBlock")
+    ) {
       skipped.offer.push(page._id);
     }
 

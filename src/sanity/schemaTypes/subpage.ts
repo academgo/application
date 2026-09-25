@@ -128,7 +128,8 @@ const subpage = {
         { type: "countriesCompareBlock" },
         { type: "countriesLinksBlock" },
         { type: "countryUniversitiesBlock" },
-        { type: "leadMagnetBlock" }
+        { type: "leadMagnetBlock" },
+        { type: "consultationFormBlock" }
       ]
     }),
     defineField({

@@ -74,6 +74,9 @@ import StudyCountryTracker from "@/app/components/Analytics/StudyCountryTracker"
 import LeadMagnetBlock, {
   LeadMagnetBlockType
 } from "@/app/components/LeadMagnetBlock/LeadMagnetBlock";
+import ConsultationFormBlock, {
+  ConsultationFormBlockType
+} from "@/app/components/ConsultationFormBlock/ConsultationFormBlock";
 import CountriesCompareBlock, {
   CountriesCompareBlockType
 } from "@/app/components/CountriesCompareBlock/CountriesCompareBlock";
@@ -121,7 +124,8 @@ type ContentBlock =
   | CountriesCompareBlockType
   | CountriesLinksBlockType
   | CountryUniversitiesBlockType
-  | LeadMagnetBlockType;
+  | LeadMagnetBlockType
+  | ConsultationFormBlockType;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -408,6 +412,19 @@ const Subpage = async ({ params }: Props) => {
             lang={params.lang}
             currentCountryCode={subPage.countryCode}
             currentPageId={subPage._id}
+          />
+        );
+      case "consultationFormBlock":
+        return (
+          <ConsultationFormBlock
+            key={block._key}
+            block={block as ConsultationFormBlockType}
+            lang={params.lang}
+            policy={{
+              text: formDocument?.form?.agreementText,
+              linkLabel: formDocument?.form?.agreementLinkLabel,
+              linkDestination: formDocument?.form?.agreementLinkDestination
+            }}
           />
         );
       case "leadMagnetBlock":

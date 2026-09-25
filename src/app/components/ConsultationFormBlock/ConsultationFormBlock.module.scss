@@ -1,0 +1,155 @@
+/* Тёмный баннер как у блока оффера, но без белого выреза справа
+   и с формой прямо в блоке вместо попапа */
+.consultation {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin: clamp(2rem, 1.6rem + 2vw, 3.5rem) 0;
+  padding: clamp(1.75rem, 1rem + 3vw, 4rem);
+  border-radius: 25px;
+  background-color: #1a2644;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.decor {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    pointer-events: none;
+  }
+}
+
+.content,
+.form {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: #fff;
+  font-size: clamp(2rem, 1.3rem + 2.8vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  margin: 0 0 20px;
+}
+
+.highlight {
+  color: #f39708;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.5;
+  margin: 0 0 28px;
+  max-width: 560px;
+}
+
+.messengers {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+}
+
+.altText {
+  color: #fff;
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  display: block;
+  width: clamp(2.75rem, 2.3rem + 1.5vw, 3.5rem);
+  height: clamp(2.75rem, 2.3rem + 1.5vw, 3.5rem);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+.form {
+  padding: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  /* Поля и кнопка обычных форм рассчитаны на крупный блок —
+     здесь на шаг компактнее, как в лид-магните */
+  :global(input[type="text"]),
+  :global(input[type="tel"]) {
+    padding: 14px 22px;
+    font-size: 15px;
+  }
+
+  button[type="submit"] {
+    height: 52px;
+    padding: 14px 22px;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    :global(input[type="text"]),
+    :global(input[type="tel"]) {
+      padding: 16px 26px;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      height: 58px;
+      font-size: 16px;
+    }
+  }
+}
+
+.formTitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.64px;
+  margin: 0 0 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+    letter-spacing: -1.2px;
+    margin-bottom: 24px;
+  }
+}
+
+.success {
+  color: #7ce0a0;
+  font-size: 14px;
+  margin: 0;
+}
+
+.error {
+  color: #ff9b91;
+  font-size: 14px;
+  margin: 0;
+}

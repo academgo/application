@@ -51,9 +51,10 @@ export async function POST(request: NextRequest) {
       `Whatsapp: ${data.whatsapp}`;
     isValid = true;
   }
-  // 2) phone-only (FormSuperLite сюда попадет)
+  // 2) phone-only (FormSuperLite), с именем — форма консультации на страницах
   else if (data.phone && !data.country && !data.whatsapp && !data.email) {
-    mailBody = meta + `Телефон: ${data.phone}`;
+    const nameLine = isNonEmptyString(data.name) ? `Имя: ${data.name}\n` : "";
+    mailBody = meta + nameLine + `Телефон: ${data.phone}`;
     isValid = true;
   }
   // 3) phone+country+email
