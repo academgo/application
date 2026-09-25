@@ -95,14 +95,32 @@
     align-items: center;
     gap: 28px;
 
+    // Номер стоит по центру пункта, а высота пунктов разная, поэтому линия
+    // собирается из двух половин: ::before — от предыдущего пункта до
+    // центра номера, ::after — от центра номера до низа пункта. Так она
+    // всегда соединяет номера и не торчит под последним.
+    &::before,
     &::after {
       content: '';
       position: absolute;
-      top: 60px;
-      left: 40px; // Центруем линию по середине
+      left: 39px; // по центру номера шириной 80px
+      transform: none;
       width: 2px;
-      height: calc(100% + 90px); // Укажите необходимую высоту
       background-color: #112546;
+    }
+
+    &::before {
+      top: -40px; // зазор между пунктами (gap у .chain)
+      height: calc(50% + 40px);
+    }
+
+    &::after {
+      top: 50%;
+      height: 50%;
+    }
+
+    &:first-child::before {
+      display: none;
     }
   }
 }
