@@ -6,6 +6,7 @@ import { ModalProvider } from "../context/ModalContext";
 import { Suspense } from "react";
 import { FacebookPixelEvents } from "../components/pixel-events";
 import Head from "next/head";
+import OrganizationSchema from "../components/OrganizationSchema/OrganizationSchema";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
         />
       </Head> */}
       <body className={inter.className}>
+        <OrganizationSchema lang={params.lang} />
         <ModalProvider>{children}</ModalProvider>
         <GoogleAnalytics gaId="G-XTMLVRC9RR" />
         <GoogleTagManager gtmId="GTM-NMJPFJ6N" />

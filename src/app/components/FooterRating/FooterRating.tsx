@@ -2,6 +2,7 @@
 import React, { FC } from "react";
 import styles from "./FooterRating.module.scss";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { ORGANIZATION_ID } from "../OrganizationSchema/OrganizationSchema";
 
 type Props = {
   lang: string;
@@ -45,10 +46,12 @@ const FooterRating: FC<Props> = ({ lang }) => {
   const { text, aria } = getLabel(lang);
   const { fullCount, halfCount, emptyCount } = buildStars(RATING_VALUE);
 
-  // Schema.org JSON-LD
+  // Schema.org JSON-LD: рейтинг дополняет организацию из OrganizationSchema
+  // (тот же @id), а не описывает ещё одну
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: BRAND_NAME,
     url: SITE_URL,
     aggregateRating: {
