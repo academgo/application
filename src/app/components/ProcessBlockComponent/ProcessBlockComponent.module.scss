@@ -89,6 +89,12 @@
     display: none; // Скрываем линию у последнего элемента
   }
 
+  // На мобильном номер висит над пунктом (top: -20px, высота 40px) —
+  // опускаем текст под него, чтобы номер не закрывал первую строку
+  @media screen and (max-width: 768px) {
+    padding-top: 32px;
+  }
+
   @media screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: 80px 1fr;
