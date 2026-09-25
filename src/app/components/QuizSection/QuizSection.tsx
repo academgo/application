@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import MultiStepFormBlock from "../MultiStepFormBlock/MultiStepFormBlock";
 import QuizSidebar, { QuizSidebarType } from "../QuizSidebar/QuizSidebar";
 import { QuizBlock } from "@/types/quizBlock";
+import QuizLayout from "./QuizLayout";
 import styles from "./QuizSection.module.scss";
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
   sidebar: QuizSidebarType;
 };
 
-// Квиз на новых страницах: анкета на половину ширины и панель рядом
+// Квиз на новых страницах: анкета на 65% ширины и панель рядом
 const QuizSection: FC<Props> = ({
   lang,
   title,
@@ -22,16 +23,16 @@ const QuizSection: FC<Props> = ({
 }) => (
   <section className={styles.quizSection}>
     {title && <p className={styles.title}>{title}</p>}
-    <div className={styles.layout}>
-      <div className={styles.quiz}>
+    <QuizLayout
+      quiz={
         <MultiStepFormBlock
           lang={lang}
           quizBlock={quizBlock}
           countryOptions={countryOptions}
         />
-      </div>
-      <QuizSidebar sidebar={sidebar} />
-    </div>
+      }
+      panel={<QuizSidebar sidebar={sidebar} />}
+    />
   </section>
 );
 

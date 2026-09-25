@@ -19,7 +19,8 @@
 
   @media screen and (min-width: 980px) {
     grid-template-columns: minmax(0, 65fr) minmax(0, 35fr);
-    align-items: stretch;
+    // до замера панель тянется по первому вопросу, потом высота фиксируется
+    align-items: start;
   }
 }
 
@@ -27,4 +28,20 @@
   padding: clamp(1.25rem, 0.6rem + 2.4vw, 3rem);
   border-radius: 25px;
   background-color: #fff;
+}
+
+.panel {
+  display: none;
+
+  // flex, а не height: 100% — от min-height проценты высоты не считаются
+  @media screen and (min-width: 980px) {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  // после замера высота задаётся явно и больше не зависит от шага квиза
+  &[style] {
+    align-self: start;
+  }
 }

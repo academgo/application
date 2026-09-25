@@ -6,7 +6,9 @@ $navy: #1a2644;
   display: none;
 
   @media screen and (min-width: 980px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 }
 
@@ -14,7 +16,7 @@ $navy: #1a2644;
 .card {
   position: relative;
   overflow: hidden;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
