@@ -345,6 +345,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionThird,
     conditionFourth,
     countriesBlock,
+    "quizSidebar": quizDocument->sidebar,
     "quizDocumentBlock": quizDocument->quiz{
           finalTitle,
           formTitle,
@@ -539,6 +540,7 @@ export async function getSinglePageByLang(
       _type == "surveyBlock" => {
         _key,
         _type,
+        "sidebar": survey.quizDocument->sidebar,
         "quiz": survey.quizDocument->quiz{
           finalTitle,
           formTitle,
@@ -635,6 +637,7 @@ export async function getSingleSubPageBySlug(
       _type == "surveyBlock" => {
         _key,
         _type,
+        "sidebar": survey.quizDocument->sidebar,
         "quiz": survey.quizDocument->quiz{
           finalTitle,
           formTitle,

@@ -380,13 +380,11 @@ const Subpage = async ({ params }: Props) => {
         );
       case "surveyBlock":
         return (
-          <div className="survey-width">
-            <SurveyBlockComponent
-              lang={params.lang}
-              key={block._key}
-              block={block as SurveyBlock}
-            />
-          </div>
+          <SurveyBlockComponent
+            lang={params.lang}
+            key={block._key}
+            block={block as SurveyBlock}
+          />
         );
       case "offerBlock":
         return (
@@ -427,11 +425,20 @@ const Subpage = async ({ params }: Props) => {
           />
         );
       case "barChartBlock":
-        return <BarChartBlock key={block._key} block={block as BarChartBlockType} />;
+        return (
+          <BarChartBlock key={block._key} block={block as BarChartBlockType} />
+        );
       case "timelineBlock":
-        return <TimelineBlock key={block._key} block={block as TimelineBlockType} />;
+        return (
+          <TimelineBlock key={block._key} block={block as TimelineBlockType} />
+        );
       case "countryMapBlock":
-        return <CountryMapBlock key={block._key} block={block as CountryMapBlockType} />;
+        return (
+          <CountryMapBlock
+            key={block._key}
+            block={block as CountryMapBlockType}
+          />
+        );
       case "consultationFormBlock":
         return (
           <ConsultationFormBlock

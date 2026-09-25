@@ -158,6 +158,7 @@ export default async function Home({ params }: Props) {
           lang={params.lang}
           survey={homePage.survey}
           quizBlock={homePage.quizDocumentBlock || homePage.quizBlock}
+          sidebar={homePage.quizSidebar || undefined}
           countryOptions={countryNames}
         />
         <About
