@@ -9,6 +9,7 @@ import StudyCountryField from "../StudyCountryField/StudyCountryField";
 import styles from "./LeadMagnetBlock.module.scss";
 // форма собрана на стилях обычных форм сайта, чтобы выглядеть одинаково
 import formStyles from "../FormStandard/FormStandard.module.scss";
+import { FieldIcon } from "../FormIcons/FormIcons";
 
 export type LeadMagnetBlockType = {
   _key: string;
@@ -123,6 +124,7 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
         )}
 
         <div className={formStyles.inputWrapper}>
+          <FieldIcon name="user" />
           <label
             htmlFor={`${block._key}-name`}
             className={`${formStyles.label} ${name ? formStyles.filled : ""}`}
@@ -140,6 +142,7 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
         </div>
 
         <div className={formStyles.inputWrapper}>
+          <FieldIcon name="mail" />
           <label
             htmlFor={`${block._key}-email`}
             className={`${formStyles.label} ${email ? formStyles.filled : ""}`}

@@ -11,6 +11,7 @@ import OfferDecor from "../OfferDecor/OfferDecor";
 import styles from "./ConsultationFormBlock.module.scss";
 // поля и кнопка — со стилей обычных форм сайта, как в лид-магните
 import formStyles from "../FormStandard/FormStandard.module.scss";
+import { FieldIcon } from "../FormIcons/FormIcons";
 
 export type ConsultationFormBlockType = {
   _key: string;
@@ -133,6 +134,7 @@ const ConsultationFormBlock: FC<Props> = ({ block, lang, policy }) => {
         )}
 
         <div className={formStyles.inputWrapper}>
+          <FieldIcon name="user" />
           <label
             htmlFor={`${block._key}-name`}
             className={`${formStyles.label} ${name ? formStyles.filled : ""}`}
@@ -151,6 +153,7 @@ const ConsultationFormBlock: FC<Props> = ({ block, lang, policy }) => {
         </div>
 
         <div className={formStyles.inputWrapper}>
+          <FieldIcon name="phone" />
           <label
             htmlFor={`${block._key}-phone`}
             className={`${formStyles.label} ${phone ? formStyles.filled : ""}`}

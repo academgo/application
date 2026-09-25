@@ -307,8 +307,36 @@
 }
 
 .inputWrapper {
+  // Те же отступы иконки и текста, что у полей FormStandard
+  --field-icon-size: 22px;
+  --field-icon-left: 24px;
+  --field-text-left: 58px;
+
   margin-bottom: 10px;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    --field-icon-left: 30px;
+    --field-text-left: 66px;
+  }
+
+  // Код страны телефона (иконка или флаг) — на месте иконки поля
+  :global(.PhoneInputCountry) {
+    margin-right: calc(
+      var(--field-text-left) - var(--field-icon-left) - var(--field-icon-size)
+    );
+  }
+
+  :global(.PhoneInputCountryIcon) {
+    width: var(--field-icon-size);
+    height: var(--field-icon-size);
+    margin-right: 0;
+  }
+
+  :global(.PhoneInputCountryIcon--border) {
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 .label {
@@ -327,11 +355,7 @@
 }
 
 .labelPhone {
-  left: 55px;
-
-  @media screen and (min-width: 768px) {
-    left: 70px;
-  }
+  left: var(--field-text-left);
 }
 
 .inputField {
@@ -346,11 +370,11 @@
   background: #F5F5F5;
   outline: none;
   transition: all 0.2s ease;
-  padding-left: 20px;
+  // поле квиза — всегда телефон: слева код страны на месте иконки
+  padding-left: var(--field-icon-left);
 
   @media screen and (min-width: 768px) {
-    padding: 33px 45px 33px 30px;
-
+    padding: 33px 45px 33px var(--field-icon-left);
   }
 }
 

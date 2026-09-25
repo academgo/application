@@ -32,6 +32,10 @@
 
 .content,
 .form {
+  --study-field-py: 14px;
+  --study-field-py-desktop: 16px;
+  --study-field-font: 15px;
+
   position: relative;
   z-index: 1;
 }
@@ -98,7 +102,7 @@
      здесь на шаг компактнее, как в лид-магните */
   :global(input[type="text"]),
   :global(input[type="tel"]) {
-    padding: 14px 22px;
+    padding: 14px 22px 14px var(--field-text-left);
     font-size: 15px;
   }
 
@@ -116,7 +120,7 @@
   @media screen and (min-width: 768px) {
     :global(input[type="text"]),
     :global(input[type="tel"]) {
-      padding: 16px 26px;
+      padding: 16px 26px 16px var(--field-text-left);
       font-size: 16px;
     }
 

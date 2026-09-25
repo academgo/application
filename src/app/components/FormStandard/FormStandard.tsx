@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { FieldIcon, PhoneInternationalIcon } from "../FormIcons/FormIcons";
 
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
@@ -136,6 +137,7 @@ const FormStandard: FC<ContactFormProps> = ({
                 {dataForm.inputPhone}
               </label>
               <PhoneInput
+                internationalIcon={PhoneInternationalIcon}
                 // defaultCountry="PL"
                 id="phone"
                 name="phone"
@@ -150,6 +152,7 @@ const FormStandard: FC<ContactFormProps> = ({
               />
             </div>
             <div className={styles.inputWrapper}>
+              <FieldIcon name="globe" />
               <label
                 htmlFor="country"
                 className={`${styles.label} ${filled.country ? styles.filled : ""}`}
@@ -176,6 +179,7 @@ const FormStandard: FC<ContactFormProps> = ({
               onChange={code => setFieldValue("studyCountry", code)}
             />
             <div className={styles.inputWrapper}>
+              <FieldIcon name="mail" />
               <label
                 htmlFor="email"
                 className={`${styles.label} ${filled.email ? styles.filled : ""}`}

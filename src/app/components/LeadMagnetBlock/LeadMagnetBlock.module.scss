@@ -66,6 +66,10 @@
 }
 
 .form {
+  --study-field-py: 14px;
+  --study-field-py-desktop: 16px;
+  --study-field-font: 15px;
+
   align-self: start;
   padding: clamp(1.25rem, 1rem + 1.25vw, 2rem);
   border-radius: 15px 15px 15px 0;
@@ -94,7 +98,7 @@
 .form {
   :global(input[type="text"]),
   :global(input[type="email"]) {
-    padding: 14px 22px;
+    padding: 14px 22px 14px var(--field-text-left);
     font-size: 15px;
   }
 
@@ -112,7 +116,7 @@
   @media screen and (min-width: 768px) {
     :global(input[type="text"]),
     :global(input[type="email"]) {
-      padding: 16px 26px;
+      padding: 16px 26px 16px var(--field-text-left);
       font-size: 16px;
     }
 

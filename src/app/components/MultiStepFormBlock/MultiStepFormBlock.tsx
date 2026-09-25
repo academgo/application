@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import PhoneInput from "react-phone-number-input";
+import { PhoneInternationalIcon } from "../FormIcons/FormIcons";
 import "react-phone-number-input/style.css";
 
 import styles from "./MultiStepFormBlock.module.scss";
@@ -437,6 +438,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
                       </label>
 
                       <PhoneInput
+                        internationalIcon={PhoneInternationalIcon}
                         id="whatsapp"
                         name="whatsapp"
                         className={styles.inputField}

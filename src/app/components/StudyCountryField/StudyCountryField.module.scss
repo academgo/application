@@ -1,53 +1,153 @@
-// Та же «таблетка», что у полей обычных форм (FormStandard.inputField)
+$ink: #091728;
+$muted: #8a929c;
+$field: #f5f5f5;
+$accent: #f39708;
+$error: #e61212;
+
+// Та же «таблетка» и те же отступы иконки и текста, что у полей FormStandard.
+// Компактные формы (лид-магнит, консультация) задают --study-field-* сами.
 .field {
+  --field-icon-size: 22px;
+  --field-icon-left: 24px;
+  --field-text-left: 58px;
+
   position: relative;
   margin-bottom: 10px;
-}
-
-.select {
-  width: 100%;
-  padding: 20px 56px 20px 28px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #091728;
-  border: none;
-  border-radius: 311.25px;
-  background-color: #f5f5f5;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  // стрелка списка
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1 1.5L7 7.5L13 1.5' stroke='%23091728' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 28px center;
 
   @media screen and (min-width: 768px) {
-    padding: 33px 72px 33px 45px;
-    background-position: right 45px center;
-  }
-
-  &:focus-visible {
-    box-shadow: 0 0 0 2px #f39708;
+    --field-icon-left: 30px;
+    --field-text-left: 66px;
   }
 }
 
-// Пока ничего не выбрано — цвет как у подписи в пустом поле
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: var(--study-field-py, 20px) 24px var(--study-field-py, 20px)
+    var(--field-text-left);
+  border: none;
+  border-radius: 311.25px;
+  background-color: $field;
+  font-family: inherit;
+  font-size: var(--study-field-font, 1rem);
+  line-height: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+
+  @media screen and (min-width: 768px) {
+    padding-top: var(--study-field-py-desktop, 33px);
+    padding-bottom: var(--study-field-py-desktop, 33px);
+    padding-right: 30px;
+  }
+
+  &:focus-visible,
+  &.triggerOpen {
+    outline: none;
+    box-shadow: 0 0 0 2px $accent;
+  }
+}
+
+.triggerInvalid {
+  box-shadow: 0 0 0 2px $error;
+}
+
+// Пусто — как подписи остальных полей; выбрано — как введённый текст
 .placeholder {
-  color: rgb(55 65 81 / 70%);
+  color: var(--field-label-color, rgb(55 65 81 / 70%));
+  font-weight: 500;
 }
 
-.error {
-  margin-top: 4px;
-  font-size: 12px;
-  color: #e61212;
-  text-align: center;
+.value {
+  color: $ink;
+  font-weight: 400;
 }
 
-.visuallyHidden {
+.chevron {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: $ink;
+  transition: transform 0.2s ease;
+
+  .triggerOpen & {
+    transform: rotate(180deg);
+  }
+}
+
+// Нативный select невидим, но лежит под кнопкой: подсказка браузера
+// «Выберите пункт списка» появится ровно у поля
+.nativeSelect {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// Список — в портале поверх страницы и попапа
+.list {
+  position: fixed;
+  z-index: 1100;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow:
+    0 12px 32px rgba(9, 23, 40, 0.14),
+    0 2px 6px rgba(9, 23, 40, 0.06);
+  font-family: inherit;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  color: $ink;
+  font-size: 15px;
+  line-height: 1.35;
+  cursor: pointer;
+  user-select: none;
+}
+
+.optionActive {
+  background-color: $field;
+}
+
+.optionSelected {
+  font-weight: 600;
+}
+
+// «Пока не решил(а)» отделён от списка стран
+.optionSeparated {
+  position: relative;
+  margin-top: 7px;
+  color: $muted;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 14px;
+    right: 14px;
+    height: 1px;
+    background-color: #ececec;
+  }
+}
+
+.check {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: $accent;
 }

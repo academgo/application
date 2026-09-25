@@ -1,8 +1,40 @@
 .inputWrapper {
+  // Иконка поля и начало текста — общие для подписи, инпута и телефона
+  --field-icon-size: 22px;
+  --field-icon-left: 24px;
+  --field-text-left: 58px;
+
   margin-bottom: 10px;
   position: relative;
   max-width: 100%;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    --field-icon-left: 30px;
+    --field-text-left: 66px;
+  }
+
+  // Поле телефона: код страны (иконка или флаг) стоит на месте иконки поля
+  :global(.PhoneInputCountry) {
+    margin-right: calc(
+      var(--field-text-left) - var(--field-icon-left) - var(--field-icon-size)
+    );
+  }
+
+  :global(.PhoneInputCountryIcon) {
+    width: var(--field-icon-size);
+    height: var(--field-icon-size);
+    margin-right: 0;
+  }
+
+  :global(.PhoneInputCountryIcon--border) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  :global(.PhoneInputCountryIconImg) {
+    border-radius: 3px;
+  }
 }
 
 .label {
@@ -10,10 +42,11 @@
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
-  color: rgb(55 65 81 / 70%);
+  // цвет подписи задаёт форма: в попапе и блоке «Оставьте контакт» он тёмный
+  color: var(--field-label-color, rgb(55 65 81 / 70%));
   position: absolute;
   top: 50%;
-  left: 28px;
+  left: var(--field-text-left);
   transform: translateY(-50%);
   transition: all 0.3s ease;
   z-index: 1;
@@ -21,19 +54,17 @@
 }
 
 .labelPhone {
-  left: 55px;
-
-  @media screen and (min-width: 768px) {
-    left: 70px;
-  }
+  left: var(--field-text-left);
 }
 
 
 
 .inputField {
   width: 100%;
-  padding: 20px 28px;
+  padding: 20px 28px 20px var(--field-text-left);
   font-size: 1rem;
+  font-family: inherit;
+  color: #091728;
   // border: 1px solid #ccc;
   border-radius: 311.25px;
   background: #F5F5F5;
@@ -41,7 +72,12 @@
   transition: all 0.2s ease;
 
   @media screen and (min-width: 768px) {
-    padding: 33px 45px;
+    padding: 33px 45px 33px var(--field-text-left);
+  }
+
+  // У телефона слева не текст, а селектор кода страны на месте иконки
+  &:global(.PhoneInput) {
+    padding-left: var(--field-icon-left);
   }
 }
 

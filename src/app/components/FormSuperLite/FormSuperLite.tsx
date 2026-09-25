@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { PhoneInternationalIcon } from "../FormIcons/FormIcons";
 import styles from "../FormStandard/FormStandard.module.scss";
 import { Form as FormType } from "@/types/form";
 import Link from "next/link";
@@ -124,6 +125,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 {dataForm.inputPhone}
               </label>
               <PhoneInput
+                internationalIcon={PhoneInternationalIcon}
                 // defaultCountry="PL"
                 id={`phone-${uniqueId}`}
                 name="phone"
