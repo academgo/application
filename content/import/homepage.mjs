@@ -54,9 +54,9 @@ const CONTENT = {
     // «образование за рубежом» — 180, «обучение за рубежом» — 120
     // (DataForSEO, 24.09.2026). «Поступление за рубеж» даёт всего 50.
     seo: {
-      title: "Учёба за границей: помощь в поступлении в вузы 10 стран",
+      title: "Обучение за рубежом: поступление в вузы Европы, ОАЭ и Азии",
       description:
-        "Образование за рубежом с AcademGo: Польша, Турция, ОАЭ, Малайзия, Италия, Испания, Венгрия, Грузия и Кипр. Подбор программы, документы, виза и сопровождение. Первая консультация бесплатная."
+        "Помогаем поступить в университеты Польши, Италии, Испании, Венгрии, Турции, ОАЭ, Малайзии, Грузии и Кипра. Подбор вуза, документы, виза. Консультация бесплатно."
     },
     hero: {
       mainHeadingStart: "Помогаем вам",
@@ -111,9 +111,9 @@ const CONTENT = {
     // consultant" — 4 400 (DataForSEO, 24.09.2026). "study abroad programs"
     // (193k) не берём: это в основном американский интент «семестр за рубежом».
     seo: {
-      title: "Study Abroad Consultants: Admission to 10 Countries",
+      title: "Study in Europe, Türkiye, the UAE & Asia — AcademGo",
       description:
-        "AcademGo is an overseas education consultant for Poland, Türkiye, the UAE, Malaysia, Italy, Spain, Hungary, Georgia and Cyprus. Programme selection, documents, visa and support. The first consultation is free."
+        "Admission support for universities in Poland, Italy, Spain, Hungary, Türkiye, the UAE, Malaysia, Georgia and Cyprus. Documents, visa and support. Free consultation."
     },
     hero: {
       mainHeadingStart: "We help you",

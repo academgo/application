@@ -14,8 +14,8 @@ const BlogPostsAll: FC<Props> = ({ blogPosts, lang }) => {
       <div className="container">
         <h1 className={styles.pageTitle}>
           {lang === "ru"
-            ? "Блог о поступлении в Польшу"
-            : "Blog about studying in Poland"}
+            ? "Образование за рубежом: статьи и гайды"
+            : "Study abroad guides"}
         </h1>
       </div>
       <BlogPostsRenderer blogPosts={blogPosts} lang={lang} />

@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Study in Poland for international students - Academgo",
+  title: "Study in Europe, Türkiye, the UAE & Asia — AcademGo",
   description:
-    "We offer full assistance in applying to universities in Poland from the moment we choose a university to the first day of your studies in it!",
+    "Admission support for universities in Poland, Italy, Spain, Hungary, Türkiye, the UAE, Malaysia, Georgia and Cyprus. Documents, visa and support. Free consultation.",
   other: {
     "google-site-verification": "y26kx-fqwQmu8vSsuIo8zW09MIp0pnOQNHnGFNggnmQ"
   }
