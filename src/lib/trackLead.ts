@@ -1,6 +1,7 @@
 import {
   detectStudyDestination,
-  detectStudyDestinationCode
+  detectStudyDestinationCode,
+  studyCountryName
 } from "./studyDestination";
 
 declare global {
@@ -12,14 +13,23 @@ declare global {
 
 /**
  * Событие отправленной заявки со страной обучения — для GA4/GTM и Meta Pixel.
- * Вызывается после успешной отправки любой формы.
+ * Вызывается после успешной отправки любой формы. Если страну выбрали
+ * в самой форме (на общих страницах), передаём её код третьим аргументом.
  */
-export const trackLead = (formName: string, lang?: string) => {
+export const trackLead = (
+  formName: string,
+  lang?: string,
+  studyCountry?: string
+) => {
   if (typeof window === "undefined") return;
 
   const url = window.location.href;
-  const countryCode = detectStudyDestinationCode(url) || "unknown";
-  const countryTitle = detectStudyDestination(url, lang) || "";
+  const countryCode =
+    studyCountry || detectStudyDestinationCode(url) || "unknown";
+  const countryTitle =
+    studyCountryName(studyCountry, lang) ||
+    detectStudyDestination(url, lang) ||
+    "";
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({

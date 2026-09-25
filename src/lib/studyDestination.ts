@@ -75,3 +75,42 @@ export const detectStudyDestination = (
  */
 export const detectStudyDestinationCode = (url?: string): string | undefined =>
   detectDestination(url)?.code;
+
+/** «Пока не решил(а)» в поле страны обучения */
+export const UNDECIDED_STUDY_COUNTRY = "undecided";
+
+/** Десять направлений для поля «Страна обучения» — без повторов RU/EN-слагов */
+export const STUDY_COUNTRIES: Destination[] = Object.values(
+  DESTINATIONS
+).filter(
+  (destination, index, all) =>
+    all.findIndex(item => item.code === destination.code) === index
+);
+
+/**
+ * Код страны по её названию — для ответа квиза «Куда хотите поехать?»:
+ * варианты берутся из названий стран в Sanity и совпадают с этими
+ */
+export const studyCountryCodeByName = (name?: string): string | undefined => {
+  if (!name) return undefined;
+  const normalized = name.trim().toLowerCase();
+  return STUDY_COUNTRIES.find(
+    item =>
+      item.ru.toLowerCase() === normalized ||
+      item.en.toLowerCase() === normalized
+  )?.code;
+};
+
+/** Название страны обучения по коду из формы */
+export const studyCountryName = (
+  code?: string,
+  lang?: string
+): string | undefined => {
+  if (!code) return undefined;
+  if (code === UNDECIDED_STUDY_COUNTRY) {
+    return lang === "en" ? "not decided yet" : "пока не решил(а)";
+  }
+  const destination = STUDY_COUNTRIES.find(item => item.code === code);
+  if (!destination) return undefined;
+  return lang === "en" ? destination.en : destination.ru;
+};

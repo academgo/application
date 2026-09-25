@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { detectStudyDestination } from "@/lib/studyDestination";
+import {
+  detectStudyDestination,
+  studyCountryName
+} from "@/lib/studyDestination";
 import type Mail from "nodemailer/lib/mailer";
 
 type QuizAnswer = {
@@ -14,6 +17,7 @@ type QuizPayload = {
   quizAnswers: QuizAnswer[];
   lang?: string;
   url?: string;
+  studyCountry?: string;
 };
 
 const isNonEmptyString = (v: unknown): v is string =>
@@ -62,7 +66,10 @@ export async function POST(request: NextRequest) {
     }
   });
 
-  const destination = detectStudyDestination(data.url, data.lang);
+  // Ответ квиза о стране точнее адреса: на главной страны в адресе нет вовсе
+  const destination =
+    studyCountryName(data.studyCountry, data.lang) ||
+    detectStudyDestination(data.url, data.lang);
 
   // В письмо идут все вопросы анкеты в том порядке, в каком их видел человек,
   // включая те, что добавили в Sanity уже после запуска
@@ -86,7 +93,9 @@ export async function POST(request: NextRequest) {
     `WhatsApp: ${data.whatsapp}`,
     "",
     "Ответы:",
-    ...answers.map(answer => `${answer.number}. ${answer.label}: ${answer.value}`)
+    ...answers.map(
+      answer => `${answer.number}. ${answer.label}: ${answer.value}`
+    )
   ].join("\n");
 
   const html = `

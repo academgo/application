@@ -17,6 +17,10 @@ import { QuizBlock } from "@/types/quizBlock";
 import imageParent from "./image-parent.jpg";
 import imageStudent from "./image-student.jpg";
 import { trackLead } from "@/lib/trackLead";
+import {
+  UNDECIDED_STUDY_COUNTRY,
+  studyCountryCodeByName
+} from "@/lib/studyDestination";
 
 type Props = {
   lang: string;
@@ -184,14 +188,27 @@ const MultiStepFormBlock: React.FC<Props> = ({
         })
       ];
 
+      // Ответ на вопрос о стране — это и есть страна обучения заявки;
+      // «Ещё не выбрал(а)» и любой вариант не из списка стран — «не решил»
+      const countryQuestion = dynamicQuestions.find(
+        q => q.optionsSource === "countries"
+      );
+      const countryAnswer = countryQuestion
+        ? values[`q_${countryQuestion._key}`]
+        : undefined;
+      const studyCountry = countryAnswer
+        ? studyCountryCodeByName(countryAnswer) || UNDECIDED_STUDY_COUNTRY
+        : undefined;
+
       await axios.post("/api/quiz-email", {
         whatsapp: values.whatsapp,
         quizAnswers,
         lang,
+        studyCountry,
         url: typeof window !== "undefined" ? window.location.href : ""
       });
 
-      trackLead("quiz", lang);
+      trackLead("quiz", lang, studyCountry);
       router.push(lang === "ru" ? "/ru/success" : "/success");
     } catch (error) {
       alert(lang === "ru" ? "Ошибка отправки" : "Error sending");

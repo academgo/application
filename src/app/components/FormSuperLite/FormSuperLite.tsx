@@ -11,9 +11,11 @@ import { Form as FormType } from "@/types/form";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation"; // Импортируйте useRouter из next/navigation
 import { trackLead } from "@/lib/trackLead";
+import StudyCountryField from "../StudyCountryField/StudyCountryField";
 
 export type FormData = {
   phone: string;
+  studyCountry: string;
   agreedToPolicy: boolean;
 };
 
@@ -61,6 +63,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
 
   const initialValues: FormData = {
     phone: "",
+    studyCountry: "",
     agreedToPolicy: false
   };
 
@@ -88,7 +91,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
       router.push(lang === "ru" ? "/ru/success" : "/success");
 
       if (response.data.message === "Email sent") {
-        trackLead("super-lite", lang);
+        trackLead("super-lite", lang, values.studyCountry);
         resetForm({});
         setFilled({ phone: false });
         onFormSubmitSuccess && onFormSubmitSuccess();
@@ -111,7 +114,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting, setFieldValue }) => (
+        {({ isSubmitting, setFieldValue, values }) => (
           <Form>
             <div className={styles.inputWrapper}>
               <label
@@ -134,6 +137,12 @@ const FormSuperLite: FC<ContactFormProps> = ({
                 className={styles.error}
               />
             </div>
+            <StudyCountryField
+              id={`studyCountry-${uniqueId}`}
+              lang={lang}
+              value={values.studyCountry}
+              onChange={code => setFieldValue("studyCountry", code)}
+            />
             <div>
               <button
                 type="submit"

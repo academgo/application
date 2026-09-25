@@ -1,7 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import type Mail from "nodemailer/lib/mailer";
-import { detectStudyDestination } from "@/lib/studyDestination";
+import {
+  detectStudyDestination,
+  studyCountryName
+} from "@/lib/studyDestination";
 
 type LeadMagnetPayload = {
   email: string;
@@ -9,6 +12,7 @@ type LeadMagnetPayload = {
   magnet?: string;
   lang?: string;
   url?: string;
+  studyCountry?: string;
 };
 
 const isEmail = (value: unknown): value is string =>
@@ -31,7 +35,10 @@ export async function POST(request: NextRequest) {
     }
   });
 
-  const destination = detectStudyDestination(data.url, data.lang);
+  // Страна из поля формы (общие страницы) или из адреса страницы страны
+  const destination =
+    studyCountryName(data.studyCountry, data.lang) ||
+    detectStudyDestination(data.url, data.lang);
 
   const mailBody = [
     `Материал: ${data.magnet || "не указан"}`,

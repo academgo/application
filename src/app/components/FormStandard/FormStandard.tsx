@@ -12,11 +12,13 @@ import { Form as FormType } from "@/types/form";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 import { trackLead } from "@/lib/trackLead";
+import StudyCountryField from "../StudyCountryField/StudyCountryField";
 
 export type FormData = {
   phone: string;
   country: string;
   email: string;
+  studyCountry: string;
   agreedToPolicy: boolean;
 };
 
@@ -64,6 +66,7 @@ const FormStandard: FC<ContactFormProps> = ({
     phone: "",
     country: "",
     email: "",
+    studyCountry: "",
     agreedToPolicy: false
   };
 
@@ -93,7 +96,11 @@ const FormStandard: FC<ContactFormProps> = ({
       const response = await axios.post("/api/email", payload);
 
       if (response.data.message === "Email sent") {
-        trackLead("standard", typeof lang === "string" ? lang : undefined);
+        trackLead(
+          "standard",
+          typeof lang === "string" ? lang : undefined,
+          values.studyCountry
+        );
         resetForm({});
         setFilled({ phone: false, country: false, email: false });
         onFormSubmitSuccess && onFormSubmitSuccess();
@@ -119,7 +126,7 @@ const FormStandard: FC<ContactFormProps> = ({
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting, setFieldValue }) => (
+        {({ isSubmitting, setFieldValue, values }) => (
           <Form>
             <div className={styles.inputWrapper}>
               <label
@@ -162,6 +169,12 @@ const FormStandard: FC<ContactFormProps> = ({
                 className={styles.error}
               />
             </div>
+            <StudyCountryField
+              id="studyCountry"
+              lang={typeof lang === "string" ? lang : "en"}
+              value={values.studyCountry}
+              onChange={code => setFieldValue("studyCountry", code)}
+            />
             <div className={styles.inputWrapper}>
               <label
                 htmlFor="email"

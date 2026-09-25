@@ -6,6 +6,7 @@ import Link from "next/link";
 import axios from "axios";
 import { urlFor } from "@/sanity/sanity.client";
 import { trackLead } from "@/lib/trackLead";
+import StudyCountryField from "../StudyCountryField/StudyCountryField";
 import OfferDecor from "../OfferDecor/OfferDecor";
 import styles from "./ConsultationFormBlock.module.scss";
 // поля и кнопка — со стилей обычных форм сайта, как в лид-магните
@@ -48,6 +49,7 @@ type Props = {
 const ConsultationFormBlock: FC<Props> = ({ block, lang, policy }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [studyCountry, setStudyCountry] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle"
@@ -67,10 +69,11 @@ const ConsultationFormBlock: FC<Props> = ({ block, lang, policy }) => {
         name,
         phone,
         lang,
+        studyCountry,
         url: typeof window !== "undefined" ? window.location.href : ""
       });
 
-      trackLead("consultation-form", lang);
+      trackLead("consultation-form", lang, studyCountry);
       setStatus("done");
       setName("");
       setPhone("");
@@ -165,6 +168,13 @@ const ConsultationFormBlock: FC<Props> = ({ block, lang, policy }) => {
             onChange={event => setPhone(event.target.value)}
           />
         </div>
+
+        <StudyCountryField
+          id={`${block._key}-study-country`}
+          lang={lang}
+          value={studyCountry}
+          onChange={setStudyCountry}
+        />
 
         <button
           type="submit"

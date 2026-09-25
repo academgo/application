@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { trackLead } from "@/lib/trackLead";
+import StudyCountryField from "../StudyCountryField/StudyCountryField";
 import styles from "./LeadMagnetBlock.module.scss";
 // форма собрана на стилях обычных форм сайта, чтобы выглядеть одинаково
 import formStyles from "../FormStandard/FormStandard.module.scss";
@@ -43,6 +44,7 @@ type Props = {
 const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [studyCountry, setStudyCountry] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle"
@@ -71,10 +73,11 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
         name,
         magnet: block.magnetName || block.title,
         lang,
+        studyCountry,
         url: typeof window !== "undefined" ? window.location.href : ""
       });
 
-      trackLead("lead-magnet", lang);
+      trackLead("lead-magnet", lang, studyCountry);
       setStatus("done");
 
       if (block.fileUrl && fileWindow) {
@@ -154,6 +157,13 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
           />
         </div>
 
+        <StudyCountryField
+          id={`${block._key}-study-country`}
+          lang={lang}
+          value={studyCountry}
+          onChange={setStudyCountry}
+        />
+
         <button
           type="submit"
           className={formStyles.sentBtn}
@@ -163,7 +173,8 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
             ? isEnglish
               ? "Sending…"
               : "Отправляем…"
-            : block.buttonText || (isEnglish ? "Get the file" : "Получить файл")}
+            : block.buttonText ||
+              (isEnglish ? "Get the file" : "Получить файл")}
         </button>
 
         <div className={formStyles.customCheckbox}>

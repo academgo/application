@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { detectStudyDestination } from "@/lib/studyDestination";
+import {
+  detectStudyDestination,
+  studyCountryName
+} from "@/lib/studyDestination";
 import Mail from "nodemailer/lib/mailer";
 
 const isNonEmptyString = (v: unknown): v is string =>
@@ -23,7 +26,10 @@ export async function POST(request: NextRequest) {
     ? `Language: ${data.lang}\n`
     : "";
   const urlLine = isNonEmptyString(data.url) ? `Page URL: ${data.url}\n` : "";
-  const destination = detectStudyDestination(data.url, data.lang);
+  // Страна из поля формы (общие страницы) или из адреса страницы страны
+  const destination =
+    studyCountryName(data.studyCountry, data.lang) ||
+    detectStudyDestination(data.url, data.lang);
   const destinationLine = destination
     ? `Страна обучения: ${destination}\n`
     : "";
