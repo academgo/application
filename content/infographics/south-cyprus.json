@@ -12,9 +12,18 @@
           "lat": 35.17,
           "lon": 33.36,
           "universities": [
-            { "name": "University of Nicosia (UNIC)", "href": "/ru/ucheba-na-yuzhnom-kipre/university-of-nicosia" },
-            { "name": "European University Cyprus (EUC)", "href": "/ru/ucheba-na-yuzhnom-kipre/european-university-cyprus" },
-            { "name": "University of Cyprus (UCY)", "href": "/ru/ucheba-na-yuzhnom-kipre/university-of-cyprus" }
+            {
+              "name": "University of Nicosia (UNIC)",
+              "href": "/ru/ucheba-na-yuzhnom-kipre/university-of-nicosia"
+            },
+            {
+              "name": "European University Cyprus (EUC)",
+              "href": "/ru/ucheba-na-yuzhnom-kipre/european-university-cyprus"
+            },
+            {
+              "name": "University of Cyprus (UCY)",
+              "href": "/ru/ucheba-na-yuzhnom-kipre/university-of-cyprus"
+            }
           ]
         },
         {
@@ -22,7 +31,10 @@
           "lat": 34.68,
           "lon": 33.04,
           "universities": [
-            { "name": "Cyprus University of Technology (CUT)", "href": "/ru/ucheba-na-yuzhnom-kipre/cyprus-university-of-technology" }
+            {
+              "name": "Cyprus University of Technology (CUT)",
+              "href": "/ru/ucheba-na-yuzhnom-kipre/cyprus-university-of-technology"
+            }
           ]
         },
         {
@@ -30,7 +42,10 @@
           "lat": 34.92,
           "lon": 33.63,
           "universities": [
-            { "name": "UCLan Cyprus", "href": "/ru/ucheba-na-yuzhnom-kipre/uclan-cyprus" }
+            {
+              "name": "UCLan Cyprus",
+              "href": "/ru/ucheba-na-yuzhnom-kipre/uclan-cyprus"
+            }
           ]
         }
       ]
@@ -49,9 +64,18 @@
           "lat": 35.17,
           "lon": 33.36,
           "universities": [
-            { "name": "University of Nicosia (UNIC)", "href": "/study-in-cyprus/university-of-nicosia" },
-            { "name": "European University Cyprus (EUC)", "href": "/study-in-cyprus/european-university-cyprus" },
-            { "name": "University of Cyprus (UCY)", "href": "/study-in-cyprus/university-of-cyprus" }
+            {
+              "name": "University of Nicosia (UNIC)",
+              "href": "/study-in-cyprus/university-of-nicosia"
+            },
+            {
+              "name": "European University Cyprus (EUC)",
+              "href": "/study-in-cyprus/european-university-cyprus"
+            },
+            {
+              "name": "University of Cyprus (UCY)",
+              "href": "/study-in-cyprus/university-of-cyprus"
+            }
           ]
         },
         {
@@ -59,7 +83,10 @@
           "lat": 34.68,
           "lon": 33.04,
           "universities": [
-            { "name": "Cyprus University of Technology (CUT)", "href": "/study-in-cyprus/cyprus-university-of-technology" }
+            {
+              "name": "Cyprus University of Technology (CUT)",
+              "href": "/study-in-cyprus/cyprus-university-of-technology"
+            }
           ]
         },
         {
@@ -67,42 +94,85 @@
           "lat": 34.92,
           "lon": 33.63,
           "universities": [
-            { "name": "UCLan Cyprus", "href": "/study-in-cyprus/uclan-cyprus" }
+            {
+              "name": "UCLan Cyprus",
+              "href": "/study-in-cyprus/uclan-cyprus"
+            }
           ]
         }
       ]
     }
   },
   "academgo.south-cyprus.admission.ru": {
-    "afterHeading": "Сроки подачи на 2027/28",
+    "afterHeading": "Сроки подачи",
     "block": {
       "_type": "timelineBlock",
       "title": "Когда подавать документы на осень",
-      "subtitle": "Осенний набор, ориентир по срокам вузов 2026/27",
+      "subtitle": "Осенний набор, ориентир по срокам вузов прошлого набора",
       "items": [
-        { "period": "До конца июня", "title": "UNIC: заявки на осенний семестр", "text": "UNIC обычно принимает заявки на осень (сентябрь — январь) до конца июня, на весну — до конца октября." },
-        { "period": "За 3 месяца до семестра", "title": "EUC: документы на визу", "text": "EUC просит прислать документы на визу не позднее чем за 3 месяца до начала семестра." },
-        { "period": "1 месяц", "title": "Рассмотрение разрешения на въезд", "text": "Официальный срок при полном пакете; при неполных документах дольше." },
-        { "period": "31 августа", "title": "EUC: дедлайн на осень", "text": "Дедлайн для студентов не из ЕС, которым нужна виза; на весенний семестр — 15 января." },
-        { "period": "Октябрь", "title": "Начало учебного года в EUC", "text": "В EUC учебный год начинается в октябре." }
+        {
+          "period": "До конца июня",
+          "title": "UNIC: заявки на осенний семестр",
+          "text": "UNIC обычно принимает заявки на осень (сентябрь — январь) до конца июня, на весну — до конца октября."
+        },
+        {
+          "period": "За 3 месяца до семестра",
+          "title": "EUC: документы на визу",
+          "text": "EUC просит прислать документы на визу не позднее чем за 3 месяца до начала семестра."
+        },
+        {
+          "period": "1 месяц",
+          "title": "Рассмотрение разрешения на въезд",
+          "text": "Официальный срок при полном пакете; при неполных документах дольше."
+        },
+        {
+          "period": "31 августа",
+          "title": "EUC: дедлайн на осень",
+          "text": "Дедлайн для студентов не из ЕС, которым нужна виза; на весенний семестр — 15 января."
+        },
+        {
+          "period": "Октябрь",
+          "title": "Начало учебного года в EUC",
+          "text": "В EUC учебный год начинается в октябре."
+        }
       ],
-      "note": "Точные даты набора 2027/28 вузы ещё не объявили — их публикуют ближе к приёму."
+      "note": "Точные даты ближайшего набора вузы ещё не объявили — их публикуют ближе к приёму."
     }
   },
   "academgo.south-cyprus.admission.en": {
-    "afterHeading": "Intake dates and timeline for 2027/28",
+    "afterHeading": "Intake dates and timeline",
     "block": {
       "_type": "timelineBlock",
       "title": "When to apply for a fall start",
-      "subtitle": "Fall intake, based on the deadlines universities used for 2026/27",
+      "subtitle": "Fall intake, based on the deadlines universities used for the previous intake",
       "items": [
-        { "period": "Spring 2027", "title": "Offer and English score in hand", "text": "A safe plan for fall 2027: have your offer and English score by spring and your document pack ready well before summer." },
-        { "period": "Late June", "title": "UNIC fall deadline", "text": "UNIC's general deadline for the fall semester; the spring deadline is late October." },
-        { "period": "3 months before the semester", "title": "EUC visa documents due", "text": "EUC asks for visa documents at least 3 months before the semester starts." },
-        { "period": "1 month", "title": "Entry permit review", "text": "The official processing time with a complete file; EUC says 3–4 weeks is typical." },
-        { "period": "31 August", "title": "EUC fall deadline", "text": "EUC's published deadline for non-EU visa students for fall; the spring deadline is 15 January." }
+        {
+          "period": "Spring",
+          "title": "Offer and English score in hand",
+          "text": "A safe plan for a fall start: have your offer and English score by spring and your document pack ready well before summer."
+        },
+        {
+          "period": "Late June",
+          "title": "UNIC fall deadline",
+          "text": "UNIC's general deadline for the fall semester; the spring deadline is late October."
+        },
+        {
+          "period": "3 months before the semester",
+          "title": "EUC visa documents due",
+          "text": "EUC asks for visa documents at least 3 months before the semester starts."
+        },
+        {
+          "period": "1 month",
+          "title": "Entry permit review",
+          "text": "The official processing time with a complete file; EUC says 3–4 weeks is typical."
+        },
+        {
+          "period": "31 August",
+          "title": "EUC fall deadline",
+          "text": "EUC's published deadline for non-EU visa students for fall; the spring deadline is 15 January."
+        }
       ],
-      "note": "Exact deadlines for 2027/28 have not been published yet; check these dates again."
+      "note": "Exact deadlines for the next intake have not been published yet; check these dates again."
     }
   },
   "academgo.south-cyprus.cost.ru": {
@@ -110,16 +180,51 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Бюджет первого года на Кипре",
-      "subtitle": "EUR, пример на ценах UNIC 2026/27 с банковской гарантией €850",
+      "subtitle": "EUR, пример на действующих ценах UNIC с банковской гарантией €850",
       "items": [
-        { "label": "Итого, ориентировочно", "value": 19975, "valueMax": 27725, "valueLabel": "около €19 975–27 725", "highlight": true },
-        { "label": "Обучение 2026/27", "value": 10320, "valueLabel": "€10 320" },
-        { "label": "Жизнь в Никосии по оценке UNIC", "value": 7750, "valueMax": 15500, "valueLabel": "€7 750–15 500" },
-        { "label": "Банковская гарантия (если не вносит вуз)", "value": 850, "valueLabel": "€850" },
-        { "label": "International Student Guarantee (возвратный)", "value": 400, "valueLabel": "€400" },
-        { "label": "Медстраховка UNIC", "value": 175, "valueLabel": "€175" },
-        { "label": "Госпошлина: въезд + ВНЖ + ARC", "value": 140, "valueLabel": "€140" },
-        { "label": "Сборы вуза за 2 семестра", "value": 130, "valueLabel": "€130" }
+        {
+          "label": "Итого, ориентировочно",
+          "value": 19975,
+          "valueMax": 27725,
+          "valueLabel": "около €19 975–27 725",
+          "highlight": true
+        },
+        {
+          "label": "Обучение",
+          "value": 10320,
+          "valueLabel": "€10 320"
+        },
+        {
+          "label": "Жизнь в Никосии по оценке UNIC",
+          "value": 7750,
+          "valueMax": 15500,
+          "valueLabel": "€7 750–15 500"
+        },
+        {
+          "label": "Банковская гарантия (если не вносит вуз)",
+          "value": 850,
+          "valueLabel": "€850"
+        },
+        {
+          "label": "International Student Guarantee (возвратный)",
+          "value": 400,
+          "valueLabel": "€400"
+        },
+        {
+          "label": "Медстраховка UNIC",
+          "value": 175,
+          "valueLabel": "€175"
+        },
+        {
+          "label": "Госпошлина: въезд + ВНЖ + ARC",
+          "value": 140,
+          "valueLabel": "€140"
+        },
+        {
+          "label": "Сборы вуза за 2 семестра",
+          "value": 130,
+          "valueLabel": "€130"
+        }
       ],
       "note": "Для гражданина России или Беларуси гарантия — €550, итог ниже на €300. Без перелёта, повторного медобследования на Кипре и перевода документов."
     }
@@ -129,15 +234,46 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Sample first-year budget in Cyprus",
-      "subtitle": "EUR, first year at 2026/27 prices, with an €850 bank guarantee",
+      "subtitle": "EUR, first year at current prices, with an €850 bank guarantee",
       "items": [
-        { "label": "Approximate first-year total", "value": 20000, "valueMax": 27700, "valueLabel": "about €20,000–27,700", "highlight": true },
-        { "label": "Tuition", "value": 10320, "valueLabel": "€10,320" },
-        { "label": "Living costs", "value": 7750, "valueMax": 15500, "valueLabel": "€7,750–15,500" },
-        { "label": "Bank guarantee (held, not spent)", "value": 850, "valueLabel": "€850" },
-        { "label": "Refundable university guarantee", "value": 400, "valueLabel": "€400" },
-        { "label": "Health insurance", "value": 175, "valueLabel": "€175" },
-        { "label": "Government entry and residence fees", "value": 140, "valueLabel": "€140" }
+        {
+          "label": "Approximate first-year total",
+          "value": 20000,
+          "valueMax": 27700,
+          "valueLabel": "about €20,000–27,700",
+          "highlight": true
+        },
+        {
+          "label": "Tuition",
+          "value": 10320,
+          "valueLabel": "€10,320"
+        },
+        {
+          "label": "Living costs",
+          "value": 7750,
+          "valueMax": 15500,
+          "valueLabel": "€7,750–15,500"
+        },
+        {
+          "label": "Bank guarantee (held, not spent)",
+          "value": 850,
+          "valueLabel": "€850"
+        },
+        {
+          "label": "Refundable university guarantee",
+          "value": 400,
+          "valueLabel": "€400"
+        },
+        {
+          "label": "Health insurance",
+          "value": 175,
+          "valueLabel": "€175"
+        },
+        {
+          "label": "Government entry and residence fees",
+          "value": 140,
+          "valueLabel": "€140"
+        }
       ],
       "note": "For a student from Pakistan, India, Bangladesh or Nigeria. Excludes flights, home-country medical tests and document translation; assumes no scholarship."
     }
@@ -147,15 +283,35 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены медицинских программ на Кипре",
-      "subtitle": "EUR за учебный год, прайсы 2026/27",
+      "subtitle": "EUR за учебный год, действующие прайсы",
       "items": [
-        { "label": "MD для выпускников бакалавриата, UNIC", "value": 25000, "valueLabel": "€25 000" },
-        { "label": "MD, 6 лет, UNIC", "value": 24000, "valueLabel": "€24 000" },
-        { "label": "MD, 6 лет, EUC", "value": 23000, "valueLabel": "€23 000" },
-        { "label": "Стоматология (BDS, 5 лет), EUC", "value": 23000, "valueLabel": "€23 000 + €900 за практику" },
-        { "label": "Ветеринария (DVM), UNIC и EUC", "value": 21000, "valueLabel": "€21 000" }
+        {
+          "label": "MD для выпускников бакалавриата, UNIC",
+          "value": 25000,
+          "valueLabel": "€25 000"
+        },
+        {
+          "label": "MD, 6 лет, UNIC",
+          "value": 24000,
+          "valueLabel": "€24 000"
+        },
+        {
+          "label": "MD, 6 лет, EUC",
+          "value": 23000,
+          "valueLabel": "€23 000"
+        },
+        {
+          "label": "Стоматология (BDS, 5 лет), EUC",
+          "value": 23000,
+          "valueLabel": "€23 000 + €900 за практику"
+        },
+        {
+          "label": "Ветеринария (DVM), UNIC и EUC",
+          "value": 21000,
+          "valueLabel": "€21 000"
+        }
       ],
-      "note": "Цены 2027/28 университеты пока не опубликовали."
+      "note": "Цены на следующий учебный год университеты пока не опубликовали."
     }
   },
   "academgo.south-cyprus.medicine.en": {
@@ -163,14 +319,30 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Medical program fees in Cyprus",
-      "subtitle": "EUR per year for non-EU students, 2026/27 price lists",
+      "subtitle": "EUR per year for non-EU students, current price lists",
       "items": [
-        { "label": "Graduate-entry MD (5 years), UNIC", "value": 25000, "valueLabel": "€25,000" },
-        { "label": "MD (6 years), UNIC", "value": 24000, "valueLabel": "€24,000" },
-        { "label": "MD (6 years), EUC", "value": 23000, "valueLabel": "€23,000" },
-        { "label": "BDS dentistry (5 years), EUC", "value": 23000, "valueLabel": "€23,000 + €900 lab fee" }
+        {
+          "label": "Graduate-entry MD (5 years), UNIC",
+          "value": 25000,
+          "valueLabel": "€25,000"
+        },
+        {
+          "label": "MD (6 years), UNIC",
+          "value": 24000,
+          "valueLabel": "€24,000"
+        },
+        {
+          "label": "MD (6 years), EUC",
+          "value": 23000,
+          "valueLabel": "€23,000"
+        },
+        {
+          "label": "BDS dentistry (5 years), EUC",
+          "value": 23000,
+          "valueLabel": "€23,000 + €900 lab fee"
+        }
       ],
-      "note": "Fees for 2027/28 are not published yet."
+      "note": "Fees for the next academic year are not published yet."
     }
   },
   "academgo.south-cyprus.visa.ru": {
@@ -180,12 +352,36 @@
       "title": "Сроки: от справок до ВНЖ",
       "subtitle": "Сроки давности документов по требованиям UNIC и сроки рассмотрения",
       "items": [
-        { "period": "Не старше 6 месяцев", "title": "Справка о несудимости и письмо банка", "text": "Такой срок давности UNIC ставит для справки о несудимости и письма банка о платёжеспособности." },
-        { "period": "Не старше 4 месяцев", "title": "Анализы и рентген", "text": "Если сдать анализы слишком рано, их придётся переделывать." },
-        { "period": "Не старше 1 месяца", "title": "Выписка по счёту", "text": "UNIC требует выписку с суммой не меньше платы за первый год обучения." },
-        { "period": "1 месяц", "title": "Рассмотрение разрешения на въезд", "text": "Официальный срок при полном пакете; если чего-то не хватает, срок растягивается." },
-        { "period": "7 дней после приезда", "title": "Регистрация и подача на ВНЖ", "text": "Регистрация в реестре иностранцев и подача на временный ВНЖ с биометрией." },
-        { "period": "До 3 месяцев", "title": "Рассмотрение ВНЖ", "text": "Квитанция о подаче с отметкой позволяет выезжать с Кипра и возвращаться, пока решение не готово." }
+        {
+          "period": "Не старше 6 месяцев",
+          "title": "Справка о несудимости и письмо банка",
+          "text": "Такой срок давности UNIC ставит для справки о несудимости и письма банка о платёжеспособности."
+        },
+        {
+          "period": "Не старше 4 месяцев",
+          "title": "Анализы и рентген",
+          "text": "Если сдать анализы слишком рано, их придётся переделывать."
+        },
+        {
+          "period": "Не старше 1 месяца",
+          "title": "Выписка по счёту",
+          "text": "UNIC требует выписку с суммой не меньше платы за первый год обучения."
+        },
+        {
+          "period": "1 месяц",
+          "title": "Рассмотрение разрешения на въезд",
+          "text": "Официальный срок при полном пакете; если чего-то не хватает, срок растягивается."
+        },
+        {
+          "period": "7 дней после приезда",
+          "title": "Регистрация и подача на ВНЖ",
+          "text": "Регистрация в реестре иностранцев и подача на временный ВНЖ с биометрией."
+        },
+        {
+          "period": "До 3 месяцев",
+          "title": "Рассмотрение ВНЖ",
+          "text": "Квитанция о подаче с отметкой позволяет выезжать с Кипра и возвращаться, пока решение не готово."
+        }
       ],
       "note": "Сроки давности документов вузы задают сами; здесь — пример University of Nicosia."
     }
@@ -197,12 +393,36 @@
       "title": "Cyprus student visa timing",
       "subtitle": "Document validity windows at UNIC and official processing times",
       "items": [
-        { "period": "No older than 6 months", "title": "Bank letter and police clearance", "text": "UNIC's validity window for the home-country bank letter and the police clearance certificate." },
-        { "period": "No older than 4 months", "title": "Medical tests", "text": "UNIC's validity window for the hepatitis, HIV and syphilis tests and the chest X-ray." },
-        { "period": "No older than 1 month", "title": "Bank statement", "text": "UNIC asks for a statement showing at least the first year's tuition." },
-        { "period": "1 month", "title": "Entry permit review", "text": "The official processing time for a complete file; EUC says its students typically wait 3–4 weeks." },
-        { "period": "Within 7 days of arrival", "title": "Register and apply for residence", "text": "Enroll in the register of foreigners and apply for a temporary residence permit with biometrics." },
-        { "period": "Up to 3 months", "title": "Residence permit decision", "text": "The stamped receipt lets you leave and re-enter Cyprus while you wait." }
+        {
+          "period": "No older than 6 months",
+          "title": "Bank letter and police clearance",
+          "text": "UNIC's validity window for the home-country bank letter and the police clearance certificate."
+        },
+        {
+          "period": "No older than 4 months",
+          "title": "Medical tests",
+          "text": "UNIC's validity window for the hepatitis, HIV and syphilis tests and the chest X-ray."
+        },
+        {
+          "period": "No older than 1 month",
+          "title": "Bank statement",
+          "text": "UNIC asks for a statement showing at least the first year's tuition."
+        },
+        {
+          "period": "1 month",
+          "title": "Entry permit review",
+          "text": "The official processing time for a complete file; EUC says its students typically wait 3–4 weeks."
+        },
+        {
+          "period": "Within 7 days of arrival",
+          "title": "Register and apply for residence",
+          "text": "Enroll in the register of foreigners and apply for a temporary residence permit with biometrics."
+        },
+        {
+          "period": "Up to 3 months",
+          "title": "Residence permit decision",
+          "text": "The stamped receipt lets you leave and re-enter Cyprus while you wait."
+        }
       ],
       "note": "Universities set their own validity periods; these are the University of Nicosia's."
     }
@@ -212,18 +432,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в UNIC",
-      "subtitle": "EUR за учебный год, кампус в Никосии, студенты не из ЕС, 2026/27",
+      "subtitle": "EUR за учебный год, кампус в Никосии, студенты не из ЕС",
       "items": [
-        { "label": "MD для выпускников бакалавриата", "value": 25000, "valueLabel": "€25 000" },
-        { "label": "Медицина (MD, 6 лет)", "value": 24000, "valueLabel": "€24 000" },
-        { "label": "Ветеринария (DVM)", "value": 21000, "valueLabel": "€21 000" },
-        { "label": "Бакалавриат: архитектура", "value": 11820, "valueLabel": "€11 820" },
-        { "label": "Бакалавриат: право", "value": 11700, "valueLabel": "€11 700" },
-        { "label": "Бакалавриат: IT и инженерия", "value": 10800, "valueLabel": "€10 800" },
-        { "label": "Фармация (5 лет)", "value": 10800, "valueLabel": "€10 800" },
-        { "label": "Бакалавриат: бизнес, гуманитарные", "value": 10320, "valueLabel": "€10 320" }
+        {
+          "label": "MD для выпускников бакалавриата",
+          "value": 25000,
+          "valueLabel": "€25 000"
+        },
+        {
+          "label": "Медицина (MD, 6 лет)",
+          "value": 24000,
+          "valueLabel": "€24 000"
+        },
+        {
+          "label": "Ветеринария (DVM)",
+          "value": 21000,
+          "valueLabel": "€21 000"
+        },
+        {
+          "label": "Бакалавриат: архитектура",
+          "value": 11820,
+          "valueLabel": "€11 820"
+        },
+        {
+          "label": "Бакалавриат: право",
+          "value": 11700,
+          "valueLabel": "€11 700"
+        },
+        {
+          "label": "Бакалавриат: IT и инженерия",
+          "value": 10800,
+          "valueLabel": "€10 800"
+        },
+        {
+          "label": "Фармация (5 лет)",
+          "value": 10800,
+          "valueLabel": "€10 800"
+        },
+        {
+          "label": "Бакалавриат: бизнес, гуманитарные",
+          "value": 10320,
+          "valueLabel": "€10 320"
+        }
       ],
-      "note": "Официальный прайс кампуса в Никосии. Цены на 2027/28 вуз ещё не опубликовал."
+      "note": "Официальный прайс кампуса в Никосии. Цены на следующий учебный год вуз ещё не опубликовал."
     }
   },
   "academgo.south-cyprus.unic.en": {
@@ -231,18 +483,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at UNIC costs",
-      "subtitle": "EUR per year, Nicosia campus, non-EU students, 2026/27",
+      "subtitle": "EUR per year, Nicosia campus, non-EU students",
       "items": [
-        { "label": "Medicine (MD), graduate entry", "value": 25000, "valueLabel": "€25,000" },
-        { "label": "Medicine (MD), undergraduate entry", "value": 24000, "valueLabel": "€24,000" },
-        { "label": "Veterinary Medicine (DVM)", "value": 21000, "valueLabel": "€21,000" },
-        { "label": "Bachelor's: architecture", "value": 11820, "valueLabel": "€11,820" },
-        { "label": "Bachelor's: law", "value": 11700, "valueLabel": "€11,700" },
-        { "label": "Bachelor's: IT, engineering", "value": 10800, "valueLabel": "€10,800" },
-        { "label": "Pharmacy (5 years)", "value": 10800, "valueLabel": "€10,800" },
-        { "label": "Bachelor's: business, humanities", "value": 10320, "valueLabel": "€10,320" }
+        {
+          "label": "Medicine (MD), graduate entry",
+          "value": 25000,
+          "valueLabel": "€25,000"
+        },
+        {
+          "label": "Medicine (MD), undergraduate entry",
+          "value": 24000,
+          "valueLabel": "€24,000"
+        },
+        {
+          "label": "Veterinary Medicine (DVM)",
+          "value": 21000,
+          "valueLabel": "€21,000"
+        },
+        {
+          "label": "Bachelor's: architecture",
+          "value": 11820,
+          "valueLabel": "€11,820"
+        },
+        {
+          "label": "Bachelor's: law",
+          "value": 11700,
+          "valueLabel": "€11,700"
+        },
+        {
+          "label": "Bachelor's: IT, engineering",
+          "value": 10800,
+          "valueLabel": "€10,800"
+        },
+        {
+          "label": "Pharmacy (5 years)",
+          "value": 10800,
+          "valueLabel": "€10,800"
+        },
+        {
+          "label": "Bachelor's: business, humanities",
+          "value": 10320,
+          "valueLabel": "€10,320"
+        }
       ],
-      "note": "UNIC's 2026/27 fee list for the Nicosia campus. Fees for 2027/28 are usually published closer to the intake."
+      "note": "UNIC's current fee list for the Nicosia campus. Fees for the next academic year are usually published closer to the intake."
     }
   },
   "academgo.south-cyprus.euc.ru": {
@@ -250,31 +534,71 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в EUC",
-      "subtitle": "EUR за учебный год, студенты не из ЕС, прайс 2026/27",
+      "subtitle": "EUR за учебный год, студенты не из ЕС, действующий прайс",
       "items": [
-        { "label": "Медицина (MD, 6 лет)", "value": 23000, "valueLabel": "€23 000" },
-        { "label": "Стоматология (5 лет)", "value": 23000, "valueLabel": "€23 000 + €900 за практику" },
-        { "label": "Ветеринария (DVM)", "value": 21000, "valueLabel": "€21 000" },
-        { "label": "Биомедицина, физиотерапия, право", "value": 10980, "valueLabel": "€10 980" },
-        { "label": "Бизнес, IT, психология, фармация", "value": 9240, "valueLabel": "€9 240" }
+        {
+          "label": "Медицина (MD, 6 лет)",
+          "value": 23000,
+          "valueLabel": "€23 000"
+        },
+        {
+          "label": "Стоматология (5 лет)",
+          "value": 23000,
+          "valueLabel": "€23 000 + €900 за практику"
+        },
+        {
+          "label": "Ветеринария (DVM)",
+          "value": 21000,
+          "valueLabel": "€21 000"
+        },
+        {
+          "label": "Биомедицина, физиотерапия, право",
+          "value": 10980,
+          "valueLabel": "€10 980"
+        },
+        {
+          "label": "Бизнес, IT, психология, фармация",
+          "value": 9240,
+          "valueLabel": "€9 240"
+        }
       ],
-      "note": "Официальный прайс EUC. Цены на 2027/28 вуз ещё не опубликовал."
+      "note": "Официальный прайс EUC. Цены на следующий учебный год вуз ещё не опубликовал."
     }
   },
   "academgo.south-cyprus.euc.en": {
-    "afterHeading": "European University Cyprus tuition fees (2026/27)",
+    "afterHeading": "European University Cyprus tuition fees",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at EUC costs",
-      "subtitle": "EUR per year, 2026/27 fees",
+      "subtitle": "EUR per year, current fees",
       "items": [
-        { "label": "Medicine (MD, 6 years)", "value": 23000, "valueLabel": "€23,000" },
-        { "label": "Dentistry (BDS, 5 years)", "value": 23000, "valueLabel": "€23,000 + €900 lab practice" },
-        { "label": "Veterinary Medicine (DVM)", "value": 21000, "valueLabel": "€21,000" },
-        { "label": "Biomedical sciences, physiotherapy", "value": 10980, "valueLabel": "€10,980" },
-        { "label": "Business, IT, psychology, pharmacy", "value": 9240, "valueLabel": "€9,240" }
+        {
+          "label": "Medicine (MD, 6 years)",
+          "value": 23000,
+          "valueLabel": "€23,000"
+        },
+        {
+          "label": "Dentistry (BDS, 5 years)",
+          "value": 23000,
+          "valueLabel": "€23,000 + €900 lab practice"
+        },
+        {
+          "label": "Veterinary Medicine (DVM)",
+          "value": 21000,
+          "valueLabel": "€21,000"
+        },
+        {
+          "label": "Biomedical sciences, physiotherapy",
+          "value": 10980,
+          "valueLabel": "€10,980"
+        },
+        {
+          "label": "Business, IT, psychology, pharmacy",
+          "value": 9240,
+          "valueLabel": "€9,240"
+        }
       ],
-      "note": "Fees for 2027/28 are not out yet."
+      "note": "Fees for the next academic year are not out yet."
     }
   },
   "academgo.south-cyprus.uclan.ru": {
@@ -282,14 +606,31 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год бакалавриата в UCLan Cyprus",
-      "subtitle": "EUR за учебный год, прайс 2026/27",
+      "subtitle": "EUR за учебный год, действующий прайс",
       "items": [
-        { "label": "Бакалавриат, полная цена", "value": 9000, "valueLabel": "€9 000" },
-        { "label": "Со стипендией 40% за аттестат", "value": 5970, "valueLabel": "€5 970" },
-        { "label": "Со стипендией 50% за аттестат", "value": 4975, "valueLabel": "€4 975" },
-        { "label": "Со спортивной стипендией", "value": 4975, "valueMax": 6900, "valueLabel": "€4 975–6 900" }
+        {
+          "label": "Бакалавриат, полная цена",
+          "value": 9000,
+          "valueLabel": "€9 000"
+        },
+        {
+          "label": "Со стипендией 40% за аттестат",
+          "value": 5970,
+          "valueLabel": "€5 970"
+        },
+        {
+          "label": "Со стипендией 50% за аттестат",
+          "value": 4975,
+          "valueLabel": "€4 975"
+        },
+        {
+          "label": "Со спортивной стипендией",
+          "value": 4975,
+          "valueMax": 6900,
+          "valueLabel": "€4 975–6 900"
+        }
       ],
-      "note": "Цена €9 000 уже с автоматической скидкой €950. Пороги стипендий за аттестат опубликованы только для российской шкалы: 4,95 для 50% и 4,85 для 40%. Цены на 2027/28 вуз ещё не опубликовал."
+      "note": "Цена €9 000 уже с автоматической скидкой €950. Пороги стипендий за аттестат опубликованы только для российской шкалы: 4,95 для 50% и 4,85 для 40%. Цены на следующий учебный год вуз ещё не опубликовал."
     }
   },
   "academgo.south-cyprus.uclan.en": {
@@ -297,13 +638,25 @@
     "block": {
       "_type": "barChartBlock",
       "title": "UCLan Cyprus master's fees",
-      "subtitle": "EUR for the whole program, 2026/27 price list",
+      "subtitle": "EUR for the whole program, current price list",
       "items": [
-        { "label": "Master's (standard, 90 ECTS)", "value": 9500, "valueLabel": "€9,500" },
-        { "label": "Master's: HRM, MBA, Cybersecurity and more", "value": 7350, "valueLabel": "€7,350" },
-        { "label": "Master's: Sport & Exercise Sciences", "value": 7000, "valueLabel": "€7,000" }
+        {
+          "label": "Master's (standard, 90 ECTS)",
+          "value": 9500,
+          "valueLabel": "€9,500"
+        },
+        {
+          "label": "Master's: HRM, MBA, Cybersecurity and more",
+          "value": 7350,
+          "valueLabel": "€7,350"
+        },
+        {
+          "label": "Master's: Sport & Exercise Sciences",
+          "value": 7000,
+          "valueLabel": "€7,000"
+        }
       ],
-      "note": "Bachelor's programs cost €9,000 per year. Fees for the 2027/28 intake have not been published yet."
+      "note": "Bachelor's programs cost €9,000 per year. Fees for the next intake have not been published yet."
     }
   },
   "academgo.south-cyprus.ucy.ru": {
@@ -313,12 +666,36 @@
       "title": "Цены магистратуры в UCY",
       "subtitle": "EUR за всю программу магистратуры",
       "items": [
-        { "label": "Financial Analysis", "value": 15000, "valueLabel": "€15 000" },
-        { "label": "MBA", "value": 10250, "valueLabel": "€10 250" },
-        { "label": "Natural Gas in Energy Transition (M.Eng.)", "value": 8000, "valueLabel": "€8 000" },
-        { "label": "Human Resource Management", "value": 7500, "valueLabel": "€7 500" },
-        { "label": "Intelligent Critical Infrastructure Systems", "value": 6500, "valueLabel": "€6 500" },
-        { "label": "Обычные программы", "value": 5125, "valueLabel": "€5 125" }
+        {
+          "label": "Financial Analysis",
+          "value": 15000,
+          "valueLabel": "€15 000"
+        },
+        {
+          "label": "MBA",
+          "value": 10250,
+          "valueLabel": "€10 250"
+        },
+        {
+          "label": "Natural Gas in Energy Transition (M.Eng.)",
+          "value": 8000,
+          "valueLabel": "€8 000"
+        },
+        {
+          "label": "Human Resource Management",
+          "value": 7500,
+          "valueLabel": "€7 500"
+        },
+        {
+          "label": "Intelligent Critical Infrastructure Systems",
+          "value": 6500,
+          "valueLabel": "€6 500"
+        },
+        {
+          "label": "Обычные программы",
+          "value": 5125,
+          "valueLabel": "€5 125"
+        }
       ],
       "note": "Отдельной ставки магистратуры для граждан не из ЕС на странице цен нет. Бакалавриат для граждан не из ЕС — €6 834 в год."
     }
@@ -328,14 +705,38 @@
     "block": {
       "_type": "barChartBlock",
       "title": "UCY master's fees",
-      "subtitle": "EUR for the whole master's program, 2026/27 fees page",
+      "subtitle": "EUR for the whole master's program, UCY fees page",
       "items": [
-        { "label": "Financial Analysis", "value": 15000, "valueLabel": "€15,000" },
-        { "label": "MBA", "value": 10250, "valueLabel": "€10,250" },
-        { "label": "M.Eng. Natural Gas in Energy Transition", "value": 8000, "valueLabel": "€8,000" },
-        { "label": "Human Resource Management", "value": 7500, "valueLabel": "€7,500" },
-        { "label": "Intelligent Critical Infrastructure Systems", "value": 6500, "valueLabel": "€6,500" },
-        { "label": "Standard programs", "value": 5125, "valueLabel": "€5,125" }
+        {
+          "label": "Financial Analysis",
+          "value": 15000,
+          "valueLabel": "€15,000"
+        },
+        {
+          "label": "MBA",
+          "value": 10250,
+          "valueLabel": "€10,250"
+        },
+        {
+          "label": "M.Eng. Natural Gas in Energy Transition",
+          "value": 8000,
+          "valueLabel": "€8,000"
+        },
+        {
+          "label": "Human Resource Management",
+          "value": 7500,
+          "valueLabel": "€7,500"
+        },
+        {
+          "label": "Intelligent Critical Infrastructure Systems",
+          "value": 6500,
+          "valueLabel": "€6,500"
+        },
+        {
+          "label": "Standard programs",
+          "value": 5125,
+          "valueLabel": "€5,125"
+        }
       ],
       "note": "The fees page does not list a separate master's rate for non-EU students. Bachelor's for non-EU students: €6,834 per year."
     }
@@ -345,12 +746,28 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены магистратуры в CUT",
-      "subtitle": "EUR за всю программу магистратуры, прайс 2026/27",
+      "subtitle": "EUR за всю программу магистратуры, действующий прайс",
       "items": [
-        { "label": "Electronic Science and Technology", "value": 19500, "valueLabel": "€19 500" },
-        { "label": "MSc Interaction Design", "value": 9600, "valueLabel": "€9 600" },
-        { "label": "Experiential Digital Marketing Communications", "value": 7500, "valueLabel": "€7 500" },
-        { "label": "Большинство программ", "value": 5125, "valueLabel": "€5 125" }
+        {
+          "label": "Electronic Science and Technology",
+          "value": 19500,
+          "valueLabel": "€19 500"
+        },
+        {
+          "label": "MSc Interaction Design",
+          "value": 9600,
+          "valueLabel": "€9 600"
+        },
+        {
+          "label": "Experiential Digital Marketing Communications",
+          "value": 7500,
+          "valueLabel": "€7 500"
+        },
+        {
+          "label": "Большинство программ",
+          "value": 5125,
+          "valueLabel": "€5 125"
+        }
       ],
       "note": "Цена обычной магистратуры одинакова для ЕС и не-ЕС. Бакалавриат (на греческом) для не-ЕС — €6 834 в год. Регистрационный сбор — €40 один раз."
     }
@@ -360,12 +777,28 @@
     "block": {
       "_type": "barChartBlock",
       "title": "CUT master's fees",
-      "subtitle": "EUR for the whole master's program, 2026/27",
+      "subtitle": "EUR for the whole master's program, current price list",
       "items": [
-        { "label": "Electronic Science and Technology", "value": 19500, "valueLabel": "€19,500" },
-        { "label": "MSc Interaction Design", "value": 9600, "valueLabel": "€9,600" },
-        { "label": "Experiential Digital Marketing Communications", "value": 7500, "valueLabel": "€7,500" },
-        { "label": "Standard master's programs", "value": 5125, "valueLabel": "€5,125" }
+        {
+          "label": "Electronic Science and Technology",
+          "value": 19500,
+          "valueLabel": "€19,500"
+        },
+        {
+          "label": "MSc Interaction Design",
+          "value": 9600,
+          "valueLabel": "€9,600"
+        },
+        {
+          "label": "Experiential Digital Marketing Communications",
+          "value": 7500,
+          "valueLabel": "€7,500"
+        },
+        {
+          "label": "Standard master's programs",
+          "value": 5125,
+          "valueLabel": "€5,125"
+        }
       ],
       "note": "The three programs with their own prices are awaiting approval by the Cypriot Council of Ministers. Bachelor's (taught in Greek): €6,834 per year."
     }

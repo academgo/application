@@ -12,10 +12,22 @@
           "lat": 45.46,
           "lon": 9.19,
           "universities": [
-            { "name": "Bocconi", "href": "/ru/ucheba-v-italii/bocconi-university" },
-            { "name": "Politecnico di Milano", "href": "/ru/ucheba-v-italii/politecnico-di-milano" },
-            { "name": "NABA", "href": "/ru/ucheba-v-italii/naba" },
-            { "name": "Istituto Marangoni", "href": "/ru/ucheba-v-italii/istituto-marangoni" }
+            {
+              "name": "Bocconi",
+              "href": "/ru/ucheba-v-italii/bocconi-university"
+            },
+            {
+              "name": "Politecnico di Milano",
+              "href": "/ru/ucheba-v-italii/politecnico-di-milano"
+            },
+            {
+              "name": "NABA",
+              "href": "/ru/ucheba-v-italii/naba"
+            },
+            {
+              "name": "Istituto Marangoni",
+              "href": "/ru/ucheba-v-italii/istituto-marangoni"
+            }
           ]
         },
         {
@@ -23,7 +35,10 @@
           "lat": 41.9,
           "lon": 12.5,
           "universities": [
-            { "name": "NABA", "href": "/ru/ucheba-v-italii/naba" }
+            {
+              "name": "NABA",
+              "href": "/ru/ucheba-v-italii/naba"
+            }
           ]
         },
         {
@@ -31,7 +46,10 @@
           "lat": 44.49,
           "lon": 11.34,
           "universities": [
-            { "name": "Università di Bologna", "href": "/ru/ucheba-v-italii/university-of-bologna" }
+            {
+              "name": "Università di Bologna",
+              "href": "/ru/ucheba-v-italii/university-of-bologna"
+            }
           ]
         },
         {
@@ -39,7 +57,10 @@
           "lat": 43.77,
           "lon": 11.26,
           "universities": [
-            { "name": "Istituto Marangoni", "href": "/ru/ucheba-v-italii/istituto-marangoni" }
+            {
+              "name": "Istituto Marangoni",
+              "href": "/ru/ucheba-v-italii/istituto-marangoni"
+            }
           ]
         }
       ],
@@ -59,10 +80,22 @@
           "lat": 45.46,
           "lon": 9.19,
           "universities": [
-            { "name": "Bocconi University", "href": "/study-in-italy/bocconi-university" },
-            { "name": "Politecnico di Milano", "href": "/study-in-italy/politecnico-di-milano" },
-            { "name": "NABA", "href": "/study-in-italy/naba" },
-            { "name": "Istituto Marangoni", "href": "/study-in-italy/istituto-marangoni" }
+            {
+              "name": "Bocconi University",
+              "href": "/study-in-italy/bocconi-university"
+            },
+            {
+              "name": "Politecnico di Milano",
+              "href": "/study-in-italy/politecnico-di-milano"
+            },
+            {
+              "name": "NABA",
+              "href": "/study-in-italy/naba"
+            },
+            {
+              "name": "Istituto Marangoni",
+              "href": "/study-in-italy/istituto-marangoni"
+            }
           ]
         },
         {
@@ -70,8 +103,13 @@
           "lat": 41.9,
           "lon": 12.5,
           "universities": [
-            { "name": "NABA", "href": "/study-in-italy/naba" },
-            { "name": "LUISS" }
+            {
+              "name": "NABA",
+              "href": "/study-in-italy/naba"
+            },
+            {
+              "name": "LUISS"
+            }
           ]
         },
         {
@@ -79,7 +117,10 @@
           "lat": 44.49,
           "lon": 11.34,
           "universities": [
-            { "name": "University of Bologna", "href": "/study-in-italy/university-of-bologna" }
+            {
+              "name": "University of Bologna",
+              "href": "/study-in-italy/university-of-bologna"
+            }
           ]
         },
         {
@@ -87,7 +128,10 @@
           "lat": 43.77,
           "lon": 11.26,
           "universities": [
-            { "name": "Istituto Marangoni", "href": "/study-in-italy/istituto-marangoni" }
+            {
+              "name": "Istituto Marangoni",
+              "href": "/study-in-italy/istituto-marangoni"
+            }
           ]
         }
       ],
@@ -95,10 +139,10 @@
     }
   },
   "academgo.italy.admission.ru": {
-    "afterHeading": "Поступление в Италию: календарь набора 2027/28",
+    "afterHeading": "Поступление в Италию: календарь набора",
     "block": {
       "_type": "timelineBlock",
-      "title": "Календарь поступления в Италию на 2027/28",
+      "title": "Календарь поступления в Италию",
       "subtitle": "Подтверждён только дедлайн по визе, остальное — ориентиры по правилам и прошлому циклу",
       "items": [
         {
@@ -114,10 +158,10 @@
         {
           "period": "Лето",
           "title": "Стипендия DSU",
-          "text": "В 2026 году региональные конкурсы принимали заявки с конца июня до начала сентября; даты 2027 будут в новых bandi."
+          "text": "В последнем цикле региональные конкурсы принимали заявки с конца июня до начала сентября; новые даты будут в новых bandi."
         },
         {
-          "period": "До 31 октября 2027",
+          "period": "До 31 октября",
           "title": "Виза D",
           "text": "Крайний срок подачи в консульство; вуз может поставить более ранний."
         },
@@ -127,7 +171,7 @@
           "text": "Документы подают через почту или пункт в вузе."
         },
         {
-          "period": "До 31 января 2028",
+          "period": "До 31 января",
           "title": "Зачисление",
           "text": "Если к этой дате вы не зачислены по данным портала, визу аннулируют."
         }
@@ -135,11 +179,11 @@
     }
   },
   "academgo.italy.admission.en": {
-    "afterHeading": "Admission calendar for 2027/28",
+    "afterHeading": "Admission calendar",
     "block": {
       "_type": "timelineBlock",
-      "title": "Admission calendar for Italy, 2027/28",
-      "subtitle": "Dates fixed by the rules; most 2027 university dates are not published yet",
+      "title": "Admission calendar for Italy",
+      "subtitle": "Dates fixed by the rules; most university dates for the next intake are not published yet",
       "items": [
         {
           "period": "About 60 working days",
@@ -152,7 +196,7 @@
           "text": "November–January, February–March, April–June and September–October, one attempt in each."
         },
         {
-          "period": "By 31 October 2027",
+          "period": "By 31 October",
           "title": "Visa for bachelor's and master's",
           "text": "Apply at the consulate by this date, or earlier if the university says so."
         },
@@ -162,7 +206,7 @@
           "text": "Apply for your permesso di soggiorno after entering Italy."
         },
         {
-          "period": "By 31 January 2028",
+          "period": "By 31 January",
           "title": "Final enrolment",
           "text": "If you are not enrolled by this date, the visa is cancelled."
         }
@@ -174,14 +218,30 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Bocconi",
-      "subtitle": "EUR за учебный год, прайс 2026/27",
+      "subtitle": "EUR за учебный год, действующий прайс",
       "items": [
-        { "label": "Магистратура (MSc)", "value": 18550, "valueLabel": "€18 550" },
-        { "label": "Бакалавриат (BSc) и Law", "value": 17000, "valueLabel": "€17 000" },
-        { "label": "Магистратура со скидкой 20%", "value": 14840, "valueLabel": "€14 840" },
-        { "label": "Магистратура со скидкой 60%", "value": 7420, "valueLabel": "€7 420" }
+        {
+          "label": "Магистратура (MSc)",
+          "value": 18550,
+          "valueLabel": "€18 550"
+        },
+        {
+          "label": "Бакалавриат (BSc) и Law",
+          "value": 17000,
+          "valueLabel": "€17 000"
+        },
+        {
+          "label": "Магистратура со скидкой 20%",
+          "value": 14840,
+          "valueLabel": "€14 840"
+        },
+        {
+          "label": "Магистратура со скидкой 60%",
+          "value": 7420,
+          "valueLabel": "€7 420"
+        }
       ],
-      "note": "Цену на 2027/28 университет пока не объявил: сумма «будет определена в ближайшее время»."
+      "note": "Цену на следующий учебный год университет пока не объявил: сумма «будет определена в ближайшее время»."
     }
   },
   "academgo.italy.bocconi.en": {
@@ -189,14 +249,30 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Bocconi costs",
-      "subtitle": "EUR per year, 2026/27 price list",
+      "subtitle": "EUR per year, current price list",
       "items": [
-        { "label": "Master of Science, 1st year", "value": 18550, "valueLabel": "€18,550" },
-        { "label": "Bachelor's and law, 1st year", "value": 17000, "valueLabel": "€17,000" },
-        { "label": "Master of Science with a 20% waiver", "value": 14840, "valueLabel": "€14,840" },
-        { "label": "Master of Science with a 60% waiver", "value": 7420, "valueLabel": "€7,420" }
+        {
+          "label": "Master of Science, 1st year",
+          "value": 18550,
+          "valueLabel": "€18,550"
+        },
+        {
+          "label": "Bachelor's and law, 1st year",
+          "value": 17000,
+          "valueLabel": "€17,000"
+        },
+        {
+          "label": "Master of Science with a 20% waiver",
+          "value": 14840,
+          "valueLabel": "€14,840"
+        },
+        {
+          "label": "Master of Science with a 60% waiver",
+          "value": 7420,
+          "valueLabel": "€7,420"
+        }
       ],
-      "note": "The fee for 2027/28 has not been published yet (\"will be defined soon\"). Same fee for EU and non-EU students."
+      "note": "The fee for the next academic year has not been published yet (\"will be defined soon\"). Same fee for EU and non-EU students."
     }
   },
   "academgo.italy.bologna.ru": {
@@ -204,31 +280,79 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в University of Bologna",
-      "subtitle": "EUR за учебный год, прайс 2026/27",
+      "subtitle": "EUR за учебный год, действующий прайс",
       "items": [
-        { "label": "Бакалавриат, фикс для граждан СНГ", "value": 1157.04, "valueLabel": "€1 157,04", "highlight": true },
-        { "label": "Магистратура, фикс для граждан СНГ", "value": 1357.04, "valueLabel": "€1 357,04" },
-        { "label": "Бакалавриат, плата по ISEE", "value": 157.04, "valueMax": 2040, "valueLabel": "€157,04–2 040" },
-        { "label": "Магистратура, плата по ISEE", "value": 157.04, "valueMax": 2550, "valueLabel": "€157,04–2 550" },
-        { "label": "Medicine and Surgery (EN), плата по ISEE", "value": 157.04, "valueMax": 3315, "valueLabel": "€157,04–3 315" }
+        {
+          "label": "Бакалавриат, фикс для граждан СНГ",
+          "value": 1157.04,
+          "valueLabel": "€1 157,04",
+          "highlight": true
+        },
+        {
+          "label": "Магистратура, фикс для граждан СНГ",
+          "value": 1357.04,
+          "valueLabel": "€1 357,04"
+        },
+        {
+          "label": "Бакалавриат, плата по ISEE",
+          "value": 157.04,
+          "valueMax": 2040,
+          "valueLabel": "€157,04–2 040"
+        },
+        {
+          "label": "Магистратура, плата по ISEE",
+          "value": 157.04,
+          "valueMax": 2550,
+          "valueLabel": "€157,04–2 550"
+        },
+        {
+          "label": "Medicine and Surgery (EN), плата по ISEE",
+          "value": 157.04,
+          "valueMax": 3315,
+          "valueLabel": "€157,04–3 315"
+        }
       ],
-      "note": "Сниженная фиксированная плата — для семей с доходами только за рубежом. Без ISEE студент платит максимум. Цены на 2027/28 вуз ещё не опубликовал."
+      "note": "Сниженная фиксированная плата — для семей с доходами только за рубежом. Без ISEE студент платит максимум. Цены на следующий учебный год вуз ещё не опубликовал."
     }
   },
   "academgo.italy.bologna.en": {
-    "afterHeading": "University of Bologna tuition fees for 2026/27",
+    "afterHeading": "University of Bologna tuition fees",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at the University of Bologna costs",
-      "subtitle": "EUR per year, 2026/27 fees",
+      "subtitle": "EUR per year, current fees",
       "items": [
-        { "label": "Bachelor's, reduced flat fee (non-OECD)", "value": 1157.04, "valueLabel": "€1,157.04", "highlight": true },
-        { "label": "Master's, reduced flat fee (non-OECD)", "value": 1357.04, "valueLabel": "€1,357.04" },
-        { "label": "Bachelor's, income-based (ISEE)", "value": 157.04, "valueMax": 2040, "valueLabel": "€157.04–2,040" },
-        { "label": "Master's, income-based (ISEE)", "value": 157.04, "valueMax": 2550, "valueLabel": "€157.04–2,550" },
-        { "label": "Medicine and Surgery (English), ISEE", "value": 157.04, "valueMax": 3315, "valueLabel": "€157.04–3,315" }
+        {
+          "label": "Bachelor's, reduced flat fee (non-OECD)",
+          "value": 1157.04,
+          "valueLabel": "€1,157.04",
+          "highlight": true
+        },
+        {
+          "label": "Master's, reduced flat fee (non-OECD)",
+          "value": 1357.04,
+          "valueLabel": "€1,357.04"
+        },
+        {
+          "label": "Bachelor's, income-based (ISEE)",
+          "value": 157.04,
+          "valueMax": 2040,
+          "valueLabel": "€157.04–2,040"
+        },
+        {
+          "label": "Master's, income-based (ISEE)",
+          "value": 157.04,
+          "valueMax": 2550,
+          "valueLabel": "€157.04–2,550"
+        },
+        {
+          "label": "Medicine and Surgery (English), ISEE",
+          "value": 157.04,
+          "valueMax": 3315,
+          "valueLabel": "€157.04–3,315"
+        }
       ],
-      "note": "The reduced flat fee is for non-OECD citizens whose family income is earned only abroad. Without ISEE you pay the maximum. Fees for 2027/28 are not published yet."
+      "note": "The reduced flat fee is for non-OECD citizens whose family income is earned only abroad. Without ISEE you pay the maximum. Fees for the next academic year are not published yet."
     }
   },
   "academgo.italy.dsu.ru": {
@@ -236,7 +360,7 @@
     "block": {
       "_type": "timelineBlock",
       "title": "Год со стипендией ER.GO: главные сроки",
-      "subtitle": "Ориентир по циклу 2026/27 в Эмилии-Романье; даты 2027 года регионы объявят в новых bandi",
+      "subtitle": "Ориентир по последнему циклу в Эмилии-Романье; новые даты регионы объявят в новых bandi",
       "items": [
         {
           "period": "Весна",
@@ -246,12 +370,12 @@
         {
           "period": "23 июня – 24 августа",
           "title": "Заявка в ER.GO",
-          "text": "Окно подачи на стипендию в цикле 2026/27, до 16:00 последнего дня."
+          "text": "Окно подачи на стипендию в последнем цикле, до 16:00 последнего дня."
         },
         {
-          "period": "До 03.11.2026 и 14.01.2027",
+          "period": "До 03.11 и 14.01",
           "title": "Подтверждение жилья",
-          "text": "Самодекларацию о жилье подавали до 03.11.2026, документы — до 14.01.2027."
+          "text": "Самодекларацию о жилье подают до 03.11, документы — до 14.01."
         },
         {
           "period": "К 28 февраля",
@@ -276,7 +400,7 @@
     "block": {
       "_type": "timelineBlock",
       "title": "A year on the ER.GO grant: key dates",
-      "subtitle": "Emilia-Romagna, 2026 cycle as a guide; 2027 dates will be in the new calls",
+      "subtitle": "Emilia-Romagna, last cycle as a guide; new dates will be in the new calls",
       "items": [
         {
           "period": "Spring",
@@ -286,7 +410,7 @@
         {
           "period": "June 23 – August 24",
           "title": "Apply to ER.GO",
-          "text": "ER.GO's application window in 2026; late applications were rejected."
+          "text": "ER.GO's application window in the last cycle; late applications were rejected."
         },
         {
           "period": "By February 28",
@@ -311,14 +435,39 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Istituto Marangoni",
-      "subtitle": "Tuition в EUR за год для не-граждан ЕС, итальянские кампусы, 2026/27",
+      "subtitle": "Tuition в EUR за год для не-граждан ЕС, итальянские кампусы, действующий прайс",
       "items": [
-        { "label": "Master Fashion & Luxury Brand Management", "value": 33500, "valueLabel": "€33 500" },
-        { "label": "One-Year Intensive: Fashion Design", "value": 25850, "valueLabel": "€25 850" },
-        { "label": "Бакалавриат моды", "value": 25800, "valueLabel": "€25 800", "highlight": true },
-        { "label": "Бакалавриат Interior Design", "value": 24300, "valueLabel": "€24 300" },
-        { "label": "One-Year Intensive: Interior Design", "value": 24150, "valueLabel": "€24 150" },
-        { "label": "Foundation (подготовительный год)", "value": 14850, "valueLabel": "€14 850" }
+        {
+          "label": "Master Fashion & Luxury Brand Management",
+          "value": 33500,
+          "valueLabel": "€33 500"
+        },
+        {
+          "label": "One-Year Intensive: Fashion Design",
+          "value": 25850,
+          "valueLabel": "€25 850"
+        },
+        {
+          "label": "Бакалавриат моды",
+          "value": 25800,
+          "valueLabel": "€25 800",
+          "highlight": true
+        },
+        {
+          "label": "Бакалавриат Interior Design",
+          "value": 24300,
+          "valueLabel": "€24 300"
+        },
+        {
+          "label": "One-Year Intensive: Interior Design",
+          "value": 24150,
+          "valueLabel": "€24 150"
+        },
+        {
+          "label": "Foundation (подготовительный год)",
+          "value": 14850,
+          "valueLabel": "€14 850"
+        }
       ],
       "note": "Цены с сайта вуза. Сверху каждый год платится enrolment fee: €4 000, на Master — €5 500. One-Year Intensive и Foundation дают сертификат без признания MUR."
     }
@@ -328,14 +477,39 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Istituto Marangoni costs",
-      "subtitle": "Tuition in EUR per year for non-EU students, Milan and Florence, 2026/27",
+      "subtitle": "Tuition in EUR per year for non-EU students, Milan and Florence, current price list",
       "items": [
-        { "label": "Master Fashion & Luxury Brand Management", "value": 33500, "valueLabel": "€33,500" },
-        { "label": "One-Year Intensive Fashion Design", "value": 25850, "valueLabel": "€25,850" },
-        { "label": "BA Fashion Design, Fashion Management", "value": 25800, "valueLabel": "€25,800", "highlight": true },
-        { "label": "BA Interior Design (Milano Design)", "value": 24300, "valueLabel": "€24,300" },
-        { "label": "One-Year Intensive Interior Design", "value": 24150, "valueLabel": "€24,150" },
-        { "label": "Foundation year", "value": 14850, "valueLabel": "€14,850" }
+        {
+          "label": "Master Fashion & Luxury Brand Management",
+          "value": 33500,
+          "valueLabel": "€33,500"
+        },
+        {
+          "label": "One-Year Intensive Fashion Design",
+          "value": 25850,
+          "valueLabel": "€25,850"
+        },
+        {
+          "label": "BA Fashion Design, Fashion Management",
+          "value": 25800,
+          "valueLabel": "€25,800",
+          "highlight": true
+        },
+        {
+          "label": "BA Interior Design (Milano Design)",
+          "value": 24300,
+          "valueLabel": "€24,300"
+        },
+        {
+          "label": "One-Year Intensive Interior Design",
+          "value": 24150,
+          "valueLabel": "€24,150"
+        },
+        {
+          "label": "Foundation year",
+          "value": 14850,
+          "valueLabel": "€14,850"
+        }
       ],
       "note": "An enrollment fee is charged every year on top: €4,000, or €5,500 for a Master. One-Year Intensive and Foundation courses give a certificate without MUR recognition."
     }
@@ -345,12 +519,29 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год медицины в госвузах Италии",
-      "subtitle": "EUR за учебный год, 2026/27",
+      "subtitle": "EUR за учебный год, действующие цены",
       "items": [
-        { "label": "Госвузы в целом", "value": 160, "valueMax": 4000, "valueLabel": "примерно €160–4 000" },
-        { "label": "Болонья, Medicine and Surgery (EN), максимум", "value": 3315, "valueLabel": "€3 315" },
-        { "label": "Падуя, не-ЕС с семьёй за рубежом", "value": 2990, "valueLabel": "€2 990" },
-        { "label": "Болонья, ISEE до €27 000", "value": 157.04, "valueLabel": "€157,04" }
+        {
+          "label": "Госвузы в целом",
+          "value": 160,
+          "valueMax": 4000,
+          "valueLabel": "примерно €160–4 000"
+        },
+        {
+          "label": "Болонья, Medicine and Surgery (EN), максимум",
+          "value": 3315,
+          "valueLabel": "€3 315"
+        },
+        {
+          "label": "Падуя, не-ЕС с семьёй за рубежом",
+          "value": 2990,
+          "valueLabel": "€2 990"
+        },
+        {
+          "label": "Болонья, ISEE до €27 000",
+          "value": 157.04,
+          "valueLabel": "€157,04"
+        }
       ],
       "note": "В Болонье без ISEE сразу начисляют максимум. В Падуе к плате добавляются региональный налог до €192 и марка €16."
     }
@@ -360,14 +551,30 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Medicine fees at Bologna and Padua",
-      "subtitle": "EUR per year, 2026/27",
+      "subtitle": "EUR per year, current fees",
       "items": [
-        { "label": "Bologna, maximum or no ISEE", "value": 3315, "valueLabel": "€3,315" },
-        { "label": "Padua, non-EU with family abroad", "value": 2990, "valueLabel": "€2,990" },
-        { "label": "Padua, particularly poor countries", "value": 996.66, "valueLabel": "€996.66" },
-        { "label": "Bologna, ISEE up to €27,000", "value": 157.04, "valueLabel": "€157.04" }
+        {
+          "label": "Bologna, maximum or no ISEE",
+          "value": 3315,
+          "valueLabel": "€3,315"
+        },
+        {
+          "label": "Padua, non-EU with family abroad",
+          "value": 2990,
+          "valueLabel": "€2,990"
+        },
+        {
+          "label": "Padua, particularly poor countries",
+          "value": 996.66,
+          "valueLabel": "€996.66"
+        },
+        {
+          "label": "Bologna, ISEE up to €27,000",
+          "value": 157.04,
+          "valueLabel": "€157.04"
+        }
       ],
-      "note": "Padua fees are plus regional tax (up to €192) and a €16 stamp. Fees for 2027/28 have not been published yet."
+      "note": "Padua fees are plus regional tax (up to €192) and a €16 stamp. Fees for the next academic year have not been published yet."
     }
   },
   "academgo.italy.naba.ru": {
@@ -375,14 +582,31 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в NABA",
-      "subtitle": "EUR в год для не-граждан ЕС, прайс 2026/27",
+      "subtitle": "EUR в год для не-граждан ЕС, действующий прайс",
       "items": [
-        { "label": "Academic Master (1 год)", "value": 23800, "valueLabel": "€23 800" },
-        { "label": "Bachelor of Arts (BA)", "value": 22250, "valueLabel": "€22 250", "highlight": true },
-        { "label": "Master of Arts (MA)", "value": 22250, "valueLabel": "€22 250" },
-        { "label": "Diploma Programme (без признания MUR)", "value": 21600, "valueLabel": "€21 600" }
+        {
+          "label": "Academic Master (1 год)",
+          "value": 23800,
+          "valueLabel": "€23 800"
+        },
+        {
+          "label": "Bachelor of Arts (BA)",
+          "value": 22250,
+          "valueLabel": "€22 250",
+          "highlight": true
+        },
+        {
+          "label": "Master of Arts (MA)",
+          "value": 22250,
+          "valueLabel": "€22 250"
+        },
+        {
+          "label": "Diploma Programme (без признания MUR)",
+          "value": 21600,
+          "valueLabel": "€21 600"
+        }
       ],
-      "note": "Цены на 2027/28 вуз пока не опубликовал. Со 2-го года цена растёт на 2%, с 3-го — на 2,5%."
+      "note": "Цены на следующий учебный год вуз пока не опубликовал. Со 2-го года цена растёт на 2%, с 3-го — на 2,5%."
     }
   },
   "academgo.italy.naba.en": {
@@ -390,14 +614,31 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at NABA costs",
-      "subtitle": "EUR per year for non-EU students, 2026/27 price list",
+      "subtitle": "EUR per year for non-EU students, current price list",
       "items": [
-        { "label": "Academic Master (1 year)", "value": 23800, "valueLabel": "€23,800" },
-        { "label": "Bachelor of Arts", "value": 22250, "valueLabel": "€22,250", "highlight": true },
-        { "label": "Master of Arts", "value": 22250, "valueLabel": "€22,250" },
-        { "label": "Diploma Programme (not accredited)", "value": 21600, "valueLabel": "€21,600" }
+        {
+          "label": "Academic Master (1 year)",
+          "value": 23800,
+          "valueLabel": "€23,800"
+        },
+        {
+          "label": "Bachelor of Arts",
+          "value": 22250,
+          "valueLabel": "€22,250",
+          "highlight": true
+        },
+        {
+          "label": "Master of Arts",
+          "value": 22250,
+          "valueLabel": "€22,250"
+        },
+        {
+          "label": "Diploma Programme (not accredited)",
+          "value": 21600,
+          "valueLabel": "€21,600"
+        }
       ],
-      "note": "Fees for 2027/28 are not published yet. The fee rises by 2% from the second year and by 2.5% from the third."
+      "note": "Fees for the next academic year are not published yet. The fee rises by 2% from the second year and by 2.5% from the third."
     }
   },
   "academgo.italy.polimi.ru": {
@@ -407,15 +648,48 @@
       "title": "Сколько стоит месяц жизни в Милане",
       "subtitle": "EUR в месяц: жильё и основные расходы студента PoliMi",
       "items": [
-        { "label": "Отдельная комната на частном рынке", "value": 704, "valueLabel": "около €704" },
-        { "label": "Одноместная комната в резиденции PoliMi", "value": 420, "valueMax": 646, "valueLabel": "около €420–646" },
-        { "label": "Двухместная комната в резиденции PoliMi", "value": 382, "valueMax": 565, "valueLabel": "около €382–565" },
-        { "label": "Питание", "value": 150, "valueMax": 200, "valueLabel": "€150–200" },
-        { "label": "Досуг", "value": 100, "valueMax": 200, "valueLabel": "€100–200" },
-        { "label": "Связь", "value": 10, "valueMax": 30, "valueLabel": "€10–30" },
-        { "label": "Проездной", "value": 22, "valueLabel": "€22" }
+        {
+          "label": "Отдельная комната на частном рынке",
+          "value": 704,
+          "valueLabel": "около €704"
+        },
+        {
+          "label": "Одноместная комната в резиденции PoliMi",
+          "value": 420,
+          "valueMax": 646,
+          "valueLabel": "около €420–646"
+        },
+        {
+          "label": "Двухместная комната в резиденции PoliMi",
+          "value": 382,
+          "valueMax": 565,
+          "valueLabel": "около €382–565"
+        },
+        {
+          "label": "Питание",
+          "value": 150,
+          "valueMax": 200,
+          "valueLabel": "€150–200"
+        },
+        {
+          "label": "Досуг",
+          "value": 100,
+          "valueMax": 200,
+          "valueLabel": "€100–200"
+        },
+        {
+          "label": "Связь",
+          "value": 10,
+          "valueMax": 30,
+          "valueLabel": "€10–30"
+        },
+        {
+          "label": "Проездной",
+          "value": 22,
+          "valueLabel": "€22"
+        }
       ],
-      "note": "Частная комната — средняя цена в августе 2026. Резиденции — ставки 2025/26 с индексацией. Расходы без аренды — оценка PoliMi."
+      "note": "Частная комната — средняя цена в августе. Резиденции — ставки прошлого года с индексацией. Расходы без аренды — оценка PoliMi."
     }
   },
   "academgo.italy.polimi.en": {
@@ -425,15 +699,48 @@
       "title": "What a month in Milan costs",
       "subtitle": "EUR per month: housing and a PoliMi student's main costs",
       "items": [
-        { "label": "Private single room", "value": 704, "valueLabel": "about €704" },
-        { "label": "Single room in a PoliMi residence", "value": 420, "valueMax": 646, "valueLabel": "roughly €420–646" },
-        { "label": "Double room in a PoliMi residence", "value": 382, "valueMax": 565, "valueLabel": "roughly €382–565" },
-        { "label": "Food", "value": 150, "valueMax": 200, "valueLabel": "€150–200" },
-        { "label": "Leisure", "value": 100, "valueMax": 200, "valueLabel": "€100–200" },
-        { "label": "Phone", "value": 10, "valueMax": 30, "valueLabel": "€10–30" },
-        { "label": "Transport pass", "value": 22, "valueLabel": "€22" }
+        {
+          "label": "Private single room",
+          "value": 704,
+          "valueLabel": "about €704"
+        },
+        {
+          "label": "Single room in a PoliMi residence",
+          "value": 420,
+          "valueMax": 646,
+          "valueLabel": "roughly €420–646"
+        },
+        {
+          "label": "Double room in a PoliMi residence",
+          "value": 382,
+          "valueMax": 565,
+          "valueLabel": "roughly €382–565"
+        },
+        {
+          "label": "Food",
+          "value": 150,
+          "valueMax": 200,
+          "valueLabel": "€150–200"
+        },
+        {
+          "label": "Leisure",
+          "value": 100,
+          "valueMax": 200,
+          "valueLabel": "€100–200"
+        },
+        {
+          "label": "Phone",
+          "value": 10,
+          "valueMax": 30,
+          "valueLabel": "€10–30"
+        },
+        {
+          "label": "Transport pass",
+          "value": 22,
+          "valueLabel": "€22"
+        }
       ],
-      "note": "Private room: average for August 2026. Residences: 2025/26 rates with inflation indexation. Costs without rent are PoliMi's estimate."
+      "note": "Private room: August average. Residences: last year's rates with inflation indexation. Costs without rent are PoliMi's estimate."
     }
   },
   "academgo.italy.visa.ru": {
@@ -441,7 +748,7 @@
     "block": {
       "_type": "timelineBlock",
       "title": "Сроки на пути от визы до продления ВНЖ",
-      "subtitle": "Набор 2027/28: документы, виза D, permesso di soggiorno",
+      "subtitle": "Порядок поступления: документы, виза D, permesso di soggiorno",
       "items": [
         {
           "period": "Около 60 рабочих дней",
@@ -449,7 +756,7 @@
           "text": "Стандартный срок признания аттестата, поэтому документы об образовании начинают первыми."
         },
         {
-          "period": "До 31 октября 2027",
+          "period": "До 31 октября",
           "title": "Подача на визу D",
           "text": "Крайний срок для бакалавриата и магистратуры; вуз может поставить срок раньше."
         },
@@ -472,10 +779,10 @@
     }
   },
   "academgo.italy.visa.en": {
-    "afterHeading": "Italy student visa deadlines for 2027/28",
+    "afterHeading": "Italy student visa deadlines",
     "block": {
       "_type": "timelineBlock",
-      "title": "Italy student visa timeline for 2027/28",
+      "title": "Italy student visa timeline",
       "subtitle": "From your first documents to the first permit renewal",
       "items": [
         {
@@ -489,7 +796,7 @@
           "text": "Standard processing time for the statement that goes with your school certificate."
         },
         {
-          "period": "By October 31, 2027",
+          "period": "By October 31",
           "title": "Visa application",
           "text": "Deadline for bachelor's, master's and AFAM programmes; your university may set an earlier one."
         },

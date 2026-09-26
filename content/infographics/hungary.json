@@ -12,13 +12,31 @@
           "lat": 47.5,
           "lon": 19.04,
           "universities": [
-            { "name": "Semmelweis University", "href": "/ru/ucheba-v-vengrii/semmelweis-university" },
-            { "name": "Budapest Metropolitan University (METU)", "href": "/ru/ucheba-v-vengrii/metropolitan-university-budapest" },
-            { "name": "IBS Budapest", "href": "/ru/ucheba-v-vengrii/ibs-budapest" },
-            { "name": "McDaniel College Budapest", "href": "/ru/ucheba-v-vengrii/mcdaniel-college-budapest" },
-            { "name": "BME" },
-            { "name": "ELTE" },
-            { "name": "Corvinus" }
+            {
+              "name": "Semmelweis University",
+              "href": "/ru/ucheba-v-vengrii/semmelweis-university"
+            },
+            {
+              "name": "Budapest Metropolitan University (METU)",
+              "href": "/ru/ucheba-v-vengrii/metropolitan-university-budapest"
+            },
+            {
+              "name": "IBS Budapest",
+              "href": "/ru/ucheba-v-vengrii/ibs-budapest"
+            },
+            {
+              "name": "McDaniel College Budapest",
+              "href": "/ru/ucheba-v-vengrii/mcdaniel-college-budapest"
+            },
+            {
+              "name": "BME"
+            },
+            {
+              "name": "ELTE"
+            },
+            {
+              "name": "Corvinus"
+            }
           ]
         },
         {
@@ -26,20 +44,31 @@
           "lat": 47.53,
           "lon": 21.63,
           "universities": [
-            { "name": "University of Debrecen", "href": "/ru/ucheba-v-vengrii/university-of-debrecen" }
+            {
+              "name": "University of Debrecen",
+              "href": "/ru/ucheba-v-vengrii/university-of-debrecen"
+            }
           ]
         },
         {
           "city": "Сегед",
           "lat": 46.25,
           "lon": 20.15,
-          "universities": [{ "name": "Szeged" }]
+          "universities": [
+            {
+              "name": "Szeged"
+            }
+          ]
         },
         {
           "city": "Печ",
           "lat": 46.07,
           "lon": 18.23,
-          "universities": [{ "name": "Pécs" }]
+          "universities": [
+            {
+              "name": "Pécs"
+            }
+          ]
         }
       ]
     }
@@ -57,13 +86,31 @@
           "lat": 47.5,
           "lon": 19.04,
           "universities": [
-            { "name": "Semmelweis University", "href": "/study-in-hungary/semmelweis-university" },
-            { "name": "Budapest Metropolitan University (METU)", "href": "/study-in-hungary/metropolitan-university-budapest" },
-            { "name": "IBS Budapest", "href": "/study-in-hungary/ibs-budapest" },
-            { "name": "McDaniel College Budapest", "href": "/study-in-hungary/mcdaniel-college-budapest" },
-            { "name": "BME" },
-            { "name": "ELTE" },
-            { "name": "Corvinus" }
+            {
+              "name": "Semmelweis University",
+              "href": "/study-in-hungary/semmelweis-university"
+            },
+            {
+              "name": "Budapest Metropolitan University (METU)",
+              "href": "/study-in-hungary/metropolitan-university-budapest"
+            },
+            {
+              "name": "IBS Budapest",
+              "href": "/study-in-hungary/ibs-budapest"
+            },
+            {
+              "name": "McDaniel College Budapest",
+              "href": "/study-in-hungary/mcdaniel-college-budapest"
+            },
+            {
+              "name": "BME"
+            },
+            {
+              "name": "ELTE"
+            },
+            {
+              "name": "Corvinus"
+            }
           ]
         },
         {
@@ -71,20 +118,31 @@
           "lat": 47.53,
           "lon": 21.63,
           "universities": [
-            { "name": "University of Debrecen", "href": "/study-in-hungary/university-of-debrecen" }
+            {
+              "name": "University of Debrecen",
+              "href": "/study-in-hungary/university-of-debrecen"
+            }
           ]
         },
         {
           "city": "Szeged",
           "lat": 46.25,
           "lon": 20.15,
-          "universities": [{ "name": "Szeged" }]
+          "universities": [
+            {
+              "name": "Szeged"
+            }
+          ]
         },
         {
           "city": "Pécs",
           "lat": 46.07,
           "lon": 18.23,
-          "universities": [{ "name": "Pécs" }]
+          "universities": [
+            {
+              "name": "Pécs"
+            }
+          ]
         }
       ]
     }
@@ -94,15 +152,44 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит семестр в BME и METU",
-      "subtitle": "EUR за семестр, прайс 2026/27 для граждан стран вне ЕС",
+      "subtitle": "EUR за семестр, действующий прайс для граждан стран вне ЕС",
       "items": [
-        { "label": "BME: строительство, электротехника, науки", "value": 3200, "valueLabel": "€3 200" },
-        { "label": "BME: машиностроение", "value": 3500, "valueLabel": "€3 500" },
-        { "label": "BME: магистратура", "value": 3500, "valueMax": 4000, "valueLabel": "€3 500–4 000" },
-        { "label": "METU: бизнес, маркетинг, туризм", "value": 3500, "valueLabel": "€3 500" },
-        { "label": "METU: дизайн, анимация, медиа", "value": 4990, "valueLabel": "€4 990" },
-        { "label": "METU: магистратура, бизнес", "value": 3600, "valueLabel": "€3 600" },
-        { "label": "METU: магистратура, дизайн", "value": 4990, "valueLabel": "€4 990" }
+        {
+          "label": "BME: строительство, электротехника, науки",
+          "value": 3200,
+          "valueLabel": "€3 200"
+        },
+        {
+          "label": "BME: машиностроение",
+          "value": 3500,
+          "valueLabel": "€3 500"
+        },
+        {
+          "label": "BME: магистратура",
+          "value": 3500,
+          "valueMax": 4000,
+          "valueLabel": "€3 500–4 000"
+        },
+        {
+          "label": "METU: бизнес, маркетинг, туризм",
+          "value": 3500,
+          "valueLabel": "€3 500"
+        },
+        {
+          "label": "METU: дизайн, анимация, медиа",
+          "value": 4990,
+          "valueLabel": "€4 990"
+        },
+        {
+          "label": "METU: магистратура, бизнес",
+          "value": 3600,
+          "valueLabel": "€3 600"
+        },
+        {
+          "label": "METU: магистратура, дизайн",
+          "value": 4990,
+          "valueLabel": "€4 990"
+        }
       ],
       "note": "METU предупреждает, что плата может ежегодно расти на уровень инфляции."
     }
@@ -112,15 +199,44 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Semester fees at BME and METU",
-      "subtitle": "EUR per semester, 2026/27 price lists",
+      "subtitle": "EUR per semester, current price lists",
       "items": [
-        { "label": "BME bachelor's: civil, electrical, sciences", "value": 3200, "valueLabel": "€3,200" },
-        { "label": "BME bachelor's: mechanical engineering", "value": 3500, "valueLabel": "€3,500" },
-        { "label": "BME master's", "value": 3500, "valueMax": 4000, "valueLabel": "€3,500–4,000" },
-        { "label": "METU bachelor's: business, marketing, tourism", "value": 3500, "valueLabel": "€3,500" },
-        { "label": "METU bachelor's: design, animation, media", "value": 4990, "valueLabel": "€4,990" },
-        { "label": "METU master's: business", "value": 3600, "valueLabel": "€3,600" },
-        { "label": "METU master's: design", "value": 4990, "valueLabel": "€4,990" }
+        {
+          "label": "BME bachelor's: civil, electrical, sciences",
+          "value": 3200,
+          "valueLabel": "€3,200"
+        },
+        {
+          "label": "BME bachelor's: mechanical engineering",
+          "value": 3500,
+          "valueLabel": "€3,500"
+        },
+        {
+          "label": "BME master's",
+          "value": 3500,
+          "valueMax": 4000,
+          "valueLabel": "€3,500–4,000"
+        },
+        {
+          "label": "METU bachelor's: business, marketing, tourism",
+          "value": 3500,
+          "valueLabel": "€3,500"
+        },
+        {
+          "label": "METU bachelor's: design, animation, media",
+          "value": 4990,
+          "valueLabel": "€4,990"
+        },
+        {
+          "label": "METU master's: business",
+          "value": 3600,
+          "valueLabel": "€3,600"
+        },
+        {
+          "label": "METU master's: design",
+          "value": 4990,
+          "valueLabel": "€4,990"
+        }
       ],
       "note": "METU warns that its fees may rise each year in line with inflation."
     }
@@ -130,33 +246,87 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в University of Debrecen",
-      "subtitle": "USD за учебный год, прайс 2026/27",
+      "subtitle": "USD за учебный год, действующий прайс",
       "items": [
-        { "label": "Dentistry, одним платежом", "value": 17500, "valueLabel": "$17 500" },
-        { "label": "Medicine (годы 1–5), одним платежом", "value": 16900, "valueLabel": "$16 900", "highlight": true },
-        { "label": "Pharmacy", "value": 8000, "valueLabel": "$8 000" },
-        { "label": "Basic Medicine Course", "value": 7500, "valueLabel": "$7 500" },
-        { "label": "Бакалавриат (немедицинские программы)", "value": 6000, "valueMax": 10000, "valueLabel": "$6 000–10 000" },
-        { "label": "Магистратура", "value": 5500, "valueMax": 8000, "valueLabel": "$5 500–8 000" }
+        {
+          "label": "Dentistry, одним платежом",
+          "value": 17500,
+          "valueLabel": "$17 500"
+        },
+        {
+          "label": "Medicine (годы 1–5), одним платежом",
+          "value": 16900,
+          "valueLabel": "$16 900",
+          "highlight": true
+        },
+        {
+          "label": "Pharmacy",
+          "value": 8000,
+          "valueLabel": "$8 000"
+        },
+        {
+          "label": "Basic Medicine Course",
+          "value": 7500,
+          "valueLabel": "$7 500"
+        },
+        {
+          "label": "Бакалавриат (немедицинские программы)",
+          "value": 6000,
+          "valueMax": 10000,
+          "valueLabel": "$6 000–10 000"
+        },
+        {
+          "label": "Магистратура",
+          "value": 5500,
+          "valueMax": 8000,
+          "valueLabel": "$5 500–8 000"
+        }
       ],
-      "note": "Цены на 2027/28 вуз ещё не опубликовал. Для немедицинских программ вуз публикует только диапазоны."
+      "note": "Цены на следующий учебный год вуз ещё не опубликовал. Для немедицинских программ вуз публикует только диапазоны."
     }
   },
   "academgo.hungary.debrecen.en": {
-    "afterHeading": "University of Debrecen tuition fees for 2026/27",
+    "afterHeading": "University of Debrecen tuition fees",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Debrecen costs",
-      "subtitle": "USD per academic year, 2026/27 price list",
+      "subtitle": "USD per academic year, current price list",
       "items": [
-        { "label": "Dentistry, paid at once", "value": 17500, "valueLabel": "$17,500" },
-        { "label": "Medicine (years 1–5), paid at once", "value": 16900, "valueLabel": "$16,900", "highlight": true },
-        { "label": "Pharmacy", "value": 8000, "valueLabel": "$8,000" },
-        { "label": "Basic Medicine Course", "value": 7500, "valueLabel": "$7,500" },
-        { "label": "Other bachelor's programs", "value": 6000, "valueMax": 10000, "valueLabel": "$6,000–10,000" },
-        { "label": "Master's programs", "value": 5500, "valueMax": 8000, "valueLabel": "$5,500–8,000" }
+        {
+          "label": "Dentistry, paid at once",
+          "value": 17500,
+          "valueLabel": "$17,500"
+        },
+        {
+          "label": "Medicine (years 1–5), paid at once",
+          "value": 16900,
+          "valueLabel": "$16,900",
+          "highlight": true
+        },
+        {
+          "label": "Pharmacy",
+          "value": 8000,
+          "valueLabel": "$8,000"
+        },
+        {
+          "label": "Basic Medicine Course",
+          "value": 7500,
+          "valueLabel": "$7,500"
+        },
+        {
+          "label": "Other bachelor's programs",
+          "value": 6000,
+          "valueMax": 10000,
+          "valueLabel": "$6,000–10,000"
+        },
+        {
+          "label": "Master's programs",
+          "value": 5500,
+          "valueMax": 8000,
+          "valueLabel": "$5,500–8,000"
+        }
       ],
-      "note": "Fees for 2027/28 are not published yet. For non-medical programs the university publishes only ranges."
+      "note": "Fees for the next academic year are not published yet. For non-medical programs the university publishes only ranges."
     }
   },
   "academgo.hungary.ibs.ru": {
@@ -164,13 +334,33 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Из чего складывается первый год бакалавриата в IBS",
-      "subtitle": "EUR, прайс 2026/27 для студентов не из ЕС",
+      "subtitle": "EUR, действующий прайс для студентов не из ЕС",
       "items": [
-        { "label": "Обучение BSc за год", "value": 8000, "valueLabel": "€8 000" },
-        { "label": "Регистрационный сбор", "value": 1200, "valueLabel": "€1 200" },
-        { "label": "Медстраховка по приезде", "value": 300, "valueLabel": "около €300" },
-        { "label": "Application fee", "value": 200, "valueLabel": "€200" },
-        { "label": "Консульский сбор за ВНЖ", "value": 110, "valueLabel": "€110" }
+        {
+          "label": "Обучение BSc за год",
+          "value": 8000,
+          "valueLabel": "€8 000"
+        },
+        {
+          "label": "Регистрационный сбор",
+          "value": 1200,
+          "valueLabel": "€1 200"
+        },
+        {
+          "label": "Медстраховка по приезде",
+          "value": 300,
+          "valueLabel": "около €300"
+        },
+        {
+          "label": "Application fee",
+          "value": 200,
+          "valueLabel": "€200"
+        },
+        {
+          "label": "Консульский сбор за ВНЖ",
+          "value": 110,
+          "valueLabel": "€110"
+        }
       ],
       "note": "До визы нужно оплатить €9 200 — обучение за первый год и регистрацию. Жильё и питание в плату не входят."
     }
@@ -180,13 +370,33 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a first BSc year at IBS costs",
-      "subtitle": "EUR, 2026/27 price list for non-EU students",
+      "subtitle": "EUR, current price list for non-EU students",
       "items": [
-        { "label": "BSc tuition, one year", "value": 8000, "valueLabel": "€8,000" },
-        { "label": "Registration fee", "value": 1200, "valueLabel": "€1,200" },
-        { "label": "Health insurance on arrival", "value": 300, "valueLabel": "about €300" },
-        { "label": "Application fee", "value": 200, "valueLabel": "€200" },
-        { "label": "Consular fee for the residence permit", "value": 110, "valueLabel": "€110" }
+        {
+          "label": "BSc tuition, one year",
+          "value": 8000,
+          "valueLabel": "€8,000"
+        },
+        {
+          "label": "Registration fee",
+          "value": 1200,
+          "valueLabel": "€1,200"
+        },
+        {
+          "label": "Health insurance on arrival",
+          "value": 300,
+          "valueLabel": "about €300"
+        },
+        {
+          "label": "Application fee",
+          "value": 200,
+          "valueLabel": "€200"
+        },
+        {
+          "label": "Consular fee for the residence permit",
+          "value": 110,
+          "valueLabel": "€110"
+        }
       ],
       "note": "Non-EU students pay €9,200 (first-year tuition plus registration) before IBS issues the certificate for the visa. Housing and food are not included."
     }
@@ -196,15 +406,36 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит семестр в McDaniel",
-      "subtitle": "EUR за семестр, прайс осени 2026 (2026/27)",
+      "subtitle": "EUR за семестр, действующий прайс",
       "items": [
-        { "label": "Бакалавриат BA, 1–2 курс", "value": 4600, "valueLabel": "€4 600" },
-        { "label": "Бакалавриат BA, 3–4 курс", "value": 4900, "valueLabel": "€4 900" },
-        { "label": "Pre-Med, 1 семестр (Intensive)", "value": 7900, "valueLabel": "€7 900" },
-        { "label": "Отдельный курс", "value": 1000, "valueLabel": "€1 000" },
-        { "label": "Жильё (ориентир колледжа)", "value": 3500, "valueMax": 4500, "valueLabel": "€3 500–4 500" }
+        {
+          "label": "Бакалавриат BA, 1–2 курс",
+          "value": 4600,
+          "valueLabel": "€4 600"
+        },
+        {
+          "label": "Бакалавриат BA, 3–4 курс",
+          "value": 4900,
+          "valueLabel": "€4 900"
+        },
+        {
+          "label": "Pre-Med, 1 семестр (Intensive)",
+          "value": 7900,
+          "valueLabel": "€7 900"
+        },
+        {
+          "label": "Отдельный курс",
+          "value": 1000,
+          "valueLabel": "€1 000"
+        },
+        {
+          "label": "Жильё (ориентир колледжа)",
+          "value": 3500,
+          "valueMax": 4500,
+          "valueLabel": "€3 500–4 500"
+        }
       ],
-      "note": "Цены на 2027/28 McDaniel ещё не опубликовал. Ориентир по жилью — со страницы сборов колледжа; общежития нет."
+      "note": "Цены на следующий учебный год McDaniel ещё не опубликовал. Ориентир по жилью — со страницы сборов колледжа; общежития нет."
     }
   },
   "academgo.hungary.mcdaniel.en": {
@@ -212,15 +443,36 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a semester at McDaniel costs",
-      "subtitle": "EUR per semester, fall 2026 (2026/27) price list",
+      "subtitle": "EUR per semester, current fall price list",
       "items": [
-        { "label": "BA tuition, years 1–2", "value": 4600, "valueLabel": "€4,600" },
-        { "label": "BA tuition, years 3–4", "value": 4900, "valueLabel": "€4,900" },
-        { "label": "Pre-Med track, 1 semester", "value": 7900, "valueLabel": "€7,900" },
-        { "label": "Single course", "value": 1000, "valueLabel": "€1,000" },
-        { "label": "Housing (college estimate)", "value": 3500, "valueMax": 4500, "valueLabel": "€3,500–4,500" }
+        {
+          "label": "BA tuition, years 1–2",
+          "value": 4600,
+          "valueLabel": "€4,600"
+        },
+        {
+          "label": "BA tuition, years 3–4",
+          "value": 4900,
+          "valueLabel": "€4,900"
+        },
+        {
+          "label": "Pre-Med track, 1 semester",
+          "value": 7900,
+          "valueLabel": "€7,900"
+        },
+        {
+          "label": "Single course",
+          "value": 1000,
+          "valueLabel": "€1,000"
+        },
+        {
+          "label": "Housing (college estimate)",
+          "value": 3500,
+          "valueMax": 4500,
+          "valueLabel": "€3,500–4,500"
+        }
       ],
-      "note": "Fees for 2027/28 are not published yet. The housing estimate is from the college's fees page; there is no dormitory."
+      "note": "Fees for the next academic year are not published yet. The housing estimate is from the college's fees page; there is no dormitory."
     }
   },
   "academgo.hungary.medicine.ru": {
@@ -228,12 +480,28 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены на медицину в Debrecen и Pécs",
-      "subtitle": "USD за учебный год, прайсы 2026/27 и набора 2027/28",
+      "subtitle": "USD за учебный год, действующие прайсы",
       "items": [
-        { "label": "Debrecen, по семестрам (2026/27)", "value": 17900, "valueLabel": "$17 900" },
-        { "label": "Debrecen, одним платежом (2026/27)", "value": 16900, "valueLabel": "$16 900" },
-        { "label": "Pécs (набор 2027/28)", "value": 16750, "valueLabel": "$16 750" },
-        { "label": "Debrecen, 6-й курс, базовая плата", "value": 8950, "valueLabel": "$8 950" }
+        {
+          "label": "Debrecen, по семестрам",
+          "value": 17900,
+          "valueLabel": "$17 900"
+        },
+        {
+          "label": "Debrecen, одним платежом",
+          "value": 16900,
+          "valueLabel": "$16 900"
+        },
+        {
+          "label": "Pécs (ближайший набор)",
+          "value": 16750,
+          "valueLabel": "$16 750"
+        },
+        {
+          "label": "Debrecen, 6-й курс, базовая плата",
+          "value": 8950,
+          "valueLabel": "$8 950"
+        }
       ],
       "note": "Semmelweis и Szeged выставляют счета в евро: €9 340 и €7 900 за семестр. На 6-м курсе Debrecen в базовую плату входят 12 недель практики, каждая следующая неделя — $389."
     }
@@ -243,13 +511,33 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Medicine fees at Debrecen and Pécs",
-      "subtitle": "USD per academic year, 2026/27 and 2027/28 intake price lists",
+      "subtitle": "USD per academic year, current price lists",
       "items": [
-        { "label": "Debrecen medicine, by semester (2026/27)", "value": 17900, "valueLabel": "$17,900" },
-        { "label": "Debrecen dentistry (2026/27)", "value": 17500, "valueLabel": "$17,500" },
-        { "label": "Debrecen medicine, paid at once (2026/27)", "value": 16900, "valueLabel": "$16,900" },
-        { "label": "Pécs medicine (2027/28 intake)", "value": 16750, "valueLabel": "$16,750" },
-        { "label": "Debrecen medicine, 6th year base fee", "value": 8950, "valueLabel": "$8,950" }
+        {
+          "label": "Debrecen medicine, by semester",
+          "value": 17900,
+          "valueLabel": "$17,900"
+        },
+        {
+          "label": "Debrecen dentistry",
+          "value": 17500,
+          "valueLabel": "$17,500"
+        },
+        {
+          "label": "Debrecen medicine, paid at once",
+          "value": 16900,
+          "valueLabel": "$16,900"
+        },
+        {
+          "label": "Pécs medicine (next intake)",
+          "value": 16750,
+          "valueLabel": "$16,750"
+        },
+        {
+          "label": "Debrecen medicine, 6th year base fee",
+          "value": 8950,
+          "valueLabel": "$8,950"
+        }
       ],
       "note": "Semmelweis and Szeged charge in euros: €9,340 and €7,900 per semester. Debrecen's 6th-year base fee includes 12 weeks of practice there, plus $389 for each extra week."
     }
@@ -259,17 +547,45 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит семестр в METU",
-      "subtitle": "EUR за семестр, прайс 2026/27 для граждан стран вне ЕС",
+      "subtitle": "EUR за семестр, действующий прайс для граждан стран вне ЕС",
       "items": [
-        { "label": "Бизнес, маркетинг, финансы, туризм (BSc)", "value": 3500, "valueLabel": "€3 500" },
-        { "label": "International Business Economics (BSc)", "value": 3600, "valueLabel": "€3 600" },
-        { "label": "Human Resources Management (BA)", "value": 3800, "valueLabel": "€3 800" },
-        { "label": "Коммуникации, международные отношения (BA)", "value": 3900, "valueLabel": "€3 900" },
-        { "label": "Дизайн и медиа (BA)", "value": 4990, "valueLabel": "€4 990" },
-        { "label": "Магистратура MSc", "value": 3600, "valueLabel": "€3 600" },
-        { "label": "MBA", "value": 4100, "valueLabel": "€4 100" }
+        {
+          "label": "Бизнес, маркетинг, финансы, туризм (BSc)",
+          "value": 3500,
+          "valueLabel": "€3 500"
+        },
+        {
+          "label": "International Business Economics (BSc)",
+          "value": 3600,
+          "valueLabel": "€3 600"
+        },
+        {
+          "label": "Human Resources Management (BA)",
+          "value": 3800,
+          "valueLabel": "€3 800"
+        },
+        {
+          "label": "Коммуникации, международные отношения (BA)",
+          "value": 3900,
+          "valueLabel": "€3 900"
+        },
+        {
+          "label": "Дизайн и медиа (BA)",
+          "value": 4990,
+          "valueLabel": "€4 990"
+        },
+        {
+          "label": "Магистратура MSc",
+          "value": 3600,
+          "valueLabel": "€3 600"
+        },
+        {
+          "label": "MBA",
+          "value": 4100,
+          "valueLabel": "€4 100"
+        }
       ],
-      "note": "Плата может ежегодно расти на уровень инфляции. Цены на 2027/28 METU ещё не опубликовал."
+      "note": "Плата может ежегодно расти на уровень инфляции. Цены на следующий учебный год METU ещё не опубликовал."
     }
   },
   "academgo.hungary.metu.en": {
@@ -277,17 +593,45 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a semester at METU costs",
-      "subtitle": "EUR per semester, 2026/27 non-EU price list",
+      "subtitle": "EUR per semester, current non-EU price list",
       "items": [
-        { "label": "Business, marketing, finance, tourism (BSc)", "value": 3500, "valueLabel": "€3,500" },
-        { "label": "International Business Economics (BSc)", "value": 3600, "valueLabel": "€3,600" },
-        { "label": "Human Resources Management (BA)", "value": 3800, "valueLabel": "€3,800" },
-        { "label": "Communication, International Relations (BA)", "value": 3900, "valueLabel": "€3,900" },
-        { "label": "Design and media (BA)", "value": 4990, "valueLabel": "€4,990" },
-        { "label": "Master's (MSc)", "value": 3600, "valueLabel": "€3,600" },
-        { "label": "MBA", "value": 4100, "valueLabel": "€4,100" }
+        {
+          "label": "Business, marketing, finance, tourism (BSc)",
+          "value": 3500,
+          "valueLabel": "€3,500"
+        },
+        {
+          "label": "International Business Economics (BSc)",
+          "value": 3600,
+          "valueLabel": "€3,600"
+        },
+        {
+          "label": "Human Resources Management (BA)",
+          "value": 3800,
+          "valueLabel": "€3,800"
+        },
+        {
+          "label": "Communication, International Relations (BA)",
+          "value": 3900,
+          "valueLabel": "€3,900"
+        },
+        {
+          "label": "Design and media (BA)",
+          "value": 4990,
+          "valueLabel": "€4,990"
+        },
+        {
+          "label": "Master's (MSc)",
+          "value": 3600,
+          "valueLabel": "€3,600"
+        },
+        {
+          "label": "MBA",
+          "value": 4100,
+          "valueLabel": "€4,100"
+        }
       ],
-      "note": "Tuition may rise each year in line with inflation. Prices for 2027/28 have not been published."
+      "note": "Tuition may rise each year in line with inflation. Prices for the next academic year have not been published."
     }
   },
   "academgo.hungary.semmelweis.ru": {
@@ -295,44 +639,94 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Semmelweis",
-      "subtitle": "EUR за учебный год, набор 2027/28",
+      "subtitle": "EUR за учебный год, ближайший набор",
       "items": [
-        { "label": "General Medicine", "value": 18680, "valueLabel": "€18 680", "highlight": true },
-        { "label": "Dentistry", "value": 18680, "valueLabel": "€18 680" },
-        { "label": "Pharmaceutical Sciences", "value": 11640, "valueLabel": "€11 640" }
+        {
+          "label": "General Medicine",
+          "value": 18680,
+          "valueLabel": "€18 680",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 18680,
+          "valueLabel": "€18 680"
+        },
+        {
+          "label": "Pharmaceutical Sciences",
+          "value": 11640,
+          "valueLabel": "€11 640"
+        }
       ],
       "note": "Разовые сборы вуз выставляет в долларах: вступительная процедура $400, депозит $2 000, регистрация $230."
     }
   },
   "academgo.hungary.semmelweis.en": {
-    "afterHeading": "Semmelweis University tuition fees for 2027",
+    "afterHeading": "Semmelweis University tuition fees",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Semmelweis costs",
-      "subtitle": "EUR per academic year, September 2027 intake",
+      "subtitle": "EUR per academic year, current intake",
       "items": [
-        { "label": "General Medicine", "value": 18680, "valueLabel": "€18,680", "highlight": true },
-        { "label": "Dentistry", "value": 18680, "valueLabel": "€18,680" },
-        { "label": "Pharmaceutical Sciences", "value": 11640, "valueLabel": "€11,640" }
+        {
+          "label": "General Medicine",
+          "value": 18680,
+          "valueLabel": "€18,680",
+          "highlight": true
+        },
+        {
+          "label": "Dentistry",
+          "value": 18680,
+          "valueLabel": "€18,680"
+        },
+        {
+          "label": "Pharmaceutical Sciences",
+          "value": 11640,
+          "valueLabel": "€11,640"
+        }
       ],
       "note": "One-time fees stay in US dollars: admission procedure $400, deposit $2,000, enrollment $230."
     }
   },
   "academgo.hungary.stipendium.ru": {
-    "afterHeading": "Сроки Stipendium Hungaricum: как прошёл цикл 2026/27 и чего ждать в 2027/28",
+    "afterHeading": "Сроки Stipendium Hungaricum: как прошёл последний цикл и чего ждать в следующем",
     "block": {
       "_type": "timelineBlock",
       "title": "Цикл Stipendium Hungaricum по месяцам",
-      "subtitle": "Даты цикла 2026/27 как ориентир для набора 2027/28",
+      "subtitle": "Даты прошлого цикла как ориентир для следующего набора",
       "items": [
-        { "period": "Ноябрь (ориентировочно)", "title": "Открытие приёма заявок", "text": "По модели прошлых лет приём на 2027/28 откроется ориентировочно в ноябре 2026 года." },
-        { "period": "До 15 января", "title": "Дедлайн заявки в TPF и Sending Partner", "text": "В цикле 2026/27 — до 15.01.2026, 14:00 CET; на 2027/28 ожидается ориентировочно середина января 2027." },
-        { "period": "До 28 февраля", "title": "Номинация страной", "text": "Sending Partner вашей страны номинирует кандидатов — без этого заявка недействительна." },
-        { "period": "Середина марта – конец мая", "title": "Экзамены и собеседования в вузах", "text": "Вузы оценивают кандидатов по 100-балльной шкале." },
-        { "period": "Конец июня – середина июля", "title": "Результаты", "text": "Окончательно места распределяет TPF: положительная оценка вуза ещё не равна стипендии." },
-        { "period": "Июль–август", "title": "Визы и приезд", "text": "Визы оформляли в июле–августе, а приехать в Венгрию нужно было до 30.09.2026." }
+        {
+          "period": "Ноябрь (ориентировочно)",
+          "title": "Открытие приёма заявок",
+          "text": "По модели прошлых лет приём на следующий учебный год откроется ориентировочно в ноябре."
+        },
+        {
+          "period": "До 15 января",
+          "title": "Дедлайн заявки в TPF и Sending Partner",
+          "text": "В прошлом цикле — до 15 января, 14:00 CET; в следующем ожидается ориентировочно середина января."
+        },
+        {
+          "period": "До 28 февраля",
+          "title": "Номинация страной",
+          "text": "Sending Partner вашей страны номинирует кандидатов — без этого заявка недействительна."
+        },
+        {
+          "period": "Середина марта – конец мая",
+          "title": "Экзамены и собеседования в вузах",
+          "text": "Вузы оценивают кандидатов по 100-балльной шкале."
+        },
+        {
+          "period": "Конец июня – середина июля",
+          "title": "Результаты",
+          "text": "Окончательно места распределяет TPF: положительная оценка вуза ещё не равна стипендии."
+        },
+        {
+          "period": "Июль–август",
+          "title": "Визы и приезд",
+          "text": "Визы оформляли в июле–августе, а приехать в Венгрию нужно было до 30 сентября."
+        }
       ],
-      "note": "Официальный конкурс на 2027/28 ещё не опубликован. Точные даты TPF объявит в Call for Applications."
+      "note": "Официальный конкурс на следующий учебный год ещё не опубликован. Точные даты TPF объявит в Call for Applications."
     }
   },
   "academgo.hungary.stipendium.en": {
@@ -340,16 +734,40 @@
     "block": {
       "_type": "timelineBlock",
       "title": "The Stipendium Hungaricum year, month by month",
-      "subtitle": "2026/27 round dates as a guide for 2027/28",
+      "subtitle": "Last round's dates as a guide for the next one",
       "items": [
-        { "period": "November", "title": "Round opens", "text": "In past years the application round opened in November." },
-        { "period": "Mid-January", "title": "Application deadline", "text": "Last round: 15 January 2026, 14:00 CET. For 2027/28, expect a deadline around mid-January 2027." },
-        { "period": "By 28 February", "title": "Nomination by your country", "text": "In 2026/27, Sending Partners had to send their nominations by 28 February." },
-        { "period": "Mid-March – late May", "title": "University exams and interviews", "text": "Universities test candidates and score them out of 100." },
-        { "period": "Late June – mid-July", "title": "Results", "text": "TPF makes the final allocation; a good university score does not guarantee a scholarship." },
-        { "period": "July–August", "title": "Visa and arrival", "text": "Visas were processed in July–August, and scholarship holders had to arrive by 30 September." }
+        {
+          "period": "November",
+          "title": "Round opens",
+          "text": "In past years the application round opened in November."
+        },
+        {
+          "period": "Mid-January",
+          "title": "Application deadline",
+          "text": "Last round: 15 January, 14:00 CET. For the next round, expect a deadline around mid-January."
+        },
+        {
+          "period": "By 28 February",
+          "title": "Nomination by your country",
+          "text": "In the last round, Sending Partners had to send their nominations by 28 February."
+        },
+        {
+          "period": "Mid-March – late May",
+          "title": "University exams and interviews",
+          "text": "Universities test candidates and score them out of 100."
+        },
+        {
+          "period": "Late June – mid-July",
+          "title": "Results",
+          "text": "TPF makes the final allocation; a good university score does not guarantee a scholarship."
+        },
+        {
+          "period": "July–August",
+          "title": "Visa and arrival",
+          "text": "Visas were processed in July–August, and scholarship holders had to arrive by 30 September."
+        }
       ],
-      "note": "TPF has not yet published the official call for 2027/28."
+      "note": "TPF has not yet published the official call for the next round."
     }
   },
   "academgo.hungary.visa.ru": {
@@ -359,11 +777,31 @@
       "title": "Сроки студенческого ВНЖ в Венгрии",
       "subtitle": "Официальные сроки OIF: от подачи до статуса после выпуска",
       "items": [
-        { "period": "15 дней", "title": "Подготовка дела", "text": "После подачи в консульстве у OIF есть 15 дней на подготовку дела." },
-        { "period": "До 60 дней", "title": "Решение по существу", "text": "Если пришёл отказ, обжаловать его можно в течение 8 дней." },
-        { "period": "Около 30 дней после приезда", "title": "Карта ВНЖ в Венгрии", "text": "После въезда по однократной визе карту ВНЖ оформляют ориентировочно в течение 30 дней." },
-        { "period": "За 90–30 дней до окончания ВНЖ", "title": "Продление онлайн", "text": "Продление подают через Enter Hungary; условие — не меньше 90 дней в Венгрии в любом 180-дневном периоде." },
-        { "period": "Не позже чем за 15 дней до окончания", "title": "ВНЖ после выпуска", "text": "ВНЖ для поиска работы или открытия бизнеса — до 9 месяцев, без продления." }
+        {
+          "period": "15 дней",
+          "title": "Подготовка дела",
+          "text": "После подачи в консульстве у OIF есть 15 дней на подготовку дела."
+        },
+        {
+          "period": "До 60 дней",
+          "title": "Решение по существу",
+          "text": "Если пришёл отказ, обжаловать его можно в течение 8 дней."
+        },
+        {
+          "period": "Около 30 дней после приезда",
+          "title": "Карта ВНЖ в Венгрии",
+          "text": "После въезда по однократной визе карту ВНЖ оформляют ориентировочно в течение 30 дней."
+        },
+        {
+          "period": "За 90–30 дней до окончания ВНЖ",
+          "title": "Продление онлайн",
+          "text": "Продление подают через Enter Hungary; условие — не меньше 90 дней в Венгрии в любом 180-дневном периоде."
+        },
+        {
+          "period": "Не позже чем за 15 дней до окончания",
+          "title": "ВНЖ после выпуска",
+          "text": "ВНЖ для поиска работы или открытия бизнеса — до 9 месяцев, без продления."
+        }
       ],
       "note": "Закладывайте на ВНЖ не меньше двух–трёх месяцев от подачи до въезда."
     }
@@ -375,11 +813,31 @@
       "title": "Hungary study permit: key time limits",
       "subtitle": "Official OIF deadlines, from application to post-study permit",
       "items": [
-        { "period": "15 days", "title": "Case preparation", "text": "OIF has 15 days to prepare your case after you apply." },
-        { "period": "Within 60 days", "title": "Decision on the merits", "text": "Together that is up to about 75 days; a refusal can be appealed within 8 days." },
-        { "period": "About 30 days after arrival", "title": "Residence card in Hungary", "text": "After entering on the single-entry visa, you complete the residence card formalities." },
-        { "period": "90 to 30 days before expiry", "title": "Online renewal", "text": "Renew through Enter Hungary; you must have lived in Hungary 90 days in any 180-day period." },
-        { "period": "No later than 15 days before expiry", "title": "Post-study permit", "text": "A permit to seek a job or start a business, valid for up to 9 months and not extendable." }
+        {
+          "period": "15 days",
+          "title": "Case preparation",
+          "text": "OIF has 15 days to prepare your case after you apply."
+        },
+        {
+          "period": "Within 60 days",
+          "title": "Decision on the merits",
+          "text": "Together that is up to about 75 days; a refusal can be appealed within 8 days."
+        },
+        {
+          "period": "About 30 days after arrival",
+          "title": "Residence card in Hungary",
+          "text": "After entering on the single-entry visa, you complete the residence card formalities."
+        },
+        {
+          "period": "90 to 30 days before expiry",
+          "title": "Online renewal",
+          "text": "Renew through Enter Hungary; you must have lived in Hungary 90 days in any 180-day period."
+        },
+        {
+          "period": "No later than 15 days before expiry",
+          "title": "Post-study permit",
+          "text": "A permit to seek a job or start a business, valid for up to 9 months and not extendable."
+        }
       ],
       "note": "A file submitted in late July can run close to the start of the semester."
     }

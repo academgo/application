@@ -12,10 +12,22 @@
           "lat": 40.42,
           "lon": -3.7,
           "universities": [
-            { "name": "Universidad Complutense de Madrid", "href": "/ru/ucheba-v-ispanii/complutense-university-of-madrid" },
-            { "name": "CEU San Pablo", "href": "/ru/ucheba-v-ispanii/ceu-san-pablo-university" },
-            { "name": "Universidad Europea", "href": "/ru/ucheba-v-ispanii/universidad-europea" },
-            { "name": "UCAM", "href": "/ru/ucheba-v-ispanii/ucam" }
+            {
+              "name": "Universidad Complutense de Madrid",
+              "href": "/ru/ucheba-v-ispanii/complutense-university-of-madrid"
+            },
+            {
+              "name": "CEU San Pablo",
+              "href": "/ru/ucheba-v-ispanii/ceu-san-pablo-university"
+            },
+            {
+              "name": "Universidad Europea",
+              "href": "/ru/ucheba-v-ispanii/universidad-europea"
+            },
+            {
+              "name": "UCAM",
+              "href": "/ru/ucheba-v-ispanii/ucam"
+            }
           ]
         },
         {
@@ -23,9 +35,16 @@
           "lat": 41.39,
           "lon": 2.17,
           "universities": [
-            { "name": "Universitat de Barcelona", "href": "/ru/ucheba-v-ispanii/university-of-barcelona" },
-            { "name": "UPC" },
-            { "name": "UPF" }
+            {
+              "name": "Universitat de Barcelona",
+              "href": "/ru/ucheba-v-ispanii/university-of-barcelona"
+            },
+            {
+              "name": "UPC"
+            },
+            {
+              "name": "UPF"
+            }
           ]
         },
         {
@@ -33,7 +52,10 @@
           "lat": 37.98,
           "lon": -1.13,
           "universities": [
-            { "name": "UCAM", "href": "/ru/ucheba-v-ispanii/ucam" }
+            {
+              "name": "UCAM",
+              "href": "/ru/ucheba-v-ispanii/ucam"
+            }
           ]
         },
         {
@@ -41,7 +63,10 @@
           "lat": 39.47,
           "lon": -0.38,
           "universities": [
-            { "name": "Universidad Europea", "href": "/ru/ucheba-v-ispanii/universidad-europea" }
+            {
+              "name": "Universidad Europea",
+              "href": "/ru/ucheba-v-ispanii/universidad-europea"
+            }
           ]
         },
         {
@@ -49,7 +74,10 @@
           "lat": 38.35,
           "lon": -0.48,
           "universities": [
-            { "name": "Universidad Europea", "href": "/ru/ucheba-v-ispanii/universidad-europea" }
+            {
+              "name": "Universidad Europea",
+              "href": "/ru/ucheba-v-ispanii/universidad-europea"
+            }
           ]
         },
         {
@@ -57,8 +85,14 @@
           "lat": 36.72,
           "lon": -4.42,
           "universities": [
-            { "name": "UCAM", "href": "/ru/ucheba-v-ispanii/ucam" },
-            { "name": "Universidad Europea", "href": "/ru/ucheba-v-ispanii/universidad-europea" }
+            {
+              "name": "UCAM",
+              "href": "/ru/ucheba-v-ispanii/ucam"
+            },
+            {
+              "name": "Universidad Europea",
+              "href": "/ru/ucheba-v-ispanii/universidad-europea"
+            }
           ]
         }
       ]
@@ -77,10 +111,22 @@
           "lat": 40.42,
           "lon": -3.7,
           "universities": [
-            { "name": "Complutense University of Madrid", "href": "/study-in-spain/complutense-university-of-madrid" },
-            { "name": "CEU San Pablo University", "href": "/study-in-spain/ceu-san-pablo-university" },
-            { "name": "Universidad Europea", "href": "/study-in-spain/universidad-europea" },
-            { "name": "UCAM", "href": "/study-in-spain/ucam" }
+            {
+              "name": "Complutense University of Madrid",
+              "href": "/study-in-spain/complutense-university-of-madrid"
+            },
+            {
+              "name": "CEU San Pablo University",
+              "href": "/study-in-spain/ceu-san-pablo-university"
+            },
+            {
+              "name": "Universidad Europea",
+              "href": "/study-in-spain/universidad-europea"
+            },
+            {
+              "name": "UCAM",
+              "href": "/study-in-spain/ucam"
+            }
           ]
         },
         {
@@ -88,9 +134,16 @@
           "lat": 41.39,
           "lon": 2.17,
           "universities": [
-            { "name": "University of Barcelona", "href": "/study-in-spain/university-of-barcelona" },
-            { "name": "UPC" },
-            { "name": "UPF" }
+            {
+              "name": "University of Barcelona",
+              "href": "/study-in-spain/university-of-barcelona"
+            },
+            {
+              "name": "UPC"
+            },
+            {
+              "name": "UPF"
+            }
           ]
         },
         {
@@ -98,7 +151,10 @@
           "lat": 37.98,
           "lon": -1.13,
           "universities": [
-            { "name": "UCAM", "href": "/study-in-spain/ucam" }
+            {
+              "name": "UCAM",
+              "href": "/study-in-spain/ucam"
+            }
           ]
         },
         {
@@ -106,8 +162,13 @@
           "lat": 39.47,
           "lon": -0.38,
           "universities": [
-            { "name": "Universidad Europea", "href": "/study-in-spain/universidad-europea" },
-            { "name": "UPV" }
+            {
+              "name": "Universidad Europea",
+              "href": "/study-in-spain/universidad-europea"
+            },
+            {
+              "name": "UPV"
+            }
           ]
         },
         {
@@ -115,7 +176,10 @@
           "lat": 38.35,
           "lon": -0.48,
           "universities": [
-            { "name": "Universidad Europea", "href": "/study-in-spain/universidad-europea" }
+            {
+              "name": "Universidad Europea",
+              "href": "/study-in-spain/universidad-europea"
+            }
           ]
         },
         {
@@ -123,8 +187,14 @@
           "lat": 36.72,
           "lon": -4.42,
           "universities": [
-            { "name": "UCAM", "href": "/study-in-spain/ucam" },
-            { "name": "Universidad Europea", "href": "/study-in-spain/universidad-europea" }
+            {
+              "name": "UCAM",
+              "href": "/study-in-spain/ucam"
+            },
+            {
+              "name": "Universidad Europea",
+              "href": "/study-in-spain/universidad-europea"
+            }
           ]
         }
       ]
@@ -135,15 +205,37 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит кредит в UB",
-      "subtitle": "€ за кредит, прайс 2026/27, без сборов",
+      "subtitle": "€ за кредит, действующий прайс, без сборов",
       "items": [
-        { "label": "Бакалавриат (Grau), все на полный диплом", "value": 17.69, "valueLabel": "17,69 €", "highlight": true },
-        { "label": "Магистратура, ЕС/ЕЭЗ и резиденты", "value": 19.37, "valueLabel": "19,37 €" },
-        { "label": "Магистратура, не-ЕС, большинство программ", "value": 82, "valueLabel": "82 €" },
-        { "label": "Магистратура habilitant, не-ЕС", "value": 71, "valueLabel": "71 €" },
-        { "label": "Отдельные магистратуры, не-ЕС", "value": 95, "valueMax": 110, "valueLabel": "95–110 €" }
+        {
+          "label": "Бакалавриат (Grau), все на полный диплом",
+          "value": 17.69,
+          "valueLabel": "17,69 €",
+          "highlight": true
+        },
+        {
+          "label": "Магистратура, ЕС/ЕЭЗ и резиденты",
+          "value": 19.37,
+          "valueLabel": "19,37 €"
+        },
+        {
+          "label": "Магистратура, не-ЕС, большинство программ",
+          "value": 82,
+          "valueLabel": "82 €"
+        },
+        {
+          "label": "Магистратура habilitant, не-ЕС",
+          "value": 71,
+          "valueLabel": "71 €"
+        },
+        {
+          "label": "Отдельные магистратуры, не-ЕС",
+          "value": 95,
+          "valueMax": 110,
+          "valueLabel": "95–110 €"
+        }
       ],
-      "note": "Цены по указу Decret 96/2026. Цены отдельных магистратур уточняются по странице программы. Прайс на 2027/28 Каталония ещё не утвердила."
+      "note": "Цены по указу Decret 96/2026. Цены отдельных магистратур уточняются по странице программы. Прайс на следующий учебный год Каталония ещё не утвердила."
     }
   },
   "academgo.spain.barcelona.en": {
@@ -153,12 +245,30 @@
       "title": "What a credit costs at UB",
       "subtitle": "€ per credit, full-degree students, before annual fees",
       "items": [
-        { "label": "Bachelor's (Grau), full degree", "value": 17.69, "valueLabel": "€17.69", "highlight": true },
-        { "label": "Official master's, most programs", "value": 82, "valueLabel": "€82" },
-        { "label": "Master's for a regulated profession", "value": 71, "valueLabel": "€71" },
-        { "label": "Selected business and economics master's", "value": 95, "valueMax": 110, "valueLabel": "€95–110" }
+        {
+          "label": "Bachelor's (Grau), full degree",
+          "value": 17.69,
+          "valueLabel": "€17.69",
+          "highlight": true
+        },
+        {
+          "label": "Official master's, most programs",
+          "value": 82,
+          "valueLabel": "€82"
+        },
+        {
+          "label": "Master's for a regulated profession",
+          "value": 71,
+          "valueLabel": "€71"
+        },
+        {
+          "label": "Selected business and economics master's",
+          "value": 95,
+          "valueMax": 110,
+          "valueLabel": "€95–110"
+        }
       ],
-      "note": "2026/27 price list; the business and economics master's rate comes from a UB list labeled 2025/26. 2027/28 prices are not published yet."
+      "note": "Current price list; the business and economics master's rate comes from an earlier UB list. Prices for the next academic year are not published yet."
     }
   },
   "academgo.spain.ceu.ru": {
@@ -166,18 +276,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в CEU San Pablo",
-      "subtitle": "€ за учебный год (60 ECTS), прайс 2026/27, без брони и matrícula",
+      "subtitle": "€ за учебный год (60 ECTS), действующий прайс, без брони и matrícula",
       "items": [
-        { "label": "Dentistry (на английском)", "value": 23100, "valueLabel": "23 100 €" },
-        { "label": "Медицина (испанская и билингвальная)", "value": 19500, "valueLabel": "19 500 €" },
-        { "label": "Odontología (на испанском)", "value": 18900, "valueLabel": "18 900 €" },
-        { "label": "Pharmacy (на английском)", "value": 15000, "valueLabel": "15 000 €" },
-        { "label": "Business Administration & Management (EN)", "value": 13500, "valueLabel": "13 500 €" },
-        { "label": "International Relations & EU (EN)", "value": 13200, "valueLabel": "13 200 €" },
-        { "label": "Physiotherapy (EN)", "value": 11700, "valueLabel": "11 700 €" },
-        { "label": "Psicología (ES)", "value": 10500, "valueLabel": "10 500 €" }
+        {
+          "label": "Dentistry (на английском)",
+          "value": 23100,
+          "valueLabel": "23 100 €"
+        },
+        {
+          "label": "Медицина (испанская и билингвальная)",
+          "value": 19500,
+          "valueLabel": "19 500 €"
+        },
+        {
+          "label": "Odontología (на испанском)",
+          "value": 18900,
+          "valueLabel": "18 900 €"
+        },
+        {
+          "label": "Pharmacy (на английском)",
+          "value": 15000,
+          "valueLabel": "15 000 €"
+        },
+        {
+          "label": "Business Administration & Management (EN)",
+          "value": 13500,
+          "valueLabel": "13 500 €"
+        },
+        {
+          "label": "International Relations & EU (EN)",
+          "value": 13200,
+          "valueLabel": "13 200 €"
+        },
+        {
+          "label": "Physiotherapy (EN)",
+          "value": 11700,
+          "valueLabel": "11 700 €"
+        },
+        {
+          "label": "Psicología (ES)",
+          "value": 10500,
+          "valueLabel": "10 500 €"
+        }
       ],
-      "note": "Официальный прайс вуза, одинаковый для ЕС и не-ЕС. Цены на 2027/28 вуз ещё не опубликовал."
+      "note": "Официальный прайс вуза, одинаковый для ЕС и не-ЕС. Цены на следующий учебный год вуз ещё не опубликовал."
     }
   },
   "academgo.spain.ceu.en": {
@@ -185,18 +327,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year costs at CEU San Pablo",
-      "subtitle": "€ per year (60 ECTS), 2026/27 price list, before reservation and enrollment fees",
+      "subtitle": "€ per year (60 ECTS), current price list, before reservation and enrollment fees",
       "items": [
-        { "label": "Dentistry (English)", "value": 23100, "valueLabel": "€23,100" },
-        { "label": "Medicine (Spanish or bilingual)", "value": 19500, "valueLabel": "€19,500" },
-        { "label": "Odontología (Spanish)", "value": 18900, "valueLabel": "€18,900" },
-        { "label": "Pharmacy (English)", "value": 15000, "valueLabel": "€15,000" },
-        { "label": "Business Administration & Management (EN)", "value": 13500, "valueLabel": "€13,500" },
-        { "label": "International Relations & EU (English)", "value": 13200, "valueLabel": "€13,200" },
-        { "label": "Physiotherapy (English)", "value": 11700, "valueLabel": "€11,700" },
-        { "label": "Psychology (Spanish)", "value": 10500, "valueLabel": "€10,500" }
+        {
+          "label": "Dentistry (English)",
+          "value": 23100,
+          "valueLabel": "€23,100"
+        },
+        {
+          "label": "Medicine (Spanish or bilingual)",
+          "value": 19500,
+          "valueLabel": "€19,500"
+        },
+        {
+          "label": "Odontología (Spanish)",
+          "value": 18900,
+          "valueLabel": "€18,900"
+        },
+        {
+          "label": "Pharmacy (English)",
+          "value": 15000,
+          "valueLabel": "€15,000"
+        },
+        {
+          "label": "Business Administration & Management (EN)",
+          "value": 13500,
+          "valueLabel": "€13,500"
+        },
+        {
+          "label": "International Relations & EU (English)",
+          "value": 13200,
+          "valueLabel": "€13,200"
+        },
+        {
+          "label": "Physiotherapy (English)",
+          "value": 11700,
+          "valueLabel": "€11,700"
+        },
+        {
+          "label": "Psychology (Spanish)",
+          "value": 10500,
+          "valueLabel": "€10,500"
+        }
       ],
-      "note": "Official 2026/27 list, one price for all students with no separate non-EU rate."
+      "note": "Current official list, one price for all students with no separate non-EU rate."
     }
   },
   "academgo.spain.complutense.ru": {
@@ -204,12 +378,28 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в UCM для не-ЕС",
-      "subtitle": "€ за учебный год (60 ECTS) по тарифу для не-ЕС, прайс 2026/27",
+      "subtitle": "€ за учебный год (60 ECTS) по тарифу для не-ЕС, действующий прайс",
       "items": [
-        { "label": "Grado: науки и здоровье", "value": 8186, "valueLabel": "≈ 8 186 €" },
-        { "label": "Grado: инженерия", "value": 7714, "valueLabel": "≈ 7 714 €" },
-        { "label": "Grado: гуманитарные и социальные", "value": 6823, "valueLabel": "≈ 6 823 €" },
-        { "label": "Máster Universitario", "value": 5044, "valueLabel": "≈ 5 044 €" }
+        {
+          "label": "Grado: науки и здоровье",
+          "value": 8186,
+          "valueLabel": "≈ 8 186 €"
+        },
+        {
+          "label": "Grado: инженерия",
+          "value": 7714,
+          "valueLabel": "≈ 7 714 €"
+        },
+        {
+          "label": "Grado: гуманитарные и социальные",
+          "value": 6823,
+          "valueLabel": "≈ 6 823 €"
+        },
+        {
+          "label": "Máster Universitario",
+          "value": 5044,
+          "valueLabel": "≈ 5 044 €"
+        }
       ],
       "note": "Тариф по Decreto 43/2022. К цене добавляются сборы: 6,11 € за secretaría и 27,54 € за открытие дела при первой записи."
     }
@@ -219,52 +409,132 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at UCM costs non-EU students",
-      "subtitle": "€ per year (60 ECTS) at the non-EU rate, 2026/27",
+      "subtitle": "€ per year (60 ECTS) at the non-EU rate",
       "items": [
-        { "label": "Bachelor's: sciences and health", "value": 8186, "valueLabel": "≈ 8,186 €" },
-        { "label": "Bachelor's: engineering", "value": 7714, "valueLabel": "≈ 7,714 €" },
-        { "label": "Bachelor's: humanities and social sciences", "value": 6823, "valueLabel": "≈ 6,823 €" },
-        { "label": "Official master's (most programs)", "value": 5044, "valueLabel": "≈ 5,044 €" }
+        {
+          "label": "Bachelor's: sciences and health",
+          "value": 8186,
+          "valueLabel": "≈ 8,186 €"
+        },
+        {
+          "label": "Bachelor's: engineering",
+          "value": 7714,
+          "valueLabel": "≈ 7,714 €"
+        },
+        {
+          "label": "Bachelor's: humanities and social sciences",
+          "value": 6823,
+          "valueLabel": "≈ 6,823 €"
+        },
+        {
+          "label": "Official master's (most programs)",
+          "value": 5044,
+          "valueLabel": "≈ 5,044 €"
+        }
       ],
-      "note": "Rates under Madrid's Decree 43/2022. Prices for 2027/28 are not published yet."
+      "note": "Rates under Madrid's Decree 43/2022. Prices for the next academic year are not published yet."
     }
   },
   "academgo.spain.europea.ru": {
-    "afterHeading": "Стоимость обучения в Universidad Europea (прайс 2026/27)",
+    "afterHeading": "Стоимость обучения в Universidad Europea (действующий прайс)",
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Universidad Europea",
-      "subtitle": "€ за первый курс (60 ECTS) без скидок, прайс 2026/27",
+      "subtitle": "€ за первый курс (60 ECTS) без скидок, действующий прайс",
       "items": [
-        { "label": "Dentistry (английский)", "value": 24120, "valueLabel": "24 120 €" },
-        { "label": "Медицина (испанский), Мадрид", "value": 21480, "valueLabel": "21 480 €" },
-        { "label": "Odontología (испанский), Мадрид", "value": 20820, "valueLabel": "20 820 €" },
-        { "label": "Ветеринария (испанский), Мадрид", "value": 19500, "valueLabel": "19 500 €" },
-        { "label": "Physiotherapy (английский), Мадрид", "value": 14340, "valueLabel": "14 340 €" },
-        { "label": "Business Administration (английский)", "value": 14040, "valueLabel": "14 040 €" },
-        { "label": "Psychology (английский)", "value": 12540, "valueLabel": "12 540 €" },
-        { "label": "Tourism & Leisure Management, Валенсия", "value": 9359, "valueLabel": "9 359 €" }
+        {
+          "label": "Dentistry (английский)",
+          "value": 24120,
+          "valueLabel": "24 120 €"
+        },
+        {
+          "label": "Медицина (испанский), Мадрид",
+          "value": 21480,
+          "valueLabel": "21 480 €"
+        },
+        {
+          "label": "Odontología (испанский), Мадрид",
+          "value": 20820,
+          "valueLabel": "20 820 €"
+        },
+        {
+          "label": "Ветеринария (испанский), Мадрид",
+          "value": 19500,
+          "valueLabel": "19 500 €"
+        },
+        {
+          "label": "Physiotherapy (английский), Мадрид",
+          "value": 14340,
+          "valueLabel": "14 340 €"
+        },
+        {
+          "label": "Business Administration (английский)",
+          "value": 14040,
+          "valueLabel": "14 040 €"
+        },
+        {
+          "label": "Psychology (английский)",
+          "value": 12540,
+          "valueLabel": "12 540 €"
+        },
+        {
+          "label": "Tourism & Leisure Management, Валенсия",
+          "value": 9359,
+          "valueLabel": "9 359 €"
+        }
       ],
-      "note": "Официальные прайсы вуза, без брони места. Прайс на 2027/28 вуз ещё не опубликовал."
+      "note": "Официальные прайсы вуза, без брони места. Прайс на следующий учебный год вуз ещё не опубликовал."
     }
   },
   "academgo.spain.europea.en": {
-    "afterHeading": "Universidad Europea tuition fees (2026/27 price list)",
+    "afterHeading": "Universidad Europea tuition fees (current price list)",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year costs at Universidad Europea",
-      "subtitle": "€ per year (60 ECTS), bachelor's, without discounts, 2026/27",
+      "subtitle": "€ per year (60 ECTS), bachelor's, without discounts",
       "items": [
-        { "label": "Dentistry", "value": 24120, "valueLabel": "€24,120" },
-        { "label": "Medicine (Spanish only), Madrid", "value": 21480, "valueLabel": "€21,480" },
-        { "label": "Global International Business, Madrid", "value": 17580, "valueLabel": "€17,580" },
-        { "label": "Global BBA, Madrid", "value": 16080, "valueLabel": "€16,080" },
-        { "label": "Physiotherapy, Madrid", "value": 14340, "valueLabel": "€14,340" },
-        { "label": "Business Administration, Madrid", "value": 14040, "valueLabel": "€14,040" },
-        { "label": "Psychology", "value": 12540, "valueLabel": "€12,540" },
-        { "label": "Tourism & Leisure Management, Valencia", "value": 9359, "valueLabel": "€9,359" }
+        {
+          "label": "Dentistry",
+          "value": 24120,
+          "valueLabel": "€24,120"
+        },
+        {
+          "label": "Medicine (Spanish only), Madrid",
+          "value": 21480,
+          "valueLabel": "€21,480"
+        },
+        {
+          "label": "Global International Business, Madrid",
+          "value": 17580,
+          "valueLabel": "€17,580"
+        },
+        {
+          "label": "Global BBA, Madrid",
+          "value": 16080,
+          "valueLabel": "€16,080"
+        },
+        {
+          "label": "Physiotherapy, Madrid",
+          "value": 14340,
+          "valueLabel": "€14,340"
+        },
+        {
+          "label": "Business Administration, Madrid",
+          "value": 14040,
+          "valueLabel": "€14,040"
+        },
+        {
+          "label": "Psychology",
+          "value": 12540,
+          "valueLabel": "€12,540"
+        },
+        {
+          "label": "Tourism & Leisure Management, Valencia",
+          "value": 9359,
+          "valueLabel": "€9,359"
+        }
       ],
-      "note": "Official 2026/27 price lists, before the reservation fee; expect some change for 2027/28."
+      "note": "Current official price lists, before the reservation fee; expect some change for the next academic year."
     }
   },
   "academgo.spain.ucam.ru": {
@@ -272,18 +542,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в UCAM",
-      "subtitle": "€ за учебный год по тарифу для не-ЕС, прайс 2026/27",
+      "subtitle": "€ за учебный год по тарифу для не-ЕС, действующий прайс",
       "items": [
-        { "label": "International Relations (англ.)", "value": 7350, "valueLabel": "7 350 €" },
-        { "label": "Business Administration (англ.)", "value": 7550, "valueLabel": "7 550 €" },
-        { "label": "Physical Activity & Sport Sciences (англ.)", "value": 7800, "valueLabel": "7 800 €" },
-        { "label": "Psychology (англ.)", "value": 7950, "valueLabel": "7 950 €" },
-        { "label": "Veterinary Medicine (англ. + исп.)", "value": 12990, "valueLabel": "12 990 €" },
-        { "label": "Dentistry (англ.), Картахена", "value": 15200, "valueLabel": "15 200 €" },
-        { "label": "Стоматология (исп.), Мурсия", "value": 14500, "valueLabel": "14 500 €" },
-        { "label": "Медицина (исп.)", "value": 18900, "valueLabel": "18 900 €" }
+        {
+          "label": "International Relations (англ.)",
+          "value": 7350,
+          "valueLabel": "7 350 €"
+        },
+        {
+          "label": "Business Administration (англ.)",
+          "value": 7550,
+          "valueLabel": "7 550 €"
+        },
+        {
+          "label": "Physical Activity & Sport Sciences (англ.)",
+          "value": 7800,
+          "valueLabel": "7 800 €"
+        },
+        {
+          "label": "Psychology (англ.)",
+          "value": 7950,
+          "valueLabel": "7 950 €"
+        },
+        {
+          "label": "Veterinary Medicine (англ. + исп.)",
+          "value": 12990,
+          "valueLabel": "12 990 €"
+        },
+        {
+          "label": "Dentistry (англ.), Картахена",
+          "value": 15200,
+          "valueLabel": "15 200 €"
+        },
+        {
+          "label": "Стоматология (исп.), Мурсия",
+          "value": 14500,
+          "valueLabel": "14 500 €"
+        },
+        {
+          "label": "Медицина (исп.)",
+          "value": 18900,
+          "valueLabel": "18 900 €"
+        }
       ],
-      "note": "Цены со страниц программ вуза, сентябрь 2026. Год на страницах не указан, прайс на 2027/28 ещё не опубликован — суммы ориентировочные."
+      "note": "Цены со страниц программ вуза. Год на страницах не указан, прайс на следующий учебный год ещё не опубликован — суммы ориентировочные."
     }
   },
   "academgo.spain.ucam.en": {
@@ -291,17 +593,45 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year costs at UCAM",
-      "subtitle": "€ per year at the non-EU rate, current list (2026/27)",
+      "subtitle": "€ per year at the non-EU rate, current list",
       "items": [
-        { "label": "International Relations (English)", "value": 7350, "valueLabel": "about €7,350" },
-        { "label": "Business Administration (English)", "value": 7550, "valueLabel": "about €7,550" },
-        { "label": "Physical Activity & Sport Sciences", "value": 7800, "valueLabel": "about €7,800" },
-        { "label": "Psychology (English)", "value": 7950, "valueLabel": "about €7,950" },
-        { "label": "Veterinary Medicine (English + Spanish)", "value": 12990, "valueLabel": "about €12,990" },
-        { "label": "Dentistry, Cartagena (English)", "value": 15200, "valueLabel": "about €15,200" },
-        { "label": "Medicine (Spanish only)", "value": 18900, "valueLabel": "about €18,900" }
+        {
+          "label": "International Relations (English)",
+          "value": 7350,
+          "valueLabel": "about €7,350"
+        },
+        {
+          "label": "Business Administration (English)",
+          "value": 7550,
+          "valueLabel": "about €7,550"
+        },
+        {
+          "label": "Physical Activity & Sport Sciences",
+          "value": 7800,
+          "valueLabel": "about €7,800"
+        },
+        {
+          "label": "Psychology (English)",
+          "value": 7950,
+          "valueLabel": "about €7,950"
+        },
+        {
+          "label": "Veterinary Medicine (English + Spanish)",
+          "value": 12990,
+          "valueLabel": "about €12,990"
+        },
+        {
+          "label": "Dentistry, Cartagena (English)",
+          "value": 15200,
+          "valueLabel": "about €15,200"
+        },
+        {
+          "label": "Medicine (Spanish only)",
+          "value": 18900,
+          "valueLabel": "about €18,900"
+        }
       ],
-      "note": "UCAM publishes fees on program pages without naming the year; 2027/28 fees are not published yet."
+      "note": "UCAM publishes fees on program pages without naming the year; fees for the next academic year are not published yet."
     }
   },
   "academgo.spain.masters.ru": {
@@ -309,16 +639,41 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цена кредита в магистратуре госвузов",
-      "subtitle": "€ за кредит ECTS для не-ЕС, 2026/27",
+      "subtitle": "€ за кредит ECTS для не-ЕС",
       "items": [
-        { "label": "UCM: психология здоровья (habilitante)", "value": 169.21, "valueLabel": "169,21 €" },
-        { "label": "UCM: адвокатура (habilitante)", "value": 126, "valueLabel": "126 €" },
-        { "label": "UB: отдельные программы", "value": 95, "valueMax": 110, "valueLabel": "95–110 €" },
-        { "label": "UCM: обычная магистратура", "value": 84.07, "valueLabel": "84,07 €" },
-        { "label": "UB: обычная магистратура", "value": 82, "valueLabel": "82 €" },
-        { "label": "UB: habilitante", "value": 71, "valueLabel": "71 €" }
+        {
+          "label": "UCM: психология здоровья (habilitante)",
+          "value": 169.21,
+          "valueLabel": "169,21 €"
+        },
+        {
+          "label": "UCM: адвокатура (habilitante)",
+          "value": 126,
+          "valueLabel": "126 €"
+        },
+        {
+          "label": "UB: отдельные программы",
+          "value": 95,
+          "valueMax": 110,
+          "valueLabel": "95–110 €"
+        },
+        {
+          "label": "UCM: обычная магистратура",
+          "value": 84.07,
+          "valueLabel": "84,07 €"
+        },
+        {
+          "label": "UB: обычная магистратура",
+          "value": 82,
+          "valueLabel": "82 €"
+        },
+        {
+          "label": "UB: habilitante",
+          "value": 71,
+          "valueLabel": "71 €"
+        }
       ],
-      "note": "Цены на 2027/28 вузы публикуют летом перед началом учёбы. В UPV новые студенты-иностранцы без ВНЖ платят двойную цену."
+      "note": "Цены на следующий учебный год вузы публикуют летом перед началом учёбы. В UPV новые студенты-иностранцы без ВНЖ платят двойную цену."
     }
   },
   "academgo.spain.masters.en": {
@@ -326,14 +681,39 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Master's price per credit at public universities",
-      "subtitle": "€ per ECTS credit for non-EU students, 2026/27",
+      "subtitle": "€ per ECTS credit for non-EU students",
       "items": [
-        { "label": "UCM: health psychology (habilitante)", "value": 169.21, "valueLabel": "169.21 €" },
-        { "label": "UCM: law practice (habilitante)", "value": 126, "valueLabel": "126 €" },
-        { "label": "UB: some programs", "value": 95, "valueMax": 110, "valueLabel": "95–110 €" },
-        { "label": "UCM: standard master's", "value": 84.07, "valueLabel": "84.07 €" },
-        { "label": "UB: standard master's", "value": 82, "valueLabel": "82 €" },
-        { "label": "UB: habilitante", "value": 71, "valueLabel": "71 €" }
+        {
+          "label": "UCM: health psychology (habilitante)",
+          "value": 169.21,
+          "valueLabel": "169.21 €"
+        },
+        {
+          "label": "UCM: law practice (habilitante)",
+          "value": 126,
+          "valueLabel": "126 €"
+        },
+        {
+          "label": "UB: some programs",
+          "value": 95,
+          "valueMax": 110,
+          "valueLabel": "95–110 €"
+        },
+        {
+          "label": "UCM: standard master's",
+          "value": 84.07,
+          "valueLabel": "84.07 €"
+        },
+        {
+          "label": "UB: standard master's",
+          "value": 82,
+          "valueLabel": "82 €"
+        },
+        {
+          "label": "UB: habilitante",
+          "value": 71,
+          "valueLabel": "71 €"
+        }
       ],
       "note": "UPV charges new non-EU students without residence double the resident price. Lower per-credit prices online usually apply to EU students and residents only."
     }
@@ -342,32 +722,72 @@
     "afterHeading": "UNEDasiss и экзамены PCE: как считается балл",
     "block": {
       "_type": "timelineBlock",
-      "title": "Календарь UNEDasiss по модели 2026 года",
-      "subtitle": "Даты 2026 года — ориентир для набора 2027/28",
+      "title": "Календарь UNEDasiss по модели прошлого набора",
+      "subtitle": "Даты прошлого набора — ориентир для ближайшего",
       "items": [
-        { "period": "4 февраля – 1 декабря", "title": "Приём заявок на acreditación", "text": "Acreditación UNEDasiss подают онлайн; обработка занимает до 3 месяцев, обычно около 3 недель." },
-        { "period": "25–29 мая", "title": "PCE: майско-июньская сессия", "text": "Предметные экзамены PCE проходят в Испании и дают до 40% балла для зачисления." },
-        { "period": "До 7 июля", "title": "Документы в госвузы", "text": "Крайний срок подачи документов на поступление в госвузы через UNEDasiss в 2026 году." },
-        { "period": "2–8 сентября", "title": "PCE: сентябрьская сессия", "text": "Вторая сессия экзаменов PCE в 2026 году." }
+        {
+          "period": "4 февраля – 1 декабря",
+          "title": "Приём заявок на acreditación",
+          "text": "Acreditación UNEDasiss подают онлайн; обработка занимает до 3 месяцев, обычно около 3 недель."
+        },
+        {
+          "period": "25–29 мая",
+          "title": "PCE: майско-июньская сессия",
+          "text": "Предметные экзамены PCE проходят в Испании и дают до 40% балла для зачисления."
+        },
+        {
+          "period": "До 7 июля",
+          "title": "Документы в госвузы",
+          "text": "Крайний срок подачи документов на поступление в госвузы через UNEDasiss в прошлом наборе."
+        },
+        {
+          "period": "2–8 сентября",
+          "title": "PCE: сентябрьская сессия",
+          "text": "Вторая сессия экзаменов PCE."
+        }
       ],
-      "note": "Календарь UNEDasiss на 2027 год ещё не опубликован."
+      "note": "Календарь UNEDasiss на следующий год ещё не опубликован."
     }
   },
   "academgo.spain.admission.en": {
     "afterHeading": "UNEDasiss and PCE: how your admission score is calculated",
     "block": {
       "_type": "timelineBlock",
-      "title": "The UNEDasiss year, 2026 model",
-      "subtitle": "2026 dates as a guide for the 2027/28 intake",
+      "title": "The UNEDasiss year, based on the last intake",
+      "subtitle": "Last intake's dates as a guide for the upcoming one",
       "items": [
-        { "period": "4 February – 1 December", "title": "Acreditación window", "text": "Request the UNEDasiss acreditación online; processing takes up to 3 months, usually about 3 weeks." },
-        { "period": "16 March – 28 April", "title": "PCE registration, spring session", "text": "Sign up for the PCE subject exams that carry 40% of your admission score." },
-        { "period": "25–29 May", "title": "PCE exams, spring session", "text": "The spring PCE exams take place in Spain." },
-        { "period": "By 7 July", "title": "Documents to public universities", "text": "In 2026 this was the deadline for sending documents to public universities through UNEDasiss." },
-        { "period": "1–22 July", "title": "PCE registration, September session", "text": "A second chance to register for PCE exams." },
-        { "period": "2–8 September", "title": "PCE exams, September session", "text": "The September PCE session; 2027 dates are to be announced." }
+        {
+          "period": "4 February – 1 December",
+          "title": "Acreditación window",
+          "text": "Request the UNEDasiss acreditación online; processing takes up to 3 months, usually about 3 weeks."
+        },
+        {
+          "period": "16 March – 28 April",
+          "title": "PCE registration, spring session",
+          "text": "Sign up for the PCE subject exams that carry 40% of your admission score."
+        },
+        {
+          "period": "25–29 May",
+          "title": "PCE exams, spring session",
+          "text": "The spring PCE exams take place in Spain."
+        },
+        {
+          "period": "By 7 July",
+          "title": "Documents to public universities",
+          "text": "In the last intake this was the deadline for sending documents to public universities through UNEDasiss."
+        },
+        {
+          "period": "1–22 July",
+          "title": "PCE registration, September session",
+          "text": "A second chance to register for PCE exams."
+        },
+        {
+          "period": "2–8 September",
+          "title": "PCE exams, September session",
+          "text": "The September PCE session; new dates are to be announced."
+        }
       ],
-      "note": "UNEDasiss has not published its 2027 calendar yet."
+      "note": "UNEDasiss has not published its next calendar yet."
     }
   },
   "academgo.spain.visa.ru": {
@@ -377,11 +797,31 @@
       "title": "Сроки разрешения на учёбу",
       "subtitle": "Когда начинает действовать estancia por estudios и когда её продлевать",
       "items": [
-        { "period": "За месяц до начала занятий", "title": "Разрешение вступает в силу", "text": "Estancia начинает действовать за месяц до старта учёбы." },
-        { "period": "В начале каждого учебного года", "title": "Подтверждение записи", "text": "Если разрешение выдано больше чем на год, нужно подтверждать запись на курс (matrícula)." },
-        { "period": "За 2 месяца до окончания срока", "title": "Продление онлайн", "text": "Заявление на prórroga подают только онлайн; каждое продление — максимум на 1 год." },
-        { "period": "До 3 месяцев после окончания", "title": "Позднее продление", "text": "Подать ещё можно, но тогда возможен штраф." },
-        { "period": "15 дней после окончания занятий", "title": "Разрешение ещё действует", "text": "Estancia остаётся в силе 15 дней после конца учёбы." }
+        {
+          "period": "За месяц до начала занятий",
+          "title": "Разрешение вступает в силу",
+          "text": "Estancia начинает действовать за месяц до старта учёбы."
+        },
+        {
+          "period": "В начале каждого учебного года",
+          "title": "Подтверждение записи",
+          "text": "Если разрешение выдано больше чем на год, нужно подтверждать запись на курс (matrícula)."
+        },
+        {
+          "period": "За 2 месяца до окончания срока",
+          "title": "Продление онлайн",
+          "text": "Заявление на prórroga подают только онлайн; каждое продление — максимум на 1 год."
+        },
+        {
+          "period": "До 3 месяцев после окончания",
+          "title": "Позднее продление",
+          "text": "Подать ещё можно, но тогда возможен штраф."
+        },
+        {
+          "period": "15 дней после окончания занятий",
+          "title": "Разрешение ещё действует",
+          "text": "Estancia остаётся в силе 15 дней после конца учёбы."
+        }
       ],
       "note": "Студенты вузов продлевают разрешение до 2 раз, слушатели языковых курсов — только 1 раз."
     }
@@ -393,11 +833,31 @@
       "title": "Key dates of your study stay",
       "subtitle": "When the authorization starts, how to keep it and when to renew",
       "items": [
-        { "period": "1 month before classes", "title": "Authorization starts", "text": "Your study stay authorization becomes valid 1 month before classes begin." },
-        { "period": "Start of each academic year", "title": "Confirm your enrollment", "text": "If the authorization runs longer than a year, you confirm your enrollment (matrícula) every year." },
-        { "period": "2 months before expiry", "title": "File the renewal online", "text": "Renewal is filed online in the 2 months before expiry; each renewal lasts up to 1 year." },
-        { "period": "1 month after filing", "title": "Renewal decision", "text": "If the immigration office does not reply within 1 month, the answer is no, so file early." },
-        { "period": "15 days after classes end", "title": "Authorization still valid", "text": "The authorization stays valid for 15 days after your classes end." }
+        {
+          "period": "1 month before classes",
+          "title": "Authorization starts",
+          "text": "Your study stay authorization becomes valid 1 month before classes begin."
+        },
+        {
+          "period": "Start of each academic year",
+          "title": "Confirm your enrollment",
+          "text": "If the authorization runs longer than a year, you confirm your enrollment (matrícula) every year."
+        },
+        {
+          "period": "2 months before expiry",
+          "title": "File the renewal online",
+          "text": "Renewal is filed online in the 2 months before expiry; each renewal lasts up to 1 year."
+        },
+        {
+          "period": "1 month after filing",
+          "title": "Renewal decision",
+          "text": "If the immigration office does not reply within 1 month, the answer is no, so file early."
+        },
+        {
+          "period": "15 days after classes end",
+          "title": "Authorization still valid",
+          "text": "The authorization stays valid for 15 days after your classes end."
+        }
       ]
     }
   },
@@ -408,11 +868,31 @@
       "title": "Сроки работы во время учёбы и после выпуска",
       "subtitle": "Когда и что можно подавать по RD 1155/2024",
       "items": [
-        { "period": "Во время учёбы", "title": "До 30 часов в неделю", "text": "Студент вуза работает без отдельного разрешения, но только в своём автономном сообществе." },
-        { "period": "За 2 месяца до – 3 месяца после окончания", "title": "Смена статуса на рабочий", "text": "С договором по convenio выпускник подаёт на ВНЖ с правом работы; его выдают на 1 год." },
-        { "period": "За 60 дней до – 90 дней после окончания", "title": "Заявка на поиск работы", "text": "Выпускник с уровнем от 6 по EQF подаёт онлайн на разрешение для поиска работы или бизнеса." },
-        { "period": "20 дней", "title": "Ответ по заявке", "text": "Решение приходит за 20 дней; если ответа нет, это считается согласием." },
-        { "period": "До 24 месяцев", "title": "Поиск работы или бизнес", "text": "Разрешение действует до 24 месяцев без продления; с найденной работой подают на новое разрешение." }
+        {
+          "period": "Во время учёбы",
+          "title": "До 30 часов в неделю",
+          "text": "Студент вуза работает без отдельного разрешения, но только в своём автономном сообществе."
+        },
+        {
+          "period": "За 2 месяца до – 3 месяца после окончания",
+          "title": "Смена статуса на рабочий",
+          "text": "С договором по convenio выпускник подаёт на ВНЖ с правом работы; его выдают на 1 год."
+        },
+        {
+          "period": "За 60 дней до – 90 дней после окончания",
+          "title": "Заявка на поиск работы",
+          "text": "Выпускник с уровнем от 6 по EQF подаёт онлайн на разрешение для поиска работы или бизнеса."
+        },
+        {
+          "period": "20 дней",
+          "title": "Ответ по заявке",
+          "text": "Решение приходит за 20 дней; если ответа нет, это считается согласием."
+        },
+        {
+          "period": "До 24 месяцев",
+          "title": "Поиск работы или бизнес",
+          "text": "Разрешение действует до 24 месяцев без продления; с найденной работой подают на новое разрешение."
+        }
       ],
       "note": "Сроки смены статуса — в редакции RD 316/2026. Для слушателей языковых курсов и стипендиатов MAEC-AECID смена статуса недоступна."
     }
@@ -424,11 +904,31 @@
       "title": "Work deadlines during and after your degree",
       "subtitle": "What you can do and when, under RD 1155/2024",
       "items": [
-        { "period": "During your degree", "title": "Up to 30 hours a week", "text": "University students work without a separate permit, within the autonomous community that issued it." },
-        { "period": "2 months before – 3 months after studies end", "title": "Switch to a work permit", "text": "With a contract under the sector agreement, apply for a work permit; it is issued for 1 year." },
-        { "period": "60 days before – 90 days after stay ends", "title": "Apply for the job search permit", "text": "Graduates at EQF level 6 or higher apply online to look for work or start a business." },
-        { "period": "Within 20 days", "title": "Decision on the application", "text": "The answer is due within 20 days; no answer means approval." },
-        { "period": "Up to 24 months", "title": "Job search or business", "text": "The permit lasts up to 24 months and cannot be extended; once you find a job, you move to a work permit." }
+        {
+          "period": "During your degree",
+          "title": "Up to 30 hours a week",
+          "text": "University students work without a separate permit, within the autonomous community that issued it."
+        },
+        {
+          "period": "2 months before – 3 months after studies end",
+          "title": "Switch to a work permit",
+          "text": "With a contract under the sector agreement, apply for a work permit; it is issued for 1 year."
+        },
+        {
+          "period": "60 days before – 90 days after stay ends",
+          "title": "Apply for the job search permit",
+          "text": "Graduates at EQF level 6 or higher apply online to look for work or start a business."
+        },
+        {
+          "period": "Within 20 days",
+          "title": "Decision on the application",
+          "text": "The answer is due within 20 days; no answer means approval."
+        },
+        {
+          "period": "Up to 24 months",
+          "title": "Job search or business",
+          "text": "The permit lasts up to 24 months and cannot be extended; once you find a job, you move to a work permit."
+        }
       ],
       "note": "Not available to language course students or to students on development-aid scholarships such as MAEC-AECID."
     }

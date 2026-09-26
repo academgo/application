@@ -4,7 +4,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год обучения в евро",
-      "subtitle": "Обучение, EUR за учебный год, прайсы 2025/26–2026/27",
+      "subtitle": "Обучение, EUR за учебный год, по действующим прайсам вузов",
       "items": [
         {
           "label": "Южный Кипр, частные вузы",
@@ -49,7 +49,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year of tuition costs in euros",
-      "subtitle": "Tuition, EUR per academic year, 2025/26–2026/27 price lists",
+      "subtitle": "Tuition, EUR per academic year, current university price lists",
       "items": [
         {
           "label": "Cyprus, private universities",

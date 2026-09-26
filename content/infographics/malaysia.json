@@ -12,10 +12,22 @@
           "lat": 3.14,
           "lon": 101.69,
           "universities": [
-            { "name": "Universiti Malaya", "href": "/ru/ucheba-v-malayzii/universiti-malaya" },
-            { "name": "Asia Pacific University (APU)", "href": "/ru/ucheba-v-malayzii/asia-pacific-university" },
-            { "name": "UCSI University", "href": "/ru/ucheba-v-malayzii/ucsi-university" },
-            { "name": "Taylor's University", "href": "/ru/ucheba-v-malayzii/taylors-university" }
+            {
+              "name": "Universiti Malaya",
+              "href": "/ru/ucheba-v-malayzii/universiti-malaya"
+            },
+            {
+              "name": "Asia Pacific University (APU)",
+              "href": "/ru/ucheba-v-malayzii/asia-pacific-university"
+            },
+            {
+              "name": "UCSI University",
+              "href": "/ru/ucheba-v-malayzii/ucsi-university"
+            },
+            {
+              "name": "Taylor's University",
+              "href": "/ru/ucheba-v-malayzii/taylors-university"
+            }
           ]
         },
         {
@@ -23,7 +35,10 @@
           "lat": 1.49,
           "lon": 103.74,
           "universities": [
-            { "name": "Universiti Teknologi Malaysia (UTM)", "href": "/ru/ucheba-v-malayzii/universiti-teknologi-malaysia" }
+            {
+              "name": "Universiti Teknologi Malaysia (UTM)",
+              "href": "/ru/ucheba-v-malayzii/universiti-teknologi-malaysia"
+            }
           ]
         }
       ]
@@ -42,10 +57,22 @@
           "lat": 3.14,
           "lon": 101.69,
           "universities": [
-            { "name": "Universiti Malaya", "href": "/study-in-malaysia/universiti-malaya" },
-            { "name": "Asia Pacific University (APU)", "href": "/study-in-malaysia/asia-pacific-university" },
-            { "name": "UCSI University", "href": "/study-in-malaysia/ucsi-university" },
-            { "name": "Taylor's University", "href": "/study-in-malaysia/taylors-university" }
+            {
+              "name": "Universiti Malaya",
+              "href": "/study-in-malaysia/universiti-malaya"
+            },
+            {
+              "name": "Asia Pacific University (APU)",
+              "href": "/study-in-malaysia/asia-pacific-university"
+            },
+            {
+              "name": "UCSI University",
+              "href": "/study-in-malaysia/ucsi-university"
+            },
+            {
+              "name": "Taylor's University",
+              "href": "/study-in-malaysia/taylors-university"
+            }
           ]
         },
         {
@@ -53,7 +80,10 @@
           "lat": 1.49,
           "lon": 103.74,
           "universities": [
-            { "name": "Universiti Teknologi Malaysia (UTM)", "href": "/study-in-malaysia/universiti-teknologi-malaysia" }
+            {
+              "name": "Universiti Teknologi Malaysia (UTM)",
+              "href": "/study-in-malaysia/universiti-teknologi-malaysia"
+            }
           ]
         }
       ]
@@ -72,13 +102,31 @@
           "lat": 3.14,
           "lon": 101.69,
           "universities": [
-            { "name": "Universiti Malaya (UM)", "href": "/ru/ucheba-v-malayzii/universiti-malaya" },
-            { "name": "Asia Pacific University (APU)", "href": "/ru/ucheba-v-malayzii/asia-pacific-university" },
-            { "name": "UCSI University", "href": "/ru/ucheba-v-malayzii/ucsi-university" },
-            { "name": "Taylor's University", "href": "/ru/ucheba-v-malayzii/taylors-university" },
-            { "name": "Monash" },
-            { "name": "Heriot-Watt" },
-            { "name": "Nottingham" }
+            {
+              "name": "Universiti Malaya (UM)",
+              "href": "/ru/ucheba-v-malayzii/universiti-malaya"
+            },
+            {
+              "name": "Asia Pacific University (APU)",
+              "href": "/ru/ucheba-v-malayzii/asia-pacific-university"
+            },
+            {
+              "name": "UCSI University",
+              "href": "/ru/ucheba-v-malayzii/ucsi-university"
+            },
+            {
+              "name": "Taylor's University",
+              "href": "/ru/ucheba-v-malayzii/taylors-university"
+            },
+            {
+              "name": "Monash"
+            },
+            {
+              "name": "Heriot-Watt"
+            },
+            {
+              "name": "Nottingham"
+            }
           ]
         },
         {
@@ -86,8 +134,13 @@
           "lat": 1.49,
           "lon": 103.74,
           "universities": [
-            { "name": "Universiti Teknologi Malaysia (UTM)", "href": "/ru/ucheba-v-malayzii/universiti-teknologi-malaysia" },
-            { "name": "Southampton Malaysia" }
+            {
+              "name": "Universiti Teknologi Malaysia (UTM)",
+              "href": "/ru/ucheba-v-malayzii/universiti-teknologi-malaysia"
+            },
+            {
+              "name": "Southampton Malaysia"
+            }
           ]
         }
       ]
@@ -106,12 +159,28 @@
           "lat": 3.14,
           "lon": 101.69,
           "universities": [
-            { "name": "Universiti Malaya (UM)", "href": "/study-in-malaysia/universiti-malaya" },
-            { "name": "Asia Pacific University (APU)", "href": "/study-in-malaysia/asia-pacific-university" },
-            { "name": "UCSI University", "href": "/study-in-malaysia/ucsi-university" },
-            { "name": "Taylor's University", "href": "/study-in-malaysia/taylors-university" },
-            { "name": "Monash University Malaysia" },
-            { "name": "Heriot-Watt University Malaysia" }
+            {
+              "name": "Universiti Malaya (UM)",
+              "href": "/study-in-malaysia/universiti-malaya"
+            },
+            {
+              "name": "Asia Pacific University (APU)",
+              "href": "/study-in-malaysia/asia-pacific-university"
+            },
+            {
+              "name": "UCSI University",
+              "href": "/study-in-malaysia/ucsi-university"
+            },
+            {
+              "name": "Taylor's University",
+              "href": "/study-in-malaysia/taylors-university"
+            },
+            {
+              "name": "Monash University Malaysia"
+            },
+            {
+              "name": "Heriot-Watt University Malaysia"
+            }
           ]
         },
         {
@@ -119,8 +188,13 @@
           "lat": 1.49,
           "lon": 103.74,
           "universities": [
-            { "name": "Universiti Teknologi Malaysia (UTM)", "href": "/study-in-malaysia/universiti-teknologi-malaysia" },
-            { "name": "Southampton" }
+            {
+              "name": "Universiti Teknologi Malaysia (UTM)",
+              "href": "/study-in-malaysia/universiti-teknologi-malaysia"
+            },
+            {
+              "name": "Southampton"
+            }
           ]
         }
       ]
@@ -131,17 +205,48 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Первый год бакалавриата в APU",
-      "subtitle": "RM за первый год, частный вуз в Куала-Лумпуре, прайсы 2026",
+      "subtitle": "RM за первый год, частный вуз в Куала-Лумпуре, действующие прайсы",
       "items": [
-        { "label": "Обучение за 1-й год", "value": 34900, "valueLabel": "RM 34 900" },
-        { "label": "Жизнь, 12 месяцев", "value": 24000, "valueMax": 42000, "valueLabel": "RM 24 000–42 000" },
-        { "label": "Регистрационный сбор", "value": 5000, "valueLabel": "RM 5 000" },
-        { "label": "Визовый пакет APU при оффере", "value": 3600, "valueLabel": "около RM 3 600" },
-        { "label": "Визовый пакет APU после одобрения", "value": 2000, "valueLabel": "RM 2 000" },
-        { "label": "Personal bond (возвратный)", "value": 1000, "valueLabel": "RM 1 000" },
-        { "label": "Итого за первый год", "value": 74000, "valueMax": 92000, "valueLabel": "около RM 74 000–92 000", "highlight": true }
+        {
+          "label": "Обучение за 1-й год",
+          "value": 34900,
+          "valueLabel": "RM 34 900"
+        },
+        {
+          "label": "Жизнь, 12 месяцев",
+          "value": 24000,
+          "valueMax": 42000,
+          "valueLabel": "RM 24 000–42 000"
+        },
+        {
+          "label": "Регистрационный сбор",
+          "value": 5000,
+          "valueLabel": "RM 5 000"
+        },
+        {
+          "label": "Визовый пакет APU при оффере",
+          "value": 3600,
+          "valueLabel": "около RM 3 600"
+        },
+        {
+          "label": "Визовый пакет APU после одобрения",
+          "value": 2000,
+          "valueLabel": "RM 2 000"
+        },
+        {
+          "label": "Personal bond (возвратный)",
+          "value": 1000,
+          "valueLabel": "RM 1 000"
+        },
+        {
+          "label": "Итого за первый год",
+          "value": 74000,
+          "valueMax": 92000,
+          "valueLabel": "около RM 74 000–92 000",
+          "highlight": true
+        }
       ],
-      "note": "Расчёт по прайсам 2026 года, без авиабилетов и курсовой разницы. 6% SST начисляется на обучение и сборы APU."
+      "note": "Расчёт по действующим прайсам, без авиабилетов и курсовой разницы. 6% SST начисляется на обучение и сборы APU."
     }
   },
   "academgo.malaysia.cost.en": {
@@ -149,16 +254,51 @@
     "block": {
       "_type": "barChartBlock",
       "title": "First year of a bachelor's at APU",
-      "subtitle": "RM for year one, IT or Business bachelor's, APU Fee Guide 2026",
+      "subtitle": "RM for year one, IT or Business bachelor's, current APU Fee Guide",
       "items": [
-        { "label": "Tuition, year 1", "value": 34900, "valueLabel": "RM 34,900" },
-        { "label": "Living costs including housing", "value": 24000, "valueMax": 42000, "valueLabel": "RM 24,000–42,000" },
-        { "label": "Registration fee (one-off)", "value": 5000, "valueLabel": "RM 5,000" },
-        { "label": "Visa package at offer", "value": 3600, "valueLabel": "around RM 3,600" },
-        { "label": "6% SST on tuition and registration", "value": 2394, "valueLabel": "RM 2,394" },
-        { "label": "Visa package after approval", "value": 2000, "valueLabel": "RM 2,000" },
-        { "label": "Personal bond (refundable)", "value": 1000, "valueLabel": "RM 1,000" },
-        { "label": "Total, first year", "value": 73000, "valueMax": 91000, "valueLabel": "about RM 73,000–91,000", "highlight": true }
+        {
+          "label": "Tuition, year 1",
+          "value": 34900,
+          "valueLabel": "RM 34,900"
+        },
+        {
+          "label": "Living costs including housing",
+          "value": 24000,
+          "valueMax": 42000,
+          "valueLabel": "RM 24,000–42,000"
+        },
+        {
+          "label": "Registration fee (one-off)",
+          "value": 5000,
+          "valueLabel": "RM 5,000"
+        },
+        {
+          "label": "Visa package at offer",
+          "value": 3600,
+          "valueLabel": "around RM 3,600"
+        },
+        {
+          "label": "6% SST on tuition and registration",
+          "value": 2394,
+          "valueLabel": "RM 2,394"
+        },
+        {
+          "label": "Visa package after approval",
+          "value": 2000,
+          "valueLabel": "RM 2,000"
+        },
+        {
+          "label": "Personal bond (refundable)",
+          "value": 1000,
+          "valueLabel": "RM 1,000"
+        },
+        {
+          "label": "Total, first year",
+          "value": 73000,
+          "valueMax": 91000,
+          "valueLabel": "about RM 73,000–91,000",
+          "highlight": true
+        }
       ],
       "note": "From year 2 the one-off items disappear: tuition is RM 36,100 and APU's visa renewal costs RM 1,100–1,450."
     }
@@ -168,18 +308,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены магистратуры в вузах Малайзии",
-      "subtitle": "RM за весь курс для иностранцев, прайсы 2025/26–2026",
+      "subtitle": "RM за весь курс для иностранцев, действующие прайсы",
       "items": [
-        { "label": "Universiti Malaya — MBA", "value": 79100, "valueLabel": "RM 79 100" },
-        { "label": "Monash Malaysia — AI, Data Science", "value": 74160, "valueLabel": "RM 74 160" },
-        { "label": "Taylor's — MBA full-time", "value": 56920, "valueLabel": "RM 56 920" },
-        { "label": "Universiti Malaya — AI, Cyber Security", "value": 48100, "valueLabel": "RM 48 100" },
-        { "label": "APU — MBA full-time", "value": 42000, "valueLabel": "RM 42 000" },
-        { "label": "Universiti Malaya — Data Science", "value": 41700, "valueLabel": "RM 41 700" },
-        { "label": "UTM — Engineering (coursework)", "value": 31000, "valueLabel": "RM 31 000" },
-        { "label": "UTM — Computing, Business", "value": 26500, "valueLabel": "RM 26 500" }
+        {
+          "label": "Universiti Malaya — MBA",
+          "value": 79100,
+          "valueLabel": "RM 79 100"
+        },
+        {
+          "label": "Monash Malaysia — AI, Data Science",
+          "value": 74160,
+          "valueLabel": "RM 74 160"
+        },
+        {
+          "label": "Taylor's — MBA full-time",
+          "value": 56920,
+          "valueLabel": "RM 56 920"
+        },
+        {
+          "label": "Universiti Malaya — AI, Cyber Security",
+          "value": 48100,
+          "valueLabel": "RM 48 100"
+        },
+        {
+          "label": "APU — MBA full-time",
+          "value": 42000,
+          "valueLabel": "RM 42 000"
+        },
+        {
+          "label": "Universiti Malaya — Data Science",
+          "value": 41700,
+          "valueLabel": "RM 41 700"
+        },
+        {
+          "label": "UTM — Engineering (coursework)",
+          "value": 31000,
+          "valueLabel": "RM 31 000"
+        },
+        {
+          "label": "UTM — Computing, Business",
+          "value": 26500,
+          "valueLabel": "RM 26 500"
+        }
       ],
-      "note": "Частные вузы добавляют иностранцам 6% SST, прайсы обычно указаны без него. Прайсы на 2027 год вузы ещё не публиковали."
+      "note": "Частные вузы добавляют иностранцам 6% SST, прайсы обычно указаны без него. Прайсы на следующий год вузы ещё не публиковали."
     }
   },
   "academgo.malaysia.masters.en": {
@@ -187,18 +359,50 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Master's fees by university in Malaysia",
-      "subtitle": "RM for the whole program, international students, fee lists 2025–2026",
+      "subtitle": "RM for the whole program, international students, current fee lists",
       "items": [
-        { "label": "Universiti Malaya — MBA", "value": 79100, "valueLabel": "RM 79,100" },
-        { "label": "Monash Malaysia — AI, Data Science", "value": 74160, "valueLabel": "RM 74,160" },
-        { "label": "Taylor's — MBA, full-time", "value": 56920, "valueLabel": "RM 56,920" },
-        { "label": "Universiti Malaya — AI / Cyber Security", "value": 48100, "valueLabel": "RM 48,100" },
-        { "label": "APU — MBA, full-time", "value": 42000, "valueLabel": "RM 42,000" },
-        { "label": "Universiti Malaya — Data Science", "value": 41700, "valueLabel": "RM 41,700" },
-        { "label": "UTM — Engineering (coursework)", "value": 31000, "valueLabel": "RM 31,000" },
-        { "label": "UTM — Computing or Business", "value": 26500, "valueLabel": "RM 26,500" }
+        {
+          "label": "Universiti Malaya — MBA",
+          "value": 79100,
+          "valueLabel": "RM 79,100"
+        },
+        {
+          "label": "Monash Malaysia — AI, Data Science",
+          "value": 74160,
+          "valueLabel": "RM 74,160"
+        },
+        {
+          "label": "Taylor's — MBA, full-time",
+          "value": 56920,
+          "valueLabel": "RM 56,920"
+        },
+        {
+          "label": "Universiti Malaya — AI / Cyber Security",
+          "value": 48100,
+          "valueLabel": "RM 48,100"
+        },
+        {
+          "label": "APU — MBA, full-time",
+          "value": 42000,
+          "valueLabel": "RM 42,000"
+        },
+        {
+          "label": "Universiti Malaya — Data Science",
+          "value": 41700,
+          "valueLabel": "RM 41,700"
+        },
+        {
+          "label": "UTM — Engineering (coursework)",
+          "value": 31000,
+          "valueLabel": "RM 31,000"
+        },
+        {
+          "label": "UTM — Computing or Business",
+          "value": 26500,
+          "valueLabel": "RM 26,500"
+        }
       ],
-      "note": "Tuition only. Private universities add 6% SST, and Universiti Malaya also quotes fees without it. 2027 fee lists are not out yet."
+      "note": "Tuition only. Private universities add 6% SST, and Universiti Malaya also quotes fees without it. Next year's fee lists are not out yet."
     }
   },
   "academgo.malaysia.visa.ru": {
@@ -208,12 +412,36 @@
       "title": "Сколько ждать Student Pass",
       "subtitle": "Сроки от подачи в EMGS до Student Pass",
       "items": [
-        { "period": "14 рабочих дней", "title": "Официальный срок EMGS", "text": "Столько EMGS рассматривает полный пакет документов; если чего-то не хватает, заявку рассматривают дольше." },
-        { "period": "4–8 недель", "title": "Реальное ожидание eVAL", "text": "На практике закладывайте 4–8 недель, в пиковые месяцы — больше; UTM ориентирует студентов на 3–6 недель." },
-        { "period": "Около 48 часов", "title": "Виза SEV через eVISA", "text": "Сама eVisa после eVAL обрабатывается около 48 часов. Билеты не покупайте до одобрения VAL и SEV." },
-        { "period": "Около 6 месяцев", "title": "Срок действия eVAL", "text": "eVAL действует ориентировочно 6 месяцев — въехать в Малайзию нужно в этот срок." },
-        { "period": "7 рабочих дней после прилёта", "title": "Медосмотр", "text": "В панельной клинике EMGS или в клинике вуза; без него EMGS не запустит оформление Student Pass." },
-        { "period": "Не больше 1 года", "title": "Student Pass и продление", "text": "Student Pass выдаётся обычно не более чем на 1 год, продлевать его нужно до истечения срока." }
+        {
+          "period": "14 рабочих дней",
+          "title": "Официальный срок EMGS",
+          "text": "Столько EMGS рассматривает полный пакет документов; если чего-то не хватает, заявку рассматривают дольше."
+        },
+        {
+          "period": "4–8 недель",
+          "title": "Реальное ожидание eVAL",
+          "text": "На практике закладывайте 4–8 недель, в пиковые месяцы — больше; UTM ориентирует студентов на 3–6 недель."
+        },
+        {
+          "period": "Около 48 часов",
+          "title": "Виза SEV через eVISA",
+          "text": "Сама eVisa после eVAL обрабатывается около 48 часов. Билеты не покупайте до одобрения VAL и SEV."
+        },
+        {
+          "period": "Около 6 месяцев",
+          "title": "Срок действия eVAL",
+          "text": "eVAL действует ориентировочно 6 месяцев — въехать в Малайзию нужно в этот срок."
+        },
+        {
+          "period": "7 рабочих дней после прилёта",
+          "title": "Медосмотр",
+          "text": "В панельной клинике EMGS или в клинике вуза; без него EMGS не запустит оформление Student Pass."
+        },
+        {
+          "period": "Не больше 1 года",
+          "title": "Student Pass и продление",
+          "text": "Student Pass выдаётся обычно не более чем на 1 год, продлевать его нужно до истечения срока."
+        }
       ],
       "note": "Считайте время назад от даты начала занятий: оффер, затем 1–2 месяца на EMGS, затем перелёт."
     }
@@ -225,12 +453,36 @@
       "title": "How long the Student Pass takes",
       "subtitle": "Timings from the EMGS application to the Student Pass",
       "items": [
-        { "period": "14 working days", "title": "Official EMGS target", "text": "The official processing time, but only for a complete application; missing or unclear documents add time." },
-        { "period": "4–8 weeks", "title": "Realistic wait for the eVAL", "text": "Plan 4–8 weeks from a complete submission, longer in peak months; UTM budgets 3–6 weeks for the approval letter." },
-        { "period": "About 48 hours", "title": "Single Entry Visa on eVISA", "text": "If your country needs a visa, the SEV on the official eVISA portal takes about 48 hours." },
-        { "period": "Around 6 months", "title": "eVAL validity", "text": "The eVAL is usually valid for around 6 months, and you must enter Malaysia within that time." },
-        { "period": "Within 7 working days of arrival", "title": "Medical screening", "text": "At an EMGS panel clinic or a registered university clinic; without the result, EMGS will not start the endorsement." },
-        { "period": "Up to 1 year", "title": "Student Pass and renewal", "text": "The pass is usually issued for no more than 1 year and must be renewed before it expires." }
+        {
+          "period": "14 working days",
+          "title": "Official EMGS target",
+          "text": "The official processing time, but only for a complete application; missing or unclear documents add time."
+        },
+        {
+          "period": "4–8 weeks",
+          "title": "Realistic wait for the eVAL",
+          "text": "Plan 4–8 weeks from a complete submission, longer in peak months; UTM budgets 3–6 weeks for the approval letter."
+        },
+        {
+          "period": "About 48 hours",
+          "title": "Single Entry Visa on eVISA",
+          "text": "If your country needs a visa, the SEV on the official eVISA portal takes about 48 hours."
+        },
+        {
+          "period": "Around 6 months",
+          "title": "eVAL validity",
+          "text": "The eVAL is usually valid for around 6 months, and you must enter Malaysia within that time."
+        },
+        {
+          "period": "Within 7 working days of arrival",
+          "title": "Medical screening",
+          "text": "At an EMGS panel clinic or a registered university clinic; without the result, EMGS will not start the endorsement."
+        },
+        {
+          "period": "Up to 1 year",
+          "title": "Student Pass and renewal",
+          "text": "The pass is usually issued for no more than 1 year and must be renewed before it expires."
+        }
       ],
       "note": "Do not buy flights until both the approval letter and the SEV are issued."
     }
@@ -240,33 +492,82 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит программа в APU целиком",
-      "subtitle": "RM за всю программу, Fee Guide 2026, без 6% SST",
+      "subtitle": "RM за всю программу, действующий Fee Guide, без 6% SST",
       "items": [
-        { "label": "Foundation (12 месяцев)", "value": 28400, "valueMax": 29200, "valueLabel": "RM 28 400–29 200" },
-        { "label": "Diploma (2 года)", "value": 54200, "valueLabel": "RM 54 200" },
-        { "label": "Бакалавриат: IT, Business и др.", "value": 108500, "valueLabel": "RM 108 500" },
-        { "label": "Architecture", "value": 110400, "valueLabel": "RM 110 400" },
-        { "label": "Engineering (4 года)", "value": 137200, "valueLabel": "RM 137 200" },
-        { "label": "MBA (full-time)", "value": 42000, "valueLabel": "RM 42 000" }
+        {
+          "label": "Foundation (12 месяцев)",
+          "value": 28400,
+          "valueMax": 29200,
+          "valueLabel": "RM 28 400–29 200"
+        },
+        {
+          "label": "Diploma (2 года)",
+          "value": 54200,
+          "valueLabel": "RM 54 200"
+        },
+        {
+          "label": "Бакалавриат: IT, Business и др.",
+          "value": 108500,
+          "valueLabel": "RM 108 500"
+        },
+        {
+          "label": "Architecture",
+          "value": 110400,
+          "valueLabel": "RM 110 400"
+        },
+        {
+          "label": "Engineering (4 года)",
+          "value": 137200,
+          "valueLabel": "RM 137 200"
+        },
+        {
+          "label": "MBA (full-time)",
+          "value": 42000,
+          "valueLabel": "RM 42 000"
+        }
       ],
-      "note": "APU начисляет 6% SST на все платежи иностранцев. Прайс на 2027 год вуз ещё не опубликовал, возможна индексация."
+      "note": "APU начисляет 6% SST на все платежи иностранцев. Прайс на следующий год вуз ещё не опубликовал, возможна индексация."
     }
   },
   "academgo.malaysia.apu.en": {
-    "afterHeading": "Asia Pacific University tuition fees (2026 price list)",
+    "afterHeading": "Asia Pacific University tuition fees (current price list)",
     "block": {
       "_type": "barChartBlock",
       "title": "APU fees for the whole program",
-      "subtitle": "RM for the whole program, APU Fee Guide 2026, before 6% SST",
+      "subtitle": "RM for the whole program, current APU Fee Guide, before 6% SST",
       "items": [
-        { "label": "Foundation (12 months)", "value": 28400, "valueLabel": "RM 28,400" },
-        { "label": "Diploma (2 years)", "value": 54200, "valueLabel": "RM 54,200" },
-        { "label": "Bachelor's: IT, Computing, Business and more", "value": 108500, "valueLabel": "RM 108,500" },
-        { "label": "Bachelor's: Architecture", "value": 110400, "valueLabel": "RM 110,400" },
-        { "label": "Bachelor's: Engineering (4 years)", "value": 137200, "valueLabel": "RM 137,200" },
-        { "label": "MBA (full-time)", "value": 42000, "valueLabel": "RM 42,000" }
+        {
+          "label": "Foundation (12 months)",
+          "value": 28400,
+          "valueLabel": "RM 28,400"
+        },
+        {
+          "label": "Diploma (2 years)",
+          "value": 54200,
+          "valueLabel": "RM 54,200"
+        },
+        {
+          "label": "Bachelor's: IT, Computing, Business and more",
+          "value": 108500,
+          "valueLabel": "RM 108,500"
+        },
+        {
+          "label": "Bachelor's: Architecture",
+          "value": 110400,
+          "valueLabel": "RM 110,400"
+        },
+        {
+          "label": "Bachelor's: Engineering (4 years)",
+          "value": 137200,
+          "valueLabel": "RM 137,200"
+        },
+        {
+          "label": "MBA (full-time)",
+          "value": 42000,
+          "valueLabel": "RM 42,000"
+        }
       ],
-      "note": "Add 6% SST to every line. The 2027 fees are not published yet; expect possible indexation."
+      "note": "Add 6% SST to every line. Next year's fees are not published yet; expect possible indexation."
     }
   },
   "academgo.malaysia.taylors.ru": {
@@ -274,16 +575,40 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит обучение в Taylor's",
-      "subtitle": "RM за всю программу, прайс 2026 для иностранцев, без сборов и 6% SST",
+      "subtitle": "RM за всю программу, действующий прайс для иностранцев, без сборов и 6% SST",
       "items": [
-        { "label": "Foundation (Arts, Business, Computing)", "value": 30950, "valueLabel": "RM 30 950" },
-        { "label": "MBA (full-time)", "value": 56920, "valueLabel": "RM 56 920" },
-        { "label": "Computer Science, IT (3 года)", "value": 124080, "valueLabel": "RM 124 080" },
-        { "label": "Bachelor of Business (3 года)", "value": 132180, "valueLabel": "RM 132 180" },
-        { "label": "Engineering (4 года)", "value": 171040, "valueLabel": "RM 171 040" },
-        { "label": "Bachelor of Pharmacy (4 года)", "value": 199104, "valueLabel": "RM 199 104" }
+        {
+          "label": "Foundation (Arts, Business, Computing)",
+          "value": 30950,
+          "valueLabel": "RM 30 950"
+        },
+        {
+          "label": "MBA (full-time)",
+          "value": 56920,
+          "valueLabel": "RM 56 920"
+        },
+        {
+          "label": "Computer Science, IT (3 года)",
+          "value": 124080,
+          "valueLabel": "RM 124 080"
+        },
+        {
+          "label": "Bachelor of Business (3 года)",
+          "value": 132180,
+          "valueLabel": "RM 132 180"
+        },
+        {
+          "label": "Engineering (4 года)",
+          "value": 171040,
+          "valueLabel": "RM 171 040"
+        },
+        {
+          "label": "Bachelor of Pharmacy (4 года)",
+          "value": 199104,
+          "valueLabel": "RM 199 104"
+        }
       ],
-      "note": "Прайс на 2027 год Taylor's ещё не опубликовал. Сборы для иностранцев и 6% SST оплачиваются сверху."
+      "note": "Прайс на следующий год Taylor's ещё не опубликовал. Сборы для иностранцев и 6% SST оплачиваются сверху."
     }
   },
   "academgo.malaysia.taylors.en": {
@@ -291,16 +616,40 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a program at Taylor's costs in total",
-      "subtitle": "RM for the whole program, with international fees and 6% SST, 2026",
+      "subtitle": "RM for the whole program, with international fees and 6% SST, current prices",
       "items": [
-        { "label": "Foundation (Arts, Business, Computing)", "value": 47529, "valueLabel": "RM 47,529" },
-        { "label": "MBA (full-time)", "value": 75057, "valueLabel": "RM 75,057" },
-        { "label": "Computer Science, IT (3 years)", "value": 152187, "valueLabel": "RM 152,187" },
-        { "label": "Bachelor of Business (3 years)", "value": 160773, "valueLabel": "RM 160,773" },
-        { "label": "Engineering (4 years)", "value": 204934, "valueLabel": "RM 204,934" },
-        { "label": "Bachelor of Pharmacy (4 years)", "value": 234682, "valueLabel": "RM 234,682" }
+        {
+          "label": "Foundation (Arts, Business, Computing)",
+          "value": 47529,
+          "valueLabel": "RM 47,529"
+        },
+        {
+          "label": "MBA (full-time)",
+          "value": 75057,
+          "valueLabel": "RM 75,057"
+        },
+        {
+          "label": "Computer Science, IT (3 years)",
+          "value": 152187,
+          "valueLabel": "RM 152,187"
+        },
+        {
+          "label": "Bachelor of Business (3 years)",
+          "value": 160773,
+          "valueLabel": "RM 160,773"
+        },
+        {
+          "label": "Engineering (4 years)",
+          "value": 204934,
+          "valueLabel": "RM 204,934"
+        },
+        {
+          "label": "Bachelor of Pharmacy (4 years)",
+          "value": 234682,
+          "valueLabel": "RM 234,682"
+        }
       ],
-      "note": "Taylor's 2026 fee schedules for international students. The 2027 price list is not published yet."
+      "note": "Taylor's current fee schedules for international students. Next year's price list is not published yet."
     }
   },
   "academgo.malaysia.ucsi.ru": {
@@ -308,17 +657,45 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит курс в UCSI",
-      "subtitle": "RM за весь курс, Approximate Total Fees с сайта вуза, сентябрь 2026",
+      "subtitle": "RM за весь курс, Approximate Total Fees с сайта вуза",
       "items": [
-        { "label": "Foundation in Arts, KL", "value": 38416, "valueLabel": "RM 38 416" },
-        { "label": "Foundation in Science, KL", "value": 40006, "valueLabel": "RM 40 006" },
-        { "label": "International Business (3 года)", "value": 87088, "valueLabel": "RM 87 088" },
-        { "label": "Computer Science (3 года)", "value": 103881, "valueLabel": "RM 103 881" },
-        { "label": "Computer Science (AI) (3 года)", "value": 125993, "valueLabel": "RM 125 993" },
-        { "label": "Pharmacy (4 года)", "value": 232726, "valueLabel": "RM 232 726" },
-        { "label": "Doctor of Medicine (5 лет)", "value": 532524, "valueLabel": "RM 532 524" }
+        {
+          "label": "Foundation in Arts, KL",
+          "value": 38416,
+          "valueLabel": "RM 38 416"
+        },
+        {
+          "label": "Foundation in Science, KL",
+          "value": 40006,
+          "valueLabel": "RM 40 006"
+        },
+        {
+          "label": "International Business (3 года)",
+          "value": 87088,
+          "valueLabel": "RM 87 088"
+        },
+        {
+          "label": "Computer Science (3 года)",
+          "value": 103881,
+          "valueLabel": "RM 103 881"
+        },
+        {
+          "label": "Computer Science (AI) (3 года)",
+          "value": 125993,
+          "valueLabel": "RM 125 993"
+        },
+        {
+          "label": "Pharmacy (4 года)",
+          "value": 232726,
+          "valueLabel": "RM 232 726"
+        },
+        {
+          "label": "Doctor of Medicine (5 лет)",
+          "value": 532524,
+          "valueLabel": "RM 532 524"
+        }
       ],
-      "note": "Это ориентировочная оценка вуза; включён ли 6% SST, UCSI не указывает. Цены на набор 2027 года не опубликованы."
+      "note": "Это ориентировочная оценка вуза; включён ли 6% SST, UCSI не указывает. Цены на следующий набор не опубликованы."
     }
   },
   "academgo.malaysia.ucsi.en": {
@@ -326,17 +703,45 @@
     "block": {
       "_type": "barChartBlock",
       "title": "UCSI fees for the whole course",
-      "subtitle": "RM for the whole course, Approximate Total Fees, checked September 2026",
+      "subtitle": "RM for the whole course, Approximate Total Fees",
       "items": [
-        { "label": "Foundation in Arts, KL", "value": 38416, "valueLabel": "RM 38,416" },
-        { "label": "Foundation in Science, KL", "value": 40006, "valueLabel": "RM 40,006" },
-        { "label": "International Business (3 years)", "value": 87088, "valueLabel": "RM 87,088" },
-        { "label": "Computer Science (3 years)", "value": 103881, "valueLabel": "RM 103,881" },
-        { "label": "Computer Science (AI) (3 years)", "value": 125993, "valueLabel": "RM 125,993" },
-        { "label": "Pharmacy (4 years)", "value": 232726, "valueLabel": "RM 232,726" },
-        { "label": "Doctor of Medicine (5 years)", "value": 532524, "valueLabel": "RM 532,524" }
+        {
+          "label": "Foundation in Arts, KL",
+          "value": 38416,
+          "valueLabel": "RM 38,416"
+        },
+        {
+          "label": "Foundation in Science, KL",
+          "value": 40006,
+          "valueLabel": "RM 40,006"
+        },
+        {
+          "label": "International Business (3 years)",
+          "value": 87088,
+          "valueLabel": "RM 87,088"
+        },
+        {
+          "label": "Computer Science (3 years)",
+          "value": 103881,
+          "valueLabel": "RM 103,881"
+        },
+        {
+          "label": "Computer Science (AI) (3 years)",
+          "value": 125993,
+          "valueLabel": "RM 125,993"
+        },
+        {
+          "label": "Pharmacy (4 years)",
+          "value": 232726,
+          "valueLabel": "RM 232,726"
+        },
+        {
+          "label": "Doctor of Medicine (5 years)",
+          "value": 532524,
+          "valueLabel": "RM 532,524"
+        }
       ],
-      "note": "UCSI calls these totals an estimate and does not say whether they include 6% SST. 2027 fees are not published yet."
+      "note": "UCSI calls these totals an estimate and does not say whether they include 6% SST. Next year's fees are not published yet."
     }
   },
   "academgo.malaysia.um.ru": {
@@ -344,17 +749,46 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены бакалавриата в Universiti Malaya",
-      "subtitle": "RM за всю программу, прайс для набора 2025/26 и далее, без 6% SST",
+      "subtitle": "RM за всю программу, действующий прайс, без 6% SST",
       "items": [
-        { "label": "Engineering (4 года)", "value": 132100, "valueLabel": "RM 132 100" },
-        { "label": "Architecture", "value": 103900, "valueLabel": "RM 103 900" },
-        { "label": "Accounting (3,5 года)", "value": 99100, "valueLabel": "RM 99 100" },
-        { "label": "Computer Science (3,5 года)", "value": 89200, "valueLabel": "RM 89 200" },
-        { "label": "Finance (3,5 года)", "value": 84100, "valueLabel": "RM 84 100" },
-        { "label": "Economics / BBA (3,5 года)", "value": 77100, "valueLabel": "RM 77 100" },
-        { "label": "Гуманитарные, Shariah, Malay Studies", "value": 60900, "valueMax": 76300, "valueLabel": "RM 60 900–76 300" }
+        {
+          "label": "Engineering (4 года)",
+          "value": 132100,
+          "valueLabel": "RM 132 100"
+        },
+        {
+          "label": "Architecture",
+          "value": 103900,
+          "valueLabel": "RM 103 900"
+        },
+        {
+          "label": "Accounting (3,5 года)",
+          "value": 99100,
+          "valueLabel": "RM 99 100"
+        },
+        {
+          "label": "Computer Science (3,5 года)",
+          "value": 89200,
+          "valueLabel": "RM 89 200"
+        },
+        {
+          "label": "Finance (3,5 года)",
+          "value": 84100,
+          "valueLabel": "RM 84 100"
+        },
+        {
+          "label": "Economics / BBA (3,5 года)",
+          "value": 77100,
+          "valueLabel": "RM 77 100"
+        },
+        {
+          "label": "Гуманитарные, Shariah, Malay Studies",
+          "value": 60900,
+          "valueMax": 76300,
+          "valueLabel": "RM 60 900–76 300"
+        }
       ],
-      "note": "Отдельных цен на 2027/28 UM не публиковал. Admission fee уже входит в стоимость."
+      "note": "Отдельных цен на следующий учебный год UM не публиковал. Admission fee уже входит в стоимость."
     }
   },
   "academgo.malaysia.um.en": {
@@ -362,17 +796,46 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Bachelor's fees at Universiti Malaya",
-      "subtitle": "RM for the whole program, 2025/2026 intake onwards, before 6% SST",
+      "subtitle": "RM for the whole program, current price list, before 6% SST",
       "items": [
-        { "label": "Engineering (4 years)", "value": 132100, "valueLabel": "RM 132,100" },
-        { "label": "Architecture", "value": 103900, "valueLabel": "RM 103,900" },
-        { "label": "Accounting (3.5 years)", "value": 99100, "valueLabel": "RM 99,100" },
-        { "label": "Computer Science (3.5 years)", "value": 89200, "valueLabel": "RM 89,200" },
-        { "label": "Finance (3.5 years)", "value": 84100, "valueLabel": "RM 84,100" },
-        { "label": "Economics / Business Administration", "value": 77100, "valueLabel": "RM 77,100" },
-        { "label": "Arts, Shariah, Malay Studies", "value": 60900, "valueMax": 76300, "valueLabel": "RM 60,900–76,300" }
+        {
+          "label": "Engineering (4 years)",
+          "value": 132100,
+          "valueLabel": "RM 132,100"
+        },
+        {
+          "label": "Architecture",
+          "value": 103900,
+          "valueLabel": "RM 103,900"
+        },
+        {
+          "label": "Accounting (3.5 years)",
+          "value": 99100,
+          "valueLabel": "RM 99,100"
+        },
+        {
+          "label": "Computer Science (3.5 years)",
+          "value": 89200,
+          "valueLabel": "RM 89,200"
+        },
+        {
+          "label": "Finance (3.5 years)",
+          "value": 84100,
+          "valueLabel": "RM 84,100"
+        },
+        {
+          "label": "Economics / Business Administration",
+          "value": 77100,
+          "valueLabel": "RM 77,100"
+        },
+        {
+          "label": "Arts, Shariah, Malay Studies",
+          "value": 60900,
+          "valueMax": 76300,
+          "valueLabel": "RM 60,900–76,300"
+        }
       ],
-      "note": "Price list updated 22 October 2025; no 2027/28 list is published yet. The one-time admission fee is already included."
+      "note": "Price list updated 22 October 2025; no list for the next academic year is published yet. The one-time admission fee is already included."
     }
   },
   "academgo.malaysia.utm.ru": {
@@ -380,14 +843,38 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены бакалавриата в UTM",
-      "subtitle": "RM за всю программу, сессия 2026/27, сайт вуза в сентябре 2026",
+      "subtitle": "RM за всю программу, действующий прайс с сайта вуза",
       "items": [
-        { "label": "Engineering (4 года)", "value": 75000, "valueLabel": "RM 75 000" },
-        { "label": "Computing / IT (4 года)", "value": 71000, "valueLabel": "RM 71 000" },
-        { "label": "Science, Landscape, Quantity Surveying", "value": 63000, "valueLabel": "RM 63 000" },
-        { "label": "Geoinformation, Property Management", "value": 59000, "valueLabel": "RM 59 000" },
-        { "label": "Artificial Intelligence (3 года)", "value": 54788, "valueLabel": "RM 54 788" },
-        { "label": "Architecture (BSc, 3 года)", "value": 51620, "valueLabel": "RM 51 620" }
+        {
+          "label": "Engineering (4 года)",
+          "value": 75000,
+          "valueLabel": "RM 75 000"
+        },
+        {
+          "label": "Computing / IT (4 года)",
+          "value": 71000,
+          "valueLabel": "RM 71 000"
+        },
+        {
+          "label": "Science, Landscape, Quantity Surveying",
+          "value": 63000,
+          "valueLabel": "RM 63 000"
+        },
+        {
+          "label": "Geoinformation, Property Management",
+          "value": 59000,
+          "valueLabel": "RM 59 000"
+        },
+        {
+          "label": "Artificial Intelligence (3 года)",
+          "value": 54788,
+          "valueLabel": "RM 54 788"
+        },
+        {
+          "label": "Architecture (BSc, 3 года)",
+          "value": 51620,
+          "valueLabel": "RM 51 620"
+        }
       ],
       "note": "Проживание в эти суммы не входит."
     }
@@ -397,14 +884,38 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Bachelor's fees at UTM",
-      "subtitle": "RM for the whole program, UTM fee schedule checked September 2026",
+      "subtitle": "RM for the whole program, UTM's current fee schedule",
       "items": [
-        { "label": "Engineering (4 years)", "value": 75000, "valueLabel": "RM 75,000" },
-        { "label": "MJIIT engineering (4 years)", "value": 75000, "valueLabel": "RM 75,000" },
-        { "label": "Computing / IT (4 years)", "value": 71000, "valueLabel": "RM 71,000" },
-        { "label": "Science, Landscape, Quantity Surveying", "value": 63000, "valueLabel": "RM 63,000" },
-        { "label": "Artificial Intelligence (3 years)", "value": 54788, "valueLabel": "RM 54,788" },
-        { "label": "Architecture (BSc, 3 years)", "value": 51620, "valueLabel": "RM 51,620" }
+        {
+          "label": "Engineering (4 years)",
+          "value": 75000,
+          "valueLabel": "RM 75,000"
+        },
+        {
+          "label": "MJIIT engineering (4 years)",
+          "value": 75000,
+          "valueLabel": "RM 75,000"
+        },
+        {
+          "label": "Computing / IT (4 years)",
+          "value": 71000,
+          "valueLabel": "RM 71,000"
+        },
+        {
+          "label": "Science, Landscape, Quantity Surveying",
+          "value": 63000,
+          "valueLabel": "RM 63,000"
+        },
+        {
+          "label": "Artificial Intelligence (3 years)",
+          "value": 54788,
+          "valueLabel": "RM 54,788"
+        },
+        {
+          "label": "Architecture (BSc, 3 years)",
+          "value": 51620,
+          "valueLabel": "RM 51,620"
+        }
       ],
       "note": "The fee page does not name an academic year. Housing is not included."
     }

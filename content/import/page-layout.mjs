@@ -71,7 +71,7 @@ const CONTACT_LINKS = [
   {
     title: "Whatsapp",
     icon: "image-86a70c8efc3b3954a8c2e2bda57335cb079f7618-50x50-svg",
-    link: "https://api.whatsapp.com/send/?phone=48505118058&text&type=phone_number&app_absent=0"
+    link: "https://wa.me/message/5EJRNM3WEDXAC1"
   },
   {
     title: "Telegram",

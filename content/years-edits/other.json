@@ -1,0 +1,194 @@
+[
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"1765af9046aa\"].content[_key==\"0d70911bdc3b\"].children[_key==\"a873577bdf3f\"].text",
+    "text": "Цены — официальные прайсы вузов с указанием года. Прайсы на 2027/28 вузы публикуют ближе к набору, поэтому смотрите на диапазоны, а не на точную цифру.",
+    "new": "Цены — официальные прайсы вузов. Прайсы на следующий учебный год вузы публикуют ближе к набору, поэтому смотрите на диапазоны, а не на точную цифру."
+  },
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"040444c6165d\"].subtitle",
+    "text": "Обучение, EUR за учебный год, прайсы 2025/26–2026/27",
+    "new": "Обучение, EUR за учебный год, по действующим прайсам вузов"
+  },
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"2f5d8817821d\"].content[_key==\"9e57de846d1a\"].children[_key==\"4520af6eec09\"].text",
+    "text": " В госвузах около 82–84 € за кредит ECTS для студентов не из ЕС — примерно 5 000 € за год из 60 кредитов (2026/27). Для официальной магистратуры омологация диплома не нужна: вуз сам проверяет уровень вашего диплома. Подробно — ",
+    "new": " В госвузах около 82–84 € за кредит ECTS для студентов не из ЕС — примерно 5 000 € за год из 60 кредитов. Для официальной магистратуры омологация диплома не нужна: вуз сам проверяет уровень вашего диплома. Подробно — "
+  },
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"2f5d8817821d\"].content[_key==\"0ae95802801a\"].children[_key==\"b895889934c6\"].text",
+    "text": " Программы на английском в государственных и частных вузах, примерно RM 26 500–79 100 за весь курс по прайсам 2025/26–2026. Подробно — ",
+    "new": " Программы на английском в государственных и частных вузах, примерно RM 26 500–79 100 за весь курс по действующим прайсам. Подробно — "
+  },
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"2f5d8817821d\"].content[_key==\"088c4da316c8\"].children[_key==\"49a326bc6fc5\"].text",
+    "text": " Кампусы британских и австралийских университетов в Дубае: очная программа длится 12–16 месяцев, цены — от 76 491 AED за MSc в Middlesex (2026/27). Диплом выдаёт головной университет. Подробно — ",
+    "new": " Кампусы британских и австралийских университетов в Дубае: очная программа длится 12–16 месяцев, цены — от 76 491 AED за MSc в Middlesex. Диплом выдаёт головной университет. Подробно — "
+  },
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"132903108e31\"].items[_key==\"d73e2d1b89d8\"].answer[_key==\"84f4294ab214\"].children[_key==\"ff6387e637ba\"].text",
+    "text": "По прайсам вузов самый низкий порог — в государственных вузах Италии: от €160 в год, но плата зависит от дохода семьи (ISEE). В госвузах Турции обучение стоит от $500 в год (2025/26). Кроме цены обучения считайте расходы на жизнь: они сведены в таблице выше по всем десяти странам.",
+    "new": "По прайсам вузов самый низкий порог — в государственных вузах Италии: от €160 в год, но плата зависит от дохода семьи (ISEE). В госвузах Турции обучение стоит от $500 в год. Кроме цены обучения считайте расходы на жизнь: они сведены в таблице выше по всем десяти странам."
+  },
+  {
+    "id": "drafts.academgo.compare.ru",
+    "path": "contentBlocks[_key==\"132903108e31\"].items[_key==\"b0d195f4e4d6\"].answer[_key==\"0d89cb7450ed\"].children[_key==\"57d0f83915c6\"].text",
+    "text": "Зависит от страны и формата. В госвузах Испании — около 82–84 € за кредит ECTS, примерно 5 000 € за год (2026/27). В Малайзии — примерно RM 26 500–79 100 за весь курс. В Дубае — от 76 491 AED за MSc в Middlesex (2026/27).",
+    "new": "Зависит от страны и формата. В госвузах Испании — около 82–84 € за кредит ECTS, примерно 5 000 € за год. В Малайзии — примерно RM 26 500–79 100 за весь курс. В Дубае — от 76 491 AED за MSc в Middlesex."
+  },
+  {
+    "id": "drafts.academgo.compare.en",
+    "path": "contentBlocks[_key==\"3223fa8f666f\"].content[_key==\"8bd59e561581\"].children[_key==\"d51a14014b30\"].text",
+    "text": "Prices come from official university price lists, with the year stated. Universities publish 2027/28 prices closer to intake, so read the ranges rather than a single figure.",
+    "new": "Prices come from official university price lists. Universities publish next year's prices closer to intake, so read the ranges rather than a single figure."
+  },
+  {
+    "id": "drafts.academgo.compare.en",
+    "path": "contentBlocks[_key==\"9fee1e181210\"].subtitle",
+    "text": "Tuition, EUR per academic year, 2025/26–2026/27 price lists",
+    "new": "Tuition, EUR per academic year, current university price lists"
+  },
+  {
+    "id": "drafts.academgo.compare.en",
+    "path": "contentBlocks[_key==\"34daa6012ca2\"].content[_key==\"382d5666235b\"].children[_key==\"a245c5b40f5e\"].text",
+    "text": " At public universities, non-EU students paid about 82–84 € per ECTS credit for a standard master's in 2026/27 — roughly 4,900–5,100 € for a one-year, 60-credit programme. More in ",
+    "new": " At public universities, non-EU students pay about 82–84 € per ECTS credit for a standard master's — roughly 4,900–5,100 € for a one-year, 60-credit programme. More in "
+  },
+  {
+    "id": "drafts.academgo.compare.en",
+    "path": "contentBlocks[_key==\"34daa6012ca2\"].content[_key==\"3ddd51dcc789\"].children[_key==\"0d0cdffba635\"].text",
+    "text": " UK and Australian branch campuses in Dubai: most master's degrees cost roughly 76,000–175,000 AED, and an MBA about 85,000–118,000 AED in tuition at 2026/27 prices. The degree is awarded by the parent university. More in ",
+    "new": " UK and Australian branch campuses in Dubai: most master's degrees cost roughly 76,000–175,000 AED, and an MBA about 85,000–118,000 AED in tuition at current prices. The degree is awarded by the parent university. More in "
+  },
+  {
+    "id": "drafts.academgo.compare.en",
+    "path": "contentBlocks[_key==\"06ad0049c9e0\"].items[_key==\"b1cea55f039a\"].answer[_key==\"aa7a742deb74\"].children[_key==\"ccb8f5a0227d\"].text",
+    "text": "By university price lists, the lowest starting point is at Italian public universities: from €160 a year, but the fee depends on family income (ISEE). Public universities in Türkiye start from $500 a year (2025/26). Add living costs as well — the table above compares them for all ten countries.",
+    "new": "By university price lists, the lowest starting point is at Italian public universities: from €160 a year, but the fee depends on family income (ISEE). Public universities in Türkiye start from $500 a year. Add living costs as well — the table above compares them for all ten countries."
+  },
+  {
+    "id": "drafts.academgo.compare.en",
+    "path": "contentBlocks[_key==\"06ad0049c9e0\"].items[_key==\"3a2b6ca6d692\"].answer[_key==\"25a3f007b726\"].children[_key==\"2e481ded513d\"].text",
+    "text": "It depends on the country and the format. At Spanish public universities, about 82–84 € per ECTS credit, roughly 4,900–5,100 € a year (2026/27). In Malaysia, about RM 26,500–79,100 for the whole programme. In Dubai, most master's degrees cost roughly 76,000–175,000 AED.",
+    "new": "It depends on the country and the format. At Spanish public universities, about 82–84 € per ECTS credit, roughly 4,900–5,100 € a year. In Malaysia, about RM 26,500–79,100 for the whole programme. In Dubai, most master's degrees cost roughly 76,000–175,000 AED."
+  },
+  {
+    "id": "drafts.academgo.university.malaysia.utm.en",
+    "path": "title",
+    "text": "Study at Universiti Teknologi Malaysia in 2027",
+    "new": "Study at Universiti Teknologi Malaysia"
+  },
+  {
+    "id": "drafts.academgo.country.south-cyprus.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "примерно €9 000–11 820 в год в частных вузах; медицина €23 000–24 000 (2026/27)",
+    "new": "примерно €9 000–11 820 в год в частных вузах; медицина €23 000–24 000"
+  },
+  {
+    "id": "drafts.academgo.country.georgia.en",
+    "path": "comparison.tuitionFrom",
+    "text": "MD in English: $5,900–6,500 at private, $8,000 at public universities (2026/27)",
+    "new": "MD in English: $5,900–6,500 at private, $8,000 at public universities"
+  },
+  {
+    "id": "drafts.academgo.country.south-cyprus.en",
+    "path": "comparison.tuitionFrom",
+    "text": "about €9,000–11,820 a year at private universities; medicine €23,000–24,000 (2026/27)",
+    "new": "about €9,000–11,820 a year at private universities; medicine €23,000–24,000"
+  },
+  {
+    "id": "drafts.academgo.country.turkey.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "от $500 в год в госвузах, от $4 000 в частных (2025/26)",
+    "new": "от $500 в год в госвузах, от $4 000 в частных"
+  },
+  {
+    "id": "drafts.academgo.country.hungary.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "примерно €6 000–10 000 в год на английском (2025/26–2026/27)",
+    "new": "примерно €6 000–10 000 в год на английском"
+  },
+  {
+    "id": "drafts.academgo.country.georgia.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "MD на английском: $5 900–6 500 в частных вузах, $8 000 в государственных (2026/27)",
+    "new": "MD на английском: $5 900–6 500 в частных вузах, $8 000 в государственных"
+  },
+  {
+    "id": "drafts.academgo.country.spain.en",
+    "path": "comparison.tuitionFrom",
+    "text": "about €1,200–8,200 a year at public universities; private cost more (2026/27)",
+    "new": "about €1,200–8,200 a year at public universities; private cost more"
+  },
+  {
+    "id": "drafts.academgo.country.north-cyprus.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "$4 450–6 400 в год в госвузе EMU; €2 800–4 500 в частных вузах со скидкой (2026/27)",
+    "new": "$4 450–6 400 в год в госвузе EMU; €2 800–4 500 в частных вузах со скидкой"
+  },
+  {
+    "id": "drafts.academgo.country.spain.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "примерно €1 200–8 200 в год в госвузах, частные дороже (2026/27)",
+    "new": "примерно €1 200–8 200 в год в госвузах, частные дороже"
+  },
+  {
+    "id": "drafts.academgo.country.uae.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "примерно 60 000–80 000 AED в год в филиалах (≈$16–22 тыс., 2026/27)",
+    "new": "примерно 60 000–80 000 AED в год в филиалах (≈$16–22 тыс.)"
+  },
+  {
+    "id": "drafts.academgo.country.malaysia.en",
+    "path": "comparison.tuitionFrom",
+    "text": "about RM 35,000–45,000 a year at private universities (2026)",
+    "new": "about RM 35,000–45,000 a year at private universities"
+  },
+  {
+    "id": "drafts.academgo.country.uae.en",
+    "path": "comparison.tuitionFrom",
+    "text": "about AED 60,000–80,000 a year at branch campuses (2026/27)",
+    "new": "about AED 60,000–80,000 a year at branch campuses"
+  },
+  {
+    "id": "drafts.academgo.country.north-cyprus.en",
+    "path": "comparison.tuitionFrom",
+    "text": "$4,450–6,400 a year at EMU (public); €2,800–4,500 at private universities after the standard discount (2026/27)",
+    "new": "$4,450–6,400 a year at EMU (public); €2,800–4,500 at private universities after the standard discount"
+  },
+  {
+    "id": "drafts.academgo.country.turkey.en",
+    "path": "comparison.tuitionFrom",
+    "text": "from $500 a year at public, from $4,000 at private universities (2025/26)",
+    "new": "from $500 a year at public, from $4,000 at private universities"
+  },
+  {
+    "id": "drafts.academgo.country.italy.en",
+    "path": "comparison.tuitionFrom",
+    "text": "from €160 a year at public universities (income-based, ISEE), 2026/27",
+    "new": "from €160 a year at public universities (income-based, ISEE)"
+  },
+  {
+    "id": "drafts.academgo.country.malaysia.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "примерно RM 35 000–45 000 в год в частных вузах (2026)",
+    "new": "примерно RM 35 000–45 000 в год в частных вузах"
+  },
+  {
+    "id": "drafts.academgo.country.hungary.en",
+    "path": "comparison.tuitionFrom",
+    "text": "about €6,000–10,000 a year in English (2025/26–2026/27)",
+    "new": "about €6,000–10,000 a year in English"
+  },
+  {
+    "id": "drafts.academgo.country.italy.ru",
+    "path": "comparison.tuitionFrom",
+    "text": "от €160 в год в госвузах (плата зависит от дохода, ISEE), 2026/27",
+    "new": "от €160 в год в госвузах (плата зависит от дохода, ISEE)"
+  }
+]

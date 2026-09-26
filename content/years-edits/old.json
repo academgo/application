@@ -1,0 +1,392 @@
+[
+  {
+    "id": "drafts.31524895-0e8e-4e42-8ef0-614766aa1e00",
+    "path": "quizBlock.questions[_key==\"fd443dc14b0c\"].options[_key==\"c87e62ed283e\"].label",
+    "text": "Как можно скорее (Осень 2026)",
+    "new": "Ближайший набор (осень)"
+  },
+  {
+    "id": "drafts.31524895-0e8e-4e42-8ef0-614766aa1e00",
+    "path": "quizBlock.questions[_key==\"fd443dc14b0c\"].options[_key==\"d58cb85a2dfb\"].label",
+    "text": "Весна 2027",
+    "new": "Весенний набор"
+  },
+  {
+    "id": "drafts.387c8a6f-fe32-4c84-bb65-bfb143fa1044",
+    "path": "quizBlock.questions[_key==\"5b9873d5e063\"].options[_key==\"1df04693755e\"].label",
+    "text": "October 2026",
+    "new": "October intake"
+  },
+  {
+    "id": "drafts.387c8a6f-fe32-4c84-bb65-bfb143fa1044",
+    "path": "quizBlock.questions[_key==\"5b9873d5e063\"].options[_key==\"d2574d8d673e\"].label",
+    "text": "March 2027",
+    "new": "March intake"
+  },
+  {
+    "id": "drafts.0a719cd2-f12d-4547-b469-813916f825c4",
+    "path": "contentBlocks[_key==\"c77f69a137c0\"].survey.quizBlock.questions[_key==\"f08ea48aa16a\"].options[_key==\"ec6740e2debb\"].label",
+    "text": "October 2026",
+    "new": "October intake"
+  },
+  {
+    "id": "drafts.0a719cd2-f12d-4547-b469-813916f825c4",
+    "path": "contentBlocks[_key==\"c77f69a137c0\"].survey.quizBlock.questions[_key==\"f08ea48aa16a\"].options[_key==\"1b2a551bc668\"].label",
+    "text": "March 2027",
+    "new": "March intake"
+  },
+  {
+    "id": "drafts.c1d92362-2478-4fc6-b82f-434fe9b3acb4",
+    "path": "contentBlocks[_key==\"9739656fc47d\"].survey.quizBlock.questions[_key==\"cb1da139f0ae\"].options[_key==\"2f22ee44a8bf\"].label",
+    "text": "Октябрь 2026",
+    "new": "Набор в октябре"
+  },
+  {
+    "id": "drafts.c1d92362-2478-4fc6-b82f-434fe9b3acb4",
+    "path": "contentBlocks[_key==\"9739656fc47d\"].survey.quizBlock.questions[_key==\"cb1da139f0ae\"].options[_key==\"c195045ab525\"].label",
+    "text": "Март 2027",
+    "new": "Набор в марте"
+  },
+  {
+    "id": "387c8a6f-fe32-4c84-bb65-bfb143fa1044",
+    "path": "conditionFourth.linkLabel",
+    "text": "Find out the tuition cost and scholarships for admission in 2026",
+    "new": "Find out the tuition cost and scholarships for the upcoming intake"
+  },
+  {
+    "id": "387c8a6f-fe32-4c84-bb65-bfb143fa1044",
+    "path": "quizBlock.questions[_key==\"5b9873d5e063\"].options[_key==\"1df04693755e\"].label",
+    "text": "October 2026",
+    "new": "October intake"
+  },
+  {
+    "id": "387c8a6f-fe32-4c84-bb65-bfb143fa1044",
+    "path": "quizBlock.questions[_key==\"5b9873d5e063\"].options[_key==\"d2574d8d673e\"].label",
+    "text": "March 2027",
+    "new": "March intake"
+  },
+  {
+    "id": "312a026a-76f4-42cc-b900-cf110a18ebfa",
+    "path": "contentBlocks[_key==\"b9de5032246c\"].content[_key==\"9698479f200f\"].children[_key==\"9d0ff56a89f50\"].text",
+    "text": "Estimated Monthly Living Costs in Poland (2026)",
+    "new": "Estimated Monthly Living Costs in Poland"
+  },
+  {
+    "id": "066c0db6-e282-40b1-b287-e39517dc0845",
+    "path": "contentBlocks[_key==\"8f2d3148bff0\"].content[_key==\"49f4c9ac0a9c\"].children[_key==\"c0254ef4a8811\"].text",
+    "text": " в Варшавском университете зависит от факультета, программы и языка обучения. Иностранные студенты оплачивают обучение в евро (на английских программах) или в злотых (на польских программах). Ниже представлены ориентировочные расценки на 2024/2025 учебный год:",
+    "new": " в Варшавском университете зависит от факультета, программы и языка обучения. Иностранные студенты оплачивают обучение в евро (на английских программах) или в злотых (на польских программах). Ниже представлены ориентировочные расценки за учебный год:"
+  },
+  {
+    "id": "da88f874-a005-48ef-bef1-ade3803fb120",
+    "path": "contentBlocks[_key==\"cb8776f9727e\"].content[_key==\"79d01b5baaf4\"].children[_key==\"e3f442798f621\"].text",
+    "text": "на 2024/2025 учебный год",
+    "new": "за учебный год"
+  },
+  {
+    "id": "d4d8a2aa-5389-485b-ac19-272267f34f95",
+    "path": "contentBlocks[_key==\"967036045ab3\"].survey.quizBlock.questions[_key==\"bc67aeb5f254\"].options[_key==\"250fc4129fff\"].label",
+    "text": " Как можно скорее (Осень 2026)",
+    "new": " Ближайший набор (осень)"
+  },
+  {
+    "id": "d4d8a2aa-5389-485b-ac19-272267f34f95",
+    "path": "contentBlocks[_key==\"967036045ab3\"].survey.quizBlock.questions[_key==\"bc67aeb5f254\"].options[_key==\"f02ceef53894\"].label",
+    "text": " Весна 2027",
+    "new": " Весенний набор"
+  },
+  {
+    "id": "e980a5be-40ff-48eb-ad19-8b5f471d69db",
+    "path": "contentBlocks[_key==\"6a3e2ef165eb\"].items[_key==\"cb65d41829a5\"].answer[_key==\"47cf5f8e68c8\"].children[_key==\"84e8a81d00d82\"].text",
+    "text": ", the most popular universities in Poland in 2025 include:",
+    "new": ", the most popular universities in Poland include:"
+  },
+  {
+    "id": "e980a5be-40ff-48eb-ad19-8b5f471d69db",
+    "path": "contentBlocks[_key==\"6a3e2ef165eb\"].items[_key==\"cb65d41829a5\"].question",
+    "text": "Which universities in Poland are most popular for studying economics and finance in 2025?",
+    "new": "Which universities in Poland are most popular for studying economics and finance?"
+  },
+  {
+    "id": "f2ce5741-8f90-42ea-a9ce-097d989e7fcb",
+    "path": "contentBlocks[_key==\"60dab562bd7d\"].content[_key==\"ae2edd118739\"].children[_key==\"edd4d3faf2ab1\"].text",
+    "text": "- Intakes & Deadlines (2026/2027)",
+    "new": "- Intakes & Deadlines"
+  },
+  {
+    "id": "ce135bcd-4e0d-44e5-8e65-37385ea97765",
+    "path": "contentBlocks[_key==\"2592dd2d38aa\"].items[_key==\"0b5747a634a6\"].question",
+    "text": "Which Polish IT universities are the most popular among international students in 2025?",
+    "new": "Which Polish IT universities are the most popular among international students?"
+  },
+  {
+    "id": "c1d92362-2478-4fc6-b82f-434fe9b3acb4",
+    "path": "contentBlocks[_key==\"9739656fc47d\"].survey.quizBlock.questions[_key==\"cb1da139f0ae\"].options[_key==\"2f22ee44a8bf\"].label",
+    "text": "Октябрь 2026",
+    "new": "Набор в октябре"
+  },
+  {
+    "id": "c1d92362-2478-4fc6-b82f-434fe9b3acb4",
+    "path": "contentBlocks[_key==\"9739656fc47d\"].survey.quizBlock.questions[_key==\"cb1da139f0ae\"].options[_key==\"c195045ab525\"].label",
+    "text": "Март 2027",
+    "new": "Набор в марте"
+  },
+  {
+    "id": "6c476740-5017-442b-8e56-43270cc99c60",
+    "path": "contentBlocks[_key==\"762483c87528\"].content[_key==\"62be2b8d09e0\"].children[_key==\"0a8671074f2611\"].text",
+    "text": "2024/2025 academic year",
+    "new": "academic year"
+  },
+  {
+    "id": "1c9395e4-e36f-4dcb-9921-fbe2ee765532",
+    "path": "seo.metaTitle",
+    "text": "VIZIJA University (ex-UEHS) – Admission 2026 & Fees",
+    "new": "VIZIJA University (ex-UEHS) – Admission & Fees"
+  },
+  {
+    "id": "c53f340d-9534-450e-ae17-042865097720",
+    "path": "contentBlocks[_key==\"b02c89e2b00c\"].items[_key==\"5bb070e619b1\"].answer[_key==\"33986866202c\"].children[_key==\"04db5ff87dc11\"].text",
+    "text": "не соответствует требованиям 2025 года",
+    "new": "не соответствует действующим требованиям"
+  },
+  {
+    "id": "70493bd3-d2e0-43a5-867a-b2da1273fa23",
+    "path": "contentBlocks[_key==\"31378f0b3217\"].items[_key==\"4c13d7e865fb\"].answer[_key==\"e6ac32adb002\"].children[_key==\"21cdae42d7e80\"].text",
+    "text": "Для иностранных студентов, интересующихся экономикой, в 2025 году наиболее популярными вузами в Польше являются ",
+    "new": "Для иностранных студентов, интересующихся экономикой, наиболее популярными вузами в Польше являются "
+  },
+  {
+    "id": "814aa4cd-274f-4b70-9347-fed2ba52edb1",
+    "path": "firstContent.content[_key==\"c70c1329d0c4\"].children[_key==\"c9ee23ffc0c10\"].text",
+    "text": "Мечтаете получить качественное европейское образование? Обратите внимание на Польшу! В 2025 году польские университеты рады приветствовать белорусских студентов, предлагая широкий спектр программ обучения на польском и английском языках. Эта статья станет вашим надежным проводником по всем этапам поступления, включая обязательные документы, языковые требования, оформление визы, варианты оплаты и особенности приема.",
+    "new": "Мечтаете получить качественное европейское образование? Обратите внимание на Польшу! Сегодня польские университеты рады приветствовать белорусских студентов, предлагая широкий спектр программ обучения на польском и английском языках. Эта статья станет вашим надежным проводником по всем этапам поступления, включая обязательные документы, языковые требования, оформление визы, варианты оплаты и особенности приема."
+  },
+  {
+    "id": "0c1ab658-bd3c-4a79-83a1-4110a13a7d97",
+    "path": "contentBlocks[_key==\"cb4d87ee190b\"].items[_key==\"f93f06f235ea\"].answer[_key==\"92ce097b5bb1\"].children[_key==\"8b62c097c12a1\"].text",
+    "text": "B1 level does not meet the 2025 admission requirements",
+    "new": "B1 level does not meet the current admission requirements"
+  },
+  {
+    "id": "b75cebcd-baf7-4794-99b5-2a793dd4746b",
+    "path": "contentBlocks[_key==\"206c80988336\"].content[_key==\"e8a102d54a93\"].children[_key==\"841fb6d5ae722\"].text",
+    "text": " is automated and unforgiving. A shadow on a scan, a missing translation stamp, or the wrong file format can lead to immediate rejection. With the new 2025 rules, you don't have time for a second try — universities require the decision ",
+    "new": " is automated and unforgiving. A shadow on a scan, a missing translation stamp, or the wrong file format can lead to immediate rejection. With the new rules, you don't have time for a second try — universities require the decision "
+  },
+  {
+    "id": "b75cebcd-baf7-4794-99b5-2a793dd4746b",
+    "path": "contentBlocks[_key==\"fac55cade206\"].items[_key==\"d91da099c559\"].answer[_key==\"5dac6d0cd92b\"].children[_key==\"cac4f5f92fe81\"].text",
+    "text": " Under the new 2025 regulations, universities strictly require the final nostrification certificate ",
+    "new": " Under the new regulations, universities strictly require the final nostrification certificate "
+  },
+  {
+    "id": "b75cebcd-baf7-4794-99b5-2a793dd4746b",
+    "path": "seo.metaDescription",
+    "text": "Learn everything about the new nostrification rules in Poland for 2025: how the process works, where and how to submit your documents. A complete step-by-step guide for applying to Polish universities from AcademGo!",
+    "new": "Learn everything about the new nostrification rules in Poland: how the process works, where and how to submit your documents. A complete step-by-step guide for applying to Polish universities from AcademGo!"
+  },
+  {
+    "id": "07f0b8a7-2f36-4849-b2d3-c2fd4d6f9ab3",
+    "path": "seo.metaDescription",
+    "text": "Собираетесь поступать в Польшу? Узнайте, какие документы нужны для поступления в польский ВУЗ в 2025 году: ✔️полный список, ✔️языковые сертификаты, ✔️правила легализации, ✔️как AcademGo помогает студентам.",
+    "new": "Собираетесь поступать в Польшу? Узнайте, какие документы нужны для поступления в польский ВУЗ: ✔️полный список, ✔️языковые сертификаты, ✔️правила легализации, ✔️как AcademGo помогает студентам."
+  },
+  {
+    "id": "9f93818a-00bd-4d82-a179-a21a4eb007de",
+    "path": "contentBlocks[_key==\"381c44ed092c\"].items[_key==\"6d9d7d16e595\"].answer[_key==\"e48f55e3195f\"].children[_key==\"6b14b541fcf01\"].text",
+    "text": "новое требование 2025 года",
+    "new": "обязательное требование"
+  },
+  {
+    "id": "b0626478-2e12-46ce-995d-2d735e2c1449",
+    "path": "copyright",
+    "text": "Все права защищены. AcademGo. 2026",
+    "new": "Все права защищены. AcademGo."
+  },
+  {
+    "id": "0c61bcc2-e1ca-43b1-8c72-ad688f5e6a92",
+    "path": "contentBlocks[_key==\"d65b64ab95a5\"].items[_key==\"b2a5fb3ad341\"].answer[_key==\"6d9a5b5a6a04\"].children[_key==\"526995dbcb520\"].text",
+    "text": "В 2025 году среди иностранных студентов популярны следующие польские IT-университеты:",
+    "new": "Сейчас среди иностранных студентов популярны следующие польские IT-университеты:"
+  },
+  {
+    "id": "0c61bcc2-e1ca-43b1-8c72-ad688f5e6a92",
+    "path": "contentBlocks[_key==\"d65b64ab95a5\"].items[_key==\"b2a5fb3ad341\"].question",
+    "text": "Какие польские IT университеты наиболее популярны среди иностранных студентов в 2025 году?",
+    "new": "Какие польские IT университеты наиболее популярны среди иностранных студентов?"
+  },
+  {
+    "id": "9776c2e5-355d-45fc-a1ec-39d5e9275c43",
+    "path": "contentBlocks[_key==\"6896138d2316\"].content[_key==\"bc6b6a4c00ca\"].children[_key==\"b974963d9f400\"].text",
+    "text": "Среди белорусских студентов особой популярностью пользуются такие направления, как менеджмент и экономика, IT, медицина и гуманитарные науки. В 2024 году ожидается рост интереса к программам, связанным с цифровыми технологиями и искусственным интеллектом, отражая глобальные образовательные тренды и спрос на рынке труда.",
+    "new": "Среди белорусских студентов особой популярностью пользуются такие направления, как менеджмент и экономика, IT, медицина и гуманитарные науки. Ожидается рост интереса к программам, связанным с цифровыми технологиями и искусственным интеллектом, отражая глобальные образовательные тренды и спрос на рынке труда."
+  },
+  {
+    "id": "1d6e9b8b-6b3c-4849-aed7-bcfdd8924398",
+    "path": "contentBlocks[_key==\"5861834d7e97\"].content[_key==\"119653c22cfc\"].children[_key==\"9dc9a3323a8e3\"].text",
+    "text": "2024/2025 academic year",
+    "new": "academic year"
+  },
+  {
+    "id": "31524895-0e8e-4e42-8ef0-614766aa1e00",
+    "path": "conditionFourth.linkLabel",
+    "text": "Узнать стоимость и скидку на обучение в 2026 году",
+    "new": "Узнать стоимость и скидку на обучение"
+  },
+  {
+    "id": "31524895-0e8e-4e42-8ef0-614766aa1e00",
+    "path": "quizBlock.questions[_key==\"fd443dc14b0c\"].options[_key==\"c87e62ed283e\"].label",
+    "text": "Как можно скорее (Осень 2026)",
+    "new": "Ближайший набор (осень)"
+  },
+  {
+    "id": "31524895-0e8e-4e42-8ef0-614766aa1e00",
+    "path": "quizBlock.questions[_key==\"fd443dc14b0c\"].options[_key==\"d58cb85a2dfb\"].label",
+    "text": "Весна 2027",
+    "new": "Весенний набор"
+  },
+  {
+    "id": "42ee66c2-77e7-4c6c-8bec-7ef71544fdaa",
+    "path": "contentBlocks[_key==\"ee69204b6d16\"].items[_key==\"21653574cc44\"].question",
+    "text": "What documents are required for admission in 2024?",
+    "new": "What documents are required for admission?"
+  },
+  {
+    "id": "42ee66c2-77e7-4c6c-8bec-7ef71544fdaa",
+    "path": "contentBlocks[_key==\"ee69204b6d16\"].items[_key==\"9db135f0b757\"].question",
+    "text": "What are the application deadlines for admission in 2024? ",
+    "new": "What are the application deadlines for admission? "
+  },
+  {
+    "id": "42ee66c2-77e7-4c6c-8bec-7ef71544fdaa",
+    "path": "firstContent.content[_key==\"c16a382a9b6c\"].children[_key==\"dc9e462eec620\"].text",
+    "text": "Do you dream of obtaining an affordable and high-quality education in Europe? Poland is a country that can offer you this opportunity. In 2024, Polish universities will be happy to welcome applicants from all over the world. Let's take a look at the entire actual process of applying to universities in Poland in 2024.",
+    "new": "Do you dream of obtaining an affordable and high-quality education in Europe? Poland is a country that can offer you this opportunity. Polish universities are happy to welcome applicants from all over the world. Let's take a look at the entire actual process of applying to universities in Poland."
+  },
+  {
+    "id": "42ee66c2-77e7-4c6c-8bec-7ef71544fdaa",
+    "path": "seo.metaDescription",
+    "text": "At this article we will take a look at the entire actual process of applying to universities in Poland for international students in 2024.",
+    "new": "At this article we will take a look at the entire actual process of applying to universities in Poland for international students."
+  },
+  {
+    "id": "42ee66c2-77e7-4c6c-8bec-7ef71544fdaa",
+    "path": "seo.metaTitle",
+    "text": "Admission in EU 2024",
+    "new": "Admission in EU"
+  },
+  {
+    "id": "42ee66c2-77e7-4c6c-8bec-7ef71544fdaa",
+    "path": "title",
+    "text": "Study in Poland 2024 | Admission in EU 2024",
+    "new": "Study in Poland | Admission in EU"
+  },
+  {
+    "id": "4b5c83d9-0d80-4c51-b1a5-db642e833caa",
+    "path": "contentBlocks[_key==\"2a1554f71d84\"].leftContent.blockContent.content[_key==\"1182d9260357\"].children[_key==\"76efb1f7dd730\"].text",
+    "text": "Это причина №1 для отказов в 2024-2025 годах. Консул должен видеть, что вы едете учиться, а не искать нелегальную работу ради выживания.",
+    "new": "Это причина №1 для отказов. Консул должен видеть, что вы едете учиться, а не искать нелегальную работу ради выживания."
+  },
+  {
+    "id": "4b5c83d9-0d80-4c51-b1a5-db642e833caa",
+    "path": "contentBlocks[_key==\"5bde62506515\"].content[_key==\"64c96eb579fd\"].children[_key==\"579a91afce5c0\"].text",
+    "text": "Даже если вы поступили в университет и оплатили обучение, это не гарантирует получение визы. По статистике 2024 года, консулы чаще всего отказывают по следующим причинам:",
+    "new": "Даже если вы поступили в университет и оплатили обучение, это не гарантирует получение визы. По статистике, консулы чаще всего отказывают по следующим причинам:"
+  },
+  {
+    "id": "921c6a18-6d84-4666-b0ae-43732d88c08b",
+    "path": "contentBlocks[_key==\"8013c9486fc1\"].survey.quizBlock.questions[_key==\"7a802c508cfc\"].options[_key==\"16fde7fc096c\"].label",
+    "text": "ASAP (Fall 2026)",
+    "new": "Next intake (fall)"
+  },
+  {
+    "id": "921c6a18-6d84-4666-b0ae-43732d88c08b",
+    "path": "contentBlocks[_key==\"8013c9486fc1\"].survey.quizBlock.questions[_key==\"7a802c508cfc\"].options[_key==\"0e4200a15c43\"].label",
+    "text": "Spring 2027",
+    "new": "Spring intake"
+  },
+  {
+    "id": "d4984c93-a1e8-43df-8f5c-351c027513d9",
+    "path": "contentBlocks[_key==\"3eed8c1de00a\"].survey.quizBlock.questions[_key==\"349cb0ae7772\"].options[_key==\"b967f6a31508\"].label",
+    "text": "ASAP (Fall 2026)",
+    "new": "Next intake (fall)"
+  },
+  {
+    "id": "d4984c93-a1e8-43df-8f5c-351c027513d9",
+    "path": "contentBlocks[_key==\"3eed8c1de00a\"].survey.quizBlock.questions[_key==\"349cb0ae7772\"].options[_key==\"0729a457bd81\"].label",
+    "text": "Spring 2027",
+    "new": "Spring intake"
+  },
+  {
+    "id": "5830e59a-5d91-45ad-92e9-c5423d361e87",
+    "path": "contentBlocks[_key==\"82173e1d6c82\"].items[_key==\"0e263b208561\"].answer[_key==\"3bd9c5c9aa5d\"].children[_key==\"f2a480319c3d1\"].text",
+    "text": " Новые правила 2025 года строги: университет обязан увидеть решение о нострификации ",
+    "new": " Новые правила строги: университет обязан увидеть решение о нострификации "
+  },
+  {
+    "id": "8ce69918-d6bf-43b7-bd60-4a5d1386710e",
+    "path": "copyright",
+    "text": "All rights reserved. AcademGo. 2026",
+    "new": "All rights reserved. AcademGo."
+  },
+  {
+    "id": "30765126-7c8c-429a-869b-7a061d01aeaa",
+    "path": "firstContent.content[_key==\"6297d5f5060b\"].children[_key==\"c90b938e8412\"].text",
+    "text": "В 2025 году",
+    "new": "Сегодня"
+  },
+  {
+    "id": "a4d12936-71c3-4a81-bfaf-72aec727e171",
+    "path": "contentBlocks[_key==\"8d7a60f81c50\"].content[_key==\"bf8b98138204\"].children[_key==\"e965556421c3\"].text",
+    "text": "Польша остается направлением №1 для белорусских абитуриентов, но в 2026 году ситуация кардинально поменялась. Если раньше главной сложностью было \"выбрать университет\", то сейчас на первый план вышли ",
+    "new": "Польша остается направлением №1 для белорусских абитуриентов, но за последнее время ситуация кардинально поменялась. Если раньше главной сложностью было \"выбрать университет\", то сейчас на первый план вышли "
+  },
+  {
+    "id": "a4d12936-71c3-4a81-bfaf-72aec727e171",
+    "path": "contentBlocks[_key==\"6b4dfdd5b469\"].content[_key==\"4251cb123c8a\"].children[_key==\"59982c4e0ee6\"].text",
+    "text": "В 2026 году главная проблема абитуриента из Беларуси — это не экзамены, а ",
+    "new": "Сегодня главная проблема абитуриента из Беларуси — это не экзамены, а "
+  },
+  {
+    "id": "8f0845c4-a1c4-4458-a844-4036f885f17b",
+    "path": "contentBlocks[_key==\"f145a9975725\"].content[_key==\"b4d1dfd6bcaa\"].children[_key==\"e6d6b08ababa\"].text",
+    "text": "\nМы посчитали все расходы студента в 2025 году. Узнайте, сколько реально стоят общежития (от 150€), продукты и транспорт, и какую сумму нужно показать на счету для визы.",
+    "new": "\nМы посчитали все расходы студента. Узнайте, сколько реально стоят общежития (от 150€), продукты и транспорт, и какую сумму нужно показать на счету для визы."
+  },
+  {
+    "id": "0239a061-1abf-44e5-a946-e47699c34f64",
+    "path": "contentBlocks[_key==\"410716a81df4\"].survey.quizBlock.questions[_key==\"c961bfd7666e\"].options[_key==\"03e5a7471e8f\"].label",
+    "text": " Как можно скорее (Осень 2026)",
+    "new": " Ближайший набор (осень)"
+  },
+  {
+    "id": "0239a061-1abf-44e5-a946-e47699c34f64",
+    "path": "contentBlocks[_key==\"410716a81df4\"].survey.quizBlock.questions[_key==\"c961bfd7666e\"].options[_key==\"9128a6b21fb6\"].label",
+    "text": " Весна 2027",
+    "new": " Весенний набор"
+  },
+  {
+    "id": "2840f96a-f9e8-41ea-9da0-93ca7da62ce8",
+    "path": "contentBlocks[_key==\"8e78059af17e\"].survey.quizBlock.questions[_key==\"e27f95e12cc8\"].options[_key==\"7b1fd9b779af\"].label",
+    "text": " Как можно скорее (Осень 2026)",
+    "new": " Ближайший набор (осень)"
+  },
+  {
+    "id": "2840f96a-f9e8-41ea-9da0-93ca7da62ce8",
+    "path": "contentBlocks[_key==\"8e78059af17e\"].survey.quizBlock.questions[_key==\"e27f95e12cc8\"].options[_key==\"e15b0a933d0f\"].label",
+    "text": " Весна 2027",
+    "new": " Весенний набор"
+  },
+  {
+    "id": "0a719cd2-f12d-4547-b469-813916f825c4",
+    "path": "contentBlocks[_key==\"c77f69a137c0\"].survey.quizBlock.questions[_key==\"f08ea48aa16a\"].options[_key==\"ec6740e2debb\"].label",
+    "text": "October 2026",
+    "new": "October intake"
+  },
+  {
+    "id": "0a719cd2-f12d-4547-b469-813916f825c4",
+    "path": "contentBlocks[_key==\"c77f69a137c0\"].survey.quizBlock.questions[_key==\"f08ea48aa16a\"].options[_key==\"1b2a551bc668\"].label",
+    "text": "March 2027",
+    "new": "March intake"
+  }
+]

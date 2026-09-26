@@ -93,64 +93,64 @@
     "afterHeading": "Три пути поступления",
     "block": {
       "_type": "timelineBlock",
-      "title": "Когда поступать в Турцию на 2027/28",
-      "subtitle": "Ориентиры по модели 2026 года",
+      "title": "Когда поступать в Турцию",
+      "subtitle": "Ориентиры по прошлому циклу",
       "items": [
         {
-          "period": "Сентябрь — декабрь 2026",
+          "period": "Сентябрь — декабрь",
           "title": "Выбор вузов и осенний TR-YÖS",
-          "text": "11 октября 2026 — осенний TR-YÖS; в это же время выберите путь, поставьте апостиль и сдайте TOEFL iBT, PTE или IELTS."
+          "text": "Октябрь — осенний TR-YÖS; в это же время выберите путь, поставьте апостиль и сдайте TOEFL iBT, PTE или IELTS."
         },
         {
-          "period": "Январь — февраль 2027",
+          "period": "Январь — февраль",
           "title": "Грант и заявки в частные вузы",
-          "text": "В 2026 году приём на Türkiye Bursları шёл с 10 января по 20 февраля, а Medipol открыл набор уже в начале февраля."
+          "text": "Приём на Türkiye Bursları обычно идёт с 10 января по 20 февраля, а Medipol открывал набор уже в начале февраля."
         },
         {
-          "period": "Весна 2027",
+          "period": "Весна",
           "title": "Весенний TR-YÖS",
           "text": "Даты весенней сессии не объявлены; в это время вузы рассматривают заявки, а вы собираете офферы."
         },
         {
-          "period": "Лето 2027",
+          "period": "Лето",
           "title": "Зачисление, депозит и виза",
           "text": "Условное зачисление, депозит и Official Acceptance, затем студенческая виза и заявка на e-Denklik."
         },
         {
-          "period": "Сентябрь 2027",
+          "period": "Сентябрь",
           "title": "Приезд и регистрация",
-          "text": "Сдайте оригиналы и Denklik в срок вуза и подайте на ВНЖ; в Medipol осенний семестр 2025/26 начался 22 сентября."
+          "text": "Сдайте оригиналы и Denklik в срок вуза и подайте на ВНЖ; в Medipol осенний семестр начинается в конце сентября."
         }
       ],
-      "note": "Точные даты 2027 года вузы и ÖSYM объявят ближе к набору."
+      "note": "Точные даты вузы и ÖSYM объявляют ближе к набору."
     }
   },
   "academgo.turkey.admission.en": {
     "afterHeading": "TR-YÖS exam: format, scores, dates and fees",
     "block": {
       "_type": "timelineBlock",
-      "title": "TR-YÖS dates: 2026 sessions and 2027",
-      "subtitle": "ÖSYM exam calendar, 2026 cycle",
+      "title": "TR-YÖS dates: spring and fall sessions",
+      "subtitle": "ÖSYM exam calendar",
       "items": [
         {
-          "period": "12 April 2026",
+          "period": "April",
           "title": "TR-YÖS/1, spring session",
-          "text": "The first 2026 session. Results stay valid for two years from the exam date."
+          "text": "The spring session. Results stay valid for two years from the exam date."
         },
         {
-          "period": "August 2026",
+          "period": "August",
           "title": "Registration for TR-YÖS/2 closes",
-          "text": "Registration for the October session closed in August 2026."
+          "text": "Registration for the October session closes in August."
         },
         {
-          "period": "11 October 2026",
+          "period": "October",
           "title": "TR-YÖS/2, fall session",
-          "text": "If you are registered, your score stays valid for two years and works for the 2027/28 intake."
+          "text": "If you are registered, your score stays valid for two years and works for the next intake."
         },
         {
-          "period": "2027",
+          "period": "Next cycle",
           "title": "Spring and fall sessions expected",
-          "text": "ÖSYM has not published the 2027 calendar yet; don't plan around exact dates until they're announced."
+          "text": "Check ÖSYM's calendar for the next cycle; don't plan around exact dates until they're announced."
         }
       ]
     }
@@ -160,7 +160,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Altınbaş",
-      "subtitle": "USD в год, списочная цена по прайсу 2025/26",
+      "subtitle": "USD в год, списочная цена по последнему прайсу",
       "items": [
         {
           "label": "Medicine (EN)",
@@ -198,7 +198,7 @@
           "valueLabel": "$5 000"
         }
       ],
-      "note": "Прайс для поступающих в 2026/27 и 2027/28 вуз не публиковал, окончательную сумму фиксирует offer letter. При оплате двумя платежами или за год разом цена ниже списочной."
+      "note": "Ориентир — последний опубликованный прайс, окончательную сумму фиксирует offer letter. При оплате двумя платежами или за год разом цена ниже списочной."
     }
   },
   "academgo.turkey.altinbas.en": {
@@ -206,7 +206,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Altınbaş costs",
-      "subtitle": "USD per year, list price, 2025/26 price list",
+      "subtitle": "USD per year, list price, latest price list",
       "items": [
         {
           "label": "Medicine (English)",
@@ -244,7 +244,7 @@
           "valueLabel": "$5,000"
         }
       ],
-      "note": "Fees for 2027/28 are not published yet; the amount that applies to you is the one in your offer letter. Paying in two instalments or the year at once lowers the list price."
+      "note": "Next year's fees are not published yet; the amount that applies to you is the one in your offer letter. Paying in two instalments or the year at once lowers the list price."
     }
   },
   "academgo.turkey.bahcesehir.ru": {
@@ -252,7 +252,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в BAU",
-      "subtitle": "USD в год, официальный прайс 2026/27",
+      "subtitle": "USD в год, официальный действующий прайс",
       "items": [
         {
           "label": "Медицина",
@@ -290,15 +290,15 @@
           "valueLabel": "$8 500"
         }
       ],
-      "note": "Прайс на 2027/28 вуз публикует ближе к набору, поэтому цифры — ориентир для бюджета."
+      "note": "Прайс на следующий учебный год вуз публикует ближе к набору, поэтому цифры — ориентир для бюджета."
     }
   },
   "academgo.turkey.bahcesehir.en": {
-    "afterHeading": "Bahcesehir University fees for international students (2026/27)",
+    "afterHeading": "Bahcesehir University fees for international students",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at BAU costs",
-      "subtitle": "USD per year, official 2026/27 fees",
+      "subtitle": "USD per year, official current fees",
       "items": [
         {
           "label": "Medicine",
@@ -336,7 +336,7 @@
           "valueLabel": "$8,500"
         }
       ],
-      "note": "The 2027/28 price list is not out yet."
+      "note": "Next year's price list is published closer to the intake."
     }
   },
   "academgo.turkey.burslari.ru": {
@@ -347,9 +347,9 @@
       "subtitle": "Цикл отбора по модели прошлых лет",
       "items": [
         {
-          "period": "Конец декабря 2026",
-          "title": "Объявление конкурса 2027 года",
-          "text": "На 21 сентября 2026 года конкурс не объявлен; официальное объявление ожидается в конце декабря."
+          "period": "Конец декабря",
+          "title": "Объявление конкурса",
+          "text": "Официальное объявление конкурса обычно выходит в конце декабря."
         },
         {
           "period": "10 января – 20 февраля",
@@ -377,7 +377,7 @@
           "text": "В августе стипендиаты подписывают соглашение, в сентябре приезжают на учёбу."
         }
       ],
-      "note": "Даты конкурса 2027 года сверяйте на turkiyeburslari.gov.tr."
+      "note": "Даты конкурса сверяйте на turkiyeburslari.gov.tr."
     }
   },
   "academgo.turkey.burslari.en": {
@@ -388,9 +388,9 @@
       "subtitle": "Selection cycle, based on recent years",
       "items": [
         {
-          "period": "Late December 2026",
-          "title": "2027 call expected",
-          "text": "In recent years YTB published the call in late December; as of September 2026 it has not been announced."
+          "period": "Late December",
+          "title": "Next call expected",
+          "text": "In recent years YTB published the call in late December."
         },
         {
           "period": "10 January – 20 February",
@@ -418,15 +418,15 @@
           "text": "You sign the scholarship agreement, get your student visa and arrive in September."
         }
       ],
-      "note": "Check the 2027 dates on turkiyeburslari.gov.tr before you apply."
+      "note": "Check the current dates on turkiyeburslari.gov.tr before you apply."
     }
   },
   "academgo.turkey.istanbul-university.ru": {
-    "afterHeading": "Стоимость обучения в Istanbul University (2026/27)",
+    "afterHeading": "Стоимость обучения в Istanbul University",
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Istanbul University",
-      "subtitle": "Турецкие лиры за учебный год, цены для иностранцев на 2026/27",
+      "subtitle": "Турецкие лиры за учебный год, действующие цены для иностранцев",
       "items": [
         {
           "label": "Медицина (İstanbul Tıp, TR и EN)",
@@ -470,7 +470,7 @@
           "valueLabel": "95 220 TL"
         }
       ],
-      "note": "Итог в долларах зависит от курса на дату оплаты: по курсу около 47,6 TL за $1 медицина — около $10 000. Цены на 2027/28 ещё не опубликованы."
+      "note": "Итог в долларах зависит от курса на дату оплаты: по курсу около 47,6 TL за $1 медицина — около $10 000. Цены на следующий учебный год публикуют ближе к набору."
     }
   },
   "academgo.turkey.istanbul-university.en": {
@@ -478,7 +478,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Istanbul University costs",
-      "subtitle": "Turkish lira per year, 2026/27 fees for international students",
+      "subtitle": "Turkish lira per year, current fees for international students",
       "items": [
         {
           "label": "Medicine (İstanbul Tıp)",
@@ -522,7 +522,7 @@
           "valueLabel": "95,220 TL"
         }
       ],
-      "note": "What you pay in dollars depends on the exchange rate on the payment date; at about 47.6 TL per USD, Medicine is about $10,000. Fees for 2027/28 are not published yet."
+      "note": "What you pay in dollars depends on the exchange rate on the payment date; at about 47.6 TL per USD, Medicine is about $10,000. Next year's fees are published closer to the intake."
     }
   },
   "academgo.turkey.medicine.ru": {
@@ -530,7 +530,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены на медицину на английском",
-      "subtitle": "USD за учебный год без скидок, прайсы 2026/27",
+      "subtitle": "USD за учебный год без скидок, действующие прайсы",
       "items": [
         {
           "label": "Medipol (100% English)",
@@ -563,7 +563,7 @@
           "valueLabel": "$24 000"
         }
       ],
-      "note": "Koç ($59 000), Altınbaş ($25 000) и Hacettepe ($12 000) — по прайсам 2025/26, поэтому в график не включены. Цены на 2027/28 не опубликовал ни один вуз."
+      "note": "Koç ($59 000), Altınbaş ($25 000) и Hacettepe ($12 000) — по более ранним прайсам, поэтому в график не включены. Цены на следующий учебный год вузы публикуют ближе к набору."
     }
   },
   "academgo.turkey.medicine.en": {
@@ -571,7 +571,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "English-taught medicine fees in Turkey",
-      "subtitle": "USD per year, list prices without discounts, 2026/27",
+      "subtitle": "USD per year, list prices without discounts, current price lists",
       "items": [
         {
           "label": "Istanbul Medipol (100% English)",
@@ -604,15 +604,15 @@
           "valueLabel": "$24,000"
         }
       ],
-      "note": "Koç ($59,000), Altınbaş ($25,000) and Hacettepe ($12,000) are on 2025/26 price lists and are not shown. No university has published 2027/28 fees yet."
+      "note": "Koç ($59,000), Altınbaş ($25,000) and Hacettepe ($12,000) are on older price lists and are not shown. Next year's fees are published closer to the intake."
     }
   },
   "academgo.turkey.medipol.ru": {
-    "afterHeading": "Стоимость обучения в Medipol University на 2026/27",
+    "afterHeading": "Стоимость обучения в Medipol University",
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Medipol",
-      "subtitle": "USD в год, прайс для иностранцев на 2026/27, без скидок",
+      "subtitle": "USD в год, действующий прайс для иностранцев, без скидок",
       "items": [
         {
           "label": "Medicine, 100% английский",
@@ -655,15 +655,15 @@
           "valueLabel": "$5 000"
         }
       ],
-      "note": "При оплате года целиком или до срока из offer letter — скидка 10%. Цены на 2027/28 вуз пока не опубликовал."
+      "note": "При оплате года целиком или до срока из offer letter — скидка 10%. Цены на следующий учебный год вуз публикует ближе к набору."
     }
   },
   "academgo.turkey.medipol.en": {
-    "afterHeading": "Medipol University tuition fees 2026/27",
+    "afterHeading": "Medipol University tuition fees",
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Medipol costs",
-      "subtitle": "USD per year, 2026/27 fees for international students, before discounts",
+      "subtitle": "USD per year, current fees for international students, before discounts",
       "items": [
         {
           "label": "Medicine, 100% English",
@@ -706,7 +706,7 @@
           "valueLabel": "$5,000"
         }
       ],
-      "note": "10% off if you pay the whole year at once or before the offer-letter deadline. Fees for 2027/28 are not published yet."
+      "note": "10% off if you pay the whole year at once or before the offer-letter deadline. Next year's fees are published closer to the intake."
     }
   },
   "academgo.turkey.metu.ru": {
@@ -714,7 +714,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в METU",
-      "subtitle": "USD в год, цены 2026/27 (не изменились с 2025/26)",
+      "subtitle": "USD в год, действующие цены",
       "items": [
         {
           "label": "Faculty of Engineering",
@@ -752,7 +752,7 @@
           "valueLabel": "$750"
         }
       ],
-      "note": "Платится в лирах по курсу Центробанка Турции. Прайс на 2027/28 ещё не опубликован."
+      "note": "Платится в лирах по курсу Центробанка Турции. Прайс на следующий учебный год вуз публикует ближе к набору."
     }
   },
   "academgo.turkey.metu.en": {
@@ -760,7 +760,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at METU costs",
-      "subtitle": "USD per year, 2026/27 fees, unchanged from 2025/26",
+      "subtitle": "USD per year, current fees",
       "items": [
         {
           "label": "Engineering and Architecture",
@@ -793,7 +793,7 @@
           "valueLabel": "$750"
         }
       ],
-      "note": "Paid in Turkish lira at the Central Bank of Turkey's rate. METU has not published 2027/28 fees yet."
+      "note": "Paid in Turkish lira at the Central Bank of Turkey's rate. METU publishes next year's fees closer to the intake."
     }
   },
   "academgo.turkey.visa.ru": {
@@ -829,7 +829,7 @@
           "text": "Студенческий ВНЖ прекращается с даты выпуска; на краткосрочный ВНЖ выпускника — 6 месяцев."
         }
       ],
-      "note": "Данные проверены в сентябре 2026 года."
+      "note": "Актуальные суммы сверяйте перед оплатой."
     }
   },
   "academgo.turkey.visa.en": {
@@ -865,7 +865,7 @@
           "text": "The student permit ends on your graduation date; a graduate short-term permit needs an application within 6 months."
         }
       ],
-      "note": "Official figures for 2026."
+      "note": "Official figures."
     }
   }
 }

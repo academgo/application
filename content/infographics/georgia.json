@@ -4,7 +4,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год MD в вузах Грузии",
-      "subtitle": "USD за учебный год, действующие прайсы с сайтов вузов на сентябрь 2026 года",
+      "subtitle": "USD за учебный год, действующие прайсы с сайтов вузов",
       "items": [
         {
           "label": "TSMU, MD на английском",
@@ -38,7 +38,7 @@
           "highlight": true
         }
       ],
-      "note": "Прайсы на 2027/28 вузы ещё не опубликовали; SEU указывает цены по документу 2025 года."
+      "note": "Прайсы на следующий учебный год вузы ещё не опубликовали; SEU указывает цены по своему последнему опубликованному прайсу."
     }
   },
   "academgo.georgia.hub.en": {
@@ -46,7 +46,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "MD tuition by university in Georgia",
-      "subtitle": "USD per year, fees on university websites in September 2026",
+      "subtitle": "USD per year, current fees on university websites",
       "items": [
         {
           "label": "TSMU",
@@ -74,7 +74,7 @@
           "valueLabel": "$5,900"
         }
       ],
-      "note": "SEU figure is from its 2025 price list. No university had published 2027/28 price lists as of September 2026."
+      "note": "SEU figure is from its latest published price list. No university has published next year's price lists yet."
     }
   },
   "academgo.georgia.cost.ru": {
@@ -82,7 +82,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год MD на английском",
-      "subtitle": "USD за учебный год, действующие цены с сайтов вузов на 09.2026",
+      "subtitle": "USD за учебный год, действующие цены с сайтов вузов",
       "items": [
         {
           "label": "TSMU",
@@ -110,7 +110,7 @@
           "valueLabel": "$5 900"
         }
       ],
-      "note": "У SEU — прайс 2025 года. Прайсы на набор 2027/28 вузы пока не опубликовали."
+      "note": "У SEU — последний опубликованный прайс. Прайсы на ближайший набор вузы пока не опубликовали."
     }
   },
   "academgo.georgia.cost.en": {
@@ -118,7 +118,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "English MD tuition by university",
-      "subtitle": "USD per year, current university prices as of September 2026",
+      "subtitle": "USD per year, current university prices",
       "items": [
         {
           "label": "TSMU",
@@ -146,7 +146,7 @@
           "valueLabel": "$5,900"
         }
       ],
-      "note": "SEU figure is from its 2025 price list. No university has published 2027/28 prices yet."
+      "note": "SEU figure is from its latest published price list. No university has published next year's prices yet."
     }
   },
   "academgo.georgia.medicine.ru": {
@@ -154,7 +154,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены программ MD в Грузии",
-      "subtitle": "USD за учебный год, цены с сайтов вузов на 09.2026",
+      "subtitle": "USD за учебный год, действующие цены с сайтов вузов",
       "items": [
         {
           "label": "American MD, TSMU",
@@ -192,7 +192,7 @@
           "valueLabel": "$5 000"
         }
       ],
-      "note": "У SEU — прайс 2025 года. Прайсы на набор 2027/28 вузы не опубликовали, цены могут измениться."
+      "note": "У SEU — последний опубликованный прайс. Прайсы на ближайший набор вузы не опубликовали, цены могут измениться."
     }
   },
   "academgo.georgia.medicine.en": {
@@ -200,7 +200,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "MD fees in Georgia by program",
-      "subtitle": "USD per year, university websites checked in September 2026",
+      "subtitle": "USD per year, current fees on university websites",
       "items": [
         {
           "label": "American MD, TSMU",
@@ -233,7 +233,7 @@
           "valueLabel": "$5,900"
         }
       ],
-      "note": "SEU figure is from its 2025 admission guidelines. 2027/28 price lists are not yet published."
+      "note": "SEU figure is from its latest admission guidelines. Next year's price lists are not yet published."
     }
   },
   "academgo.georgia.tsmu.ru": {
@@ -241,7 +241,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в TSMU",
-      "subtitle": "USD за учебный год, цены по сайту TSMU на 09.2026",
+      "subtitle": "USD за учебный год, действующие цены по сайту TSMU",
       "items": [
         {
           "label": "American MD Program",
@@ -285,7 +285,7 @@
           "valueLabel": "$2 000"
         }
       ],
-      "note": "Цены на 2027/28 учебный год TSMU не публиковал."
+      "note": "Цены на следующий учебный год TSMU не публиковал."
     }
   },
   "academgo.georgia.tsmu.en": {
@@ -293,7 +293,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at TSMU costs",
-      "subtitle": "USD per year, fees on the TSMU website as of September 2026",
+      "subtitle": "USD per year, current fees on the TSMU website",
       "items": [
         {
           "label": "American MD Program",
@@ -337,7 +337,7 @@
           "valueLabel": "$2,000"
         }
       ],
-      "note": "The fee page does not state the academic year. Fees for 2027/28 are not yet published."
+      "note": "The fee page does not state the academic year. Next year's fees are not yet published."
     }
   },
   "academgo.georgia.tsu.ru": {
@@ -345,7 +345,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "MD на английском: TSU и другие вузы Тбилиси",
-      "subtitle": "USD за учебный год, цены по сайтам вузов на 09.2026",
+      "subtitle": "USD за учебный год, действующие цены по сайтам вузов",
       "items": [
         {
           "label": "TSU",
@@ -369,7 +369,7 @@
           "valueLabel": "$5 900"
         }
       ],
-      "note": "У SEU — прайс 2025 года. TSU определяет плату на каждый учебный год, прайс на 2027/28 ещё не опубликован."
+      "note": "У SEU — последний опубликованный прайс. TSU определяет плату на каждый учебный год, прайс на следующий учебный год ещё не опубликован."
     }
   },
   "academgo.georgia.tsu.en": {
@@ -377,7 +377,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "English MD: TSU and other Tbilisi options",
-      "subtitle": "USD per year, per each university's website in September 2026",
+      "subtitle": "USD per year, per each university's website",
       "items": [
         {
           "label": "Tbilisi State University (TSU)",
@@ -406,7 +406,7 @@
           "valueLabel": "$5,900"
         }
       ],
-      "note": "TSU sets fees each academic year; 2027/28 fees have not been published yet."
+      "note": "TSU sets fees each academic year; next year's fees have not been published yet."
     }
   },
   "academgo.georgia.ug.ru": {
@@ -414,7 +414,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в University of Georgia",
-      "subtitle": "USD за год, прайс на сайте UG на 09.2026",
+      "subtitle": "USD за год, действующий прайс на сайте UG",
       "items": [
         {
           "label": "Medicine (MD)",
@@ -453,7 +453,7 @@
           "valueLabel": "$4 000"
         }
       ],
-      "note": "Учебный год на странице прайса не указан. Прайс на 2027/28 UG отдельно не публиковал."
+      "note": "Учебный год на странице прайса не указан. Прайс на следующий учебный год UG отдельно не публиковал."
     }
   },
   "academgo.georgia.ug.en": {
@@ -461,7 +461,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at UG costs",
-      "subtitle": "USD per year, UG fees as of September 2026",
+      "subtitle": "USD per year, current UG fees",
       "items": [
         {
           "label": "Medicine (MD)",
@@ -500,7 +500,7 @@
           "valueLabel": "$4,000"
         }
       ],
-      "note": "The price list does not name an academic year. UG has not published 2027/28 fees."
+      "note": "The price list does not name an academic year. UG has not published next year's fees."
     }
   },
   "academgo.georgia.seu.ru": {
@@ -508,7 +508,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в SEU",
-      "subtitle": "USD за учебный год, прайс SEU для набора 2025/26",
+      "subtitle": "USD за учебный год, последний опубликованный прайс SEU",
       "items": [
         {
           "label": "Medical Doctor (MD)",
@@ -537,7 +537,7 @@
           "valueLabel": "$3 500"
         }
       ],
-      "note": "Прайс опубликован в июне 2025 года. Прайс на 2027/28 на сентябрь 2026 года вуз не публиковал."
+      "note": "Последний опубликованный прайс вуза. Прайс на следующий учебный год вуз пока не публиковал."
     }
   },
   "academgo.georgia.seu.en": {
@@ -545,7 +545,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at SEU costs",
-      "subtitle": "USD per year, SEU fee list for the 2025/26 intake",
+      "subtitle": "USD per year, latest SEU fee list",
       "items": [
         {
           "label": "Medical Doctor (MD)",
@@ -574,7 +574,7 @@
           "valueLabel": "$3,500"
         }
       ],
-      "note": "Fee list dated June 2025. 2027/28 fees had not been published as of September 2026."
+      "note": "Latest published fee list. Next year's fees have not been published yet."
     }
   },
   "academgo.georgia.alte.ru": {
@@ -582,7 +582,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Alte University",
-      "subtitle": "USD за учебный год, цены по сайту Alte на 09.2026",
+      "subtitle": "USD за учебный год, действующие цены по сайту Alte",
       "items": [
         {
           "label": "Medical Doctor (MD)",
@@ -606,7 +606,7 @@
           "valueLabel": "$3 500"
         }
       ],
-      "note": "Alte не указывает, к какому набору относятся цены; прайс на 2027/28 может измениться."
+      "note": "Alte не указывает, к какому набору относятся цены; к следующему набору они могут измениться."
     }
   },
   "academgo.georgia.alte.en": {
@@ -614,7 +614,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "What a year at Alte costs",
-      "subtitle": "USD per year, fees on the Alte website in September 2026",
+      "subtitle": "USD per year, current fees on the Alte website",
       "items": [
         {
           "label": "Medical Doctor (MD)",
@@ -638,15 +638,15 @@
           "valueLabel": "$3,500"
         }
       ],
-      "note": "Fee pages do not state the academic year. 2027/28 fees have not been published yet."
+      "note": "Fee pages do not state the academic year. Next year's fees have not been published yet."
     }
   },
   "academgo.georgia.admission.ru": {
-    "afterHeading": "Сроки поступления на 2027/28",
+    "afterHeading": "Сроки поступления",
     "block": {
       "_type": "timelineBlock",
       "title": "Когда подавать документы в Грузию",
-      "subtitle": "Ориентиры по срокам: точные даты на 2027/28 вузы публикуют ближе к набору",
+      "subtitle": "Ориентиры по срокам: точные даты вузы публикуют ближе к набору",
       "items": [
         {
           "period": "За 2–3 месяца до семестра",
@@ -678,16 +678,16 @@
     }
   },
   "academgo.georgia.admission.en": {
-    "afterHeading": "Timeline for the 2027/28 intake",
+    "afterHeading": "Timeline for the upcoming intake",
     "block": {
       "_type": "timelineBlock",
       "title": "When to apply to a Georgian university",
-      "subtitle": "Planning backward from the semester start for the 2027/28 intake",
+      "subtitle": "Planning backward from the semester start for the upcoming intake",
       "items": [
         {
           "period": "2–3 months before the semester",
           "title": "Start the procedure",
-          "text": "Begin the NCEQE and ministry steps; universities publish exact 2027/28 dates closer to the intake."
+          "text": "Begin the NCEQE and ministry steps; universities publish exact dates closer to the intake."
         },
         {
           "period": "1 working day to 1 month",
@@ -710,7 +710,7 @@
           "text": "File in Georgia no later than 40 calendar days before your stay ends; a decision comes on day 30, 20 or 10."
         }
       ],
-      "note": "Exact 2027/28 application dates are set by each university and published closer to the intake."
+      "note": "Exact application dates are set by each university and published closer to the intake."
     }
   },
   "academgo.georgia.visa.ru": {
@@ -754,7 +754,7 @@
     "block": {
       "_type": "timelineBlock",
       "title": "D3 visa and residence permit timeline",
-      "subtitle": "For students from India, Pakistan, Nigeria and Egypt, 2027/28 intake",
+      "subtitle": "For students from India, Pakistan, Nigeria and Egypt",
       "items": [
         {
           "period": "2–3 months before the semester",

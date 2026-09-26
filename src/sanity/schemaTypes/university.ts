@@ -55,7 +55,7 @@ const university = {
       name: "tuitionFrom",
       title: "Tuition from",
       type: "string",
-      description: "Диапазон с годом прайса: «от $5 000 в год (2026/27)»"
+      description: "Цена «от» без года: «от $5 000 в год»"
     }),
     defineField({
       name: "programsLanguage",

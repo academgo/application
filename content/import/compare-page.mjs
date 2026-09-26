@@ -57,16 +57,16 @@ const PAGES = {
 
 Магистратура за рубежом открыта выпускникам бакалавриата из стран СНГ, но цена считается по-разному: где-то платят за каждый кредит ECTS, где-то — сразу за всю программу. Вот три направления, которые мы разобрали подробно.
 
-- **Испания.** В госвузах около 82–84 € за кредит ECTS для студентов не из ЕС — примерно 5 000 € за год из 60 кредитов (2026/27). Для официальной магистратуры омологация диплома не нужна: вуз сам проверяет уровень вашего диплома. Подробно — [магистратура в Испании](/ru/ucheba-v-ispanii/magistratura-v-ispanii).
-- **Малайзия.** Программы на английском в государственных и частных вузах, примерно RM 26 500–79 100 за весь курс по прайсам 2025/26–2026. Подробно — [магистратура в Малайзии](/ru/ucheba-v-malayzii/magistratura-v-malayzii).
-- **ОАЭ.** Кампусы британских и австралийских университетов в Дубае: очная программа длится 12–16 месяцев, цены — от 76 491 AED за MSc в Middlesex (2026/27). Диплом выдаёт головной университет. Подробно — [магистратура и MBA в Дубае](/ru/ucheba-v-oae/magistratura-i-mba-v-dubae).
+- **Испания.** В госвузах около 82–84 € за кредит ECTS для студентов не из ЕС — примерно 5 000 € за год из 60 кредитов. Для официальной магистратуры омологация диплома не нужна: вуз сам проверяет уровень вашего диплома. Подробно — [магистратура в Испании](/ru/ucheba-v-ispanii/magistratura-v-ispanii).
+- **Малайзия.** Программы на английском в государственных и частных вузах, примерно RM 26 500–79 100 за весь курс по действующим прайсам. Подробно — [магистратура в Малайзии](/ru/ucheba-v-malayzii/magistratura-v-malayzii).
+- **ОАЭ.** Кампусы британских и австралийских университетов в Дубае: очная программа длится 12–16 месяцев, цены — от 76 491 AED за MSc в Middlesex. Диплом выдаёт головной университет. Подробно — [магистратура и MBA в Дубае](/ru/ucheba-v-oae/magistratura-i-mba-v-dubae).
 
 По остальным странам начните со страницы направления — ссылки на все десять стран ниже.`,
     faqTitle: "Частые вопросы об обучении за границей",
     faq: [
       [
         "В какой стране дешевле всего учиться за границей?",
-        "По прайсам вузов самый низкий порог — в государственных вузах Италии: от €160 в год, но плата зависит от дохода семьи (ISEE). В госвузах Турции обучение стоит от $500 в год (2025/26). Кроме цены обучения считайте расходы на жизнь: они сведены в таблице выше по всем десяти странам."
+        "По прайсам вузов самый низкий порог — в государственных вузах Италии: от €160 в год, но плата зависит от дохода семьи (ISEE). В госвузах Турции обучение стоит от $500 в год. Кроме цены обучения считайте расходы на жизнь: они сведены в таблице выше по всем десяти странам."
       ],
       [
         "Где можно учиться за границей на английском?",
@@ -74,7 +74,7 @@ const PAGES = {
       ],
       [
         "Сколько стоит магистратура за рубежом?",
-        "Зависит от страны и формата. В госвузах Испании — около 82–84 € за кредит ECTS, примерно 5 000 € за год (2026/27). В Малайзии — примерно RM 26 500–79 100 за весь курс. В Дубае — от 76 491 AED за MSc в Middlesex (2026/27)."
+        "Зависит от страны и формата. В госвузах Испании — около 82–84 € за кредит ECTS, примерно 5 000 € за год. В Малайзии — примерно RM 26 500–79 100 за весь курс. В Дубае — от 76 491 AED за MSc в Middlesex."
       ],
       [
         "Признают ли диплом дома?",
@@ -103,16 +103,16 @@ const PAGES = {
 
 A master's abroad is open to bachelor's graduates, but each country prices it differently: some charge per ECTS credit, others for the whole programme. Here are three destinations we cover in detail.
 
-- **Spain.** At public universities, non-EU students paid about 82–84 € per ECTS credit for a standard master's in 2026/27 — roughly 4,900–5,100 € for a one-year, 60-credit programme. More in [masters in Spain](/study-in-spain/masters-in-spain).
+- **Spain.** At public universities, non-EU students pay about 82–84 € per ECTS credit for a standard master's — roughly 4,900–5,100 € for a one-year, 60-credit programme. More in [masters in Spain](/study-in-spain/masters-in-spain).
 - **Malaysia.** English-taught programmes at public and private universities, from about RM 26,500 to RM 79,100 for the whole programme. More in [masters in Malaysia](/study-in-malaysia/masters-in-malaysia).
-- **UAE.** UK and Australian branch campuses in Dubai: most master's degrees cost roughly 76,000–175,000 AED, and an MBA about 85,000–118,000 AED in tuition at 2026/27 prices. The degree is awarded by the parent university. More in [masters and MBA in Dubai](/study-in-uae/masters-and-mba-in-dubai).
+- **UAE.** UK and Australian branch campuses in Dubai: most master's degrees cost roughly 76,000–175,000 AED, and an MBA about 85,000–118,000 AED in tuition at current prices. The degree is awarded by the parent university. More in [masters and MBA in Dubai](/study-in-uae/masters-and-mba-in-dubai).
 
 For the other countries, start with the destination page — links to all ten are below.`,
     faqTitle: "Studying abroad: frequently asked questions",
     faq: [
       [
         "What is the cheapest country to study abroad?",
-        "By university price lists, the lowest starting point is at Italian public universities: from €160 a year, but the fee depends on family income (ISEE). Public universities in Türkiye start from $500 a year (2025/26). Add living costs as well — the table above compares them for all ten countries."
+        "By university price lists, the lowest starting point is at Italian public universities: from €160 a year, but the fee depends on family income (ISEE). Public universities in Türkiye start from $500 a year. Add living costs as well — the table above compares them for all ten countries."
       ],
       [
         "Where can I study abroad in English?",
@@ -120,7 +120,7 @@ For the other countries, start with the destination page — links to all ten ar
       ],
       [
         "How much does a master's abroad cost?",
-        "It depends on the country and the format. At Spanish public universities, about 82–84 € per ECTS credit, roughly 4,900–5,100 € a year (2026/27). In Malaysia, about RM 26,500–79,100 for the whole programme. In Dubai, most master's degrees cost roughly 76,000–175,000 AED."
+        "It depends on the country and the format. At Spanish public universities, about 82–84 € per ECTS credit, roughly 4,900–5,100 € a year. In Malaysia, about RM 26,500–79,100 for the whole programme. In Dubai, most master's degrees cost roughly 76,000–175,000 AED."
       ],
       [
         "Will my degree be recognised back home?",

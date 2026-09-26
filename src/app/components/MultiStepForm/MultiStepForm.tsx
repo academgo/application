@@ -382,7 +382,9 @@ const MultiStepForm = ({
                             type="radio"
                             name="question3"
                             value={
-                              lang === "en" ? "October 2026" : "Октябрь 2026"
+                              lang === "en"
+                                ? "Autumn intake"
+                                : "Ближайший набор (осень)"
                             }
                           />
                           <div className={styles.pseudoRadioData}>
@@ -391,7 +393,9 @@ const MultiStepForm = ({
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "October 2026" : "Октябрь 2026"}
+                              {lang === "en"
+                                ? "Autumn intake"
+                                : "Ближайший набор (осень)"}
                             </p>
                           </div>
                         </label>
@@ -403,7 +407,9 @@ const MultiStepForm = ({
                           <Field
                             type="radio"
                             name="question3"
-                            value={lang === "en" ? "March 2027" : "Март 2027"}
+                            value={
+                              lang === "en" ? "Spring intake" : "Весенний набор"
+                            }
                           />
                           <div className={styles.pseudoRadioData}>
                             <div
@@ -411,7 +417,9 @@ const MultiStepForm = ({
                               style={{ backgroundColor: "#fff" }}
                             ></div>
                             <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "March 2027" : "Март 2027"}
+                              {lang === "en"
+                                ? "Spring intake"
+                                : "Весенний набор"}
                             </p>
                           </div>
                         </label>

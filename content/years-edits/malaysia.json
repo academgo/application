@@ -1,0 +1,2072 @@
+[
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"a50d60df9423\"].content[_key==\"ca3ee5951c7c\"].children[_key==\"cabfdd25339d\"].text",
+  "text": "Учеба в Малайзии подходит тем, кто хочет учиться на английском, жить в большом азиатском городе и не готов платить британские или австралийские цены. Бакалавриат в частных вузах стоит примерно RM 35 000–45 000 в год, в государственных — примерно RM 16 000–33 000 в год (прайсы 2026, без налога). Часть частных вузов выдаёт второй диплом британского партнёра, а у большинства из них 2–4 набора в год.",
+  "new": "Учеба в Малайзии подходит тем, кто хочет учиться на английском, жить в большом азиатском городе и не готов платить британские или австралийские цены. Бакалавриат в частных вузах стоит примерно RM 35 000–45 000 в год, в государственных — примерно RM 16 000–33 000 в год (по действующим прайсам, без налога). Часть частных вузов выдаёт второй диплом британского партнёра, а у большинства из них 2–4 набора в год."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"a50d60df9423\"].content[_key==\"cb999a4bceae\"].children[_key==\"25d156ceee74\"].text",
+  "text": "Ниже — цены, типы вузов, шаги поступления и визовый маршрут через EMGS для набора 2027 года. Цифры сверены с официальными прайсами вузов и сайтами ведомств Малайзии в сентябре 2026 года. Прайсы на 2027 год большинство вузов ещё не опубликовали, поэтому возможна индексация.",
+  "new": "Ниже — цены, типы вузов, шаги поступления и визовый маршрут через EMGS для ближайшего набора. Цифры сверены с официальными прайсами вузов и сайтами ведомств Малайзии. Прайсы на следующий год большинство вузов ещё не опубликовали, поэтому возможна индексация."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"83b6059c81d1\"].content[_key==\"1a12411170b6\"].children[_key==\"00d7bc155b9a\"].text",
+  "text": "Сколько стоит учеба в Малайзии в 2026/27",
+  "new": "Сколько стоит учеба в Малайзии"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"83b6059c81d1\"].content[_key==\"01d8a46606e0\"].children[_key==\"9594b5b6673c\"].text",
+  "text": "Все суммы ниже — для иностранных студентов, по прайсам 2026 года и без 6% налога SST. Цены для граждан Малайзии заметно ниже, и именно их часто цитируют в интернете. Сравнивайте только строки «International».",
+  "new": "Все суммы ниже — для иностранных студентов, по действующим прайсам и без 6% налога SST. Цены для граждан Малайзии заметно ниже, и именно их часто цитируют в интернете. Сравнивайте только строки «International»."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"b4ed57912580\"].columns[1]",
+  "text": "Ориентир для иностранцев (2026, без SST)",
+  "new": "Ориентир для иностранцев (без SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"913ecb7da99a\"].content[_key==\"af435764bbef\"].children[_key==\"c3e1046db537\"].text",
+  "text": "Вузы пишут суммы и в долларах, но платить нужно в ринггитах (MYR). Доллары в прайсах пересчитаны по курсу 3,80, а рыночный курс в сентябре 2026 года — около 4,05–4,10 MYR за доллар. Если вы платите из долларов, реальная сумма будет примерно на 7% выше. Подробный расчёт по вузам и программам — на странице ",
+  "new": "Вузы пишут суммы и в долларах, но платить нужно в ринггитах (MYR). Доллары в прайсах пересчитаны по курсу 3,80, а рыночный курс — около 4,05–4,10 MYR за доллар. Если вы платите из долларов, реальная сумма будет примерно на 7% выше. Подробный расчёт по вузам и программам — на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"df4505274f96\"].rows[_key==\"1881b17cb933\"].cells[_key==\"9a40efa7991c\"].content[_key==\"d2d8dfb94641\"].children[_key==\"4f0ff1001da9\"].text",
+  "text": "Бакалавриат в год (2026, без SST)",
+  "new": "Бакалавриат в год (без SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"43151643c9cf\"].content[_key==\"8e5232cf356b\"].children[_key==\"7b7d3265ae52\"].text",
+  "text": "Обучение в Малайзии для иностранцев стоит дороже, чем для местных, а в интернете часто встречаются цены для граждан Малайзии. Пример: Computer Science в Sunway University стоит RM 39 800 в год для малайзийцев и USD 9 779 в год для иностранцев (2026). С 1 июля 2025 года частные вузы добавляют иностранцам 6% SST, а прайсы обычно указаны без него. На консультации мы считаем полный бюджет: обучение, сборы иностранца, EMGS, страховку и налог.",
+  "new": "Обучение в Малайзии для иностранцев стоит дороже, чем для местных, а в интернете часто встречаются цены для граждан Малайзии. Пример: Computer Science в Sunway University стоит RM 39 800 в год для малайзийцев и USD 9 779 в год для иностранцев. С 1 июля 2025 года частные вузы добавляют иностранцам 6% SST, а прайсы обычно указаны без него. На консультации мы считаем полный бюджет: обучение, сборы иностранца, EMGS, страховку и налог."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"0fa331ca317c\"].content[_key==\"d7ed6788f84e\"].children[_key==\"a9efd81b0687\"].text",
+  "text": "Студенту в Куала-Лумпуре нужно примерно RM 2 000–3 500 в месяц. Меньше — если живёте в общежитии или share-house, больше — если снимаете отдельную студию и часто ездите на Grab. По данным Numbeo на сентябрь 2026 года, одному человеку без аренды нужно около RM 2 450 в месяц, проездной стоит RM 50, обед в недорогом кафе — около RM 20.",
+  "new": "Студенту в Куала-Лумпуре нужно примерно RM 2 000–3 500 в месяц. Меньше — если живёте в общежитии или share-house, больше — если снимаете отдельную студию и часто ездите на Grab. По данным Numbeo, одному человеку без аренды нужно около RM 2 450 в месяц, проездной стоит RM 50, обед в недорогом кафе — около RM 20."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"12dd05116407\"].columns[2]",
+  "text": "Цена в месяц (2026)",
+  "new": "Цена в месяц"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"12dd05116407\"].rows[_key==\"a188759fe635\"].cells[_key==\"c09775c95874\"].content[_key==\"317bc3c99132\"].children[_key==\"eedd1551e42d\"].text",
+  "text": "около RM 700 (брошюра 2025)",
+  "new": "около RM 700 (по брошюре вуза)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"ba3a82d99dc5\"].content[_key==\"46cd1968a737\"].children[_key==\"0b3d9d07e0d3\"].text",
+  "text": " — частный вуз в Subang Jaya под Куала-Лумпуром, #272 в QS World University Rankings 2027. Сильные направления — hospitality, бизнес и Computer Science с dual award UWE Bristol; обучение около RM 41 000–44 000 в год (прайс 2026, без SST).",
+  "new": " — частный вуз в Subang Jaya под Куала-Лумпуром, #272 в QS World University Rankings. Сильные направления — hospitality, бизнес и Computer Science с dual award UWE Bristol; обучение около RM 41 000–44 000 в год (действующий прайс, без SST)."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"ba3a82d99dc5\"].content[_key==\"0cf0dc40656c\"].children[_key==\"7a9f0b6638eb\"].text",
+  "text": " — частный технологический вуз в Bukit Jalil (Куала-Лумпур), #=528 в QS 2027. IT, Cyber Security, AI и бизнес, двойной диплом с De Montfort University; бакалавриат около RM 34 900–37 500 в год (2026, без SST).",
+  "new": " — частный технологический вуз в Bukit Jalil (Куала-Лумпур), #=528 в рейтинге QS. IT, Cyber Security, AI и бизнес, двойной диплом с De Montfort University; бакалавриат около RM 34 900–37 500 в год (без SST)."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"ba3a82d99dc5\"].content[_key==\"fc5bf2f870ad\"].children[_key==\"04450dd68a72\"].text",
+  "text": " — частный вуз с основным кампусом в Cheras (Куала-Лумпур), #282 в QS 2027. Медицина, фармация, музыка, hospitality и переводы в британские вузы по схемам 2+1 и 2+2.",
+  "new": " — частный вуз с основным кампусом в Cheras (Куала-Лумпур), #282 в рейтинге QS. Медицина, фармация, музыка, hospitality и переводы в британские вузы по схемам 2+1 и 2+2."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"ba3a82d99dc5\"].content[_key==\"f8e69945444d\"].children[_key==\"efa3a4b6e2ea\"].text",
+  "text": " — старейший госвуз страны, #58 в QS 2026. Большинство программ бакалавриата стоит RM 60 900–132 100 за весь курс (прайс 2025/26); для выпускников 11 классов нужен промежуточный шаг перед бакалавриатом.",
+  "new": " — старейший госвуз страны, #58 в рейтинге QS. Большинство программ бакалавриата стоит RM 60 900–132 100 за весь курс (действующий прайс); для выпускников 11 классов нужен промежуточный шаг перед бакалавриатом."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"ba3a82d99dc5\"].content[_key==\"a2ae32f06f2c\"].children[_key==\"848e6bb14d2c\"].text",
+  "text": " — инженерный госвуз с главным кампусом в Johor Bahru, #153 в QS 2026. С 2026/27 подготовительный Bridging Programme отменён: требования к аттестату и английскому нужно выполнить сразу.",
+  "new": " — инженерный госвуз с главным кампусом в Johor Bahru, #153 в рейтинге QS. Подготовительный Bridging Programme отменён: требования к аттестату и английскому нужно выполнить сразу."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"53fa7036997f\"].items[_key==\"482343564909\"].answer[_key==\"24eb01409dfb\"].children[_key==\"da2bd2f7662a\"].text",
+  "text": "Бакалавриат для иностранцев в частных вузах стоит примерно RM 35 000–45 000 в год, в госвузах — примерно RM 16 000–33 000, в филиалах британских и австралийских вузов — примерно RM 48 000–65 000 (прайсы 2026, без 6% SST). Сверху добавьте сборы EMGS и иммиграции — около RM 2 700–3 300 за первый год — и жизнь в Куала-Лумпуре, примерно RM 2 000–3 500 в месяц.",
+  "new": "Бакалавриат для иностранцев в частных вузах стоит примерно RM 35 000–45 000 в год, в госвузах — примерно RM 16 000–33 000, в филиалах британских и австралийских вузов — примерно RM 48 000–65 000 (действующие прайсы, без 6% SST). Сверху добавьте сборы EMGS и иммиграции — около RM 2 700–3 300 за первый год — и жизнь в Куала-Лумпуре, примерно RM 2 000–3 500 в месяц."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"53fa7036997f\"].items[_key==\"fa8e13dfef40\"].answer[_key==\"8e1da47918bb\"].children[_key==\"ed04a1671a31\"].text",
+  "text": "Для магистратуры и PhD есть государственная стипендия Malaysia International Scholarship: она покрывает обучение и даёт RM 1 500 в месяц. Её могут получить граждане России, Казахстана, Узбекистана, Кыргызстана и Азербайджана, а Беларуси в списке нет; даты приёма на 2027 год пока не опубликованы. Для бакалавриата у частных вузов бывают скидки, но чаще за A-Level, IGCSE или IB, а не за аттестат СНГ.",
+  "new": "Для магистратуры и PhD есть государственная стипендия Malaysia International Scholarship: она покрывает обучение и даёт RM 1 500 в месяц. Её могут получить граждане России, Казахстана, Узбекистана, Кыргызстана и Азербайджана, а Беларуси в списке нет; даты приёма на следующий набор пока не опубликованы. Для бакалавриата у частных вузов бывают скидки, но чаще за A-Level, IGCSE или IB, а не за аттестат СНГ."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "contentBlocks[_key==\"26b8bd2087f8\"].content[_key==\"d930320cdd0e\"].children[_key==\"e33f32ae53bb\"].text",
+  "text": "Не уверены, подходит ли вам Малайзия? На бесплатной консультации оценим ваши документы, подберём 3–4 программы под ваш бюджет и распишем визовый маршрут через EMGS по срокам — с учётом набора 2027 года. Напишите нам через форму на сайте, в WhatsApp или Telegram — все каналы на странице ",
+  "new": "Не уверены, подходит ли вам Малайзия? На бесплатной консультации оценим ваши документы, подберём 3–4 программы под ваш бюджет и распишем визовый маршрут через EMGS по срокам — с учётом ближайшего набора. Напишите нам через форму на сайте, в WhatsApp или Telegram — все каналы на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "coverBlock.coverText",
+  "text": "Бакалавриат и магистратура на английском, цены 2026/27, поступление после 11 классов и Student Pass через EMGS — с рисками, о которых стоит знать заранее.",
+  "new": "Бакалавриат и магистратура на английском, действующие цены, поступление после 11 классов и Student Pass через EMGS — с рисками, о которых стоит знать заранее."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "seo.metaDescription",
+  "text": "Сколько стоит обучение в Малайзии в 2026/27, как поступить после 11 классов и получить Student Pass через EMGS. Честно о рисках. Консультация бесплатно.",
+  "new": "Сколько стоит обучение в Малайзии, как поступить после 11 классов и получить Student Pass через EMGS. Честно о рисках. Консультация бесплатно."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.ru",
+  "path": "seo.metaTitle",
+  "text": "Учеба в Малайзии 2027: цены, вузы, виза EMGS",
+  "new": "Учеба в Малайзии: цены, вузы, виза EMGS"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"d018a8a241ec\"].rightContent.blockContent.content[_key==\"45c9600563d7\"].children[_key==\"28b04f1f2f29\"].text",
+  "text": "Fees below are in ringgit (RM) from 2026 price lists unless another year is shown. Prices for 2027 are not published yet and may rise. Universities quote USD at an indicative RM 3.80 per dollar, while the market rate was about RM 4.08 on 18 September 2026, so plan in ringgit.",
+  "new": "Fees below are in ringgit (RM) from current price lists. Next year's prices are not published yet and may rise. Universities quote USD at an indicative RM 3.80 per dollar, while the market rate is about RM 4.08, so plan in ringgit."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"c068f5dda2bf\"].columns[1]",
+  "text": "Approximate tuition (international, 2026)",
+  "new": "Approximate tuition (international)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"3ff6e19f371c\"].content[_key==\"ea5ae2408d3c\"].children[_key==\"7bb941047e4e\"].text",
+  "text": "Computer Science bachelor's: 2026 fees compared",
+  "new": "Computer Science bachelor's: current fees compared"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"6127671467d1\"].cells[_key==\"3b31f37652db\"].content[_key==\"0adc22d25dbe\"].children[_key==\"db78b16c2d45\"].text",
+  "text": "Fee Guide 2026",
+  "new": "Fee Guide"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"34dd1dd7e8e9\"].cells[_key==\"1fbbd323869c\"].content[_key==\"a4706e952b9d\"].children[_key==\"5a6093e4750f\"].text",
+  "text": "September 2026 intake",
+  "new": "Current intake"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"1f42f66f1e28\"].cells[_key==\"288b6451825d\"].content[_key==\"cb1db9ba897b\"].children[_key==\"d7690b869f29\"].text",
+  "text": "Program page, September 2026",
+  "new": "Program page"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"9e5eaf21ec1a\"].cells[_key==\"7a24ab9d8d59\"].content[_key==\"8c5bb149fb87\"].children[_key==\"7b01b57f7cbe\"].text",
+  "text": "2026",
+  "new": "Current list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"bc8a3727afe3\"].cells[_key==\"1b361e4c0c5d\"].content[_key==\"f843d48d1d4e\"].children[_key==\"90dea9e9a373\"].text",
+  "text": "2026",
+  "new": "Current list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"d93b3e6f78ac\"].cells[_key==\"866b7c6f8ad1\"].content[_key==\"68ed5daee1e8\"].children[_key==\"d2a86fc35057\"].text",
+  "text": "2026/27",
+  "new": "Current list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"85e867139df1\"].rows[_key==\"cadd28919933\"].cells[_key==\"d505a1056ae3\"].content[_key==\"07a7ca0ad120\"].children[_key==\"868d5c898776\"].text",
+  "text": "2025/26 intake onwards",
+  "new": "Current list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"df00a90b5cb9\"].content[_key==\"2c42a2ad364e\"].children[_key==\"6dcb244c515f\"].text",
+  "text": "Smaller items add up. APU's dual degree with De Montfort University (UK) costs GBP 450 extra per level. Intensive English costs RM 2,750 per 4-week level at APU. Foundation costs RM 28,400 at APU and RM 47,529 all-in with SST at Taylor's College (August 2026). Compare more options on our ",
+  "new": "Smaller items add up. APU's dual degree with De Montfort University (UK) costs GBP 450 extra per level. Intensive English costs RM 2,750 per 4-week level at APU. Foundation costs RM 28,400 at APU and RM 47,529 all-in with SST at Taylor's College. Compare more options on our "
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"e3f2a24bcf8d\"].rows[_key==\"139035ffe7f0\"].cells[_key==\"93b53fda59ea\"].content[_key==\"03b8b621d1d5\"].children[_key==\"8f5cd2fc8b4c\"].text",
+  "text": "2026",
+  "new": "Current list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"e3f2a24bcf8d\"].rows[_key==\"08bef4666323\"].cells[_key==\"c0bb994ebdfd\"].content[_key==\"a38e40b921dc\"].children[_key==\"92b6b532449d\"].text",
+  "text": "September 2026",
+  "new": "Current intake"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"e3f2a24bcf8d\"].rows[_key==\"14d942da720d\"].cells[_key==\"0137c39a36ad\"].content[_key==\"bd415d4c551f\"].children[_key==\"44c37f6062ac\"].text",
+  "text": "2026",
+  "new": "Current list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"e3f2a24bcf8d\"].rows[_key==\"8ea1c51cbaae\"].cells[_key==\"4c43e063c5dd\"].content[_key==\"0be83fffb2b1\"].children[_key==\"9e5d12cb21e2\"].text",
+  "text": "Booklet updated December 2025",
+  "new": "UM booklet"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"86961846a1aa\"].content[_key==\"798ca7876bef\"].children[_key==\"8517257f579b\"].text",
+  "text": "A student in Kuala Lumpur needs roughly RM 2,000–3,500 a month: less with a shared hostel room, more with a private studio and frequent Grab rides. Numbeo (September 2026) puts a cheap lunch at about RM 20, a transit pass at RM 50 and a one-bedroom flat outside the center at about RM 1,500.",
+  "new": "A student in Kuala Lumpur needs roughly RM 2,000–3,500 a month: less with a shared hostel room, more with a private studio and frequent Grab rides. Numbeo puts a cheap lunch at about RM 20, a transit pass at RM 50 and a one-bedroom flat outside the center at about RM 1,500."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"e672859b581f\"].content[_key==\"36c336ea49a9\"].children[_key==\"a941304b97ac\"].text",
+  "text": "This example uses APU's 2026 Fee Guide for an IT or Business bachelor's. Your university and housing choice will move the total up or down.",
+  "new": "This example uses APU's current Fee Guide for an IT or Business bachelor's. Your university and housing choice will move the total up or down."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"99d27d0e2522\"].subtitle",
+  "text": "RM for year one, IT or Business bachelor's, APU Fee Guide 2026",
+  "new": "RM for year one, IT or Business bachelor's, current APU Fee Guide"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"ebd329ffef18\"].content[_key==\"7b017ac7789f\"].children[_key==\"6972c9f35f13\"].text",
+  "text": " 20 public universities, including UM and UTM, and several private ones. The 2026/27 round is closed; 2027 dates are not announced.",
+  "new": " 20 public universities, including UM and UTM, and several private ones. The current round is closed; dates for the next one are not announced."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"2d0fc655de71\"].rows[_key==\"6aaf1996b781\"].cells[_key==\"47eb1d687edf\"].content[_key==\"6c672ef193a4\"].children[_key==\"0afca3c18ce1\"].text",
+  "text": "Bachelor's: one PTE x UM award of GBP 3,000 in 2026, by essay competition. PhD: UM Bright Scholarship",
+  "new": "Bachelor's: one PTE x UM award of GBP 3,000, by essay competition. PhD: UM Bright Scholarship"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "contentBlocks[_key==\"80f0bd8fda56\"].items[_key==\"eb9180a2d421\"].answer[_key==\"f9480804449f\"].children[_key==\"979a17d0dfa5\"].text",
+  "text": "At a private Malaysian university, tuition is roughly RM 35,000–45,000 a year plus 6% SST (2026 prices). Branch campuses of UK and Australian universities cost roughly RM 48,000–65,000 a year. Public universities charge about RM 16,000–33,000 a year.",
+  "new": "At a private Malaysian university, tuition is roughly RM 35,000–45,000 a year plus 6% SST (current prices). Branch campuses of UK and Australian universities cost roughly RM 48,000–65,000 a year. Public universities charge about RM 16,000–33,000 a year."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "coverBlock.coverText",
+  "text": "Real 2026 fee schedules, the mandatory visa and insurance costs, a first-year sample budget, and the scholarships international students can actually get.",
+  "new": "Real fee schedules, the mandatory visa and insurance costs, a first-year sample budget, and the scholarships international students can actually get."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "seo.metaDescription",
+  "text": "Tuition by university, 6% SST, EMGS visa fees, Kuala Lumpur living costs and scholarships in Malaysia for international students. Plan your 2027 budget.",
+  "new": "Tuition by university, 6% SST, EMGS visa fees, Kuala Lumpur living costs and scholarships in Malaysia for international students. Plan your budget."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "seo.metaTitle",
+  "text": "Cost of Studying in Malaysia 2027: Fees & Scholarships",
+  "new": "Cost of Studying in Malaysia: Fees & Scholarships"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.en",
+  "path": "videoPlan[_key==\"88624924c80a\"].brief",
+  "text": "Screen recording of a real 2026 fee schedule (APU or Taylor's). Show where tuition ends and international fees begin: registration fee, annual fee, EMGS package, deposit, insurance. Point out that SST is usually not included and that the USD column uses a RM 3.80 rate. End with: \"Always ask for the all-in first-year figure in ringgit.\"",
+  "new": "Screen recording of a real current fee schedule (APU or Taylor's). Show where tuition ends and international fees begin: registration fee, annual fee, EMGS package, deposit, insurance. Point out that SST is usually not included and that the USD column uses a RM 3.80 rate. End with: \"Always ask for the all-in first-year figure in ringgit.\""
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"7d11ae5489bc\"].content[_key==\"1cd8e5a15f13\"].children[_key==\"a4161baa16d4\"].text",
+  "text": "Вуз входит в QS World University Rankings 2027 на 282-м месте. В нём больше 150 программ: от Foundation и бакалавриата до магистратуры и PhD. Сильные направления по QS by Subject — музыка, исполнительские искусства, дизайн и гостиничный бизнес. Есть медицина (Doctor of Medicine), фармация, инженерия и Computer Science.",
+  "new": "Вуз входит в QS World University Rankings на 282-м месте. В нём больше 150 программ: от Foundation и бакалавриата до магистратуры и PhD. Сильные направления по QS by Subject — музыка, исполнительские искусства, дизайн и гостиничный бизнес. Есть медицина (Doctor of Medicine), фармация, инженерия и Computer Science."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"54d0546e9b0a\"].rows[_key==\"2f4b3fb16ffe\"].cells[_key==\"4d47785f46a3\"].content[_key==\"5c4630c6a91f\"].children[_key==\"6c65ca2a0a8e\"].text",
+  "text": "QS World University Rankings 2027",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"54d0546e9b0a\"].rows[_key==\"ec4ab3e08e0b\"].cells[_key==\"09fef05208da\"].content[_key==\"3072b4dbe73d\"].children[_key==\"f897f9ebf26f\"].text",
+  "text": "QS Asia 2026",
+  "new": "QS Asia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"d274f4f80812\"].content[_key==\"8d66fa328794\"].children[_key==\"7650c29ee6bc\"].text",
+  "text": "Суммы взяты со страниц программ на сайте вуза (проверено в сентябре 2026 года). Цены на набор 2027 года UCSI отдельно не публиковал — уточняем их под вашу программу.",
+  "new": "Суммы взяты со страниц программ на сайте вуза. Цены на следующий набор UCSI отдельно не публиковал — уточняем их под вашу программу."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"aca71e3995e8\"].note",
+  "text": "Это ориентировочная оценка вуза; включён ли 6% SST, UCSI не указывает. Цены на набор 2027 года не опубликованы.",
+  "new": "Это ориентировочная оценка вуза; включён ли 6% SST, UCSI не указывает. Цены на следующий набор не опубликованы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"aca71e3995e8\"].subtitle",
+  "text": "RM за весь курс, Approximate Total Fees с сайта вуза, сентябрь 2026",
+  "new": "RM за весь курс, Approximate Total Fees с сайта вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"2d29032c8033\"].items[_key==\"5b03e622be2e\"].content.content[_key==\"29aca58675c3\"].children[_key==\"d02eefacbf37\"].text",
+  "text": "Выбор набора — январь, май или сентябрь; медицина стартует только в сентябре. Календарь на 2027 год вуз ещё не опубликовал, обычно даты появляются ближе к набору.",
+  "new": "Выбор набора — январь, май или сентябрь; медицина стартует только в сентябре. Календарь на следующий год вуз ещё не опубликовал, обычно даты появляются ближе к набору."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"1bb9078d2630\"].content[_key==\"99c042ba7882\"].children[_key==\"928fd0fd451b\"].text",
+  "text": "В QS World University Rankings 2027 UCSI занимает 282-е место и пятый год подряд держится в топ-300. В QS Asia 2026 вуз входит в топ-30 Азии и занимает 8-е место в Юго-Восточной Азии.",
+  "new": "В QS World University Rankings UCSI занимает 282-е место и пятый год подряд держится в топ-300. В QS Asia вуз входит в топ-30 Азии и занимает 8-е место в Юго-Восточной Азии."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"1bb9078d2630\"].content[_key==\"ae633bc9cf71\"].children[_key==\"e19e316af439\"].text",
+  "text": "В QS by Subject 2026 четыре направления UCSI вошли в топ-50 мира: Music и Performing Arts (по 24-му месту), Art & Design (29-е), Hospitality & Leisure (47-е). Marketing — в топ-100, Education — в топ-150.",
+  "new": "В QS by Subject четыре направления UCSI вошли в топ-50 мира: Music и Performing Arts (по 24-му месту), Art & Design (29-е), Hospitality & Leisure (47-е). Marketing — в топ-100, Education — в топ-150."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"144faf36d631\"].content[_key==\"67e5349f3ccd\"].children[_key==\"01185663b1a1\"].text",
+  "text": "На кампусе в Куала-Лумпуре есть общежитие — Residential Halls, блоки D, E и L. Комнаты в основном двухместные, в блоке E есть немного одноместных с собственной ванной. По брошюре вуза (август 2025 года) место стоит около RM 700 в месяц с человека, вода и электричество включены, оплата — за семестр.",
+  "new": "На кампусе в Куала-Лумпуре есть общежитие — Residential Halls, блоки D, E и L. Комнаты в основном двухместные, в блоке E есть немного одноместных с собственной ванной. По брошюре вуза место стоит около RM 700 в месяц с человека, вода и электричество включены, оплата — за семестр."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"63615c47a946\"].items[_key==\"16e7f5eb0066\"].answer[_key==\"5024c20ae224\"].children[_key==\"c1b6adbe2cbf\"].text",
+  "text": "Календарь на 2027 год UCSI пока не опубликовал. Обычно наборы проходят в январе, мае и сентябре, медицина — только в сентябре. Закладывайте на визу 4–8 недель, поэтому начинать подготовку лучше за 4–6 месяцев до выбранного набора.",
+  "new": "Календарь на следующий год UCSI пока не опубликовал. Обычно наборы проходят в январе, мае и сентябре, медицина — только в сентябре. Закладывайте на визу 4–8 недель, поэтому начинать подготовку лучше за 4–6 месяцев до выбранного набора."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "contentBlocks[_key==\"63615c47a946\"].items[_key==\"16e7f5eb0066\"].question",
+  "text": "Когда подавать документы на 2027 год?",
+  "new": "Когда подавать документы?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "seo.metaDescription",
+  "text": "UCSI University в Куала-Лумпуре: QS 2027 — #282, стоимость курса для иностранцев, IELTS от 5.0, Foundation после школы СНГ и виза. Оценим ваши шансы.",
+  "new": "UCSI University в Куала-Лумпуре: QS — #282, стоимость курса для иностранцев, IELTS от 5.0, Foundation после школы СНГ и виза. Оценим ваши шансы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.ru",
+  "path": "seo.metaTitle",
+  "text": "UCSI University в Малайзии: цены и поступление 2027",
+  "new": "UCSI University в Малайзии: цены и поступление"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"d2b8b5208124\"].content[_key==\"e8ecdbf1b339\"].children[_key==\"11dd832e3cbe\"].text",
+  "text": "Universiti Teknologi Malaysia (UTM) — государственный исследовательский университет инженерно-технического профиля. Статус университета он получил в 1975 году, главный кампус находится в Johor Bahru (Скудаи) на юге Малайзии. На конец 2025 года в UTM учились 32 004 студента, из них 4 852 — иностранцы.",
+  "new": "Universiti Teknologi Malaysia (UTM) — государственный исследовательский университет инженерно-технического профиля. Статус университета он получил в 1975 году, главный кампус находится в Johor Bahru (Скудаи) на юге Малайзии. В UTM учатся 32 004 студента, из них 4 852 — иностранцы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"74adefc1de48\"].rows[_key==\"5df35f98daa7\"].cells[_key==\"80a9742377b0\"].content[_key==\"4af25576e1ec\"].children[_key==\"b0f309143a3e\"].text",
+  "text": "32 004, из них иностранцев — 4 852 (на 31.12.2025)",
+  "new": "32 004, из них иностранцев — 4 852"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"74adefc1de48\"].rows[_key==\"8190aedeeac2\"].cells[_key==\"0b75fbf18d92\"].content[_key==\"f545af185565\"].children[_key==\"7825aff4bf59\"].text",
+  "text": "QS World University Rankings 2026",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"74adefc1de48\"].rows[_key==\"fa765081aa9a\"].cells[_key==\"335b72f35e6f\"].content[_key==\"30b051fa4343\"].children[_key==\"f30593edda73\"].text",
+  "text": "THE World University Rankings 2026",
+  "new": "THE World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"03d8b35e0aea\"].content[_key==\"c1c8c9aa5309\"].children[_key==\"135b62900860\"].text",
+  "text": "UTM публикует цену сразу за всю программу, а не за год. Ниже — прайс для иностранных бакалавров, который мы проверили на сайте вуза в сентябре 2026 года (сессия 2026/27). Проживание в эти суммы не входит.",
+  "new": "UTM публикует цену сразу за всю программу, а не за год. Ниже — прайс для иностранных бакалавров, который мы проверили на сайте вуза. Проживание в эти суммы не входит."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"89fa423eff3d\"].columns[2]",
+  "text": "Стоимость за программу (2026/27)",
+  "new": "Стоимость за программу"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"bbc4e85695ae\"].subtitle",
+  "text": "RM за всю программу, сессия 2026/27, сайт вуза в сентябре 2026",
+  "new": "RM за всю программу, действующий прайс с сайта вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"943005dd228a\"].content[_key==\"9af91f28ddaa\"].children[_key==\"1c4b19d35709\"].text",
+  "text": "Основа UTM — инженерия и технологии. Для иностранцев на 2026/27 открыты:",
+  "new": "Основа UTM — инженерия и технологии. Для иностранцев сейчас открыты:"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"0af258c594ef\"].content[_key==\"9477e23dff1e\"].children[_key==\"2c737bf92ddc\"].text",
+  "text": "С 2026/27 UTM больше не предлагает иностранцам Bridging Programme, поэтому требования прямого зачисления нужно выполнить сразу. Пороги считаются по профильным предметам: для инженерии это математика, физика и химия или биология.",
+  "new": "UTM больше не предлагает иностранцам Bridging Programme, поэтому требования прямого зачисления нужно выполнить сразу. Пороги считаются по профильным предметам: для инженерии это математика, физика и химия или биология."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"79bb0afd738f\"].content[_key==\"e5e5b7796e35\"].children[_key==\"8b5294dbf5f8\"].text",
+  "text": "Сроки. На сентябрь 2026 года заявки принимали в два этапа: с апреля по середину мая и с конца июня по середину июля, выпускники подавали с текущими оценками. Даты на 2027 год UTM ещё не объявил: обычно приём на сентябрь открывается весной, точные даты вуз публикует ближе к набору.",
+  "new": "Сроки. В прошлом цикле заявки на сентябрь принимали в два этапа: с апреля по середину мая и с конца июня по середину июля, выпускники подавали с текущими оценками. Даты на следующий набор UTM ещё не объявил: обычно приём на сентябрь открывается весной, точные даты вуз публикует ближе к набору."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"e15686e54e79\"].content[_key==\"ce28dc87ae95\"].children[_key==\"39a3611fb66c\"].text",
+  "text": "Bridging больше нет. Старые материалы и даже FAQ вуза ещё упоминают Bridging Programme, но с 2026/27 его отменили.",
+  "new": "Bridging больше нет. Старые материалы и даже FAQ вуза ещё упоминают Bridging Programme, но его отменили."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"e15686e54e79\"].content[_key==\"a5b14473907d\"].children[_key==\"b9e549ff7ffa\"].text",
+  "text": "Часть программ закрыта. Accounting, Management, Digital Marketing и Mechanical Engineering (Manufacturing) в 2026/27 не набирают. Проверяем актуальный список на момент подачи.",
+  "new": "Часть программ закрыта. Accounting, Management, Digital Marketing и Mechanical Engineering (Manufacturing) сейчас не набирают. Проверяем актуальный список на момент подачи."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"5f7bdf9f65b1\"].leftContent.blockContent.content[_key==\"14b8ee6525ff\"].children[_key==\"4b439d8ba632\"].text",
+  "text": "В QS World University Rankings 2026 UTM занимает 153-е место — рост с #181 в 2025 году и #188 в 2024-м. В THE World University Rankings 2026 вуз находится в группе 401–500, по данным THE на одного преподавателя приходится 10,1 студента.",
+  "new": "В QS World University Rankings UTM занимает 153-е место — рост с #181 в 2025 году и #188 в 2024-м. В THE World University Rankings вуз находится в группе 401–500, по данным THE на одного преподавателя приходится 10,1 студента."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"2449fc6c6b53\"].items[_key==\"b1c88699b7fa\"].answer[_key==\"ab122a41afb8\"].children[_key==\"b0bb148b842e\"].text",
+  "text": "Цена указана за всю программу: инженерия — RM 75 000 за 4 года, Computing — RM 71 000, Artificial Intelligence — от RM 54 788 за 3 года (прайс 2026/27). Проживание, personal bond, сборы EMGS и страховка оплачиваются отдельно.",
+  "new": "Цена указана за всю программу: инженерия — RM 75 000 за 4 года, Computing — RM 71 000, Artificial Intelligence — от RM 54 788 за 3 года (действующий прайс). Проживание, personal bond, сборы EMGS и страховка оплачиваются отдельно."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "contentBlocks[_key==\"2449fc6c6b53\"].items[_key==\"33845673ac7b\"].answer[_key==\"91449949db19\"].children[_key==\"da9e049ee540\"].text",
+  "text": "Напрямую — сложно: для Казахстана UTM указывает аттестат 12-летней школы, для Узбекистана — диплом колледжа или лицея. Bridging Programme с 2026/27 отменён. Рабочий путь — Foundation ASASI UTM через UTMSPACE (1 год), а затем бакалавриат.",
+  "new": "Напрямую — сложно: для Казахстана UTM указывает аттестат 12-летней школы, для Узбекистана — диплом колледжа или лицея. Bridging Programme отменён. Рабочий путь — Foundation ASASI UTM через UTMSPACE (1 год), а затем бакалавриат."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "coverBlock.coverTitle",
+  "text": "Universiti Teknologi Malaysia: поступление из СНГ в 2027 году",
+  "new": "Universiti Teknologi Malaysia: поступление из СНГ"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "seo.metaTitle",
+  "text": "Universiti Teknologi Malaysia (UTM): поступление 2027",
+  "new": "Universiti Teknologi Malaysia (UTM): поступление"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.ru",
+  "path": "title",
+  "text": "Universiti Teknologi Malaysia: поступление из СНГ в 2027 году",
+  "new": "Universiti Teknologi Malaysia: поступление из СНГ"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"c41eeb1ba299\"].rows[_key==\"706f89fcb73d\"].cells[_key==\"3c91c61a27d9\"].content[_key==\"05e8fe93d5db\"].children[_key==\"95386ad55100\"].text",
+  "text": "QS World University Rankings 2027",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"e141674e6380\"].content[_key==\"35e183cc7fb1\"].children[_key==\"d922e0fb733b\"].text",
+  "text": "Ниже — официальный прайс APU для иностранцев из Fee Guide 2026 (январь). Цены указаны в ринггитах (RM) без 6% Service Tax (SST), который APU начисляет на все платежи иностранцев. Прайс на 2027 год вуз ещё не опубликовал, возможна индексация.",
+  "new": "Ниже — официальный прайс APU для иностранцев из действующего Fee Guide. Цены указаны в ринггитах (RM) без 6% Service Tax (SST), который APU начисляет на все платежи иностранцев. Прайс на следующий год вуз ещё не опубликовал, возможна индексация."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"a114d5fa3ca3\"].content[_key==\"7378512555fc\"].children[_key==\"e33239b802c2\"].text",
+  "text": "APU указывает цены и в долларах, но пересчитывает по курсу около 3,8 ринггита за доллар. Рыночный курс в сентябре 2026 года — около 4,05–4,10. Закладывайте запас на курсовую разницу. Полное сравнение цен по вузам — на странице ",
+  "new": "APU указывает цены и в долларах, но пересчитывает по курсу около 3,8 ринггита за доллар. Рыночный курс — около 4,05–4,10. Закладывайте запас на курсовую разницу. Полное сравнение цен по вузам — на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"b5760c4016ee\"].note",
+  "text": "APU начисляет 6% SST на все платежи иностранцев. Прайс на 2027 год вуз ещё не опубликовал, возможна индексация.",
+  "new": "APU начисляет 6% SST на все платежи иностранцев. Прайс на следующий год вуз ещё не опубликовал, возможна индексация."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"b5760c4016ee\"].subtitle",
+  "text": "RM за всю программу, Fee Guide 2026, без 6% SST",
+  "new": "RM за всю программу, действующий Fee Guide, без 6% SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"2aaf4d4163ac\"].content[_key==\"155514d2062f\"].children[_key==\"24b6f857e61c\"].text",
+  "text": "Уровень входа зависит от документа об образовании. Так выглядит официальная таблица APU (декабрь 2025):",
+  "new": "Уровень входа зависит от документа об образовании. Так выглядит официальная таблица APU:"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"3676b3a2c94e\"].content[_key==\"7afd1da1773b\"].children[_key==\"4df3c5189cde\"].text",
+  "text": "Сроки на 2027 год. APU набирает студентов несколько раз в год, но календарь интейков на 2027 год ещё не опубликован. Для ориентира: в 2026 году бакалавриат стартовал в конце сентября и в конце ноября. Сертификат английского и заверенные переводы лучше подготовить заранее, чтобы подать полный пакет за 6–8 недель до старта.",
+  "new": "Сроки. APU набирает студентов несколько раз в год, но календарь интейков на следующий год ещё не опубликован. Для ориентира: в текущем цикле бакалавриат стартует в конце сентября и в конце ноября. Сертификат английского и заверенные переводы лучше подготовить заранее, чтобы подать полный пакет за 6–8 недель до старта."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"243878f7512a\"].leftContent.blockContent.content[_key==\"782fd2806b63\"].children[_key==\"1e11832ede96\"].text",
+  "text": "В QS World University Rankings 2027 APU занимает место #=528 — лучший результат вуза за всю историю. По показателю International Students вуз на 20-м месте в мире, по International Faculty — на 157-м. MBA APU в QS Global MBA 2027 — #51 в Азии и 301+ в мире (по данным вуза). В основном рейтинге THE World University Rankings APU нет, вуз участвует только в THE Impact Rankings.",
+  "new": "В QS World University Rankings APU занимает место #=528 — лучший результат вуза за всю историю. По показателю International Students вуз на 20-м месте в мире, по International Faculty — на 157-м. MBA APU в QS Global MBA — #51 в Азии и 301+ в мире (по данным вуза). В основном рейтинге THE World University Rankings APU нет, вуз участвует только в THE Impact Rankings."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"6b11adf87870\"].content[_key==\"5d927fc9a7df\"].children[_key==\"323f59201c05\"].text",
+  "text": "APU предлагает три типа жилья, все с официальными ценами на 2026 год:",
+  "new": "APU предлагает три типа жилья, все с официальными ценами:"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"9fc764a2ad97\"].content[_key==\"a0352e391c43\"].children[_key==\"b90454319810\"].text",
+  "text": " — частный вуз с более высоким прайсом: около RM 44 000 в год за бизнес-бакалавриат (2026). ",
+  "new": " — частный вуз с более высоким прайсом: около RM 44 000 в год за бизнес-бакалавриат. "
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "contentBlocks[_key==\"72a24f20583e\"].items[_key==\"308a35d25cd7\"].answer[_key==\"b511e6c429c7\"].children[_key==\"581dac82802a\"].text",
+  "text": "По прайсу 2026 года бакалавриат по IT, бизнесу и дизайну стоит RM 34 900–37 500 в год, всего RM 108 500 за три года. Foundation — RM 28 400. К этим суммам прибавляются 6% SST, регистрационный сбор RM 5 000 и визовые платежи.",
+  "new": "По действующему прайсу бакалавриат по IT, бизнесу и дизайну стоит RM 34 900–37 500 в год, всего RM 108 500 за три года. Foundation — RM 28 400. К этим суммам прибавляются 6% SST, регистрационный сбор RM 5 000 и визовые платежи."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "seo.metaDescription",
+  "text": "APU Malaysia для абитуриентов из СНГ: цены 2026 для иностранцев, вход через Foundation, двойной диплом с De Montfort, общежития и виза. Разберём ваш случай.",
+  "new": "APU Malaysia для абитуриентов из СНГ: цены для иностранцев, вход через Foundation, двойной диплом с De Montfort, общежития и виза. Разберём ваш случай."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.ru",
+  "path": "seo.metaTitle",
+  "text": "Asia Pacific University (APU) Малайзия: поступление 2027",
+  "new": "Asia Pacific University (APU) Малайзия: поступление"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"e55bba009928\"].content[_key==\"965d0d712239\"].children[_key==\"96d0718e1e24\"].text",
+  "text": "Стоимость обучения в Малайзии для иностранца на бакалавриате — около RM 35 000–45 000 в год в частном малайзийском вузе и около RM 16 000–33 000 в год в госвузе (прайсы 2026, без 6% SST). Жизнь в Куала-Лумпуре обходится студенту примерно в RM 2 000–3 500 в месяц.",
+  "new": "Стоимость обучения в Малайзии для иностранца на бакалавриате — около RM 35 000–45 000 в год в частном малайзийском вузе и около RM 16 000–33 000 в год в госвузе (действующие прайсы, без 6% SST). Жизнь в Куала-Лумпуре обходится студенту примерно в RM 2 000–3 500 в месяц."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"ee8ada0ca452\"].content[_key==\"69c7e9a5fc6b\"].children[_key==\"e2a3a824df3f\"].text",
+  "text": "Все суммы ниже — для иностранцев, в ринггитах (RM), по прайсам 2026 года. Прайсы на 2027 год большинство вузов ещё не опубликовало, возможна индексация.",
+  "new": "Все суммы ниже — для иностранцев, в ринггитах (RM), по действующим прайсам. Прайсы на следующий год большинство вузов ещё не опубликовало, возможна индексация."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"92ad778a6a56\"].content[_key==\"c5d14279ea5e\"].children[_key==\"7334b15925d5\"].text",
+  "text": "Цены конкретных вузов для иностранцев: прайсы 2026",
+  "new": "Цены конкретных вузов для иностранцев: действующие прайсы"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"96b37c37eeb8\"].rows[_key==\"df57f7377ed5\"].cells[_key==\"637b1c07dfe8\"].content[_key==\"52052f582001\"].children[_key==\"71e882e6c1fe\"].text",
+  "text": "Fee Guide 2026, без SST",
+  "new": "Fee Guide, без SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"96b37c37eeb8\"].rows[_key==\"feb03ef1bcb8\"].cells[_key==\"6cdb8f7e2bf2\"].content[_key==\"918ed8538697\"].children[_key==\"71cafafe237a\"].text",
+  "text": "прайс 2026, без SST",
+  "new": "прайс вуза, без SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"96b37c37eeb8\"].rows[_key==\"77401264c8b2\"].cells[_key==\"75dfe8379906\"].content[_key==\"7056d83934c5\"].children[_key==\"04221bdea0ac\"].text",
+  "text": "прайс 2026",
+  "new": "прайс вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"96b37c37eeb8\"].rows[_key==\"d9c4d8894947\"].cells[_key==\"36533ecd0331\"].content[_key==\"4061300c0571\"].children[_key==\"1213e31f018c\"].text",
+  "text": "2026/27, без SST",
+  "new": "прайс вуза, без SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"96b37c37eeb8\"].rows[_key==\"dbece8bd8208\"].cells[_key==\"7ee5d1fa24aa\"].content[_key==\"5d26d4f4dde7\"].children[_key==\"ea63bd8552e2\"].text",
+  "text": "для набора 2025/26 и далее, без 6% SST",
+  "new": "действующий прайс, без 6% SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"1859655f3a12\"].rightContent.blockContent.content[_key==\"160345facdf8\"].children[_key==\"f7caead47c55\"].text",
+  "text": "Ориентиры Numbeo (сентябрь 2026): проездной — RM 50 в месяц, обед в недорогом кафе — около RM 20, интернет — около RM 107. Квартира с одной спальней вне центра — около RM 1 500 в месяц. Главная статья — жильё, и цены общежитий сильно различаются:",
+  "new": "Ориентиры Numbeo: проездной — RM 50 в месяц, обед в недорогом кафе — около RM 20, интернет — около RM 107. Квартира с одной спальней вне центра — около RM 1 500 в месяц. Главная статья — жильё, и цены общежитий сильно различаются:"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"5b89a36e480c\"].rows[_key==\"617fb1762e73\"].cells[_key==\"3f75505801ba\"].content[_key==\"b33b88f79ccf\"].children[_key==\"bc976cb6f0a6\"].text",
+  "text": "около RM 700 (брошюра 2025 г.)",
+  "new": "около RM 700 (по брошюре вуза)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"39edefbff91e\"].content[_key==\"d4f1cc5c196d\"].children[_key==\"a5e090789d40\"].text",
+  "text": "Два сценария для бакалавра из СНГ: частный вуз в Куала-Лумпуре и госвуз в Джохор-Бару. Это расчёт по прайсам 2026 года, без авиабилетов и курсовой разницы.",
+  "new": "Два сценария для бакалавра из СНГ: частный вуз в Куала-Лумпуре и госвуз в Джохор-Бару. Это расчёт по действующим прайсам, без авиабилетов и курсовой разницы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"c4646a35e51b\"].content[_key==\"9b593c51f741\"].children[_key==\"99f04e60348f\"].text",
+  "text": "Разница — почти вдвое, но в госвуз сложнее поступить: UTM с 2026/27 отменил bridging-программу для иностранцев. Какой вариант реален с вашим аттестатом, покажет оценка документов.",
+  "new": "Разница — почти вдвое, но в госвуз сложнее поступить: UTM отменил bridging-программу для иностранцев. Какой вариант реален с вашим аттестатом, покажет оценка документов."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"c75061a27fbf\"].note",
+  "text": "Расчёт по прайсам 2026 года, без авиабилетов и курсовой разницы. 6% SST начисляется на обучение и сборы APU.",
+  "new": "Расчёт по действующим прайсам, без авиабилетов и курсовой разницы. 6% SST начисляется на обучение и сборы APU."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"c75061a27fbf\"].subtitle",
+  "text": "RM за первый год, частный вуз в Куала-Лумпуре, прайсы 2026",
+  "new": "RM за первый год, частный вуз в Куала-Лумпуре, действующие прайсы"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"50c0717a6edc\"].content[_key==\"9507792545fd\"].children[_key==\"792fe824ca16\"].text",
+  "text": " от Минвысшобра — только магистратура и PhD, очно. Покрывает обучение на весь срок и платит RM 1 500 в месяц. В 2026 году подать могли граждане РФ, Казахстана, Узбекистана, Кыргызстана и Азербайджана; Беларуси в списке нет.",
+  "new": " от Минвысшобра — только магистратура и PhD, очно. Покрывает обучение на весь срок и платит RM 1 500 в месяц. В последнем наборе подать могли граждане РФ, Казахстана, Узбекистана, Кыргызстана и Азербайджана; Беларуси в списке нет."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"50c0717a6edc\"].content[_key==\"cfa1ba05984f\"].children[_key==\"e7dc1a3207d5\"].text",
+  "text": " магистрант до 40 лет, CGPA от 3,00, IELTS от 6.0 или TOEFL PBT от 550, 2 рекомендации. Стипендия действует в 20 госвузах, в том числе UM и UTM. Приём на 2026/27 закрыт, даты на 2027 год ещё не опубликованы.",
+  "new": " магистрант до 40 лет, CGPA от 3,00, IELTS от 6.0 или TOEFL PBT от 550, 2 рекомендации. Стипендия действует в 20 госвузах, в том числе UM и UTM. Приём на текущий учебный год закрыт, даты следующего набора ещё не опубликованы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"3616be8bc7b0\"].content[_key==\"3d1b9a02e5ca\"].children[_key==\"33d88c898905\"].text",
+  "text": " Платить нужно в ринггитах. Вузы пересчитывают доллары по курсу 3,80, а рыночный курс 18.09.2026 — около 4,08 за доллар. Закладывайте запас на разницу.",
+  "new": " Платить нужно в ринггитах. Вузы пересчитывают доллары по курсу 3,80, а рыночный курс — около 4,08 за доллар. Закладывайте запас на разницу."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "contentBlocks[_key==\"864648470cef\"].items[_key==\"ce5edf6120f6\"].answer[_key==\"b6e3f8ef7172\"].children[_key==\"73719f2bfe29\"].text",
+  "text": "На бакалавриате в частном малайзийском вузе — около RM 35 000–45 000 в год, в филиале британского или австралийского вуза — около RM 48 000–65 000, в госвузе — около RM 16 000–33 000. Это прайсы 2026 года без 6% SST. Добавьте жизнь (RM 2 000–3 500 в месяц в Куала-Лумпуре) и сборы EMGS.",
+  "new": "На бакалавриате в частном малайзийском вузе — около RM 35 000–45 000 в год, в филиале британского или австралийского вуза — около RM 48 000–65 000, в госвузе — около RM 16 000–33 000. Это действующие прайсы без 6% SST. Добавьте жизнь (RM 2 000–3 500 в месяц в Куала-Лумпуре) и сборы EMGS."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "seo.metaDescription",
+  "text": "Цены вузов Малайзии для иностранцев по прайсам 2026, 6% SST, сборы EMGS, жизнь в Куала-Лумпуре от RM 2 000 в месяц и стипендии. Посчитаем ваш бюджет.",
+  "new": "Цены вузов Малайзии для иностранцев по действующим прайсам, 6% SST, сборы EMGS, жизнь в Куала-Лумпуре от RM 2 000 в месяц и стипендии. Посчитаем ваш бюджет."
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "seo.metaTitle",
+  "text": "Стоимость обучения в Малайзии 2027: цены, жизнь, стипендии",
+  "new": "Стоимость обучения в Малайзии: цены, жизнь, стипендии"
+ },
+ {
+  "id": "drafts.academgo.malaysia.cost.ru",
+  "path": "videoPlan[_key==\"a08ce4a59af0\"].brief",
+  "text": "Экран с реальным прайсом частного вуза (например, Fee Guide APU 2026). Показать: где цена для малайзийцев, а где для иностранцев; где строка обучения, а где разовые сборы; как добавить 6% SST; какие депозиты возвратные. Закончить фразой: «Сравнивайте итог за весь курс, а не цену первого года».",
+  "new": "Экран с реальным прайсом частного вуза (например, действующий Fee Guide APU). Показать: где цена для малайзийцев, а где для иностранцев; где строка обучения, а где разовые сборы; как добавить 6% SST; какие депозиты возвратные. Закончить фразой: «Сравнивайте итог за весь курс, а не цену первого года»."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"4a031fcf3fc1\"].content[_key==\"6b46159e777e\"].children[_key==\"89565cb90587\"].text",
+  "text": "The ranges below are for international students, taken from 2026 price lists, and exclude the 6% Service Tax (SST). Prices for 2027 are not published yet, so expect some indexation.",
+  "new": "The ranges below are for international students, taken from current price lists, and exclude the 6% Service Tax (SST). Next year's prices are not published yet, so expect some indexation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"2a44d22b63cd\"].columns[1]",
+  "text": "Approximate tuition for international students (2026 price lists, excl. SST)",
+  "new": "Approximate tuition for international students (current price lists, excl. SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"a004997c5ef4\"].content[_key==\"a4a8ab36b0f5\"].children[_key==\"25e8ab99334a\"].text",
+  "text": "Universities often quote a USD figure \"for reference\" at an indicative rate of 1 USD = RM 3.80. The market rate in September 2026 was about RM 4.05–4.10 per dollar, so budget in ringgit and allow for the exchange difference. A detailed breakdown by university is on our page about the ",
+  "new": "Universities often quote a USD figure \"for reference\" at an indicative rate of 1 USD = RM 3.80. The market rate is about RM 4.05–4.10 per dollar, so budget in ringgit and allow for the exchange difference. A detailed breakdown by university is on our page about the "
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"1cbfdd95d3ff\"].rows[_key==\"ffc294093760\"].cells[_key==\"78c78c7b80d1\"].content[_key==\"4e2623950266\"].children[_key==\"1a50f0ba8003\"].text",
+  "text": "Tuition (2026, international)",
+  "new": "Tuition (international)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"f38d0f095146\"].content[_key==\"ddf749039af1\"].children[_key==\"0f249da4993f\"].text",
+  "text": "A bank statement is not on the standard EMGS or immigration list for students, though a university can ask for one. Most private universities have 2–4 intakes a year. Universiti Malaya admits undergraduates in October and March; applications for March 2027 are open from 7 September 2026 to 30 January 2027. UTM admits in September and, for some programs, in February. Exact dates for autumn 2027 are not announced yet; universities publish them closer to the intake.",
+  "new": "A bank statement is not on the standard EMGS or immigration list for students, though a university can ask for one. Most private universities have 2–4 intakes a year. Universiti Malaya admits undergraduates in October and March; applications for the March intake run from 7 September to 30 January. UTM admits in September and, for some programs, in February. Exact dates for the autumn intake are not announced yet; universities publish them closer to the intake."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"5cb679548695\"].columns[2]",
+  "text": "Monthly rent (official, 2026 or latest)",
+  "new": "Monthly rent (official, latest)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"b675d25235c3\"].content[_key==\"d7439232b374\"].children[_key==\"27d5d7991243\"].text",
+  "text": ": a private university on a lakeside campus in Subang Jaya, ranked #272 in the QS World University Rankings 2027. Computer Science and Business offer dual awards with UWE Bristol; scholarships are mostly closed to international students from outside the Taylor's group.",
+  "new": ": a private university on a lakeside campus in Subang Jaya, ranked #272 in the QS World University Rankings. Computer Science and Business offer dual awards with UWE Bristol; scholarships are mostly closed to international students from outside the Taylor's group."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"b675d25235c3\"].content[_key==\"d6e1e2fa1660\"].children[_key==\"b42c1e786a46\"].text",
+  "text": ": a private university with its main campus in Cheras, Kuala Lumpur, ranked #282 in the QS World University Rankings 2027. Instead of a dual award, it offers transfer pathways to UK universities, where the UK university issues the degree.",
+  "new": ": a private university with its main campus in Cheras, Kuala Lumpur, ranked #282 in the QS World University Rankings. Instead of a dual award, it offers transfer pathways to UK universities, where the UK university issues the degree."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"b675d25235c3\"].content[_key==\"81f21e947934\"].children[_key==\"043606130ce9\"].text",
+  "text": ": Malaysia's oldest university and a public research university, ranked #58 in the QS World University Rankings 2026. Fees are quoted per program, and every international student must pass a basic Malay language course before graduating.",
+  "new": ": Malaysia's oldest university and a public research university, ranked #58 in the QS World University Rankings. Fees are quoted per program, and every international student must pass a basic Malay language course before graduating."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"b675d25235c3\"].content[_key==\"8ddddf8a940b\"].children[_key==\"e8698e1a3716\"].text",
+  "text": ": a public engineering-focused university, main campus in Johor Bahru, ranked #153 in the QS World University Rankings 2026. Entry is direct only, since UTM stopped its bridging program from 2026/27, and there is no financial aid for international students.",
+  "new": ": a public engineering-focused university, main campus in Johor Bahru, ranked #153 in the QS World University Rankings. Entry is direct only, since UTM stopped its bridging program, and there is no financial aid for international students."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "contentBlocks[_key==\"66d94c3a253b\"].items[_key==\"a2647b8c372a\"].answer[_key==\"fcfd9dee6f47\"].children[_key==\"2f2c16f20894\"].text",
+  "text": "Based on 2026 price lists, bachelor's tuition for international students is about RM 16,000–33,000 a year at public universities and RM 35,000–45,000 at private ones, before 6% SST. Add EMGS and visa fees of about RM 2,700–3,300 in year one, plus living costs.",
+  "new": "Based on current price lists, bachelor's tuition for international students is about RM 16,000–33,000 a year at public universities and RM 35,000–45,000 at private ones, before 6% SST. Add EMGS and visa fees of about RM 2,700–3,300 in year one, plus living costs."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "seo.metaDescription",
+  "text": "Tuition from about RM 16,000 a year, EMGS Student Pass steps, work rules and five universities compared. Plan your 2027 intake with a free consultation.",
+  "new": "Tuition from about RM 16,000 a year, EMGS Student Pass steps, work rules and five universities compared. Plan your intake with a free consultation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.hub.en",
+  "path": "seo.metaTitle",
+  "text": "Study in Malaysia 2027: Costs, Universities, Visa",
+  "new": "Study in Malaysia: Costs, Universities, Visa"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"f7aa64afd5d9\"].content[_key==\"96708c85fed4\"].children[_key==\"ed1769069267\"].text",
+  "text": "Universiti Teknologi Malaysia (UTM) is a public research university focused on engineering, computing and science. It received university status in 1975, and its main campus is in Johor Bahru, about 300 km south of Kuala Lumpur. At the end of 2025, UTM had 32,004 students, including 4,852 international students.",
+  "new": "Universiti Teknologi Malaysia (UTM) is a public research university focused on engineering, computing and science. It received university status in 1975, and its main campus is in Johor Bahru, about 300 km south of Kuala Lumpur. UTM has 32,004 students, including 4,852 international students."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"f7aa64afd5d9\"].content[_key==\"b8feb54a0042\"].children[_key==\"675254c7a06d\"].text",
+  "text": "UTM suits students with strong math and science grades who want an engineering or computing degree, with tuition quoted as one sum for the whole program. It is a weaker fit if your grades are borderline, since the Bridging Programme ended in 2026/27, or if you want business or accounting.",
+  "new": "UTM suits students with strong math and science grades who want an engineering or computing degree, with tuition quoted as one sum for the whole program. It is a weaker fit if your grades are borderline, since the Bridging Programme has ended, or if you want business or accounting."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"8a58a8b0fc5f\"].rows[_key==\"3a5da67bcc0e\"].cells[_key==\"df3083879f76\"].content[_key==\"f5a042d42331\"].children[_key==\"1b7c226fd57c\"].text",
+  "text": "32,004, including 4,852 international (31 December 2025)",
+  "new": "32,004, including 4,852 international"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"8a58a8b0fc5f\"].rows[_key==\"f1abd28eef9d\"].cells[_key==\"e23c6249a052\"].content[_key==\"5c0342d616e1\"].children[_key==\"4a7becc12a1f\"].text",
+  "text": "QS World University Rankings 2026",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"8a58a8b0fc5f\"].rows[_key==\"9ac06abae2a3\"].cells[_key==\"7f8d0cf58d27\"].content[_key==\"93e5a4139306\"].children[_key==\"93d1f28757f5\"].text",
+  "text": "THE World University Rankings 2026",
+  "new": "THE World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"a06d12ae98e1\"].content[_key==\"22f7131bb43e\"].children[_key==\"227f2e683211\"].text",
+  "text": "UTM quotes undergraduate fees in Malaysian ringgit (RM) for the whole program, not per year. The figures below come from UTM's current fee schedule for international undergraduates, checked in September 2026. The page does not name an academic year, so we confirm the figure for your program and the 2027 intake before you apply.",
+  "new": "UTM quotes undergraduate fees in Malaysian ringgit (RM) for the whole program, not per year. The figures below come from UTM's current fee schedule for international undergraduates. The page does not name an academic year, so we confirm the figure for your program and intake before you apply."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"d33b041cb007\"].subtitle",
+  "text": "RM for the whole program, UTM fee schedule checked September 2026",
+  "new": "RM for the whole program, UTM's current fee schedule"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"88163b9a7223\"].content[_key==\"aa126b82fd77\"].children[_key==\"16573ca3aeaf\"].text",
+  "text": "For 2026/27, UTM's programs for international undergraduates include:",
+  "new": "UTM's current programs for international undergraduates include:"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"fdba115ffd9c\"].items[_key==\"2fa9d3ee0543\"].content.content[_key==\"123abece8044\"].children[_key==\"36a5384831cb\"].text",
+  "text": "Plan the 2027 timeline — for September 2026, UTM accepted applications in two phases between April and July. Dates for February and September 2027 are not yet published; UTM announces them closer to each intake.",
+  "new": "Plan your timeline — in the last cycle, UTM accepted applications for September in two phases between April and July. Dates for the next February and September intakes are not yet published; UTM announces them closer to each intake."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"fdba115ffd9c\"].title",
+  "text": "How to apply to UTM for 2027",
+  "new": "How to apply to UTM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"78a8ca3b6e51\"].content[_key==\"62ec09e89638\"].children[_key==\"309e8d55d484\"].text",
+  "text": "No Bridging Programme from 2026/27. Older pages may still mention it. If your grades fall short, look at the UTMSPACE Foundation or a university with a pathway program.",
+  "new": "No Bridging Programme anymore. Older pages may still mention it. If your grades fall short, look at the UTMSPACE Foundation or a university with a pathway program."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"78a8ca3b6e51\"].content[_key==\"4b385d7c545b\"].children[_key==\"361e04092e55\"].text",
+  "text": "Accounting, Digital Marketing, Management and Mechanical Engineering (Manufacturing) are not offered to new students in 2026/27.",
+  "new": "Accounting, Digital Marketing, Management and Mechanical Engineering (Manufacturing) are not currently offered to new students."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"78570e1b775f\"].leftContent.blockContent.content[_key==\"a523276cdd72\"].children[_key==\"865078f4512a\"].text",
+  "text": "UTM ranks #153 in the QS World University Rankings 2026, up from #181 in 2025 and #188 in 2024. In the Times Higher Education World University Rankings 2026, it is in the 401–500 band. THE data show 28% international students and 10.1 students per staff member.",
+  "new": "UTM ranks #153 in the QS World University Rankings, up from #181 in 2025 and #188 in 2024. In the Times Higher Education World University Rankings, it is in the 401–500 band. THE data show 28% international students and 10.1 students per staff member."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"4c7affc60d9c\"].items[_key==\"2742acb00483\"].answer[_key==\"dcd0f66d6b0e\"].children[_key==\"c06a098b27f0\"].text",
+  "text": "Dates for February and September 2027 are not yet published. For September 2026, applications ran in two phases between April and July. February is open only for selected programs.",
+  "new": "Dates for the next February and September intakes are not yet published. In the last cycle, September applications ran in two phases between April and July. February is open only for selected programs."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"4c7affc60d9c\"].items[_key==\"2742acb00483\"].question",
+  "text": "When does UTM accept applications for 2027?",
+  "new": "When does UTM accept applications?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "contentBlocks[_key==\"369529869af2\"].content[_key==\"6db0d29b8cac\"].children[_key==\"56c40f724c03\"].text",
+  "text": "Not sure your documents meet UTM's requirements? Send them for a free check. We compare them with UTM's subject rules, plan your 2027 timeline and suggest 2–3 alternatives in Malaysia. Write to us through the ",
+  "new": "Not sure your documents meet UTM's requirements? Send them for a free check. We compare them with UTM's subject rules, plan your timeline and suggest 2–3 alternatives in Malaysia. Write to us through the "
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "coverBlock.coverText",
+  "text": "A public engineering and technology university in Johor Bahru: fees for the whole degree, entry grades by country and the visa route for 2027.",
+  "new": "A public engineering and technology university in Johor Bahru: fees for the whole degree, entry grades by country and the visa route."
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "coverBlock.coverTitle",
+  "text": "Study at Universiti Teknologi Malaysia in 2027",
+  "new": "Study at Universiti Teknologi Malaysia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "seo.metaTitle",
+  "text": "Universiti Teknologi Malaysia (UTM): Fees & Entry 2027",
+  "new": "Universiti Teknologi Malaysia (UTM): Fees & Entry"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "shortTitle",
+  "text": "Study at Universiti Teknologi Malaysia in 2027",
+  "new": "Study at Universiti Teknologi Malaysia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.utm.en",
+  "path": "title",
+  "text": "Study at Universiti Teknologi Malaysia in 2027",
+  "new": "Study at Universiti Teknologi Malaysia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.en",
+  "path": "contentBlocks[_key==\"d64c5c21b712\"].rightContent.blockContent.content[_key==\"086ecf2658ff\"].children[_key==\"f42e51fb5156\"].text",
+  "text": "The 2026 Immigration website describes the limit as applying \"during studies\", allows on-campus work and bans front-desk jobs and student recruitment work. Language center students cannot work. Since sources differ, confirm the rules with your university. You apply through the university with the employer's offer, a university letter and your passport. Breaking the rules gets the Student Pass cancelled.",
+  "new": "The Immigration website describes the limit as applying \"during studies\", allows on-campus work and bans front-desk jobs and student recruitment work. Language center students cannot work. Since sources differ, confirm the rules with your university. You apply through the university with the employer's offer, a university letter and your passport. Breaking the rules gets the Student Pass cancelled."
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.en",
+  "path": "seo.metaDescription",
+  "text": "Student Pass for Malaysia in 2027: EMGS steps, eVAL, official fees in RM, medical check, insurance, work rules and Graduate Pass. Get a free document check.",
+  "new": "Student Pass for Malaysia: EMGS steps, eVAL, official fees in RM, medical check, insurance, work rules and Graduate Pass. Get a free document check."
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.en",
+  "path": "seo.metaTitle",
+  "text": "Malaysia Student Visa 2027: EMGS Steps, Fees, Timeline",
+  "new": "Malaysia Student Visa: EMGS Steps, Fees, Timeline"
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.ru",
+  "path": "contentBlocks[_key==\"9bc98efa15a3\"].content[_key==\"d2bcaad8895e\"].children[_key==\"b446a1bc1edd\"].text",
+  "text": "Ниже — весь маршрут для интейков 2027 года: шаги, сроки, официальные сборы, документы без апостиля, медосмотр, страховка, продление и правила подработки. Все суммы — в ринггитах (RM) по прайсу EMGS Schedule of Fees v1.6 от 13.11.2025.",
+  "new": "Ниже — весь маршрут для ближайших интейков: шаги, сроки, официальные сборы, документы без апостиля, медосмотр, страховка, продление и правила подработки. Все суммы — в ринггитах (RM) по прайсу EMGS Schedule of Fees v1.6 от 13.11.2025."
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.ru",
+  "path": "contentBlocks[_key==\"5e03eb6f3c27\"].content[_key==\"53b0bc7f5d5c\"].children[_key==\"be2d2885f3c9\"].text",
+  "text": "Часто вузы берут визовые сборы одним пакетом вместе со своими. По прайсам 2026 года: у Taylor's University «EMGS Visa Application Fee & E-Val» — RM 2 920 плюс страховка RM 644 в год. У Asia Pacific University (APU) — RM 3 400 при принятии оффера и RM 2 000 после одобрения визы (медосмотр, страховка, i-Kad, eVAL и Student Pass на год). Поэтому сравнивайте не «визу», а полный счёт первого года — подробнее на странице ",
+  "new": "Часто вузы берут визовые сборы одним пакетом вместе со своими. По действующим прайсам: у Taylor's University «EMGS Visa Application Fee & E-Val» — RM 2 920 плюс страховка RM 644 в год. У Asia Pacific University (APU) — RM 3 400 при принятии оффера и RM 2 000 после одобрения визы (медосмотр, страховка, i-Kad, eVAL и Student Pass на год). Поэтому сравнивайте не «визу», а полный счёт первого года — подробнее на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.ru",
+  "path": "contentBlocks[_key==\"fde5e783bf59\"].rightContent.blockContent.content[_key==\"72fbedf50c0d\"].children[_key==\"d0c1ef6fb8c6\"].text",
+  "text": " Пример 2026 года: у Sunway University программа BSc (Hons) Computer Science стоит RM 39 800 в год для малайзийцев и USD 9 779 в год для иностранцев. Кроме того, с 01.07.2025 на обучение иностранцев в частных вузах начисляют 6% Service Tax, а прайсы обычно указаны без него. Мы считаем для вас полный счёт с налогом и визовыми сборами.",
+  "new": " Пример: у Sunway University программа BSc (Hons) Computer Science стоит RM 39 800 в год для малайзийцев и USD 9 779 в год для иностранцев. Кроме того, с 01.07.2025 на обучение иностранцев в частных вузах начисляют 6% Service Tax, а прайсы обычно указаны без него. Мы считаем для вас полный счёт с налогом и визовыми сборами."
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.ru",
+  "path": "contentBlocks[_key==\"004a79d51fd1\"].content[_key==\"19d3b156b074\"].children[_key==\"bfce8f6817d5\"].text",
+  "text": "Пришлите нам страну гражданства, срок действия паспорта и желаемый интейк 2027 года — на бесплатной консультации мы составим ваш визовый график: когда подавать в вуз и EMGS, какие документы заверять и сколько закладывать на сборы первого года. Написать можно через форму на сайте, в WhatsApp или Telegram — контакты на странице ",
+  "new": "Пришлите нам страну гражданства, срок действия паспорта и желаемый интейк — на бесплатной консультации мы составим ваш визовый график: когда подавать в вуз и EMGS, какие документы заверять и сколько закладывать на сборы первого года. Написать можно через форму на сайте, в WhatsApp или Telegram — контакты на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.visa.ru",
+  "path": "seo.metaTitle",
+  "text": "Студенческая виза в Малайзию 2027: EMGS, eVAL, сборы",
+  "new": "Студенческая виза в Малайзию: EMGS, eVAL, сборы"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"10cc2410453d\"].rows[_key==\"1bed241ad8f3\"].cells[_key==\"6efb10e2de1e\"].content[_key==\"ec7b6ac8ff76\"].children[_key==\"8ccf19f4dad6\"].text",
+  "text": "QS World University Rankings 2027",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"58fcbab8e34c\"].content[_key==\"195b0897d084\"].children[_key==\"2a5c88d46174\"].text",
+  "text": "Asia Pacific University tuition fees (2026 price list)",
+  "new": "Asia Pacific University tuition fees (current price list)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"58fcbab8e34c\"].content[_key==\"45fcfbd190bb\"].children[_key==\"dff259e05fe2\"].text",
+  "text": "APU publishes fees in Malaysian ringgit (RM). The figures below come from the APU Fee Guide 2026 for international students and do not include the 6% Service Tax (SST). Since 1 July 2025, SST has applied to all fees that APU charges non-Malaysian students, so add 6% to every line.",
+  "new": "APU publishes fees in Malaysian ringgit (RM). The figures below come from the current APU Fee Guide for international students and do not include the 6% Service Tax (SST). Since 1 July 2025, SST has applied to all fees that APU charges non-Malaysian students, so add 6% to every line."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"52a0424a23f5\"].columns[0]",
+  "text": "Program (international students, 2026 prices)",
+  "new": "Program (international students, current prices)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"28d08e247aa0\"].content[_key==\"ae0be5b111fc\"].children[_key==\"ea48491dc8b3\"].text",
+  "text": "Other costs to budget for (2026, before SST)",
+  "new": "Other costs to budget for (before SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"212d17645167\"].content[_key==\"6fd06b8042f0\"].children[_key==\"c035e279ef81\"].text",
+  "text": "You pay in ringgit. APU's reference dollar amounts use about 3.80 RM per dollar, while the market rate in September 2026 was about 4.05–4.10, so budget for the difference. The 2027 fees are not published yet; expect possible indexation. More on budgets: ",
+  "new": "You pay in ringgit. APU's reference dollar amounts use about 3.80 RM per dollar, while the market rate is about 4.05–4.10, so budget for the difference. Next year's fees are not published yet; expect possible indexation. More on budgets: "
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"1c4c07ab4f29\"].note",
+  "text": "Add 6% SST to every line. The 2027 fees are not published yet; expect possible indexation.",
+  "new": "Add 6% SST to every line. Next year's fees are not published yet; expect possible indexation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"1c4c07ab4f29\"].subtitle",
+  "text": "RM for the whole program, APU Fee Guide 2026, before 6% SST",
+  "new": "RM for the whole program, current APU Fee Guide, before 6% SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"984fc77cfe54\"].items[_key==\"35ff21a0e4ed\"].content.content[_key==\"424d919c0acc\"].children[_key==\"c7dd47876c2d\"].text",
+  "text": "Watch the 2027 dates. APU runs several intakes a year, but the 2027 calendar is not published yet. We track it for you.",
+  "new": "Watch the intake dates. APU runs several intakes a year, but next year's calendar is not published yet. We track it for you."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"984fc77cfe54\"].title",
+  "text": "How to apply to APU for 2027",
+  "new": "How to apply to APU"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"208e69c07010\"].content[_key==\"279675407aa7\"].children[_key==\"6301787f33e4\"].text",
+  "text": "APU ranks #=528 in the QS World University Rankings 2027, its best result so far, and #20 in the world for International Students. The APU MBA ranks #51 in Asia in the QS Global MBA Rankings 2027. APU is not in the Times Higher Education (THE) World University Rankings, only in the THE Impact Rankings.",
+  "new": "APU ranks #=528 in the QS World University Rankings, its best result so far, and #20 in the world for International Students. The APU MBA ranks #51 in Asia in the QS Global MBA Rankings. APU is not in the Times Higher Education (THE) World University Rankings, only in the THE Impact Rankings."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"6486c02054fb\"].content[_key==\"f969bef13866\"].children[_key==\"c28f420f017d\"].text",
+  "text": "APU has three housing options, all priced per person per month (2026):",
+  "new": "APU has three housing options, all priced per person per month:"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "contentBlocks[_key==\"a0ec1168a681\"].items[_key==\"1192dbe1df1a\"].answer[_key==\"0955b5207b8a\"].children[_key==\"2a570d2265e8\"].text",
+  "text": "Under the 2026 price list, most bachelor's programs cost RM 34,900–37,500 a year, and Engineering RM 32,600–36,200 a year over four years. Add 6% SST, the RM 5,000 registration fee and visa payments. Fees for 2027 are not published yet.",
+  "new": "Under the current price list, most bachelor's programs cost RM 34,900–37,500 a year, and Engineering RM 32,600–36,200 a year over four years. Add 6% SST, the RM 5,000 registration fee and visa payments. Next year's fees are not published yet."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "seo.metaDescription",
+  "text": "APU Kuala Lumpur for international students: 2026 fees from RM 34,900 a year, UK dual degree with DMU, entry by certificate, IELTS 5.0–6.0. Free consultation.",
+  "new": "APU Kuala Lumpur for international students: current fees from RM 34,900 a year, UK dual degree with DMU, entry by certificate, IELTS 5.0–6.0. Free consultation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "seo.metaTitle",
+  "text": "Asia Pacific University (APU): Fees & Entry 2027",
+  "new": "Asia Pacific University (APU): Fees & Entry"
+ },
+ {
+  "id": "drafts.academgo.malaysia.apu.en",
+  "path": "videoPlan[_key==\"ba661be3dcff\"].brief",
+  "text": "Walk from the main entrance through the TPM campus in Bukit Jalil: labs, library, study areas and the on-campus residence. Show the free shuttle to the LRT station. On screen or in voiceover: a private Malaysian university with more than half of its students from abroad, bachelor's fees from RM 34,900 a year (2026, before SST), and the DMU dual degree option. End with an invitation to a free consultation.",
+  "new": "Walk from the main entrance through the TPM campus in Bukit Jalil: labs, library, study areas and the on-campus residence. Show the free shuttle to the LRT station. On screen or in voiceover: a private Malaysian university with more than half of its students from abroad, bachelor's fees from RM 34,900 a year (before SST), and the DMU dual degree option. End with an invitation to a free consultation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"c317345dc031\"].content[_key==\"4a15de248749\"].children[_key==\"7e4617503113\"].text",
+  "text": "Магистратура в Малайзии — это англоязычные программы в государственных и частных вузах, за весь курс обучения примерно RM 26 500–79 100 по прайсам вузов 2025/26–2026. Для поступления нужен диплом бакалавра, английский на уровне около IELTS 6.0–6.5 и учебная виза через EMGS — она обязательна и для граждан СНГ.",
+  "new": "Магистратура в Малайзии — это англоязычные программы в государственных и частных вузах, за весь курс обучения примерно RM 26 500–79 100 по действующим прайсам вузов. Для поступления нужен диплом бакалавра, английский на уровне около IELTS 6.0–6.5 и учебная виза через EMGS — она обязательна и для граждан СНГ."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"c317345dc031\"].content[_key==\"dd74ffc1b538\"].children[_key==\"81a8d8cc7b04\"].text",
+  "text": "Выбор широкий по уровню и бюджету. Universiti Malaya занимает #58 в QS World University Rankings 2026, UTM — #153 в том же рейтинге. Частные Taylor's, UCSI и APU стоят в QS 2027 на местах #272, #282 и #=528. Магистрантам доступна государственная стипендия Malaysia International Scholarship, а ещё они могут привезти семью — по правилам иммиграции это право есть только у магистрантов и аспирантов.",
+  "new": "Выбор широкий по уровню и бюджету. Universiti Malaya занимает #58 в QS World University Rankings, UTM — #153 в том же рейтинге. Частные Taylor's, UCSI и APU стоят в QS на местах #272, #282 и #=528. Магистрантам доступна государственная стипендия Malaysia International Scholarship, а ещё они могут привезти семью — по правилам иммиграции это право есть только у магистрантов и аспирантов."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"6dead95ad50f\"].content[_key==\"49af01463947\"].children[_key==\"530249bdeb72\"].text",
+  "text": "Сроки подачи на research обычно шире. В 2026 году UTM принимал заявки на сентябрьский поток по taught и mixed mode с 1 апреля по 31 июля, а на research — до 31 октября. В Universiti Malaya на октябрь 2026 года приём по coursework шёл до 30 сентября, по research — до 22 ноября.",
+  "new": "Сроки подачи на research обычно шире. В последнем цикле UTM принимал заявки на сентябрьский поток по taught и mixed mode с 1 апреля по 31 июля, а на research — до 31 октября. В Universiti Malaya на октябрьский набор приём по coursework шёл до 30 сентября, по research — до 22 ноября."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"8f63e4f30a0c\"].content[_key==\"c83d05983e1d\"].children[_key==\"7486605b7a9f\"].text",
+  "text": "Цены в таблице — за весь курс обучения для иностранцев, в ринггитах (RM). Прайсы на 2027 год вузы ещё не публиковали, возможна индексация.",
+  "new": "Цены в таблице — за весь курс обучения для иностранцев, в ринггитах (RM). Прайсы на следующий год вузы ещё не публиковали, возможна индексация."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"f0148303487e\"].cells[_key==\"018826fb29d8\"].content[_key==\"fe87d8ede271\"].children[_key==\"73bac4d5c7af\"].text",
+  "text": "сайт UTM, сентябрь 2026",
+  "new": "сайт UTM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"043ee9ef6c30\"].cells[_key==\"e9a5f9531e60\"].content[_key==\"8fc9d8206920\"].children[_key==\"1b287ee7cdc7\"].text",
+  "text": "сайт UTM, сентябрь 2026",
+  "new": "сайт UTM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"7523e8b0a0ff\"].cells[_key==\"e5f830b56d37\"].content[_key==\"53011eb0176b\"].children[_key==\"0dbde62d8788\"].text",
+  "text": "сайт UTM, сентябрь 2026",
+  "new": "сайт UTM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"429f7ea25b0b\"].cells[_key==\"8a9677f294bf\"].content[_key==\"a4b9ed092128\"].children[_key==\"9668ebb78948\"].text",
+  "text": "буклет UM, декабрь 2025",
+  "new": "буклет UM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"1c2cd4fc78ba\"].cells[_key==\"441c281fe764\"].content[_key==\"b7254d3ae04f\"].children[_key==\"2f1b3e8df1b0\"].text",
+  "text": "буклет UM, декабрь 2025",
+  "new": "буклет UM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"e46e152c2985\"].cells[_key==\"becb861bbe62\"].content[_key==\"e7d9a53473c4\"].children[_key==\"833721e92e21\"].text",
+  "text": "буклет UM, декабрь 2025",
+  "new": "буклет UM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"a349ffcdc6d6\"].cells[_key==\"db1d7f566e36\"].content[_key==\"91c79caacd41\"].children[_key==\"34023d6ec8ff\"].text",
+  "text": "буклет UM, декабрь 2025",
+  "new": "буклет UM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"6be77314b0d4\"].cells[_key==\"c64833bb31d7\"].content[_key==\"7e007c386f29\"].children[_key==\"d86f48deacad\"].text",
+  "text": "буклет UM, декабрь 2025",
+  "new": "буклет UM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"92f070809775\"].cells[_key==\"31722a36294b\"].content[_key==\"26971c439ae2\"].children[_key==\"6b713f94d90a\"].text",
+  "text": "2026",
+  "new": "прайс вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"e1670db3273d\"].cells[_key==\"ce02088f4a38\"].content[_key==\"6300e5b45672\"].children[_key==\"a58c2a1f6e18\"].text",
+  "text": "сентябрь 2026",
+  "new": "прайс вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"9055cffd1709\"].cells[_key==\"73b0ee6ec254\"].content[_key==\"462deb28eb10\"].children[_key==\"7f120889a7b4\"].text",
+  "text": "2026",
+  "new": "прайс вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"a1d396de6122\"].rows[_key==\"e698f517056b\"].cells[_key==\"29b102118ce8\"].content[_key==\"4e992684b048\"].children[_key==\"6ab0be83b615\"].text",
+  "text": "2026",
+  "new": "прайс вуза"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"026733cb8f7b\"].note",
+  "text": "Частные вузы добавляют иностранцам 6% SST, прайсы обычно указаны без него. Прайсы на 2027 год вузы ещё не публиковали.",
+  "new": "Частные вузы добавляют иностранцам 6% SST, прайсы обычно указаны без него. Прайсы на следующий год вузы ещё не публиковали."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"026733cb8f7b\"].subtitle",
+  "text": "RM за весь курс для иностранцев, прайсы 2025/26–2026",
+  "new": "RM за весь курс для иностранцев, действующие прайсы"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"efa901c6f301\"].rows[_key==\"fafaf28bb053\"].cells[_key==\"e8c975a43e60\"].content[_key==\"b0bb11338444\"].children[_key==\"53f6b5591c98\"].text",
+  "text": "QS 2026: #58",
+  "new": "QS: #58"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"efa901c6f301\"].rows[_key==\"877dfb608836\"].cells[_key==\"0b6aef1a339b\"].content[_key==\"380cb7284f57\"].children[_key==\"f1bd9e6ccebb\"].text",
+  "text": "QS 2026: #153",
+  "new": "QS: #153"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"efa901c6f301\"].rows[_key==\"37e375387c80\"].cells[_key==\"d8a0e8b606bc\"].content[_key==\"9c3f3aca9545\"].children[_key==\"bde8eb8edd7a\"].text",
+  "text": "QS 2027: #272",
+  "new": "QS: #272"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"efa901c6f301\"].rows[_key==\"3c5baa10df0d\"].cells[_key==\"6d4b4c6c2e3d\"].content[_key==\"e079a6d7087f\"].children[_key==\"9ef0017c30a5\"].text",
+  "text": "QS 2027: #282",
+  "new": "QS: #282"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"efa901c6f301\"].rows[_key==\"38530473fc08\"].cells[_key==\"16413b00f5b8\"].content[_key==\"d5856339070a\"].children[_key==\"d0f8995a7330\"].text",
+  "text": "QS 2027: #=528",
+  "new": "QS: #=528"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"72206c1edb6a\"].content[_key==\"d0fb0ac76b36\"].children[_key==\"793648b4273c\"].text",
+  "text": "У APU есть dual degree с De Montfort University (DMU, Лестер): партнёр одобрил 23 магистерские программы, выпускник получает два диплома и два транскрипта. Опция доступна на coursework-магистратуре, доплата — GBP 450 за каждый уровень обучения (прайс APU 2026). Полный список вузов — на странице ",
+  "new": "У APU есть dual degree с De Montfort University (DMU, Лестер): партнёр одобрил 23 магистерские программы, выпускник получает два диплома и два транскрипта. Опция доступна на coursework-магистратуре, доплата — GBP 450 за каждый уровень обучения (действующий прайс APU). Полный список вузов — на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"96be57318f78\"].content[_key==\"041e233dd468\"].children[_key==\"40195e2ed088\"].text",
+  "text": "Интейки и сроки подачи на 2027 год",
+  "new": "Интейки и сроки подачи"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"96be57318f78\"].content[_key==\"22361a3339c1\"].children[_key==\"d747235cae91\"].text",
+  "text": "Ближайший поток в Universiti Malaya — март 2027 года: приём заявок в магистратуру открыт с 7 сентября 2026 года по 30 января 2027 года. Даты на октябрь 2027 года вуз ещё не опубликовал. UTM тоже пока не объявил даты на февраль и сентябрь 2027 года — обычно их публикуют ближе к набору.",
+  "new": "Ближайший поток в Universiti Malaya — март: приём заявок в магистратуру открыт с 7 сентября по 30 января. Даты на октябрьский набор вуз ещё не опубликовал. UTM тоже пока не объявил даты на ближайшие февральский и сентябрьский наборы — обычно их публикуют ближе к набору."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"10b37f60e86d\"].content[_key==\"bd52e00465ce\"].children[_key==\"cc77c5288ea8\"].text",
+  "text": "Претендовать могут граждане России, Казахстана, Узбекистана, Кыргызстана и Азербайджана. Беларуси в списке стран MIS 2026 нет. Условия для магистратуры: возраст до 40 лет, CGPA от 3.00, IELTS от 6.0 или TOEFL PBT от 550 (либо предыдущее обучение на английском), 2 рекомендации. Медицина, сестринское дело и фармация в приоритетные направления не входят.",
+  "new": "Претендовать могут граждане России, Казахстана, Узбекистана, Кыргызстана и Азербайджана. Беларуси в списке стран MIS нет. Условия для магистратуры: возраст до 40 лет, CGPA от 3.00, IELTS от 6.0 или TOEFL PBT от 550 (либо предыдущее обучение на английском), 2 рекомендации. Медицина, сестринское дело и фармация в приоритетные направления не входят."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"10b37f60e86d\"].content[_key==\"92848cb5bf54\"].children[_key==\"7c15a1a55a8e\"].text",
+  "text": "MIS действует в 20 госвузах, среди них Universiti Malaya и UTM, и в нескольких частных. Приём на 2026/27 закрыт, даты на 2027 год пока не опубликованы.",
+  "new": "MIS действует в 20 госвузах, среди них Universiti Malaya и UTM, и в нескольких частных. Приём на текущий учебный год закрыт, даты следующего набора пока не опубликованы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "contentBlocks[_key==\"6112da3029f6\"].items[_key==\"e8c8b4bde9a4\"].answer[_key==\"53643505e485\"].children[_key==\"9667ab595c22\"].text",
+  "text": "По прайсам 2025/26–2026 обучение за весь курс стоит примерно от RM 26 500 в UTM до RM 79 100 за MBA в Universiti Malaya. Частные вузы добавляют 6% SST. Отдельно считайте визовые сборы и жизнь — в Куала-Лумпуре ориентировочно RM 2 000–3 500 в месяц.",
+  "new": "По действующим прайсам обучение за весь курс стоит примерно от RM 26 500 в UTM до RM 79 100 за MBA в Universiti Malaya. Частные вузы добавляют 6% SST. Отдельно считайте визовые сборы и жизнь — в Куала-Лумпуре ориентировочно RM 2 000–3 500 в месяц."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "coverBlock.coverTitle",
+  "text": "Магистратура в Малайзии: форматы, цены и поступление на 2027 год",
+  "new": "Магистратура в Малайзии: форматы, цены и поступление"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "seo.metaTitle",
+  "text": "Магистратура в Малайзии 2027: цены, вузы, требования",
+  "new": "Магистратура в Малайзии: цены, вузы, требования"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.ru",
+  "path": "title",
+  "text": "Магистратура в Малайзии: форматы, цены и поступление на 2027 год",
+  "new": "Магистратура в Малайзии: форматы, цены и поступление"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"d5efd5d0fb25\"].content[_key==\"1e9e2bed63f4\"].children[_key==\"41025ce0db07\"].text",
+  "text": "Taylor's University is a private Malaysian university on the Lakeside Campus in Subang Jaya, Selangor, next to Kuala Lumpur. It grew out of Taylor's College, which dates back to 1969, and it is a Malaysian institution in its own right, not a branch of a foreign university. In the QS World University Rankings 2027 it is placed #272.",
+  "new": "Taylor's University is a private Malaysian university on the Lakeside Campus in Subang Jaya, Selangor, next to Kuala Lumpur. It grew out of Taylor's College, which dates back to 1969, and it is a Malaysian institution in its own right, not a branch of a foreign university. In the QS World University Rankings it is placed #272."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"dc261adabce9\"].rows[_key==\"bbead3757bca\"].cells[_key==\"0cf85df1df3b\"].content[_key==\"a1f137f4dbda\"].children[_key==\"314b5d199cb0\"].text",
+  "text": "QS World University Rankings 2027",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"dc261adabce9\"].rows[_key==\"e80f620ac99a\"].cells[_key==\"bd22b6de032d\"].content[_key==\"15fcbcac6481\"].children[_key==\"e6ecdf15122a\"].text",
+  "text": "QS Asia 2026",
+  "new": "QS Asia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"77e178e52f31\"].content[_key==\"21e327613454\"].children[_key==\"7fa138843a22\"].text",
+  "text": "The figures below come from Taylor's 2026 fee schedules for international students (updated June–August 2026). The 2027 price list is not published yet, so expect possible indexation. Fees are charged in ringgit (RM). The \"total\" column adds the international student fees and the 6% Service Tax (SST) that private universities charge non-Malaysians.",
+  "new": "The figures below come from Taylor's current fee schedules for international students. Next year's price list is not published yet, so expect possible indexation. Fees are charged in ringgit (RM). The \"total\" column adds the international student fees and the 6% Service Tax (SST) that private universities charge non-Malaysians."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"00d542a2d043\"].content[_key==\"97be52008afe\"].children[_key==\"76791e764526\"].text",
+  "text": "Dollar amounts in Taylor's schedules use RM 3.80 per dollar; the market rate in September 2026 was around RM 4.05–4.10, so plan for the difference. The fee schedules list no separate application fee. For programs not in the table, we confirm the fee for your intake. For a wider comparison, see the ",
+  "new": "Dollar amounts in Taylor's schedules use RM 3.80 per dollar; the market rate is around RM 4.05–4.10, so plan for the difference. The fee schedules list no separate application fee. For programs not in the table, we confirm the fee for your intake. For a wider comparison, see the "
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"27516731332c\"].note",
+  "text": "Taylor's 2026 fee schedules for international students. The 2027 price list is not published yet.",
+  "new": "Taylor's current fee schedules for international students. Next year's price list is not published yet."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"27516731332c\"].subtitle",
+  "text": "RM for the whole program, with international fees and 6% SST, 2026",
+  "new": "RM for the whole program, with international fees and 6% SST, current prices"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"de52df28102a\"].items[_key==\"2f5f03e399fc\"].content.content[_key==\"e32c3db00b1f\"].children[_key==\"b482c207db16\"].text",
+  "text": "Keep to the timeline. International students should apply at least 9 weeks before the intake, because the eVAL (visa approval letter) takes 6–8 weeks. For 2027, target the February, April or September intake; Taylor's publishes exact dates closer to each intake. MBBS also requires A Level BBB, ABC or AAC in Biology, Chemistry and Physics or Maths, or IB from 33 with Biology, Chemistry and Maths at HL, plus an interview, a medical check and a minimum age of 18.",
+  "new": "Keep to the timeline. International students should apply at least 9 weeks before the intake, because the eVAL (visa approval letter) takes 6–8 weeks. Target the February, April or September intake; Taylor's publishes exact dates closer to each intake. MBBS also requires A Level BBB, ABC or AAC in Biology, Chemistry and Physics or Maths, or IB from 33 with Biology, Chemistry and Maths at HL, plus an interview, a medical check and a minimum age of 18."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"de52df28102a\"].title",
+  "text": "How to apply to Taylor's University for 2027",
+  "new": "How to apply to Taylor's University"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"c8a11d99498b\"].content[_key==\"3187119c87bf\"].children[_key==\"bcba330ae0e7\"].text",
+  "text": "Taylor's is ranked #272 in the QS World University Rankings 2027, down from #253 in QS 2026. It is #27 in QS Asia 2026.",
+  "new": "Taylor's is ranked #272 in the QS World University Rankings, down from #253 in the previous edition. It is #27 in QS Asia."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"c8a11d99498b\"].content[_key==\"590725890939\"].children[_key==\"44d9111edcaa\"].text",
+  "text": "In QS by Subject 2026, 20 of its subjects are ranked. Hospitality and Leisure Management is #26 in the world; Art and Design and Marketing are in the top 100; Accounting and Finance is in the top 200.",
+  "new": "In QS by Subject, 20 of its subjects are ranked. Hospitality and Leisure Management is #26 in the world; Art and Design and Marketing are in the top 100; Accounting and Finance is in the top 200."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "contentBlocks[_key==\"73d65e8ee1c1\"].items[_key==\"fa82a8869c95\"].answer[_key==\"e76e9ec2ed81\"].children[_key==\"4efc975b2c24\"].text",
+  "text": "Under the 2026 price list, a 3-year Computer Science degree costs RM 152,187 with all international fees and 6% SST; MBBS costs RM 512,760 for 5 years. The 2027 prices are not published yet.",
+  "new": "Under the current price list, a 3-year Computer Science degree costs RM 152,187 with all international fees and 6% SST; MBBS costs RM 512,760 for 5 years. Next year's prices are not published yet."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "coverBlock.coverText",
+  "text": "A private university in Subang Jaya, ranked #272 in QS 2027. Real fees, entry requirements and the limits other guides skip.",
+  "new": "A private university in Subang Jaya, ranked #272 in QS. Real fees, entry requirements and the limits other guides skip."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "seo.metaDescription",
+  "text": "Taylor's University for international students: 2026 fees in RM with 6% SST, entry grades, IELTS, intakes and MBBS limits. Get a free document check.",
+  "new": "Taylor's University for international students: current fees in RM with 6% SST, entry grades, IELTS, intakes and MBBS limits. Get a free document check."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.en",
+  "path": "seo.metaTitle",
+  "text": "Taylor's University 2027: Fees, Admission, Rankings",
+  "new": "Taylor's University: Fees, Admission, Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"5c022de2b965\"].content[_key==\"44ef250e4f25\"].children[_key==\"6aec18e65664\"].text",
+  "text": "Taylor's University — частный малайзийский университет в Субанг-Джае, пригороде Куала-Лумпура. Он вырос из Taylor's College, основанного в 1969 году. В QS World University Rankings 2027 вуз занимает 272-е место. Это самостоятельный малайзийский вуз, а не филиал зарубежного университета, но по ряду программ он выдаёт двойной диплом вместе с вузами Великобритании, Австралии и Франции.",
+  "new": "Taylor's University — частный малайзийский университет в Субанг-Джае, пригороде Куала-Лумпура. Он вырос из Taylor's College, основанного в 1969 году. В QS World University Rankings вуз занимает 272-е место. Это самостоятельный малайзийский вуз, а не филиал зарубежного университета, но по ряду программ он выдаёт двойной диплом вместе с вузами Великобритании, Австралии и Франции."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"160f72fe0e4a\"].rows[_key==\"378d9efb4f57\"].cells[_key==\"bc6cd2d0b974\"].content[_key==\"c5c4b50ccb5e\"].children[_key==\"8e60edb6d39d\"].text",
+  "text": "QS World University Rankings 2027",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"160f72fe0e4a\"].rows[_key==\"2d0e804f0eae\"].cells[_key==\"5b71b157e71f\"].content[_key==\"7f38eb183941\"].children[_key==\"869df98d9e32\"].text",
+  "text": "QS Asia 2026",
+  "new": "QS Asia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"7dcaa10a20bf\"].content[_key==\"9586084e6a1f\"].children[_key==\"fb412a6f7591\"].text",
+  "text": "Все цены ниже — из официального прайса Taylor's для иностранных студентов на 2026 год. Прайс на 2027 год вуз ещё не опубликовал, возможна индексация. Платить нужно в ринггитах (RM). Суммы в долларах вуз даёт «для справки» по курсу 3,80, это ниже рыночного курса, поэтому при оплате из долларов закладывайте курсовую разницу.",
+  "new": "Все цены ниже — из официального действующего прайса Taylor's для иностранных студентов. Прайс на следующий год вуз ещё не опубликовал, возможна индексация. Платить нужно в ринггитах (RM). Суммы в долларах вуз даёт «для справки» по курсу 3,80, это ниже рыночного курса, поэтому при оплате из долларов закладывайте курсовую разницу."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"4a5e90e13c36\"].note",
+  "text": "Прайс на 2027 год Taylor's ещё не опубликовал. Сборы для иностранцев и 6% SST оплачиваются сверху.",
+  "new": "Прайс на следующий год Taylor's ещё не опубликовал. Сборы для иностранцев и 6% SST оплачиваются сверху."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"4a5e90e13c36\"].subtitle",
+  "text": "RM за всю программу, прайс 2026 для иностранцев, без сборов и 6% SST",
+  "new": "RM за всю программу, действующий прайс для иностранцев, без сборов и 6% SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"cf2f35a8c49c\"].items[_key==\"6d916b0b6353\"].content.content[_key==\"698c5487cd34\"].children[_key==\"18dff9b7d40a\"].text",
+  "text": "Выбор программы и интейка. Бакалавриат стартует в феврале, апреле и сентябре, Foundation — в феврале, апреле и августе. Точные даты 2027 года вуз публикует ближе к набору.",
+  "new": "Выбор программы и интейка. Бакалавриат стартует в феврале, апреле и сентябре, Foundation — в феврале, апреле и августе. Точные даты вуз публикует ближе к набору."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"cf2f35a8c49c\"].title",
+  "text": "Поступление в Taylor's: шаги для набора 2027",
+  "new": "Поступление в Taylor's: шаги"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"960407c311a4\"].content[_key==\"a842878c8584\"].children[_key==\"d722885386db\"].text",
+  "text": "В QS World University Rankings 2027 Taylor's занимает 272-е место (в QS 2026 было 253-е). В QS Asia 2026 — 27-е место. В QS by Subject 2026 ранжировано 20 направлений. Hospitality & Leisure Management — 26-е место в мире, Art & Design и Marketing — в топ-100, Accounting & Finance — в топ-200.",
+  "new": "В QS World University Rankings Taylor's занимает 272-е место (в предыдущем выпуске было 253-е). В QS Asia — 27-е место. В QS by Subject ранжировано 20 направлений. Hospitality & Leisure Management — 26-е место в мире, Art & Design и Marketing — в топ-100, Accounting & Finance — в топ-200."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"5cc2031acb17\"].items[_key==\"910a9adea061\"].answer[_key==\"e860291d2a1b\"].children[_key==\"40e75f303d11\"].text",
+  "text": "По прайсу 2026 года бакалавриат Computer Science со всеми сборами и SST стоит RM 152 187 за 3 года, Business — RM 160 773. Foundation — от RM 47 529 за год со сборами. Прайс на 2027 год ещё не опубликован, возможна индексация.",
+  "new": "По действующему прайсу бакалавриат Computer Science со всеми сборами и SST стоит RM 152 187 за 3 года, Business — RM 160 773. Foundation — от RM 47 529 за год со сборами. Прайс на следующий год ещё не опубликован, возможна индексация."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"5cc2031acb17\"].items[_key==\"4dc28a91f325\"].question",
+  "text": "Когда подавать документы на 2027 год?",
+  "new": "Когда подавать документы?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "contentBlocks[_key==\"2d5d4705f402\"].content[_key==\"1c3ff9ca68bd\"].children[_key==\"bfa6f665ef49\"].text",
+  "text": "Проверим ваши документы под требования Taylor's University, подскажем программу и интейк 2027 года и сравним Taylor's с 2–3 вузами Малайзии по цене и условиям. Первичная консультация бесплатная — напишите нам через форму на сайте, в WhatsApp или Telegram, или загляните на страницу ",
+  "new": "Проверим ваши документы под требования Taylor's University, подскажем программу и интейк и сравним Taylor's с 2–3 вузами Малайзии по цене и условиям. Первичная консультация бесплатная — напишите нам через форму на сайте, в WhatsApp или Telegram, или загляните на страницу "
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "coverBlock.coverText",
+  "text": "Частный вуз под Куала-Лумпуром с обучением на английском и двойными дипломами с вузами Великобритании. Разбираем цены 2026, требования и подводные камни.",
+  "new": "Частный вуз под Куала-Лумпуром с обучением на английском и двойными дипломами с вузами Великобритании. Разбираем действующие цены, требования и подводные камни."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "seo.metaDescription",
+  "text": "Taylor's University в Малайзии: прайс 2026 по программам, QS 2027 #272, поступление после 11 класса через Foundation, документы и виза. Консультация бесплатно.",
+  "new": "Taylor's University в Малайзии: действующий прайс по программам, QS #272, поступление после 11 класса через Foundation, документы и виза. Консультация бесплатно."
+ },
+ {
+  "id": "drafts.academgo.malaysia.taylors.ru",
+  "path": "seo.metaTitle",
+  "text": "Taylor's University: цены и поступление из СНГ, 2027",
+  "new": "Taylor's University: цены и поступление из СНГ"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"2d37b2334f8c\"].content[_key==\"4ba43c9bcaf7\"].children[_key==\"1cb03b534129\"].text",
+  "text": "Universiti Malaya (UM) — государственный исследовательский университет в Куала-Лумпуре и старейший вуз Малайзии. Его история начинается в 1905 году с медицинского колледжа, самостоятельным университетом в Куала-Лумпуре он стал в 1962 году. В рейтинге QS World University Rankings 2026 UM занимает 58-е место.",
+  "new": "Universiti Malaya (UM) — государственный исследовательский университет в Куала-Лумпуре и старейший вуз Малайзии. Его история начинается в 1905 году с медицинского колледжа, самостоятельным университетом в Куала-Лумпуре он стал в 1962 году. В рейтинге QS World University Rankings UM занимает 58-е место."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"71331591f1fc\"].rows[_key==\"d1981071402f\"].cells[_key==\"e1f628522684\"].content[_key==\"f7d84ef8082a\"].children[_key==\"a3c5d7517b8d\"].text",
+  "text": "QS World 2026 — #58; QS Asia 2026 — #12; THE 2026 — 201–250",
+  "new": "QS World — #58; QS Asia — #12; THE — 201–250"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"1ce6a4b0fbdf\"].content[_key==\"dbc7c7d1d8d6\"].children[_key==\"71c8de6cedd3\"].text",
+  "text": "UM указывает цену за всю программу, а не за год. Платить нужно по семестрам. Действующий прайс для иностранцев относится к набору «2025/2026 и далее»; отдельных цен на 2027/28 вуз не публиковал и оставляет за собой право их изменить. Поэтому перед подачей сверяем цену под вашу программу.",
+  "new": "UM указывает цену за всю программу, а не за год. Платить нужно по семестрам. Действующий прайс для иностранцев действует для текущих наборов; отдельных цен на следующий учебный год вуз не публиковал и оставляет за собой право их изменить. Поэтому перед подачей сверяем цену под вашу программу."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"9062822c42a0\"].columns[2]",
+  "text": "Цена за программу, RM (прайс 2025/26)",
+  "new": "Цена за программу, RM (действующий прайс)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"aa38d20b3d07\"].note",
+  "text": "Отдельных цен на 2027/28 UM не публиковал. Admission fee уже входит в стоимость.",
+  "new": "Отдельных цен на следующий учебный год UM не публиковал. Admission fee уже входит в стоимость."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"aa38d20b3d07\"].subtitle",
+  "text": "RM за всю программу, прайс для набора 2025/26 и далее, без 6% SST",
+  "new": "RM за всю программу, действующий прайс, без 6% SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"7edf48358944\"].items[_key==\"b69e07badf07\"].content.content[_key==\"fd5a35c3b845\"].children[_key==\"8597303549cb\"].text",
+  "text": "Выбор программы и оценка аттестата — проверяем, хватает ли 12 лет обучения. Если у вас 11 лет, планируем подготовительный год: Foundation в UM (по буклету 2025 года — RM 35 000, 1 год, набор иностранцев на 2027 уточняем), Foundation в другом малайзийском вузе или первый курс вуза дома.",
+  "new": "Выбор программы и оценка аттестата — проверяем, хватает ли 12 лет обучения. Если у вас 11 лет, планируем подготовительный год: Foundation в UM (по буклету вуза — RM 35 000, 1 год, набор иностранцев уточняем), Foundation в другом малайзийском вузе или первый курс вуза дома."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"7edf48358944\"].items[_key==\"d3033341b6d0\"].content.content[_key==\"6015d0dfbc54\"].children[_key==\"267b71bd1ed0\"].text",
+  "text": "Сроки 2027 — на мартовский набор 2027 года заявки принимают с 07.09.2026 по 30.01.2027. Даты для октября 2027 года UM ещё не объявил; для ориентира: в 2026 году приём на октябрь шёл с 09.02 по 30.08, а на MBBS закрылся 09.06. Точные даты вуз публикует ближе к набору.",
+  "new": "Сроки — на мартовский набор заявки принимают с 07.09 по 30.01. Даты для октябрьского набора UM ещё не объявил; для ориентира: в прошлом цикле приём на октябрь шёл с 09.02 по 30.08, а на MBBS закрылся 09.06. Точные даты вуз публикует ближе к набору."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"bda8256d6a0f\"].content[_key==\"33cb3ae9ae7d\"].children[_key==\"bacbd6d5f872\"].text",
+  "text": "В QS World University Rankings 2026 UM занимает 58-е место (в 2025 году — 60-е), в QS Asia 2026 — 12-е. В THE World University Rankings 2026 вуз в группе 201–250.",
+  "new": "В QS World University Rankings UM занимает 58-е место (в 2025 году — 60-е), в QS Asia — 12-е. В THE World University Rankings вуз в группе 201–250."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"bda8256d6a0f\"].content[_key==\"2683b096de6e\"].children[_key==\"6d7a178f65ba\"].text",
+  "text": "По предметам THE 2026 сильнее всего выглядит Education (80-е место). Business & Economics — 101–125, Law — 126–150, Engineering — 151–175.",
+  "new": "По предметам THE сильнее всего выглядит Education (80-е место). Business & Economics — 101–125, Law — 126–150, Engineering — 151–175."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"f0b9fa95abb2\"].items[_key==\"44e111eb500e\"].answer[_key==\"94ae6972ca8a\"].children[_key==\"b19a377cd590\"].text",
+  "text": "Формально UM требует не меньше 12 лет школьного обучения, а 11-летний аттестат это требование не закрывает. Обычный путь — Foundation в UM или другом малайзийском вузе либо год учёбы в вузе дома. Набор иностранцев на Foundation UM в 2027 году уточняем под ваш случай.",
+  "new": "Формально UM требует не меньше 12 лет школьного обучения, а 11-летний аттестат это требование не закрывает. Обычный путь — Foundation в UM или другом малайзийском вузе либо год учёбы в вузе дома. Набор иностранцев на Foundation UM уточняем под ваш случай."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"f0b9fa95abb2\"].items[_key==\"7f76a159866f\"].answer[_key==\"0e2fd5b23db6\"].children[_key==\"ccd6287da1f7\"].text",
+  "text": "UM указывает цену за всю программу по прайсу для набора 2025/26 и далее. Computer Science — RM 89 200 за 3,5 года, инженерия — RM 132 100 за 4 года, гуманитарные программы — RM 60 900–76 300. К этому добавляются визовый пакет UM (RM 5 451 на первый год) и, если применимо, 6% SST.",
+  "new": "UM указывает цену за всю программу по действующему прайсу. Computer Science — RM 89 200 за 3,5 года, инженерия — RM 132 100 за 4 года, гуманитарные программы — RM 60 900–76 300. К этому добавляются визовый пакет UM (RM 5 451 на первый год) и, если применимо, 6% SST."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"f0b9fa95abb2\"].items[_key==\"41aa4a37138d\"].answer[_key==\"4a388f7c620b\"].children[_key==\"ac9659616263\"].text",
+  "text": "На мартовский набор 2027 года UM принимает заявки с 07.09.2026 по 30.01.2027. Даты для октября 2027 года ещё не объявлены. Для медицины приём на октябрь закрывается раньше, чем на другие программы.",
+  "new": "На мартовский набор UM принимает заявки с 07.09 по 30.01. Даты для октябрьского набора ещё не объявлены. Для медицины приём на октябрь закрывается раньше, чем на другие программы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "contentBlocks[_key==\"f0b9fa95abb2\"].items[_key==\"41aa4a37138d\"].question",
+  "text": "Когда подавать документы на 2027 год?",
+  "new": "Когда подавать документы?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "seo.metaDescription",
+  "text": "Universiti Malaya (UM): QS 2026 — #58, цены за всю программу в RM, требования к аттестату СНГ, английскому, интейки март и октябрь. Оценим ваши шансы.",
+  "new": "Universiti Malaya (UM): QS — #58, цены за всю программу в RM, требования к аттестату СНГ, английскому, интейки март и октябрь. Оценим ваши шансы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.ru",
+  "path": "seo.metaTitle",
+  "text": "Universiti Malaya 2027: цены, требования, поступление из СНГ",
+  "new": "Universiti Malaya: цены, требования, поступление из СНГ"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"c43d6d716de5\"].content[_key==\"d4773ac79379\"].children[_key==\"690eb5fff382\"].text",
+  "text": "Whichever you choose, the application for your Student Pass goes through Education Malaysia Global Services (EMGS). Below we compare the options with 2026 fee data and show where applicants from Pakistan, India, Nigeria, Bangladesh, Egypt and the Gulf most often get stuck.",
+  "new": "Whichever you choose, the application for your Student Pass goes through Education Malaysia Global Services (EMGS). Below we compare the options with current fee data and show where applicants from Pakistan, India, Nigeria, Bangladesh, Egypt and the Gulf most often get stuck."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"dd006cca78ef\"].rows[_key==\"3953d0bc98d5\"].cells[_key==\"37c0cd8a0496\"].content[_key==\"08357fca9c3c\"].children[_key==\"1df81f08c2c0\"].text",
+  "text": "Approx. tuition per year (international, 2025–2026 price lists, before SST)",
+  "new": "Approx. tuition per year (international, current price lists, before SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"ae307d726fe1\"].cells[_key==\"228c1f50031e\"].content[_key==\"f8cfbdee39e2\"].children[_key==\"ca37c0b8853f\"].text",
+  "text": "#58 (2026)",
+  "new": "#58"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"ae307d726fe1\"].cells[_key==\"693a7bacdf4f\"].content[_key==\"bf774efef46f\"].children[_key==\"95fa9536fa35\"].text",
+  "text": "Computer Science: RM 89,200 for the full 3.5-year program (2025/26 intake onwards)",
+  "new": "Computer Science: RM 89,200 for the full 3.5-year program (current price list)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"925e224f979c\"].cells[_key==\"5964d1738e85\"].content[_key==\"05d7829e380d\"].children[_key==\"0f467c6de472\"].text",
+  "text": "#153 (2026)",
+  "new": "#153"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"925e224f979c\"].cells[_key==\"f0bd3d71e646\"].content[_key==\"ecd79a7089db\"].children[_key==\"3b619349013c\"].text",
+  "text": "Engineering: RM 75,000 for the full 4-year program (fee page checked September 2026)",
+  "new": "Engineering: RM 75,000 for the full 4-year program (current fee page)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"e9cfd52386e7\"].cells[_key==\"365858b51797\"].content[_key==\"0951957fee50\"].children[_key==\"bb937835403d\"].text",
+  "text": "#272 (2027)",
+  "new": "#272"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"e9cfd52386e7\"].cells[_key==\"a0ca5a92497e\"].content[_key==\"2f6eed112a89\"].children[_key==\"a3d0deb9f9aa\"].text",
+  "text": "Computer Science: RM 124,080 tuition for 3 years (2026, before SST)",
+  "new": "Computer Science: RM 124,080 tuition for 3 years (before SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"6b2b3c607497\"].cells[_key==\"119e98ccb522\"].content[_key==\"e4a88c92451f\"].children[_key==\"aebcf0f9a289\"].text",
+  "text": "#282 (2027)",
+  "new": "#282"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"0b502f102783\"].cells[_key==\"447490dcf68e\"].content[_key==\"72cd2969e75b\"].children[_key==\"28ad60a74fa1\"].text",
+  "text": "#=528 (2027)",
+  "new": "#=528"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"0b502f102783\"].cells[_key==\"6baaf5bb0b93\"].content[_key==\"5e18309d386c\"].children[_key==\"ee53af8bc252\"].text",
+  "text": "IT, Computer Science, Business: RM 108,500 for 3 years (2026, before SST)",
+  "new": "IT, Computer Science, Business: RM 108,500 for 3 years (before SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"c083b565b5be\"].cells[_key==\"2be851f06db5\"].content[_key==\"2ffd09197c79\"].children[_key==\"e27a3d4d18eb\"].text",
+  "text": "Computer Science: USD 9,779 per year, paid in MYR (2026)",
+  "new": "Computer Science: USD 9,779 per year, paid in MYR"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"ac0f0cf036ce\"].cells[_key==\"606e43732589\"].content[_key==\"31bf9fdad37a\"].children[_key==\"3abc939baf9b\"].text",
+  "text": "Computer Science: RM 54,720 per year (2026)",
+  "new": "Computer Science: RM 54,720 per year"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"d8abb7df5a1c\"].rows[_key==\"3e30c5622764\"].cells[_key==\"ae29c53c70dd\"].content[_key==\"6bf44a2937b3\"].children[_key==\"b1f669475ba8\"].text",
+  "text": "Computing: RM 48,400 per year (2026/27, before SST)",
+  "new": "Computing: RM 48,400 per year (before SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"962c026aa557\"].content[_key==\"8f4ee083a8de\"].children[_key==\"a222465dfe27\"].text",
+  "text": "Public universities set subject grades. For UTM engineering, you need at least 75% per subject with FSc, B1/B+ with CBSE or ISC, B2 with WAEC, A+ with Bangladesh HSC, and 80% with Thanaweya Amma or Gulf certificates. UTM stopped offering its Bridging Programme from the 2026/27 session, so you must meet direct-entry rules.",
+  "new": "Public universities set subject grades. For UTM engineering, you need at least 75% per subject with FSc, B1/B+ with CBSE or ISC, B2 with WAEC, A+ with Bangladesh HSC, and 80% with Thanaweya Amma or Gulf certificates. UTM has stopped offering its Bridging Programme, so you must meet direct-entry rules."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"962c026aa557\"].content[_key==\"b16007fd7783\"].children[_key==\"91d83fe0dd00\"].text",
+  "text": "For English, a bachelor's usually asks for IELTS 5.5–6.0, and medicine or psychology can ask for more. Examples: APU asks for IELTS 5.0 in IT and Computer Science and 5.5 in Business; UM and UTM ask for 5.5; Taylor's asks for 5.5 in Computer Science and 6.0 for medicine. If you are short, Monash English costs RM 7,600 for 10 weeks (2026).",
+  "new": "For English, a bachelor's usually asks for IELTS 5.5–6.0, and medicine or psychology can ask for more. Examples: APU asks for IELTS 5.0 in IT and Computer Science and 5.5 in Business; UM and UTM ask for 5.5; Taylor's asks for 5.5 in Computer Science and 6.0 for medicine. If you are short, Monash English costs RM 7,600 for 10 weeks."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"eee4eb62921d\"].title",
+  "text": "How to apply to a Malaysian university for a 2027 intake",
+  "new": "How to apply to a Malaysian university"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"922546a57f0e\"].content[_key==\"6247dd44308a\"].children[_key==\"c44787e93a52\"].text",
+  "text": "Sunway's Computer Science costs RM 39,800 a year for Malaysians but USD 9,779 for international students. UCSI's Pharmacy costs RM 232,726 for internationals against RM 161,340 for locals. Since 1 July 2025, private universities add 6% Service Tax to fees for non-Malaysians, and UM also quotes its fees before 6% SST. Universities convert USD at an indicative RM 3.80, while the market rate was about 4.08 on 18 September 2026, so budget for the difference. A bank statement is not in the standard EMGS document list, although a university may ask for one. See our ",
+  "new": "Sunway's Computer Science costs RM 39,800 a year for Malaysians but USD 9,779 for international students. UCSI's Pharmacy costs RM 232,726 for internationals against RM 161,340 for locals. Since 1 July 2025, private universities add 6% Service Tax to fees for non-Malaysians, and UM also quotes its fees before 6% SST. Universities convert USD at an indicative RM 3.80, while the market rate is about 4.08, so budget for the difference. A bank statement is not in the standard EMGS document list, although a university may ask for one. See our "
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"bfab7ca6af94\"].items[_key==\"05839b836eab\"].answer[_key==\"9367d4219fb2\"].children[_key==\"9b0b79552356\"].text",
+  "text": "No. It is a branch campus of Australia's Monash University, located in Bandar Sunway. In 2026, international students pay RM 51,840 a year for Business and Commerce and RM 54,720 for Computer Science. Medical Science plus Doctor of Medicine costs RM 138,720 a year.",
+  "new": "No. It is a branch campus of Australia's Monash University, located in Bandar Sunway. International students pay RM 51,840 a year for Business and Commerce and RM 54,720 for Computer Science. Medical Science plus Doctor of Medicine costs RM 138,720 a year."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"bfab7ca6af94\"].items[_key==\"128c5efb9f1b\"].answer[_key==\"657611e74e06\"].children[_key==\"7c632a1bac96\"].text",
+  "text": "Sunway is a private Malaysian university. For its BSc (Hons) Computer Science, the 2026 international fee is USD 9,779 a year, paid in MYR. The RM 39,800 figure you may see online is the price for Malaysian students. Entry to that program needs IELTS 6.0 or an equivalent.",
+  "new": "Sunway is a private Malaysian university. For its BSc (Hons) Computer Science, the current international fee is USD 9,779 a year, paid in MYR. The RM 39,800 figure you may see online is the price for Malaysian students. Entry to that program needs IELTS 6.0 or an equivalent."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"bfab7ca6af94\"].items[_key==\"2708890f9b96\"].answer[_key==\"9a1be3b4470a\"].children[_key==\"260158a7375f\"].text",
+  "text": "UM accepts applications for its March 2027 intake from 7 September 2026 to 30 January 2027. Dates for the September and October 2027 intakes have not been published yet. Most private universities run 2–4 intakes a year; Taylor's asks international students to apply at least 9 weeks before the start.",
+  "new": "UM accepts applications for its March intake from 7 September to 30 January. Dates for the next September and October intakes have not been published yet. Most private universities run 2–4 intakes a year; Taylor's asks international students to apply at least 9 weeks before the start."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "contentBlocks[_key==\"bfab7ca6af94\"].items[_key==\"2708890f9b96\"].question",
+  "text": "When should I apply for a 2027 intake?",
+  "new": "When should I apply?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "coverBlock.coverText",
+  "text": "Public, private and branch campuses compared, with 2026 fees, QS ranks, the degree you actually get, and what to check before a 2027 intake.",
+  "new": "Public, private and branch campuses compared, with current fees, QS ranks, the degree you actually get, and what to check before you apply."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "seo.metaDescription",
+  "text": "Public, private or branch campus? Compare 2026 fees for international students, QS ranks, 3+0 degrees and entry routes, then get a free consultation.",
+  "new": "Public, private or branch campus? Compare current fees for international students, QS ranks, 3+0 degrees and entry routes, then get a free consultation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.en",
+  "path": "seo.metaTitle",
+  "text": "Universities in Malaysia 2027: Fees, Rankings, Types",
+  "new": "Universities in Malaysia: Fees, Rankings, Types"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"a1096a89d027\"].content[_key==\"c4d206296550\"].children[_key==\"63338ceccaa9\"].text",
+  "text": "Ниже — таблица пяти вузов с ценами для иностранцев, разбор программ 3+0 и 2+1, гранты и порядок поступления на 2027 год. Общий обзор страны — в разделе ",
+  "new": "Ниже — таблица пяти вузов с ценами для иностранцев, разбор программ 3+0 и 2+1, гранты и порядок поступления на ближайший набор. Общий обзор страны — в разделе "
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"8c036dd50d50\"].cells[_key==\"2eea5322d5ce\"].content[_key==\"6228b1d06d01\"].children[_key==\"a8e3fb287e48\"].text",
+  "text": "#58 (QS 2026)",
+  "new": "#58 (QS)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"8c036dd50d50\"].cells[_key==\"17f8c17775ce\"].content[_key==\"21ab71016727\"].children[_key==\"f61ac63360b4\"].text",
+  "text": "Computer Science — RM 89 200 за всю программу, 3,5 года (прайс для набора 2025/26 и далее)",
+  "new": "Computer Science — RM 89 200 за всю программу, 3,5 года (действующий прайс)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"82d7469db38e\"].cells[_key==\"6a758de2a636\"].content[_key==\"0a264246754a\"].children[_key==\"0ac0a4fadfed\"].text",
+  "text": "#153 (QS 2026)",
+  "new": "#153 (QS)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"82d7469db38e\"].cells[_key==\"2fb843a1935b\"].content[_key==\"77e18811acac\"].children[_key==\"4ca6c21f5c13\"].text",
+  "text": "Инженерия — RM 75 000 за всю программу, 4 года (прайс на сайте UTM, сентябрь 2026)",
+  "new": "Инженерия — RM 75 000 за всю программу, 4 года (действующий прайс на сайте UTM)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"fa2d4f86ec13\"].cells[_key==\"2f85d3a44fb0\"].content[_key==\"728fe20f0dd5\"].children[_key==\"1bab11e34356\"].text",
+  "text": "#272 (QS 2027)",
+  "new": "#272 (QS)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"fa2d4f86ec13\"].cells[_key==\"61dbe4b8f2ee\"].content[_key==\"abaa778c0c8f\"].children[_key==\"722e47a86c7d\"].text",
+  "text": "Computer Science — RM 124 080 за 3 года (прайс 2026, без 6% SST)",
+  "new": "Computer Science — RM 124 080 за 3 года (действующий прайс, без 6% SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"63de96b5dcf9\"].cells[_key==\"b98860579949\"].content[_key==\"e86984245ab4\"].children[_key==\"39d308aa1a12\"].text",
+  "text": "#282 (QS 2027)",
+  "new": "#282 (QS)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"63de96b5dcf9\"].cells[_key==\"fe404a29cca9\"].content[_key==\"f08047a58131\"].children[_key==\"1b00f64b426e\"].text",
+  "text": "Computer Science — около RM 103 881 за 3 года (оценка вуза на сентябрь 2026)",
+  "new": "Computer Science — около RM 103 881 за 3 года (оценка вуза)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"a9c8678574e3\"].cells[_key==\"3e7c39ee0455\"].content[_key==\"37f1134b6342\"].children[_key==\"79271196079e\"].text",
+  "text": "#=528 (QS 2027)",
+  "new": "#=528 (QS)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"b1b48d70ef67\"].rows[_key==\"a9c8678574e3\"].cells[_key==\"09e8684306a3\"].content[_key==\"f2dee7906241\"].children[_key==\"c31913838872\"].text",
+  "text": "IT, Business, CS — RM 108 500 за 3 года, 1-й курс RM 34 900 (прайс 2026, без 6% SST)",
+  "new": "IT, Business, CS — RM 108 500 за 3 года, 1-й курс RM 34 900 (действующий прайс, без 6% SST)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"7f42dff5fa36\"].content[_key==\"d2d53168759a\"].children[_key==\"fec7f102064b\"].text",
+  "text": "Ориентиры по прайсам 2026 года, без 6% SST: бакалавриат в частных вузах — примерно RM 35 000–45 000 в год, в филиалах UK и Австралии — примерно RM 48 000–65 000 в год. В госвузах выходит примерно RM 16 000–33 000 в год, если разделить цену программы на годы обучения. Foundation обходится примерно в RM 28 000–37 500 за программу.",
+  "new": "Ориентиры по действующим прайсам, без 6% SST: бакалавриат в частных вузах — примерно RM 35 000–45 000 в год, в филиалах UK и Австралии — примерно RM 48 000–65 000 в год. В госвузах выходит примерно RM 16 000–33 000 в год, если разделить цену программы на годы обучения. Foundation обходится примерно в RM 28 000–37 500 за программу."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"7f42dff5fa36\"].content[_key==\"80b4b1c3cd74\"].children[_key==\"22193ffa7262\"].text",
+  "text": "Для сравнения с филиалами: в Monash Malaysia Business and Commerce стоит RM 51 840 в год (иностранцы, 2026), в Heriot-Watt Malaysia бакалавриат Business — RM 48 120 в год (2026/27, без SST).",
+  "new": "Для сравнения с филиалами: в Monash Malaysia Business and Commerce стоит RM 51 840 в год (иностранцы), в Heriot-Watt Malaysia бакалавриат Business — RM 48 120 в год (без SST)."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"7f42dff5fa36\"].content[_key==\"0328186a5d82\"].children[_key==\"cdc3d501c256\"].text",
+  "text": "Прайсов на 2027 год вузы ещё не опубликовали, возможна индексация. Подробный расчёт с проживанием и визовыми сборами — на странице ",
+  "new": "Прайсов на следующий год вузы ещё не опубликовали, возможна индексация. Подробный расчёт с проживанием и визовыми сборами — на странице "
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"1ebe706faf73\"].content[_key==\"b3490dfddf00\"].children[_key==\"a0a325d506f7\"].text",
+  "text": " с 2026/27 вуз отменил Bridging Programme — нужно сразу выполнять требования прямого зачисления. В таблице UTM есть аттестат 12-летней школы Казахстана, диплом колледжа или лицея Узбекистана и ЕГЭ для России. Foundation для иностранцев ведёт UTMSPACE, заявка туда подаётся отдельно.",
+  "new": " вуз отменил Bridging Programme — нужно сразу выполнять требования прямого зачисления. В таблице UTM есть аттестат 12-летней школы Казахстана, диплом колледжа или лицея Узбекистана и ЕГЭ для России. Foundation для иностранцев ведёт UTMSPACE, заявка туда подаётся отдельно."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"de9e001d8845\"].content[_key==\"51ecf1156331\"].children[_key==\"3ed0720a4301\"].text",
+  "text": "Когда подавать на 2027 год",
+  "new": "Когда подавать документы"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"de9e001d8845\"].content[_key==\"2f9945d735a5\"].children[_key==\"076459249968\"].text",
+  "text": "Ближайший набор в UM — мартовский интейк 2027: приём заявок на бакалавриат и магистратуру открыт с 07.09.2026 по 30.01.2027. Даты приёма на октябрь 2027 UM ещё не объявил. У UTM основной набор в сентябре, даты на 2027 год вуз публикует ближе к набору. Частные вузы принимают 2–4 раза в год, так что старт в 2027 году возможен в январе–феврале, апреле–мае или сентябре.",
+  "new": "Ближайший набор в UM — мартовский интейк: приём заявок на бакалавриат и магистратуру открыт с 07.09 по 30.01. Даты приёма на октябрь UM ещё не объявил. У UTM основной набор в сентябре, даты вуз публикует ближе к набору. Частные вузы принимают 2–4 раза в год, так что старт возможен в январе–феврале, апреле–мае или сентябре."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"c3b7d1287ee4\"].content[_key==\"3084a3ebc018\"].children[_key==\"8689b8480b0d\"].text",
+  "text": " от Минвысшобра — только магистратура и PhD. Покрывает обучение на весь срок и даёт RM 1 500 в месяц. Подать могут граждане России, Казахстана, Узбекистана, Кыргызстана, Азербайджана; Беларуси в списке нет. Условия: CGPA от 3,00, IELTS от 6.0, две рекомендации. Даты приёма на 2027 год ещё не опубликованы.",
+  "new": " от Минвысшобра — только магистратура и PhD. Покрывает обучение на весь срок и даёт RM 1 500 в месяц. Подать могут граждане России, Казахстана, Узбекистана, Кыргызстана, Азербайджана; Беларуси в списке нет. Условия: CGPA от 3,00, IELTS от 6.0, две рекомендации. Даты приёма на следующий набор ещё не опубликованы."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"af4b37f0dacc\"].items[_key==\"f8952691d710\"].answer[_key==\"2a9a30916c21\"].children[_key==\"3f311cc2fd59\"].text",
+  "text": "По прайсам 2026 года частные вузы стоят примерно RM 35 000–45 000 в год, филиалы UK и Австралии — примерно RM 48 000–65 000 в год, без 6% SST. В госвузах цена указана за всю программу: например, Computer Science в UM — RM 89 200 за 3,5 года.",
+  "new": "По действующим прайсам частные вузы стоят примерно RM 35 000–45 000 в год, филиалы UK и Австралии — примерно RM 48 000–65 000 в год, без 6% SST. В госвузах цена указана за всю программу: например, Computer Science в UM — RM 89 200 за 3,5 года."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"af4b37f0dacc\"].items[_key==\"d5c6b1043cfd\"].answer[_key==\"621083e676ec\"].children[_key==\"67114626bed0\"].text",
+  "text": "Частные вузы набирают 2–4 раза в год, поэтому старт возможен в начале, середине или осенью 2027 года. В UM приём на мартовский интейк 2027 открыт до 30.01.2027. Подавайте минимум за 2–3 месяца до старта: одна виза занимает 4–8 недель.",
+  "new": "Частные вузы набирают 2–4 раза в год, поэтому старт возможен в начале, середине или осенью года. В UM приём на мартовский интейк открыт до 30.01. Подавайте минимум за 2–3 месяца до старта: одна виза занимает 4–8 недель."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "contentBlocks[_key==\"af4b37f0dacc\"].items[_key==\"d5c6b1043cfd\"].question",
+  "text": "Когда подавать документы на 2027 год?",
+  "new": "Когда подавать документы?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "coverBlock.coverText",
+  "text": "Чем госвуз отличается от частного вуза и филиала, какой диплом даёт 3+0 и сколько платят иностранцы: сравнение пяти вузов по данным 2026 года.",
+  "new": "Чем госвуз отличается от частного вуза и филиала, какой диплом даёт 3+0 и сколько платят иностранцы: сравнение пяти вузов по актуальным данным."
+ },
+ {
+  "id": "drafts.academgo.malaysia.universities.ru",
+  "path": "seo.metaTitle",
+  "text": "Университеты Малайзии 2027: госвузы, частные, филиалы",
+  "new": "Университеты Малайзии: госвузы, частные, филиалы"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"58f0a15170fa\"].content[_key==\"c933e804444f\"].children[_key==\"99be396579c2\"].text",
+  "text": "Masters in Malaysia are taught at public research universities such as Universiti Malaya and UTM and at private universities such as Taylor's and APU, in coursework, research and mixed-mode formats. Tuition for the whole program ranges from about RM 26,500 to RM 79,100 at the universities on this page (fee lists published 2025–2026), before visa fees, insurance and living costs.",
+  "new": "Masters in Malaysia are taught at public research universities such as Universiti Malaya and UTM and at private universities such as Taylor's and APU, in coursework, research and mixed-mode formats. Tuition for the whole program ranges from about RM 26,500 to RM 79,100 at the universities on this page (current fee lists), before visa fees, insurance and living costs."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"cf2fd1379408\"].content[_key==\"284007de0e64\"].children[_key==\"60e7bdf21aa1\"].text",
+  "text": "Deadlines differ by format, too. For September 2026, UTM closed taught and mixed-mode applications on 31 July but kept research applications open until 31 October. Expect a similar split for 2027; universities publish exact dates closer to each intake.",
+  "new": "Deadlines differ by format, too. In the last cycle, UTM closed September taught and mixed-mode applications on 31 July but kept research applications open until 31 October. Expect a similar split next year; universities publish exact dates closer to each intake."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"8ef3ee147b45\"].rows[_key==\"329c371aceb2\"].cells[_key==\"be733d7b9853\"].content[_key==\"60e432c76086\"].children[_key==\"aa2f26021e12\"].text",
+  "text": "UM international booklet, Dec 2025",
+  "new": "UM international booklet"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"8ef3ee147b45\"].rows[_key==\"9dd8f39488cb\"].cells[_key==\"38793cbde1b9\"].content[_key==\"aa7a93bd5c2e\"].children[_key==\"297eacb976cf\"].text",
+  "text": "UTM postgraduate fee page, checked Sept 2026",
+  "new": "UTM postgraduate fee page"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"8ef3ee147b45\"].rows[_key==\"3768ebceb427\"].cells[_key==\"e33089cb8e0a\"].content[_key==\"5df4a2487ce6\"].children[_key==\"fd25224f17e6\"].text",
+  "text": "2026",
+  "new": "Current fee list"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"8ef3ee147b45\"].rows[_key==\"592abfb518eb\"].cells[_key==\"3e02e6028988\"].content[_key==\"4883256240cb\"].children[_key==\"e3c74922b5fd\"].text",
+  "text": "September 2026 intake",
+  "new": "Current intake"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"8ef3ee147b45\"].rows[_key==\"1b9bf8c4935d\"].cells[_key==\"55c739d89828\"].content[_key==\"e6ed251992f2\"].children[_key==\"4ba2d928417e\"].text",
+  "text": "Fee guide 2026",
+  "new": "Fee guide"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"f5b044ec831f\"].content[_key==\"f798074a52f0\"].children[_key==\"2b46e09ddf5a\"].text",
+  "text": "Three things change the final number. Since 1 July 2025, private universities add 6% Service Tax (SST) for international students, and fee lists usually exclude it; Universiti Malaya also quotes fees without 6% SST. You pay in ringgit: universities convert to USD at an indicative RM 3.80, while the market rate in September 2026 was around RM 4.05–4.10. And 2027 fee lists are not out yet, so plan on 2026 prices with a possible increase.",
+  "new": "Three things change the final number. Since 1 July 2025, private universities add 6% Service Tax (SST) for international students, and fee lists usually exclude it; Universiti Malaya also quotes fees without 6% SST. You pay in ringgit: universities convert to USD at an indicative RM 3.80, while the market rate is around RM 4.05–4.10. And next year's fee lists are not out yet, so plan on current prices with a possible increase."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"7eb7c4fd58fc\"].note",
+  "text": "Tuition only. Private universities add 6% SST, and Universiti Malaya also quotes fees without it. 2027 fee lists are not out yet.",
+  "new": "Tuition only. Private universities add 6% SST, and Universiti Malaya also quotes fees without it. Next year's fee lists are not out yet."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"7eb7c4fd58fc\"].subtitle",
+  "text": "RM for the whole program, international students, fee lists 2025–2026",
+  "new": "RM for the whole program, international students, current fee lists"
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"cdd46d031282\"].content[_key==\"4885ee1aaf8a\"].children[_key==\"74467f3f95e9\"].text",
+  "text": "In the QS World University Rankings 2026, Universiti Malaya was #58 and UTM #153. Compare universities side by side on our ",
+  "new": "In the QS World University Rankings, Universiti Malaya is #58 and UTM #153. Compare universities side by side on our "
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"0a4e4d518cf8\"].rightContent.blockContent.content[_key==\"bb81dbf11ca6\"].children[_key==\"087c4b1b7caa\"].text",
+  "text": "MIS is open to citizens of Egypt, Saudi Arabia, the UAE, Qatar, Kuwait and Bahrain, and of Commonwealth countries, including India, Pakistan, Nigeria and Bangladesh. Master's applicants must be under 40, with a CGPA of 3.00 (Second Class Upper) or higher and IELTS 6.0 or TOEFL PBT 550. Medicine, nursing and pharmacy are not priority fields. MIS works at 20 public universities, including UM and UTM, and several private ones. The 2026/27 round is closed, and dates for the next round have not been announced.",
+  "new": "MIS is open to citizens of Egypt, Saudi Arabia, the UAE, Qatar, Kuwait and Bahrain, and of Commonwealth countries, including India, Pakistan, Nigeria and Bangladesh. Master's applicants must be under 40, with a CGPA of 3.00 (Second Class Upper) or higher and IELTS 6.0 or TOEFL PBT 550. Medicine, nursing and pharmacy are not priority fields. MIS works at 20 public universities, including UM and UTM, and several private ones. The current round is closed, and dates for the next round have not been announced."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"02f7a7767011\"].items[_key==\"9f63bb24bf21\"].content.content[_key==\"d762fe14ed6e\"].children[_key==\"e8b8d3681050\"].text",
+  "text": "Shortlist programs and check each code in the MQR. Confirm the intake: Universiti Malaya accepts master's applications for March 2027 from 7 September 2026 to 30 January 2027.",
+  "new": "Shortlist programs and check each code in the MQR. Confirm the intake: Universiti Malaya accepts master's applications for the March intake from 7 September to 30 January."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "contentBlocks[_key==\"77ed6d59b3e3\"].items[_key==\"472050ee79e3\"].answer[_key==\"9ada94cd69e8\"].children[_key==\"db762ba3c5a6\"].text",
+  "text": "On 2025–2026 fee lists, tuition for the whole program runs from about RM 26,500 at UTM to RM 79,100 for the UM MBA, plus 6% SST at private universities. Add first-year visa and EMGS fees (about RM 2,700–3,300) and living costs of about RM 2,000–3,500 a month in Kuala Lumpur.",
+  "new": "On current fee lists, tuition for the whole program runs from about RM 26,500 at UTM to RM 79,100 for the UM MBA, plus 6% SST at private universities. Add first-year visa and EMGS fees (about RM 2,700–3,300) and living costs of about RM 2,000–3,500 a month in Kuala Lumpur."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "seo.metaDescription",
+  "text": "Master's tuition in Malaysia: about RM 26,500–79,100 per program on 2025–26 fee lists. Formats, IELTS, MIS scholarship, family visas. Book a free consultation.",
+  "new": "Master's tuition in Malaysia: about RM 26,500–79,100 per program on current fee lists. Formats, IELTS, MIS scholarship, family visas. Book a free consultation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.masters.en",
+  "path": "seo.metaTitle",
+  "text": "Masters in Malaysia 2027: Fees, Entry and Scholarships",
+  "new": "Masters in Malaysia: Fees, Entry and Scholarships"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"ffb4a269c292\"].leftContent.blockContent.content[_key==\"94f9e7a46f3d\"].children[_key==\"6c140a8d8786\"].text",
+  "text": "UCSI University is a private Malaysian university founded in 1986, with its main campus in Cheras, Kuala Lumpur, and two more campuses in Bandar Springhill and Kuching. It offers over 150 programs from Foundation to PhD, including medicine, pharmacy, engineering, computer science, business, hospitality and music. In the QS World University Rankings 2027 it is placed #282.",
+  "new": "UCSI University is a private Malaysian university founded in 1986, with its main campus in Cheras, Kuala Lumpur, and two more campuses in Bandar Springhill and Kuching. It offers over 150 programs from Foundation to PhD, including medicine, pharmacy, engineering, computer science, business, hospitality and music. In the QS World University Rankings it is placed #282."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"ebdd892ea54e\"].rows[_key==\"1bf63e8834cb\"].cells[_key==\"df40226e5f3e\"].content[_key==\"56375ed1a7a7\"].children[_key==\"ee01694d16cc\"].text",
+  "text": "QS World University Rankings 2027",
+  "new": "QS World University Rankings"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"ebdd892ea54e\"].rows[_key==\"b2cd137c182c\"].cells[_key==\"2a7dbc64f74c\"].content[_key==\"495c71a4e0c7\"].children[_key==\"345f57913ec1\"].text",
+  "text": "QS Asia 2026",
+  "new": "QS Asia"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"d6a4bbcc9358\"].content[_key==\"1d177bca713d\"].children[_key==\"014935163bfa\"].text",
+  "text": "Fees are for the whole course, from UCSI program pages checked in September 2026. The pages carry no update date, and 2027 fees are not published yet. Since July 1, 2025, international students at private universities pay 6% Service Tax; UCSI does not say whether these totals include it.",
+  "new": "Fees are for the whole course, from UCSI program pages. The pages carry no update date, and next year's fees are not published yet. Since July 1, 2025, international students at private universities pay 6% Service Tax; UCSI does not say whether these totals include it."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"e6f3e0a01169\"].note",
+  "text": "UCSI calls these totals an estimate and does not say whether they include 6% SST. 2027 fees are not published yet.",
+  "new": "UCSI calls these totals an estimate and does not say whether they include 6% SST. Next year's fees are not published yet."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"e6f3e0a01169\"].subtitle",
+  "text": "RM for the whole course, Approximate Total Fees, checked September 2026",
+  "new": "RM for the whole course, Approximate Total Fees"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"6f1bc16852af\"].items[_key==\"bf6182d71f46\"].content.content[_key==\"f33f25a3588b\"].children[_key==\"cadca9200e40\"].text",
+  "text": " UCSI usually takes students in January, May and September, and the MD in September only. The 2027 calendar is not published yet, so start documents 4–6 months ahead.",
+  "new": " UCSI usually takes students in January, May and September, and the MD in September only. Next year's calendar is not published yet, so start documents 4–6 months ahead."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"6f1bc16852af\"].title",
+  "text": "How to apply to UCSI for 2027",
+  "new": "How to apply to UCSI"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"b023af4f7d7a\"].content[_key==\"4ef06da8ef89\"].children[_key==\"d22d93aac8d3\"].text",
+  "text": "UCSI is #282 in the QS World University Rankings 2027 and has stayed in the global top 300 for five years in a row. In QS Asia 2026 it is in the top 30 in Asia and 8th in Southeast Asia. Its strongest subjects in QS by Subject 2026 are Music and Performing Arts (both #24 in the world), Art & Design (#29) and Hospitality & Leisure (#47).",
+  "new": "UCSI is #282 in the QS World University Rankings and has stayed in the global top 300 for five years in a row. In QS Asia it is in the top 30 in Asia and 8th in Southeast Asia. Its strongest subjects in QS by Subject are Music and Performing Arts (both #24 in the world), Art & Design (#29) and Hospitality & Leisure (#47)."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"b023af4f7d7a\"].content[_key==\"19b814d515c8\"].children[_key==\"8ab3373e7997\"].text",
+  "text": "On the Kuala Lumpur campus, students live in the Residential Halls, mostly in twin-sharing rooms, with a few single en-suite rooms in block E. According to UCSI's 2025 brochure, a room costs around RM 700 per person per month, paid per semester, with water and electricity included.",
+  "new": "On the Kuala Lumpur campus, students live in the Residential Halls, mostly in twin-sharing rooms, with a few single en-suite rooms in block E. According to UCSI's brochure, a room costs around RM 700 per person per month, paid per semester, with water and electricity included."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"3d8b23623fac\"].items[_key==\"293718ac1032\"].answer[_key==\"60e46be8b3d6\"].children[_key==\"89d27ad343f6\"].text",
+  "text": "It is ranked #282 in the QS World University Rankings 2027 and in the top 30 in QS Asia 2026. Its Music and Performing Arts programs are #24 in the world in QS by Subject 2026. Whether it fits you depends on your program, budget and plans after graduation.",
+  "new": "It is ranked #282 in the QS World University Rankings and in the top 30 in QS Asia. Its Music and Performing Arts programs are #24 in the world in QS by Subject. Whether it fits you depends on your program, budget and plans after graduation."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"3d8b23623fac\"].items[_key==\"24cafab80154\"].answer[_key==\"491a8374738a\"].children[_key==\"0c9c3230a392\"].text",
+  "text": "UCSI publishes approximate total fees for the whole course: RM 103,881 for the 3-year Bachelor of Computer Science, RM 232,726 for 4-year Pharmacy and RM 532,524 for the 5-year MD (checked September 2026). The application fee is RM 3,100–3,600.",
+  "new": "UCSI publishes approximate total fees for the whole course: RM 103,881 for the 3-year Bachelor of Computer Science, RM 232,726 for 4-year Pharmacy and RM 532,524 for the 5-year MD. The application fee is RM 3,100–3,600."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"3d8b23623fac\"].items[_key==\"a94cb666ddf0\"].answer[_key==\"0800beb20e41\"].children[_key==\"88ed74ceda84\"].text",
+  "text": "UCSI usually runs intakes in January, May and September; the MD starts in September only. The 2027 calendar is not published yet, so start preparing documents 4–6 months before your intake.",
+  "new": "UCSI usually runs intakes in January, May and September; the MD starts in September only. Next year's calendar is not published yet, so start preparing documents 4–6 months before your intake."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "contentBlocks[_key==\"3d8b23623fac\"].items[_key==\"a94cb666ddf0\"].question",
+  "text": "When are UCSI intakes in 2027?",
+  "new": "When are UCSI intakes?"
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "coverBlock.coverText",
+  "text": "A private Kuala Lumpur university ranked #282 in QS 2027, with 150+ programs, three intakes a year and published total course fees.",
+  "new": "A private Kuala Lumpur university ranked #282 in QS, with 150+ programs, three intakes a year and published total course fees."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "seo.metaDescription",
+  "text": "UCSI University in Kuala Lumpur: official course fees, entry rules for MD, pharmacy and IT, QS 2027 #282, housing and visa. Get a free document check.",
+  "new": "UCSI University in Kuala Lumpur: official course fees, entry rules for MD, pharmacy and IT, QS #282, housing and visa. Get a free document check."
+ },
+ {
+  "id": "drafts.academgo.malaysia.ucsi.en",
+  "path": "seo.metaTitle",
+  "text": "UCSI University 2027: Fees, Admission, QS Rank #282",
+  "new": "UCSI University: Fees, Admission, QS Rank #282"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"68ae941df1f1\"].rows[_key==\"360528839e58\"].cells[_key==\"3dcac904ba51\"].content[_key==\"f6ed66e27a00\"].children[_key==\"f46fe7c3939c\"].text",
+  "text": "QS World University Rankings 2026: #58; THE 2026: 201–250",
+  "new": "QS World University Rankings: #58; THE: 201–250"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"d0a2b94fb1a2\"].content[_key==\"f516ec17708c\"].children[_key==\"3f0d7186cb0b\"].text",
+  "text": ", not per year, and you pay by semester. The price list applies to the \"2025/2026 intake onwards\" (updated 22 October 2025). No 2027/28 list is published yet, and fees may change without notice. Fees exclude 6% SST, so add it where it applies.",
+  "new": ", not per year, and you pay by semester. The current price list was updated on 22 October 2025. No list for the next academic year is published yet, and fees may change without notice. Fees exclude 6% SST, so add it where it applies."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"171a470dcbca\"].columns[1]",
+  "text": "Total fee, RM (2025/26 list)",
+  "new": "Total fee, RM (current list)"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"a9f6cad3feb8\"].note",
+  "text": "Price list updated 22 October 2025; no 2027/28 list is published yet. The one-time admission fee is already included.",
+  "new": "Price list updated 22 October 2025; no list for the next academic year is published yet. The one-time admission fee is already included."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"a9f6cad3feb8\"].subtitle",
+  "text": "RM for the whole program, 2025/2026 intake onwards, before 6% SST",
+  "new": "RM for the whole program, current price list, before 6% SST"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"34fc6ded7ae3\"].items[_key==\"45cc7745787f\"].content.content[_key==\"49d5a20e78f3\"].children[_key==\"57d8a3c3c042\"].text",
+  "text": "Plan the timeline. Applications for the March 2027 intake are open from 7 September 2026 to 30 January 2027. For October 2027, UM has not published dates yet; in the 2026 cycle, undergraduate applications ran February to August and MBBS closed in June. UM publishes exact dates closer to each intake.",
+  "new": "Plan the timeline. Applications for the March intake are open from 7 September to 30 January. For the October intake, UM has not published dates yet; in the last cycle, undergraduate applications ran February to August and MBBS closed in June. UM publishes exact dates closer to each intake."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"34fc6ded7ae3\"].title",
+  "text": "How to apply to UM for 2027",
+  "new": "How to apply to UM"
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"8e348afce8b5\"].leftContent.blockContent.content[_key==\"2770a67d7935\"].children[_key==\"d08b869506da\"].text",
+  "text": " Of 13 entries on UM's undergraduate aid page, only one is open to them: a PTE-sponsored award that in 2026 was a single GBP 3,000 prize decided by an essay contest. Plan to pay the full fee. Postgraduates have more options: UM Bright Scholarship for PhD by research, and the government's Malaysia International Scholarship (MIS) for master's and PhD, which includes RM 1,500 per month.",
+  "new": " Of 13 entries on UM's undergraduate aid page, only one is open to them: a PTE-sponsored award that in the last round was a single GBP 3,000 prize decided by an essay contest. Plan to pay the full fee. Postgraduates have more options: UM Bright Scholarship for PhD by research, and the government's Malaysia International Scholarship (MIS) for master's and PhD, which includes RM 1,500 per month."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"8e348afce8b5\"].rightContent.blockContent.content[_key==\"2d76472ab181\"].children[_key==\"c7393e5c634a\"].text",
+  "text": "The 12-year rule matters. If your school system ends after 11 years, you may not meet it directly. UM's 2025 booklet lists a one-year Foundation, but whether international students can join it in 2027 still needs to be confirmed.",
+  "new": "The 12-year rule matters. If your school system ends after 11 years, you may not meet it directly. UM's current booklet lists a one-year Foundation, but whether international students can join it for your intake still needs to be confirmed."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"35a3496cbea7\"].content[_key==\"7f0b525263a2\"].children[_key==\"ee01361861a1\"].text",
+  "text": "UM ranks #58 in the QS World University Rankings 2026, up from #60 in 2025, and #12 in QS Asia 2026. In the THE World University Rankings 2026 it sits in the 201–250 band. THE subject results: Education =80, Business and Economics 101–125, Law 126–150, Engineering 151–175.",
+  "new": "UM ranks #58 in the QS World University Rankings, up from #60 in 2025, and #12 in QS Asia. In the THE World University Rankings it sits in the 201–250 band. THE subject results: Education =80, Business and Economics 101–125, Law 126–150, Engineering 151–175."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"00bd640b8466\"].items[_key==\"2ed1ef0b87e4\"].answer[_key==\"11b90e4ed6ab\"].children[_key==\"62c7782a2927\"].text",
+  "text": "Under the 2025/26 list, whole-program fees start at RM 60,900 for arts, with Computer Science at RM 89,200 and MBBS at RM 673,200. Add 6% SST where it applies, the RM 500 application fee and the visa package of about RM 5,450–6,250.",
+  "new": "Under the current list, whole-program fees start at RM 60,900 for arts, with Computer Science at RM 89,200 and MBBS at RM 673,200. Add 6% SST where it applies, the RM 500 application fee and the visa package of about RM 5,450–6,250."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"00bd640b8466\"].items[_key==\"0dcda2868ded\"].answer[_key==\"14014fb37347\"].children[_key==\"7f5d603f2e53\"].text",
+  "text": "Almost none. In 2026 the only one was a single GBP 3,000 PTE award decided by an essay contest. Master's and PhD students have better chances through MIS or UM Bright Scholarship.",
+  "new": "Almost none. In the last round the only one was a single GBP 3,000 PTE award decided by an essay contest. Master's and PhD students have better chances through MIS or UM Bright Scholarship."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "contentBlocks[_key==\"00bd640b8466\"].items[_key==\"ac84fc5ecb50\"].answer[_key==\"0682315cc520\"].children[_key==\"a97e4f49d3a6\"].text",
+  "text": "Undergraduate intakes are in October and March. Applications for March 2027 are open from 7 September 2026 to 30 January 2027. October 2027 dates are not published yet. MBBS admits only in October, and in 2026 it closed earlier than other programs.",
+  "new": "Undergraduate intakes are in October and March. Applications for the March intake are open from 7 September to 30 January. October intake dates are not published yet. MBBS admits only in October, and in the last cycle it closed earlier than other programs."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "coverBlock.coverText",
+  "text": "Malaysia's oldest university, QS #58 in 2026: fees by program, entry grades, the Malay course rule and the real cost of the visa package.",
+  "new": "Malaysia's oldest university, QS #58: fees by program, entry grades, the Malay course rule and the real cost of the visa package."
+ },
+ {
+  "id": "drafts.academgo.malaysia.um.en",
+  "path": "seo.metaTitle",
+  "text": "Universiti Malaya 2027: Fees, Entry Requirements, Intakes",
+  "new": "Universiti Malaya: Fees, Entry Requirements, Intakes"
+ }
+]

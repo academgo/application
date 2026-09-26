@@ -4,7 +4,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год учёбы в Дубае",
-      "subtitle": "AED за учебный год, ориентиры по действующим прайсам 2026/27",
+      "subtitle": "AED за учебный год, ориентиры по действующим прайсам",
       "items": [
         {
           "label": "Бакалавриат в филиалах UK и Австралии",
@@ -25,7 +25,7 @@
           "valueLabel": "примерно 166 000–175 000 AED"
         }
       ],
-      "note": "Birmingham — наборы 2026 и сентябрь 2026 / январь 2027. Магистратура и MBA в других филиалах и Foundation считаются за программу, поэтому в график не вошли. Цены на 2027/28 большинство вузов ещё не опубликовало."
+      "note": "Birmingham — наборы сентябрь / январь. Магистратура и MBA в других филиалах и Foundation считаются за программу, поэтому в график не вошли. Цены на следующий учебный год большинство вузов ещё не опубликовало."
     }
   },
   "academgo.uae.hub.en": {
@@ -181,7 +181,7 @@
           "valueLabel": "about 60,900 AED"
         }
       ],
-      "note": "Only Heriot-Watt has published 2027 prices (Jan and Sept 2027 intakes); the others are 2026/27 fees. UOWD engineering costs 68,909 AED; Curtin quotes 182,700 AED for a 3-year program."
+      "note": "Only Heriot-Watt has published prices for the upcoming intakes (Jan and Sept); the others are current fees. UOWD engineering costs 68,909 AED; Curtin quotes 182,700 AED for a 3-year program."
     }
   },
   "academgo.uae.cost.ru": {
@@ -218,7 +218,7 @@
           "valueLabel": "около 60 900 AED"
         }
       ],
-      "note": "Heriot-Watt — наборы январь и сентябрь 2027, у остальных — прайсы 2026/27. Curtin публикует цену за всю программу: 182 700 AED за 3 года."
+      "note": "Heriot-Watt — наборы январь и сентябрь, у остальных — действующие прайсы. Curtin публикует цену за всю программу: 182 700 AED за 3 года."
     }
   },
   "academgo.uae.cost.en": {
@@ -255,7 +255,7 @@
           "valueLabel": "about 60,900 AED"
         }
       ],
-      "note": "Heriot-Watt: January and September 2027 intakes; others: 2026/27 intakes. Curtin quotes 182,700 AED for a 3-year degree."
+      "note": "Heriot-Watt: January and September intakes; others: current price lists. Curtin quotes 182,700 AED for a 3-year degree."
     }
   },
   "academgo.uae.visa.ru": {
@@ -308,7 +308,7 @@
         {
           "period": "At least 8 weeks before the semester",
           "title": "Entry permit application",
-          "text": "For a September 2027 start, submit your visa documents to the university by early July 2027 at the latest."
+          "text": "For a September start, submit your visa documents to the university by early July at the latest."
         },
         {
           "period": "About 4–6 weeks",
@@ -343,7 +343,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены магистратуры и MBA в кампусах Дубая",
-      "subtitle": "AED за всю программу, прайсы 2026/27 и наборов 2027",
+      "subtitle": "AED за всю программу, действующие прайсы",
       "items": [
         {
           "label": "Middlesex: Executive MBA",
@@ -382,15 +382,15 @@
           "valueLabel": "76 491–94 101 AED"
         }
       ],
-      "note": "Birmingham указывает цену за год (International Business MSc — 166 356 AED, AI & Machine Learning MSc — 174 509 AED), UOWD — за предмет, поэтому в график они не вошли. Heriot-Watt — прайс на январь и сентябрь 2027."
+      "note": "Birmingham указывает цену за год (International Business MSc — 166 356 AED, AI & Machine Learning MSc — 174 509 AED), UOWD — за предмет, поэтому в график они не вошли. Heriot-Watt — прайс на январский и сентябрьский наборы."
     }
   },
   "academgo.uae.masters-mba.en": {
-    "afterHeading": "MBA in Dubai and master's fees: 2026/27 price lists",
+    "afterHeading": "MBA in Dubai and master's fees: current price lists",
     "block": {
       "_type": "barChartBlock",
       "title": "Master's and MBA fees at Dubai campuses",
-      "subtitle": "AED for the whole program, 2026/27 and 2027 price lists",
+      "subtitle": "AED for the whole program, current price lists",
       "items": [
         {
           "label": "Middlesex: Executive MBA",
@@ -429,7 +429,7 @@
           "valueLabel": "76,491–94,101 AED"
         }
       ],
-      "note": "Birmingham quotes fees per year (MSc International Business 166,356 AED; MSc AI and Machine Learning 174,509 AED) and UOWD per subject, so they are not shown. Heriot-Watt's fee covers the January and September 2027 intakes."
+      "note": "Birmingham quotes fees per year (MSc International Business 166,356 AED; MSc AI and Machine Learning 174,509 AED) and UOWD per subject, so they are not shown. Heriot-Watt's fee covers the January and September intakes."
     }
   },
   "academgo.uae.birmingham.ru": {
@@ -437,7 +437,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Birmingham Dubai",
-      "subtitle": "AED за учебный год, набор сентябрь 2026 / январь 2027",
+      "subtitle": "AED за учебный год, набор сентябрь / январь",
       "items": [
         {
           "label": "Economics BSc",
@@ -475,7 +475,7 @@
           "valueLabel": "174 509 AED"
         }
       ],
-      "note": "Цены на набор 2027 года вуз ещё не опубликовал. После нулевого года (Integrated Foundation Year) действует цена бакалавриата."
+      "note": "Цены на следующий набор вуз ещё не опубликовал. После нулевого года (Integrated Foundation Year) действует цена бакалавриата."
     }
   },
   "academgo.uae.birmingham.en": {
@@ -483,7 +483,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "A year at Birmingham Dubai",
-      "subtitle": "AED per year, September 2026 / January 2027 intake",
+      "subtitle": "AED per year, September / January intake",
       "items": [
         {
           "label": "Economics BSc",
@@ -521,7 +521,7 @@
           "valueLabel": "174,509 AED"
         }
       ],
-      "note": "Fees for September 2027 have not been published yet. After the Integrated Foundation Year, the bachelor's fee applies."
+      "note": "Fees for the next intake have not been published yet. After the Integrated Foundation Year, the bachelor's fee applies."
     }
   },
   "academgo.uae.curtin.ru": {
@@ -529,7 +529,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены программ в Curtin Dubai",
-      "subtitle": "AED за всю программу с НДС 5%, старт с сентября 2026",
+      "subtitle": "AED за всю программу с НДС 5%, действующий прайс",
       "items": [
         {
           "label": "Бакалавриат: бизнес, IT, дизайн (3 года)",
@@ -568,7 +568,7 @@
           "valueLabel": "115 500 AED"
         }
       ],
-      "note": "Curtin называет цену за всю программу, а не за год. Прайса на 2027 год вуз не публиковал."
+      "note": "Curtin называет цену за всю программу, а не за год. Отдельного прайса на следующий год вуз не публиковал."
     }
   },
   "academgo.uae.curtin.en": {
@@ -576,7 +576,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Program fees at Curtin Dubai",
-      "subtitle": "AED for the whole program, students starting from September 2026",
+      "subtitle": "AED for the whole program, current fee policy",
       "items": [
         {
           "label": "Foundation (2 trimesters)",
@@ -615,15 +615,15 @@
           "valueLabel": "115,500 AED"
         }
       ],
-      "note": "Curtin quotes tuition for the whole program, not per year. There is no separate 2027 price list yet."
+      "note": "Curtin quotes tuition for the whole program, not per year. There is no separate price list for the next year yet."
     }
   },
   "academgo.uae.heriot-watt.ru": {
-    "afterHeading": "Стоимость обучения в Heriot-Watt Dubai на 2027 год",
+    "afterHeading": "Стоимость обучения в Heriot-Watt Dubai",
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в Heriot-Watt Dubai",
-      "subtitle": "AED за учебный год, наборы январь и сентябрь 2027",
+      "subtitle": "AED за учебный год, наборы январь и сентябрь",
       "items": [
         {
           "label": "Foundation (Degree Entry Programme)",
@@ -645,11 +645,11 @@
     }
   },
   "academgo.uae.heriot-watt.en": {
-    "afterHeading": "Tuition fees at Heriot-Watt University Dubai for 2027",
+    "afterHeading": "Tuition fees at Heriot-Watt University Dubai",
     "block": {
       "_type": "barChartBlock",
       "title": "A year at Heriot-Watt Dubai",
-      "subtitle": "AED per year, January and September 2027 intakes",
+      "subtitle": "AED per year, January and September intakes",
       "items": [
         {
           "label": "Foundation (Degree Entry Programme)",
@@ -675,7 +675,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Цены программ в Middlesex Dubai",
-      "subtitle": "AED с НДС, официальный прайс 2026/27",
+      "subtitle": "AED с НДС, официальный действующий прайс",
       "items": [
         {
           "label": "International Foundation Programme (1 год)",
@@ -710,7 +710,7 @@
           "valueLabel": "117 548 AED"
         }
       ],
-      "note": "Бакалавриат — 64 557 AED в год. Прайс на 2027/28 вуз объявит отдельно."
+      "note": "Бакалавриат — 64 557 AED в год. Прайс на следующий учебный год вуз объявит отдельно."
     }
   },
   "academgo.uae.middlesex.en": {
@@ -718,7 +718,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Program fees at Middlesex Dubai",
-      "subtitle": "AED for the whole program incl. VAT, 2026/27 price list",
+      "subtitle": "AED for the whole program incl. VAT, current price list",
       "items": [
         {
           "label": "International Foundation Programme",
@@ -753,7 +753,7 @@
           "valueLabel": "117,548 AED"
         }
       ],
-      "note": "The bachelor's fee is 64,557 AED per year. Prices for 2027/28 intakes have not been published yet."
+      "note": "The bachelor's fee is 64,557 AED per year. Prices for the next academic year have not been published yet."
     }
   },
   "academgo.uae.uowd.ru": {
@@ -761,7 +761,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "Сколько стоит год в UOWD",
-      "subtitle": "AED в год при полной нагрузке, набор Autumn 2026, НДС 5% включён",
+      "subtitle": "AED в год при полной нагрузке, действующий прайс, НДС 5% включён",
       "items": [
         {
           "label": "Бакалавриат: Business, CS, Media, Psychology",
@@ -779,7 +779,7 @@
           "valueLabel": "42 466 AED"
         }
       ],
-      "note": "UOWD берёт оплату за каждый предмет по триместрам, годовая сумма — ориентир. Прайс на 2027/28 вуз пока не опубликовал."
+      "note": "UOWD берёт оплату за каждый предмет по триместрам, годовая сумма — ориентир. Прайс на следующий учебный год вуз пока не опубликовал."
     }
   },
   "academgo.uae.uowd.en": {
@@ -787,7 +787,7 @@
     "block": {
       "_type": "barChartBlock",
       "title": "A year at UOWD",
-      "subtitle": "AED per year on a full load, Autumn 2026 intake, 5% VAT included",
+      "subtitle": "AED per year on a full load, current rates, 5% VAT included",
       "items": [
         {
           "label": "Bachelor's: Business, CS, Media, Psychology",
@@ -805,7 +805,7 @@
           "valueLabel": "42,466 AED"
         }
       ],
-      "note": "UOWD charges per subject each trimester, so the yearly figure assumes a full load. 2027/28 rates are not published yet."
+      "note": "UOWD charges per subject each trimester, so the yearly figure assumes a full load. Rates for the next academic year are not published yet."
     }
   }
 }
