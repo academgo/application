@@ -74,6 +74,10 @@ const FacultySlide: FC<Props> = ({
         {linkLabel && linkDestination && (
           <Link href={linkDestination} className={styles.button}>
             {linkLabel}
+            {/* «More» без контекста — плохой текст ссылки для поиска и скринридеров */}
+            {facultyName && (
+              <span className="visually-hidden">: {facultyName}</span>
+            )}
           </Link>
         )}
       </div>

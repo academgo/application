@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styles from "./SurveyBlog.module.scss";
 import { Survey as SurveyType } from "@/types/homepage";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import MultiStepForm from "../MultiStepForm/MultiStepForm";
 import MultiStepFormBlock from "../MultiStepFormBlock/MultiStepFormBlock";
 import { QuizBlock } from "@/types/quizBlock";

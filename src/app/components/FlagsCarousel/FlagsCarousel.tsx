@@ -3,7 +3,7 @@ import styles from "./FlagsCarousel.module.scss";
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import Marquee from "react-fast-marquee";
 
 type Props = {

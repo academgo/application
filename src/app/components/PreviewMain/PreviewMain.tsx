@@ -2,7 +2,7 @@ import { Image as ImageType } from "@/types/homepage";
 import React, { FC } from "react";
 import styles from "./PreviewMain.module.scss";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 type Props = {
   previewImage: ImageType;

@@ -5,7 +5,7 @@ import { Image as ImageType } from "@/types/homepage";
 import Image from "next/image";
 import { FaPlay, FaPause } from "react-icons/fa";
 import YouTube, { YouTubePlayer } from "react-youtube";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 type Props = {
   videoId: string;

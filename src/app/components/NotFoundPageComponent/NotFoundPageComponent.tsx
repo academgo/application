@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./NotFoundPageComponent.module.scss";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import Link from "next/link";
 import { NotFoundPage } from "@/types/notFoundPage";
 import LinkPrimary from "../LinkPrimary/LinkPrimary";

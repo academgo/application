@@ -8,7 +8,7 @@ import { PortableText } from "@portabletext/react";
 import { RichText } from "../RichText/RichText";
 import Image from "next/image";
 import styles from "./DoubleTextBlockComponent.module.scss";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 type Props = {
   block: DoubleTextBlock;

@@ -6,7 +6,7 @@ import {
 
 declare global {
   interface Window {
-    // Meta Pixel: инициализируется в components/pixel-events.tsx
+    // Meta Pixel: очередь создаёт components/Analytics/DeferredAnalytics.tsx
     fbq?: (...args: any[]) => void;
   }
 }

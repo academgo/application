@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Next 16 по умолчанию отдаёт <title> и description в <body> потоком всем, кроме
+  // известных ботов. Яндекс, превью ссылок в мессенджерах и AI-краулеры могут их
+  // не увидеть — метаданные всегда в <head>.
+  htmlLimitedBots: /.*/,
   turbopack: {
     resolveAlias: {
       // Legacy JavaScript в PageSpeed: полифиллы не нужны браузерам, которые
@@ -11,6 +15,10 @@ const nextConfig = {
     },
   },
   images: {
+    // Картинки режет и сжимает CDN Sanity (w, q, auto=format), а не /_next/image:
+    // квота оптимизации Vercel не тратится. Подробности в src/lib/images/sanityLoader.ts
+    loader: "custom",
+    loaderFile: "./src/lib/images/sanityLoader.ts",
     remotePatterns: [
       {
         protocol: 'https',

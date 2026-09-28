@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styles from "./SlidePicture.module.scss";
 import { Image as ImageProp } from "@/types/homepage";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import Link from "next/link";
 
 type Props = {

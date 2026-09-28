@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styles from "./ExtraBlock.module.scss";
 import { ExtraBlock as ExtraBlockType } from "@/types/homepage";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 export type Props = {
   extraBlock: ExtraBlockType;

@@ -8,7 +8,7 @@ import React, { FC } from "react";
 import styles from "./Consultation.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import FormSuperLite from "../FormSuperLite/FormSuperLite";
 
 type Props = {

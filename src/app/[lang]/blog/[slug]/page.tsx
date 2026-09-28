@@ -1,4 +1,5 @@
 import React from "react";
+import { notFound } from "next/navigation";
 import AccordionContainer from "@/app/components/AccordionContainer/AccordionContainer";
 import BlogButtonWrapper from "@/app/components/BlogButtonWrapper/BlogButtonWrapper";
 import BlogIntro from "@/app/components/BlogIntro/BlogIntro";
@@ -8,15 +9,14 @@ import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import LastArticles from "@/app/components/LastArticles/LastArticles";
 import LinkPrimary from "@/app/components/LinkPrimary/LinkPrimary";
-import ModalFull from "@/app/components/ModalFull/ModalFull";
+import ModalFullLazy from "@/app/components/ModalFull/ModalFullLazy";
 import RelatedArticles from "@/app/components/RelatedArticles/RelatedArticles";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import { i18n } from "@/i18n.config";
 import {
   getBlogPostByLang,
-  getFormStandardDocumentByLang,
-  getNotFoundPageByLang
+  getFormStandardDocumentByLang
 } from "@/sanity/sanity.utils";
 import {
   AccordionBlock,
@@ -30,7 +30,6 @@ import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import { buildLanguageAlternates } from "@/lib/hreflang";
-import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 
@@ -72,14 +71,7 @@ const PagePost = async (props: Props) => {
   const blog = await getBlogPostByLang(lang, slug);
 
   if (!blog) {
-    const notFoundPage = await getNotFoundPageByLang(lang);
-    return (
-      <>
-        <Header params={params} translations={[]} />
-        <NotFoundPageComponent notFoundPage={notFoundPage} lang={lang} />
-        <Footer params={params} />
-      </>
-    ); // Рендеринг компонента NotFound
+    notFound();
   }
 
   const formDocument: FormStandardDocument =
@@ -220,7 +212,7 @@ const PagePost = async (props: Props) => {
         </div>
       </main>
       <Footer params={params} />
-      <ModalFull lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
     </>
   );
 };

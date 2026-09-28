@@ -15,8 +15,8 @@ import styles from "./MultiStepFormBlock.module.scss";
 import { QuizBlock } from "@/types/quizBlock";
 
 // ✅ фиксированные картинки для шага 1
-import imageParent from "./image-parent.jpg";
-import imageStudent from "./image-student.jpg";
+import imageParent from "./image-parent.webp";
+import imageStudent from "./image-student.webp";
 import { trackLead } from "@/lib/trackLead";
 import {
   UNDECIDED_STUDY_COUNTRY,

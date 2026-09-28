@@ -4,7 +4,7 @@ import { getNinePostsByLang } from "@/sanity/sanity.utils";
 import SliderMain from "../SliderMain/SliderMain";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import BlogButtonWrapper from "../BlogButtonWrapper/BlogButtonWrapper";
 import LinkPrimary from "../LinkPrimary/LinkPrimary";
 

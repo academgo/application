@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { Image as ImageType, Flag } from "@/types/homepage";
 import FlagsCarousel from "../FlagsCarousel/FlagsCarousel";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
 
 type Props = {
@@ -73,6 +73,9 @@ const Hero: FC<Props> = ({
                   width={850}
                   height={700}
                   sizes="(max-width: 768px) 100vw, 850px"
+                  // LCP на мобильном: грузится сразу и с высоким приоритетом
+                  preload
+                  fetchPriority="high"
                   className={styles.heroImage}
                 />
               </div>

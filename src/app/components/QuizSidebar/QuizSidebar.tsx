@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import styles from "./QuizSidebar.module.scss";
 
 export type QuizSidebarType = {

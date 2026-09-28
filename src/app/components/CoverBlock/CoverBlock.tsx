@@ -2,7 +2,7 @@ import { Image as ImageType } from "@/types/homepage";
 import React, { FC } from "react";
 import styles from "./CoverBlock.module.scss";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import { Coverblock as CoverBlockType } from "@/types/singlepage";
 
 type Props = {
@@ -32,6 +32,10 @@ const CoverBlock: FC<Props> = ({ coverBlock }) => {
             alt={coverImageAlt || coverTitle}
             src={coverImageUrl}
             fill={true}
+            sizes="100vw"
+            // обложка — первый экран страницы: грузится сразу
+            preload
+            fetchPriority="high"
             className={styles.image}
           />
         </>

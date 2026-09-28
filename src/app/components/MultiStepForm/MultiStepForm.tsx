@@ -9,8 +9,8 @@ import Link from "next/link";
 import styles from "./MultiStepForm.module.scss";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import imageParent from "./image-parent.jpg";
-import imageStudent from "./image-student.jpg";
+import imageParent from "./image-parent.webp";
+import imageStudent from "./image-student.webp";
 import { trackLead } from "@/lib/trackLead";
 
 type FormData = {

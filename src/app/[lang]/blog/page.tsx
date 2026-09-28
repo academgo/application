@@ -13,7 +13,7 @@ import BlogPostsAll from "@/app/components/BlogPostsAll/BlogPostsAll";
 import BlogPageContent from "@/app/components/BlogPageContent/BlogPageContent";
 import Footer from "@/app/components/Footer/Footer";
 import { FormStandardDocument } from "@/types/formStandardDocument";
-import ModalFull from "@/app/components/ModalFull/ModalFull";
+import ModalFullLazy from "@/app/components/ModalFull/ModalFullLazy";
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -98,7 +98,7 @@ const PageBlog = async (props: Props) => {
         <BlogPageContent faq={blogPage.faq} lang={params.lang} />
       </main>
       <Footer params={params} />
-      <ModalFull lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
     </>
   );
 };

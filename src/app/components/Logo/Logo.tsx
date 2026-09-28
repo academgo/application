@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import { Image as ImageType } from "@/types/header";
 
 type LogoProps = {

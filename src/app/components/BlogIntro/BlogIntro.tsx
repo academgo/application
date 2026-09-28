@@ -3,7 +3,7 @@ import styles from "./BlogIntro.module.scss";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { Image as BlogMainImage } from "@/types/blog";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import { RichText } from "../RichText/RichText";
 
 type Props = {
@@ -41,7 +41,14 @@ const BlogIntro: FC<Props> = ({
         </div>
         <div className={styles.blogIntroImage}>
           {previewImage && (
-            <Image src={urlFor(previewImage).url()} alt={title} fill={true} />
+            <Image
+              src={urlFor(previewImage).url()}
+              alt={title}
+              fill={true}
+              sizes="(max-width: 1330px) 100vw, 1290px"
+              preload
+              fetchPriority="high"
+            />
           )}
         </div>
       </div>

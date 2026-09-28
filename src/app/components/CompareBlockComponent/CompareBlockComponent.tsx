@@ -2,7 +2,7 @@ import { CompareBlock } from "@/types/blog";
 import React, { FC } from "react";
 import styles from "./CompareBlockComponent.module.scss";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import Link from "next/link";
 import LinkPrimary from "../LinkPrimary/LinkPrimary";
 

@@ -2,7 +2,7 @@ import { SuccessPage } from "@/types/successPage";
 import React, { FC } from "react";
 import styles from "./SuccessPageComponent.module.scss";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import Link from "next/link";
 
 type Props = {

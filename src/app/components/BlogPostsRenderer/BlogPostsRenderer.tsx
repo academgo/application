@@ -3,11 +3,11 @@ import React, { FC, useState } from "react";
 import styles from "./BlogPostsRenderer.module.scss";
 import { Blog } from "@/types/blog";
 import Link from "next/link";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import Image from "next/image";
 import axios from "axios";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
-import Loading from "@/app/[lang]/loading";
+import Loading from "@/app/components/Loader/Loader";
 
 type Props = {
   blogPosts: Blog[];

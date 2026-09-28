@@ -54,9 +54,9 @@ export default async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // robots.txt и sitemap.xml обязаны отдаваться как есть: middleware
+    // robots.txt, sitemap.xml и llms.txt обязаны отдаваться как есть: middleware
     // перехватывал их раньше rewrite, и поисковики получали HTML вместо файла
-    "/((?!api|_next/static|admin|structure|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
+    "/((?!api|_next/static|admin|structure|_next/image|favicon.ico|robots.txt|sitemap.xml|llms.txt).*)",
     "/(en|ru)/:path*"
   ]
 };

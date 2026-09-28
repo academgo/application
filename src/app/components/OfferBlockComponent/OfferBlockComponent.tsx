@@ -6,7 +6,7 @@ import styles from "./OfferBlockComponent.module.scss";
 import FormSuperLite from "../FormSuperLite/FormSuperLite";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
 import OfferDecor from "../OfferDecor/OfferDecor";
 

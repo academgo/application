@@ -3,7 +3,7 @@ import LocaleSwitcher from "../LocaleSwitcher/LocaleSwitcher";
 import { getCountriesByLang, getHeaderByLang } from "@/sanity/sanity.utils";
 import { Header as HeaderType } from "@/types/header";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import NavWrapper from "../NavWrapper/NavWrapper";
@@ -68,10 +68,9 @@ const Header = async ({ translations, params }: Props) => {
                 >
                   <Image
                     alt={link.title}
-                    src={urlFor(link.icon).format("png").url()}
+                    src={urlFor(link.icon).url()}
                     width={50}
                     height={50}
-                    unoptimized
                     className={styles.contactIcon}
                   />
                 </Link>

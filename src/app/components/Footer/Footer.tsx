@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import NavLink from "../NavLink/NavLink";
 import Consultation from "../Consultation/Consultation";
 import { ButtonModal } from "../ButtonModal/ButtonModal";

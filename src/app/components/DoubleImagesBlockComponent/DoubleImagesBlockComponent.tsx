@@ -2,7 +2,7 @@ import { DoubleImagesBlock } from "@/types/blog";
 import React, { FC } from "react";
 import styles from "./DoubleImagesBlockComponent.module.scss";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 type Props = {
   block: DoubleImagesBlock;

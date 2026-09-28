@@ -4,7 +4,7 @@ import { StepFour as StepFourType } from "@/types/homepage";
 import StepCarousel from "../StepCarousel/StepCarousel";
 import VideoStep from "../VideoStep/VideoStep";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 type Props = {
   stepFour: StepFourType;

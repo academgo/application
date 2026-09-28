@@ -1,17 +1,17 @@
 import React from "react";
+import { notFound } from "next/navigation";
 import AccordionContainer from "@/app/components/AccordionContainer/AccordionContainer";
 import DoubleImagesBlockComponent from "@/app/components/DoubleImagesBlockComponent/DoubleImagesBlockComponent";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
-import ModalFull from "@/app/components/ModalFull/ModalFull";
+import ModalFullLazy from "@/app/components/ModalFull/ModalFullLazy";
 import PreviewMain from "@/app/components/PreviewMain/PreviewMain";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import { i18n } from "@/i18n.config";
 import {
   getFormStandardDocumentByLang,
-  getSingleSubPageBySlug,
-  getNotFoundPageByLang
+  getSingleSubPageBySlug
 } from "@/sanity/sanity.utils";
 import {
   AccordionBlock,
@@ -44,7 +44,6 @@ import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Translation } from "@/types/post";
 import { Metadata } from "next";
 import { buildLanguageAlternates } from "@/lib/hreflang";
-import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
@@ -174,26 +173,12 @@ const Subpage = async (props: Props) => {
   // console.log("Subpage data:", subPage);
 
   if (!subPage) {
-    const notFoundPage = await getNotFoundPageByLang(lang);
-    return (
-      <>
-        <Header params={params} translations={[]} />
-        <NotFoundPageComponent notFoundPage={notFoundPage} lang={lang} />
-        <Footer params={params} />
-      </>
-    );
+    notFound();
   }
 
   // Проверка, что слаг родительской страницы в URL соответствует слагу родителя подстраницы
   if (subPage.parentPage.slug[lang]?.current !== slug) {
-    const notFoundPage = await getNotFoundPageByLang(lang);
-    return (
-      <>
-        <Header params={params} translations={[]} />
-        <NotFoundPageComponent notFoundPage={notFoundPage} lang={lang} />
-        <Footer params={params} />
-      </>
-    );
+    notFound();
   }
 
   const formDocument: FormStandardDocument =
@@ -493,7 +478,7 @@ const Subpage = async (props: Props) => {
         </div>
       </main>
       <Footer params={params} />
-      <ModalFull lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
     </>
   );
 };

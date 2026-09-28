@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import styles from "./ContactsBlockComponent.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 
 type Props = {
   block: ContactsBlock;

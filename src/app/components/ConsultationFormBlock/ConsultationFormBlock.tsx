@@ -4,7 +4,7 @@ import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
-import { urlFor } from "@/sanity/sanity.client";
+import { urlFor } from "@/sanity/image";
 import { trackLead } from "@/lib/trackLead";
 import StudyCountryField from "../StudyCountryField/StudyCountryField";
 import OfferDecor from "../OfferDecor/OfferDecor";

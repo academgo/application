@@ -25,7 +25,7 @@ import Price from "../components/Price/Price";
 import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
 import Survey from "../components/Survey/Survey";
-import ModalFull from "../components/ModalFull/ModalFull";
+import ModalFullLazy from "../components/ModalFull/ModalFullLazy";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
 import AccordionContainer from "../components/AccordionContainer/AccordionContainer";
@@ -199,7 +199,7 @@ export default async function Home(props: Props) {
         <BlogPostsSection params={{ lang: params.lang }} />
       </main>
       <Footer params={params} />
-      <ModalFull lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
     </>
   );
 }
