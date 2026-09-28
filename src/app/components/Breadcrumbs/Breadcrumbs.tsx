@@ -63,7 +63,6 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ol className={styles.breadcrumb}>

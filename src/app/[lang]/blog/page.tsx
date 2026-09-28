@@ -16,11 +16,12 @@ import { FormStandardDocument } from "@/types/formStandardDocument";
 import ModalFull from "@/app/components/ModalFull/ModalFull";
 
 type Props = {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const data = await getBlogPageByLang(params.lang);
 
   // default locale (en) без /en
@@ -43,7 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const PageBlog = async ({ params }: Props) => {
+const PageBlog = async (props: Props) => {
+  const params = await props.params;
   const { lang } = params;
   const initialPosts = await getBlogPostsByLangWithPagination(lang, 12, 0);
   const blogPage = await getBlogPageByLang(lang);

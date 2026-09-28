@@ -35,7 +35,7 @@ import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 
 type Props = {
-  params: { lang: string; slug: string };
+  params: Promise<{ lang: string; slug: string }>;
 };
 
 type ContentBlock =
@@ -47,7 +47,8 @@ type ContentBlock =
   | DoubleTextBlock;
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const { lang, slug } = params;
   const data = await getBlogPostByLang(lang, slug);
 
@@ -65,7 +66,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const PagePost = async ({ params }: Props) => {
+const PagePost = async (props: Props) => {
+  const params = await props.params;
   const { lang, slug } = params;
   const blog = await getBlogPostByLang(lang, slug);
 

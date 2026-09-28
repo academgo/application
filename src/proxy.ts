@@ -21,7 +21,7 @@ const withNoindex = (response: NextResponse, host: string) => {
   return response;
 };
 
-export default async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
   // На production-домене vercel.app уводим на основной домен,

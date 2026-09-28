@@ -1,7 +1,7 @@
 import { PackagePriceBlock } from "@/types/blog";
 import React, { FC } from "react";
 import styles from "./PackagePriceBlockComponent.module.scss";
-import { PortableText } from "next-sanity";
+import { PortableText } from "@portabletext/react";
 import { RichText } from "../RichText/RichText";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
 

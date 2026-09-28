@@ -3,12 +3,12 @@ import { headers } from "next/headers";
 
 const PRIMARY_HOST = "academgo.com";
 
-export default function robots(): MetadataRoute.Robots {
-  const host = headers().get("host") || "";
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const host = (await headers()).get("host") || "";
 
   // Всё, что не основной домен, — превью и тестовые домены: закрываем целиком.
   // Обход запрещаем здесь, а саму индексацию — заголовком X-Robots-Tag
-  // из middleware: одного robots.txt для этого недостаточно.
+  // из proxy: одного robots.txt для этого недостаточно.
   if (host !== PRIMARY_HOST && host !== `www.${PRIMARY_HOST}`) {
     return {
       rules: [{ userAgent: "*", disallow: "/" }]

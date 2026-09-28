@@ -1,9 +1,7 @@
-import dynamicImport from "next/dynamic";
+import StudioLoader from "../StudioLoader";
 
 export const dynamic = "force-static";
 
-const Studio = dynamicImport(() => import("../Studio"), { ssr: false });
-
 export default function StudioCatchAllPage() {
-  return <Studio />;
+  return <StudioLoader />;
 }

@@ -9,10 +9,11 @@ import { getNotFoundPageByLang } from "@/sanity/sanity.utils";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
 
 type Props = {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const data = await getNotFoundPageByLang(params.lang);
 
   return {
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const NotFoundPage = async ({ params }: Props) => {
+const NotFoundPage = async (props: Props) => {
+  const params = await props.params;
   const { lang } = params;
   const notFoundPage = await getNotFoundPageByLang(lang);
 

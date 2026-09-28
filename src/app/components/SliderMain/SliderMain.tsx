@@ -75,10 +75,8 @@ const SliderMain = ({
           spaceBetween={20}
           slidesPerView={1.5}
           onSwiper={swiper => (swiperRef.current = swiper)}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current
-          }}
+          // кнопки подключаются в useEffect: при первом рендере рефов ещё нет
+          navigation={{ prevEl: null, nextEl: null }}
           pagination={{
             clickable: true,
             // Если пагинация оформляется через CSS-модуль, можно аналогично передать нужный контейнер

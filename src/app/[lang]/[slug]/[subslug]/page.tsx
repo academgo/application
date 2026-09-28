@@ -1,5 +1,4 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import AccordionContainer from "@/app/components/AccordionContainer/AccordionContainer";
 import DoubleImagesBlockComponent from "@/app/components/DoubleImagesBlockComponent/DoubleImagesBlockComponent";
 import Footer from "@/app/components/Footer/Footer";
@@ -96,12 +95,8 @@ import CountryUniversitiesBlock, {
   CountryUniversitiesBlockType
 } from "@/app/components/CountryUniversitiesBlock/CountryUniversitiesBlock";
 
-const NotFound = dynamic(() => import("@/app/components/NotFound/NotFound"), {
-  ssr: false
-});
-
 type Props = {
-  params: { lang: string; slug: string; subslug: string };
+  params: Promise<{ lang: string; slug: string; subslug: string }>;
 };
 
 type ContentBlock =
@@ -140,7 +135,8 @@ type ContentBlock =
   | CountryMapBlockType;
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const { lang, slug, subslug } = params;
   const data = await getSingleSubPageBySlug(lang, slug, subslug);
 
@@ -168,7 +164,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const Subpage = async ({ params }: Props) => {
+const Subpage = async (props: Props) => {
+  const params = await props.params;
   const { lang, slug, subslug } = params;
 
   // Получаем данные подстраницы

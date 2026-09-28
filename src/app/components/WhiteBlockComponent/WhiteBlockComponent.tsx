@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./WhiteBlockComponent.module.scss";
 import { WhiteBlock } from "@/types/blog";
-import { PortableText } from "next-sanity";
+import { PortableText } from "@portabletext/react";
 import { RichText } from "../RichText/RichText";
 
 type Props = {

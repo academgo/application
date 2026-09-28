@@ -33,11 +33,12 @@ import MultiStepFormBlock from "../components/MultiStepFormBlock/MultiStepFormBl
 import CountriesSection from "../components/CountriesSection/CountriesSection";
 
 type Props = {
-  params: { lang: string; slug: string };
+  params: Promise<{ lang: string; slug: string }>;
 };
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const homePage = await getHomePageByLang(params.lang);
   return {
     title: homePage?.seo?.title,
@@ -49,7 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Home({ params }: Props) {
+export default async function Home(props: Props) {
+  const params = await props.params;
   const homePage = await getHomePageByLang(params.lang);
 
   const formDocument: FormStandardDocument =

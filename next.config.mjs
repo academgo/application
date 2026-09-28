@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    resolveAlias: {
+      // Legacy JavaScript в PageSpeed: полифиллы не нужны браузерам, которые
+      // поддерживает Next 16. app-globals.js подключает модуль ИМЕННО этим
+      // относительным путём — алиас только на полный путь не срабатывает.
+      // После обновления Next проверь путь в next/dist/client/app-globals.js.
+      "../build/polyfills/polyfill-module": "./src/lib/empty-polyfills.js",
+      "next/dist/build/polyfills/polyfill-module": "./src/lib/empty-polyfills.js",
+    },
+  },
   images: {
     remotePatterns: [
       {

@@ -8,10 +8,11 @@ import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
 
 type Props = {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const data = await getSuccessPageByLang(params.lang);
 
   return {
@@ -20,7 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const SuccessPage = async ({ params }: Props) => {
+const SuccessPage = async (props: Props) => {
+  const params = await props.params;
   const { lang } = params;
   const successPage = await getSuccessPageByLang(lang);
 
