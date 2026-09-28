@@ -5,7 +5,7 @@ import { Blog } from "@/types/blog";
 import Link from "next/link";
 import { urlFor } from "@/sanity/image";
 import Image from "next/image";
-import axios from "axios";
+import http from "@/lib/http";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import Loading from "@/app/components/Loader/Loader";
 
@@ -36,7 +36,7 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
     const offset = posts.length;
 
     try {
-      const response = await axios.get(
+      const response = await http.get(
         `/api/getMorePosts?lang=${lang}&limit=${limit}&offset=${offset}`
       );
       const newPosts = response.data.posts;

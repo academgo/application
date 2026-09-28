@@ -3,7 +3,7 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
+import http from "@/lib/http";
 import { urlFor } from "@/sanity/image";
 import { trackLead } from "@/lib/trackLead";
 import StudyCountryField from "../StudyCountryField/StudyCountryField";
@@ -66,7 +66,7 @@ const ConsultationFormBlock: FC<Props> = ({ block, lang, policy }) => {
     setStatus("sending");
 
     try {
-      await axios.post("/api/email", {
+      await http.post("/api/email", {
         name,
         phone,
         lang,

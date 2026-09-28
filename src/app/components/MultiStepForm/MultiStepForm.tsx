@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import http from "@/lib/http";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -126,7 +126,7 @@ const MultiStepForm = ({
   ) => {
     setSubmitting(true);
     try {
-      await axios.post("/api/email", values);
+      await http.post("/api/email", values);
       trackLead("multi-step", lang);
       router.push(lang === "ru" ? "/ru/success" : "/success");
     } catch (error) {

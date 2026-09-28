@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import http from "@/lib/http";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -201,7 +201,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
         ? studyCountryCodeByName(countryAnswer) || UNDECIDED_STUDY_COUNTRY
         : undefined;
 
-      await axios.post("/api/quiz-email", {
+      await http.post("/api/quiz-email", {
         whatsapp: values.whatsapp,
         quizAnswers,
         lang,

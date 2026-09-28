@@ -5,7 +5,7 @@ import { Header as HeaderType } from "@/types/header";
 import { Country } from "@/types/country";
 import styles from "../Header/Header.module.scss";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import MobileCollapse from "./MobileCollapse";
 import { FiChevronDown } from "react-icons/fi"; // Иконка стрелки
 
 type Props = {
@@ -261,37 +261,33 @@ const NavLinks: React.FC<Props> = ({
               )}
             </div>
             {/* Подменю */}
-            <AnimatePresence>
-              {hasSubMenu &&
-                openSubMenuIndex === index &&
-                (isMobile ? (
-                  <motion.div
-                    className={`${styles.subLinks} ${
-                      showCountries ? styles.countriesMenu : ""
-                    }`}
-                    initial={{ maxHeight: 0, overflow: "hidden" }}
-                    animate={{ maxHeight: "50vh", overflow: "auto" }}
-                    exit={{ maxHeight: 0, overflow: "hidden" }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {showCountries ? (
-                      renderCountriesMenu()
-                    ) : (
-                      <div className={styles.subLinksWrapper}>
-                        {link.subLinks.map(subLink => (
-                          <Link
-                            key={subLink.label}
-                            href={getNormalizedHref(params.lang, subLink.link)}
-                            className={styles.subLink}
-                            onClick={closeMenu}
-                          >
-                            {subLink.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </motion.div>
-                ) : (
+            {hasSubMenu &&
+              (isMobile ? (
+                <MobileCollapse
+                  open={openSubMenuIndex === index}
+                  className={`${styles.subLinks} ${
+                    showCountries ? styles.countriesMenu : ""
+                  }`}
+                >
+                  {showCountries ? (
+                    renderCountriesMenu()
+                  ) : (
+                    <div className={styles.subLinksWrapper}>
+                      {link.subLinks.map(subLink => (
+                        <Link
+                          key={subLink.label}
+                          href={getNormalizedHref(params.lang, subLink.link)}
+                          className={styles.subLink}
+                          onClick={closeMenu}
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </MobileCollapse>
+              ) : (
+                openSubMenuIndex === index && (
                   <div
                     className={`${styles.subLinks} ${
                       showCountries ? styles.countriesMenu : ""
@@ -325,8 +321,8 @@ const NavLinks: React.FC<Props> = ({
                       </div>
                     )}
                   </div>
-                ))}
-            </AnimatePresence>
+                )
+              ))}
           </div>
         );
       })}

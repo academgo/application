@@ -3,7 +3,7 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
+import http from "@/lib/http";
 import { trackLead } from "@/lib/trackLead";
 import StudyCountryField from "../StudyCountryField/StudyCountryField";
 import styles from "./LeadMagnetBlock.module.scss";
@@ -69,7 +69,7 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
     if (fileWindow) fileWindow.opener = null;
 
     try {
-      await axios.post("/api/lead-magnet", {
+      await http.post("/api/lead-magnet", {
         email,
         name,
         magnet: block.magnetName || block.title,

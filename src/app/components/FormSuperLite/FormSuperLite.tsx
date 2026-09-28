@@ -3,7 +3,7 @@
 import { FC, useState, useEffect, useId } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import http from "@/lib/http";
 import PhoneInput from "../LazyPhoneInput/LazyPhoneInput";
 import "react-phone-number-input/style.css";
 import { PhoneInternationalIcon } from "../FormIcons/FormIcons";
@@ -87,7 +87,7 @@ const FormSuperLite: FC<ContactFormProps> = ({
         url: typeof window !== "undefined" ? window.location.href : ""
       };
 
-      const response = await axios.post("/api/email", payload);
+      const response = await http.post("/api/email", payload);
 
       router.push(lang === "ru" ? "/ru/success" : "/success");
 
