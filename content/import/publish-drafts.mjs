@@ -12,7 +12,11 @@
  *   node content/import/publish-drafts.mjs --unpublish --apply   # снять с публикации
  *
  * Шапка и главная НЕ публикуются без флага --with-layout: их публикация
- * меняет живое меню и главную страницу.
+ * меняет живое меню и главную страницу. Общие страницы («О нас», «Контакты»,
+ * «Стоимость услуг», страница блога) — только с флагом --with-common.
+ *
+ * Запуск целиком:
+ *   node content/import/publish-drafts.mjs --with-layout --with-common --apply
  */
 
 import fs from "node:fs";
@@ -33,6 +37,7 @@ const args = process.argv.slice(2);
 const APPLY = args.includes("--apply");
 const UNPUBLISH = args.includes("--unpublish");
 const WITH_LAYOUT = args.includes("--with-layout");
+const WITH_COMMON = args.includes("--with-common");
 const ONLY = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
 const TYPE = args.includes("--type") ? args[args.indexOf("--type") + 1] : null;
 
@@ -139,7 +144,15 @@ const publish = async () => {
       )
     : [];
 
-  const all = [...selected, ...layoutDrafts];
+  // черновики общих страниц («О нас», «Контакты», «Стоимость услуг», блог):
+  // тоже без префикса, тоже только по флагу
+  const commonDrafts = WITH_COMMON
+    ? await query(
+        `*[_id in path("drafts.**") && !(_id match "drafts.${PREFIX}*") && _type in ["singlepage", "blogPage"]]{_id, _type}`
+      )
+    : [];
+
+  const all = [...selected, ...layoutDrafts, ...commonDrafts];
 
   if (!all.length) {
     console.log("Черновиков под эти условия не нашлось.");
