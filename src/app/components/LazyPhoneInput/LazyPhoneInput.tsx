@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentProps, useCallback, useEffect, useState } from "react";
+import { ComponentProps, useCallback, useEffect, useRef, useState } from "react";
 import type PhoneInputType from "react-phone-number-input";
 
 type Props = ComponentProps<typeof PhoneInputType>;
@@ -20,12 +20,22 @@ const LazyPhoneInput = (props: Props) => {
     null
   );
   const [focusOnLoad, setFocusOnLoad] = useState(false);
+  const placeholderRef = useRef<HTMLInputElement>(null);
 
   const load = useCallback(() => {
-    loadPhoneInput().then(module => setPhoneInput(() => module.default));
+    loadPhoneInput().then(module => {
+      // посетитель мог нажать на поле ещё до гидратации, когда onFocus не
+      // работал: фокус переносим на настоящее поле
+      if (document.activeElement === placeholderRef.current) {
+        setFocusOnLoad(true);
+      }
+      setPhoneInput(() => module.default);
+    });
   }, []);
 
   useEffect(() => {
+    if (document.activeElement === placeholderRef.current) load();
+
     const start = () => {
       const win = window as IdleWindow;
       if (win.requestIdleCallback) win.requestIdleCallback(load);
@@ -38,11 +48,17 @@ const LazyPhoneInput = (props: Props) => {
     return () => window.removeEventListener("load", start);
   }, [load]);
 
-  if (PhoneInput) {
-    return <PhoneInput {...props} autoFocus={focusOnLoad || props.autoFocus} />;
-  }
-
   const { className, id, name, placeholder, internationalIcon: Icon } = props;
+
+  // PhoneInput не передаёт autoFocus своему полю, а поле-заглушка при замене
+  // исчезает вместе с фокусом — возвращаем его вручную
+  useEffect(() => {
+    if (PhoneInput && focusOnLoad && id) document.getElementById(id)?.focus();
+  }, [PhoneInput, focusOnLoad, id]);
+
+  if (PhoneInput) {
+    return <PhoneInput {...props} />;
+  }
 
   return (
     <div className={`${className ? `${className} ` : ""}PhoneInput`}>
@@ -62,6 +78,7 @@ const LazyPhoneInput = (props: Props) => {
         <div className="PhoneInputCountrySelectArrow"></div>
       </div>
       <input
+        ref={placeholderRef}
         type="tel"
         autoComplete="tel"
         id={id}
