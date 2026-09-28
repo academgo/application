@@ -38,7 +38,7 @@ export default async function RootLayout(
           content="y26kx-fqwQmu8vSsuIo8zW09MIp0pnOQNHnGFNggnmQ"
         />
       </Head> */}
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <OrganizationSchema lang={params.lang} />
         <ModalProvider>{children}</ModalProvider>
         <GoogleAnalytics gaId="G-XTMLVRC9RR" />
