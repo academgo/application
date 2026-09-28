@@ -16,14 +16,17 @@ const isPreview =
 
 const useCdn = process.env.NODE_ENV === "production" && !isPreview;
 
+// Токен нужен и на production: документы с точкой в _id (academgo.uae.hub.ru)
+// Sanity считает приватными, анонимный запрос их не видит.
 export const client = createClient({
   projectId,
   dataset,
   apiVersion,
   useCdn,
+  ...(readToken ? { token: readToken } : {}),
   // "drafts" — новое имя перспективы previewDrafts: черновики поверх
   // опубликованных документов
-  ...(isPreview ? { token: readToken, perspective: "drafts" as const } : {})
+  perspective: isPreview ? ("drafts" as const) : ("published" as const)
 });
 
 const builder = ImageUrlBuilder(client);
