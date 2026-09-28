@@ -4,7 +4,7 @@ import { FC, useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "../LazyPhoneInput/LazyPhoneInput";
 import "react-phone-number-input/style.css";
 import { FieldIcon, PhoneInternationalIcon } from "../FormIcons/FormIcons";
 

@@ -7,7 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "../LazyPhoneInput/LazyPhoneInput";
 import { PhoneInternationalIcon } from "../FormIcons/FormIcons";
 import "react-phone-number-input/style.css";
 

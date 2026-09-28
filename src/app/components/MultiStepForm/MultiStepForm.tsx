@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./MultiStepForm.module.scss";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "../LazyPhoneInput/LazyPhoneInput";
 import "react-phone-number-input/style.css";
 import imageParent from "./image-parent.webp";
 import imageStudent from "./image-student.webp";
