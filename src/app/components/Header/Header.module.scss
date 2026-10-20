@@ -1,29 +1,57 @@
+/* ===== Шапка: метрики перенесены из образца клиента =====
+   высота 80px, пункты меню 14px/500, слоган 10px под логотипом */
+
+$h-ink: #091728;
+$h-text: #334155;
+$h-muted: #64748b;
+$h-line: #e2e8f0;
+$h-line-soft: #f1f5f9;
+$h-accent: #f39708;
+
+/* палитра выпадающих панелей и мобильного меню */
+$menu-ink: #091728;
+$menu-muted: #6f7a88;
+$menu-line: #e6e9ee;
+$menu-accent: #f39708;
+$menu-surface: #f7f8fa;
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #F5F5F5;
+  background-color: #fff;
+  border-bottom: 1px solid $h-line-soft;
 }
 
 .wrapper {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 24px;
+  height: 80px;
 }
 
+/* Логотип и слоган под ним */
 .companyData {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.logoLink {
+  display: inline-flex;
   align-items: center;
-  gap: 30px;
 }
 
 .logoImage {
+  width: auto;
+  height: 36px;
 
-  @media screen and (max-width: 1120px){
+  @media screen and (max-width: 1120px) {
     display: none;
     position: relative;
     z-index: 101;
@@ -33,49 +61,59 @@
 .logoImageMobile {
   position: relative;
   z-index: 101;
-  
-  @media screen and (min-width: 1121px){
+  width: auto;
+  height: 36px;
+
+  @media screen and (min-width: 1121px) {
     display: none;
   }
 }
 
 .description {
-  max-width: 230px;
-  color: #8A929C;
-  font-size: 13px;
+  max-width: 176px;
+  color: $h-muted;
+  font-size: 10px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 153.846% */
-  letter-spacing: -0.65px;
+  line-height: 13px;
+  letter-spacing: 0;
 
-  @media screen and (max-width: 1720px){
+  @media screen and (max-width: 1280px) {
     display: none;
   }
 }
 
 .navWrapperParent {
 
-  @media screen and (max-width: 768px){
+  /* меню занимает свободное место и стоит по центру шапки */
+  @media screen and (min-width: 1024px) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1023px){
     order: 5;
   }
 }
 
 .navWrapper {
 
-  @media screen and (max-width: 768px){
-    position: absolute;
+  @media screen and (max-width: 1023px){
+    position: fixed;
     top: 0;
     left: 200vw;
     right: 0;
     bottom: 0;
     z-index: 100;
-    background: #112546;
+    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 120px;
-    transition: all 0.4s ease;
+    padding: 96px 0 20px;
+    overflow-y: auto;
+    transition: left 0.4s ease;
     height: 100lvh;
   }
 }
@@ -84,240 +122,174 @@
   left: 0;
 }
 
+/* Правая часть: мессенджеры, кнопка Telegram, язык, бургер */
 .contacts {
   display: flex;
   align-items: center;
-  gap: 15px;
-
-  @media screen and (max-width: 1600px){
-    gap: 30px;
-  }
-
-  @media screen and (max-width: 325px){
-    gap: 15px;
-  }
+  gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .contactLinks {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 8px;
 }
 
 .contactLink {
+  display: inline-flex;
+  transition: transform 0.2s ease-in-out;
 
-  @media screen and (max-width: 768px){
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 1023px) {
     position: relative;
     z-index: 101;
   }
 }
 
 .contactIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 
-  @media screen and (max-width: 1320px){
+  @media screen and (max-width: 1320px) {
     width: 35px;
     height: 35px;
-  }
-}
-
-.contactData {
-
-  @media screen and (max-width: 820px){
-    display: none;
-  }
-}
-
-.workingHours {
-  color: #8A929C;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.65px;
-
-  @media screen and (max-width: 1120px){
-    font-size: 11px;
-  }
-
-  @media screen and (max-width: 860px){
-    font-size: 10px;
-  }
-}
-
-.phoneNumber {
-  color: #091728;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -1.5px;
-
-  @media screen and (max-width: 1600px){
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 860px){
-    font-size: 18px;
   }
 }
 
 .contactButtons {
   display: flex;
   align-items: center;
-  gap: 15px;
-}
+  gap: 12px;
 
-.phoneButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // padding: 17px;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-
-  @media screen and (max-width: 1120px){
-    width: 35px;
-    height: 35px;
-  }
-
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1023px) {
     position: relative;
     z-index: 101;
   }
 }
 
+
 .navLinks {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 2px;
 
-  @media screen and (max-width: 1440px) {
-    gap: 20px;
-  }
-
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1023px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0;
     width: 90%;
-    // padding-top: 100px;
   }
 }
 
 .navLinkWrapper {
   position: relative;
 
-  @media screen and (max-width: 768px){
-    // text-align: center;
+  @media screen and (max-width: 1023px) {
     width: 100%;
   }
 }
 
 .navLink {
-  color: #091728;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: $h-text;
+  font-size: 13px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 20px; /* 125% */
-  letter-spacing: -0.8px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0;
+  white-space: nowrap;
   cursor: pointer;
-  transition: all ease-in-out 0.2s;
-  position: relative;
+  transition: color 0.2s ease-in-out;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% + 20px);
-    height: 0;
-    background: #F39708;
-    transition: all ease-in-out 0.2s;
-    z-index: -1;
-    border-radius: 10px 10px 10px 0px;
+  @media screen and (min-width: 1280px) {
+    padding-inline: 10px;
   }
 
-  @media screen and (max-width: 1320px) {
-    font-size: 14px;
-  }
-
-  @media screen and (max-width: 768px) {
-    color: #fff;
-    display: block;
-    width: 100%;
-    padding: 20px 0 20px 10px;
-    font-size: 24px;
-    font-weight: 300;
-
-
-
-    &:has(.chevron) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 5px;
-    }
-  }
-
-  @media screen and (min-width: 768px){
-
+  @media screen and (min-width: 1024px) {
     &:hover {
-      color: #fff;
-      &::after {
-        height: calc(100% + 30px);
-      }
+      color: $h-ink;
     }
+  }
+
+  @media screen and (max-width: 1023px) {
+    color: $menu-ink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 0;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
   }
 }
 
-@media screen and (max-width: 768px){
-  .navLinkWrapper:not(:last-child) .navLink {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+.navLinkText {
+  color: inherit;
+}
+
+@media screen and (max-width: 1023px) {
+  .navLinkWrapper .navLink {
+    border-bottom: 1px solid #eceff3;
   }
-  
 }
 
 .subLinks {
   overflow: hidden;
   // margin-top: clamp(0.625rem, 0.398rem + 1.14vw, 1.25rem);
   
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: max-content;
     max-width: calc(100vw - 40px);
     position: absolute;
-    left: -10px;
-    padding-top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 12px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     max-height: 35vh; /* Ограничиваем высоту на мобильных устройствах */
     overflow-y: auto; /* Включаем вертикальный скролл */
 
-    /* Стилизация скроллбара */
+    /* тонкий серый скролл */
+    scrollbar-width: thin;
+    scrollbar-color: #cfd6de transparent;
+
     &::-webkit-scrollbar {
-      width: 8px;
+      width: 4px;
     }
     &::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background: #F39708;
+      background: #cfd6de;
       border-radius: 4px;
     }
     &::-webkit-scrollbar-thumb:hover {
-      background: #F39708;
+      background: #b6bfc9;
     }
   }
 }
 
 /* выпадающий список у правых пунктов меню прижат к правому краю */
 .subLinksRight {
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     left: auto;
-    right: -10px;
+    right: 0;
+    transform: none;
   }
 }
 
@@ -327,7 +299,7 @@
   grid-template-columns: 1fr;
   padding: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: block; /* важно: выключаем grid */
     width: max-content;
     background: #F39708;
@@ -364,7 +336,7 @@
     transition: all ease-in-out 0.2s;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     margin: unset;
     color: #fff;
     width: fit-content;
@@ -376,7 +348,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     display: block;
     width: 100%;
 
@@ -392,11 +364,23 @@
   margin-right: 8px;
   transition: transform 0.3s ease;
   color: #fff;
+
+  /* на десктопе шеврон стоит в светлой шапке рядом с пунктом меню */
+  @media (min-width: 1024px) {
+    font-size: 14px;
+    margin-right: 0;
+    margin-left: 4px;
+    color: #8a929c;
+  }
 }
 
 .chevronOpen {
   transform: rotate(180deg);
   color: #F39708;
+
+  @media (min-width: 1024px) {
+    color: #F39708;
+  }
 }
 
 
@@ -415,21 +399,23 @@
 /* Панель со странами разворачивается на всю ширину шапки: её позиционирует
    .header (position: fixed), потому что у пункта меню отключён position: relative */
 .countriesMenu {
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: absolute;
     /* top не задаём: панель встаёт сразу под пунктом меню, на той же высоте,
        что и обычные подменю, а left/right растягивают её на ширину шапки */
+    /* панель встаёт под шапкой и тянется на ширину контейнера */
+    top: 100%;
     left: 0;
     right: 0;
     width: auto;
-    max-width: 100vw;
+    max-width: none;
     transform: none;
-    padding: 25px clamp(1rem, 2vw, 2.5rem) 0;
+    padding: 8px 0 0;
   }
 }
 
 .navLinkWrapperWide {
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: static;
   }
 }
@@ -438,7 +424,7 @@
   display: grid;
   gap: 10px 40px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 24px 40px;
     background: #F39708;
@@ -450,19 +436,19 @@
     overflow-y: auto;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     gap: 0;
     padding: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
   }
 
-  @media (min-width: 768px) and (max-width: 1320px) {
+  @media (min-width: 1024px) and (max-width: 1320px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 .countryColumn {
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 4px 0;
 
@@ -491,7 +477,7 @@
   padding: 8px 0;
   transition: all ease-in-out 0.2s;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     color: #fff;
     padding: 0 0 10px;
 
@@ -499,6 +485,12 @@
       opacity: 0.8;
     }
   }
+}
+
+.countryFlagImage {
+  width: 24px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .countryFlag {
@@ -526,7 +518,531 @@
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     padding: 0 0 10px 32px;
   }
+}
+
+/* ===== Выпадающие плашки меню: карточка со ссылкой и пояснением ===== */
+
+.menuCardsMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @media (min-width: 1024px) {
+    width: 340px;
+    max-width: calc(100vw - 40px);
+    padding: 8px;
+    border: 1px solid $menu-line;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 24px 48px rgba(9, 23, 40, 0.12);
+  }
+}
+
+.menuCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    background: $menu-surface;
+
+    .menuCardLabel {
+      color: $menu-accent;
+    }
+
+    .menuCardIcon {
+      color: $menu-accent;
+    }
+  }
+}
+
+.menuCardLabel {
+  display: block;
+  color: $menu-ink;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  transition: color 0.2s ease-in-out;
+}
+
+.menuCardDescription {
+  display: block;
+  margin-top: 2px;
+  color: $menu-muted;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+}
+
+.menuCardIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 16px;
+  color: #c3cad3;
+  transition: color 0.2s ease-in-out;
+}
+
+/* ===== Мега-меню стран: слева список стран, справа ссылки ===== */
+
+.megaMenu {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+  overflow: hidden;
+  border: 1px solid $menu-line;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 28px 56px rgba(9, 23, 40, 0.14);
+
+  @media (max-width: 1100px) {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  }
+}
+
+.megaMenuAside {
+  padding: 12px;
+  border-right: 1px solid $menu-line;
+}
+
+.megaMenuAsideTitle {
+  padding: 4px 12px 8px;
+  color: #98a2ae;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.countryTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.countryTab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background: $menu-surface;
+  }
+}
+
+.countryTabActive {
+  background: $menu-surface;
+
+  .countryTabChevron {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.countryFlagBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 18px;
+}
+
+.countryTabChevron {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: $menu-accent;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.countryTabName {
+  flex: 1;
+  color: $menu-ink;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+}
+
+.countryBadge {
+  flex-shrink: 0;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(243, 151, 8, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(243, 151, 8, 0.35);
+  color: #b36d05;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.megaMenuPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px;
+  background: rgba(247, 248, 250, 0.6);
+}
+
+.megaMenuPanelWithPromo {
+  @media (min-width: 1100px) {
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
+}
+
+.megaMenuContent {
+  min-width: 0;
+}
+
+.megaMenuHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $menu-line;
+}
+
+.megaMenuTitle {
+  color: $menu-ink;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+}
+
+.megaMenuTagline {
+  margin-top: 2px;
+  color: $menu-muted;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+}
+
+.megaMenuAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  color: $menu-accent;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: #d07f00;
+  }
+}
+
+.menuCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .menuCard {
+    height: 100%;
+    padding: 14px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: #fff;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $menu-line;
+      box-shadow: 0 8px 20px rgba(9, 23, 40, 0.08);
+    }
+  }
+}
+
+/* Промо-карточка справа в мега-меню */
+.menuPromo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 18px;
+  background: $menu-ink;
+  color: #fff;
+}
+
+.menuPromoLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(42, 171, 238, 0.16);
+  color: #7dd3fc;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.menuPromoIcon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.menuPromoTitle {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+}
+
+.menuPromoText {
+  margin-top: 8px;
+  color: #b9c2cd;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: -0.2px;
+}
+
+.menuPromoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  background: #2aabee;
+  box-shadow: 0 10px 24px rgba(42, 171, 238, 0.25);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    background: #1b97d6;
+  }
+}
+
+/* ===== Страны на мобильном: гармошка ===== */
+
+.countriesMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+}
+
+.countryMobileItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.countryMobileHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.countryMobileTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+}
+
+.countryMobileLinks {
+  padding-bottom: 8px;
+}
+
+/* В мобильном меню карточки лежат на светлой шторке */
+@media (max-width: 1023px) {
+  .menuCardsMobile {
+    gap: 0;
+    padding: 0 0 6px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menuCard {
+    padding: 10px 0 10px 12px;
+    border-radius: 0;
+
+    &:hover,
+    &:focus-visible {
+      background: transparent;
+    }
+  }
+
+  .menuCardLabel {
+    color: $menu-ink;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .menuCardDescription {
+    color: $menu-muted;
+    font-size: 12px;
+  }
+
+  .menuCardIcon {
+    color: #c3cad3;
+  }
+
+  .menuCards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .countryMobileItem {
+    border-bottom: 1px solid #f2f4f7;
+  }
+
+  .countryMobileTitle {
+    color: $menu-ink;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 0;
+  }
+
+  .countryToggle {
+    color: #98a2ae;
+  }
+
+  .chevron {
+    color: #98a2ae;
+  }
+
+  .chevronOpen {
+    color: $menu-accent;
+  }
+}
+
+/* Нижняя плашка мобильного меню */
+.mobileCta {
+  display: none;
+
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 90%;
+    margin-top: auto;
+    padding: 18px;
+    border: 1px solid #eceff3;
+    border-radius: 16px;
+    background: #f7f8fa;
+  }
+}
+
+.mobileCtaTitle {
+  color: $menu-ink;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.mobileCtaText {
+  margin-top: 4px;
+  color: $menu-muted;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.mobileCtaButtons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mobileCtaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.mobileCtaTelegram {
+  background: #2aabee;
+
+  &:hover,
+  &:focus-visible {
+    background: #1b97d6;
+  }
+}
+
+.mobileCtaWhatsapp {
+  background: #25d366;
+
+  &:hover,
+  &:focus-visible {
+    background: #1db954;
+  }
+}
+
+.mobileCtaIcon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+  fill: currentColor;
 }

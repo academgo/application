@@ -8,6 +8,7 @@ export type Image = {
 export type Sublink = {
   _key: string;
   label: string;
+  description?: string;
   link: string;
 };
 
@@ -17,6 +18,15 @@ type navLink = {
   link: string;
   subLinks: Sublink[];
   showCountries?: boolean;
+};
+
+export type CountriesPromo = {
+  label?: string;
+  title?: string;
+  text?: string;
+  buttonText?: string;
+  link?: string;
+  icon?: Image;
 };
 
 type contactLink = {
@@ -35,6 +45,7 @@ export type Header = {
   logoMobileActive: Image;
   description: string;
   navLinks: navLink[];
+  countriesPromo?: CountriesPromo;
   contactLinks: contactLink[];
   workingHours: string;
   phoneNumber: string;

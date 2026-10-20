@@ -269,6 +269,7 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
     logoMobileActive,
     description,
     navLinks,
+    countriesPromo,
     contactLinks,
     workingHours,
     phoneNumber,
@@ -308,6 +309,11 @@ export async function getFooterByLang(lang: string): Promise<Footer> {
     footerEmail,
     adress,
     navLinks,
+    countriesTitle,
+    navTitle,
+    contactsTitle,
+    partnersLabel,
+    contactNote,
     contactLinksTitle,
     contactLinks,
     buttonText,
@@ -765,6 +771,7 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     "flagUrl": flag.asset->url,
     order,
     isFeatured,
+    badge,
     shortDescription,
     comparison,
     hubPage->{
@@ -774,6 +781,7 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     menuLinks[]{
       _key,
       label,
+      description,
       page->{
         _type,
         slug,
@@ -796,6 +804,7 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     flagUrl: country.flagUrl,
     order: country.order,
     isFeatured: country.isFeatured,
+    badge: country.badge,
     shortDescription: country.shortDescription,
     comparison: country.comparison,
     hubHref: pageHref(lang, country.hubPage),
@@ -803,6 +812,7 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
       .map((item: any) => ({
         _key: item._key,
         label: item.label,
+        description: item.description,
         href: pageHref(lang, item.page)
       }))
       .filter((item: any) => item.label && item.href)

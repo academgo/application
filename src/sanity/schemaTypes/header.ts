@@ -70,16 +70,56 @@ const header = {
                       type: "string"
                     }),
                     defineField({
+                      name: "description",
+                      title: "Description",
+                      type: "string",
+                      description:
+                        "Короткое пояснение под ссылкой в выпадающем меню. Можно оставить пустым"
+                    }),
+                    defineField({
                       name: "link",
                       title: "Link",
                       type: "string"
                     })
-                  ]
+                  ],
+                  preview: {
+                    select: { title: "label", subtitle: "description" }
+                  }
                 }
               ]
             })
           ]
         }
+      ]
+    }),
+    defineField({
+      name: "countriesPromo",
+      title: "Countries menu promo",
+      type: "object",
+      description:
+        "Карточка справа в мега-меню стран. Если заголовок не заполнен, блок не выводится и ссылки занимают всю ширину",
+      fields: [
+        defineField({
+          name: "label",
+          title: "Label",
+          type: "string",
+          description: "Подпись над заголовком: «Telegram-бот»"
+        }),
+        defineField({ name: "title", title: "Title", type: "string" }),
+        defineField({
+          name: "text",
+          title: "Text",
+          type: "text",
+          rows: 3
+        }),
+        defineField({ name: "buttonText", title: "Button text", type: "string" }),
+        defineField({ name: "link", title: "Link", type: "string" }),
+        defineField({
+          name: "icon",
+          title: "Icon",
+          type: "image",
+          description: "Иконка мессенджера рядом с подписью"
+        })
       ]
     }),
     defineField({

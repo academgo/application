@@ -45,15 +45,29 @@ const country = {
           fields: [
             defineField({ name: "label", title: "Label", type: "string" }),
             defineField({
+              name: "description",
+              title: "Description",
+              type: "string",
+              description:
+                "Короткое пояснение под ссылкой в мега-меню: «Бакалавриат и магистратура». Можно оставить пустым"
+            }),
+            defineField({
               name: "page",
               title: "Page",
               type: "reference",
               to: [{ type: "subpage" }, { type: "singlepage" }]
             })
           ],
-          preview: { select: { title: "label", subtitle: "page.title" } }
+          preview: { select: { title: "label", subtitle: "description" } }
         }
       ]
+    }),
+    defineField({
+      name: "badge",
+      title: "Badge",
+      type: "string",
+      description:
+        "Короткая подпись рядом со страной в мега-меню: «Топ выбор», «Переезд и ВНЖ». Пустое поле — бейдж не выводится"
     }),
     defineField({
       name: "order",

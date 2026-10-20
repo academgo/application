@@ -99,14 +99,7 @@ body {
   transition: all 0.3s ease;
 }
 
-body.menu-open .logoImageMobile {
-  display: none;
-  opacity: 0;
-}
-
-body.menu-open .logoImageMobileActive {
-  display: block;
-}
+/* меню открывается на светлом фоне, поэтому логотип остаётся обычным */
 /* styles for the header */
 
 /* styles for the flag */

@@ -13,6 +13,7 @@ export type CountryComparison = {
 export type CountryMenuLink = {
   _key: string;
   label: string;
+  description?: string;
   href: string;
 };
 
@@ -24,6 +25,7 @@ export type Country = {
   flagUrl?: string;
   order?: number;
   isFeatured?: boolean;
+  badge?: string;
   shortDescription?: string;
   comparison?: CountryComparison;
   hubHref: string;
