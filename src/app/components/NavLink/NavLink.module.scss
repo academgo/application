@@ -1,32 +1,18 @@
+/* Ссылка в колонке «Навигация» футера */
 .navLink {
   cursor: pointer;
-  color: #8A929C;
-  font-size: 16px;
+  color: #8a929c;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 125% */
-  letter-spacing: -0.8px;
-  position: relative;
+  line-height: 20px;
+  letter-spacing: -0.4px;
   width: fit-content;
+  transition: color 0.2s ease-in-out;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #8A929C;
-    transition: all 0.2s ease-in-out;
-  }
-
-  @media screen and (min-width: 768px){
-    
-    &:hover {
-      
-      &::after {
-        width: 0;
-      }
-    }
+  &:hover,
+  &:focus-visible,
+  &.active {
+    color: #fff;
   }
 }

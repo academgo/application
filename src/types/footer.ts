@@ -38,6 +38,11 @@ export type Footer = {
   footerEmail: string;
   adress: string;
   navLinks: NavLink[];
+  countriesTitle?: string;
+  navTitle?: string;
+  contactsTitle?: string;
+  partnersLabel?: string;
+  contactNote?: string;
   contactLinksTitle: string;
   contactLinks: ContactLink[];
   buttonText: string;

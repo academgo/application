@@ -164,6 +164,35 @@ const footer = {
       ]
     }),
     defineField({
+      name: "countriesTitle",
+      title: "Countries column title",
+      type: "string",
+      description: "Заголовок колонки со странами (список стран берётся из документов Country)"
+    }),
+    defineField({
+      name: "navTitle",
+      title: "Navigation column title",
+      type: "string"
+    }),
+    defineField({
+      name: "contactsTitle",
+      title: "Contacts column title",
+      type: "string"
+    }),
+    defineField({
+      name: "partnersLabel",
+      title: "Contacts column label",
+      type: "string",
+      description: "Подпись над email, например «Для партнёров, B2B и предложений:»"
+    }),
+    defineField({
+      name: "contactNote",
+      title: "Contacts note",
+      type: "text",
+      rows: 2,
+      description: "Короткая заметка под адресом, например про приём заявок в Telegram"
+    }),
+    defineField({
       name: "contactLinksTitle",
       title: "Contact links title",
       type: "string"
