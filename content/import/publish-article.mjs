@@ -216,10 +216,8 @@ const uploadImage = async file => {
 
 const buildDocuments = (assetId, categoryByLang) => {
   const documents = [];
-  const slugs = {
-    ru: { _type: "slug", current: ARTICLE.ru.slug },
-    en: { _type: "slug", current: ARTICLE.en.slug }
-  };
+  // В документе заполняем слаг только своего языка: если заполнить оба,
+  // переключатель языков склеивает их в один адрес и получается 404
 
   for (const lang of ["ru", "en"]) {
     const config = ARTICLE[lang];
@@ -231,7 +229,7 @@ const buildDocuments = (assetId, categoryByLang) => {
       _type: "blog",
       language: lang,
       title,
-      slug: { _type: "localizedSlug", ...slugs },
+      slug: { _type: "localizedSlug", [lang]: { _type: "slug", current: config.slug } },
       seo: {
         _type: "object",
         metaTitle: config.metaTitle,
