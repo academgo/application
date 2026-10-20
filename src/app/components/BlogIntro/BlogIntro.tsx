@@ -8,7 +8,7 @@ import { RichText } from "../RichText/RichText";
 
 type Props = {
   title: string;
-  categoryTitle: string;
+  categoryTitle?: string;
   date: string;
   previewImage: BlogMainImage;
   firstContent: any;
@@ -32,7 +32,9 @@ const BlogIntro: FC<Props> = ({
         <div className={styles.blogIntroContent}>
           <h1 className={styles.blogHeading}>{title}</h1>
           <div className={styles.data}>
-            <div className={styles.category}>{categoryTitle}</div>
+            {categoryTitle && (
+              <div className={styles.category}>{categoryTitle}</div>
+            )}
             <div className={styles.date}>{formatDate(date)}</div>
           </div>
           <div className={styles.blogIntroText}>

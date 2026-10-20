@@ -52,12 +52,12 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
   };
 
   const categories = Array.from(
-    new Set(posts.map(post => post.category.title))
+    new Set(posts.map(post => post.category?.title).filter(Boolean))
   );
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const filteredPosts = selectedCategory
-    ? posts.filter(post => post.category.title === selectedCategory)
+    ? posts.filter(post => post.category?.title === selectedCategory)
     : posts;
 
   return (
@@ -105,7 +105,7 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
                   <div className={styles.contentWrapper}>
                     <div className={styles.contentTop}>
                       <p className={styles.articleCategory}>
-                        {post.category.title}
+                        {post.category?.title}
                       </p>
                     </div>
                     <div className={styles.contentBottom}>

@@ -55,7 +55,7 @@ const LastArticles = async ({ params }: Props) => {
               <div className={styles.contentWrapper}>
                 <div className={styles.contentTop}>
                   <p className={styles.articleCategory}>
-                    {post.category.title}
+                    {post.category?.title}
                   </p>
                 </div>
                 <div className={styles.contentBottom}>

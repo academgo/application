@@ -172,7 +172,7 @@ const PagePost = async (props: Props) => {
             <div className="post-content">
               <BlogIntro
                 title={blog.title}
-                categoryTitle={blog.category.title}
+                categoryTitle={blog.category?.title}
                 date={blog.publishedAt}
                 previewImage={blog.previewImage}
                 firstContent={blog.firstContent}
