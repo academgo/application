@@ -20,7 +20,11 @@ type SitemapEntry = {
   slug: any;
   _updatedAt: string;
   parentPage?: { slug: any } | null;
-  _translations?: Array<{ slug: any; parentPage?: { slug: any } | null }>;
+  _translations?: Array<{
+    language?: string;
+    slug: any;
+    parentPage?: { slug: any } | null;
+  }>;
 };
 
 type SitemapPage = {
@@ -54,22 +58,34 @@ const pathFor = (
 
 /** hreflang-альтернативы: собираются из языковых версий документа */
 const alternatesFor = (entry: SitemapEntry, prefix?: string) => {
-  const alternates: Array<{ hreflang: string; url: string }> = [];
+  // На язык — одна альтернатива. Язык берём у самого документа перевода:
+  // если в документе случайно заполнен слаг чужой локали, он больше не
+  // создаёт второй hreflang с неправильным адресом
+  const byLang = new Map<string, string>();
 
   (entry._translations || []).forEach(translation => {
-    LANGS.forEach(lang => {
+    const own = translation?.language;
+    const langs =
+      own && (LANGS as readonly string[]).includes(own)
+        ? [own as (typeof LANGS)[number]]
+        : LANGS;
+
+    langs.forEach(lang => {
+      if (byLang.has(lang)) return;
       if (!translation?.slug?.[lang]?.current) return;
 
       const path = pathFor(translation, lang, prefix);
       if (!path || EXCLUDED.has(path)) return;
 
-      alternates.push({ hreflang: lang, url: `${WEBSITE_URL}${path}` });
+      byLang.set(lang, `${WEBSITE_URL}${path}`);
     });
   });
 
-  const english = alternates.find(item => item.hreflang === "en");
+  const alternates = [...byLang].map(([hreflang, url]) => ({ hreflang, url }));
+
+  const english = byLang.get("en");
   if (english) {
-    alternates.push({ hreflang: "x-default", url: english.url });
+    alternates.push({ hreflang: "x-default", url: english });
   }
 
   return alternates;
@@ -113,9 +129,18 @@ async function generateSitemap(): Promise<SitemapPage[]> {
       getBlogPostsForSitemap(lang)
     ]);
 
+    // дата обновления хабов — по самому свежему документу внутри них
+    const newest = (entries: SitemapEntry[]) =>
+      entries
+        .map(entry => entry._updatedAt)
+        .filter(Boolean)
+        .sort()
+        .pop();
+
     pages.push(
       {
         url: lang === "en" ? `${WEBSITE_URL}/` : `${WEBSITE_URL}/${lang}`,
+        lastmod: newest([...singlePages, ...subPages, ...blogPosts]),
         changefreq: "weekly",
         priority: 1,
         alternates: homeAlternates
@@ -123,6 +148,7 @@ async function generateSitemap(): Promise<SitemapPage[]> {
       {
         url:
           lang === "en" ? `${WEBSITE_URL}/blog` : `${WEBSITE_URL}/${lang}/blog`,
+        lastmod: newest(blogPosts),
         changefreq: "weekly",
         priority: 0.9,
         alternates: [

@@ -890,6 +890,7 @@ const TRANSLATIONS_PROJECTION = groq`*[
   _type == "translation.metadata" &&
   references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))
 ].translations[].value->{
+  language,
   slug,
   parentPage->{ slug }
 }`;
