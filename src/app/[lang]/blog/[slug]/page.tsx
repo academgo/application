@@ -84,7 +84,11 @@ const PagePost = async (props: Props) => {
         const newItem: { [key: string]: { current: string } } = {};
 
         for (const key in item.slug) {
-          if (key !== "_type" && item.slug[key]) {
+          if (
+            key !== "_type" &&
+            item.slug[key] &&
+            (!item.language || key === item.language)
+          ) {
             newItem[key] = { current: item.slug[key].current };
           }
         }

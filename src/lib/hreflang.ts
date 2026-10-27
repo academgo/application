@@ -2,6 +2,8 @@ type SlugValue = { current?: string } | undefined | null;
 type LocalizedSlug = Record<string, SlugValue> | undefined | null;
 
 export type TranslationEntry = {
+  /** язык самого документа перевода */
+  language?: string;
   slug?: LocalizedSlug;
   parentPage?: { slug?: LocalizedSlug } | null;
 };
@@ -25,8 +27,14 @@ export const buildLanguageAlternates = (
   const languages: Record<string, string> = {};
 
   translations.forEach(translation => {
+    // Берём слаг только того языка, на котором написан сам документ.
+    // Если в документе по ошибке заполнен и слаг чужой локали, он даёт
+    // несуществующий адрес вида /study-in-poland с русским слагом
     const slugEntries = Object.entries(translation?.slug || {}).filter(
-      ([key, value]) => key !== "_type" && (value as SlugValue)?.current
+      ([key, value]) =>
+        key !== "_type" &&
+        (value as SlugValue)?.current &&
+        (!translation.language || key === translation.language)
     );
 
     slugEntries.forEach(([lang, value]) => {

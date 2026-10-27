@@ -20,6 +20,8 @@ export type SuccessPage = {
   };
   _translations: [
     {
+      /** язык документа перевода */
+      language?: string;
       slug: {
         [lang: string]: {
           current: string;

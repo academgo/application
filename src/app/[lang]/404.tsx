@@ -33,7 +33,7 @@ const NotFoundPage = async ({ params }: Props) => {
     const newItem: { [key: string]: { current: string } } = {};
 
     for (const key in item.slug) {
-      if (key !== "_type") {
+      if (key !== "_type" && (!item.language || key === item.language)) {
         newItem[key] = { current: item.slug[key].current };
       }
     }

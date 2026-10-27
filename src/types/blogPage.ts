@@ -23,6 +23,8 @@ export type BlogPage = {
   };
   _translations: [
     {
+      /** язык документа перевода */
+      language?: string;
       slug: {
         [lang: string]: {
           current: string;

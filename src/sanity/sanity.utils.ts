@@ -23,6 +23,7 @@ export async function getPostsByLang(lang: string): Promise<Post[]> {
         language,
         description,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+          language,
           slug,
         },
       }`;
@@ -40,6 +41,7 @@ export async function getPostByLang(lang: string, slug: string): Promise<Post> {
         language,
         description,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+          language,
           slug,
         },
       }`;
@@ -57,6 +59,7 @@ export async function getBlogPageByLang(lang: string): Promise<BlogPage> {
     faq,
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -105,6 +108,7 @@ export async function getBlogPostByLang(
     },
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -138,6 +142,7 @@ export async function getFourPostsByLang(
     publishedAt,
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -171,6 +176,7 @@ export async function getNinePostsByLang(
     publishedAt,
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -201,6 +207,7 @@ export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
     publishedAt,
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -236,6 +243,7 @@ export async function getBlogPostsByLangWithPagination(
       publishedAt,
       language,
       "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+        language,
         slug,
       },
     }
@@ -445,6 +453,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     language,
     slug,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -473,6 +482,7 @@ export async function getSuccessPageByLang(lang: string): Promise<SuccessPage> {
     image,
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -495,6 +505,7 @@ export async function getNotFoundPageByLang(
     image,
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -598,6 +609,7 @@ export async function getSinglePageByLang(
     },
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
     },
   }`;
@@ -701,6 +713,7 @@ export async function getSingleSubPageBySlug(
     },
     language,
     "_translations": *[_type == "translation.metadata" && references(select(^._id in path("drafts.**") => string::split(^._id, "drafts.")[1], ^._id))].translations[].value->{
+      language,
       slug,
       parentPage->{
         slug

@@ -305,6 +305,8 @@ export type Homepage = {
   };
   _translations: [
     {
+      /** язык документа перевода */
+      language?: string;
       slug: {
         [lang: string]: {
           current: string;
