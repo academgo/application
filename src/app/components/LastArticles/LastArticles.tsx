@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { blogHref } from "@/lib/href";
 import styles from "./LastArticles.module.scss";
 import { getFourPostsByLang } from "@/sanity/sanity.utils";
 import Image from "next/image";
@@ -20,11 +21,8 @@ const LastArticles = async ({ params }: Props) => {
     return parsedDate.toLocaleDateString("en-GB").replace(/\//g, ".");
   };
 
-  const generateSlug = (slug: any, language: string) => {
-    return slug && slug[language]?.current
-      ? `/${language}/blog/${slug[language].current}`
-      : "#";
-  };
+  const generateSlug = (slug: any, language: string) =>
+    blogHref(slug, language) || "#";
 
   // console.log("blogPosts", blogPosts);
 

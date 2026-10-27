@@ -1,7 +1,6 @@
 // page.tsx
 import React from "react";
 import { Metadata } from "next";
-import { i18n } from "@/i18n.config";
 import {
   getBlogPageByLang,
   getBlogPostsByLangWithPagination,
@@ -53,44 +52,11 @@ const PageBlog = async (props: Props) => {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
-  const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
-    blogPage?._translations.map(item => {
-      const newItem: { [key: string]: { current: string } } = {};
-
-      for (const key in item.slug) {
-        if (key !== "_type" && (!item.language || key === item.language)) {
-          newItem[key] = { current: item.slug[key].current };
-        }
-      }
-      return newItem;
-    });
-
-  const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
-    const translationSlug = blogPageTranslationSlugs
-      ?.reduce(
-        (acc: string[], slug: { [key: string]: { current: string } }) => {
-          const current = slug[lang.id]?.current;
-          if (current) {
-            acc.push(current);
-          }
-          return acc;
-        },
-        []
-      )
-      // берём первый найденный слаг: склейка всех переводов давала
-      // дубль в адресе, если у документа заполнены слаги обеих локалей
-      .find(Boolean);
-
-    return translationSlug
-      ? [
-          ...acc,
-          {
-            language: lang.id,
-            path: `/${lang.id}/${translationSlug}`
-          }
-        ]
-      : acc;
-  }, []);
+  // адрес листинга фиксированный, слаги документа тут не участвуют
+  const translations: Translation[] = [
+    { language: "en", path: "/blog" },
+    { language: "ru", path: "/ru/blog" }
+  ];
 
   return (
     <>

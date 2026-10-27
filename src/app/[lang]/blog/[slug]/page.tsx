@@ -13,7 +13,6 @@ import ModalFullLazy from "@/app/components/ModalFull/ModalFullLazy";
 import RelatedArticles from "@/app/components/RelatedArticles/RelatedArticles";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
-import { i18n } from "@/i18n.config";
 import {
   getBlogPostByLang,
   getFormStandardDocumentByLang
@@ -27,9 +26,12 @@ import {
   SurveyBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
-import { Translation } from "@/types/post";
 import { Metadata } from "next";
-import { buildLanguageAlternates } from "@/lib/hreflang";
+import { localePath } from "@/lib/href";
+import {
+  buildLanguageAlternates,
+  buildLanguageVersions
+} from "@/lib/hreflang";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 
@@ -77,50 +79,7 @@ const PagePost = async (props: Props) => {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
-  const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
-    blog?._translations
-      ?.filter(item => item && item.slug)
-      .map(item => {
-        const newItem: { [key: string]: { current: string } } = {};
-
-        for (const key in item.slug) {
-          if (
-            key !== "_type" &&
-            item.slug[key] &&
-            (!item.language || key === item.language)
-          ) {
-            newItem[key] = { current: item.slug[key].current };
-          }
-        }
-        return newItem;
-      }) || [];
-
-  const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
-    const translationSlug = blogPageTranslationSlugs
-      ?.reduce(
-        (acc: string[], slug: { [key: string]: { current: string } }) => {
-          const current = slug[lang.id]?.current;
-          if (current) {
-            acc.push(current);
-          }
-          return acc;
-        },
-        []
-      )
-      // берём первый найденный слаг: склейка всех переводов давала
-      // дубль в адресе, если у документа заполнены слаги обеих локалей
-      .find(Boolean);
-
-    return translationSlug
-      ? [
-          ...acc,
-          {
-            language: lang.id,
-            path: `/${lang.id}/blog/${translationSlug}`
-          }
-        ]
-      : acc;
-  }, []);
+  const translations = buildLanguageVersions(blog?._translations, "blog");
 
   const renderContentBlock = (block: ContentBlock) => {
     switch (block._type) {
@@ -187,7 +146,7 @@ const PagePost = async (props: Props) => {
                 {blog.contentBlocks.map(block => renderContentBlock(block))}
               </article>
               <BlogButtonWrapper>
-                <LinkPrimary href={`/${lang}/blog`}>
+                <LinkPrimary href={localePath(lang, "blog")}>
                   {lang === "en"
                     ? "Back to all articles"
                     : "Вернуться ко всем статьям"}

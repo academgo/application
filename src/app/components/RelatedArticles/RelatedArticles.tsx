@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import styles from "./RelatedArticles.module.scss";
+import { localePath } from "@/lib/href";
 import { RelatedArticle } from "@/types/blog";
 
 // Создаем расширенный тип, который включает _type и parentPage (а не parent)
@@ -26,36 +27,40 @@ const RelatedArticles: FC<Props> = ({ relatedArticles, language }) => {
     return parsedDate.toLocaleDateString("en-GB").replace(/\//g, ".");
   };
 
-  // Функция генерирует URL в зависимости от типа статьи
+  // Адрес статьи. Пустая строка, если на этом языке её нет —
+  // такие карточки не выводим, иначе в href попадает слово undefined
   const generateSlug = (article: ExtendedRelatedArticle, language: string) => {
+    const self = article.slug?.[language]?.current;
+    if (!self) return "";
+
     switch (article._type) {
       case "blog":
-        return `/${language}/blog/${article.slug[language]?.current}`;
+        return localePath(language, `blog/${self}`);
       case "singlepage":
-        return `/${language}/${article.slug[language]?.current}`;
-      case "subpage":
-        // Для subpage используем поле parentPage
-        if (
-          article.parentPage &&
-          article.parentPage.slug &&
-          article.parentPage.slug[language]?.current
-        ) {
-          return `/${language}/${article.parentPage.slug[language].current}/${article.slug[language]?.current}`;
-        }
-        return "#";
+        return localePath(language, self);
+      case "subpage": {
+        const parent = article.parentPage?.slug?.[language]?.current;
+        return parent ? localePath(language, `${parent}/${self}`) : "";
+      }
       default:
-        return "#";
+        return "";
     }
   };
+
+  const articles = relatedArticles
+    .map(article => ({ article, href: generateSlug(article, language) }))
+    .filter(item => item.href);
+
+  if (articles.length === 0) return null;
 
   return (
     <div className={styles.relatedArticles}>
       <div className={styles.relatedArticlesList}>
-        {relatedArticles.map(article => (
+        {articles.map(({ article, href }) => (
           <div key={article._id} className={styles.relatedArticle}>
             <p className={styles.date}>{formatDate(article.publishedAt)}</p>
             <Link
-              href={generateSlug(article, language)}
+              href={href}
               className={styles.link}
             >
               {article.title}

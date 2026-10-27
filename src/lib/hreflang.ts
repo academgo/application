@@ -68,3 +68,21 @@ export const homeLanguageAlternates = (): Record<string, string> => ({
   ru: "/ru",
   "x-default": "/"
 });
+
+export type LanguageVersion = { language: string; path: string };
+
+/**
+ * Адреса языковых версий для переключателя языков.
+ * Собираются тем же способом, что и hreflang, — из _translations,
+ * поэтому переключатель и <head> всегда ведут на один и тот же адрес.
+ */
+export const buildLanguageVersions = (
+  translations?: TranslationEntry[] | null,
+  prefix?: string
+): LanguageVersion[] => {
+  const map = buildLanguageAlternates(translations, prefix) || {};
+
+  return Object.entries(map)
+    .filter(([language]) => language !== "x-default")
+    .map(([language, path]) => ({ language, path }));
+};

@@ -19,7 +19,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   parentTitle,
   parentSlug
 }) => {
-  const basePath = `/${lang}`;
+  // en — язык по умолчанию и идёт без префикса
+  const basePath = lang === "en" ? "" : `/${lang}`;
 
   // Заголовок для главной страницы на основе языка
   const homeTitle =
@@ -27,7 +28,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 
   // Абсолютные адреса для schema.org: en — без языкового префикса
   const SITE_URL = "https://academgo.com";
-  const langPrefix = lang === "en" ? "" : `/${lang}`;
+  const langPrefix = basePath;
 
   const trail: Array<{ name: string; url: string }> = [
     { name: homeTitle, url: `${SITE_URL}${langPrefix || "/"}` }
@@ -68,7 +69,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       <ol className={styles.breadcrumb}>
         {/* Ссылка на главную страницу */}
         <li className={styles.breadcrumbItem}>
-          <Link href={basePath}>{homeTitle}</Link>
+          <Link href={basePath || "/"}>{homeTitle}</Link>
         </li>
 
         {/* Для родительской страницы */}

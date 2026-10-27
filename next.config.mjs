@@ -53,6 +53,16 @@ const nextConfig = {
       // ===========================
       // EN redirects
       // ===========================
+      // Старые адреса из ссылок внутри статей блога (отчёт Ahrefs, 27.10.2026)
+      { source: '/why-poland', destination: '/study-in-poland', permanent: true },
+      { source: '/ru/why-poland', destination: '/ru/obuchenie-v-polshe', permanent: true },
+      { source: '/contact', destination: '/contacts', permanent: true },
+      { source: '/ru/contact', destination: '/ru/kontakty', permanent: true },
+      { source: '/ru/contacts', destination: '/ru/kontakty', permanent: true },
+      { source: '/how-to-apply-to-university-in-poland', destination: '/study-in-poland', permanent: true },
+      { source: '/ru/how-to-apply-to-university-in-poland', destination: '/ru/obuchenie-v-polshe', permanent: true },
+      { source: '/student-visa-in-poland-how-to-get-a-student-visa-in-poland', destination: '/student-visa-to-poland', permanent: true },
+      { source: '/ru/student-visa-in-poland-how-to-get-a-student-visa-in-poland', destination: '/ru/studencheskaya-viza', permanent: true },
       { source: '/blog/cost-of-studying-in-poland', destination: '/cost-of-studying-in-poland', permanent: true },
       { source: '/blog/how-to-apply-to-university-in-poland', destination: '/study-in-poland', permanent: true },
       { source: '/blog/studying-in-poland', destination: '/study-in-poland', permanent: true },

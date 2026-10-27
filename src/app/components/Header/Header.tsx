@@ -60,7 +60,7 @@ const Header = async ({ translations, params }: Props) => {
       <div className="container">
         <div className={styles.wrapper}>
           <div className={styles.companyData}>
-            <Link className={styles.logoLink} href={`/${params.lang}`}>
+            <Link className={styles.logoLink} href={params.lang === "en" ? "/" : `/${params.lang}`}>
               <Image
                 alt="Academgo Logo"
                 src={urlFor(data.logo).url()}

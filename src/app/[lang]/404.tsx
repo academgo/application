@@ -1,12 +1,11 @@
 import React from "react";
 import { Metadata } from "next";
-import { i18n } from "@/i18n.config";
 import SuccessPageComponent from "@/app/components/SuccessPageComponent/SuccessPageComponent";
-import { Translation } from "@/types/post";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
 import { getNotFoundPageByLang } from "@/sanity/sanity.utils";
 import NotFoundPageComponent from "@/app/components/NotFoundPageComponent/NotFoundPageComponent";
+import { buildLanguageVersions } from "@/lib/hreflang";
 
 type Props = {
   params: { lang: string };
@@ -27,43 +26,7 @@ const NotFoundPage = async ({ params }: Props) => {
 
   // console.log("successPage", successPage);
 
-  const notFoundPageTranslationSlugs: {
-    [key: string]: { current: string };
-  }[] = notFoundPage?._translations.map(item => {
-    const newItem: { [key: string]: { current: string } } = {};
-
-    for (const key in item.slug) {
-      if (key !== "_type" && (!item.language || key === item.language)) {
-        newItem[key] = { current: item.slug[key].current };
-      }
-    }
-    return newItem;
-  });
-
-  const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
-    const translationSlug = notFoundPageTranslationSlugs
-      ?.reduce(
-        (acc: string[], slug: { [key: string]: { current: string } }) => {
-          const current = slug[lang.id]?.current;
-          if (current) {
-            acc.push(current);
-          }
-          return acc;
-        },
-        []
-      )
-      .join(" ");
-
-    return translationSlug
-      ? [
-          ...acc,
-          {
-            language: lang.id,
-            path: `/${lang.id}/${translationSlug}`
-          }
-        ]
-      : acc;
-  }, []);
+  const translations = buildLanguageVersions(notFoundPage?._translations);
 
   if (!notFoundPage) return null;
 

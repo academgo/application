@@ -1,4 +1,5 @@
 import React from "react";
+import { blogHref, localePath } from "@/lib/href";
 import styles from "./BlogPostsSection.module.scss";
 import { getNinePostsByLang } from "@/sanity/sanity.utils";
 import SliderMain from "../SliderMain/SliderMain";
@@ -20,11 +21,8 @@ const BlogPostsSection = async ({ params }: Props) => {
     return parsedDate.toLocaleDateString("en-GB").replace(/\//g, ".");
   };
 
-  const generateSlug = (slug: any, language: string) => {
-    return slug && slug[language]?.current
-      ? `/${language}/blog/${slug[language].current}`
-      : "#";
-  };
+  const generateSlug = (slug: any, language: string) =>
+    blogHref(slug, language) || "#";
 
   if (!blogPosts) {
     return (
@@ -82,7 +80,7 @@ const BlogPostsSection = async ({ params }: Props) => {
           ))}
         </SliderMain>
         <BlogButtonWrapper>
-          <LinkPrimary href={`/${params.lang}/blog`}>
+          <LinkPrimary href={localePath(params.lang, "blog")}>
             {params.lang === "en" ? "Go to blog" : "Перейти в блог"}
           </LinkPrimary>
         </BlogButtonWrapper>

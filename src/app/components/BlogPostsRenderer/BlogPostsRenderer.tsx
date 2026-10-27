@@ -1,5 +1,6 @@
 "use client";
 import React, { FC, useState } from "react";
+import { blogHref } from "@/lib/href";
 import styles from "./BlogPostsRenderer.module.scss";
 import { Blog } from "@/types/blog";
 import Link from "next/link";
@@ -24,11 +25,8 @@ const BlogPostsRenderer: FC<Props> = ({ blogPosts, lang }) => {
     return parsedDate.toLocaleDateString("en-GB").replace(/\//g, ".");
   };
 
-  const generateSlug = (slug: any, language: string) => {
-    return slug && slug[language]?.current
-      ? `/${language}/blog/${slug[language].current}`
-      : "#";
-  };
+  const generateSlug = (slug: any, language: string) =>
+    blogHref(slug, language) || "#";
 
   const loadMorePosts = async () => {
     setLoading(true);

@@ -8,7 +8,6 @@ import ModalFullLazy from "@/app/components/ModalFull/ModalFullLazy";
 import PreviewMain from "@/app/components/PreviewMain/PreviewMain";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
-import { i18n } from "@/i18n.config";
 import {
   getFormStandardDocumentByLang,
   getSingleSubPageBySlug
@@ -41,9 +40,11 @@ import {
   VideosBlock
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
-import { Translation } from "@/types/post";
 import { Metadata } from "next";
-import { buildLanguageAlternates } from "@/lib/hreflang";
+import {
+  buildLanguageAlternates,
+  buildLanguageVersions
+} from "@/lib/hreflang";
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
 import CoverBlock from "@/app/components/CoverBlock/CoverBlock";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
@@ -185,42 +186,7 @@ const Subpage = async (props: Props) => {
     await getFormStandardDocumentByLang(params.lang);
   // console.log("formDocument", formDocument);
 
-  const subPageTranslationSlugs: { [key: string]: { current: string } }[] =
-    subPage?._translations.map(item => {
-      const newItem: { [key: string]: { current: string } } = {};
-
-      for (const key in item.slug) {
-        if (key !== "_type" && (!item.language || key === item.language)) {
-          newItem[key] = { current: item.slug[key].current };
-        }
-      }
-      return newItem;
-    });
-
-  const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
-    const translationSlug = subPageTranslationSlugs
-      ?.reduce(
-        (acc: string[], slug: { [key: string]: { current: string } }) => {
-          const current = slug[lang.id]?.current;
-          if (current) {
-            acc.push(current);
-          }
-          return acc;
-        },
-        []
-      )
-      .join(" ");
-
-    return translationSlug
-      ? [
-          ...acc,
-          {
-            language: lang.id,
-            path: `/${lang.id}/${slug}/${translationSlug}`
-          }
-        ]
-      : acc;
-  }, []);
+  const translations = buildLanguageVersions(subPage?._translations);
 
   const renderContentBlock = (block: ContentBlock) => {
     // console.log("Block type", block._type);
@@ -275,7 +241,11 @@ const Subpage = async (props: Props) => {
         );
       case "linksBlock":
         return (
-          <LinksBlockComponent key={block._key} block={block as LinksBlock} />
+          <LinksBlockComponent
+            key={block._key}
+            block={block as LinksBlock}
+            lang={lang}
+          />
         );
       case "sliderBlock":
         return (
