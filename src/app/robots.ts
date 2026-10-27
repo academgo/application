@@ -24,7 +24,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
           "/admin",
           "/single-page",
           "/ru/success",
-          "/en/success",
+          "/success",
           "*?gtm",
           "*?utm",
           "*?gclid",
