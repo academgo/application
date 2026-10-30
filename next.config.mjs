@@ -54,6 +54,10 @@ const nextConfig = {
       // EN redirects
       // ===========================
       // Старые адреса из ссылок внутри статей блога (отчёт Ahrefs, 27.10.2026)
+      { source: '/ru/obuchenie-v-polshe/yazykovye-kursy', destination: '/ru/obuchenie-v-polshe', permanent: true },
+      { source: '/obuchenie-v-polshe/yazykovye-kursy', destination: '/ru/obuchenie-v-polshe', permanent: true },
+      { source: '/ru/blog/kak-postupit-v-polshu', destination: '/ru/obuchenie-v-polshe', permanent: true },
+      { source: '/blog/kak-postupit-v-polshu', destination: '/ru/obuchenie-v-polshe', permanent: true },
       { source: '/why-poland', destination: '/study-in-poland', permanent: true },
       { source: '/ru/why-poland', destination: '/ru/obuchenie-v-polshe', permanent: true },
       { source: '/contact', destination: '/contacts', permanent: true },

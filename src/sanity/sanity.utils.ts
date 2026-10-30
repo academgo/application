@@ -33,8 +33,17 @@ export async function getPostsByLang(lang: string): Promise<Post[]> {
   return posts;
 }
 
+/**
+ * Страница отдаётся только по своему языку.
+ *
+ * Запрос по слагу сам по себе не защищает от дублей: если в CMS у документа
+ * по ошибке заполнены слаги обеих локалей, русская статья открывается и по
+ * адресу /blog/<русский-слаг>, и по /ru/blog/<русский-слаг>. Условие по
+ * language отсекает это на уровне выборки. Документы без заполненного
+ * language продолжают находиться, чтобы не потерять старые записи.
+ */
 export async function getPostByLang(lang: string, slug: string): Promise<Post> {
-  const postQuery = groq`*[_type == 'post' && slug[$lang].current == $slug][0] {
+  const postQuery = groq`*[_type == 'post' && slug[$lang].current == $slug && (!defined(language) || language == $lang)][0] {
         _id,
         title,
         slug,
@@ -81,7 +90,7 @@ export async function getBlogPostByLang(
   lang: string,
   slug: string
 ): Promise<Blog> {
-  const blogQuery = groq`*[_type == 'blog' && slug[$lang].current == $slug][0] {
+  const blogQuery = groq`*[_type == 'blog' && slug[$lang].current == $slug && (!defined(language) || language == $lang)][0] {
     _id,
     title,
     shortTitle,
@@ -535,7 +544,7 @@ export async function getSinglePageByLang(
   lang: string,
   slug: string
 ): Promise<Singlepage> {
-  const singlePageQuery = groq`*[_type == 'singlepage' && slug[$lang].current == $slug][0] {
+  const singlePageQuery = groq`*[_type == 'singlepage' && slug[$lang].current == $slug && (!defined(language) || language == $lang)][0] {
     _id,
     title,
     shortTitle,
@@ -634,7 +643,7 @@ export async function getSingleSubPageBySlug(
 ): Promise<Subpage | null> {
   // Ищем по паре «родитель + slug»: у страниц разных стран slug может совпадать
   // (admission-requirements есть у Грузии, Испании, Турции и Северного Кипра)
-  const subPageQuery = groq`*[_type == 'subpage' && slug[$lang].current == $subslug && parentPage->slug[$lang].current == $slug][0] {
+  const subPageQuery = groq`*[_type == 'subpage' && slug[$lang].current == $subslug && parentPage->slug[$lang].current == $slug && (!defined(language) || language == $lang)][0] {
     _id,
     title,
     shortTitle,
