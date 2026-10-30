@@ -45,3 +45,4 @@ docs/
 content/seo/gsc/*
 !content/seo/gsc/README.md
 content/seo/.month-check-progress.json
+content/seo/core-export.json
