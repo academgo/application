@@ -212,11 +212,22 @@ const fetchSerp = async (market, keyword) => {
     item => item.type === "organic" && (item.domain || "").includes(TARGET)
   );
 
+  // relative_url есть не во всех ответах — подстраховываемся абсолютным url
+  let relative = hit?.relative_url ?? null;
+  if (!relative && hit?.url) {
+    try {
+      relative = new URL(hit.url).pathname;
+    } catch {
+      relative = hit.url;
+    }
+  }
+
   return {
     keyword,
     market: market.name,
     position: hit?.rank_group ?? null,
-    url: hit?.relative_url ?? null,
+    url: relative,
+    absoluteUrl: hit?.url ?? null,
     cost: task.cost || 0
   };
 };

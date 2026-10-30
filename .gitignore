@@ -40,3 +40,8 @@ content/import/out/
 
 # исследования клиента: большие исходники, в сборке не нужны
 docs/
+
+# выгрузки Search Console для замеров
+content/seo/gsc/*
+!content/seo/gsc/README.md
+content/seo/.month-check-progress.json
