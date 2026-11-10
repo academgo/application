@@ -527,7 +527,13 @@ const MultiStepFormBlock: React.FC<Props> = ({
                         onClick={() => sendLead(values, "telegram")}
                       >
                         {pulse && (
-                          <span aria-hidden="true" className={styles.pulse} />
+                          <>
+                            <span aria-hidden="true" className={styles.pulse} />
+                            <span
+                              aria-hidden="true"
+                              className={`${styles.pulse} ${styles.pulseLate}`}
+                            />
+                          </>
                         )}
                         <FaTelegramPlane
                           aria-hidden="true"
@@ -551,7 +557,13 @@ const MultiStepFormBlock: React.FC<Props> = ({
                         onClick={() => sendLead(values, "whatsapp")}
                       >
                         {pulse && (
-                          <span aria-hidden="true" className={styles.pulse} />
+                          <>
+                            <span aria-hidden="true" className={styles.pulse} />
+                            <span
+                              aria-hidden="true"
+                              className={`${styles.pulse} ${styles.pulseLate}`}
+                            />
+                          </>
                         )}
                         <FaWhatsapp
                           aria-hidden="true"

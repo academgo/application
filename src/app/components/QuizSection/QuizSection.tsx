@@ -38,7 +38,13 @@ const QuizSection = async ({
             socials={<QuizSocials lang={lang} />}
           />
         }
-        panel={<QuizSidebar sidebar={sidebar} />}
+        panel={
+          <QuizSidebar
+            sidebar={sidebar}
+            lang={lang}
+            questionsCount={quizBlock?.questions?.length}
+          />
+        }
       />
     </section>
   );

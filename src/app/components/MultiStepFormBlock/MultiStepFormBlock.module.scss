@@ -785,23 +785,40 @@ $final-green-dark: #1c8946;
   }
 }
 
-/* Ореол расходится от кнопки и гаснет — как на референсе */
+/* Волна расходится от кнопки и гаснет. Волны две, вторая сдвинута на половину
+   цикла: с одной между повторами была пауза в полсекунды, и анимация читалась
+   как случайная вспышка, а не как непрерывные волны */
 .pulse {
   position: absolute;
   inset: 0;
+  box-sizing: border-box;
   border-radius: 999px;
-  background: rgba(243, 151, 8, 0.4);
-  animation: messengerPulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  // Кольцо, а не заливка: полупрозрачная заливка оранжевым по светло-оранжевой
+  // карточке почти не читается, а линия видна
+  border: 3px solid rgba(243, 151, 8, 0.7);
+  animation: messengerPulse 2s cubic-bezier(0.2, 0.5, 0.3, 1) infinite;
+}
+
+.pulseLate {
+  animation-delay: -1s;
 }
 
 .messengerWhatsapp .pulse {
-  background: rgba(34, 164, 85, 0.35);
+  border-color: rgba(34, 164, 85, 0.7);
 }
 
 @keyframes messengerPulse {
-  75%,
+  // Волна проявляется, уже выйдя за край кнопки: в начале она ровно по её
+  // размеру и целиком за ней спрятана
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  14% {
+    opacity: 1;
+  }
   100% {
-    transform: scale(2);
+    transform: scale(1.9);
     opacity: 0;
   }
 }
