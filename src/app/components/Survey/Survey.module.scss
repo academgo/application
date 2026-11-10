@@ -80,9 +80,9 @@
   letter-spacing: -0.8px;
 }
 
-// На финальном экране квиза карточка сама себе фон: белая подложка и паддинги
-// вокруг неё лишние. Метку data-quiz-final ставит MultiStepFormBlock
-.multiStepForm:has([data-quiz-final]) {
+// На экране подбора и на финальном карточка сама себе фон: подложка и паддинги
+// вокруг неё лишние. Метку data-quiz-card ставит MultiStepFormBlock
+.multiStepForm:has([data-quiz-card]) {
   padding: 0;
   background-color: transparent;
 }

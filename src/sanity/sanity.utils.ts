@@ -567,6 +567,8 @@ export async function getSinglePageByLang(
         _type,
         "sidebar": survey.quizDocument->sidebar,
         "quiz": survey.quizDocument->quiz{
+          loadingTitle,
+          loadingSteps,
           finalEyebrow,
           finalTitle,
           finalDescription,
@@ -576,6 +578,7 @@ export async function getSinglePageByLang(
           whatsappLabel,
           whatsappLink,
           finalNote,
+          sendAnswersByEmail,
           showSocials,
           questions[]{
             _key,
@@ -674,6 +677,8 @@ export async function getSingleSubPageBySlug(
         _type,
         "sidebar": survey.quizDocument->sidebar,
         "quiz": survey.quizDocument->quiz{
+          loadingTitle,
+          loadingSteps,
           finalEyebrow,
           finalTitle,
           finalDescription,
@@ -683,6 +688,7 @@ export async function getSingleSubPageBySlug(
           whatsappLabel,
           whatsappLink,
           finalNote,
+          sendAnswersByEmail,
           showSocials,
           questions[]{
             _key,

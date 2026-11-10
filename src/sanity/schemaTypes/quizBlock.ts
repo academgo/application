@@ -7,6 +7,7 @@ export default defineType({
   type: "object",
   groups: [
     { name: "questions", title: "Вопросы", default: true },
+    { name: "loading", title: "Экран подбора" },
     { name: "final", title: "Финальный экран" }
   ],
   fields: [
@@ -23,6 +24,29 @@ export default defineType({
     }),
 
     defineField({
+      name: "loadingTitle",
+      title: "Заголовок экрана подбора",
+      type: "string",
+      group: "loading",
+      description:
+        "Экран показывается между последним вопросом и финальным: человек видит, " +
+        "что по его ответам идёт работа. Если оставить пусто, подставится запасной текст."
+    }),
+
+    defineField({
+      name: "loadingSteps",
+      title: "Строки экрана подбора",
+      type: "array",
+      of: [{ type: "string" }],
+      group: "loading",
+      description:
+        "Появляются по очереди, примерно по 0,8 секунды на строку. Две-три строки — " +
+        "нормально; чем их больше, тем дольше человек ждёт.",
+      validation: Rule =>
+        Rule.max(5).warning("Больше четырёх строк — это уже долго")
+    }),
+
+    defineField({
       name: "finalEyebrow",
       title: "Надзаголовок",
       type: "string",
@@ -34,7 +58,11 @@ export default defineType({
       name: "finalTitle",
       title: "Заголовок",
       type: "string",
-      group: "final"
+      group: "final",
+      description:
+        "Можно подставить страну: {country} даёт «Венгрия», {countryIn} — «в Венгрию». " +
+        "Страна берётся из ответа на вопрос о направлении, а если такого вопроса нет — " +
+        "из страницы, на которой стоит квиз."
     }),
 
     defineField({
@@ -107,6 +135,17 @@ export default defineType({
       type: "string",
       group: "final",
       description: "Мелкая строка, например «Ответим в течение рабочего дня»"
+    }),
+
+    defineField({
+      name: "sendAnswersByEmail",
+      title: "Отправлять ответы на почту",
+      type: "boolean",
+      group: "final",
+      initialValue: true,
+      description:
+        "Письмо с ответами уходит при нажатии на кнопку мессенджера. Если выключить, " +
+        "сайт ответы никуда не отправляет и строка про согласие с политикой не показывается."
     }),
 
     defineField({

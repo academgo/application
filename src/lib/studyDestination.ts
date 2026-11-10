@@ -101,6 +101,37 @@ export const studyCountryCodeByName = (name?: string): string | undefined => {
   )?.code;
 };
 
+/**
+ * Винительный падеж для фраз вида «поступление в …». Названия стран везде
+ * хранятся в именительном, и без этой таблицы в тексте выходит «в Венгрия».
+ */
+const RU_ACCUSATIVE: Record<string, string> = {
+  poland: "Польшу",
+  turkey: "Турцию",
+  uae: "ОАЭ",
+  malaysia: "Малайзию",
+  italy: "Италию",
+  spain: "Испанию",
+  hungary: "Венгрию",
+  georgia: "Грузию",
+  "north-cyprus": "Северный Кипр",
+  "south-cyprus": "Южный Кипр"
+};
+
+/** Название страны в форме для фразы «в …»: «в Венгрию», «to Hungary» */
+export const studyCountryNameIn = (
+  code?: string,
+  lang?: string
+): string | undefined => {
+  if (!code || code === UNDECIDED_STUDY_COUNTRY) return undefined;
+
+  if (lang === "en") {
+    return STUDY_COUNTRIES.find(item => item.code === code)?.en;
+  }
+
+  return RU_ACCUSATIVE[code];
+};
+
 /** Название страны обучения по коду из формы */
 export const studyCountryName = (
   code?: string,

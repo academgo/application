@@ -46,9 +46,9 @@
   }
 }
 
-// На финальном экране квиза карточка сама себе фон: белая подложка и паддинги
-// вокруг неё лишние. Метку data-quiz-final ставит MultiStepFormBlock
-.quiz:has([data-quiz-final]) {
+// На экране подбора и на финальном карточка сама себе фон: подложка и паддинги
+// вокруг неё лишние. Метку data-quiz-card ставит MultiStepFormBlock
+.quiz:has([data-quiz-card]) {
   padding: 0;
   background-color: transparent;
 }

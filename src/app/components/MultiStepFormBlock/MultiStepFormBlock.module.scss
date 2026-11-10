@@ -839,3 +839,106 @@ $final-green-dark: #1c8946;
     color: $final-orange-dark;
   }
 }
+
+/* ──────────── Экран подбора между последним вопросом и финалом ──────────── */
+
+.analyzingCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.analyzingRing {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 4px solid rgba(243, 151, 8, 0.22);
+  border-top-color: $final-orange;
+  animation: analyzingSpin 0.9s linear infinite;
+}
+
+@keyframes analyzingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.analyzingTitle {
+  margin: 28px 0 0;
+  color: $final-ink;
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.analyzingSteps {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $final-muted;
+    font-size: 1rem;
+    transition:
+      color 0.3s ease,
+      opacity 0.3s ease;
+  }
+}
+
+.analyzingMark {
+  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(90, 104, 120, 0.3);
+}
+
+.analyzingPending {
+  opacity: 0.4;
+}
+
+.analyzingCurrent {
+  color: $final-ink;
+
+  .analyzingMark {
+    border-color: $final-orange;
+    border-top-color: transparent;
+    animation: analyzingSpin 0.8s linear infinite;
+  }
+}
+
+.analyzingDone {
+  color: $final-ink;
+
+  .analyzingMark {
+    border-color: $final-green;
+    background: $final-green;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 5px;
+      height: 9px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analyzingRing,
+  .analyzingCurrent .analyzingMark {
+    animation: none;
+  }
+}

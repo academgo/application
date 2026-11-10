@@ -31,6 +31,8 @@ export type QuizQuestion = {
 export type QuizFinalMode = "telegram" | "whatsapp" | "both";
 
 export type QuizBlock = {
+  loadingTitle?: string;
+  loadingSteps?: string[];
   finalEyebrow?: string;
   finalTitle?: string;
   finalDescription?: string;
@@ -40,6 +42,7 @@ export type QuizBlock = {
   whatsappLabel?: string;
   whatsappLink?: string;
   finalNote?: string;
+  sendAnswersByEmail?: boolean;
   showSocials?: boolean;
   questions: QuizQuestion[];
 };

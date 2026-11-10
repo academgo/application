@@ -14,7 +14,10 @@ import { QuizBlock } from "@/types/quizBlock";
 import { trackLead } from "@/lib/trackLead";
 import {
   UNDECIDED_STUDY_COUNTRY,
-  studyCountryCodeByName
+  detectStudyDestinationCode,
+  studyCountryCodeByName,
+  studyCountryName,
+  studyCountryNameIn
 } from "@/lib/studyDestination";
 
 type Props = {
@@ -35,6 +38,9 @@ type LeadChannel = "telegram" | "whatsapp" | "none";
 // Сколько воздуха оставить над блоком при перемотке: примерно высота шапки
 const SCROLL_OFFSET = 100;
 
+// Сколько держится одна строка на экране подбора
+const ANALYZE_STEP_MS = 800;
+
 // Запасные тексты финального экрана: показываются, пока поля в CMS не заполнены,
 // чтобы кнопка не осталась без подписи сразу после выкладки
 const finalFallback = (lang: string) =>
@@ -49,7 +55,11 @@ const finalFallback = (lang: string) =>
         submit: "Send the request",
         note: "We reply within one business day",
         policyPrefix: "By clicking the button you agree to the",
-        policyLink: "Privacy Policy"
+        policyLink: "Privacy Policy",
+        loadingTitle: "Preparing your shortlist",
+        loadingSteps: ["Analysing your answers", "Matching universities"],
+        country: "your chosen country",
+        countryIn: "your chosen country"
       }
     : {
         eyebrow: "Анкета заполнена",
@@ -61,7 +71,11 @@ const finalFallback = (lang: string) =>
         submit: "Отправить заявку",
         note: "Отвечаем в течение рабочего дня",
         policyPrefix: "Нажимая кнопку, вы соглашаетесь с",
-        policyLink: "политикой конфиденциальности"
+        policyLink: "политикой конфиденциальности",
+        loadingTitle: "Готовим подборку",
+        loadingSteps: ["Анализируем ваши ответы", "Подбираем вузы"],
+        country: "выбранное направление",
+        countryIn: "выбранную страну"
       };
 
 const MultiStepFormBlock: React.FC<Props> = ({
@@ -98,6 +112,9 @@ const MultiStepFormBlock: React.FC<Props> = ({
 
   const [step, setStep] = useState(1);
   const [sent, setSent] = useState(false);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzingIndex, setAnalyzingIndex] = useState(0);
+  const [pageCountryCode, setPageCountryCode] = useState<string | undefined>();
   const blockRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
 
@@ -115,7 +132,13 @@ const MultiStepFormBlock: React.FC<Props> = ({
     const top =
       node.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, [step]);
+  }, [step, analyzing]);
+
+  // Страна страницы — запасной вариант подстановки, если про направление
+  // в квизе не спрашивают. Читаем адрес после отрисовки, не на сервере
+  useEffect(() => {
+    setPageCountryCode(detectStudyDestinationCode(window.location.href));
+  }, []);
 
   const initialValues = useMemo<DynamicFormValues>(() => {
     const base: DynamicFormValues = {};
@@ -136,12 +159,48 @@ const MultiStepFormBlock: React.FC<Props> = ({
     [questions, lang]
   );
 
+  const loadingSteps = useMemo(() => {
+    const fromCms = (quizBlock?.loadingSteps || [])
+      .map(line => (line || "").trim())
+      .filter(Boolean);
+
+    return fromCms.length ? fromCms : texts.loadingSteps;
+  }, [quizBlock?.loadingSteps, texts.loadingSteps]);
+
+  // Экран подбора: строки сменяют друг друга, после последней открывается финал
+  useEffect(() => {
+    if (!analyzing) return;
+
+    const timers = loadingSteps
+      .map((_, index) =>
+        index === 0
+          ? null
+          : setTimeout(() => setAnalyzingIndex(index), ANALYZE_STEP_MS * index)
+      )
+      .filter(Boolean) as ReturnType<typeof setTimeout>[];
+
+    timers.push(
+      setTimeout(() => {
+        setAnalyzing(false);
+        setStep(LAST_STEP);
+      }, ANALYZE_STEP_MS * loadingSteps.length)
+    );
+
+    return () => timers.forEach(clearTimeout);
+  }, [analyzing, loadingSteps, LAST_STEP]);
+
   const handleNext = async (
     validateForm: () => Promise<Record<string, any>>
   ) => {
     const errors = await validateForm();
 
     if (Object.keys(errors).length === 0) {
+      if (step === totalQuestions) {
+        setAnalyzingIndex(0);
+        setAnalyzing(true);
+        return;
+      }
+
       setStep(s => Math.min(s + 1, LAST_STEP));
       return;
     }
@@ -185,21 +244,25 @@ const MultiStepFormBlock: React.FC<Props> = ({
       ? studyCountryCodeByName(countryAnswer) || UNDECIDED_STUDY_COUNTRY
       : undefined;
 
-    try {
-      fetch("/api/quiz-email", {
-        method: "POST",
-        keepalive: true,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          quizAnswers,
-          channel,
-          lang,
-          studyCountry,
-          url: typeof window !== "undefined" ? window.location.href : ""
-        })
-      }).catch(() => {});
-    } catch {
-      // письмо не ушло — мессенджер всё равно открываем, человека не теряем
+    // Ответы уходят письмом, только если это включено в админке: квиз можно
+    // использовать как прогрев, а заявки принимать в мессенджере
+    if (sendsEmail) {
+      try {
+        fetch("/api/quiz-email", {
+          method: "POST",
+          keepalive: true,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            quizAnswers,
+            channel,
+            lang,
+            studyCountry,
+            url: typeof window !== "undefined" ? window.location.href : ""
+          })
+        }).catch(() => {});
+      } catch {
+        // письмо не ушло — мессенджер всё равно открываем, человека не теряем
+      }
     }
 
     trackLead("quiz", lang, studyCountry);
@@ -217,6 +280,30 @@ const MultiStepFormBlock: React.FC<Props> = ({
     ? urlFor(currentQuestion.image).width(1200).url()
     : "";
 
+  const sendsEmail = quizBlock?.sendAnswersByEmail !== false;
+
+  // Страну для текста финального экрана берём из ответа квиза: он точнее
+  // страницы — человек может читать про Венгрию, а хотеть Польшу. Ответ при
+  // этом остаётся в браузере и никуда не отправляется
+  const countryQuestionKey = questions.find(
+    question => question.optionsSource === "countries"
+  )?._key;
+
+  const fillCountry = (text: string | undefined, values: DynamicFormValues) => {
+    if (!text) return "";
+
+    const answer = countryQuestionKey ? values[`q_${countryQuestionKey}`] : "";
+    const code =
+      (answer ? studyCountryCodeByName(answer) : undefined) || pageCountryCode;
+
+    const nominative = studyCountryName(code, lang) || texts.country;
+    const inflected = studyCountryNameIn(code, lang) || texts.countryIn;
+
+    return text
+      .replace(/\{countryIn\}/g, inflected)
+      .replace(/\{country\}/g, nominative);
+  };
+
   const mode = quizBlock?.finalMode || "telegram";
   const telegramHref = quizBlock?.telegramLink || messengers?.telegram || "";
   const whatsappHref = quizBlock?.whatsappLink || messengers?.whatsapp || "";
@@ -231,14 +318,16 @@ const MultiStepFormBlock: React.FC<Props> = ({
   const pulse = showTelegram !== showWhatsapp;
 
   const isFinalStep = step === LAST_STEP;
+  const showQuestion = Boolean(currentQuestion) && !analyzing;
+  const showCard = analyzing || isFinalStep;
 
   return (
     <div
       ref={blockRef}
       className={styles.multiStepForm}
       // по этой метке родительские блоки убирают свой фон и паддинги:
-      // на финальном экране карточка сама себе фон
-      data-quiz-final={isFinalStep ? "true" : undefined}
+      // на экране подбора и на финальном карточка сама себе фон
+      data-quiz-card={showCard ? "true" : undefined}
     >
       <Formik
         initialValues={initialValues}
@@ -248,7 +337,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
       >
         {({ values, validateForm }) => (
           <Form className={styles.customForm}>
-            {currentQuestion && (
+            {showQuestion && (
               <div className={styles.progressBar}>
                 <div
                   className={styles.progressFill}
@@ -262,7 +351,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
               </div>
             )}
 
-            {currentQuestion && (
+            {showQuestion && currentQuestion && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
                   <fieldset>
@@ -370,19 +459,62 @@ const MultiStepFormBlock: React.FC<Props> = ({
               </div>
             )}
 
+            {analyzing && (
+              <div className={styles.questionWrapper}>
+                <div
+                  className={`${styles.finalCard} ${styles.analyzingCard}`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  <div className={styles.analyzingRing} aria-hidden="true" />
+
+                  <p className={styles.analyzingTitle}>
+                    {quizBlock?.loadingTitle || texts.loadingTitle}
+                  </p>
+
+                  <ul className={styles.analyzingSteps}>
+                    {loadingSteps.map((line, index) => (
+                      <li
+                        key={line}
+                        className={
+                          index < analyzingIndex
+                            ? styles.analyzingDone
+                            : index === analyzingIndex
+                              ? styles.analyzingCurrent
+                              : styles.analyzingPending
+                        }
+                      >
+                        <span
+                          className={styles.analyzingMark}
+                          aria-hidden="true"
+                        />
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
             {isFinalStep && (
               <div className={styles.questionWrapper}>
                 <div className={styles.finalCard}>
                   <p className={styles.finalEyebrow}>
-                    {quizBlock?.finalEyebrow || texts.eyebrow}
+                    {fillCountry(
+                      quizBlock?.finalEyebrow || texts.eyebrow,
+                      values
+                    )}
                   </p>
 
                   <h3 className={styles.finalTitle}>
-                    {quizBlock?.finalTitle || texts.title}
+                    {fillCountry(quizBlock?.finalTitle || texts.title, values)}
                   </h3>
 
                   <p className={styles.finalDescription}>
-                    {quizBlock?.finalDescription || texts.description}
+                    {fillCountry(
+                      quizBlock?.finalDescription || texts.description,
+                      values
+                    )}
                   </p>
 
                   <div className={styles.finalActions}>
@@ -402,7 +534,10 @@ const MultiStepFormBlock: React.FC<Props> = ({
                           className={styles.messengerIcon}
                         />
                         <span className={styles.messengerLabel}>
-                          {quizBlock?.telegramLabel || texts.telegram}
+                          {fillCountry(
+                            quizBlock?.telegramLabel || texts.telegram,
+                            values
+                          )}
                         </span>
                       </a>
                     )}
@@ -423,7 +558,10 @@ const MultiStepFormBlock: React.FC<Props> = ({
                           className={styles.messengerIcon}
                         />
                         <span className={styles.messengerLabel}>
-                          {quizBlock?.whatsappLabel || texts.whatsapp}
+                          {fillCountry(
+                            quizBlock?.whatsappLabel || texts.whatsapp,
+                            values
+                          )}
                         </span>
                       </a>
                     )}
@@ -435,30 +573,35 @@ const MultiStepFormBlock: React.FC<Props> = ({
                         onClick={() => sendLead(values, "none")}
                       >
                         <span className={styles.messengerLabel}>
-                          {quizBlock?.telegramLabel || texts.submit}
+                          {fillCountry(
+                            quizBlock?.telegramLabel || texts.submit,
+                            values
+                          )}
                         </span>
                       </button>
                     )}
                   </div>
 
                   <p className={styles.finalNote}>
-                    {quizBlock?.finalNote || texts.note}
+                    {fillCountry(quizBlock?.finalNote || texts.note, values)}
                   </p>
 
-                  <p className={styles.finalPolicy}>
-                    {texts.policyPrefix}{" "}
-                    <Link
-                      className={styles.policyLink}
-                      href={
-                        lang === "en"
-                          ? "/privacy-policy"
-                          : "/ru/politika-konfidencialnosti"
-                      }
-                      target="_blank"
-                    >
-                      {texts.policyLink}
-                    </Link>
-                  </p>
+                  {sendsEmail && (
+                    <p className={styles.finalPolicy}>
+                      {texts.policyPrefix}{" "}
+                      <Link
+                        className={styles.policyLink}
+                        href={
+                          lang === "en"
+                            ? "/privacy-policy"
+                            : "/ru/politika-konfidencialnosti"
+                        }
+                        target="_blank"
+                      >
+                        {texts.policyLink}
+                      </Link>
+                    </p>
+                  )}
 
                   {quizBlock?.showSocials !== false && socials}
                 </div>
