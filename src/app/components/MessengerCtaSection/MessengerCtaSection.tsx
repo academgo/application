@@ -35,33 +35,36 @@ const MessengerCtaSection = async ({ lang, block, path }: Props) => {
   const nominative = studyCountryName(code, lang) || fallback.country;
   const inflected = studyCountryNameIn(code, lang) || fallback.countryIn;
 
-  const fill = (text: string) =>
-    text
+  // Подставляем здесь, на сервере: функцию в клиентский компонент передать
+  // нельзя, туда уходят уже готовые строки
+  const fill = (text?: string) =>
+    (text || "")
       .replace(/\{countryIn\}/g, inflected)
-      .replace(/\{country\}/g, nominative);
+      .replace(/\{country\}/g, nominative) || undefined;
 
   return (
     <section className={styles.section}>
       <div className="container">
-        <MessengerCta
-          lang={lang}
-          content={{
-            eyebrow: block.eyebrow,
-            title: block.heading,
-            description: block.description,
-            mode: block.mode,
-            telegramLabel: block.telegramLabel,
-            telegramLink: block.telegramLink,
-            whatsappLabel: block.whatsappLabel,
-            whatsappLink: block.whatsappLink,
-            note: block.note,
-            showSocials: block.showSocials
-          }}
-          socials={<QuizSocials lang={lang} />}
-          fallbackMessengers={messengers}
-          transformText={fill}
-          trackAs="cta"
-        />
+        <div className={styles.inner}>
+          <MessengerCta
+            lang={lang}
+            content={{
+              eyebrow: fill(block.eyebrow),
+              title: fill(block.heading),
+              description: fill(block.description),
+              mode: block.mode,
+              telegramLabel: fill(block.telegramLabel),
+              telegramLink: block.telegramLink,
+              whatsappLabel: fill(block.whatsappLabel),
+              whatsappLink: block.whatsappLink,
+              note: fill(block.note),
+              showSocials: block.showSocials
+            }}
+            socials={<QuizSocials lang={lang} />}
+            fallbackMessengers={messengers}
+            trackAs="cta"
+          />
+        </div>
       </div>
     </section>
   );
