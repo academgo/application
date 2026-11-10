@@ -26,9 +26,21 @@ const tuitionLabel = (lang: string) =>
 const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
   const limit = block?.maxCards || DEFAULT_CARDS;
 
-  // Страны уже отсортированы по order в запросе — берём первые N отмеченных
+  // Порядок в плитке задаётся полем homeOrder, чтобы не зависеть от порядка
+  // в мега-меню. Страны без homeOrder идут следом, в порядке поля order
+  // (запрос уже отсортирован по нему).
   const visibleCountries = countries
     .filter(country => country.isFeatured !== false && country.hubHref)
+    .map((country, index) => ({ country, index }))
+    .sort((a, b) => {
+      const aOrder = a.country.homeOrder;
+      const bOrder = b.country.homeOrder;
+      if (aOrder && bOrder) return aOrder - bOrder;
+      if (aOrder) return -1;
+      if (bOrder) return 1;
+      return a.index - b.index;
+    })
+    .map(item => item.country)
     .slice(0, limit);
 
   if (visibleCountries.length === 0) {

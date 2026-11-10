@@ -28,6 +28,8 @@ export type Country = {
   badge?: string;
   /** плашка поверх фото в блоке «Направления» на главной */
   homeBadge?: string;
+  /** порядок в плитке на главной, независимый от порядка в меню */
+  homeOrder?: number;
   shortDescription?: string;
   comparison?: CountryComparison;
   /** обложка страницы-хаба: используется как фото карточки на главной */
