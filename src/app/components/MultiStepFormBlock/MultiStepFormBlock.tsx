@@ -314,8 +314,10 @@ const MultiStepFormBlock: React.FC<Props> = ({
   // Ни одной ссылки — ни в блоке, ни в футере. Показываем обычную кнопку,
   // чтобы ответы всё равно дошли письмом, а не потерялись
   const showPlainSubmit = !showTelegram && !showWhatsapp;
-  // Пульсирующий ореол уместен у одной кнопки; у двух два ореола дерутся за взгляд
-  const pulse = showTelegram !== showWhatsapp;
+  // Волна всегда идёт ровно у одной кнопки — главной. Два набора волн дерутся
+  // за взгляд, а ноль волн выглядит как сломанная анимация
+  const pulseOnTelegram = showTelegram;
+  const pulseOnWhatsapp = showWhatsapp && !showTelegram;
 
   const isFinalStep = step === LAST_STEP;
   const showQuestion = Boolean(currentQuestion) && !analyzing;
@@ -526,7 +528,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
                         className={`${styles.messengerBtn} ${styles.messengerTelegram}`}
                         onClick={() => sendLead(values, "telegram")}
                       >
-                        {pulse && (
+                        {pulseOnTelegram && (
                           <>
                             <span aria-hidden="true" className={styles.pulse} />
                             <span
@@ -556,7 +558,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
                         className={`${styles.messengerBtn} ${styles.messengerWhatsapp}`}
                         onClick={() => sendLead(values, "whatsapp")}
                       >
-                        {pulse && (
+                        {pulseOnWhatsapp && (
                           <>
                             <span aria-hidden="true" className={styles.pulse} />
                             <span
