@@ -38,12 +38,10 @@ const DATASET = "production";
 const API_VERSION = "2023-05-03";
 
 const APPLY = process.argv.includes("--apply");
-const PUBLISH = process.argv.includes("--publish");
 
-const HOMEPAGE_IDS = {
-  ru: "31524895-0e8e-4e42-8ef0-614766aa1e00",
-  en: "387c8a6f-fe32-4c84-bb65-bfb143fa1044"
-};
+/** Черновик и опубликованный документ отличаются префиксом drafts. */
+const liveId = id => id.replace(/^drafts\./, "");
+const PUBLISH = process.argv.includes("--publish");
 
 // ------------------------------------------------------------------ тексты
 
@@ -152,6 +150,15 @@ const main = async () => {
     process.exit(1);
   }
 
+  // Главную ищем так же, как её находит сайт: по типу и языку.
+  // Захардкоженные id из старых скриптов могут не совпадать с текущими.
+  const homeQuery = encodeURIComponent(
+    '*[_type == "homepage"]{_id, language, "currentTitle": countriesBlock.title}'
+  );
+  const { result: homepages } = await api(
+    `/data/query/${DATASET}?query=${homeQuery}`
+  );
+
   const query = encodeURIComponent(
     '*[_type == "country" && code in $codes]{_id, code, title, language}'
   );
@@ -160,9 +167,8 @@ const main = async () => {
     `/data/query/${DATASET}?query=${query}&$codes=${params}`
   );
 
-  // Запрос возвращает и черновики, и опубликованные версии одной страны —
+  // Запрос возвращает и черновики, и опубликованные версии одного документа —
   // приводим к живому id и убираем дубли
-  const liveId = id => id.replace(/^drafts\./, "");
   const countries = [];
   const seen = new Set();
   for (const country of found) {
@@ -177,7 +183,18 @@ const main = async () => {
   const mutations = [];
 
   // --- тексты блока на главной ---
-  for (const [lang, texts] of Object.entries(BLOCK)) {
+  const homeSeen = new Set();
+  for (const home of homepages) {
+    const texts = BLOCK[home.language];
+    if (!texts) {
+      console.log(`  пропуск главной: язык ${home.language} не описан`);
+      continue;
+    }
+
+    const id = liveId(home._id);
+    if (homeSeen.has(`${id}|${home.language}`)) continue;
+    homeSeen.add(`${id}|${home.language}`);
+
     const set = {};
     for (const [field, value] of Object.entries(texts)) {
       set[`countriesBlock.${field}`] = value;
@@ -185,13 +202,20 @@ const main = async () => {
 
     mutations.push({
       patch: {
-        id: target(HOMEPAGE_IDS[lang]),
+        id: target(id),
         set,
         // старый заголовок был «Десять стран, одно агентство» с выделением
         unset: ["countriesBlock.titleHighlight"]
       }
     });
-    console.log(`главная (${lang}): ${texts.title}`);
+
+    console.log(
+      `главная (${home.language}) ${id}: «${home.currentTitle || "—"}» → «${texts.title}»`
+    );
+  }
+
+  if (!homepages.length) {
+    console.log("  главная не найдена: документов типа homepage нет");
   }
 
   // --- плашки и порядок у стран ---
