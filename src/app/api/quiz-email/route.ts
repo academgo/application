@@ -13,8 +13,11 @@ type QuizAnswer = {
 };
 
 type QuizPayload = {
-  whatsapp: string;
   quizAnswers: QuizAnswer[];
+  /** какую кнопку нажали на финальном экране */
+  channel?: "telegram" | "whatsapp" | "none";
+  /** телефон со старой версии квиза: поле осталось для совместимости */
+  whatsapp?: string;
   lang?: string;
   url?: string;
   studyCountry?: string;
@@ -46,10 +49,9 @@ const escapeHtml = (value: string) =>
 export async function POST(request: NextRequest) {
   const data = (await request.json()) as Partial<QuizPayload>;
 
-  if (
-    !isNonEmptyString(data.whatsapp) ||
-    !isQuizAnswerArray(data.quizAnswers)
-  ) {
+  // Телефон больше не спрашиваем: с финального экрана человек уходит в мессенджер,
+  // поэтому обязательны только ответы анкеты
+  if (!isQuizAnswerArray(data.quizAnswers) || !data.quizAnswers.length) {
     return NextResponse.json(
       { error: "Invalid quiz payload" },
       { status: 400 }
@@ -79,6 +81,16 @@ export async function POST(request: NextRequest) {
     value: isNonEmptyString(answer.value) ? answer.value : "—"
   }));
 
+  // Чем человек продолжил разговор: раньше это был телефон, теперь — кнопка
+  const channelLabel =
+    data.channel === "telegram"
+      ? "Нажал кнопку «Telegram»"
+      : data.channel === "whatsapp"
+        ? "Нажал кнопку «WhatsApp»"
+        : isNonEmptyString(data.whatsapp)
+          ? `WhatsApp: ${data.whatsapp}`
+          : "Отправил анкету без перехода в мессенджер";
+
   const meta = [
     destination ? `Страна обучения: ${destination}` : "",
     isNonEmptyString(data.lang) ? `Язык сайта: ${data.lang}` : "",
@@ -90,7 +102,7 @@ export async function POST(request: NextRequest) {
     "",
     ...meta,
     "",
-    `WhatsApp: ${data.whatsapp}`,
+    channelLabel,
     "",
     "Ответы:",
     ...answers.map(
@@ -108,8 +120,8 @@ export async function POST(request: NextRequest) {
               .join("<br/>")}</p>`
           : ""
       }
-      <p style="margin: 0 0 16px;"><strong>WhatsApp:</strong> ${escapeHtml(
-        data.whatsapp
+      <p style="margin: 0 0 16px;"><strong>Связь:</strong> ${escapeHtml(
+        channelLabel
       )}</p>
       <table cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
         <tbody>

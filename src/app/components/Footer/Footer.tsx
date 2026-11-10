@@ -7,16 +7,7 @@ import { urlFor } from "@/sanity/image";
 import NavLink from "../NavLink/NavLink";
 import Consultation from "../Consultation/Consultation";
 import FooterRating from "../FooterRating/FooterRating";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTelegramPlane,
-  FaTiktok,
-  FaVk,
-  FaWhatsapp,
-  FaYoutube
-} from "react-icons/fa";
+import { getSocialIcon } from "@/lib/socialIcons";
 
 type Props = {
   params: { lang: string };
@@ -47,25 +38,6 @@ const fallbackTexts = (lang: string) =>
         contactNote: "We accept all admission requests\nvia Telegram.",
         developer: "Developed by bandziuk.com"
       };
-
-// Однотонная иконка соцсети подбирается по адресу ссылки;
-// для незнакомой сети остаётся картинка из Sanity
-const socialIcons = [
-  { match: ["instagram."], Icon: FaInstagram },
-  { match: ["t.me", "telegram."], Icon: FaTelegramPlane },
-  { match: ["tiktok."], Icon: FaTiktok },
-  { match: ["youtube.", "youtu.be"], Icon: FaYoutube },
-  { match: ["wa.me", "whatsapp."], Icon: FaWhatsapp },
-  { match: ["facebook.", "fb.com", "fb.me"], Icon: FaFacebookF },
-  { match: ["vk.com", "vk.ru"], Icon: FaVk },
-  { match: ["linkedin."], Icon: FaLinkedinIn }
-];
-
-const getSocialIcon = (link: string) => {
-  const href = (link || "").toLowerCase();
-  return socialIcons.find(item => item.match.some(part => href.includes(part)))
-    ?.Icon;
-};
 
 const Footer = async ({ params }: Props) => {
   const [data, countries] = await Promise.all([

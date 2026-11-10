@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./Survey.module.scss";
 import { Survey as SurveyType } from "@/types/homepage";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import { urlFor } from "@/sanity/image";
 import MultiStepForm from "../MultiStepForm/MultiStepForm";
 import MultiStepFormBlock from "../MultiStepFormBlock/MultiStepFormBlock";
 import { QuizBlock } from "@/types/quizBlock";
+import QuizSocials, { getQuizMessengers } from "../QuizSocials/QuizSocials";
 
 type Props = {
   lang: string;
@@ -14,8 +15,10 @@ type Props = {
   countryOptions?: string[];
 };
 
-const Survey: FC<Props> = ({ lang, survey, quizBlock, countryOptions }) => {
-  // console.log("survey", survey);
+const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
+  // Ссылки мессенджеров для финального экрана квиза берём из контактов футера
+  const messengers = quizBlock ? await getQuizMessengers(lang) : undefined;
+
   return (
     <section className={styles.survey}>
       <div className="container">
@@ -34,6 +37,8 @@ const Survey: FC<Props> = ({ lang, survey, quizBlock, countryOptions }) => {
                 lang={lang}
                 quizBlock={quizBlock}
                 countryOptions={countryOptions}
+                messengers={messengers}
+                socials={<QuizSocials lang={lang} />}
               />
             )}
           </div>

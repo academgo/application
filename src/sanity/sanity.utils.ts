@@ -567,20 +567,29 @@ export async function getSinglePageByLang(
         _type,
         "sidebar": survey.quizDocument->sidebar,
         "quiz": survey.quizDocument->quiz{
+          finalEyebrow,
           finalTitle,
-          formTitle,
-          inputLabel,
-          buttonText,
+          finalDescription,
+          finalMode,
+          telegramLabel,
+          telegramLink,
+          whatsappLabel,
+          whatsappLink,
+          finalNote,
+          showSocials,
           questions[]{
             _key,
             questionTitle,
             useGrayStyle,
             optionsSource,
             extraOption,
+            image,
+            imageAlt,
             options[]{
               _key,
               label,
-              value
+              value,
+              image
             }
           }
         },
@@ -665,20 +674,29 @@ export async function getSingleSubPageBySlug(
         _type,
         "sidebar": survey.quizDocument->sidebar,
         "quiz": survey.quizDocument->quiz{
+          finalEyebrow,
           finalTitle,
-          formTitle,
-          inputLabel,
-          buttonText,
+          finalDescription,
+          finalMode,
+          telegramLabel,
+          telegramLink,
+          whatsappLabel,
+          whatsappLink,
+          finalNote,
+          showSocials,
           questions[]{
             _key,
             questionTitle,
             useGrayStyle,
             optionsSource,
             extraOption,
+            image,
+            imageAlt,
             options[]{
               _key,
               label,
-              value
+              value,
+              image
             }
           }
         },

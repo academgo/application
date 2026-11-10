@@ -1,7 +1,16 @@
 // types/quizBlock.ts
+type SanityImage = {
+  _type: string;
+  asset: { _ref: string; _type: string };
+  hotspot?: unknown;
+  crop?: unknown;
+};
+
 export type QuizOption = {
   _key: string;
   label: string;
+  /** необязательная картинка варианта */
+  image?: SanityImage;
 };
 
 export type QuizQuestion = {
@@ -9,16 +18,28 @@ export type QuizQuestion = {
   name: string; // stable field key for Formik
   questionTitle: string;
   options: QuizOption[];
+  /** необязательная иллюстрация над вариантами */
+  image?: SanityImage;
+  imageAlt?: string;
   /** "countries" — варианты подставляются из списка стран обучения */
   optionsSource?: "manual" | "countries";
   /** последний вариант для списка стран: «Ещё не выбрал(а)» */
   extraOption?: string;
 };
 
+/** Какие кнопки показывает финальный экран */
+export type QuizFinalMode = "telegram" | "whatsapp" | "both";
+
 export type QuizBlock = {
-  finalTitle: string;
-  formTitle: string;
-  inputLabel: string;
-  buttonText: string;
+  finalEyebrow?: string;
+  finalTitle?: string;
+  finalDescription?: string;
+  finalMode?: QuizFinalMode;
+  telegramLabel?: string;
+  telegramLink?: string;
+  whatsappLabel?: string;
+  whatsappLink?: string;
+  finalNote?: string;
+  showSocials?: boolean;
   questions: QuizQuestion[];
 };

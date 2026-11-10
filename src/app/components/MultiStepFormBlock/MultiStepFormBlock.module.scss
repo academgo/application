@@ -636,3 +636,201 @@
     box-shadow: 0em -2.6em 0em 0em rgba(255,255,255, 0.2), 1.8em -1.8em 0 0em rgba(255,255,255, 0.2), 2.5em 0em 0 0em rgba(255,255,255, 0.2), 1.75em 1.75em 0 0ем rgba(255,255,255, 0.2), 0em 2.5em 0 0ем rgba(255,255,255, 0.2), -1.8em 1.8ем 0 0em rgba(255,255,255, 0.5), -2.6ем 0em 0 0ем rgba(255,255,255, 0.7), -1.8ем -1.8ем 0 0em #ffffff;
   }
 }
+
+/* ──────────── Картинка-иллюстрация к вопросу ──────────── */
+
+.questionImage {
+  margin: 0 0 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 560px;
+}
+
+.questionImageTag {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ──────────── Финальный экран: кнопки мессенджеров ──────────── */
+
+$final-ink: #091728;
+$final-muted: #5a6878;
+$final-orange: #f39708;
+$final-orange-dark: #d98305;
+$final-green: #22a455;
+$final-green-dark: #1c8946;
+
+.finalCard {
+  border-radius: 32px;
+  padding: 48px 24px;
+  text-align: center;
+  // Ореол кнопки шире самой кнопки: на узком экране он иначе вылезает за карточку
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(243, 151, 8, 0.16) 0%,
+    rgba(243, 151, 8, 0.05) 45%,
+    #f1f5f9 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(243, 151, 8, 0.28);
+
+  @media (min-width: 768px) {
+    padding: 72px 56px;
+  }
+
+  .finalTitle {
+    margin: 0 auto;
+    max-width: 640px;
+    text-align: center;
+  }
+}
+
+.finalEyebrow {
+  margin: 0 0 14px;
+  color: $final-orange-dark;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.finalDescription {
+  margin: 20px auto 0;
+  max-width: 520px;
+  color: $final-muted;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.finalActions {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  @media (min-width: 560px) {
+    flex-direction: row;
+  }
+}
+
+.messengerBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 64px;
+  padding: 0 36px;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(243, 151, 8, 0.4);
+  }
+
+  @media (max-width: 559px) {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+.messengerTelegram {
+  background: $final-orange;
+  box-shadow: 0 18px 36px rgba(243, 151, 8, 0.32);
+
+  &:hover {
+    background: $final-orange-dark;
+  }
+}
+
+.messengerWhatsapp {
+  background: $final-green;
+  box-shadow: 0 18px 36px rgba(34, 164, 85, 0.28);
+
+  &:hover {
+    background: $final-green-dark;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 4px rgba(34, 164, 85, 0.4);
+  }
+}
+
+/* Ореол расходится от кнопки и гаснет — как на референсе */
+.pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(243, 151, 8, 0.4);
+  animation: messengerPulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.messengerWhatsapp .pulse {
+  background: rgba(34, 164, 85, 0.35);
+}
+
+@keyframes messengerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  75%,
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    display: none;
+  }
+
+  .messengerBtn:hover {
+    transform: none;
+  }
+}
+
+.messengerIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.messengerLabel {
+  position: relative;
+}
+
+.finalNote {
+  margin: 20px 0 0;
+  color: $final-muted;
+  font-size: 0.9375rem;
+}
+
+.finalPolicy {
+  margin: 28px 0 0;
+  color: rgba(90, 104, 120, 0.85);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+
+  .policyLink {
+    color: $final-orange-dark;
+  }
+}

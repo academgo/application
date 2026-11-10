@@ -14,6 +14,24 @@ export default defineType({
     }),
 
     defineField({
+      name: "image",
+      title: "Картинка над вариантами",
+      type: "image",
+      options: { hotspot: true },
+      description:
+        "Необязательно. Иллюстрация к вопросу, показывается между заголовком и вариантами."
+    }),
+
+    defineField({
+      name: "imageAlt",
+      title: "Описание картинки",
+      type: "string",
+      hidden: ({ parent }: any) => !parent?.image,
+      description:
+        "Для поисковиков и программ чтения с экрана. Если пусто, берётся текст вопроса."
+    }),
+
+    defineField({
       name: "optionsSource",
       title: "Where options come from",
       type: "string",

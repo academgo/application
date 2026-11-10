@@ -1,0 +1,45 @@
+$ink: #091728;
+$muted: #5a6878;
+$orange: #f39708;
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: $muted;
+  background: rgba(9, 23, 40, 0.04);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $orange;
+    background: rgba(243, 151, 8, 0.12);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(243, 151, 8, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

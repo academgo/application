@@ -1,22 +1,16 @@
 "use client";
 
-import React, { useEffect, useMemo, useState, useId } from "react";
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import React, { useMemo, useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import http from "@/lib/http";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import PhoneInput from "../LazyPhoneInput/LazyPhoneInput";
-import { PhoneInternationalIcon } from "../FormIcons/FormIcons";
-import "react-phone-number-input/style.css";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { urlFor } from "@/sanity/image";
 
 import styles from "./MultiStepFormBlock.module.scss";
 import { QuizBlock } from "@/types/quizBlock";
-
-// ✅ фиксированные картинки для шага 1
-import imageParent from "./image-parent.webp";
-import imageStudent from "./image-student.webp";
 import { trackLead } from "@/lib/trackLead";
 import {
   UNDECIDED_STUDY_COUNTRY,
@@ -28,23 +22,56 @@ type Props = {
   quizBlock: QuizBlock;
   /** Названия стран для вопроса, где варианты берутся из раздела Country */
   countryOptions?: string[];
+  /** Ссылки мессенджеров из контактов футера — запасные, если в блоке не заданы свои */
+  messengers?: { telegram?: string; whatsapp?: string };
+  /** Готовый ряд иконок соцсетей, собранный на сервере */
+  socials?: React.ReactNode;
 };
 
-type DynamicFormValues = Record<string, any> & {
-  question1: string;
-  whatsapp: string;
-  agreedToPolicy: boolean;
-};
+type DynamicFormValues = Record<string, string>;
+
+type LeadChannel = "telegram" | "whatsapp" | "none";
+
+// Запасные тексты финального экрана: показываются, пока поля в CMS не заполнены,
+// чтобы кнопка не осталась без подписи сразу после выкладки
+const finalFallback = (lang: string) =>
+  lang === "en"
+    ? {
+        eyebrow: "Form completed",
+        title: "Thank you! One step left",
+        description:
+          "Message us and we will send a shortlist of universities for your budget and answer your questions.",
+        telegram: "Message us on Telegram",
+        whatsapp: "Message us on WhatsApp",
+        submit: "Send the request",
+        note: "We reply within one business day",
+        policyPrefix: "By clicking the button you agree to the",
+        policyLink: "Privacy Policy"
+      }
+    : {
+        eyebrow: "Анкета заполнена",
+        title: "Спасибо! Остался один шаг",
+        description:
+          "Напишите нам — пришлём подборку вузов под ваш бюджет и ответим на вопросы.",
+        telegram: "Написать в Telegram",
+        whatsapp: "Написать в WhatsApp",
+        submit: "Отправить заявку",
+        note: "Отвечаем в течение рабочего дня",
+        policyPrefix: "Нажимая кнопку, вы соглашаетесь с",
+        policyLink: "политикой конфиденциальности"
+      };
 
 const MultiStepFormBlock: React.FC<Props> = ({
   lang,
   quizBlock,
-  countryOptions = []
+  countryOptions = [],
+  messengers,
+  socials
 }) => {
   const router = useRouter();
-  const uniqueId = useId();
+  const texts = finalFallback(lang);
 
-  const dynamicQuestions = useMemo(
+  const questions = useMemo(
     () =>
       (quizBlock?.questions ?? []).map(question => {
         if (question.optionsSource !== "countries") return question;
@@ -62,90 +89,31 @@ const MultiStepFormBlock: React.FC<Props> = ({
       }),
     [quizBlock?.questions, countryOptions]
   );
-  const dynamicCount = dynamicQuestions.length;
 
-  const TOTAL_QUESTION_STEPS = 1 + dynamicCount; // 1 фикс + N динамика
-  const LAST_STEP = TOTAL_QUESTION_STEPS + 1; // финал
+  const totalQuestions = questions.length;
+  const LAST_STEP = totalQuestions + 1; // финальный экран идёт после вопросов
 
   const [step, setStep] = useState(1);
+  const [sent, setSent] = useState(false);
 
   const initialValues = useMemo<DynamicFormValues>(() => {
-    const base: DynamicFormValues = {
-      question1: "",
-      whatsapp: "",
-      agreedToPolicy: false
-    };
-
-    for (const q of dynamicQuestions) {
-      base[`q_${q._key}`] = "";
-    }
+    const base: DynamicFormValues = {};
+    for (const question of questions) base[`q_${question._key}`] = "";
 
     return base;
-  }, [dynamicQuestions]);
+  }, [questions]);
 
-  const validationSchemaByStep = useMemo(() => {
-    const schemas: Yup.ObjectSchema<any>[] = [];
-
-    // step 1 fixed
-    schemas.push(
-      Yup.object({
-        question1: Yup.string().required(
-          lang === "en" ? "This field is required" : "Поле обязательно"
-        )
-      })
-    );
-
-    // step 2..N+1 dynamic
-    for (const q of dynamicQuestions) {
-      const fieldName = `q_${q._key}`;
-      schemas.push(
+  const validationSchemaByStep = useMemo(
+    () =>
+      questions.map(question =>
         Yup.object({
-          [fieldName]: Yup.string().required(
+          [`q_${question._key}`]: Yup.string().required(
             lang === "en" ? "This field is required" : "Поле обязательно"
           )
         })
-      );
-    }
-
-    // final
-    schemas.push(
-      Yup.object({
-        whatsapp: Yup.string().required(
-          lang === "en" ? "This field is required" : "Поле обязательно"
-        ),
-        agreedToPolicy: Yup.boolean()
-          .oneOf(
-            [true],
-            lang === "en"
-              ? "You must accept the terms and conditions"
-              : "Вы должны принять условия"
-          )
-          .required(
-            lang === "en"
-              ? "You must accept the terms and conditions"
-              : "Вы должны принять условия"
-          )
-      })
-    );
-
-    return schemas;
-  }, [dynamicQuestions, lang]);
-
-  const [filled, setFilled] = useState({ whatsapp: false });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const input = document.getElementById("whatsapp") as HTMLInputElement;
-      if (input && input.value) setFilled(f => ({ ...f, whatsapp: true }));
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFilled(prev => ({ ...prev, [name]: value.trim() !== "" }));
-  };
+      ),
+    [questions, lang]
+  );
 
   const handleNext = async (
     validateForm: () => Promise<Record<string, any>>
@@ -165,191 +133,107 @@ const MultiStepFormBlock: React.FC<Props> = ({
 
   const handlePrev = () => setStep(s => Math.max(1, s - 1));
 
-  const handleSubmit = async (
-    values: DynamicFormValues,
-    { setSubmitting }: FormikHelpers<DynamicFormValues>
-  ) => {
-    setSubmitting(true);
+  // Заявка уходит по клику на кнопку мессенджера. Ссылка остаётся настоящей
+  // ссылкой с target="_blank", а письмо отправляется запросом с keepalive —
+  // он доживает до конца, даже когда вкладка уже ушла в мессенджер. Если ждать
+  // ответ сервера и открывать мессенджер потом, браузер считает это попапом
+  // и блокирует.
+  const sendLead = (values: DynamicFormValues, channel: LeadChannel) => {
+    if (sent) return;
+    setSent(true);
+
+    const quizAnswers = questions.map(question => {
+      const fieldName = `q_${question._key}`;
+
+      return {
+        name: fieldName, // технический ключ (стабильный)
+        label: question.questionTitle, // текст вопроса (для письма)
+        value: values[fieldName] || ""
+      };
+    });
+
+    // Ответ на вопрос о стране — это и есть страна обучения заявки;
+    // «Ещё не выбрал(а)» и любой вариант не из списка стран — «не решил»
+    const countryQuestion = questions.find(
+      question => question.optionsSource === "countries"
+    );
+    const countryAnswer = countryQuestion
+      ? values[`q_${countryQuestion._key}`]
+      : undefined;
+    const studyCountry = countryAnswer
+      ? studyCountryCodeByName(countryAnswer) || UNDECIDED_STUDY_COUNTRY
+      : undefined;
 
     try {
-      const quizAnswers = [
-        {
-          name: "question1",
-          label:
-            lang === "en" ? "Who fills out the form?" : "Кто заполняет анкету?",
-          value: values.question1 || ""
-        },
-        ...dynamicQuestions.map(q => {
-          const fieldName = `q_${q._key}`;
-          return {
-            name: fieldName, // технический ключ (стабильный)
-            label: q.questionTitle, // текст вопроса (для письма)
-            value: values[fieldName] || ""
-          };
+      fetch("/api/quiz-email", {
+        method: "POST",
+        keepalive: true,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quizAnswers,
+          channel,
+          lang,
+          studyCountry,
+          url: typeof window !== "undefined" ? window.location.href : ""
         })
-      ];
-
-      // Ответ на вопрос о стране — это и есть страна обучения заявки;
-      // «Ещё не выбрал(а)» и любой вариант не из списка стран — «не решил»
-      const countryQuestion = dynamicQuestions.find(
-        q => q.optionsSource === "countries"
-      );
-      const countryAnswer = countryQuestion
-        ? values[`q_${countryQuestion._key}`]
-        : undefined;
-      const studyCountry = countryAnswer
-        ? studyCountryCodeByName(countryAnswer) || UNDECIDED_STUDY_COUNTRY
-        : undefined;
-
-      await http.post("/api/quiz-email", {
-        whatsapp: values.whatsapp,
-        quizAnswers,
-        lang,
-        studyCountry,
-        url: typeof window !== "undefined" ? window.location.href : ""
-      });
-
-      trackLead("quiz", lang, studyCountry);
-      router.push(lang === "ru" ? "/ru/success" : "/success");
-    } catch (error) {
-      alert(lang === "ru" ? "Ошибка отправки" : "Error sending");
-    } finally {
-      setSubmitting(false);
+      }).catch(() => {});
+    } catch {
+      // письмо не ушло — мессенджер всё равно открываем, человека не теряем
     }
+
+    trackLead("quiz", lang, studyCountry);
+    router.push(lang === "ru" ? "/ru/success" : "/success");
   };
 
-  const progressPercentage =
-    step > 1
-      ? (Math.min(step - 1, TOTAL_QUESTION_STEPS) / TOTAL_QUESTION_STEPS) * 100
-      : 0;
+  const progressPercentage = totalQuestions
+    ? (Math.min(step - 1, totalQuestions) / totalQuestions) * 100
+    : 0;
 
-  const isDynamicQuestionStep = step >= 2 && step <= TOTAL_QUESTION_STEPS;
-  const dynamicIndex = step - 2;
-  const currentDynamicQuestion = isDynamicQuestionStep
-    ? dynamicQuestions[dynamicIndex]
-    : null;
+  const currentQuestion = step <= totalQuestions ? questions[step - 1] : null;
+  const currentFieldName = currentQuestion ? `q_${currentQuestion._key}` : "";
 
-  // ✅ ВАЖНО: вот здесь единственное место, где надо совпадение с типами
-  // Если у вас поле называется НЕ question — поменяйте на своё.
-  const getQuestionText = (q: any) =>
-    q.questionTitle ?? q.title ?? q.question ?? q.text ?? q.label ?? "";
-
-  const currentFieldName = currentDynamicQuestion
-    ? `q_${currentDynamicQuestion._key}`
+  const questionImageUrl = currentQuestion?.image
+    ? urlFor(currentQuestion.image).width(1200).url()
     : "";
+
+  const mode = quizBlock?.finalMode || "telegram";
+  const telegramHref = quizBlock?.telegramLink || messengers?.telegram || "";
+  const whatsappHref = quizBlock?.whatsappLink || messengers?.whatsapp || "";
+  const showTelegram =
+    (mode === "telegram" || mode === "both") && Boolean(telegramHref);
+  const showWhatsapp =
+    (mode === "whatsapp" || mode === "both") && Boolean(whatsappHref);
+  // Ни одной ссылки — ни в блоке, ни в футере. Показываем обычную кнопку,
+  // чтобы ответы всё равно дошли письмом, а не потерялись
+  const showPlainSubmit = !showTelegram && !showWhatsapp;
+  // Пульсирующий ореол уместен у одной кнопки; у двух два ореола дерутся за взгляд
+  const pulse = showTelegram !== showWhatsapp;
 
   return (
     <div className={styles.multiStepForm}>
       <Formik
         initialValues={initialValues}
         enableReinitialize
-        validationSchema={validationSchemaByStep[Math.max(0, step - 1)]}
-        onSubmit={step === LAST_STEP ? handleSubmit : async () => {}}
+        validationSchema={validationSchemaByStep[step - 1]}
+        onSubmit={async () => {}}
       >
-        {({ isSubmitting, values, validateForm, setFieldValue }) => (
+        {({ values, validateForm }) => (
           <Form className={styles.customForm}>
             <div className={styles.progressBar}>
               <div
                 className={styles.progressFill}
                 style={{ width: `${progressPercentage}%` }}
               />
-              {step > 1 && (
+              {currentQuestion && (
                 <div className={styles.progressText}>
                   {lang === "en"
-                    ? `Step ${Math.min(step - 1, TOTAL_QUESTION_STEPS)} of ${TOTAL_QUESTION_STEPS}`
-                    : `Шаг ${Math.min(step - 1, TOTAL_QUESTION_STEPS)} из ${TOTAL_QUESTION_STEPS}`}
+                    ? `Step ${step} of ${totalQuestions}`
+                    : `Шаг ${step} из ${totalQuestions}`}
                 </div>
               )}
             </div>
 
-            {/* ✅ STEP 1 (фиксированный) */}
-            {step === 1 && (
-              <div className={styles.questionWrapper}>
-                <div className={styles.topWrapper}>
-                  <fieldset>
-                    <div className={styles.questionData}>
-                      <div className={styles.questionNumber}>
-                        {lang === "en" ? "Question 1" : "Вопрос 1"}
-                      </div>
-                      <legend className={styles.questionTitle}>
-                        {lang === "en"
-                          ? "Who fills out the form?"
-                          : "Кто заполняет анкету?"}
-                      </legend>
-                    </div>
-
-                    <div
-                      role="group"
-                      aria-labelledby="question1"
-                      className={styles.customRadios}
-                    >
-                      <div className={styles.customRadio}>
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question1"
-                            value={lang === "en" ? "parent" : "Родитель"}
-                          />
-                          <div className={styles.answerImg}>
-                            <Image
-                              alt={lang === "en" ? "Parent" : "Родитель"}
-                              src={imageParent}
-                            />
-                          </div>
-                          <div className={styles.pseudoRadioData}>
-                            <div className={styles.pseudoRadio} />
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "Parent" : "Родитель"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-
-                      <div className={styles.customRadio}>
-                        <label>
-                          <Field
-                            type="radio"
-                            name="question1"
-                            value={
-                              lang === "en" ? "Enrollee" : "Сам абитуриент"
-                            }
-                          />
-                          <div className={styles.answerImg}>
-                            <Image
-                              alt={
-                                lang === "en" ? "Enrollee" : "Сам абитуриент"
-                              }
-                              src={imageStudent}
-                            />
-                          </div>
-                          <div className={styles.pseudoRadioData}>
-                            <div className={styles.pseudoRadio} />
-                            <p className={styles.pseudoRadioText}>
-                              {lang === "en" ? "Enrollee" : "Сам абитуриент"}
-                            </p>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-
-                    <ErrorMessage name="question1" component="div" />
-                  </fieldset>
-                </div>
-
-                <div className={styles.buttonsBlock}>
-                  <button
-                    type="button"
-                    onClick={() => handleNext(validateForm)}
-                    className={styles.buttonNext}
-                  >
-                    {lang === "en" ? "Next" : "Далее"}
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* ✅ dynamic steps */}
-            {currentDynamicQuestion && (
+            {currentQuestion && (
               <div className={styles.questionWrapper}>
                 <div className={styles.topWrapper}>
                   <fieldset>
@@ -358,38 +242,77 @@ const MultiStepFormBlock: React.FC<Props> = ({
                         {lang === "en" ? `Question ${step}` : `Вопрос ${step}`}
                       </div>
                       <legend className={styles.questionTitle}>
-                        {getQuestionText(currentDynamicQuestion)}
+                        {currentQuestion.questionTitle}
                       </legend>
                     </div>
+
+                    {questionImageUrl && (
+                      <div className={styles.questionImage}>
+                        <Image
+                          src={questionImageUrl}
+                          alt={
+                            currentQuestion.imageAlt ||
+                            currentQuestion.questionTitle
+                          }
+                          width={1200}
+                          height={675}
+                          sizes="(max-width: 768px) 100vw, 720px"
+                          className={styles.questionImageTag}
+                        />
+                      </div>
+                    )}
 
                     <div
                       role="group"
                       aria-labelledby={currentFieldName}
                       className={styles.customRadios}
                     >
-                      {currentDynamicQuestion.options?.map((opt: any) => (
-                        <div
-                          key={opt._key}
-                          className={`${styles.customRadio} ${styles.radioGray}`}
-                        >
-                          <label>
-                            <Field
-                              type="radio"
-                              name={currentFieldName}
-                              value={opt.label}
-                            />
-                            <div className={styles.pseudoRadioData}>
-                              <div
-                                className={styles.pseudoRadio}
-                                style={{ backgroundColor: "#fff" }}
+                      {currentQuestion.options?.map((opt: any) => {
+                        const optionImageUrl = opt.image
+                          ? urlFor(opt.image).width(600).url()
+                          : "";
+
+                        return (
+                          <div
+                            key={opt._key}
+                            className={`${styles.customRadio} ${
+                              optionImageUrl ? "" : styles.radioGray
+                            }`}
+                          >
+                            <label>
+                              <Field
+                                type="radio"
+                                name={currentFieldName}
+                                value={opt.label}
                               />
-                              <p className={styles.pseudoRadioText}>
-                                {opt.label}
-                              </p>
-                            </div>
-                          </label>
-                        </div>
-                      ))}
+                              {optionImageUrl && (
+                                <div className={styles.answerImg}>
+                                  <Image
+                                    src={optionImageUrl}
+                                    alt={opt.label}
+                                    width={600}
+                                    height={600}
+                                    sizes="(max-width: 768px) 50vw, 300px"
+                                  />
+                                </div>
+                              )}
+                              <div className={styles.pseudoRadioData}>
+                                <div
+                                  className={styles.pseudoRadio}
+                                  style={
+                                    optionImageUrl
+                                      ? undefined
+                                      : { backgroundColor: "#fff" }
+                                  }
+                                />
+                                <p className={styles.pseudoRadioText}>
+                                  {opt.label}
+                                </p>
+                              </div>
+                            </label>
+                          </div>
+                        );
+                      })}
                     </div>
 
                     <ErrorMessage name={currentFieldName} component="div" />
@@ -397,13 +320,15 @@ const MultiStepFormBlock: React.FC<Props> = ({
                 </div>
 
                 <div className={styles.buttonsBlock}>
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    className={styles.buttonBack}
-                  >
-                    {lang === "en" ? "Previous" : "Назад"}
-                  </button>
+                  {step > 1 && (
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      className={styles.buttonBack}
+                    >
+                      {lang === "en" ? "Previous" : "Назад"}
+                    </button>
+                  )}
 
                   <button
                     type="button"
@@ -416,87 +341,97 @@ const MultiStepFormBlock: React.FC<Props> = ({
               </div>
             )}
 
-            {/* ✅ final step (фикс) */}
             {step === LAST_STEP && (
               <div className={styles.questionWrapper}>
-                <div className={styles.topWrapper}>
-                  <h3 className={styles.finalTitle}>{quizBlock.finalTitle}</h3>
-                </div>
+                <div className={styles.finalCard}>
+                  <p className={styles.finalEyebrow}>
+                    {quizBlock?.finalEyebrow || texts.eyebrow}
+                  </p>
 
-                <div className={styles.formSending}>
-                  <p className={styles.formTitle}>{quizBlock.formTitle}</p>
+                  <h3 className={styles.finalTitle}>
+                    {quizBlock?.finalTitle || texts.title}
+                  </h3>
 
-                  <div className={styles.finalForm}>
-                    <div className={styles.inputWrapper}>
-                      <label
-                        htmlFor="whatsapp"
-                        className={`${styles.label} ${styles.labelPhone} ${
-                          filled.whatsapp ? styles.filled : ""
-                        }`}
+                  <p className={styles.finalDescription}>
+                    {quizBlock?.finalDescription || texts.description}
+                  </p>
+
+                  <div className={styles.finalActions}>
+                    {showTelegram && (
+                      <a
+                        href={telegramHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.messengerBtn} ${styles.messengerTelegram}`}
+                        onClick={() => sendLead(values, "telegram")}
                       >
-                        {quizBlock.inputLabel}
-                      </label>
+                        {pulse && (
+                          <span aria-hidden="true" className={styles.pulse} />
+                        )}
+                        <FaTelegramPlane
+                          aria-hidden="true"
+                          className={styles.messengerIcon}
+                        />
+                        <span className={styles.messengerLabel}>
+                          {quizBlock?.telegramLabel || texts.telegram}
+                        </span>
+                      </a>
+                    )}
 
-                      <PhoneInput
-                        internationalIcon={PhoneInternationalIcon}
-                        id="whatsapp"
-                        name="whatsapp"
-                        className={styles.inputField}
-                        onBlur={handleBlur}
-                        onChange={value => setFieldValue("whatsapp", value)}
-                      />
+                    {showWhatsapp && (
+                      <a
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.messengerBtn} ${styles.messengerWhatsapp}`}
+                        onClick={() => sendLead(values, "whatsapp")}
+                      >
+                        {pulse && (
+                          <span aria-hidden="true" className={styles.pulse} />
+                        )}
+                        <FaWhatsapp
+                          aria-hidden="true"
+                          className={styles.messengerIcon}
+                        />
+                        <span className={styles.messengerLabel}>
+                          {quizBlock?.whatsappLabel || texts.whatsapp}
+                        </span>
+                      </a>
+                    )}
 
-                      <ErrorMessage
-                        name="whatsapp"
-                        component="div"
-                        className={styles.error}
-                      />
-                    </div>
-
-                    <div className={styles.customCheckbox}>
-                      <Field
-                        type="checkbox"
-                        name="agreedToPolicy"
-                        id={`agreedToPolicy-${uniqueId}`}
-                      />
-                      <label htmlFor={`agreedToPolicy-${uniqueId}`}>
-                        {lang === "en"
-                          ? "I agree to the terms"
-                          : "Согласен с условиями"}{" "}
-                        <Link
-                          className={styles.policyLink}
-                          href={
-                            lang === "en"
-                              ? "/privacy-policy"
-                              : "/ru/politika-konfidencialnosti"
-                          }
-                          target="_blank"
-                        >
-                          {lang === "en"
-                            ? "Privacy Policy"
-                            : "Политики конфиденциальности"}
-                        </Link>
-                      </label>
-                    </div>
-
-                    <ErrorMessage
-                      name="agreedToPolicy"
-                      component="div"
-                      className={styles.errorCheckbox}
-                    />
-
-                    <button
-                      type="submit"
-                      className={styles.sentBtn}
-                      disabled={isSubmitting || !values.agreedToPolicy}
-                    >
-                      {isSubmitting ? (
-                        <div className={styles.loader} />
-                      ) : (
-                        quizBlock.buttonText
-                      )}
-                    </button>
+                    {showPlainSubmit && (
+                      <button
+                        type="button"
+                        className={`${styles.messengerBtn} ${styles.messengerTelegram}`}
+                        onClick={() => sendLead(values, "none")}
+                      >
+                        <span className={styles.messengerLabel}>
+                          {quizBlock?.telegramLabel || texts.submit}
+                        </span>
+                      </button>
+                    )}
                   </div>
+
+                  <p className={styles.finalNote}>
+                    {quizBlock?.finalNote || texts.note}
+                  </p>
+
+                  <p className={styles.finalPolicy}>
+                    {texts.policyPrefix}{" "}
+                    <Link
+                      className={styles.policyLink}
+                      href={
+                        lang === "en"
+                          ? "/privacy-policy"
+                          : "/ru/politika-konfidencialnosti"
+                      }
+                      target="_blank"
+                    >
+                      {texts.policyLink}
+                    </Link>
+                  </p>
+
+                  {quizBlock?.showSocials !== false && socials}
                 </div>
               </div>
             )}
