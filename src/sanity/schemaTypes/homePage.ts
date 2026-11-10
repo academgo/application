@@ -256,7 +256,8 @@ export default defineType({
           name: "cardLinkLabel",
           title: "Card link label",
           type: "string",
-          description: "Текст ссылки в карточке страны: «Подробнее» / «Learn more»"
+          description:
+            "Текст ссылки в карточке страны: «Подробнее» / «Learn more»"
         }),
         defineField({
           name: "compareLabel",
@@ -676,6 +677,14 @@ export default defineType({
       name: "quizBlock",
       title: "Quiz Block (свои вопросы для главной)",
       type: "quizBlock"
+    }),
+    defineField({
+      name: "ctaDocument",
+      title: "Плашка в мессенджер после квиза",
+      type: "reference",
+      to: [{ type: "ctaDocument" }],
+      description:
+        "Общая плашка из раздела «Плашка в мессенджер». Если не заполнено, секция не показывается."
     }),
     // quiz block
     // about block

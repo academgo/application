@@ -41,6 +41,7 @@ import pricingTable from "./pricingTable";
 import packagesBlock from "./packagesBlock";
 import quizBlock from "./quizBlock";
 import quizDocument from "./quizDocument";
+import ctaDocument from "./ctaDocument";
 import quizQuestion from "./quizQuestion";
 import quizOption from "./quizOption";
 import tableBlock from "./tableBlock";
@@ -106,6 +107,7 @@ export const schemaTypes = [
   timelineBlock,
   countryMapBlock,
   quizDocument,
+  ctaDocument,
   quizBlock,
   quizQuestion,
   quizOption,

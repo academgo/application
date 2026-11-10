@@ -1,0 +1,215 @@
+@use "./card";
+
+/**
+ * Плашка «напишите нам в мессенджер»: финальный экран квиза и такая же
+ * самостоятельная секция после него.
+ */
+
+$final-ink: #091728;
+$final-muted: #5a6878;
+$final-orange: #f39708;
+$final-orange-dark: #d98305;
+$final-green: #22a455;
+$final-green-dark: #1c8946;
+
+.card {
+  @include card.cta-card;
+}
+
+.title {
+  margin: 0 auto;
+  max-width: 640px;
+  color: #091728;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.85px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    letter-spacing: -2.8px;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: $final-orange-dark;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: 20px auto 0;
+  max-width: 520px;
+  color: $final-muted;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.actions {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  @media (min-width: 560px) {
+    flex-direction: row;
+  }
+}
+
+.messengerBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 64px;
+  padding: 0 40px;
+  max-width: 100%;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  animation: messengerBreath 2s ease-in-out infinite;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(243, 151, 8, 0.4);
+  }
+
+  // На узком экране кнопка остаётся пилюлей, как в референсе, но ужимается,
+  // чтобы подпись влезла в одну строку
+  @media (max-width: 420px) {
+    padding: 0 22px;
+    font-size: 1rem;
+  }
+}
+
+.messengerTelegram {
+  background: $final-orange;
+  box-shadow:
+    0 20px 25px -5px rgba(243, 151, 8, 0.3),
+    0 8px 10px -6px rgba(243, 151, 8, 0.3);
+
+  &:hover {
+    background: $final-orange-dark;
+  }
+}
+
+.messengerWhatsapp {
+  background: $final-green;
+  box-shadow:
+    0 20px 25px -5px rgba(34, 164, 85, 0.3),
+    0 8px 10px -6px rgba(34, 164, 85, 0.3);
+
+  &:hover {
+    background: $final-green-dark;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 4px rgba(34, 164, 85, 0.4);
+  }
+}
+
+/* Волна расходится от кнопки и гаснет. Волны две, вторая сдвинута на половину
+   цикла: с одной между повторами была пауза в полсекунды, и анимация читалась
+   как случайная вспышка, а не как непрерывные волны */
+.pulse {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border-radius: 999px;
+  // Кольцо, а не заливка: полупрозрачная заливка оранжевым по светло-оранжевой
+  // карточке почти не читается, а линия видна
+  border: 4px solid rgba(243, 151, 8, 0.85);
+  animation: messengerPulse 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.pulseLate {
+  animation-delay: -1s;
+}
+
+.messengerWhatsapp .pulse {
+  border-color: rgba(34, 164, 85, 0.7);
+}
+
+@keyframes messengerPulse {
+  // Волна проявляется, уже выйдя за край кнопки: в начале она ровно по её
+  // размеру и целиком за ней спрятана. Яркость держим до середины пути,
+  // иначе кольцо гаснет раньше, чем его успеваешь заметить
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Сама кнопка тоже дышит — это и есть «пульс», волны одни его не передают */
+@keyframes messengerBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    display: none;
+  }
+
+  .messengerBtn {
+    animation: none;
+  }
+}
+
+.messengerIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.messengerLabel {
+  position: relative;
+}
+
+.note {
+  // Волна на пике выходит за кнопку примерно на 38 пикселей — иначе кольцо
+  // проезжает прямо по этой строке
+  margin: 48px 0 0;
+  color: $final-muted;
+  font-size: 0.9375rem;
+}
+
+.policy {
+  margin: 28px 0 0;
+  color: rgba(90, 104, 120, 0.85);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+
+  .policyLink {
+    color: $final-orange-dark;
+  }
+}

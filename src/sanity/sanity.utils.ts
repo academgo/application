@@ -369,23 +369,47 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     conditionFourth,
     countriesBlock,
     "quizDocumentBlock": quizDocument->quiz{
-          finalTitle,
-          formTitle,
-          inputLabel,
-          buttonText,
-          questions[]{
-            _key,
-            questionTitle,
-            useGrayStyle,
-            optionsSource,
-            extraOption,
-            options[]{
-              _key,
-              label,
-              value
-            }
-          }
-        },
+      loadingTitle,
+      loadingSteps,
+      finalEyebrow,
+      finalTitle,
+      finalDescription,
+      finalMode,
+      telegramLabel,
+      telegramLink,
+      whatsappLabel,
+      whatsappLink,
+      finalNote,
+      sendAnswersByEmail,
+      showSocials,
+      questions[]{
+        _key,
+        questionTitle,
+        useGrayStyle,
+        optionsSource,
+        extraOption,
+        image,
+        imageAlt,
+        options[]{
+          _key,
+          label,
+          value,
+          image
+        }
+      }
+    },
+    "ctaBlock": ctaDocument->{
+      eyebrow,
+      heading,
+      description,
+      mode,
+      telegramLabel,
+      telegramLink,
+      whatsappLabel,
+      whatsappLink,
+      note,
+      showSocials
+    },
     universitiesBlock,
     videosTitle,
     videos,

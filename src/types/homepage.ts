@@ -236,6 +236,7 @@ export type CountriesBlock = {
 export type Homepage = {
   countriesBlock?: CountriesBlock;
   quizDocumentBlock?: QuizBlock;
+  ctaBlock?: MessengerCtaDocument;
   _type: "homepage";
   _id: string;
   _rev: string;
@@ -319,4 +320,18 @@ export type Homepage = {
       };
     }
   ];
+};
+
+/** Плашка в мессенджер — отдельный документ, один на язык */
+export type MessengerCtaDocument = {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  mode?: "telegram" | "whatsapp" | "both";
+  telegramLabel?: string;
+  telegramLink?: string;
+  whatsappLabel?: string;
+  whatsappLink?: string;
+  note?: string;
+  showSocials?: boolean;
 };

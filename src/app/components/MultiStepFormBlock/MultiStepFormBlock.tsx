@@ -3,12 +3,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
-import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { urlFor } from "@/sanity/image";
 
+import MessengerCta from "../MessengerCta/MessengerCta";
 import styles from "./MultiStepFormBlock.module.scss";
 import { QuizBlock } from "@/types/quizBlock";
 import { trackLead } from "@/lib/trackLead";
@@ -50,12 +48,7 @@ const finalFallback = (lang: string) =>
         title: "Thank you! One step left",
         description:
           "Message us and we will send a shortlist of universities for your budget and answer your questions.",
-        telegram: "Message us on Telegram",
-        whatsapp: "Message us on WhatsApp",
-        submit: "Send the request",
         note: "We reply within one business day",
-        policyPrefix: "By clicking the button you agree to the",
-        policyLink: "Privacy Policy",
         loadingTitle: "Preparing your shortlist",
         loadingSteps: ["Analysing your answers", "Matching universities"],
         country: "your chosen country",
@@ -66,12 +59,7 @@ const finalFallback = (lang: string) =>
         title: "Спасибо! Остался один шаг",
         description:
           "Напишите нам — пришлём подборку вузов под ваш бюджет и ответим на вопросы.",
-        telegram: "Написать в Telegram",
-        whatsapp: "Написать в WhatsApp",
-        submit: "Отправить заявку",
         note: "Отвечаем в течение рабочего дня",
-        policyPrefix: "Нажимая кнопку, вы соглашаетесь с",
-        policyLink: "политикой конфиденциальности",
         loadingTitle: "Готовим подборку",
         loadingSteps: ["Анализируем ваши ответы", "Подбираем вузы"],
         country: "выбранное направление",
@@ -85,8 +73,9 @@ const MultiStepFormBlock: React.FC<Props> = ({
   messengers,
   socials
 }) => {
-  const router = useRouter();
-  const texts = finalFallback(lang);
+  // Запоминаем: объект пересоздавался на каждом рендере, из-за чего таймеры
+  // экрана подбора сбрасывались и он висел дольше задуманного
+  const texts = useMemo(() => finalFallback(lang), [lang]);
 
   const questions = useMemo(
     () =>
@@ -116,15 +105,14 @@ const MultiStepFormBlock: React.FC<Props> = ({
   const [analyzingIndex, setAnalyzingIndex] = useState(0);
   const [pageCountryCode, setPageCountryCode] = useState<string | undefined>();
   const blockRef = useRef<HTMLDivElement>(null);
-  const isFirstRender = useRef(true);
 
   // Шаги разной высоты, и без этого экран прыгает: после каждого «Далее»
-  // возвращаем начало блока на одно и то же место
+  // возвращаем начало блока на одно и то же место.
+  // Первый экран не трогаем совсем: флаг «первый рендер» тут не годится —
+  // в разработке React монтирует компонент дважды, и второй проход
+  // прокручивал страницу к квизу сразу после открытия
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
+    if (step === 1 && !analyzing) return;
 
     const node = blockRef.current;
     if (!node) return;
@@ -265,8 +253,10 @@ const MultiStepFormBlock: React.FC<Props> = ({
       }
     }
 
+    // На /success больше не уводим: переход забирает вкладку себе, и ссылка
+    // кнопки не успевает открыться — компонент размонтируется раньше, чем
+    // браузер обработает её по умолчанию. Человек уходит в мессенджер
     trackLead("quiz", lang, studyCountry);
-    router.push(lang === "ru" ? "/ru/success" : "/success");
   };
 
   const progressPercentage = totalQuestions
@@ -303,21 +293,6 @@ const MultiStepFormBlock: React.FC<Props> = ({
       .replace(/\{countryIn\}/g, inflected)
       .replace(/\{country\}/g, nominative);
   };
-
-  const mode = quizBlock?.finalMode || "telegram";
-  const telegramHref = quizBlock?.telegramLink || messengers?.telegram || "";
-  const whatsappHref = quizBlock?.whatsappLink || messengers?.whatsapp || "";
-  const showTelegram =
-    (mode === "telegram" || mode === "both") && Boolean(telegramHref);
-  const showWhatsapp =
-    (mode === "whatsapp" || mode === "both") && Boolean(whatsappHref);
-  // Ни одной ссылки — ни в блоке, ни в футере. Показываем обычную кнопку,
-  // чтобы ответы всё равно дошли письмом, а не потерялись
-  const showPlainSubmit = !showTelegram && !showWhatsapp;
-  // Волна всегда идёт ровно у одной кнопки — главной. Два набора волн дерутся
-  // за взгляд, а ноль волн выглядит как сломанная анимация
-  const pulseOnTelegram = showTelegram;
-  const pulseOnWhatsapp = showWhatsapp && !showTelegram;
 
   const isFinalStep = step === LAST_STEP;
   const showQuestion = Boolean(currentQuestion) && !analyzing;
@@ -500,125 +475,27 @@ const MultiStepFormBlock: React.FC<Props> = ({
 
             {isFinalStep && (
               <div className={styles.questionWrapper}>
-                <div className={styles.finalCard}>
-                  <p className={styles.finalEyebrow}>
-                    {fillCountry(
-                      quizBlock?.finalEyebrow || texts.eyebrow,
-                      values
-                    )}
-                  </p>
-
-                  <h3 className={styles.finalTitle}>
-                    {fillCountry(quizBlock?.finalTitle || texts.title, values)}
-                  </h3>
-
-                  <p className={styles.finalDescription}>
-                    {fillCountry(
+                <MessengerCta
+                  lang={lang}
+                  content={{
+                    eyebrow: quizBlock?.finalEyebrow || texts.eyebrow,
+                    title: quizBlock?.finalTitle || texts.title,
+                    description:
                       quizBlock?.finalDescription || texts.description,
-                      values
-                    )}
-                  </p>
-
-                  <div className={styles.finalActions}>
-                    {showTelegram && (
-                      <a
-                        href={telegramHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.messengerBtn} ${styles.messengerTelegram}`}
-                        onClick={() => sendLead(values, "telegram")}
-                      >
-                        {pulseOnTelegram && (
-                          <>
-                            <span aria-hidden="true" className={styles.pulse} />
-                            <span
-                              aria-hidden="true"
-                              className={`${styles.pulse} ${styles.pulseLate}`}
-                            />
-                          </>
-                        )}
-                        <FaTelegramPlane
-                          aria-hidden="true"
-                          className={styles.messengerIcon}
-                        />
-                        <span className={styles.messengerLabel}>
-                          {fillCountry(
-                            quizBlock?.telegramLabel || texts.telegram,
-                            values
-                          )}
-                        </span>
-                      </a>
-                    )}
-
-                    {showWhatsapp && (
-                      <a
-                        href={whatsappHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.messengerBtn} ${styles.messengerWhatsapp}`}
-                        onClick={() => sendLead(values, "whatsapp")}
-                      >
-                        {pulseOnWhatsapp && (
-                          <>
-                            <span aria-hidden="true" className={styles.pulse} />
-                            <span
-                              aria-hidden="true"
-                              className={`${styles.pulse} ${styles.pulseLate}`}
-                            />
-                          </>
-                        )}
-                        <FaWhatsapp
-                          aria-hidden="true"
-                          className={styles.messengerIcon}
-                        />
-                        <span className={styles.messengerLabel}>
-                          {fillCountry(
-                            quizBlock?.whatsappLabel || texts.whatsapp,
-                            values
-                          )}
-                        </span>
-                      </a>
-                    )}
-
-                    {showPlainSubmit && (
-                      <button
-                        type="button"
-                        className={`${styles.messengerBtn} ${styles.messengerTelegram}`}
-                        onClick={() => sendLead(values, "none")}
-                      >
-                        <span className={styles.messengerLabel}>
-                          {fillCountry(
-                            quizBlock?.telegramLabel || texts.submit,
-                            values
-                          )}
-                        </span>
-                      </button>
-                    )}
-                  </div>
-
-                  <p className={styles.finalNote}>
-                    {fillCountry(quizBlock?.finalNote || texts.note, values)}
-                  </p>
-
-                  {sendsEmail && (
-                    <p className={styles.finalPolicy}>
-                      {texts.policyPrefix}{" "}
-                      <Link
-                        className={styles.policyLink}
-                        href={
-                          lang === "en"
-                            ? "/privacy-policy"
-                            : "/ru/politika-konfidencialnosti"
-                        }
-                        target="_blank"
-                      >
-                        {texts.policyLink}
-                      </Link>
-                    </p>
-                  )}
-
-                  {quizBlock?.showSocials !== false && socials}
-                </div>
+                    mode: quizBlock?.finalMode,
+                    telegramLabel: quizBlock?.telegramLabel,
+                    telegramLink: quizBlock?.telegramLink,
+                    whatsappLabel: quizBlock?.whatsappLabel,
+                    whatsappLink: quizBlock?.whatsappLink,
+                    note: quizBlock?.finalNote || texts.note,
+                    showSocials: quizBlock?.showSocials
+                  }}
+                  socials={socials}
+                  fallbackMessengers={messengers}
+                  transformText={text => fillCountry(text, values)}
+                  onChannelClick={channel => sendLead(values, channel)}
+                  showPolicy={sendsEmail}
+                />
               </div>
             )}
           </Form>

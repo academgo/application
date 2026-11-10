@@ -24,6 +24,7 @@ import Price from "../components/Price/Price";
 import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
 import Survey from "../components/Survey/Survey";
+import MessengerCtaSection from "@/app/components/MessengerCtaSection/MessengerCtaSection";
 import ModalFullLazy from "../components/ModalFull/ModalFullLazy";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
@@ -103,6 +104,13 @@ export default async function Home(props: Props) {
           videosTitle={homePage.videosTitle}
           videos={homePage.videos}
         />
+        <Survey
+          lang={params.lang}
+          survey={homePage.survey}
+          quizBlock={homePage.quizDocumentBlock || homePage.quizBlock}
+          countryOptions={countryNames}
+        />
+        <MessengerCtaSection lang={params.lang} block={homePage.ctaBlock} />
         <Offer
           offerTitle={homePage.offerTitle}
           offerTitleHighlight={homePage.offerTitleHighlight}
@@ -123,12 +131,6 @@ export default async function Home(props: Props) {
           lastSlideTitle={homePage.lastSlideTitle}
           lastSlideDescription={homePage.lastSlideDescription}
           form={homePage.lastSlideForm}
-        />
-        <Survey
-          lang={params.lang}
-          survey={homePage.survey}
-          quizBlock={homePage.quizDocumentBlock || homePage.quizBlock}
-          countryOptions={countryNames}
         />
         <About
           aboutSummary={homePage.aboutSummary}
