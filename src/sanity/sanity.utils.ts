@@ -794,11 +794,15 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     order,
     isFeatured,
     badge,
+    homeBadge,
     shortDescription,
     comparison,
     hubPage->{
       _type,
-      slug
+      slug,
+      "cardImage": coverBlock.coverImage,
+      "cardImageUrl": coverBlock.coverImage.asset->url,
+      "cardImageAlt": coverBlock.coverImageAlt
     },
     menuLinks[]{
       _key,
@@ -827,8 +831,13 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     order: country.order,
     isFeatured: country.isFeatured,
     badge: country.badge,
+    homeBadge: country.homeBadge,
     shortDescription: country.shortDescription,
     comparison: country.comparison,
+    // фото для плитки на главной — обложка страницы-хаба, отдельное поле не заводим
+    cardImage: country.hubPage?.cardImage,
+    cardImageUrl: country.hubPage?.cardImageUrl,
+    cardImageAlt: country.hubPage?.cardImageAlt,
     hubHref: pageHref(lang, country.hubPage),
     menuLinks: (country.menuLinks || [])
       .map((item: any) => ({

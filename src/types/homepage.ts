@@ -220,12 +220,17 @@ export type Seo = {
 };
 
 export type CountriesBlock = {
+  eyebrow?: string;
   title?: string;
   titleHighlight?: string;
   description?: string;
   cardLinkLabel?: string;
   compareLabel?: string;
   compareLink?: string;
+  /** сколько карточек выводить в плитке, по умолчанию 6 */
+  maxCards?: number;
+  allLabel?: string;
+  allLink?: string;
 };
 
 export type Homepage = {

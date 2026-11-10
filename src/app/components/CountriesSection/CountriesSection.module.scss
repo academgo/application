@@ -1,147 +1,363 @@
+/* Блок «Направления» на главной.
+   Ширина уже глобального контейнера: совпадает с мега-меню «Направления»
+   в шапке. Меняется одной цифрой ниже. */
+$block-width: 1280px;
+
+$ink: #091728;
+$orange: #f39708;
+$muted: #5a6878;
+$line: #e6ebf1;
+$surface: #f3f5f8;
+
 .countriesSection {
   padding: clamp(2.5rem, 1.8rem + 3.5vw, 5rem) 0;
 }
+
+.inner {
+  max-width: $block-width;
+  margin: 0 auto;
+}
+
+/* ============================ шапка блока ============================ */
 
 .head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 24px;
-  margin-bottom: clamp(1.5rem, 1.1rem + 2vw, 2.5rem);
+  gap: 40px;
+  margin-bottom: clamp(1.5rem, 1.1rem + 2vw, 2.75rem);
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
   }
 }
 
+.headMain {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: $orange;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
 .title {
-  color: #091728;
+  color: $ink;
   font-size: clamp(1.75rem, 1.3rem + 2.25vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -1px;
-  margin: 0 0 12px;
-}
-
-.highlight {
-  color: #f39708;
-}
-
-.description {
-  color: #4c5a6d;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  line-height: 1.5;
-  max-width: 640px;
   margin: 0;
 }
 
-.compareLink {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 24px;
-  border-radius: 10px 10px 10px 0;
-  background: #112546;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background ease-in-out 0.2s;
+.highlight {
+  color: $orange;
+}
 
-  &:hover {
-    background: #f39708;
+.description {
+  max-width: 380px;
+  margin: 0 0 6px;
+  color: $muted;
+  font-size: 15px;
+  line-height: 1.5;
+
+  @media screen and (max-width: 860px) {
+    max-width: none;
   }
 }
 
+/* ============================== плитка ============================== */
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 
-  @media screen and (max-width: 1320px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1100px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 20px;
   }
 
-  @media screen and (max-width: 560px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-width: 0;
-  overflow-wrap: anywhere;
-  padding: 20px;
-  border-radius: 15px 15px 15px 0;
-  background: #f5f7fa;
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: 24px;
+  background: #fff;
   text-decoration: none;
-  transition: all ease-in-out 0.2s;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background: #112546;
+    border-color: #d7dfe8;
+    box-shadow: 0 24px 48px rgba(9, 23, 40, 0.1);
     transform: translateY(-4px);
+  }
 
-    .countryTitle,
-    .cardText,
-    .tuition {
-      color: #fff;
-    }
-
-    .cardLink {
-      color: #f39708;
+  /* на тач-экранах подъём не нужен: он залипает после тапа */
+  @media (hover: none) {
+    &:hover {
+      transform: none;
+      box-shadow: none;
     }
   }
 }
 
-.cardHead {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.media {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: $surface;
 }
 
-.flag {
-  width: 36px;
-  height: 27px;
+.image {
   object-fit: cover;
-  border-radius: 4px;
-  flex-shrink: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .card:hover & {
+    transform: scale(1.05);
+  }
+
+  @media (hover: none) {
+    .card:hover & {
+      transform: none;
+    }
+  }
+}
+
+.imageFallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e7ecf2, #f6f8fa);
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  max-width: calc(100% - 32px);
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  color: $ink;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ===== панель с ценами: выезжает снизу при наведении, только десктоп ===== */
+
+.facts {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 16px 16px;
+  background: linear-gradient(
+    to top,
+    rgba(9, 23, 40, 0.92) 0%,
+    rgba(9, 23, 40, 0.78) 60%,
+    rgba(9, 23, 40, 0) 100%
+  );
+  color: #fff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .card:hover & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* без ховера панель не показываем вообще — цена дублируется под названием */
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+.factsText {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.88);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Значения стоимости в CMS — это фразы («примерно €1 200–8 200 в год
+   в госвузах, частные дороже»), а не короткие ценники: подпись ставим
+   отдельной строкой сверху, значение переносим и ограничиваем по высоте */
+.factsTuition {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.factsLabel {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.factsValue {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================ низ карточки ============================ */
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
 }
 
 .countryTitle {
-  color: #091728;
-  font-size: 20px;
+  color: $ink;
+  font-size: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
   font-weight: 700;
   line-height: 1.2;
-  transition: color ease-in-out 0.2s;
-}
-
-.cardText {
-  color: #4c5a6d;
-  font-size: 15px;
-  line-height: 1.45;
-  transition: color ease-in-out 0.2s;
-}
-
-.tuition {
-  color: #091728;
-  font-size: 15px;
-  font-weight: 600;
-  transition: color ease-in-out 0.2s;
 }
 
 .cardLink {
-  margin-top: auto;
-  color: #f39708;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: $surface;
+  color: $ink;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  svg {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover & {
+    background: $orange;
+    color: #fff;
+
+    svg {
+      transform: translateX(3px);
+    }
+  }
+
+  @media (hover: none) {
+    .card:hover & {
+      background: $surface;
+      color: $ink;
+
+      svg {
+        transform: none;
+      }
+    }
+  }
+}
+
+/* цена под названием вместо ховер-панели на тач-экранах */
+.touchTuition {
+  display: none;
+  padding: 0 20px 16px;
+  color: $muted;
+  font-size: 13px;
+  line-height: 1.4;
+
+  @media (hover: none) {
+    display: block;
+  }
+}
+
+.touchLabel {
+  display: block;
+  margin-bottom: 2px;
+  color: #9aa4b0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* ======================= кнопка «все страны» ======================= */
+
+.allWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+}
+
+.allLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid $line;
+  border-radius: 999px;
+  background: #fff;
+  color: $ink;
   font-size: 15px;
   font-weight: 600;
-  transition: color ease-in-out 0.2s;
+  text-decoration: none;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  svg {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    border-color: $orange;
+    background: $orange;
+    color: #fff;
+
+    svg {
+      transform: translateX(3px);
+    }
+  }
 }

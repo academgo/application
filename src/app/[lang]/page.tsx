@@ -96,6 +96,7 @@ export default async function Home(props: Props) {
         <CountriesSection
           block={homePage.countriesBlock}
           countries={countries}
+          lang={params.lang}
         />
         <Universities data={homePage.universitiesBlock} />
         <VideosSection

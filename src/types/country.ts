@@ -26,8 +26,14 @@ export type Country = {
   order?: number;
   isFeatured?: boolean;
   badge?: string;
+  /** плашка поверх фото в блоке «Направления» на главной */
+  homeBadge?: string;
   shortDescription?: string;
   comparison?: CountryComparison;
+  /** обложка страницы-хаба: используется как фото карточки на главной */
+  cardImage?: Image;
+  cardImageUrl?: string;
+  cardImageAlt?: string;
   hubHref: string;
   menuLinks: CountryMenuLink[];
 };

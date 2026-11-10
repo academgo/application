@@ -227,8 +227,15 @@ export default defineType({
       title: "Countries Block",
       type: "object",
       description:
-        "Блок «Страны обучения» на главной. Сами страны берутся из раздела Country (те, у которых включено Show on homepage).",
+        "Блок «Направления» на главной. Сами страны берутся из раздела Country (те, у которых включено Show on homepage), фото — из обложки страницы-хаба страны, плашка поверх фото — из поля Home badge страны.",
       fields: [
+        defineField({
+          name: "eyebrow",
+          title: "Eyebrow",
+          type: "string",
+          description:
+            "Короткая надпись над заголовком: «Направления» / «Destinations»"
+        }),
         defineField({
           name: "title",
           title: "Title",
@@ -261,6 +268,28 @@ export default defineType({
           title: "Compare link",
           type: "string",
           description: "Ссылка на страницу сравнения стран"
+        }),
+        defineField({
+          name: "maxCards",
+          title: "How many countries to show",
+          type: "number",
+          initialValue: 6,
+          description:
+            "Сколько карточек показывать в плитке. Берутся первые по полю Order среди тех, у кого включено Show on homepage",
+          validation: Rule => Rule.min(1).max(12)
+        }),
+        defineField({
+          name: "allLabel",
+          title: "All countries button label",
+          type: "string",
+          description:
+            "Текст кнопки под плиткой: «Все страны» / «All destinations». Пустое поле — кнопки нет"
+        }),
+        defineField({
+          name: "allLink",
+          title: "All countries link",
+          type: "string",
+          description: "Куда ведёт кнопка под плиткой"
         })
       ]
     }),
