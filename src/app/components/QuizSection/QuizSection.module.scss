@@ -45,3 +45,10 @@
     align-self: start;
   }
 }
+
+// На финальном экране квиза карточка сама себе фон: белая подложка и паддинги
+// вокруг неё лишние. Метку data-quiz-final ставит MultiStepFormBlock
+.quiz:has([data-quiz-final]) {
+  padding: 0;
+  background-color: transparent;
+}

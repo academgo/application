@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
@@ -31,6 +31,9 @@ type Props = {
 type DynamicFormValues = Record<string, string>;
 
 type LeadChannel = "telegram" | "whatsapp" | "none";
+
+// Сколько воздуха оставить над блоком при перемотке: примерно высота шапки
+const SCROLL_OFFSET = 100;
 
 // Запасные тексты финального экрана: показываются, пока поля в CMS не заполнены,
 // чтобы кнопка не осталась без подписи сразу после выкладки
@@ -95,6 +98,24 @@ const MultiStepFormBlock: React.FC<Props> = ({
 
   const [step, setStep] = useState(1);
   const [sent, setSent] = useState(false);
+  const blockRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
+
+  // Шаги разной высоты, и без этого экран прыгает: после каждого «Далее»
+  // возвращаем начало блока на одно и то же место
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    const node = blockRef.current;
+    if (!node) return;
+
+    const top =
+      node.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }, [step]);
 
   const initialValues = useMemo<DynamicFormValues>(() => {
     const base: DynamicFormValues = {};
@@ -209,8 +230,16 @@ const MultiStepFormBlock: React.FC<Props> = ({
   // Пульсирующий ореол уместен у одной кнопки; у двух два ореола дерутся за взгляд
   const pulse = showTelegram !== showWhatsapp;
 
+  const isFinalStep = step === LAST_STEP;
+
   return (
-    <div className={styles.multiStepForm}>
+    <div
+      ref={blockRef}
+      className={styles.multiStepForm}
+      // по этой метке родительские блоки убирают свой фон и паддинги:
+      // на финальном экране карточка сама себе фон
+      data-quiz-final={isFinalStep ? "true" : undefined}
+    >
       <Formik
         initialValues={initialValues}
         enableReinitialize
@@ -219,19 +248,19 @@ const MultiStepFormBlock: React.FC<Props> = ({
       >
         {({ values, validateForm }) => (
           <Form className={styles.customForm}>
-            <div className={styles.progressBar}>
-              <div
-                className={styles.progressFill}
-                style={{ width: `${progressPercentage}%` }}
-              />
-              {currentQuestion && (
+            {currentQuestion && (
+              <div className={styles.progressBar}>
+                <div
+                  className={styles.progressFill}
+                  style={{ width: `${progressPercentage}%` }}
+                />
                 <div className={styles.progressText}>
                   {lang === "en"
                     ? `Step ${step} of ${totalQuestions}`
                     : `Шаг ${step} из ${totalQuestions}`}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
 
             {currentQuestion && (
               <div className={styles.questionWrapper}>
@@ -341,7 +370,7 @@ const MultiStepFormBlock: React.FC<Props> = ({
               </div>
             )}
 
-            {step === LAST_STEP && (
+            {isFinalStep && (
               <div className={styles.questionWrapper}>
                 <div className={styles.finalCard}>
                   <p className={styles.finalEyebrow}>

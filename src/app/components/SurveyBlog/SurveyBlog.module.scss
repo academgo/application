@@ -78,3 +78,17 @@
   line-height: 33px; /* 206.25% */
   letter-spacing: -0.8px;
 }
+
+// На финальном экране квиза карточка сама себе фон: белая подложка и паддинги
+// вокруг неё лишние. Метку data-quiz-final ставит MultiStepFormBlock
+.multiStepForm:has([data-quiz-final]) {
+  padding: 0;
+  background-color: transparent;
+}
+
+// На финальном экране квиза карточка сама себе фон: белая подложка и паддинги
+// вокруг неё лишние. Метку data-quiz-final ставит MultiStepFormBlock
+.surveyWrapper:has([data-quiz-final]) {
+  padding: 0;
+  background-color: transparent;
+}
