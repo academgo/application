@@ -123,7 +123,7 @@ const VideoSlide: FC<Props> = ({ videoId, posterImage, date, title }) => {
       </div>
 
       <div className={styles.videoSlideContent}>
-        <p className={styles.date}>{date}</p>
+        {date && <p className={styles.date}>{date}</p>}
         <p className={styles.title}>{title}</p>
       </div>
     </div>
