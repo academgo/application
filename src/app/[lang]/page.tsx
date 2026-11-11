@@ -11,7 +11,7 @@ import { Translation } from "@/types/post";
 import Hero from "../components/Hero/Hero";
 import Conditions from "../components/Conditions/Conditions";
 import VideosSection from "../components/VideosSection/VideosSection";
-import Offer from "../components/Offer/Offer";
+// import Offer from "../components/Offer/Offer"; // секция скрыта, см. ниже
 import Faculties from "../components/Faculties/Faculties";
 import About from "../components/About/About";
 import Principles from "../components/Principles/Principles";
@@ -111,7 +111,12 @@ export default async function Home(props: Props) {
           countryOptions={countryNames}
         />
         <MessengerCtaSection lang={params.lang} block={homePage.ctaBlock} />
-        <Offer
+        {/* Секция «Давайте ответим на все вопросы на бесплатной консультации»
+            убрана с главной: сразу над ней теперь стоит плашка с кнопкой в
+            Telegram, и две заявочные формы подряд конкурируют друг с другом.
+            Тексты и форма в Sanity целы — чтобы вернуть, раскомментируйте
+            этот блок и импорт Offer выше. */}
+        {/* <Offer
           offerTitle={homePage.offerTitle}
           offerTitleHighlight={homePage.offerTitleHighlight}
           offerListTitle={homePage.offerListTitle}
@@ -123,7 +128,7 @@ export default async function Home(props: Props) {
           offerButtonCustomText={homePage.offerButtonCustomText}
           offerAltText={homePage.offerAltText}
           offerContactLinks={homePage.offerContactLinks}
-        />
+        /> */}
         <Faculties
           facultiesTitle={homePage.facultiesTitle}
           faculties={homePage.faculties}
