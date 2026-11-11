@@ -679,6 +679,11 @@ export default defineType({
       type: "quizBlock"
     }),
     defineField({
+      name: "workSteps",
+      title: "Этапы работы",
+      type: "workStepsBlock"
+    }),
+    defineField({
       name: "videoReviewsDocument",
       title: "Видеоотзывы после плашки",
       type: "reference",
@@ -879,6 +884,7 @@ export default defineType({
     // steps block
     defineField({
       name: "stepOne",
+      hidden: true, // заменён блоком «Этапы работы»; данные сохранены
       title: "Step One",
       type: "object",
       fields: [
@@ -939,6 +945,7 @@ export default defineType({
 
     defineField({
       name: "stepTwo",
+      hidden: true, // заменён блоком «Этапы работы»; данные сохранены
       title: "Step Two",
       type: "object",
       fields: [
@@ -984,6 +991,7 @@ export default defineType({
 
     defineField({
       name: "stepThree",
+      hidden: true, // заменён блоком «Этапы работы»; данные сохранены
       title: "Step Three",
       type: "object",
       fields: [
@@ -1034,6 +1042,7 @@ export default defineType({
 
     defineField({
       name: "stepFour",
+      hidden: true, // заменён блоком «Этапы работы»; данные сохранены
       title: "Step Four",
       type: "object",
       fields: [

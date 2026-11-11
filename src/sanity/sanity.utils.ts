@@ -398,6 +398,19 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
         }
       }
     },
+    workSteps{
+      heading,
+      steps[]{
+        _key,
+        number,
+        title,
+        icon,
+        text,
+        bullets,
+        buttonText,
+        buttonLink
+      }
+    },
     "videoReviewsBlock": videoReviewsDocument->{
       heading,
       videos[]{

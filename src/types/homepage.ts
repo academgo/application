@@ -296,6 +296,7 @@ export type Homepage = {
   principles: Principle[];
   principlesTotal: PrinciplesTotal;
   principlesFinal: string;
+  workSteps?: WorkStepsBlock;
   stepOne: StepOne;
   stepTwo: StepTwo;
   stepThree: StepThree;
@@ -341,4 +342,21 @@ export type MessengerCtaDocument = {
 export type VideoReviewsDocument = {
   heading?: string;
   videos?: Video[];
+};
+
+/** Компактные «Этапы работы» вместо четырёх блоков с видео */
+export type WorkStep = {
+  _key: string;
+  number?: string;
+  title?: string;
+  icon?: string;
+  text?: string;
+  bullets?: string[];
+  buttonText?: string;
+  buttonLink?: string;
+};
+
+export type WorkStepsBlock = {
+  heading?: string;
+  steps?: WorkStep[];
 };

@@ -15,16 +15,13 @@ import VideosSection from "../components/VideosSection/VideosSection";
 import Faculties from "../components/Faculties/Faculties";
 import About from "../components/About/About";
 import Principles from "../components/Principles/Principles";
-import StepOne from "../components/StepOne/StepOne";
-import StepTwo from "../components/StepTwo/StepTwo";
-import StepThree from "../components/StepThree/StepThree";
-import StepFour from "../components/StepFour/StepFour";
 import ExtraBlock from "../components/ExtraBlock/ExtraBlock";
 import Price from "../components/Price/Price";
 import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
 import Survey from "../components/Survey/Survey";
 import MessengerCtaSection from "@/app/components/MessengerCtaSection/MessengerCtaSection";
+import WorkSteps from "@/app/components/WorkSteps/WorkSteps";
 import ModalFullLazy from "../components/ModalFull/ModalFullLazy";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import Universities from "../components/Universities/Universities";
@@ -153,12 +150,7 @@ export default async function Home(props: Props) {
           principlesTotal={homePage.principlesTotal}
           principlesFinal={homePage.principlesFinal}
         />
-        <div id="admission">
-          <StepOne stepOne={homePage.stepOne} />
-          <StepTwo stepTwo={homePage.stepTwo} />
-          <StepThree stepThree={homePage.stepThree} />
-          <StepFour stepFour={homePage.stepFour} />
-        </div>
+        <WorkSteps lang={params.lang} block={homePage.workSteps} />
         {homePage.videoReviewsBlock?.videos?.length ? (
           <VideosSection
             videosTitle={homePage.videoReviewsBlock.heading || ""}

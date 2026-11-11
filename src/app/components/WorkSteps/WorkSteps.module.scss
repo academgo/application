@@ -1,0 +1,198 @@
+$ink: #091728;
+$muted: #5a6878;
+$orange: #f39708;
+$orange-dark: #d98305;
+$line: #e6ebf1;
+
+.workSteps {
+  margin-bottom: clamp(2.813rem, 1.094rem + 6.88vw, 6.25rem);
+}
+
+.heading {
+  color: $ink;
+  font-size: clamp(1.5rem, 0.8rem + 2.8vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+  max-width: 1100px;
+  margin: 0 0 clamp(1rem, 0.7rem + 1.4vw, 1.75rem);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ──────────── бегущая строка-разделитель ──────────── */
+
+.ticker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 32px;
+  white-space: nowrap;
+}
+
+.tickerNumber {
+  color: $orange;
+  font-size: clamp(1rem, 0.8rem + 0.6vw, 1.25rem);
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.tickerDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $ink;
+  flex-shrink: 0;
+}
+
+.tickerTitle {
+  color: $ink;
+  font-size: clamp(1rem, 0.8rem + 0.6vw, 1.25rem);
+  font-weight: 500;
+}
+
+/* ──────────── сам шаг ──────────── */
+
+.row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 32px);
+  align-items: start;
+  padding: clamp(18px, 2vw, 28px) 0;
+  border-bottom: 1px solid $line;
+}
+
+.item:last-child .row {
+  border-bottom: none;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(48px, 6vw, 64px);
+  height: clamp(48px, 6vw, 64px);
+  border-radius: 18px;
+  background: rgba(243, 151, 8, 0.1);
+  color: $orange;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 46%;
+  height: 46%;
+}
+
+.body {
+  min-width: 0;
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  color: $ink;
+  font-size: clamp(1.125rem, 0.9rem + 0.9vw, 1.625rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: $ink;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 8px 0 0;
+  color: $muted;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+.bullets {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: $ink;
+    font-size: clamp(0.875rem, 0.85rem + 0.2vw, 1rem);
+    line-height: 1.45;
+  }
+}
+
+.check {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: rgba(243, 151, 8, 0.15);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid $orange-dark;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // Высота растёт по содержимому: на узком экране подпись уходит в две строки
+  min-height: 50px;
+  margin-top: 16px;
+  padding: 12px 28px;
+  text-align: center;
+  border-radius: 999px;
+  background: $orange;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: $orange-dark;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(243, 151, 8, 0.4);
+  }
+}
