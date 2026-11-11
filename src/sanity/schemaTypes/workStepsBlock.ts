@@ -70,6 +70,13 @@ const workStepsBlock = {
               description: "Короткие строки, по три-четыре на шаг"
             }),
             defineField({
+              name: "footnote",
+              title: "Подпись в нижней полоске",
+              type: "string",
+              description:
+                "Короткая строка слева от кнопки: срок этапа, условие, что угодно по делу"
+            }),
+            defineField({
               name: "buttonText",
               title: "Подпись кнопки",
               type: "string",

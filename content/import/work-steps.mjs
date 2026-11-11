@@ -56,6 +56,7 @@ const CONTENT = {
           "Понятный порядок поступления и сумма оплат",
           "Список документов, которые понадобятся"
         ],
+        footnote: "Остались вопросы по этому шагу?",
         buttonText: "Начать первый шаг в Telegram",
         buttonLink: "https://t.me/infoacademgo"
       },
@@ -67,7 +68,10 @@ const CONTENT = {
         bullets: [
           "Гарантируем поступление или возвращаем деньги",
           "Форс-мажор с вашими документами берём на себя"
-        ]
+        ],
+        footnote: "Остались вопросы по этому шагу?",
+        buttonText: "Спросить в Telegram",
+        buttonLink: "https://t.me/infoacademgo"
       },
       {
         number: "шаг 3",
@@ -78,7 +82,10 @@ const CONTENT = {
           "Регистрируем в системе вуза и заполняем анкеты",
           "Отправляем пакет документов и следим за статусом",
           "Присылаем письмо-приглашение для студенческой визы"
-        ]
+        ],
+        footnote: "Остались вопросы по этому шагу?",
+        buttonText: "Спросить в Telegram",
+        buttonLink: "https://t.me/infoacademgo"
       },
       {
         number: "шаг 4",
@@ -90,7 +97,10 @@ const CONTENT = {
           "Записываем на подачу в консульство страны назначения",
           "Остаёмся на связи до получения визы",
           "Помогаем подать на ВНЖ на месте"
-        ]
+        ],
+        footnote: "Остались вопросы по этому шагу?",
+        buttonText: "Спросить в Telegram",
+        buttonLink: "https://t.me/infoacademgo"
       }
     ]
   },
@@ -111,6 +121,7 @@ const CONTENT = {
           "A clear admission order and what it costs",
           "The list of documents you will need"
         ],
+        footnote: "Any questions about this step?",
         buttonText: "Take the first step in Telegram",
         buttonLink: "https://t.me/infoacademgo"
       },
@@ -122,7 +133,10 @@ const CONTENT = {
         bullets: [
           "Admission guaranteed or your money back",
           "Problems with your paperwork are ours to solve"
-        ]
+        ],
+        footnote: "Any questions about this step?",
+        buttonText: "Ask in Telegram",
+        buttonLink: "https://t.me/infoacademgo"
       },
       {
         number: "step 3",
@@ -133,7 +147,10 @@ const CONTENT = {
           "We register you with the university and fill in the forms",
           "We send the documents and track the status",
           "We send the invitation letter for your student visa"
-        ]
+        ],
+        footnote: "Any questions about this step?",
+        buttonText: "Ask in Telegram",
+        buttonLink: "https://t.me/infoacademgo"
       },
       {
         number: "step 4",
@@ -145,7 +162,10 @@ const CONTENT = {
           "We book your appointment at the destination country consulate",
           "We stay in touch until the visa is issued",
           "We help you apply for the residence permit on arrival"
-        ]
+        ],
+        footnote: "Any questions about this step?",
+        buttonText: "Ask in Telegram",
+        buttonLink: "https://t.me/infoacademgo"
       }
     ]
   }
@@ -248,6 +268,7 @@ const main = async () => {
           .map(
             step =>
               `        ${step.number} · ${step.title} · иконка «${step.icon}»` +
+              (step.footnote ? `\n          подпись: ${step.footnote}` : "") +
               (step.buttonText ? `\n          кнопка: ${step.buttonText}` : "")
           )
           .join("\n")

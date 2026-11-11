@@ -352,6 +352,7 @@ export type WorkStep = {
   icon?: string;
   text?: string;
   bullets?: string[];
+  footnote?: string;
   buttonText?: string;
   buttonLink?: string;
 };

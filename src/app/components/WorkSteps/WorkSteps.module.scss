@@ -1,5 +1,8 @@
+@use "../MessengerCta/card";
+
 $ink: #091728;
 $muted: #5a6878;
+$grey: #8a929c;
 $orange: #f39708;
 $orange-dark: #d98305;
 $line: #e6ebf1;
@@ -18,124 +21,144 @@ $line: #e6ebf1;
   margin: 0 0 clamp(1rem, 0.7rem + 1.4vw, 1.75rem);
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-}
+/* ──────────── бегущая строка ──────────── */
 
-/* ──────────── бегущая строка-разделитель ──────────── */
-
+// Тише и мельче содержимого: раньше разделитель был крупнее и жирнее текста
+// шага и перетягивал на себя внимание
 .ticker {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding-right: 32px;
+  gap: 14px;
+  padding-right: 30px;
   white-space: nowrap;
+  font-size: 0.8125rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .tickerNumber {
   color: $orange;
-  font-size: clamp(1rem, 0.8rem + 0.6vw, 1.25rem);
-  font-weight: 600;
-  text-transform: lowercase;
+  font-weight: 700;
 }
 
 .tickerDot {
-  width: 7px;
-  height: 7px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: $ink;
+  background: #c7cdd6;
   flex-shrink: 0;
 }
 
 .tickerTitle {
-  color: $ink;
-  font-size: clamp(1rem, 0.8rem + 0.6vw, 1.25rem);
+  color: $grey;
   font-weight: 500;
 }
 
-/* ──────────── сам шаг ──────────── */
+/* ──────────── карточка ──────────── */
 
-.row {
+.card {
+  position: relative;
+  // Колонка, чтобы подвал прижимался к низу: у шага с двумя пунктами иначе
+  // остаётся пустое поле под полоской
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(9, 23, 40, 0.1);
+  overflow: hidden;
+}
+
+.cardMain {
+  flex: 1;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(16px, 2vw, 32px);
-  align-items: start;
-  padding: clamp(18px, 2vw, 28px) 0;
-  border-bottom: 1px solid $line;
+  grid-template-columns: minmax(0, 1fr);
+
+  @media (min-width: 680px) {
+    grid-template-columns: clamp(150px, 13vw, 190px) minmax(0, 1fr);
+  }
 }
 
-.item:last-child .row {
-  border-bottom: none;
-}
-
-.iconWrap {
+// Пластина задаёт карточке высоту независимо от числа пунктов — в колоде
+// карточки разной высоты заметно подпрыгивали бы при смене
+.plate {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(48px, 6vw, 64px);
-  height: clamp(48px, 6vw, 64px);
-  border-radius: 18px;
-  background: rgba(243, 151, 8, 0.1);
-  color: $orange;
-  flex-shrink: 0;
+  gap: 16px;
+  padding: 22px;
+  background: linear-gradient(160deg, #fff3e0, #f3f5f8);
+  border-bottom: 1px solid $line;
+
+  @media (min-width: 680px) {
+    flex-direction: column;
+    gap: 18px;
+    padding: 40px 16px;
+    border-bottom: none;
+    border-right: 1px solid $line;
+  }
 }
 
-.icon {
-  width: 46%;
-  height: 46%;
+.plateNumber {
+  color: $orange;
+  font-size: clamp(2.5rem, 2rem + 2vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.plateIcon {
+  display: flex;
+  width: clamp(32px, 3vw, 52px);
+  height: clamp(32px, 3vw, 52px);
+  color: $ink;
+  opacity: 0.75;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.plateCaption {
+  color: $grey;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .body {
+  padding: clamp(24px, 3vw, 48px) clamp(20px, 3vw, 52px);
   min-width: 0;
 }
 
 .title {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 12px;
   margin: 0;
   color: $ink;
-  font-size: clamp(1.125rem, 0.9rem + 0.9vw, 1.625rem);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: 1.25;
-}
-
-.number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 30px;
-  height: 30px;
-  padding: 0 9px;
-  border-radius: 999px;
-  background: $ink;
-  color: #fff;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0;
+  line-height: 1.2;
 }
 
 .text {
-  margin: 8px 0 0;
+  margin: 12px 0 0;
   color: $muted;
   font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
-  line-height: 1.55;
+  line-height: 1.6;
   max-width: 760px;
 }
 
 .bullets {
-  margin: 12px 0 0;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 6px;
+  gap: 10px;
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 28px;
+    column-gap: 30px;
   }
 
   li {
@@ -143,7 +166,7 @@ $line: #e6ebf1;
     align-items: flex-start;
     gap: 10px;
     color: $ink;
-    font-size: clamp(0.875rem, 0.85rem + 0.2vw, 1rem);
+    font-size: clamp(0.875rem, 0.85rem + 0.2vw, 0.9375rem);
     line-height: 1.45;
   }
 }
@@ -153,7 +176,7 @@ $line: #e6ebf1;
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  margin-top: 2px;
+  margin-top: 1px;
   border-radius: 50%;
   background: rgba(243, 151, 8, 0.15);
 
@@ -170,21 +193,38 @@ $line: #e6ebf1;
   }
 }
 
+/* ──────────── нижняя полоска ──────────── */
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px clamp(20px, 3vw, 52px);
+  border-top: 1px solid $line;
+  background: #fbfcfd;
+}
+
+.footnote {
+  color: $grey;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  // Высота растёт по содержимому: на узком экране подпись уходит в две строки
-  min-height: 50px;
-  margin-top: 16px;
-  padding: 12px 28px;
-  text-align: center;
+  min-height: 46px;
+  padding: 10px 26px;
   border-radius: 999px;
   background: $orange;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
+  text-align: center;
   transition: background-color 0.2s ease;
 
   &:hover {
@@ -195,4 +235,98 @@ $line: #e6ebf1;
     outline: none;
     box-shadow: 0 0 0 4px rgba(243, 151, 8, 0.4);
   }
+}
+
+/* ──────────── запасное дерево: телефон и выключенные анимации ──────────── */
+
+.fallback {
+  display: block;
+}
+
+.fallbackItem + .fallbackItem {
+  margin-top: 20px;
+}
+
+/* ──────────── колода ──────────── */
+
+.pinWrap {
+  display: none;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .fallback {
+    display: none;
+  }
+
+  .pinWrap {
+    display: block;
+  }
+}
+
+// Анимации выключены — колода не нужна, остаётся обычный список.
+// Правило объявлено последним, поэтому перебивает блок выше
+@media (prefers-reduced-motion: reduce) {
+  .fallback {
+    display: block;
+  }
+
+  .pinWrap {
+    display: none;
+  }
+}
+
+.pinSticky {
+  position: sticky;
+  // Шапка сайта липкая: без отступа верх карточки уезжает под неё
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: clamp(80px, 9vh, 120px) 0 clamp(24px, 4vh, 48px);
+  overflow: hidden;
+
+  > .container {
+    width: 100%;
+  }
+}
+
+.tickerStage {
+  position: relative;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.tickerSlot {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.tickerOn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.stage {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  height: clamp(380px, 48vh, 470px);
+}
+
+.deckCard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-height: 100%;
+  // Положение задаётся прокруткой напрямую, без сглаживания: иначе карточка
+  // продолжает ехать, когда прокрутка уже остановилась
+  will-change: transform;
 }

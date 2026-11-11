@@ -407,6 +407,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
         icon,
         text,
         bullets,
+        footnote,
         buttonText,
         buttonLink
       }
