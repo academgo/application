@@ -36,6 +36,7 @@
   padding-inline: clamp(0.813rem, -1.281rem + 8.38vw, 5rem);
   border-radius: 25px;
   max-width: 1000px;
+  margin: 0 auto;
 
   @media screen and (min-width: 980px) {
     background-color: #fff;
