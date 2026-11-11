@@ -1,5 +1,5 @@
 // schemaTypes/videosBlock.ts
-import { defineField, defineArrayMember } from "sanity";
+import { defineField } from "sanity";
 
 const videosBlock = {
   name: "videosBlock",
@@ -15,22 +15,7 @@ const videosBlock = {
       name: "videos",
       title: "Videos",
       type: "array",
-      of: [
-        defineArrayMember({
-          type: "object",
-          name: "videoItem",
-          fields: [
-            defineField({ name: "videoId", title: "Video ID", type: "string" }),
-            defineField({
-              name: "posterImage",
-              title: "Poster Image",
-              type: "image"
-            }),
-            defineField({ name: "date", title: "Date", type: "string" }),
-            defineField({ name: "title", title: "Title", type: "string" })
-          ]
-        })
-      ]
+      of: [{ type: "videoItem" }]
     })
   ]
 };

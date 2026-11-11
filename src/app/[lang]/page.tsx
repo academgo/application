@@ -111,6 +111,14 @@ export default async function Home(props: Props) {
           countryOptions={countryNames}
         />
         <MessengerCtaSection lang={params.lang} block={homePage.ctaBlock} />
+        {homePage.videoReviewsBlock?.videos?.length ? (
+          <VideosSection
+            videosTitle={homePage.videoReviewsBlock.heading || ""}
+            videos={homePage.videoReviewsBlock.videos}
+            titleTag="h2"
+            sectionId="video-reviews"
+          />
+        ) : null}
         {/* Секция «Давайте ответим на все вопросы на бесплатной консультации»
             убрана с главной: сразу над ней теперь стоит плашка с кнопкой в
             Telegram, и две заявочные формы подряд конкурируют друг с другом.

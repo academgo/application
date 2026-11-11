@@ -46,6 +46,8 @@ import quizQuestion from "./quizQuestion";
 import quizOption from "./quizOption";
 import tableBlock from "./tableBlock";
 import videosBlock from "./videosBlock";
+import videoItem from "./videoItem";
+import videoReviewsDocument from "./videoReviewsDocument";
 import countriesCompareBlock from "./countriesCompareBlock";
 import countriesLinksBlock from "./countriesLinksBlock";
 import countryUniversitiesBlock from "./countryUniversitiesBlock";
@@ -97,6 +99,8 @@ export const schemaTypes = [
   packagesBlock,
   linksBlock,
   videosBlock,
+  videoItem,
+  videoReviewsDocument,
   tableBlock,
   countriesCompareBlock,
   countriesLinksBlock,

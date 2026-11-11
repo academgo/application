@@ -679,6 +679,14 @@ export default defineType({
       type: "quizBlock"
     }),
     defineField({
+      name: "videoReviewsDocument",
+      title: "Видеоотзывы после плашки",
+      type: "reference",
+      to: [{ type: "videoReviewsDocument" }],
+      description:
+        "Общий слайдер из раздела «Видеоотзывы». Если не заполнено, секция не показывается."
+    }),
+    defineField({
       name: "ctaDocument",
       title: "Плашка в мессенджер после квиза",
       type: "reference",

@@ -398,6 +398,16 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
         }
       }
     },
+    "videoReviewsBlock": videoReviewsDocument->{
+      heading,
+      videos[]{
+        _key,
+        videoId,
+        posterImage,
+        date,
+        title
+      }
+    },
     "ctaBlock": ctaDocument->{
       eyebrow,
       heading,
@@ -867,7 +877,11 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     }
   }`;
 
-  const countries = await client.fetch(q, { lang }, { next: { revalidate: 60 } });
+  const countries = await client.fetch(
+    q,
+    { lang },
+    { next: { revalidate: 60 } }
+  );
 
   if (!countries) return [];
 

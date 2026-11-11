@@ -237,6 +237,7 @@ export type Homepage = {
   countriesBlock?: CountriesBlock;
   quizDocumentBlock?: QuizBlock;
   ctaBlock?: MessengerCtaDocument;
+  videoReviewsBlock?: VideoReviewsDocument;
   _type: "homepage";
   _id: string;
   _rev: string;
@@ -334,4 +335,10 @@ export type MessengerCtaDocument = {
   whatsappLink?: string;
   note?: string;
   showSocials?: boolean;
+};
+
+/** Слайдер видеоотзывов — отдельный документ, один на язык */
+export type VideoReviewsDocument = {
+  heading?: string;
+  videos?: Video[];
 };
