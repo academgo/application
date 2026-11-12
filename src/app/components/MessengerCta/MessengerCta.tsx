@@ -47,6 +47,10 @@ type Props = {
 // Заполненное поле его перебивает — менять адрес в коде не нужно
 export const DEFAULT_TELEGRAM = "https://t.me/infoacademgo";
 
+// В контактах футера ватсапа нет, поэтому запасной адрес взят из шапки сайта —
+// той же кнопки, что стоит там рядом с телеграмом
+export const DEFAULT_WHATSAPP = "https://wa.me/message/5EJRNM3WEDXAC1";
+
 const fallbackTexts = (lang: string) =>
   lang === "en"
     ? {
@@ -76,20 +80,22 @@ const MessengerCta: React.FC<Props> = ({
   const fill = (text?: string) =>
     transformText ? transformText(text || "") : text || "";
 
-  const mode = content.mode || "telegram";
+  // По умолчанию обе кнопки: это основная форма связи на сайте
+  const mode = content.mode || "both";
   // Телеграм футера — это приглашение в канал, а кнопке после анкеты нужен
   // аккаунт, который отвечает. Поэтому здесь либо поле из админки, либо адрес
   // по умолчанию; футер подставляется только для WhatsApp
   const telegramHref = content.telegramLink || DEFAULT_TELEGRAM;
   const whatsappHref =
-    content.whatsappLink || fallbackMessengers?.whatsapp || "";
+    content.whatsappLink || fallbackMessengers?.whatsapp || DEFAULT_WHATSAPP;
 
   const showTelegram = mode === "telegram" || mode === "both";
   const showWhatsapp =
     (mode === "whatsapp" || mode === "both") && Boolean(whatsappHref);
 
-  // Волна всегда идёт ровно у одной кнопки — главной. Два набора волн дерутся
-  // за взгляд, а ноль волн выглядит как сломанная анимация
+  // Волна только у телеграма: клиент назвал его предпочитаемым способом связи,
+  // и два набора волн дерутся за взгляд. Если телеграм выключен в админке,
+  // волна уходит к ватсапу, иначе анимации не было бы вовсе
   const pulseOnTelegram = showTelegram;
   const pulseOnWhatsapp = showWhatsapp && !showTelegram;
 

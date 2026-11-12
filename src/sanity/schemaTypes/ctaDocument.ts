@@ -44,7 +44,7 @@ const ctaDocument = {
       name: "mode",
       title: "Какие кнопки показывать",
       type: "string",
-      initialValue: "telegram",
+      initialValue: "both",
       options: {
         list: [
           { title: "Одна кнопка — Telegram", value: "telegram" },

@@ -80,7 +80,7 @@ export default defineType({
       title: "Какие кнопки показывать",
       type: "string",
       group: "final",
-      initialValue: "telegram",
+      initialValue: "both",
       options: {
         list: [
           { title: "Одна кнопка — Telegram", value: "telegram" },

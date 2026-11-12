@@ -12,6 +12,10 @@ $final-orange-dark: #d98305;
 $final-green: #22a455;
 $final-green-dark: #1c8946;
 
+// Цвета мессенджеров взяты с иконок в шапке сайта, не подобраны на глаз
+$tg: #2aabee;
+$wa: #25d366;
+
 .card {
   @include card.cta-card;
 }
@@ -56,8 +60,11 @@ $final-green-dark: #1c8946;
   justify-content: center;
   gap: 16px;
 
-  @media (min-width: 560px) {
+  // Две кнопки с длинными подписями рядом требуют около 700 пикселей.
+  // Ниже этого они встают друг под другом, как просил клиент для телефонов
+  @media (min-width: 760px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -70,7 +77,10 @@ $final-green-dark: #1c8946;
   height: 64px;
   padding: 0 40px;
   max-width: 100%;
-  border: none;
+  box-sizing: border-box;
+  // Рамка есть всегда, просто совпадает с заливкой: иначе при наведении
+  // кнопка подрастала бы на два пикселя
+  border: 2px solid transparent;
   border-radius: 999px;
   color: #fff;
   font-size: 1.125rem;
@@ -79,12 +89,10 @@ $final-green-dark: #1c8946;
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(243, 151, 8, 0.4);
-  }
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 
   // На узком экране кнопка остаётся пилюлей, как в референсе, но ужимается,
   // чтобы подпись влезла в одну строку
@@ -94,29 +102,44 @@ $final-green-dark: #1c8946;
   }
 }
 
+// При наведении и нажатии кнопка становится прозрачной с цветным контуром
 .messengerTelegram {
-  background: $final-orange;
+  background: $tg;
+  border-color: $tg;
   box-shadow:
-    0 20px 25px -5px rgba(243, 151, 8, 0.3),
-    0 8px 10px -6px rgba(243, 151, 8, 0.3);
+    0 20px 25px -5px rgba(42, 171, 238, 0.3),
+    0 8px 10px -6px rgba(42, 171, 238, 0.3);
 
-  &:hover {
-    background: $final-orange-dark;
+  &:hover,
+  &:active {
+    background: transparent;
+    color: $tg;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(42, 171, 238, 0.4);
   }
 }
 
 .messengerWhatsapp {
-  background: $final-green;
+  background: $wa;
+  border-color: $wa;
   box-shadow:
-    0 20px 25px -5px rgba(34, 164, 85, 0.3),
-    0 8px 10px -6px rgba(34, 164, 85, 0.3);
+    0 20px 25px -5px rgba(37, 211, 102, 0.3),
+    0 8px 10px -6px rgba(37, 211, 102, 0.3);
 
-  &:hover {
-    background: $final-green-dark;
+  &:hover,
+  &:active {
+    background: transparent;
+    color: $wa;
+    box-shadow: none;
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 4px rgba(34, 164, 85, 0.4);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.4);
   }
 }
 
@@ -132,7 +155,7 @@ $final-green-dark: #1c8946;
   // карточке почти не читается, а линия видна
   // Тонкая линия и приглушённый цвет: толстое яркое кольцо перетягивало
   // внимание с самой кнопки
-  border: 1.5px solid rgba(243, 151, 8, 0.55);
+  border: 1.5px solid rgba(42, 171, 238, 0.55);
   animation: messengerPulse 2.8s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
 }
 
@@ -141,7 +164,7 @@ $final-green-dark: #1c8946;
 }
 
 .messengerWhatsapp .pulse {
-  border-color: rgba(34, 164, 85, 0.55);
+  border-color: rgba(37, 211, 102, 0.55);
 }
 
 @keyframes messengerPulse {
