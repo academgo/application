@@ -10,7 +10,12 @@ $line: #e6ebf1;
 $surface: #f3f5f8;
 
 .countriesSection {
-  padding: clamp(2.5rem, 1.8rem + 3.5vw, 5rem) 0;
+  /* Сверху паддинг меньше: предыдущая секция уже даёт 100px своим
+     margin-bottom, и вместе с прежними 80px разрыв доходил до 134 пикселей
+     против 86-102 на остальных стыках. Снизу отступ прежний — он и
+     отделяет блок от «А мы подскажем». */
+  padding-top: clamp(1.25rem, 0.9rem + 1.6vw, 2.25rem);
+  padding-bottom: clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
 }
 
 .inner {
@@ -49,11 +54,17 @@ $surface: #f3f5f8;
 
 .title {
   color: $ink;
-  font-size: clamp(1.75rem, 1.3rem + 2.25vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -1px;
+  font-size: 55px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -3.85px;
   margin: 0;
+
+  @media screen and (max-width: 980px) {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -1.68px;
+  }
 }
 
 .highlight {
