@@ -11,7 +11,6 @@ import {
   FaPaperPlane,
   FaHouse
 } from "react-icons/fa6";
-import StepCarousel from "../StepCarousel/StepCarousel";
 import { WorkStep, WorkStepsBlock } from "@/types/homepage";
 import styles from "./WorkSteps.module.scss";
 
@@ -105,14 +104,6 @@ const Card = ({
   );
 };
 
-const Ticker = ({ step }: { step: WorkStep }) => (
-  <div className={styles.ticker}>
-    <span className={styles.tickerNumber}>{step.number}</span>
-    <span className={styles.tickerDot} aria-hidden="true" />
-    <span className={styles.tickerTitle}>{step.title}</span>
-  </div>
-);
-
 /**
  * «Этапы работы». На широком экране — закреплённая колода: сцена прилипает к
  * экрану, карточки по очереди выезжают снизу и ложатся одна на другую, из-под
@@ -168,10 +159,6 @@ const WorkSteps = ({ block }: Props) => {
       <div className={styles.fallback}>
         {steps.map((step, index) => (
           <div className={styles.fallbackItem} key={step._key ?? index}>
-            <StepCarousel number={step.number || ""} title={step.title || ""}>
-              <Ticker step={step} />
-            </StepCarousel>
-
             <div className="container">
               <div className={styles.card}>
                 <Card step={step} index={index} total={total} />
@@ -188,21 +175,37 @@ const WorkSteps = ({ block }: Props) => {
         style={{ height: `${total * 100}vh` }}
       >
         <div className={styles.pinSticky}>
-          <div className={styles.tickerStage}>
-            {steps.map((step, index) => (
-              <div
-                key={step._key ?? index}
-                className={`${styles.tickerSlot} ${index === current ? styles.tickerOn : ""}`}
-                aria-hidden={index !== current}
-              >
-                <StepCarousel
-                  number={step.number || ""}
-                  title={step.title || ""}
-                >
-                  <Ticker step={step} />
-                </StepCarousel>
-              </div>
-            ))}
+          <div className="container">
+            <ol
+              className={styles.progress}
+              // Делений ровно столько, сколько шагов завели в админке
+              style={{ "--steps": total } as React.CSSProperties}
+            >
+              {steps.map((step, index) => {
+                // Деление заполняется ровно тем же ходом, что приезжает
+                // карточка — шкала и колода идут в такт
+                const fill = Math.min(Math.max(progress - (index - 1), 0), 1);
+
+                return (
+                  <li
+                    key={step._key ?? index}
+                    className={`${styles.progStep} ${fill > 0 ? styles.progOn : ""}`}
+                    aria-current={index === current ? "step" : undefined}
+                  >
+                    <span className={styles.progNum}>
+                      {stepDigit(step, index)}
+                    </span>
+                    <span className={styles.progName}>{step.title}</span>
+                    <span className={styles.progBar}>
+                      <span
+                        className={styles.progFill}
+                        style={{ width: `${fill * 100}%` }}
+                      />
+                    </span>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
 
           <div className="container">

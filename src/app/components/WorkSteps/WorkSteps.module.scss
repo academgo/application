@@ -21,37 +21,78 @@ $line: #e6ebf1;
   margin: 0 0 clamp(1rem, 0.7rem + 1.4vw, 1.75rem);
 }
 
-/* ──────────── бегущая строка ──────────── */
+/* ──────────── шкала прогресса ──────────── */
 
-// Тише и мельче содержимого: раньше разделитель был крупнее и жирнее текста
-// шага и перетягивал на себя внимание
-.ticker {
+// Заменила бегущую строку: занимает ту же высоту, но показывает весь маршрут,
+// а не повторяет название текущего шага
+.progress {
+  display: grid;
+  grid-template-columns: repeat(var(--steps, 4), minmax(0, 1fr));
+  gap: 14px;
+  max-width: clamp(1060px, 94vw, 1340px);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+.progStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 9px;
+  align-items: center;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.progOn {
+  opacity: 1;
+}
+
+.progNum {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: $line;
+  color: $muted;
+  font-size: 0.6875rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding-right: 30px;
-  white-space: nowrap;
+  justify-content: center;
+}
+
+.progOn .progNum {
+  background: $ink;
+  color: #fff;
+}
+
+.progName {
+  color: $ink;
   font-size: 0.8125rem;
-  letter-spacing: 0.09em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.tickerNumber {
-  color: $orange;
-  font-weight: 700;
+.progBar {
+  grid-column: 1 / 3;
+  height: 3px;
+  border-radius: 2px;
+  background: $line;
+  overflow: hidden;
 }
 
-.tickerDot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #c7cdd6;
-  flex-shrink: 0;
-}
-
-.tickerTitle {
-  color: $grey;
-  font-weight: 500;
+.progFill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: $orange;
 }
 
 /* ──────────── карточка ──────────── */
@@ -291,25 +332,6 @@ $line: #e6ebf1;
   > .container {
     width: 100%;
   }
-}
-
-.tickerStage {
-  position: relative;
-  height: 34px;
-  flex-shrink: 0;
-}
-
-.tickerSlot {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-
-.tickerOn {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .stage {
