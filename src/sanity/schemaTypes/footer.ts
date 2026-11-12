@@ -12,6 +12,14 @@ const footer = {
     }),
     // cousultation block
     defineField({
+      name: "ctaDocument",
+      title: "Плашка в мессенджер над футером",
+      type: "reference",
+      to: [{ type: "ctaDocument" }],
+      description:
+        "Если заполнено, над футером вместо блока с формой показывается плашка с кнопками в Telegram и WhatsApp."
+    }),
+    defineField({
       name: "consultationBlock",
       title: "Consultation Block",
       type: "object",
@@ -167,7 +175,8 @@ const footer = {
       name: "countriesTitle",
       title: "Countries column title",
       type: "string",
-      description: "Заголовок колонки со странами (список стран берётся из документов Country)"
+      description:
+        "Заголовок колонки со странами (список стран берётся из документов Country)"
     }),
     defineField({
       name: "navTitle",
@@ -183,14 +192,16 @@ const footer = {
       name: "partnersLabel",
       title: "Contacts column label",
       type: "string",
-      description: "Подпись над email, например «Для партнёров, B2B и предложений:»"
+      description:
+        "Подпись над email, например «Для партнёров, B2B и предложений:»"
     }),
     defineField({
       name: "contactNote",
       title: "Contacts note",
       type: "text",
       rows: 2,
-      description: "Короткая заметка под адресом, например про приём заявок в Telegram"
+      description:
+        "Короткая заметка под адресом, например про приём заявок в Telegram"
     }),
     defineField({
       name: "contactLinksTitle",

@@ -1,4 +1,4 @@
-import { Consultation } from "./homepage";
+import { Consultation, MessengerCtaDocument } from "./homepage";
 
 type Image = {
   _key: string;
@@ -31,6 +31,7 @@ export type Footer = {
   _id: string;
   _rev: string;
   consultationBlock: Consultation;
+  ctaBlock?: MessengerCtaDocument;
   logo: Image;
   description: string;
   workingHours: string;

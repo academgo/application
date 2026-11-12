@@ -6,6 +6,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/image";
 import NavLink from "../NavLink/NavLink";
 import Consultation from "../Consultation/Consultation";
+import MessengerCtaSection from "../MessengerCtaSection/MessengerCtaSection";
 import FooterRating from "../FooterRating/FooterRating";
 import { getSocialIcon } from "@/lib/socialIcons";
 
@@ -52,13 +53,23 @@ const Footer = async ({ params }: Props) => {
 
   return (
     <>
-      <Consultation consultationBlock={data.consultationBlock} />
+      {/* Над футером либо новая плашка с кнопками в мессенджер, либо старый
+          блок с формой — пока плашка не заведена в админке, чтобы страницы
+          не остались без призыва к действию */}
+      {data.ctaBlock ? (
+        <MessengerCtaSection lang={params.lang} block={data.ctaBlock} />
+      ) : (
+        <Consultation consultationBlock={data.consultationBlock} />
+      )}
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.wrapper}>
             <div className={styles.columns}>
               <div className={styles.brandColumn}>
-                <Link className={styles.logoLink} href={params.lang === "en" ? "/" : `/${params.lang}`}>
+                <Link
+                  className={styles.logoLink}
+                  href={params.lang === "en" ? "/" : `/${params.lang}`}
+                >
                   <Image
                     alt="Academgo Logo"
                     src={urlFor(data.logo).url()}

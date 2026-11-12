@@ -302,6 +302,18 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
 export async function getFooterByLang(lang: string): Promise<Footer> {
   const footerQuery = groq`*[_type == 'footer' && language == $lang][0] {
     _id,
+    "ctaBlock": ctaDocument->{
+      eyebrow,
+      heading,
+      description,
+      mode,
+      telegramLabel,
+      telegramLink,
+      whatsappLabel,
+      whatsappLink,
+      note,
+      showSocials
+    },
     "consultationBlock": consultationBlock{
       title,
       titleHighlight,
