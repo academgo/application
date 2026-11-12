@@ -221,7 +221,9 @@ const WorkSteps = ({ block }: Props) => {
                     key={step._key ?? index}
                     className={`${styles.card} ${styles.deckCard}`}
                     style={{
-                      transform: `translateY(${y}px) scale(${0.975 + 0.025 * arrival})`,
+                      // Карточка не только выезжает, но и раскрывается:
+                      // приходит уже, чем сцена, и расширяется к месту
+                      transform: `translateY(${y}px) scale(${0.88 + 0.12 * arrival})`,
                       zIndex: index + 1,
                       opacity: arrival > 0 ? 1 : 0
                     }}
