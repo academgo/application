@@ -1,63 +1,71 @@
-.scrollContainer {
-  position: relative;
-  height: 120px;
-  overflow: hidden;
+/* Страна показывается плашкой: круглый флаг, название и рамка.
+   Прежние правила .scrollContainer / .carouselPrimary здесь лежали мёртвым
+   грузом — карусель давно собрана на react-fast-marquee, они не применялись. */
+
+.flagsCarousel {
+  width: 100%;
 }
 
-.carouselPrimary,
-.carouselSecondary {
-  top: 26%;
-  left: 100%;
+.flagChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: 12px;
+  padding: 7px 20px 7px 7px;
+  border: 1px solid #e6ebf1;
+  border-radius: 500px;
+  background: #fff;
+  color: #091728;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+  @media screen and (max-width: 768px) {
+    gap: 8px;
+    margin-left: 8px;
+    padding: 6px 16px 6px 6px;
+    font-size: 13px;
+  }
+}
+
+a.flagChip:hover {
+  border-color: #f39708;
+  color: #f39708;
+  box-shadow: 0 6px 18px rgba(243, 151, 8, 0.14);
+}
+
+.flagImage {
+  display: block;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.flagIcon {
+  display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
+  object-fit: cover;
 }
 
-.carouselPrimary {
-  display: flex;
-  animation: scroll-horizontal 20s linear infinite;
-}
-
-.carouselSecondary {
-  animation: scroll-horizontal 20s linear infinite;
-  animation-delay: 10s;
-}
-
-@keyframes scroll-horizontal {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
-}
-
-.carouselPrimary:hover,
-.carouselPrimary:hover~.carouselSecondary {
-  animation-play-state: paused;
-}
-
-.carouselSecondary:hover {
-  animation-play-state: paused;
-}
-
-.scrollContainer:hover > .carouselPrimary:not(:hover) {
-  animation-play-state: paused;
-}
-
-.flagLink {
-  border-radius: 10px;
-  overflow: hidden;
+.flagTitle {
   display: block;
-  // position: relative;
-  flex-shrink: 0;
-  margin-left: 20px;
+}
 
-  img {
-    width: 125px;
-    height: 90px;
-    object-fit: cover;
+@media (prefers-reduced-motion: reduce) {
+  .flagChip {
+    transition: none;
   }
 }
