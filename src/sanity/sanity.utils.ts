@@ -372,6 +372,8 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     heroDescription,
     flags,
     heroTitle,
+    heroStats,
+    heroVideo,
     mainHeadingH1,
     mainHeadingH1Highlight,
     conditionsTitle,

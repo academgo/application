@@ -1,12 +1,14 @@
 import styles from "./Hero.module.scss";
 import React, { FC } from "react";
-import { Image as ImageType, Flag } from "@/types/homepage";
+import { Image as ImageType, Flag, HeroStat, HeroVideo } from "@/types/homepage";
 import FlagsCarousel from "../FlagsCarousel/FlagsCarousel";
 import Image from "next/image";
 import { urlFor } from "@/sanity/image";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
+import HeroVideoButton from "../HeroVideoButton/HeroVideoButton";
 
 type Props = {
+  lang: string;
   mainHeadingStart: string;
   mainHeadingHighlight: string;
   mainHeadingContinue: string;
@@ -19,9 +21,12 @@ type Props = {
   heroDescription: string;
   flags: Flag[];
   heroTitle: string;
+  heroStats?: HeroStat[];
+  heroVideo?: HeroVideo;
 };
 
 const Hero: FC<Props> = ({
+  lang,
   mainHeadingStart,
   mainHeadingHighlight,
   mainHeadingContinue,
@@ -33,38 +38,61 @@ const Hero: FC<Props> = ({
   heroImage,
   heroDescription,
   flags,
-  heroTitle
+  heroTitle,
+  heroStats,
+  heroVideo
 }) => {
+  const hasStats = Boolean(heroStats && heroStats.length);
+  const hasVideo = Boolean(heroVideo && heroVideo.videoId);
+  const videoButtonText =
+    heroVideo?.buttonText || (lang === "ru" ? "Как мы работаем" : "How we work");
+
   return (
     <section className={styles.hero}>
       <div className="container">
-        <div className={styles.flexBlock}>
-          <div className={styles.flexChild}>
-            <div className={styles.heroTitleWrapper}>
-              <div className={styles.headingBlock}>
-                <p className={styles.mainHeading}>
-                  {mainHeadingStart}{" "}
-                  <span className={styles.highlight}>
-                    {mainHeadingHighlight}
-                    <span className={styles.tooltip}>{tooltip}</span>
-                  </span>{" "}
-                  {mainHeadingContinue} {mainHeadingEnd}{" "}
-                </p>
-              </div>
-              <div className={styles.descriptionBlock}>
-                {description && (
-                  <p className={styles.description}>{description}</p>
-                )}
-                {descriptionSmall && (
-                  <p className={styles.descriptionSmall}>{descriptionSmall}</p>
-                )}
-              </div>
-              <div className={styles.buttonBlock}>
-                <ButtonModal>{heroButtonText}</ButtonModal>
-              </div>
+        <div className={styles.grid}>
+          <div className={styles.content}>
+            {description && <p className={styles.eyebrow}>{description}</p>}
+
+            <p className={styles.mainHeading}>
+              {mainHeadingStart}{" "}
+              <span className={styles.highlight}>
+                {mainHeadingHighlight}
+                <span className={styles.tooltip}>{tooltip}</span>
+              </span>{" "}
+              {mainHeadingContinue} {mainHeadingEnd}
+            </p>
+
+            {descriptionSmall && (
+              <p className={styles.lead}>{descriptionSmall}</p>
+            )}
+
+            <div className={styles.actions}>
+              <ButtonModal>{heroButtonText}</ButtonModal>
+              {hasVideo && (
+                <HeroVideoButton
+                  videoId={heroVideo!.videoId!}
+                  startSeconds={heroVideo?.startSeconds}
+                  title={heroVideo?.title || videoButtonText}
+                >
+                  {videoButtonText}
+                </HeroVideoButton>
+              )}
             </div>
+
+            {hasStats && (
+              <dl className={styles.stats}>
+                {heroStats!.map(stat => (
+                  <div key={stat._key} className={styles.stat}>
+                    <dt className={styles.statValue}>{stat.value}</dt>
+                    <dd className={styles.statLabel}>{stat.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
-          <div className={styles.flexChild}>
+
+          <div className={styles.media}>
             {heroImage && (
               <div className={styles.imageWrapper}>
                 <Image
@@ -80,11 +108,20 @@ const Hero: FC<Props> = ({
                 />
               </div>
             )}
-            <div className={styles.flagsBlock}>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.flagsStrip}>
+        <div className="container">
+          <div className={styles.flagsInner}>
+            <div className={styles.flagsLabel}>
+              {heroTitle && <p className={styles.flagsTitle}>{heroTitle}</p>}
               {heroDescription && (
-                <p className={styles.heroDescription}>{heroDescription}</p>
+                <p className={styles.flagsHint}>{heroDescription}</p>
               )}
-              {heroTitle && <p className={styles.heroTitle}>{heroTitle}</p>}
+            </div>
+            <div className={styles.flagsTrack}>
               <FlagsCarousel flags={flags} />
             </div>
           </div>

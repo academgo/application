@@ -69,6 +69,7 @@ export default async function Home(props: Props) {
       <Header params={params} translations={translations} />
       <main>
         <Hero
+          lang={params.lang}
           mainHeadingStart={homePage.mainHeadingStart}
           mainHeadingHighlight={homePage.mainHeadingHighlight}
           mainHeadingContinue={homePage.mainHeadingContinue}
@@ -81,6 +82,8 @@ export default async function Home(props: Props) {
           heroDescription={homePage.heroDescription}
           flags={homePage.flags}
           heroTitle={homePage.heroTitle}
+          heroStats={homePage.heroStats}
+          heroVideo={homePage.heroVideo}
         />
         <Conditions
           mainHeadingH1={homePage.mainHeadingH1}

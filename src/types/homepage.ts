@@ -11,6 +11,19 @@ export type Image = {
   url: string;
 };
 
+export type HeroStat = {
+  _key: string;
+  value: string;
+  label: string;
+};
+
+export type HeroVideo = {
+  buttonText?: string;
+  videoId?: string;
+  startSeconds?: number;
+  title?: string;
+};
+
 export type Flag = {
   _key: string;
   title: string;
@@ -255,6 +268,8 @@ export type Homepage = {
   heroDescription: string;
   flags: Flag[];
   heroTitle: string;
+  heroStats?: HeroStat[];
+  heroVideo?: HeroVideo;
   mainHeadingH1: string;
   mainHeadingH1Highlight: string;
   conditionsTitle: string;

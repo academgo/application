@@ -88,6 +88,66 @@ export default defineType({
       type: "string"
     }),
     defineField({
+      name: "heroStats",
+      title: "Hero Stats (цифры под кнопками)",
+      description:
+        "Короткие цифры в первом экране. Оптимально четыре штуки.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "value",
+              title: "Значение",
+              description: "Например: 176, 10, 8 лет, от €160",
+              type: "string"
+            }),
+            defineField({
+              name: "label",
+              title: "Подпись",
+              description: "Например: ребят поступили",
+              type: "string"
+            })
+          ],
+          preview: {
+            select: { title: "value", subtitle: "label" }
+          }
+        }
+      ]
+    }),
+    defineField({
+      name: "heroVideo",
+      title: "Hero Video (кнопка с видео в попапе)",
+      type: "object",
+      fields: [
+        defineField({
+          name: "buttonText",
+          title: "Текст кнопки",
+          type: "string"
+        }),
+        defineField({
+          name: "videoId",
+          title: "ID видео на YouTube",
+          description:
+            "Только идентификатор из ссылки. Для youtube.com/watch?v=eYt6LRvD0QA это eYt6LRvD0QA. Пусто — кнопка не выводится.",
+          type: "string"
+        }),
+        defineField({
+          name: "startSeconds",
+          title: "Начать с секунды",
+          description: "Необязательно. Параметр t= из ссылки, например 183.",
+          type: "number"
+        }),
+        defineField({
+          name: "title",
+          title: "Название видео",
+          description: "Используется как подпись попапа для скринридеров.",
+          type: "string"
+        })
+      ]
+    }),
+    defineField({
       name: "flags",
       title: "Flags",
       type: "array",
