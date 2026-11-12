@@ -27,6 +27,11 @@ const DEFAULT_TELEGRAM = "https://t.me/infoacademgo";
 const PIN_MIN_WIDTH = "(min-width: 1024px)";
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 
+// Последняя карточка должна успеть побыть на экране: без этого она приезжает
+// ровно в тот момент, когда закрепление отпускает, и прочитать её не успеваешь.
+// Доля прокрутки, отданная под это ожидание, — один шаг из общего числа
+const DWELL_SHARE = 1;
+
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   chat: FaRegComments,
   document: FaRegFileLines,
@@ -133,7 +138,9 @@ const WorkSteps = ({ block }: Props) => {
         // Сколько контейнер уже прокручен мимо липкой сцены
         const travel = node.offsetHeight - window.innerHeight;
         const passed = travel > 0 ? -rect.top / travel : 0;
-        const clamped = Math.min(Math.max(passed, 0), 1);
+        // Карточки разбирают не весь путь, а всё кроме последней доли
+        const usable = Math.max(1 - DWELL_SHARE / total, 0.01);
+        const clamped = Math.min(Math.max(passed / usable, 0), 1);
         setProgress(clamped * Math.max(total - 1, 1));
       }
 

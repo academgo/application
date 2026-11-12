@@ -61,9 +61,14 @@ const Principles: FC<Props> = ({
             </div>
           </div>
         </div>
-        <div className={styles.principlesFinal}>
+        {/* Фраза «Вам ни за что не придется переживать — мы контролируем
+            процесс от подбора вуза до получения ВНЖ» скрыта. Текст остался в
+            Sanity, в поле principlesFinal главной страницы: чтобы вернуть,
+            снимите комментарий. Обе языковые версии рисует этот же компонент,
+            поэтому правка одна на оба языка. */}
+        {/* <div className={styles.principlesFinal}>
           <p>{principlesFinal}</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
