@@ -30,7 +30,17 @@ export type QuizQuestion = {
 /** Какие кнопки показывает финальный экран */
 export type QuizFinalMode = "telegram" | "whatsapp" | "both";
 
+export type QuizSidePanelItem = {
+  _key: string;
+  title?: string;
+  text?: string;
+};
+
 export type QuizBlock = {
+  /** Панель справа от квиза: что человек получит, ответив на вопросы */
+  sidePanelTitle?: string;
+  sidePanelItems?: QuizSidePanelItem[];
+  sidePanelNote?: string;
   loadingTitle?: string;
   loadingSteps?: string[];
   finalEyebrow?: string;

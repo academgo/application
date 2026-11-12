@@ -8,7 +8,8 @@ export default defineType({
   groups: [
     { name: "questions", title: "Вопросы", default: true },
     { name: "loading", title: "Экран подбора" },
-    { name: "final", title: "Финальный экран" }
+    { name: "final", title: "Финальный экран" },
+    { name: "side", title: "Панель сбоку" }
   ],
   fields: [
     defineField({
@@ -23,6 +24,37 @@ export default defineType({
         "его тоже можно менять и переставлять."
     }),
 
+    defineField({
+      name: "sidePanelTitle",
+      title: "Заголовок панели",
+      description:
+        "Панель справа от квиза: показывает, ради чего отвечать на вопросы. Пусто — панель не выводится, квиз встаёт по центру, как раньше.",
+      type: "string",
+      group: "side"
+    }),
+    defineField({
+      name: "sidePanelItems",
+      title: "Пункты панели",
+      description: "Оптимально три штуки.",
+      type: "array",
+      group: "side",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "title", title: "Заголовок", type: "string" }),
+            defineField({ name: "text", title: "Пояснение", type: "string" })
+          ],
+          preview: { select: { title: "title", subtitle: "text" } }
+        }
+      ]
+    }),
+    defineField({
+      name: "sidePanelNote",
+      title: "Подпись внизу панели",
+      type: "string",
+      group: "side"
+    }),
     defineField({
       name: "loadingTitle",
       title: "Заголовок экрана подбора",
