@@ -18,7 +18,8 @@ $line: #e6ebf1;
   line-height: 1.15;
   letter-spacing: -0.05em;
   max-width: 1100px;
-  margin: 0 0 clamp(1rem, 0.7rem + 1.4vw, 1.75rem);
+  // 60 — тот же отступ заголовка до содержимого, что у остальных секций
+  margin: 0 0 clamp(1.75rem, 1rem + 2.4vw, 3.75rem);
 }
 
 /* ──────────── шкала прогресса ──────────── */
@@ -331,6 +332,11 @@ $line: #e6ebf1;
 
   > .container {
     width: 100%;
+  }
+
+  // Внутри сцены расстояния держит gap, свой отступ заголовку не нужен
+  .heading {
+    margin-bottom: 0;
   }
 }
 

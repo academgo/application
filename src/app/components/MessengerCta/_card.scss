@@ -5,7 +5,9 @@
  */
 @mixin cta-card {
   border-radius: 32px;
-  padding: 64px 24px;
+  // Тот же внутренний отступ, что у остальных карточек на сайте: было 64/80,
+  // и плашка висела просторнее соседних блоков
+  padding: 40px 20px;
   text-align: center;
   // Волна кнопки шире самой кнопки: на узком экране она иначе вылезает наружу
   overflow: hidden;
@@ -13,6 +15,6 @@
   box-shadow: inset 0 0 0 1px rgba(254, 215, 170, 0.6);
 
   @media (min-width: 768px) {
-    padding: 80px 64px;
+    padding: 56px;
   }
 }

@@ -158,12 +158,14 @@ const WorkSteps = ({ block }: Props) => {
 
   return (
     <section className={styles.workSteps} id="admission">
-      <div className="container">
-        {block?.heading && <h2 className={styles.heading}>{block.heading}</h2>}
-      </div>
-
       {/* Запасное дерево: телефон и выключенные анимации */}
       <div className={styles.fallback}>
+        {block?.heading && (
+          <div className="container">
+            <h2 className={styles.heading}>{block.heading}</h2>
+          </div>
+        )}
+
         {steps.map((step, index) => (
           <div className={styles.fallbackItem} key={step._key ?? index}>
             <div className="container">
@@ -182,6 +184,14 @@ const WorkSteps = ({ block }: Props) => {
         style={{ height: `${total * 100}vh` }}
       >
         <div className={styles.pinSticky}>
+          {block?.heading && (
+            <div className="container">
+              {/* Вторая копия заголовка: в разметке всегда обе, видна ровно
+                  одна — какая, решает CSS по ширине экрана */}
+              <h2 className={styles.heading}>{block.heading}</h2>
+            </div>
+          )}
+
           <div className="container">
             <ol
               className={styles.progress}
