@@ -36,10 +36,17 @@ export type QuizSidePanelItem = {
   text?: string;
 };
 
+export type QuizSidePanelStat = {
+  _key: string;
+  value?: string;
+  label?: string;
+};
+
 export type QuizBlock = {
   /** Панель справа от квиза: что человек получит, ответив на вопросы */
   sidePanelTitle?: string;
   sidePanelItems?: QuizSidePanelItem[];
+  sidePanelStats?: QuizSidePanelStat[];
   sidePanelNote?: string;
   loadingTitle?: string;
   loadingSteps?: string[];

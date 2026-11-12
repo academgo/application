@@ -5,8 +5,11 @@
  *   node content/import/quiz-side-panel.mjs --apply             # записать в черновики
  *   node content/import/quiz-side-panel.mjs --apply --publish   # записать в живые документы
  *
- * Пишет quiz.sidePanelTitle, quiz.sidePanelItems и quiz.sidePanelNote в
- * документах quizDocument. Пока заголовок или пункты пустые, панель не
+ * Пишет quiz.sidePanelTitle, quiz.sidePanelItems, quiz.sidePanelStats и
+ * quiz.sidePanelNote в документах quizDocument. Цифры внизу панели нужны,
+ * чтобы правая колонка догоняла квиз по высоте: без них панель вдвое ниже.
+ * Подпись sidePanelNote выводится только когда цифр нет, поэтому здесь она
+ * пустая. Пока заголовок или пункты пустые, панель не
  * выводится и квиз стоит по центру, как раньше.
  *
  * Тексты не новые: они собраны из того, что уже обещает финальный экран
@@ -51,9 +54,17 @@ const CONTENT = {
       {
         title: "Гайд по студенческой визе",
         text: "что собирать и в каком порядке"
+      },
+      {
+        title: "Ответ в Telegram",
+        text: "отвечаем в течение рабочего дня"
       }
     ],
-    note: "Отвечаем в течение рабочего дня"
+    stats: [
+      { value: "176", label: "ребят поступили" },
+      { value: "10", label: "стран на выбор" }
+    ],
+    note: ""
   },
   en: {
     title: "What you get back",
@@ -69,9 +80,17 @@ const CONTENT = {
       {
         title: "A student visa guide",
         text: "what to prepare and in what order"
+      },
+      {
+        title: "An answer in Telegram",
+        text: "we reply within one working day"
       }
     ],
-    note: "We reply within one working day"
+    stats: [
+      { value: "176", label: "students enrolled" },
+      { value: "10", label: "countries to choose from" }
+    ],
+    note: ""
   }
 };
 
@@ -150,6 +169,10 @@ const main = async () => {
             _key: key(),
             ...item
           })),
+          "quiz.sidePanelStats": content.stats.map(stat => ({
+            _key: key(),
+            ...stat
+          })),
           "quiz.sidePanelNote": content.note
         }
       }
@@ -162,7 +185,9 @@ const main = async () => {
         content.items
           .map((item, i) => `        ${i + 1}. ${item.title} — ${item.text}`)
           .join("\n") +
-        `\n      подпись: ${content.note}`
+        `\n      цифры: ${content.stats
+          .map(stat => `${stat.value} ${stat.label}`)
+          .join(" · ")}`
     );
   }
 

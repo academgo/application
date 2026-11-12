@@ -385,6 +385,7 @@ export async function getHomePageByLang(lang: string): Promise<Homepage> {
     "quizDocumentBlock": quizDocument->quiz{
       sidePanelTitle,
       sidePanelItems,
+      sidePanelStats,
       sidePanelNote,
       loadingTitle,
       loadingSteps,
@@ -634,7 +635,8 @@ export async function getSinglePageByLang(
         "quiz": survey.quizDocument->quiz{
           sidePanelTitle,
           sidePanelItems,
-          sidePanelNote,
+          sidePanelStats,
+      sidePanelNote,
           loadingTitle,
           loadingSteps,
           finalEyebrow,
@@ -747,7 +749,8 @@ export async function getSingleSubPageBySlug(
         "quiz": survey.quizDocument->quiz{
           sidePanelTitle,
           sidePanelItems,
-          sidePanelNote,
+          sidePanelStats,
+      sidePanelNote,
           loadingTitle,
           loadingSteps,
           finalEyebrow,

@@ -21,8 +21,9 @@ const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
   // Панель справа показываем, только если её заполнили в админке: без
   // заголовка и пунктов квиз остаётся по центру, как было раньше
   const sidePanelItems = quizBlock?.sidePanelItems ?? [];
+  const sidePanelStats = quizBlock?.sidePanelStats ?? [];
   const hasSidePanel = Boolean(
-    quizBlock?.sidePanelTitle && sidePanelItems.length
+    (quizBlock?.sidePanelTitle || "Что придёт в ответ") && sidePanelItems.length
   );
 
   return (
@@ -59,7 +60,7 @@ const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
                   <span className={styles.sideIcon} aria-hidden="true">
                     <FaTelegram />
                   </span>
-                  {quizBlock!.sidePanelTitle}
+                  {quizBlock!.sidePanelTitle || "Что придёт в ответ"}
                 </p>
 
                 <ol className={styles.sideList}>
@@ -82,8 +83,21 @@ const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
                   ))}
                 </ol>
 
-                {quizBlock!.sidePanelNote && (
-                  <p className={styles.sideNote}>{quizBlock!.sidePanelNote}</p>
+                {sidePanelStats.length > 0 ? (
+                  <dl className={styles.sideStats}>
+                    {sidePanelStats.map(stat => (
+                      <div key={stat._key} className={styles.sideStat}>
+                        <dt className={styles.sideStatValue}>{stat.value}</dt>
+                        <dd className={styles.sideStatLabel}>{stat.label}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : (
+                  quizBlock!.sidePanelNote && (
+                    <p className={styles.sideNote}>
+                      {quizBlock!.sidePanelNote}
+                    </p>
+                  )
                 )}
               </div>
             </aside>

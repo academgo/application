@@ -50,8 +50,26 @@ export default defineType({
       ]
     }),
     defineField({
+      name: "sidePanelStats",
+      title: "Цифры внизу панели",
+      description: "Две-три короткие цифры. Пусто — строка не выводится.",
+      type: "array",
+      group: "side",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "value", title: "Значение", type: "string" }),
+            defineField({ name: "label", title: "Подпись", type: "string" })
+          ],
+          preview: { select: { title: "value", subtitle: "label" } }
+        }
+      ]
+    }),
+    defineField({
       name: "sidePanelNote",
       title: "Подпись внизу панели",
+      description: "Выводится, если цифры не заданы.",
       type: "string",
       group: "side"
     }),

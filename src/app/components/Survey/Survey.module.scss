@@ -13,9 +13,9 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) 520px;
     gap: 50px;
-    /* Карточка панели вдвое ниже квиза: растянуть её на всю высоту —
-       значит получить пустоту внутри, поэтому держим её по центру */
-    align-items: center;
+    // Обе карточки от верхней линии: квиз сжат, а панель дополнена цифрами,
+    // так что по высоте они теперь почти совпадают
+    align-items: start;
   }
 }
 
@@ -48,8 +48,8 @@
 
 .multiStepForm {
 
-  padding-top: clamp(1.25rem, 0.125rem + 4.5vw, 3.5rem);
-  padding-bottom: clamp(1.25rem, 0.125rem + 4.5vw, 3.5rem);
+  padding-top: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
+  padding-bottom: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
   padding-inline: clamp(0.813rem, -1.281rem + 8.38vw, 5rem);
   border-radius: 25px;
   max-width: 1000px;
@@ -163,6 +163,37 @@
   color: #5a6878;
   font-size: 0.875rem;
   line-height: 1.45;
+}
+
+/* Цифры внизу панели: с ними правая колонка догоняет квиз по высоте,
+   без них панель вдвое ниже и композиция разъезжается */
+.sideStats {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(9, 23, 40, 0.08);
+}
+
+.sideStat {
+  min-width: 0;
+}
+
+.sideStatValue {
+  display: block;
+  color: #091728;
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.sideStatLabel {
+  display: block;
+  margin: 3px 0 0;
+  color: #8a929c;
+  font-size: 0.8125rem;
+  line-height: 1.35;
 }
 
 .sideNote {
