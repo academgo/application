@@ -32,6 +32,13 @@ const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 // Доля прокрутки, отданная под это ожидание, — один шаг из общего числа
 const DWELL_SHARE = 1;
 
+// Во сколько раз колода складывается быстрее базовой скорости «один экран
+// прокрутки на карточку». Делится не вся высота обёртки, а только её
+// прокручиваемая часть: первый экран блок просто стоит закреплённым и пути
+// анимации не добавляет, двигают её только оставшиеся (N-1) экранов. Если
+// поделить всю высоту, ускорение выйдет больше заявленного.
+const SCROLL_SPEED = 1.2;
+
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   chat: FaRegComments,
   document: FaRegFileLines,
@@ -181,7 +188,7 @@ const WorkSteps = ({ block }: Props) => {
       <div
         ref={wrapRef}
         className={styles.pinWrap}
-        style={{ height: `${total * 100}vh` }}
+        style={{ height: `${100 + ((total - 1) * 100) / SCROLL_SPEED}vh` }}
       >
         <div className={styles.pinSticky}>
           {block?.heading && (
