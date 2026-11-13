@@ -2,7 +2,7 @@ import groq from "groq";
 import { client } from "./sanity.client";
 import { Post } from "@/types/post";
 import { Header } from "@/types/header";
-import { Homepage } from "@/types/homepage";
+import { Homepage, MessengerCtaDocument } from "@/types/homepage";
 import { Footer } from "@/types/footer";
 import { Blog } from "@/types/blog";
 import { BlogPage } from "@/types/blogPage";
@@ -297,6 +297,31 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
   const header = await client.fetch(headerQuery, { lang });
 
   return header;
+}
+
+/**
+ * Плашка в мессенджер для страниц-конструкторов. Берём ровно ту, на
+ * которую ссылается футер: документов ctaDocument на язык несколько
+ * (например отдельный текст для экрана после квиза), и выбор «первого
+ * попавшегося» давал бы случайную плашку.
+ */
+export async function getCtaDocumentByLang(
+  lang: string
+): Promise<MessengerCtaDocument | null> {
+  const ctaQuery = groq`*[_type == 'footer' && language == $lang][0].ctaDocument->{
+    eyebrow,
+    heading,
+    description,
+    mode,
+    telegramLabel,
+    telegramLink,
+    whatsappLabel,
+    whatsappLink,
+    note,
+    showSocials
+  }`;
+
+  return client.fetch(ctaQuery, { lang });
 }
 
 export async function getFooterByLang(lang: string): Promise<Footer> {

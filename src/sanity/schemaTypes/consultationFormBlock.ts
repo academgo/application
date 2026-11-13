@@ -5,7 +5,9 @@ export default defineType({
   title: "Consultation form",
   type: "object",
   description:
-    "Баннер с короткой формой заявки (имя и телефон) и ссылками на мессенджеры.",
+    "Выводится как плашка с кнопками в Telegram и WhatsApp. Тексты берутся " +
+    "из документа «Плашка в мессенджер» — одного на язык, поля ниже на сайт " +
+    "больше не попадают и сохранены только для истории.",
   fields: [
     defineField({ name: "title", title: "Title", type: "string" }),
     defineField({

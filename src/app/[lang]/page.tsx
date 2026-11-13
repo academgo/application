@@ -20,7 +20,6 @@ import Price from "../components/Price/Price";
 import Footer from "../components/Footer/Footer";
 import BlogPostsSection from "../components/BlogPostsSection/BlogPostsSection";
 import Survey from "../components/Survey/Survey";
-import MessengerCtaSection from "@/app/components/MessengerCtaSection/MessengerCtaSection";
 import WorkSteps from "@/app/components/WorkSteps/WorkSteps";
 import ModalFullLazy from "../components/ModalFull/ModalFullLazy";
 import { FormStandardDocument } from "@/types/formStandardDocument";
@@ -110,7 +109,6 @@ export default async function Home(props: Props) {
           quizBlock={homePage.quizDocumentBlock || homePage.quizBlock}
           countryOptions={countryNames}
         />
-        <MessengerCtaSection lang={params.lang} block={homePage.ctaBlock} />
         {/* Секция «Давайте ответим на все вопросы на бесплатной консультации»
             убрана с главной: сразу над ней теперь стоит плашка с кнопкой в
             Telegram, и две заявочные формы подряд конкурируют друг с другом.

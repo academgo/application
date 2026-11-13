@@ -9,6 +9,7 @@ import PreviewMain from "@/app/components/PreviewMain/PreviewMain";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import {
+  getCtaDocumentByLang,
   getFormStandardDocumentByLang,
   getSingleSubPageBySlug
 } from "@/sanity/sanity.utils";
@@ -73,7 +74,8 @@ import StudyCountryTracker from "@/app/components/Analytics/StudyCountryTracker"
 import LeadMagnetBlock, {
   LeadMagnetBlockType
 } from "@/app/components/LeadMagnetBlock/LeadMagnetBlock";
-import ConsultationFormBlock, {
+import MessengerCtaSection from "@/app/components/MessengerCtaSection/MessengerCtaSection";
+import type {
   ConsultationFormBlockType
 } from "@/app/components/ConsultationFormBlock/ConsultationFormBlock";
 import BarChartBlock, {
@@ -184,6 +186,9 @@ const Subpage = async (props: Props) => {
 
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
+
+  // Плашка с кнопками в мессенджеры — один документ на язык
+  const ctaBlock = await getCtaDocumentByLang(params.lang);
   // console.log("formDocument", formDocument);
 
   const translations = buildLanguageVersions(subPage?._translations);
@@ -391,17 +396,17 @@ const Subpage = async (props: Props) => {
             block={block as CountryMapBlockType}
           />
         );
+      // Блок формы заявки заменён плашкой с кнопками в мессенджеры.
+      // Тексты берутся из документа «Плашка в мессенджер» — одного на язык,
+      // поэтому плашка одинаковая на всём сайте. Прежние заголовки и поля
+      // формы остались в блоках Sanity нетронутыми, просто не выводятся.
       case "consultationFormBlock":
         return (
-          <ConsultationFormBlock
+          <MessengerCtaSection
             key={block._key}
-            block={block as ConsultationFormBlockType}
             lang={params.lang}
-            policy={{
-              text: formDocument?.form?.agreementText,
-              linkLabel: formDocument?.form?.agreementLinkLabel,
-              linkDestination: formDocument?.form?.agreementLinkDestination
-            }}
+            block={ctaBlock}
+            path={`/${lang}/${slug}/${subslug}`}
           />
         );
       case "leadMagnetBlock":
