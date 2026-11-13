@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
@@ -32,9 +32,6 @@ type Props = {
 type DynamicFormValues = Record<string, string>;
 
 type LeadChannel = "telegram" | "whatsapp" | "none";
-
-// Сколько воздуха оставить над блоком при перемотке: примерно высота шапки
-const SCROLL_OFFSET = 100;
 
 // Сколько держится одна строка на экране подбора
 const ANALYZE_STEP_MS = 800;
@@ -104,23 +101,6 @@ const MultiStepFormBlock: React.FC<Props> = ({
   const [analyzing, setAnalyzing] = useState(false);
   const [analyzingIndex, setAnalyzingIndex] = useState(0);
   const [pageCountryCode, setPageCountryCode] = useState<string | undefined>();
-  const blockRef = useRef<HTMLDivElement>(null);
-
-  // Шаги разной высоты, и без этого экран прыгает: после каждого «Далее»
-  // возвращаем начало блока на одно и то же место.
-  // Первый экран не трогаем совсем: флаг «первый рендер» тут не годится —
-  // в разработке React монтирует компонент дважды, и второй проход
-  // прокручивал страницу к квизу сразу после открытия
-  useEffect(() => {
-    if (step === 1 && !analyzing) return;
-
-    const node = blockRef.current;
-    if (!node) return;
-
-    const top =
-      node.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, [step, analyzing]);
 
   // Страна страницы — запасной вариант подстановки, если про направление
   // в квизе не спрашивают. Читаем адрес после отрисовки, не на сервере
@@ -300,7 +280,6 @@ const MultiStepFormBlock: React.FC<Props> = ({
 
   return (
     <div
-      ref={blockRef}
       className={styles.multiStepForm}
       // по этой метке родительские блоки убирают свой фон и паддинги:
       // на экране подбора и на финальном карточка сама себе фон
