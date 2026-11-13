@@ -50,9 +50,9 @@ const BLOCK = {
     eyebrow: "Направления",
     title: "Выберите страну мечты",
     description:
-      "6 направлений с лучшим соотношением цены, качества диплома и перспектив после выпуска.",
+      "8 направлений с лучшим соотношением цены, качества диплома и перспектив после выпуска.",
     cardLinkLabel: "Узнать шансы",
-    maxCards: 6,
+    maxCards: 8,
     allLabel: "Все страны",
     allLink: "/ru/ucheba-za-rubezhom"
   },
@@ -60,9 +60,9 @@ const BLOCK = {
     eyebrow: "Destinations",
     title: "Choose your dream country",
     description:
-      "6 destinations with the best balance of cost, degree value and prospects after graduation.",
+      "8 destinations with the best balance of cost, degree value and prospects after graduation.",
     cardLinkLabel: "Check your chances",
-    maxCards: 6,
+    maxCards: 8,
     allLabel: "All destinations",
     allLink: "/study-abroad"
   }
@@ -94,6 +94,19 @@ const BADGES = {
     homeOrder: 5,
     ru: "100% покрытие грантами",
     en: "Grants cover 100%"
+  },
+  "north-cyprus": {
+    homeOrder: 7,
+    // Формулировки взяты с самих страниц-хабов, ничего нового не придумано:
+    // «Обучение на английском, понятные цены и въезд через Турцию»
+    ru: "Обучение на английском",
+    en: "Taught in English"
+  },
+  "south-cyprus": {
+    homeOrder: 8,
+    // «Учеба на Кипре: как поступить в вуз Евросоюза из СНГ»
+    ru: "Диплом Евросоюза",
+    en: "An EU degree"
   },
   hungary: {
     homeOrder: 6,

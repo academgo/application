@@ -1,7 +1,8 @@
 /* Блок «Направления» на главной.
-   Ширина уже глобального контейнера: совпадает с мега-меню «Направления»
-   в шапке. Меняется одной цифрой ниже. */
-$block-width: 1280px;
+   Ширина во весь контейнер сайта: с восемью карточками в четыре колонки
+   прежние 1280 сжимали карточку до 300 пикселей и плашки вроде
+   «Британский диплом и карьера» ломались на две строки. */
+$block-width: 1755px;
 
 $ink: #091728;
 $orange: #f39708;
@@ -87,8 +88,12 @@ $surface: #f3f5f8;
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
+
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   @media screen and (max-width: 1100px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));

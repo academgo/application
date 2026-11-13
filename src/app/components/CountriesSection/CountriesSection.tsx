@@ -13,7 +13,7 @@ type Props = {
   lang: string;
 };
 
-const DEFAULT_CARDS = 6;
+const DEFAULT_CARDS = 8;
 
 /**
  * Подпись к стоимости на ховере. В CMS не выносим: служебное слово, а не контент.
