@@ -45,9 +45,25 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 // Какую долю своего шага карточка тратит на выезд снизу. Остаток шага она
-// стоит на месте, пока кнопка слева дозаполняется: иначе карточка ползёт
-// весь шаг и наезд соседних карточек не читается
-const ARRIVAL_SHARE = 0.4;
+// стоит на месте, пока кнопка слева дозаполняется. Чем короче эта доля, тем
+// уже окно, в котором виден наезд: при переходе по клику оно проскакивает
+// за считаные кадры, поэтому карточка едет большую часть шага
+const ARRIVAL_SHARE = 0.55;
+
+// Сколько миллисекунд отводится на пиксель пути при прокрутке по клику, и
+// рамки на случай совсем короткого и совсем длинного перехода. Нативная
+// плавная прокрутка проходит любое расстояние примерно за треть секунды, и
+// наезд карточки — а он занимает лишь часть пути — в ней не успевает
+// прочитаться
+const CLICK_MS_PER_PX = 0.7;
+const CLICK_MIN_MS = 600;
+const CLICK_MAX_MS = 1400;
+
+// Разгон и торможение, без рывка на старте. Квадратичное, а не кубическое:
+// кубическое вдвое сильнее разгоняется к середине пути и проносит наезд
+// карточки мимо глаза
+const easeInOutQuad = (t: number) =>
+  t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
 const stepDigit = (step: WorkStep, index: number) =>
   step.number?.match(/\d+/)?.[0] || String(index + 1);
@@ -155,6 +171,7 @@ const WorkSteps = ({ block }: Props) => {
   const total = steps.length;
 
   const wrapRef = useRef<HTMLDivElement>(null);
+  const scrollFrame = useRef(0);
   // Непрерывное положение по шагам: 0 — начало первого шага, total — конец
   // последнего. Каждому шагу достаётся ровно одна единица, поэтому у
   // последнего остаётся свой кусок прокрутки и он успевает побыть на экране
@@ -187,26 +204,75 @@ const WorkSteps = ({ block }: Props) => {
     return () => cancelAnimationFrame(frame);
   }, [total]);
 
+  // Прокрутка по клику брошена, если ушли со страницы на полпути
+  useEffect(() => () => cancelAnimationFrame(scrollFrame.current), []);
+
   if (!total) return null;
 
   const current = Math.min(Math.floor(flow), total - 1);
 
-  // Обратный ход того же пересчёта, что ведёт сцену: шаг index начинается на
-  // доле index/total пройденного пути. Поэтому клик приводит ровно в начало
-  // шага — с пустой заливкой кнопки, а не в середину.
-  // Лишний пиксель сверху — не запас «на глазок»: начало шага это и есть
-  // граница, на которой Math.floor переключает активный шаг, а браузер
-  // прокручивает только на целые пиксели и округляет цель вниз. Без сдвига
-  // клик садится на полпикселя раньше границы и активным остаётся предыдущий
-  // шаг с полной заливкой — проверено, так вели себя шаги 3 и 4
+  // Обратный ход того же пересчёта, что ведёт сцену: шаг index занимает долю
+  // пути от index/total до (index + 1)/total. Целимся в конец шага, а не в
+  // начало: клик показывает шаг завершённым — карточка уже наехала на
+  // предыдущие, кнопка залита целиком.
+  // Пиксель назад — не запас «на глазок»: конец шага это и есть граница, на
+  // которой Math.floor отдаёт шаг следующему, а браузер прокручивает только
+  // на целые пиксели. Без сдвига клик садится на границу и активным
+  // становится следующий шаг.
+  // Прокрутка своя, кадр за кадром: сцену ведёт положение прокрутки, поэтому
+  // по дороге карточки проигрывают наезд, а не возникают на месте
   const jumpTo = (index: number) => {
     const node = wrapRef.current;
     if (!node) return;
 
     const top = node.getBoundingClientRect().top + window.scrollY;
     const travel = Math.max(node.offsetHeight - window.innerHeight, 0);
+    const stepEnd = top + ((index + 1) / total) * travel;
 
-    window.scrollTo({ top: Math.ceil(top + (index / total) * travel) + 1 });
+    const from = window.scrollY;
+    const distance = Math.ceil(stepEnd) - 1 - from;
+    if (!distance) return;
+
+    const duration = Math.min(
+      CLICK_MAX_MS,
+      Math.max(CLICK_MIN_MS, Math.abs(distance) * CLICK_MS_PER_PX)
+    );
+    const started = performance.now();
+
+    const stop = () => {
+      cancelAnimationFrame(scrollFrame.current);
+      detach();
+    };
+    const detach = () => {
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchstart", stop);
+      window.removeEventListener("keydown", stop);
+    };
+
+    // Человек крутит сам — анимация уступает, иначе страница дёргается
+    window.addEventListener("wheel", stop, { passive: true });
+    window.addEventListener("touchstart", stop, { passive: true });
+    window.addEventListener("keydown", stop);
+
+    const step = (now: number) => {
+      const passed = Math.min((now - started) / duration, 1);
+
+      // instant, а не auto: на странице включена плавная прокрутка, и с ней
+      // каждый кадр сам превращался бы в отдельную анимацию
+      window.scrollTo({
+        top: from + distance * easeInOutQuad(passed),
+        behavior: "instant"
+      });
+
+      if (passed < 1) {
+        scrollFrame.current = requestAnimationFrame(step);
+      } else {
+        detach();
+      }
+    };
+
+    cancelAnimationFrame(scrollFrame.current);
+    scrollFrame.current = requestAnimationFrame(step);
   };
 
   return (
