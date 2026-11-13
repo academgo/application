@@ -101,9 +101,75 @@ $surface: #f3f5f8;
   }
 
   @media screen and (max-width: 640px) {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
+}
+
+/* Пятая и далее карточки на телефоне не выводятся: вместо них чипы ниже */
+.cardTail {
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
+}
+
+/* Чипы — компактные названия для хвоста списка, только на телефоне */
+.chips {
+  display: none;
+
+  @media screen and (max-width: 640px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid $line;
+  border-radius: 999px;
+  background: #fff;
+  color: $ink;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Оранжевая кнопка в Telegram: только телефон, как просил клиент */
+.ctaWrapper {
+  display: none;
+
+  @media screen and (max-width: 640px) {
+    display: block;
+    margin-top: 16px;
+  }
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 20px;
+  border: 1px solid $orange;
+  border-radius: 999px;
+  background: $orange;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
 }
 
 .card {
@@ -375,5 +441,33 @@ $surface: #f3f5f8;
     svg {
       transform: translateX(3px);
     }
+  }
+}
+
+
+/* Компактная карточка на телефоне: в две колонки подпись-ссылка уже не
+   помещается рядом с названием, а вся карточка и так кликабельна */
+@media screen and (max-width: 640px) {
+  .cardLink {
+    display: none;
+  }
+
+  .countryTitle {
+    font-size: 15px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .allWrapper {
+    margin-top: 12px;
+  }
+
+  .allLink {
+    width: 100%;
+    justify-content: center;
+    min-height: 52px;
   }
 }

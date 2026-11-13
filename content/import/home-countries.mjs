@@ -53,7 +53,10 @@ const BLOCK = {
       "8 направлений с лучшим соотношением цены, качества диплома и перспектив после выпуска.",
     cardLinkLabel: "Узнать шансы",
     maxCards: 8,
-    allLabel: "Все страны",
+    // Кнопка выводится только на телефонах, под плиткой и чипами
+    ctaLabel: "Не знаю, куда хочу",
+    ctaLink: "https://t.me/infoacademgo",
+    allLabel: "Сравнить страны",
     allLink: "/ru/ucheba-za-rubezhom"
   },
   en: {
@@ -63,7 +66,9 @@ const BLOCK = {
       "8 destinations with the best balance of cost, degree value and prospects after graduation.",
     cardLinkLabel: "Check your chances",
     maxCards: 8,
-    allLabel: "All destinations",
+    ctaLabel: "Not sure where to go",
+    ctaLink: "https://t.me/infoacademgo",
+    allLabel: "Compare countries",
     allLink: "/study-abroad"
   }
 };

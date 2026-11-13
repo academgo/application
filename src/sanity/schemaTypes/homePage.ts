@@ -331,6 +331,19 @@ export default defineType({
           description: "Ссылка на страницу сравнения стран"
         }),
         defineField({
+          name: "ctaLabel",
+          title: "Кнопка «Не знаю, куда хочу»",
+          type: "string",
+          description:
+            "Оранжевая кнопка под плиткой. Выводится только на телефонах. Пусто — кнопка не показывается"
+        }),
+        defineField({
+          name: "ctaLink",
+          title: "Ссылка кнопки «Не знаю, куда хочу»",
+          type: "string",
+          description: "Обычно ссылка на Telegram"
+        }),
+        defineField({
           name: "maxCards",
           title: "How many countries to show",
           type: "number",

@@ -16,6 +16,13 @@ type Props = {
 const DEFAULT_CARDS = 8;
 
 /**
+ * На телефонах восемь полных карточек дают простыню почти в полтора экрана.
+ * Поэтому первые четыре остаются карточками, остальные сворачиваются в
+ * компактные чипы с одним названием. На планшетах и десктопе всё как было.
+ */
+const CARDS_ON_MOBILE = 4;
+
+/**
  * Подпись к стоимости на ховере. В CMS не выносим: служебное слово, а не контент.
  * Без предлога: значения в comparison.tuitionFrom уже начинаются с «от» или
  * «примерно» и представляют собой фразу, а не короткий ценник.
@@ -49,6 +56,11 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
 
   const label = tuitionLabel(lang);
 
+  // Хвост показывается дважды: карточками для широких экранов и чипами для
+  // телефонов. Лишнее прячется в CSS, поэтому разметка одна на оба случая
+  const tailCountries = visibleCountries.slice(CARDS_ON_MOBILE);
+  const isExternal = (href?: string) => Boolean(href && /^https?:/.test(href));
+
   return (
     <section className={styles.countriesSection} id="countries">
       <div className="container">
@@ -75,7 +87,7 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
           </div>
 
           <div className={styles.grid}>
-            {visibleCountries.map(country => {
+            {visibleCountries.map((country, cardIndex) => {
               // Фото карточки — обложка страницы-хаба страны
               const imageUrl = country.cardImage
                 ? urlFor(country.cardImage).url()
@@ -88,7 +100,9 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
                 <Link
                   key={country._id}
                   href={country.hubHref}
-                  className={styles.card}
+                  className={`${styles.card} ${
+                    cardIndex >= CARDS_ON_MOBILE ? styles.cardTail : ""
+                  }`}
                 >
                   <span className={styles.media}>
                     {imageUrl ? (
@@ -145,6 +159,32 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
               );
             })}
           </div>
+
+          {tailCountries.length > 0 && (
+            <ul className={styles.chips}>
+              {tailCountries.map(country => (
+                <li key={country._id}>
+                  <Link href={country.hubHref} className={styles.chip}>
+                    {country.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {block?.ctaLabel && block?.ctaLink && (
+            <div className={styles.ctaWrapper}>
+              <Link
+                href={block.ctaLink}
+                className={styles.ctaButton}
+                {...(isExternal(block.ctaLink)
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                {block.ctaLabel}
+              </Link>
+            </div>
+          )}
 
           {block?.allLabel && block?.allLink && (
             <div className={styles.allWrapper}>
