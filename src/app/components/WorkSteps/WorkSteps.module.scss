@@ -8,6 +8,13 @@ $orange-dark: #d98305;
 $line: #e6ebf1;
 
 .workSteps {
+  // На сколько закреплённая сцена опускает содержимое от верха экрана: под
+  // липкой шапкой сайта, и примерно по центру того, что под ней осталось.
+  // На эту же величину обёртка поднята вверх (см. .pinWrap): иначе отступ
+  // читается как провал между заголовком и карточками, пока блок ещё не
+  // закрепился
+  --pin-top: clamp(96px, 24vh, 240px);
+
   margin-bottom: clamp(2.813rem, 1.094rem + 6.88vw, 6.25rem);
 }
 
@@ -23,12 +30,6 @@ $line: #e6ebf1;
 }
 
 /* ──────────── левая колонка: кнопки шагов ──────────── */
-
-.railHeading {
-  // Колонка узкая, общий размер заголовка секции в неё не влезает
-  font-size: clamp(1.625rem, 0.9rem + 1.5vw, 2.5rem);
-  margin-bottom: clamp(1.25rem, 0.8rem + 1.4vw, 2.25rem);
-}
 
 .railList {
   display: grid;
@@ -60,6 +61,11 @@ $line: #e6ebf1;
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 
+  // Плавная подсветка рамки под курсором — видно, что шаг кликабелен
+  &:hover {
+    border-color: rgba(243, 151, 8, 0.55);
+  }
+
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 4px rgba(243, 151, 8, 0.4);
@@ -68,7 +74,8 @@ $line: #e6ebf1;
 
 // Заливка слева направо — доля пройденного внутри текущего шага. Ширину
 // задаёт прокрутка напрямую, без перехода: иначе полоса продолжает ехать,
-// когда прокрутка уже остановилась
+// когда прокрутка уже остановилась. Только фон, без отбивки по краю: резкая
+// линия читалась как граница, а не как заполнение
 .railFill {
   position: absolute;
   left: 0;
@@ -76,10 +83,9 @@ $line: #e6ebf1;
   bottom: 0;
   background: linear-gradient(
     90deg,
-    rgba(243, 151, 8, 0.2),
+    rgba(243, 151, 8, 0.24),
     rgba(243, 151, 8, 0.1)
   );
-  border-right: 2px solid $orange;
   will-change: width;
   // Гаснет плавно: в момент смены шага заливка обнуляется разом, и без
   // этого пройденная кнопка моргала бы
@@ -342,9 +348,24 @@ $line: #e6ebf1;
 
 /* ──────────── колода ──────────── */
 
+// Заголовок стоит над закреплённой сценой, а не внутри неё: уезжает
+// вместе с прокруткой, как заголовки остальных секций
+.pinHeading,
 .pinWrap {
   display: none;
   position: relative;
+}
+
+// Воздух до предыдущей секции: заголовок идёт сразу за ней, своего отступа
+// сверху у неё нет
+.pinHeading {
+  margin-top: clamp(3rem, 1rem + 4vw, 6.25rem);
+}
+
+// Подъём ровно на отступ сцены: в потоке карточки встают сразу под
+// заголовком, а закрепившись — всё так же ниже шапки сайта
+.pinWrap {
+  margin-top: calc(var(--pin-top) * -1);
 }
 
 @media (min-width: 1024px) {
@@ -352,6 +373,7 @@ $line: #e6ebf1;
     display: none;
   }
 
+  .pinHeading,
   .pinWrap {
     display: block;
   }
@@ -364,6 +386,7 @@ $line: #e6ebf1;
     display: block;
   }
 
+  .pinHeading,
   .pinWrap {
     display: none;
   }
@@ -376,8 +399,11 @@ $line: #e6ebf1;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: clamp(80px, 9vh, 120px) 0 clamp(24px, 4vh, 48px);
+  // Не по центру: содержимое прижато к своему отступу сверху, иначе
+  // центровка добавляет сверху ещё полтораста пикселей пустоты, которые до
+  // закрепления висят между заголовком и карточками
+  justify-content: flex-start;
+  padding: var(--pin-top) 0 clamp(24px, 4vh, 48px);
   overflow: hidden;
 
   > .container {
@@ -401,23 +427,21 @@ $line: #e6ebf1;
   }
 }
 
-// Карточки всех шагов лежат в одной ячейке сетки: высота сцены равна самому
-// длинному шагу, поэтому при переключении соседние блоки не дёргаются
+// Сцена колоды: карточки лежат друг на друге, высота задана заранее, иначе
+// абсолютные карточки её не держат
 .stage {
-  display: grid;
+  position: relative;
   min-width: 0;
+  height: clamp(400px, 52vh, 500px);
 }
 
-.stageCard {
-  grid-area: 1 / 1;
-  // visibility, а не display: скрытая карточка держит высоту сцены, но не
-  // ловит ни клик, ни табуляцию
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.stageCard[data-active="true"] {
-  visibility: visible;
-  opacity: 1;
+.deckCard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-height: 100%;
+  // Положение задаётся прокруткой напрямую, без сглаживания: иначе карточка
+  // продолжает ехать, когда прокрутка уже остановилась
+  will-change: transform;
 }

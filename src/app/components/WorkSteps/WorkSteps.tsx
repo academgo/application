@@ -44,6 +44,11 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   home: FaHouse
 };
 
+// Какую долю своего шага карточка тратит на выезд снизу. Остаток шага она
+// стоит на месте, пока кнопка слева дозаполняется: иначе карточка ползёт
+// весь шаг и наезд соседних карточек не читается
+const ARRIVAL_SHARE = 0.4;
+
 const stepDigit = (step: WorkStep, index: number) =>
   step.number?.match(/\d+/)?.[0] || String(index + 1);
 
@@ -225,6 +230,17 @@ const WorkSteps = ({ block }: Props) => {
         ))}
       </div>
 
+      {/* Заголовок стоит над закреплённой сценой и уезжает вместе с
+          прокруткой. Вторая копия заголовка: в разметке всегда обе, видна
+          ровно одна — какая, решает CSS по ширине экрана */}
+      {block?.heading && (
+        <div className={styles.pinHeading}>
+          <div className="container">
+            <h2 className={styles.heading}>{block.heading}</h2>
+          </div>
+        </div>
+      )}
+
       {/* Закреплённая сцена */}
       <div
         ref={wrapRef}
@@ -235,22 +251,13 @@ const WorkSteps = ({ block }: Props) => {
           <div className="container">
             <div className={styles.split}>
               <div className={styles.rail}>
-                {block?.heading && (
-                  <h2 className={`${styles.heading} ${styles.railHeading}`}>
-                    {/* Вторая копия заголовка: в разметке всегда обе, видна
-                        ровно одна — какая, решает CSS по ширине экрана */}
-                    {block.heading}
-                  </h2>
-                )}
-
                 <ol className={styles.railList}>
                   {steps.map((step, index) => {
                     // Заливка — доля пройденного внутри самого шага, та же
-                    // величина, что решает, какая карточка показана. Только у
-                    // активного шага: у пройденных о завершении говорит
-                    // тёмный кружок, иначе залитыми стоят сразу все кнопки
-                    const fill =
-                      index === current ? clamp01(flow - index) : 0;
+                    // величина, что решает, какая карточка показана. У
+                    // пройденных шагов она остаётся полной: кнопки читаются
+                    // как накопленный маршрут, а не как бегущий огонёк
+                    const fill = clamp01(flow - index);
                     const state =
                       index === current
                         ? "active"
@@ -286,31 +293,45 @@ const WorkSteps = ({ block }: Props) => {
                 </ol>
               </div>
 
-              {/* Карточки лежат в одной ячейке сетки: сцена держит высоту по
-                  самому длинному шагу, поэтому при переключении ничего не
-                  прыгает. Скрытые карточки убраны visibility — они не ловят
-                  ни клик, ни табуляцию */}
+              {/* Колода: карточки выезжают снизу и ложатся одна на другую,
+                  из-под верхней видны кромки предыдущих */}
               <div className={styles.stage}>
-                {steps.map((step, index) => (
-                  <div
-                    key={step._key ?? index}
-                    className={`${styles.card} ${styles.stageCard}`}
-                    data-active={index === current ? "true" : undefined}
-                    aria-hidden={index === current ? undefined : "true"}
-                  >
-                    <Card
-                      step={step}
-                      index={index}
-                      total={total}
-                      // Кнопка — только у первого шага (начать) и у
-                      // последнего (финальное действие). У остальных поля в
-                      // админке остаются, просто не выводятся
-                      action={
-                        index === 0 || index === total - 1 ? "inline" : "plain"
-                      }
-                    />
-                  </div>
-                ))}
+                {steps.map((step, index) => {
+                  // Первая карточка лежит на месте с самого начала: ехать ей
+                  // неоткуда, до неё шагов нет
+                  const arrival =
+                    index === 0 ? 1 : clamp01((flow - index) / ARRIVAL_SHARE);
+                  const rest = index * 18;
+                  const y = (1 - arrival) * 560 + arrival * rest;
+
+                  return (
+                    <div
+                      key={step._key ?? index}
+                      className={`${styles.card} ${styles.deckCard}`}
+                      style={{
+                        // Карточка не только выезжает, но и раскрывается:
+                        // приходит уже, чем сцена, и расширяется к месту
+                        transform: `translateY(${y}px) scale(${0.88 + 0.12 * arrival})`,
+                        zIndex: index + 1,
+                        opacity: arrival > 0 ? 1 : 0
+                      }}
+                    >
+                      <Card
+                        step={step}
+                        index={index}
+                        total={total}
+                        // Кнопка — только у первого шага (начать) и у
+                        // последнего (финальное действие). У остальных поля в
+                        // админке остаются, просто не выводятся
+                        action={
+                          index === 0 || index === total - 1
+                            ? "inline"
+                            : "plain"
+                        }
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
