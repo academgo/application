@@ -172,26 +172,26 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
             </ul>
           )}
 
-          {block?.ctaLabel && block?.ctaLink && (
-            <div className={styles.ctaWrapper}>
-              <Link
-                href={block.ctaLink}
-                className={styles.ctaButton}
-                {...(isExternal(block.ctaLink)
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-              >
-                {block.ctaLabel}
-              </Link>
-            </div>
-          )}
+          {(block?.ctaLabel || block?.allLabel) && (
+            <div className={styles.actions}>
+              {block?.ctaLabel && block?.ctaLink && (
+                <Link
+                  href={block.ctaLink}
+                  className={styles.ctaButton}
+                  {...(isExternal(block.ctaLink)
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {block.ctaLabel}
+                </Link>
+              )}
 
-          {block?.allLabel && block?.allLink && (
-            <div className={styles.allWrapper}>
-              <Link href={block.allLink} className={styles.allLink}>
-                {block.allLabel}
-                <FiArrowRight aria-hidden="true" />
-              </Link>
+              {block?.allLabel && block?.allLink && (
+                <Link href={block.allLink} className={styles.allLink}>
+                  {block.allLabel}
+                  <FiArrowRight aria-hidden="true" />
+                </Link>
+              )}
             </div>
           )}
         </div>

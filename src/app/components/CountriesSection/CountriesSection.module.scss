@@ -144,23 +144,30 @@ $surface: #f3f5f8;
   text-decoration: none;
 }
 
-/* Оранжевая кнопка в Telegram: только телефон, как просил клиент */
-.ctaWrapper {
-  display: none;
+/* Обе кнопки в одном ряду: на широком экране рядом по центру,
+   на телефоне друг под другом во всю ширину */
+.actions {
+  display: flex;
+  // stretch, а не center: у кнопок разная толщина шрифта и высоты
+  // расходились на пиксель
+  align-items: stretch;
+  justify-content: center;
+  gap: 16px;
+  margin-top: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
 
   @media screen and (max-width: 640px) {
-    display: block;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 16px;
   }
 }
 
 .ctaButton {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   min-height: 52px;
-  padding: 14px 20px;
+  padding: 14px 28px;
   border: 1px solid $orange;
   border-radius: 999px;
   background: $orange;
@@ -170,6 +177,18 @@ $surface: #f3f5f8;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background: #fff;
+    color: $orange;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .card {
@@ -405,12 +424,6 @@ $surface: #f3f5f8;
 
 /* ======================= кнопка «все страны» ======================= */
 
-.allWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
-}
-
 .allLink {
   display: inline-flex;
   align-items: center;
@@ -459,10 +472,6 @@ $surface: #f3f5f8;
   .badge {
     font-size: 11px;
     padding: 5px 10px;
-  }
-
-  .allWrapper {
-    margin-top: 12px;
   }
 
   .allLink {
