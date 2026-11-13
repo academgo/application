@@ -385,6 +385,7 @@ const SinglePage = async (props: Props) => {
             key={block._key}
             lang={params.lang}
             block={ctaBlock}
+            nested
             path={`/${lang}/${slug}`}
           />
         );

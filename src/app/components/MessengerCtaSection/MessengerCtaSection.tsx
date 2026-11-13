@@ -14,6 +14,12 @@ type Props = {
   block?: MessengerCtaDocument | null;
   /** Адрес страницы — для подстановки страны в тексты */
   path?: string;
+  /**
+   * Секция уже лежит внутри .container — свой не добавляем. На страницах-
+   * конструкторах блоки обёрнуты контейнером, и второй давал двойной
+   * отступ: плашка вставала на 10 пикселей уже соседних блоков
+   */
+  nested?: boolean;
 };
 
 const countryFallback = (lang: string) =>
@@ -25,7 +31,7 @@ const countryFallback = (lang: string) =>
  * Самостоятельная секция с той же плашкой, что на финальном экране квиза.
  * Тексты и ссылки редактируются в документе «Плашка в мессенджер».
  */
-const MessengerCtaSection = async ({ lang, block, path }: Props) => {
+const MessengerCtaSection = async ({ lang, block, path, nested }: Props) => {
   if (!block) return null;
 
   const [messengers] = await Promise.all([getQuizMessengers(lang)]);
@@ -42,30 +48,32 @@ const MessengerCtaSection = async ({ lang, block, path }: Props) => {
       .replace(/\{countryIn\}/g, inflected)
       .replace(/\{country\}/g, nominative) || undefined;
 
+  const card = (
+    <div className={styles.inner}>
+      <MessengerCta
+        lang={lang}
+        content={{
+          eyebrow: fill(block.eyebrow),
+          title: fill(block.heading),
+          description: fill(block.description),
+          mode: block.mode,
+          telegramLabel: fill(block.telegramLabel),
+          telegramLink: block.telegramLink,
+          whatsappLabel: fill(block.whatsappLabel),
+          whatsappLink: block.whatsappLink,
+          note: fill(block.note),
+          showSocials: block.showSocials
+        }}
+        socials={<QuizSocials lang={lang} />}
+        fallbackMessengers={messengers}
+        trackAs="cta"
+      />
+    </div>
+  );
+
   return (
     <section className={styles.section}>
-      <div className="container">
-        <div className={styles.inner}>
-          <MessengerCta
-            lang={lang}
-            content={{
-              eyebrow: fill(block.eyebrow),
-              title: fill(block.heading),
-              description: fill(block.description),
-              mode: block.mode,
-              telegramLabel: fill(block.telegramLabel),
-              telegramLink: block.telegramLink,
-              whatsappLabel: fill(block.whatsappLabel),
-              whatsappLink: block.whatsappLink,
-              note: fill(block.note),
-              showSocials: block.showSocials
-            }}
-            socials={<QuizSocials lang={lang} />}
-            fallbackMessengers={messengers}
-            trackAs="cta"
-          />
-        </div>
-      </div>
+      {nested ? card : <div className="container">{card}</div>}
     </section>
   );
 };
