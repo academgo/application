@@ -22,18 +22,13 @@ type Props = {
 // Запасной адрес кнопки, пока в админке не задан свой
 const DEFAULT_TELEGRAM = "https://t.me/infoacademgo";
 
-// Колода включается только на широком экране и только если человек не
-// просил систему убрать анимации
+// Закреплённая раскладка включается только на широком экране и только если
+// человек не просил систему убрать анимации
 const PIN_MIN_WIDTH = "(min-width: 1024px)";
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 
-// Последняя карточка должна успеть побыть на экране: без этого она приезжает
-// ровно в тот момент, когда закрепление отпускает, и прочитать её не успеваешь.
-// Доля прокрутки, отданная под это ожидание, — один шаг из общего числа
-const DWELL_SHARE = 1;
-
-// Во сколько раз колода складывается быстрее базовой скорости «один экран
-// прокрутки на карточку». Делится не вся высота обёртки, а только её
+// Во сколько раз блок проходится быстрее базовой скорости «один экран
+// прокрутки на шаг». Делится не вся высота обёртки, а только её
 // прокручиваемая часть: первый экран блок просто стоит закреплённым и пути
 // анимации не добавляет, двигают её только оставшиеся (N-1) экранов. Если
 // поделить всю высоту, ускорение выйдет больше заявленного.
@@ -52,19 +47,34 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
 const stepDigit = (step: WorkStep, index: number) =>
   step.number?.match(/\d+/)?.[0] || String(index + 1);
 
-/** Содержимое карточки — одно на оба дерева, колоду и запасной список */
+const clamp01 = (value: number) => Math.min(Math.max(value, 0), 1);
+
+/**
+ * Как показывать действие шага:
+ * - foot — старая полоса под карточкой со строкой-вопросом и кнопкой;
+ *   осталась только в запасном дереве (телефон, выключенные анимации);
+ * - inline — кнопка внутри тела карточки, само действие шага;
+ * - plain — ни полосы, ни кнопки.
+ */
+type CardAction = "foot" | "inline" | "plain";
+
+/** Содержимое карточки — одно на оба дерева, закреплённое и запасное */
 const Card = ({
   step,
   index,
-  total
+  total,
+  action = "foot"
 }: {
   step: WorkStep;
   index: number;
   total: number;
+  action?: CardAction;
 }) => {
   const Icon = ICONS[step.icon || "document"] || FaRegFileLines;
   const href = step.buttonLink || DEFAULT_TELEGRAM;
-  const hasFoot = Boolean(step.footnote || step.buttonText);
+  const hasFoot =
+    action === "foot" && Boolean(step.footnote || step.buttonText);
+  const hasInline = action === "inline" && Boolean(step.buttonText);
 
   return (
     <>
@@ -92,6 +102,17 @@ const Card = ({
               ))}
             </ul>
           )}
+
+          {hasInline && (
+            <Link
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.button} ${styles.action}`}
+            >
+              {step.buttonText}
+            </Link>
+          )}
         </div>
       </div>
 
@@ -117,18 +138,23 @@ const Card = ({
 };
 
 /**
- * «Этапы работы». На широком экране — закреплённая колода: сцена прилипает к
- * экрану, карточки по очереди выезжают снизу и ложатся одна на другую, из-под
- * верхней видны кромки предыдущих. Ниже 1024 и при отключённых анимациях
- * показывается обычный список: оба дерева в разметке всегда, переключает их
- * CSS — так колода не зависит от замеров на сервере.
+ * «Этапы работы». На широком экране — закреплённая сцена в две колонки:
+ * слева заголовок и кнопки шагов, справа карточка активного шага. Кнопка
+ * активного шага заливается слева направо по мере прохождения этого шага,
+ * клик по любой кнопке проматывает к её шагу. Ниже 1024 и при отключённых
+ * анимациях показывается обычный список: оба дерева в разметке всегда,
+ * переключает их CSS — так сцена не зависит от замеров на сервере.
  */
 const WorkSteps = ({ block }: Props) => {
   const steps = block?.steps || [];
   const total = steps.length;
 
   const wrapRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+  // Непрерывное положение по шагам: 0 — начало первого шага, total — конец
+  // последнего. Каждому шагу достаётся ровно одна единица, поэтому у
+  // последнего остаётся свой кусок прокрутки и он успевает побыть на экране
+  // до того, как закрепление отпустит
+  const [flow, setFlow] = useState(0);
 
   useEffect(() => {
     if (!total) return;
@@ -142,13 +168,10 @@ const WorkSteps = ({ block }: Props) => {
 
       if (node && wide.matches && !calm.matches) {
         const rect = node.getBoundingClientRect();
-        // Сколько контейнер уже прокручен мимо липкой сцены
+        // Сколько контейнер уже прокручен мимо закреплённой сцены
         const travel = node.offsetHeight - window.innerHeight;
-        const passed = travel > 0 ? -rect.top / travel : 0;
-        // Карточки разбирают не весь путь, а всё кроме последней доли
-        const usable = Math.max(1 - DWELL_SHARE / total, 0.01);
-        const clamped = Math.min(Math.max(passed / usable, 0), 1);
-        setProgress(clamped * Math.max(total - 1, 1));
+        const passed = travel > 0 ? clamp01(-rect.top / travel) : 0;
+        setFlow(passed * total);
       }
 
       frame = requestAnimationFrame(tick);
@@ -161,7 +184,25 @@ const WorkSteps = ({ block }: Props) => {
 
   if (!total) return null;
 
-  const current = Math.min(Math.round(progress), total - 1);
+  const current = Math.min(Math.floor(flow), total - 1);
+
+  // Обратный ход того же пересчёта, что ведёт сцену: шаг index начинается на
+  // доле index/total пройденного пути. Поэтому клик приводит ровно в начало
+  // шага — с пустой заливкой кнопки, а не в середину.
+  // Лишний пиксель сверху — не запас «на глазок»: начало шага это и есть
+  // граница, на которой Math.floor переключает активный шаг, а браузер
+  // прокручивает только на целые пиксели и округляет цель вниз. Без сдвига
+  // клик садится на полпикселя раньше границы и активным остаётся предыдущий
+  // шаг с полной заливкой — проверено, так вели себя шаги 3 и 4
+  const jumpTo = (index: number) => {
+    const node = wrapRef.current;
+    if (!node) return;
+
+    const top = node.getBoundingClientRect().top + window.scrollY;
+    const travel = Math.max(node.offsetHeight - window.innerHeight, 0);
+
+    window.scrollTo({ top: Math.ceil(top + (index / total) * travel) + 1 });
+  };
 
   return (
     <section className={styles.workSteps} id="admission">
@@ -184,81 +225,93 @@ const WorkSteps = ({ block }: Props) => {
         ))}
       </div>
 
-      {/* Колода */}
+      {/* Закреплённая сцена */}
       <div
         ref={wrapRef}
         className={styles.pinWrap}
         style={{ height: `${100 + ((total - 1) * 100) / SCROLL_SPEED}vh` }}
       >
         <div className={styles.pinSticky}>
-          {block?.heading && (
-            <div className="container">
-              {/* Вторая копия заголовка: в разметке всегда обе, видна ровно
-                  одна — какая, решает CSS по ширине экрана */}
-              <h2 className={styles.heading}>{block.heading}</h2>
-            </div>
-          )}
-
           <div className="container">
-            <ol
-              className={styles.progress}
-              // Делений ровно столько, сколько шагов завели в админке
-              style={{ "--steps": total } as React.CSSProperties}
-            >
-              {steps.map((step, index) => {
-                // Деление заполняется ровно тем же ходом, что приезжает
-                // карточка — шкала и колода идут в такт
-                const fill = Math.min(Math.max(progress - (index - 1), 0), 1);
+            <div className={styles.split}>
+              <div className={styles.rail}>
+                {block?.heading && (
+                  <h2 className={`${styles.heading} ${styles.railHeading}`}>
+                    {/* Вторая копия заголовка: в разметке всегда обе, видна
+                        ровно одна — какая, решает CSS по ширине экрана */}
+                    {block.heading}
+                  </h2>
+                )}
 
-                return (
-                  <li
-                    key={step._key ?? index}
-                    className={`${styles.progStep} ${fill > 0 ? styles.progOn : ""}`}
-                    aria-current={index === current ? "step" : undefined}
-                  >
-                    <span className={styles.progNum}>
-                      {stepDigit(step, index)}
-                    </span>
-                    <span className={styles.progName}>{step.title}</span>
-                    <span className={styles.progBar}>
-                      <span
-                        className={styles.progFill}
-                        style={{ width: `${fill * 100}%` }}
-                      />
-                    </span>
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
+                <ol className={styles.railList}>
+                  {steps.map((step, index) => {
+                    // Заливка — доля пройденного внутри самого шага, та же
+                    // величина, что решает, какая карточка показана. Только у
+                    // активного шага: у пройденных о завершении говорит
+                    // тёмный кружок, иначе залитыми стоят сразу все кнопки
+                    const fill =
+                      index === current ? clamp01(flow - index) : 0;
+                    const state =
+                      index === current
+                        ? "active"
+                        : index < current
+                          ? "past"
+                          : "next";
 
-          <div className="container">
-            <div className={styles.stage}>
-              {steps.map((step, index) => {
-                // Карточка приезжает снизу ровно тогда, когда предыдущая встала
-                const arrival = Math.min(
-                  Math.max(progress - (index - 1), 0),
-                  1
-                );
-                const rest = index * 18;
-                const y = (1 - arrival) * 560 + arrival * rest;
+                    return (
+                      <li key={step._key ?? index}>
+                        <button
+                          type="button"
+                          className={styles.railButton}
+                          data-state={state}
+                          aria-current={index === current ? "step" : undefined}
+                          onClick={() => jumpTo(index)}
+                        >
+                          <span
+                            className={styles.railFill}
+                            style={{
+                              width: `${fill * 100}%`,
+                              opacity: fill > 0 ? 1 : 0
+                            }}
+                            aria-hidden="true"
+                          />
+                          <span className={styles.railNum}>
+                            {stepDigit(step, index)}
+                          </span>
+                          <span className={styles.railName}>{step.title}</span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
 
-                return (
+              {/* Карточки лежат в одной ячейке сетки: сцена держит высоту по
+                  самому длинному шагу, поэтому при переключении ничего не
+                  прыгает. Скрытые карточки убраны visibility — они не ловят
+                  ни клик, ни табуляцию */}
+              <div className={styles.stage}>
+                {steps.map((step, index) => (
                   <div
                     key={step._key ?? index}
-                    className={`${styles.card} ${styles.deckCard}`}
-                    style={{
-                      // Карточка не только выезжает, но и раскрывается:
-                      // приходит уже, чем сцена, и расширяется к месту
-                      transform: `translateY(${y}px) scale(${0.88 + 0.12 * arrival})`,
-                      zIndex: index + 1,
-                      opacity: arrival > 0 ? 1 : 0
-                    }}
+                    className={`${styles.card} ${styles.stageCard}`}
+                    data-active={index === current ? "true" : undefined}
+                    aria-hidden={index === current ? undefined : "true"}
                   >
-                    <Card step={step} index={index} total={total} />
+                    <Card
+                      step={step}
+                      index={index}
+                      total={total}
+                      // Кнопка — только у первого шага (начать) и у
+                      // последнего (финальное действие). У остальных поля в
+                      // админке остаются, просто не выводятся
+                      action={
+                        index === 0 || index === total - 1 ? "inline" : "plain"
+                      }
+                    />
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </div>
         </div>
