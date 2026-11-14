@@ -83,7 +83,10 @@ const Header = async ({ translations, params }: Props) => {
                 className={`${styles.logoImageMobile} logoImageMobileActive`}
               />
             </Link>
-            <p className={styles.description}>{data.description}</p>
+            {/* Подпись под логотипом убрана по просьбе клиента. Поле
+                description в документе шапки осталось нетронутым: чтобы
+                вернуть, достаточно раскомментировать строку ниже. */}
+            {/* <p className={styles.description}>{data.description}</p> */}
           </div>
 
           <div className={styles.navWrapperParent}>
