@@ -2,6 +2,7 @@
 import React from "react";
 import { Metadata } from "next";
 import {
+  getCtaDocumentByLang,
   getBlogPageByLang,
   getBlogPostsByLangWithPagination,
   getFormStandardDocumentByLang
@@ -52,6 +53,9 @@ const PageBlog = async (props: Props) => {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
+  // Плашка в мессенджер для попапа — та же, что над футером
+  const ctaBlock = await getCtaDocumentByLang(params.lang);
+
   // адрес листинга фиксированный, слаги документа тут не участвуют
   const translations: Translation[] = [
     { language: "en", path: "/blog" },
@@ -66,7 +70,11 @@ const PageBlog = async (props: Props) => {
         <BlogPageContent faq={blogPage.faq} lang={params.lang} />
       </main>
       <Footer params={params} />
-      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy
+        lang={params.lang}
+        formDocument={formDocument}
+        ctaBlock={ctaBlock}
+      />
     </>
   );
 };

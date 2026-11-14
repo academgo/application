@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { homeLanguageAlternates } from "@/lib/hreflang";
 import Header from "../components/Header/Header";
 import {
+  getCtaDocumentByLang,
   getCountriesByLang,
   getCountryNamesByLang,
   getFormStandardDocumentByLang,
@@ -52,6 +53,9 @@ export default async function Home(props: Props) {
 
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
+
+  // Плашка в мессенджер для попапа — та же, что над футером
+  const ctaBlock = await getCtaDocumentByLang(params.lang);
 
   const countries = await getCountriesByLang(params.lang);
   const countryNames = await getCountryNamesByLang(params.lang);
@@ -175,7 +179,11 @@ export default async function Home(props: Props) {
         <BlogPostsSection params={{ lang: params.lang }} />
       </main>
       <Footer params={params} />
-      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy
+        lang={params.lang}
+        formDocument={formDocument}
+        ctaBlock={ctaBlock}
+      />
     </>
   );
 }

@@ -1,3 +1,17 @@
+/* Попап с плашкой в мессенджер. Ширина идёт за содержимым: заголовок
+   внутри плашки ограничен 640 пикселями, абзац 520, поэтому карточка
+   шире 720 не становится и на коротком тексте сжимается сама. */
+.ctaPopup {
+  position: relative;
+  // Ширина по содержимому: на коротком тексте карточка сжимается сама,
+  // на длинном упирается в потолок. 800 — чтобы две кнопки в мессенджеры
+  // помещались в строку: вдвоём они занимают 640 плюс паддинги плашки
+  width: fit-content;
+  max-width: min(800px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
 .modalTitle {
   color: #091728;
   font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
@@ -35,7 +49,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +98,7 @@
 
 .mainImage {
   border-radius: 15px;
-  border: 4px solid #FFA800;
+  border: 4px solid #ffa800;
   aspect-ratio: 16/9;
 
   @media screen and (max-width: 880px) {
@@ -101,7 +115,7 @@
   opacity: 0.8;
   background: #032540;
   border-radius: 15px;
-  border: 4px solid #FFA800;
+  border: 4px solid #ffa800;
   aspect-ratio: 10/6;
 }
 
@@ -166,7 +180,7 @@
   left: 40%;
   width: 55%;
   border-radius: 15px;
-  border: 4px solid #FFA800;
+  border: 4px solid #ffa800;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -14,6 +14,7 @@ import RelatedArticles from "@/app/components/RelatedArticles/RelatedArticles";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import {
+  getCtaDocumentByLang,
   getBlogPostByLang,
   getFormStandardDocumentByLang
 } from "@/sanity/sanity.utils";
@@ -28,10 +29,7 @@ import {
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Metadata } from "next";
 import { localePath } from "@/lib/href";
-import {
-  buildLanguageAlternates,
-  buildLanguageVersions
-} from "@/lib/hreflang";
+import { buildLanguageAlternates, buildLanguageVersions } from "@/lib/hreflang";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 
@@ -78,6 +76,9 @@ const PagePost = async (props: Props) => {
 
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
+
+  // Плашка в мессенджер для попапа — та же, что над футером
+  const ctaBlock = await getCtaDocumentByLang(params.lang);
 
   const translations = buildLanguageVersions(blog?._translations, "blog");
 
@@ -177,7 +178,11 @@ const PagePost = async (props: Props) => {
         </div>
       </main>
       <Footer params={params} />
-      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy
+        lang={params.lang}
+        formDocument={formDocument}
+        ctaBlock={ctaBlock}
+      />
     </>
   );
 };

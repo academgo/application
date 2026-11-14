@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { useModal } from "@/app/context/ModalContext";
 import { FormStandardDocument } from "@/types/formStandardDocument";
+import { MessengerCtaDocument } from "@/types/homepage";
 import { loadModalFull } from "./loadModalFull";
 
 const ModalFull = dynamic(loadModalFull, { ssr: false });
@@ -11,6 +12,7 @@ const ModalFull = dynamic(loadModalFull, { ssr: false });
 type Props = {
   lang: string;
   formDocument: FormStandardDocument;
+  ctaBlock?: MessengerCtaDocument | null;
 };
 
 /** Монтирует попап при первом открытии и дальше держит его смонтированным */

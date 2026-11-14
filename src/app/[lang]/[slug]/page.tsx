@@ -42,10 +42,7 @@ import {
 } from "@/types/blog";
 import { FormStandardDocument } from "@/types/formStandardDocument";
 import { Metadata } from "next";
-import {
-  buildLanguageAlternates,
-  buildLanguageVersions
-} from "@/lib/hreflang";
+import { buildLanguageAlternates, buildLanguageVersions } from "@/lib/hreflang";
 import SinglePageIntroBlock from "@/app/components/SinglePageIntroBlock/SinglePageIntroBlock";
 import DoubleTextBlockComponent from "@/app/components/DoubleTextBlockComponent/DoubleTextBlockComponent";
 import WhiteBlockComponent from "@/app/components/WhiteBlockComponent/WhiteBlockComponent";
@@ -75,9 +72,7 @@ import LeadMagnetBlock, {
   LeadMagnetBlockType
 } from "@/app/components/LeadMagnetBlock/LeadMagnetBlock";
 import MessengerCtaSection from "@/app/components/MessengerCtaSection/MessengerCtaSection";
-import type {
-  ConsultationFormBlockType
-} from "@/app/components/ConsultationFormBlock/ConsultationFormBlock";
+import type { ConsultationFormBlockType } from "@/app/components/ConsultationFormBlock/ConsultationFormBlock";
 import BarChartBlock, {
   BarChartBlockType
 } from "@/app/components/BarChartBlock/BarChartBlock";
@@ -432,7 +427,11 @@ const SinglePage = async (props: Props) => {
         </div>
       </main>
       <Footer params={params} />
-      <ModalFullLazy lang={params.lang} formDocument={formDocument} />
+      <ModalFullLazy
+        lang={params.lang}
+        formDocument={formDocument}
+        ctaBlock={ctaBlock}
+      />
     </>
   );
 };
