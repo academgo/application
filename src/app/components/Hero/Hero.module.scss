@@ -2,8 +2,10 @@
   margin-top: 100px;
   margin-bottom: 70px;
 
+  // На телефоне шапка накрывала верх синей карточки: пока колонка была
+  // без фона, это было незаметно, теперь край упирается в хедер
   @media screen and (max-width: 768px) {
-    margin-top: 80px;
+    margin-top: 90px;
     margin-bottom: 40px;
   }
 }
@@ -11,13 +13,15 @@
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 850px;
-  gap: 60px;
+  // Пока левая колонка была без фона, зазор в 60 не читался. С синей
+  // карточкой у него появился видимый край, и 60 стало много
+  gap: 30px;
   // stretch, а не center: синяя карточка тянется на высоту фото
   align-items: stretch;
 
   @media screen and (max-width: 1440px) {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 40px;
+    gap: 24px;
   }
 
   @media screen and (max-width: 900px) {
