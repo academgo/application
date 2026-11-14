@@ -4,10 +4,12 @@
   justify-content: center;
   gap: 12px;
   padding: 8px 20px;
-  border: 1px solid #e3e8ef;
+  // Кнопка стоит на синей карточке первого экрана: прозрачная с белой
+  // рамкой. Белая заливка с серой рамкой на #112546 выглядела заплаткой
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 162.353px;
-  background: #fff;
-  color: #091728;
+  background: transparent;
+  color: #fff;
   text-align: center;
   font-size: clamp(0.875rem, 0.688rem + 0.75vw, 1.25rem);
   font-weight: 700;
@@ -18,7 +20,8 @@
 
   @media screen and (min-width: 768px) {
     border-radius: 500px;
-    padding: 27px 44px;
+    padding: 22px 28px;
+    font-size: 1.125rem;
     letter-spacing: -0.6px;
 
     &:hover {
@@ -49,9 +52,9 @@
   transition: all 0.2s ease;
 
   @media screen and (min-width: 768px) {
-    width: 34px;
-    height: 34px;
-    font-size: 12px;
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
   }
 }
 

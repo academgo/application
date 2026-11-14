@@ -52,44 +52,48 @@ const Hero: FC<Props> = ({
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.content}>
-            {description && <p className={styles.eyebrow}>{description}</p>}
+            <div className={styles.contentTop}>
+              {description && <p className={styles.eyebrow}>{description}</p>}
 
-            <p className={styles.mainHeading}>
-              {mainHeadingStart}{" "}
-              <span className={styles.highlight}>
-                {mainHeadingHighlight}
-                <span className={styles.tooltip}>{tooltip}</span>
-              </span>{" "}
-              {mainHeadingContinue} {mainHeadingEnd}
-            </p>
+              <p className={styles.mainHeading}>
+                {mainHeadingStart}{" "}
+                <span className={styles.highlight}>
+                  {mainHeadingHighlight}
+                  <span className={styles.tooltip}>{tooltip}</span>
+                </span>{" "}
+                {mainHeadingContinue} {mainHeadingEnd}
+              </p>
 
-            {descriptionSmall && (
-              <p className={styles.lead}>{descriptionSmall}</p>
-            )}
-
-            <div className={styles.actions}>
-              <ButtonModal>{heroButtonText}</ButtonModal>
-              {hasVideo && (
-                <HeroVideoButton
-                  videoId={heroVideo!.videoId!}
-                  startSeconds={heroVideo?.startSeconds}
-                  title={heroVideo?.title || videoButtonText}
-                >
-                  {videoButtonText}
-                </HeroVideoButton>
+              {descriptionSmall && (
+                <p className={styles.lead}>{descriptionSmall}</p>
               )}
             </div>
 
-            {hasStats && (
-              <dl className={styles.stats}>
-                {heroStats!.map(stat => (
-                  <div key={stat._key} className={styles.stat}>
-                    <dt className={styles.statValue}>{stat.value}</dt>
-                    <dd className={styles.statLabel}>{stat.label}</dd>
-                  </div>
-                ))}
-              </dl>
-            )}
+            <div className={styles.contentBottom}>
+              <div className={styles.actions}>
+                <ButtonModal>{heroButtonText}</ButtonModal>
+                {hasVideo && (
+                  <HeroVideoButton
+                    videoId={heroVideo!.videoId!}
+                    startSeconds={heroVideo?.startSeconds}
+                    title={heroVideo?.title || videoButtonText}
+                  >
+                    {videoButtonText}
+                  </HeroVideoButton>
+                )}
+              </div>
+
+              {hasStats && (
+                <dl className={styles.stats}>
+                  {heroStats!.map(stat => (
+                    <div key={stat._key} className={styles.stat}>
+                      <dt className={styles.statValue}>{stat.value}</dt>
+                      <dd className={styles.statLabel}>{stat.label}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </div>
           </div>
 
           <div className={styles.media}>
