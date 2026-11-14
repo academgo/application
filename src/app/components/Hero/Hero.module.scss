@@ -89,6 +89,107 @@
   }
 }
 
+/* Набор заголовка по буквам. Всё на CSS: компонент остаётся серверным,
+   текст целиком приходит в HTML и индексируется, JS не участвует.
+   Скорость меняется одной цифрой ниже: 30.6ms на букву — это 1,96 с на
+   всю фразу из 64 знаков. */
+.mainHeading {
+  --type-step: 30.6ms;
+}
+
+.char {
+  position: relative;
+  opacity: 0;
+  animation: heroTypeIn 1ms linear forwards;
+  animation-delay: calc(var(--i) * var(--type-step));
+}
+
+/* Каретка бежит за буквами: у каждой своя, видна только в свой момент */
+.char::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 0.1em;
+  width: 4px;
+  height: 0.78em;
+  background: #f39708;
+  opacity: 0;
+  animation: heroTypeCaret calc(var(--type-step) * 1.2) linear forwards;
+  animation-delay: calc(var(--i) * var(--type-step));
+}
+
+/* Подчёркивание выделенного слова — на самих буквах, иначе линия
+   нарисована заранее, до того как слово набралось */
+.charHighlight {
+  border-bottom: 4px solid #f39708;
+}
+
+.caret {
+  display: inline-block;
+  width: 4px;
+  height: 0.78em;
+  margin-left: 4px;
+  background: #f39708;
+  vertical-align: -6px;
+  opacity: 0;
+  // Мигает четыре раза и пропадает: бесконечная каретка на первом экране
+  // отвлекает от заголовка
+  animation:
+    heroCaretBlink 1s step-end 4,
+    heroCaretHide 1ms linear forwards;
+  animation-delay:
+    calc(var(--total) * var(--type-step)),
+    calc(var(--total) * var(--type-step) + 4s);
+}
+
+@keyframes heroTypeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroTypeCaret {
+  0%,
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes heroCaretBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes heroCaretHide {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Кому анимации выключены — заголовок сразу целиком */
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    opacity: 1;
+    animation: none;
+  }
+
+  .char::after {
+    display: none;
+  }
+
+  .caret {
+    display: none;
+  }
+}
+
 .highlight {
   color: #f39708;
   position: relative;

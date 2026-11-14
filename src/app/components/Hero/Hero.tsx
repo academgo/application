@@ -7,6 +7,42 @@ import { urlFor } from "@/sanity/image";
 import { ButtonModal } from "../ButtonModal/ButtonModal";
 import HeroVideoButton from "../HeroVideoButton/HeroVideoButton";
 
+/**
+ * Разбивает строку на буквы для набора заголовка. Серверный рендер: в HTML
+ * уходит весь текст, анимацией занимается только CSS по номеру буквы.
+ * Пробелы оставляем обычными текстовыми узлами — в span они становятся
+ * неразрывными и заголовок перестаёт переноситься по строкам.
+ */
+const splitChars = (
+  text: string,
+  start: number,
+  extraClass?: string
+): { nodes: React.ReactNode[]; next: number } => {
+  const nodes: React.ReactNode[] = [];
+  let index = start;
+
+  for (const char of Array.from(text)) {
+    if (char === " ") {
+      nodes.push(" ");
+      index += 1;
+      continue;
+    }
+
+    nodes.push(
+      <span
+        key={index}
+        className={`${styles.char} ${extraClass || ""}`}
+        style={{ "--i": index } as React.CSSProperties}
+      >
+        {char}
+      </span>
+    );
+    index += 1;
+  }
+
+  return { nodes, next: index };
+};
+
 type Props = {
   lang: string;
   mainHeadingStart: string;
@@ -44,6 +80,19 @@ const Hero: FC<Props> = ({
 }) => {
   const hasStats = Boolean(heroStats && heroStats.length);
   const hasVideo = Boolean(heroVideo && heroVideo.videoId);
+  // Заголовок набирается по буквам: нумерация сквозная через все куски,
+  // иначе выделенное слово начало бы печататься заново
+  const headingStart = splitChars(`${mainHeadingStart} `, 0);
+  const headingHighlight = splitChars(
+    mainHeadingHighlight,
+    headingStart.next,
+    styles.charHighlight
+  );
+  const headingRest = splitChars(
+    ` ${mainHeadingContinue} ${mainHeadingEnd}`,
+    headingHighlight.next
+  );
+
   const videoButtonText =
     heroVideo?.buttonText || (lang === "ru" ? "Как мы работаем" : "How we work");
 
@@ -56,12 +105,19 @@ const Hero: FC<Props> = ({
               {description && <p className={styles.eyebrow}>{description}</p>}
 
               <p className={styles.mainHeading}>
-                {mainHeadingStart}{" "}
+                {headingStart.nodes}
                 <span className={styles.highlight}>
-                  {mainHeadingHighlight}
+                  {headingHighlight.nodes}
                   <span className={styles.tooltip}>{tooltip}</span>
-                </span>{" "}
-                {mainHeadingContinue} {mainHeadingEnd}
+                </span>
+                {headingRest.nodes}
+                <span
+                  className={styles.caret}
+                  style={
+                    { "--total": headingRest.next } as React.CSSProperties
+                  }
+                  aria-hidden="true"
+                />
               </p>
 
               {descriptionSmall && (
