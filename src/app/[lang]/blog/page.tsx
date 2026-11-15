@@ -2,7 +2,7 @@
 import React from "react";
 import { Metadata } from "next";
 import {
-  getCtaDocumentByLang,
+  getCtaDocumentsByLang,
   getBlogPageByLang,
   getBlogPostsByLangWithPagination,
   getFormStandardDocumentByLang
@@ -53,8 +53,8 @@ const PageBlog = async (props: Props) => {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
-  // Плашка в мессенджер для попапа — та же, что над футером
-  const ctaBlock = await getCtaDocumentByLang(params.lang);
+  // Плашки в мессенджер: над футером и во всплывающем окне
+  const cta = await getCtaDocumentsByLang(params.lang);
 
   // адрес листинга фиксированный, слаги документа тут не участвуют
   const translations: Translation[] = [
@@ -73,7 +73,7 @@ const PageBlog = async (props: Props) => {
       <ModalFullLazy
         lang={params.lang}
         formDocument={formDocument}
-        ctaBlock={ctaBlock}
+        ctaBlock={cta?.popup}
       />
     </>
   );

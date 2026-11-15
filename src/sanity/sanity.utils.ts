@@ -300,25 +300,38 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
 }
 
 /**
- * Плашка в мессенджер для страниц-конструкторов. Берём ровно ту, на
- * которую ссылается футер: документов ctaDocument на язык несколько
- * (например отдельный текст для экрана после квиза), и выбор «первого
- * попавшегося» давал бы случайную плашку.
+ * Плашки в мессенджер: над футером и во всплывающем окне. Берём обе одним
+ * запросом — страницы выводят и блок, и попап, а два запроса на одно и то
+ * же место лишние.
+ *
+ * Документов ctaDocument на язык несколько, поэтому идём по ссылкам из
+ * футера, а не берём первый попавшийся. Для попапа — своя ссылка, и если
+ * она не выбрана, показывается плашка над футером.
  */
-export async function getCtaDocumentByLang(
+const CTA_FIELDS = `{
+  eyebrow,
+  heading,
+  description,
+  mode,
+  telegramLabel,
+  telegramLink,
+  whatsappLabel,
+  whatsappLink,
+  note,
+  showSocials
+}`;
+
+export type CtaDocuments = {
+  block: MessengerCtaDocument | null;
+  popup: MessengerCtaDocument | null;
+};
+
+export async function getCtaDocumentsByLang(
   lang: string
-): Promise<MessengerCtaDocument | null> {
-  const ctaQuery = groq`*[_type == 'footer' && language == $lang][0].ctaDocument->{
-    eyebrow,
-    heading,
-    description,
-    mode,
-    telegramLabel,
-    telegramLink,
-    whatsappLabel,
-    whatsappLink,
-    note,
-    showSocials
+): Promise<CtaDocuments | null> {
+  const ctaQuery = groq`*[_type == 'footer' && language == $lang][0] {
+    "block": ctaDocument->${CTA_FIELDS},
+    "popup": coalesce(popupCtaDocument->${CTA_FIELDS}, ctaDocument->${CTA_FIELDS})
   }`;
 
   return client.fetch(ctaQuery, { lang });

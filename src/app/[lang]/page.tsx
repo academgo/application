@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { homeLanguageAlternates } from "@/lib/hreflang";
 import Header from "../components/Header/Header";
 import {
-  getCtaDocumentByLang,
+  getCtaDocumentsByLang,
   getCountriesByLang,
   getCountryNamesByLang,
   getFormStandardDocumentByLang,
@@ -54,8 +54,8 @@ export default async function Home(props: Props) {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
-  // Плашка в мессенджер для попапа — та же, что над футером
-  const ctaBlock = await getCtaDocumentByLang(params.lang);
+  // Плашки в мессенджер: над футером и во всплывающем окне
+  const cta = await getCtaDocumentsByLang(params.lang);
 
   const countries = await getCountriesByLang(params.lang);
   const countryNames = await getCountryNamesByLang(params.lang);
@@ -182,7 +182,7 @@ export default async function Home(props: Props) {
       <ModalFullLazy
         lang={params.lang}
         formDocument={formDocument}
-        ctaBlock={ctaBlock}
+        ctaBlock={cta?.popup}
       />
     </>
   );

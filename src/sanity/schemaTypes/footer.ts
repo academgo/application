@@ -20,6 +20,14 @@ const footer = {
         "Если заполнено, над футером вместо блока с формой показывается плашка с кнопками в Telegram и WhatsApp."
     }),
     defineField({
+      name: "popupCtaDocument",
+      title: "Плашка во всплывающем окне",
+      type: "reference",
+      to: [{ type: "ctaDocument" }],
+      description:
+        "Окно, которое открывается кнопками «Начнем с бесплатной консультации» по всему сайту. Если не выбрано, показывается та же плашка, что над футером."
+    }),
+    defineField({
       name: "consultationBlock",
       title: "Consultation Block",
       type: "object",

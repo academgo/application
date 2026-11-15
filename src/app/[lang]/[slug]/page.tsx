@@ -9,7 +9,7 @@ import PreviewMain from "@/app/components/PreviewMain/PreviewMain";
 import TabsBlockComponent from "@/app/components/TabsBlockComponent/TabsBlockComponent";
 import TextContentComponent from "@/app/components/TextContentComponent/TextContentComponent";
 import {
-  getCtaDocumentByLang,
+  getCtaDocumentsByLang,
   getFormStandardDocumentByLang,
   getSinglePageByLang
 } from "@/sanity/sanity.utils";
@@ -163,8 +163,8 @@ const SinglePage = async (props: Props) => {
   const formDocument: FormStandardDocument =
     await getFormStandardDocumentByLang(params.lang);
 
-  // Плашка с кнопками в мессенджеры — один документ на язык
-  const ctaBlock = await getCtaDocumentByLang(params.lang);
+  // Плашки в мессенджер: в контенте и во всплывающем окне
+  const cta = await getCtaDocumentsByLang(params.lang);
 
   const translations = buildLanguageVersions(page?._translations);
 
@@ -379,7 +379,7 @@ const SinglePage = async (props: Props) => {
           <MessengerCtaSection
             key={block._key}
             lang={params.lang}
-            block={ctaBlock}
+            block={cta?.block}
             nested
             path={`/${lang}/${slug}`}
           />
@@ -430,7 +430,7 @@ const SinglePage = async (props: Props) => {
       <ModalFullLazy
         lang={params.lang}
         formDocument={formDocument}
-        ctaBlock={ctaBlock}
+        ctaBlock={cta?.popup}
       />
     </>
   );
