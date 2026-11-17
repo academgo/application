@@ -54,10 +54,14 @@ const EXTRA = {
   en: { label: "Compare countries", link: "/study-abroad" }
 };
 
-/** Заметка под адресом в колонке «Контакты» */
+/**
+ * Заметка под адресом в колонке «Контакты». Перенос строки значащий:
+ * у абзаца стоит white-space: pre-line, и он сохраняется. Без переноса
+ * строка вытягивалась на 353 пикселя — вдвое шире адреса над ней
+ */
 const CONTACT_NOTE = {
-  ru: "Заявки на поступление принимаем в Telegram и WhatsApp",
-  en: "We accept admission requests via Telegram and WhatsApp"
+  ru: "Заявки на поступление принимаем\nв Telegram и WhatsApp",
+  en: "We accept admission requests\nvia Telegram and WhatsApp"
 };
 
 const token = () => {
