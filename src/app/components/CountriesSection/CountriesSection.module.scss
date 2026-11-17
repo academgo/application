@@ -162,11 +162,14 @@ $surface: #f3f5f8;
   }
 }
 
+/* Это <button>, а не ссылка: браузерные шрифт и курсор нужно сбросить */
 .ctaButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 52px;
+  font-family: inherit;
+  cursor: pointer;
   padding: 14px 28px;
   border: 1px solid $orange;
   border-radius: 999px;

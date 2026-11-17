@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import { urlFor } from "@/sanity/image";
+import { ButtonModal } from "../ButtonModal/ButtonModal";
 import { Country } from "@/types/country";
 import { CountriesBlock } from "@/types/homepage";
 import styles from "./CountriesSection.module.scss";
@@ -69,7 +70,6 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
   // только чипом, на широком экране их нет вовсе
   const gridCountries = visibleCountries.slice(0, limit);
   const tailCountries = visibleCountries.slice(CARDS_ON_MOBILE, TOTAL_ON_MOBILE);
-  const isExternal = (href?: string) => Boolean(href && /^https?:/.test(href));
 
   return (
     <section className={styles.countriesSection} id="countries">
@@ -188,16 +188,13 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
 
           {(block?.ctaLabel || block?.allLabel) && (
             <div className={styles.actions}>
-              {block?.ctaLabel && block?.ctaLink && (
-                <Link
-                  href={block.ctaLink}
-                  className={styles.ctaButton}
-                  {...(isExternal(block.ctaLink)
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
+              {/* Не ссылка, а открытие того же всплывающего окна, что и на
+                  первом экране: человек, который ещё не выбрал страну,
+                  пишет нам в мессенджер прямо отсюда */}
+              {block?.ctaLabel && (
+                <ButtonModal className={styles.ctaButton}>
                   {block.ctaLabel}
-                </Link>
+                </ButtonModal>
               )}
 
               {block?.allLabel && block?.allLink && (

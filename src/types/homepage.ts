@@ -238,9 +238,8 @@ export type CountriesBlock = {
   titleHighlight?: string;
   description?: string;
   cardLinkLabel?: string;
-  /** Оранжевая кнопка под плиткой, только на телефонах */
+  /** Оранжевая кнопка под плиткой: открывает окно с мессенджерами */
   ctaLabel?: string;
-  ctaLink?: string;
   compareLabel?: string;
   compareLink?: string;
   /** сколько карточек выводить в плитке, по умолчанию 6 */
