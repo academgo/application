@@ -37,6 +37,10 @@ const SCROLL_PER_STEP = 400;
 // расчёт, но без знания высоты сцены
 const FALLBACK_STAGE = 420;
 
+// На сколько каждая следующая карточка колоды лежит ниже предыдущей —
+// из-под верхней видны кромки тех, что уже прошли
+const DECK_STEP = 18;
+
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   chat: FaRegComments,
   document: FaRegFileLines,
@@ -202,6 +206,9 @@ const WorkSteps = ({ block }: Props) => {
   // Отступ сцены от верха экрана: задан в CSS через высоту шапки, но в
   // расчёт высоты обёртки его нужно добавить, иначе путь выйдет короче
   const [stickyOffset, setStickyOffset] = useState(0);
+  // Минимальный отступ из CSS — высота шапки плюс воздух. Запоминается до
+  // того, как мы впишем свой top: иначе прочитаем собственное же значение
+  const minTopRef = useRef<number | null>(null);
   // Непрерывное положение по шагам: 0 — начало первого шага, total — конец
   // последнего. Каждому шагу достаётся ровно одна единица, поэтому у
   // последнего остаётся свой кусок прокрутки и он успевает побыть на экране
@@ -216,9 +223,31 @@ const WorkSteps = ({ block }: Props) => {
     if (!sticky || !stage) return;
 
     const measure = () => {
-      setStickyHeight(sticky.offsetHeight);
+      if (minTopRef.current === null) {
+        minTopRef.current = parseFloat(getComputedStyle(sticky).top) || 0;
+      }
+
+      const height = sticky.offsetHeight;
+      setStickyHeight(height);
       setStageHeight(stage.offsetHeight);
-      setStickyOffset(parseFloat(getComputedStyle(sticky).top) || 0);
+      // По центру того, что осталось от экрана под шапкой, но не выше
+      // минимального отступа. Прижатая к шапке сцена оставляла под собой
+      // пустое поле во всю оставшуюся высоту экрана. Считаем от нижнего
+      // края шапки, а не от верха экрана: шапка — сплошная полоса, и
+      // свободным глаз читает только то, что под ней
+      const headerHeight =
+        parseFloat(
+          getComputedStyle(sticky).getPropertyValue("--header-h")
+        ) || 0;
+
+      setStickyOffset(
+        Math.max(
+          minTopRef.current,
+          Math.round(
+            headerHeight + (window.innerHeight - headerHeight - height) / 2
+          )
+        )
+      );
     };
 
     measure();
@@ -226,8 +255,12 @@ const WorkSteps = ({ block }: Props) => {
     const observer = new ResizeObserver(measure);
     observer.observe(sticky);
     observer.observe(stage);
+    window.addEventListener("resize", measure);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
   }, [total]);
 
   useEffect(() => {
@@ -370,7 +403,11 @@ const WorkSteps = ({ block }: Props) => {
           height: `${stickyHeight + stickyOffset + total * SCROLL_PER_STEP}px`
         }}
       >
-        <div ref={stickyRef} className={styles.pinSticky}>
+        <div
+          ref={stickyRef}
+          className={styles.pinSticky}
+          style={{ top: `${stickyOffset}px` }}
+        >
           <div className="container">
             <div className={styles.split}>
               <div className={styles.rail}>
@@ -418,13 +455,19 @@ const WorkSteps = ({ block }: Props) => {
 
               {/* Колода: карточки выезжают снизу и ложатся одна на другую,
                   из-под верхней видны кромки предыдущих */}
-              <div ref={stageRef} className={styles.stage}>
+              <div
+                ref={stageRef}
+                className={styles.stage}
+                // Колода уходит вниз на DECK_STEP за карточку: без запаса
+                // нижняя срезалась краем закреплённой сцены
+                style={{ paddingBottom: `${(total - 1) * DECK_STEP}px` }}
+              >
                 {steps.map((step, index) => {
                   // Первая карточка лежит на месте с самого начала: ехать ей
                   // неоткуда, до неё шагов нет
                   const arrival =
                     index === 0 ? 1 : clamp01((flow - index) / ARRIVAL_SHARE);
-                  const rest = index * 18;
+                  const rest = index * DECK_STEP;
                   // Путь выезда — высота сцены: карточка приходит ровно
                   // из-под её нижней кромки. Фиксированное число при
                   // невысокой сцене давало рывок
