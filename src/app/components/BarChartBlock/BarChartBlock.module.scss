@@ -44,7 +44,7 @@ $accent-range: #f9cf8f;
 
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 4px;
   }
 }
 
@@ -62,6 +62,17 @@ $accent-range: #f9cf8f;
   display: flex;
   align-items: center;
   min-height: 24px;
+  // Без этого дорожка не даёт себя ужать: длинная подпись значения
+  // распирала её, а вместе с ней и всю страницу
+  min-width: 0;
+
+  // На телефоне рядом со столбиком остаётся около 90 пикселей, а подпись
+  // вроде «примерно €9 000–11 820» занимает вдвое больше. Переносим её
+  // на свою строку: иначе она выталкивает документ за край экрана и
+  // появляется горизонтальная прокрутка
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 }
 
 // Столбик: 20px, скруглённый конец данных, прямой край у нулевой линии
@@ -95,6 +106,13 @@ $accent-range: #f9cf8f;
   font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
+
+  @media screen and (max-width: 767px) {
+    flex-basis: 100%;
+    margin: 4px 0 0;
+    // Подпись всё же длиннее экрана — пусть переносится, а не вылезает
+    white-space: normal;
+  }
 }
 
 .highlight {
