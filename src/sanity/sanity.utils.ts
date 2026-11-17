@@ -932,6 +932,7 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     badge,
     homeBadge,
     homeOrder,
+    homePrice,
     shortDescription,
     comparison,
     hubPage->{
@@ -974,6 +975,7 @@ export async function getCountriesByLang(lang: string): Promise<Country[]> {
     badge: country.badge,
     homeBadge: country.homeBadge,
     homeOrder: country.homeOrder,
+    homePrice: country.homePrice,
     shortDescription: country.shortDescription,
     comparison: country.comparison,
     // фото для плитки на главной — обложка страницы-хаба, отдельное поле не заводим

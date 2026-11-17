@@ -30,6 +30,8 @@ export type Country = {
   homeBadge?: string;
   /** порядок в плитке на главной, независимый от порядка в меню */
   homeOrder?: number;
+  /** короткая цена на карточке главной; длинная живёт в comparison */
+  homePrice?: string;
   shortDescription?: string;
   comparison?: CountryComparison;
   /** обложка страницы-хаба: используется как фото карточки на главной */

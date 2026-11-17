@@ -16,11 +16,18 @@ type Props = {
 const DEFAULT_CARDS = 8;
 
 /**
- * На телефонах восемь полных карточек дают простыню почти в полтора экрана.
- * Поэтому первые четыре остаются карточками, остальные сворачиваются в
- * компактные чипы с одним названием. На планшетах и десктопе всё как было.
+ * На телефонах полная плитка даёт простыню почти в полтора экрана, поэтому
+ * список делится надвое: первые шесть стран остаются карточками, остальные
+ * сворачиваются в компактные чипы с одним названием.
  */
-const CARDS_ON_MOBILE = 4;
+const CARDS_ON_MOBILE = 6;
+
+/**
+ * Сколько стран всего попадает на телефон: шесть карточек плюс четыре чипа.
+ * Больше, чем на десктопе: две последние страны живут только в мобильных
+ * чипах и в статье «Сравнить страны», в десктопную плитку они не идут.
+ */
+const TOTAL_ON_MOBILE = 10;
 
 /**
  * Подпись к стоимости на ховере. В CMS не выносим: служебное слово, а не контент.
@@ -48,7 +55,7 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
       return a.index - b.index;
     })
     .map(item => item.country)
-    .slice(0, limit);
+    .slice(0, Math.max(limit, TOTAL_ON_MOBILE));
 
   if (visibleCountries.length === 0) {
     return null;
@@ -56,9 +63,12 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
 
   const label = tuitionLabel(lang);
 
-  // Хвост показывается дважды: карточками для широких экранов и чипами для
-  // телефонов. Лишнее прячется в CSS, поэтому разметка одна на оба случая
-  const tailCountries = visibleCountries.slice(CARDS_ON_MOBILE);
+  // Карточки — только те, что нужны десктопу. Чипы начинаются раньше, с
+  // седьмой страны, и захватывают ещё две сверх десктопной плитки: страны
+  // 7-8 показываются и карточкой, и чипом (лишнее прячется в CSS), а 9-10 —
+  // только чипом, на широком экране их нет вовсе
+  const gridCountries = visibleCountries.slice(0, limit);
+  const tailCountries = visibleCountries.slice(CARDS_ON_MOBILE, TOTAL_ON_MOBILE);
   const isExternal = (href?: string) => Boolean(href && /^https?:/.test(href));
 
   return (
@@ -87,14 +97,17 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
           </div>
 
           <div className={styles.grid}>
-            {visibleCountries.map((country, cardIndex) => {
+            {gridCountries.map((country, cardIndex) => {
               // Фото карточки — обложка страницы-хаба страны
               const imageUrl = country.cardImage
                 ? urlFor(country.cardImage).url()
                 : country.cardImageUrl;
 
+              // На карточке — короткая цена одной строкой. Длинная из блока
+              // сравнения остаётся запасным вариантом, если короткой нет
               const tuition = country.comparison?.tuitionFrom;
-              const hasFacts = Boolean(country.shortDescription || tuition);
+              const cardPrice = country.homePrice || tuition;
+              const hasFacts = Boolean(country.shortDescription || cardPrice);
 
               return (
                 <Link
@@ -128,10 +141,12 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
                             {country.shortDescription}
                           </span>
                         )}
-                        {tuition && (
+                        {cardPrice && (
                           <span className={styles.factsTuition}>
                             <span className={styles.factsLabel}>{label}</span>
-                            <span className={styles.factsValue}>{tuition}</span>
+                            <span className={styles.factsValue}>
+                              {cardPrice}
+                            </span>
                           </span>
                         )}
                       </span>
@@ -148,12 +163,11 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
                     )}
                   </span>
 
-                  {/* На тач-экранах ховера нет — цену показываем сразу */}
-                  {tuition && (
-                    <span className={styles.touchTuition}>
-                      <span className={styles.touchLabel}>{label}</span>
-                      {tuition}
-                    </span>
+                  {/* На тач-экранах ховера нет — цену показываем сразу.
+                      Без подписи «Обучение»: она занимала отдельную строку
+                      и ничего не добавляла к самому ценнику */}
+                  {cardPrice && (
+                    <span className={styles.touchTuition}>{cardPrice}</span>
                   )}
                 </Link>
               );
