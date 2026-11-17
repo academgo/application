@@ -12,6 +12,12 @@ type Props = {
   block?: CountriesBlock;
   countries: Country[];
   lang: string;
+  /**
+   * Блок уже стоит внутри .container — свой не добавляем. На страницах из
+   * конструктора все блоки обёрнуты контейнером, и второй давал бы
+   * двойной отступ по краям
+   */
+  nested?: boolean;
 };
 
 const DEFAULT_CARDS = 8;
@@ -38,7 +44,7 @@ const TOTAL_ON_MOBILE = 10;
 const tuitionLabel = (lang: string) =>
   lang === "ru" ? "Обучение" : "Tuition";
 
-const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
+const CountriesSection: FC<Props> = ({ block, countries, lang, nested }) => {
   const limit = block?.maxCards || DEFAULT_CARDS;
 
   // Порядок в плитке задаётся полем homeOrder, чтобы не зависеть от порядка
@@ -71,10 +77,8 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
   const gridCountries = visibleCountries.slice(0, limit);
   const tailCountries = visibleCountries.slice(CARDS_ON_MOBILE, TOTAL_ON_MOBILE);
 
-  return (
-    <section className={styles.countriesSection} id="countries">
-      <div className="container">
-        <div className={styles.inner}>
+  const inner = (
+    <div className={styles.inner}>
           <div className={styles.head}>
             <div className={styles.headMain}>
               {block?.eyebrow && (
@@ -205,8 +209,12 @@ const CountriesSection: FC<Props> = ({ block, countries, lang }) => {
               )}
             </div>
           )}
-        </div>
-      </div>
+    </div>
+  );
+
+  return (
+    <section className={styles.countriesSection} id="countries">
+      {nested ? inner : <div className="container">{inner}</div>}
     </section>
   );
 };

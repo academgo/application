@@ -65,6 +65,9 @@ import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import WorkStepsBlockComponent, {
   WorkStepsBlockType
 } from "@/app/components/WorkStepsBlockComponent/WorkStepsBlockComponent";
+import CountriesBlockComponent, {
+  CountriesBlockType
+} from "@/app/components/CountriesBlockComponent/CountriesBlockComponent";
 import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlockComponent";
 import PricingTableComponent from "@/app/components/PricingTableComponent/PricingTableComponent";
 import PackagesBlockComponent from "@/app/components/PackagesBlockComponent/PackagesBlockComponent";
@@ -318,6 +321,14 @@ const SinglePage = async (props: Props) => {
             lang={params.lang}
             key={block._key}
             block={block as SurveyBlock}
+          />
+        );
+      case "countriesBlock":
+        return (
+          <CountriesBlockComponent
+            key={block._key}
+            block={block as CountriesBlockType}
+            lang={params.lang}
           />
         );
       case "workStepsBlock":

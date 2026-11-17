@@ -47,6 +47,7 @@ import quizOption from "./quizOption";
 import tableBlock from "./tableBlock";
 import videosBlock from "./videosBlock";
 import workStepsBlock from "./workStepsBlock";
+import countriesBlock from "./countriesBlock";
 import videoItem from "./videoItem";
 import videoReviewsDocument from "./videoReviewsDocument";
 import countriesCompareBlock from "./countriesCompareBlock";
@@ -101,6 +102,7 @@ export const schemaTypes = [
   linksBlock,
   videosBlock,
   workStepsBlock,
+  countriesBlock,
   videoItem,
   videoReviewsDocument,
   tableBlock,

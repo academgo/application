@@ -133,7 +133,8 @@ const subpage = {
         { type: "barChartBlock" },
         { type: "timelineBlock" },
         { type: "countryMapBlock" },
-        { type: "workStepsBlock" }
+        { type: "workStepsBlock" },
+        { type: "countriesBlock" }
       ]
     }),
     defineField({

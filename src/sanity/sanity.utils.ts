@@ -3,6 +3,7 @@ import { client } from "./sanity.client";
 import { Post } from "@/types/post";
 import { Header } from "@/types/header";
 import {
+  CountriesBlock,
   Homepage,
   MessengerCtaDocument,
   WorkStepsBlock
@@ -429,6 +430,19 @@ export async function getWorkStepsByLang(
       buttonLink
     }
   }`;
+
+  return client.fetch(q, { lang }, { next: { revalidate: 60 } });
+}
+
+/**
+ * Тексты блока «Направления» с главной страницы. Нужны такому же блоку на
+ * обычных страницах: если поля там не заполнены, он берёт их отсюда, и
+ * плитка получается один в один как на главной
+ */
+export async function getCountriesBlockByLang(
+  lang: string
+): Promise<CountriesBlock | null> {
+  const q = groq`*[_type == 'homepage' && language == $lang][0].countriesBlock`;
 
   return client.fetch(q, { lang }, { next: { revalidate: 60 } });
 }
