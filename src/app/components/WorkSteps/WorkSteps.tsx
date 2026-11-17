@@ -17,7 +17,22 @@ import styles from "./WorkSteps.module.scss";
 type Props = {
   lang: string;
   block?: WorkStepsBlock | null;
+  /**
+   * Блок уже стоит внутри .container — свой не добавляем. На страницах из
+   * конструктора все блоки обёрнуты контейнером, и второй давал бы
+   * двойной отступ по краям
+   */
+  nested?: boolean;
 };
+
+/** Контейнер сайта — либо свой, либо чужой, если блок вложенный */
+const Wrap = ({
+  nested,
+  children
+}: {
+  nested?: boolean;
+  children: React.ReactNode;
+}) => (nested ? <>{children}</> : <div className="container">{children}</div>);
 
 // Запасной адрес кнопки, пока в админке не задан свой
 const DEFAULT_TELEGRAM = "https://t.me/infoacademgo";
@@ -190,7 +205,7 @@ const Card = ({
  * анимациях показывается обычный список: оба дерева в разметке всегда,
  * переключает их CSS — так сцена не зависит от замеров на сервере.
  */
-const WorkSteps = ({ block }: Props) => {
+const WorkSteps = ({ block, nested }: Props) => {
   const steps = block?.steps || [];
   const total = steps.length;
 
@@ -366,18 +381,18 @@ const WorkSteps = ({ block }: Props) => {
       {/* Запасное дерево: телефон и выключенные анимации */}
       <div className={styles.fallback}>
         {block?.heading && (
-          <div className="container">
+          <Wrap nested={nested}>
             <h2 className={styles.heading}>{block.heading}</h2>
-          </div>
+          </Wrap>
         )}
 
         {steps.map((step, index) => (
           <div className={styles.fallbackItem} key={step._key ?? index}>
-            <div className="container">
+            <Wrap nested={nested}>
               <div className={styles.card}>
                 <Card step={step} index={index} total={total} />
               </div>
-            </div>
+            </Wrap>
           </div>
         ))}
       </div>
@@ -387,9 +402,9 @@ const WorkSteps = ({ block }: Props) => {
           ровно одна — какая, решает CSS по ширине экрана */}
       {block?.heading && (
         <div className={styles.pinHeading}>
-          <div className="container">
+          <Wrap nested={nested}>
             <h2 className={styles.heading}>{block.heading}</h2>
-          </div>
+          </Wrap>
         </div>
       )}
 
@@ -408,7 +423,7 @@ const WorkSteps = ({ block }: Props) => {
           className={styles.pinSticky}
           style={{ top: `${stickyOffset}px` }}
         >
-          <div className="container">
+          <Wrap nested={nested}>
             <div className={styles.split}>
               <div className={styles.rail}>
                 <ol className={styles.railList}>
@@ -503,7 +518,7 @@ const WorkSteps = ({ block }: Props) => {
                 })}
               </div>
             </div>
-          </div>
+          </Wrap>
         </div>
       </div>
     </section>

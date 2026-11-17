@@ -2,7 +2,11 @@ import groq from "groq";
 import { client } from "./sanity.client";
 import { Post } from "@/types/post";
 import { Header } from "@/types/header";
-import { Homepage, MessengerCtaDocument } from "@/types/homepage";
+import {
+  Homepage,
+  MessengerCtaDocument,
+  WorkStepsBlock
+} from "@/types/homepage";
 import { Footer } from "@/types/footer";
 import { Blog } from "@/types/blog";
 import { BlogPage } from "@/types/blogPage";
@@ -401,6 +405,32 @@ export async function getFooterByLang(lang: string): Promise<Footer> {
   const footer = await client.fetch(footerQuery, { lang });
 
   return footer;
+}
+
+/**
+ * Этапы работы с главной страницы. Нужны блоку «Этапы работы» на обычных
+ * страницах: если в блоке шаги не заполнены, он берёт их отсюда, и тогда
+ * текст шагов правится в одном месте, а не в каждом документе отдельно
+ */
+export async function getWorkStepsByLang(
+  lang: string
+): Promise<WorkStepsBlock | null> {
+  const q = groq`*[_type == 'homepage' && language == $lang][0].workSteps{
+    heading,
+    steps[]{
+      _key,
+      number,
+      title,
+      icon,
+      text,
+      bullets,
+      footnote,
+      buttonText,
+      buttonLink
+    }
+  }`;
+
+  return client.fetch(q, { lang }, { next: { revalidate: 60 } });
 }
 
 export async function getHomePageByLang(lang: string): Promise<Homepage> {

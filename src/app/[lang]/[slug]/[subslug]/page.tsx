@@ -62,6 +62,9 @@ import LogosBlockComponent from "@/app/components/LogosBlockComponent/LogosBlock
 import ContactsBlockComponent from "@/app/components/ContactsBlockComponent/ContactsBlockComponent";
 import SurveyBlockComponent from "@/app/components/SurveyBlockComponent/SurveyBlockComponent";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
+import WorkStepsBlockComponent, {
+  WorkStepsBlockType
+} from "@/app/components/WorkStepsBlockComponent/WorkStepsBlockComponent";
 import OfferBlockComponent from "@/app/components/OfferBlockComponent/OfferBlockComponent";
 import PricingTableComponent from "@/app/components/PricingTableComponent/PricingTableComponent";
 import PackagesBlockComponent from "@/app/components/PackagesBlockComponent/PackagesBlockComponent";
@@ -336,6 +339,14 @@ const Subpage = async (props: Props) => {
             lang={params.lang}
             key={block._key}
             block={block as SurveyBlock}
+          />
+        );
+      case "workStepsBlock":
+        return (
+          <WorkStepsBlockComponent
+            key={block._key}
+            block={block as WorkStepsBlockType}
+            lang={params.lang}
           />
         );
       case "offerBlock":

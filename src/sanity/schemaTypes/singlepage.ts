@@ -136,7 +136,8 @@ const singlepage = {
         { type: "consultationFormBlock" },
         { type: "barChartBlock" },
         { type: "timelineBlock" },
-        { type: "countryMapBlock" }
+        { type: "countryMapBlock" },
+        { type: "workStepsBlock" }
       ]
     }),
     defineField({
