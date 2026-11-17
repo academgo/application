@@ -120,8 +120,12 @@
 
 /* Подчёркивание выделенного слова — на самих буквах, иначе линия
    нарисована заранее, до того как слово набралось */
+/* Подчёркивание выделенного слова — на самих буквах, поэтому линия
+   проявляется вместе с текстом. Прежняя полоса на обёртке .highlight
+   убрана: она рисовалась сразу и целиком, дублируя эту и удваивая
+   толщину. 2px вместо 4 — прежняя была слишком жирной */
 .charHighlight {
-  border-bottom: 4px solid #f39708;
+  border-bottom: 2px solid #f39708;
 }
 
 .caret {
@@ -194,16 +198,6 @@
   color: #f39708;
   position: relative;
   cursor: pointer;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #f39708;
-  }
 
   @media screen and (min-width: 768px) {
     &:hover .tooltip {
