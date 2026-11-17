@@ -183,6 +183,7 @@ export default async function Home(props: Props) {
         lang={params.lang}
         formDocument={formDocument}
         ctaBlock={cta?.popup}
+        headerCtaBlock={cta?.headerPopup}
       />
     </>
   );

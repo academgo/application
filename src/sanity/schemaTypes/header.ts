@@ -93,6 +93,13 @@ const header = {
       ]
     }),
     defineField({
+      name: "ctaLabel",
+      title: "Кнопка в шапке",
+      type: "string",
+      description:
+        "Текст оранжевой кнопки справа в шапке. Открывает окно с мессенджерами. Пусто — подставится «Оценить шансы» / «Check chances». На телефонах кнопка не выводится"
+    }),
+    defineField({
       name: "countriesPromo",
       title: "Countries menu promo",
       type: "object",

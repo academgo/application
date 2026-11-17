@@ -290,6 +290,7 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
     logoMobile,
     logoMobileActive,
     description,
+    ctaLabel,
     navLinks,
     countriesPromo,
     contactLinks,
@@ -329,6 +330,8 @@ const CTA_FIELDS = `{
 export type CtaDocuments = {
   block: MessengerCtaDocument | null;
   popup: MessengerCtaDocument | null;
+  /** Текст окна у кнопки «Оценить шансы» в шапке */
+  headerPopup: MessengerCtaDocument | null;
 };
 
 export async function getCtaDocumentsByLang(
@@ -336,7 +339,12 @@ export async function getCtaDocumentsByLang(
 ): Promise<CtaDocuments | null> {
   const ctaQuery = groq`*[_type == 'footer' && language == $lang][0] {
     "block": ctaDocument->${CTA_FIELDS},
-    "popup": coalesce(popupCtaDocument->${CTA_FIELDS}, ctaDocument->${CTA_FIELDS})
+    "popup": coalesce(popupCtaDocument->${CTA_FIELDS}, ctaDocument->${CTA_FIELDS}),
+    "headerPopup": coalesce(
+      headerCtaDocument->${CTA_FIELDS},
+      popupCtaDocument->${CTA_FIELDS},
+      ctaDocument->${CTA_FIELDS}
+    )
   }`;
 
   return client.fetch(ctaQuery, { lang });

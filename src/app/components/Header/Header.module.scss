@@ -7,6 +7,8 @@ $h-muted: #64748b;
 $h-line: #e2e8f0;
 $h-line-soft: #f1f5f9;
 $h-accent: #f39708;
+/* цвет пунктов меню в шапке */
+$h-menu: #112546;
 
 /* палитра выпадающих панелей и мобильного меню */
 $menu-ink: #091728;
@@ -31,6 +33,14 @@ $menu-surface: #f7f8fa;
   align-items: center;
   gap: 24px;
   height: 80px;
+
+  /* Три колонки одинаковой ширины по краям: меню стоит ровно по центру
+     шапки, а не по центру остатка после логотипа и правой зоны */
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 16px;
+  }
 }
 
 /* Логотип и слоган под ним */
@@ -87,9 +97,10 @@ $menu-surface: #f7f8fa;
 
   /* меню занимает свободное место и стоит по центру шапки */
   @media screen and (min-width: 1024px) {
-    flex: 1;
     display: flex;
     justify-content: center;
+    justify-self: center;
+    min-width: 0;
   }
 
   @media screen and (max-width: 1023px){
@@ -126,15 +137,27 @@ $menu-surface: #f7f8fa;
 .contacts {
   display: flex;
   align-items: center;
+  /* Отступ между переключателем языка и кнопкой */
   gap: 12px;
   margin-left: auto;
   flex-shrink: 0;
+
+  @media screen and (min-width: 1024px) {
+    justify-self: end;
+    margin-left: 0;
+  }
 }
 
+/* Кружки WhatsApp и Telegram остаются только в мобильной шапке: на
+   десктопе каналы теперь внутри окна кнопки «Оценить шансы» */
 .contactLinks {
   display: flex;
   align-items: center;
   gap: 8px;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }
 
 .contactLink {
@@ -153,13 +176,40 @@ $menu-surface: #f7f8fa;
 }
 
 .contactIcon {
-  width: 40px;
-  height: 40px;
+  /* только мобильная шапка: на десктопе кружки скрыты */
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+}
 
-  @media screen and (max-width: 1320px) {
-    width: 35px;
-    height: 35px;
+/* Оранжевая кнопка справа в шапке. Одной высоты с переключателем языка,
+   чтобы правая зона читалась одной линией */
+.headerCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 999px;
+  background-color: #f39708;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #db8607;
+  }
+
+  /* В мобильной шапке кнопки нет: там только мессенджеры и язык */
+  @media screen and (max-width: 1023px) {
+    display: none;
   }
 }
 
@@ -178,7 +228,8 @@ $menu-surface: #f7f8fa;
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 2px;
+  /* Расстояние между пунктами меню на десктопе */
+  gap: 36px;
 
   @media screen and (max-width: 1023px) {
     flex-direction: column;
@@ -201,25 +252,23 @@ $menu-surface: #f7f8fa;
   display: flex;
   align-items: center;
   gap: 2px;
-  padding: 6px 8px;
+  /* Отступы по горизонтали нулевые: расстояние между пунктами задаёт
+     gap у .navLinks, иначе к нему прибавляются эти паддинги */
+  padding: 6px 0;
   border-radius: 8px;
-  color: $h-text;
-  font-size: 13px;
+  color: $h-menu;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 20px;
   letter-spacing: 0;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 
-  @media screen and (min-width: 1280px) {
-    padding-inline: 10px;
-  }
-
   @media screen and (min-width: 1024px) {
     &:hover {
-      color: $h-ink;
+      color: $h-accent;
     }
   }
 
@@ -367,10 +416,36 @@ $menu-surface: #f7f8fa;
 
   /* на десктопе шеврон стоит в светлой шапке рядом с пунктом меню */
   @media (min-width: 1024px) {
-    font-size: 14px;
+    font-size: 16px;
     margin-right: 0;
     margin-left: 4px;
     color: #8a929c;
+  }
+}
+
+/* Первая строка мега-меню: ссылка на страницу сравнения стран */
+.megaMenuCompare {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: $menu-accent;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+
+  svg {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover svg,
+  &:focus-visible svg {
+    transform: translateX(3px);
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin: 4px 0 14px;
   }
 }
 
@@ -979,7 +1054,9 @@ $menu-surface: #f7f8fa;
     flex-direction: column;
     gap: 14px;
     width: 90%;
-    margin-top: auto;
+    /* Сразу под пунктами меню. Раньше было margin-top: auto — карточку
+       отжимало к нижнему краю экрана, и между ней и меню зияла пустота */
+    margin-top: 24px;
     padding: 18px;
     border: 1px solid #eceff3;
     border-radius: 16px;

@@ -48,6 +48,32 @@ const getBadge = (
   return lang === "ru" ? preset.ru : preset.en;
 };
 
+/** Русское склонение слова «страна» после числа */
+const countryWordRu = (n: number) => {
+  const tens = n % 100;
+  if (tens >= 11 && tens <= 14) return "стран";
+  switch (n % 10) {
+    case 1:
+      return "страну";
+    case 2:
+    case 3:
+    case 4:
+      return "страны";
+    default:
+      return "стран";
+  }
+};
+
+/**
+ * Первая строка мега-меню: ссылка на страницу сравнения. Число берём из
+ * самого списка, чтобы оно не разошлось с действительностью, когда
+ * страну добавят или уберут
+ */
+const compareLabel = (lang: string, count: number) =>
+  lang === "ru"
+    ? `Сравнить все ${count} ${countryWordRu(count)}`
+    : `Compare all ${count} countries`;
+
 // Подписи интерфейса меню по языку документа
 const menuTexts = (lang: string) =>
   lang === "ru"
@@ -189,10 +215,27 @@ const NavLinks: React.FC<Props> = ({
 
   const hasPromo = Boolean(promo?.title);
 
+  // Адрес страницы сравнения — ссылка самого пункта «Учёба за рубежом»:
+  // отдельного поля заводить не нужно, оно уже есть в админке
+  const compareLink = navLinks.find(link => link.showCountries)?.link;
+  const compareHref = compareLink
+    ? getNormalizedHref(params.lang, compareLink)
+    : "";
+
   // Десктоп: слева список стран, справа ссылки выбранной страны
   const renderCountriesMenuDesktop = () => (
     <div className={styles.megaMenu}>
       <div className={styles.megaMenuAside}>
+        {compareHref && (
+          <Link
+            href={compareHref}
+            className={styles.megaMenuCompare}
+            onClick={closeMenu}
+          >
+            {compareLabel(params.lang, countries.length)}
+            <FiArrowRight aria-hidden="true" />
+          </Link>
+        )}
         <p className={styles.megaMenuAsideTitle}>{texts.chooseCountry}</p>
         <ul className={styles.countryTabs} role="tablist" aria-orientation="vertical">
           {countries.map(country => {
@@ -346,6 +389,16 @@ const NavLinks: React.FC<Props> = ({
   // Мобильный: страны гармошкой, внутри — ссылки с пояснениями
   const renderCountriesMenuMobile = () => (
     <div className={styles.countriesMobile}>
+      {compareHref && (
+        <Link
+          href={compareHref}
+          className={styles.megaMenuCompare}
+          onClick={closeMenu}
+        >
+          {compareLabel(params.lang, countries.length)}
+          <FiArrowRight aria-hidden="true" />
+        </Link>
+      )}
       {countries.map(country => (
         <div className={styles.countryMobileItem} key={country._id}>
           <div className={styles.countryMobileHeading}>

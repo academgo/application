@@ -44,6 +44,8 @@ export type Header = {
   logoMobile: Image;
   logoMobileActive: Image;
   description: string;
+  /** подпись оранжевой кнопки справа в шапке */
+  ctaLabel?: string;
   navLinks: navLink[];
   countriesPromo?: CountriesPromo;
   contactLinks: contactLink[];

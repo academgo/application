@@ -6,6 +6,7 @@ import { urlFor } from "@/sanity/image";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import NavWrapper from "../NavWrapper/NavWrapper";
+import { ButtonModal } from "../ButtonModal/ButtonModal";
 
 type Props = {
   translations?: Translation[];
@@ -41,10 +42,14 @@ const Header = async ({ translations, params }: Props) => {
     title: isRu
       ? "Оценить шансы на поступление?"
       : "Check your admission chances?",
-    text: isRu
-      ? "Напишите нашему боту в Telegram"
-      : "Message our bot on Telegram"
+    // Без названия мессенджера: под текстом две кнопки, Telegram
+    // и WhatsApp, и упоминание одного из них вводило в заблуждение
+    text: isRu ? "Напишите нашему боту" : "Message our bot"
   };
+
+  // Оранжевая кнопка справа. Текст правится в документе шапки
+  const ctaLabel =
+    data.ctaLabel || (isRu ? "Оценить шансы" : "Check chances");
 
   const promo = {
     label: data.countriesPromo?.label || promoDefaults.label,
@@ -124,6 +129,11 @@ const Header = async ({ translations, params }: Props) => {
 
             <div className={styles.contactButtons}>
               <LocaleSwitcher translations={translations} />
+              {/* Кнопка открывает то же окно, что и кнопка на первом
+                  экране, но со своим текстом. На телефонах не выводится */}
+              <ButtonModal className={styles.headerCta} variant="chances">
+                {ctaLabel}
+              </ButtonModal>
             </div>
           </div>
         </div>

@@ -28,6 +28,14 @@ const footer = {
         "Окно, которое открывается кнопками «Начнем с бесплатной консультации» по всему сайту. Если не выбрано, показывается та же плашка, что над футером."
     }),
     defineField({
+      name: "headerCtaDocument",
+      title: "Плашка во всплывающем окне кнопки «Оценить шансы»",
+      type: "reference",
+      to: [{ type: "ctaDocument" }],
+      description:
+        "Кнопка в шапке объясняет, что дальше будет бот, поэтому текст у её окна свой. Пусто — подставится «Плашка во всплывающем окне»"
+    }),
+    defineField({
       name: "consultationBlock",
       title: "Consultation Block",
       type: "object",
