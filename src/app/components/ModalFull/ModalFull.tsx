@@ -69,6 +69,23 @@ const ModalFull = ({ lang, ctaBlock }: Props) => {
   const { isModalOpen, closeModal } = useModal();
   const [pageCountryCode, setPageCountryCode] = useState<string | undefined>();
 
+  /**
+   * Escape закрывает окно. Своя обработка, а не встроенная в react-modal:
+   * та слушает нажатия на самом окне и срабатывает, только пока фокус
+   * внутри него. Если окно открыли щелчком по кнопке и фокус остался на
+   * кнопке, клавиша до окна не доходила
+   */
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeModal();
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [isModalOpen, closeModal]);
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.classList.add("no-scroll");

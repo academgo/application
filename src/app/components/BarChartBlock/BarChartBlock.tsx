@@ -21,9 +21,10 @@ type Props = {
   block: BarChartBlockType;
 };
 
-// Самый длинный столбик занимает не всю дорожку: справа остаётся место
-// под подпись значения, чтобы она не обрезалась и не налезала на край
-const MAX_BAR_SHARE = 72;
+// Какую долю дорожки занимает самый длинный столбик, задаётся в стилях
+// переменной --bar-max: на десктопе справа остаётся место под подпись
+// значения, на телефоне подпись ушла на свою строку и место не нужно.
+// Здесь считаем только долю от максимума, без процентов
 
 const BarChartBlock: FC<Props> = ({ block }) => {
   const items = (block.items || []).filter(
@@ -32,8 +33,9 @@ const BarChartBlock: FC<Props> = ({ block }) => {
   if (!items.length) return null;
 
   const max = Math.max(...items.map(item => item.valueMax ?? item.value ?? 0));
-  const share = (value: number) =>
-    max > 0 ? (value / max) * MAX_BAR_SHARE : 0;
+  const share = (value: number) => (max > 0 ? value / max : 0);
+  const barWidth = (fraction: number) =>
+    `calc(${fraction.toFixed(4)} * var(--bar-max))`;
 
   return (
     <figure className={styles.chart}>
@@ -57,12 +59,12 @@ const BarChartBlock: FC<Props> = ({ block }) => {
               <span className={styles.track} title={item.valueLabel}>
                 <span
                   className={styles.bar}
-                  style={{ width: `${share(value)}%` }}
+                  style={{ width: barWidth(share(value)) }}
                 />
                 {rangeWidth > 0 && (
                   <span
                     className={styles.range}
-                    style={{ width: `${rangeWidth}%` }}
+                    style={{ width: barWidth(rangeWidth) }}
                   />
                 )}
                 <span className={styles.value}>{item.valueLabel}</span>
