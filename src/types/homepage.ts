@@ -101,9 +101,10 @@ export type Faculty = {
 
 export type University = {
   _key: string;
-  title: string;
+  /** В админке поле необязательное, поэтому может не быть заполнено */
+  title?: string;
   logo: Image;
-  link: string;
+  link?: string;
 };
 
 export type Program = {

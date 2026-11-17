@@ -20,29 +20,35 @@ const LogosCarousel: FC<Props> = ({ universities }) => {
         speed={40}
         pauseOnHover={true}
       >
-        {universities.map(item =>
-          item.link ? (
-            <Link key={item.title} href={item.link} className={styles.flagLink}>
-              <Image
-                alt={item.title}
-                src={urlFor(item.logo).url()}
-                width={310}
-                height={130}
-                className={styles.flagIcon}
-              />
+        {universities.map((item, index) => {
+          // Ключ — _key элемента массива из админки. Раньше ключом было
+          // название вуза, а оно необязательное: у логотипов без названия
+          // ключ оказывался пустым, и React ругался на весь список.
+          // Название же, если оно есть, идёт в alt — у картинки он
+          // обязателен, пустая строка означает «картинка декоративная»
+          const itemKey = item._key || item.title || `logo-${index}`;
+          const alt = item.title || "";
+
+          const logo = (
+            <Image
+              alt={alt}
+              src={urlFor(item.logo).url()}
+              width={310}
+              height={130}
+              className={styles.flagIcon}
+            />
+          );
+
+          return item.link ? (
+            <Link key={itemKey} href={item.link} className={styles.flagLink}>
+              {logo}
             </Link>
           ) : (
-            <div key={item.title} className={styles.flagLink}>
-              <Image
-                alt={item.title}
-                src={urlFor(item.logo).url()}
-                width={310}
-                height={130}
-                className={styles.flagIcon}
-              />
+            <div key={itemKey} className={styles.flagLink}>
+              {logo}
             </div>
-          )
-        )}
+          );
+        })}
       </Marquee>
     </div>
   );
