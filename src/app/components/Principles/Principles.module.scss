@@ -1,3 +1,9 @@
+// Класс стоял в разметке, но правила для него не существовало: секция шла
+// вообще без отступов и на телефоне упиралась в следующий блок
+.principlesSection {
+  margin-bottom: 40px;
+}
+
 .principles {
   display: flex;
   flex-direction: column;
@@ -67,13 +73,16 @@
   gap: 15px;
 
   @media (min-width: 768px) {
-    // flex-direction: row;
-    // align-items: center;
-    grid-template-columns: 1fr 2fr;
+    // Колонка под число — по самому числу, а не доля от ширины: при
+    // жёстких 1fr 2fr ей доставалось 165 пикселей, а «200+» нужно 266,
+    // и число наезжало на текст справа
+    grid-template-columns: max-content minmax(0, 1fr);
     align-items: center;
-    gap: 5;
+    // Было `gap: 5` без единиц измерения — такое правило браузер
+    // отбрасывает целиком, и отступ оставался прежним
+    column-gap: 24px;
+    row-gap: 15px;
   }
-
 }
 
 .number {
@@ -82,8 +91,16 @@
   font-style: normal;
   font-weight: 700;
   line-height: 65px;
-  width: clamp(7.5rem, 6.094rem + 5.63vw, 10.313rem); 
-  text-align: center;
+  // Ширина по содержимому: фиксированная была уже «200», а с плюсом
+  // число выходило за свою коробку и налезало на соседний текст
+  width: auto;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    // Чуть мельче прежних ста пикселей: иначе «200+» съедает колонку
+    // и на тексте рядом остаётся полторы сотни пикселей на строку
+    font-size: clamp(3.75rem, 3.2rem + 1.6vw, 5rem);
+  }
 }
 
 .text {
