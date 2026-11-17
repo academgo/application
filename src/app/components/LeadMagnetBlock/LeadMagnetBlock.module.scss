@@ -11,6 +11,11 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  // Форма скрыта — текст занимает всю ширину, а не левые 55 процентов
+  &:has(> .content:only-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .content {

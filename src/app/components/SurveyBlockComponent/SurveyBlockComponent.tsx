@@ -2,8 +2,11 @@ import { SurveyBlock } from "@/types/blog";
 import { QuizBlock } from "@/types/quizBlock";
 import { QuizSidebarType } from "../QuizSidebar/QuizSidebar";
 import React, { FC } from "react";
-import SurveyBlog from "../SurveyBlog/SurveyBlog";
-import QuizSection from "../QuizSection/QuizSection";
+import Survey from "../Survey/Survey";
+// import SurveyBlog from "../SurveyBlog/SurveyBlog";
+// Прежний квиз страниц с отдельной панелью «Персональная подборка вузов».
+// Оставлен на случай возврата, см. комментарий ниже
+// import QuizSection from "../QuizSection/QuizSection";
 import { getCountryNamesByLang } from "@/sanity/sanity.utils";
 
 type Props = {
@@ -25,30 +28,45 @@ const SurveyBlockComponent: FC<Props> = async ({ block, lang }) => {
     ? await getCountryNamesByLang(lang)
     : [];
 
-  // Общий квиз с панелью (новые страницы) — новый блок в две колонки;
-  // квиз со своими вопросами (старые страницы, блог) — как раньше
-  if (block.sidebar) {
-    return (
-      <QuizSection
-        lang={lang}
-        title={block.survey?.title}
-        quizBlock={quizBlock}
-        countryOptions={countryOptions}
-        sidebar={block.sidebar}
-      />
-    );
-  }
-
+  // Квиз на страницах — ровно тот же, что на главной: анкета и панель
+  // справа из самого документа квиза. Раньше здесь стоял отдельный
+  // QuizSection со своей панелью из документа «Боковая панель квиза», и
+  // на сайте жили два разных квиза. Чтобы вернуть прежний вид, снимите
+  // комментарий с импорта QuizSection выше и с блока ниже:
+  //
+  // if (block.sidebar) {
+  //   return (
+  //     <QuizSection
+  //       lang={lang}
+  //       title={block.survey?.title}
+  //       quizBlock={quizBlock}
+  //       countryOptions={countryOptions}
+  //       sidebar={block.sidebar}
+  //     />
+  //   );
+  // }
   return (
-    <div className="survey-width">
-      <SurveyBlog
-        lang={lang}
-        survey={block.survey}
-        quizBlock={quizBlock}
-        countryOptions={countryOptions}
-      />
-    </div>
+    <Survey
+      lang={lang}
+      survey={{ title: block.survey?.title || "" }}
+      quizBlock={quizBlock}
+      countryOptions={countryOptions}
+      nested
+    />
   );
+
+  // Прежний вариант без панели — тоже оставлен на случай возврата:
+  //
+  // return (
+  //   <div className="survey-width">
+  //     <SurveyBlog
+  //       lang={lang}
+  //       survey={block.survey}
+  //       quizBlock={quizBlock}
+  //       countryOptions={countryOptions}
+  //     />
+  //   </div>
+  // );
 };
 
 export default SurveyBlockComponent;

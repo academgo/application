@@ -12,9 +12,21 @@ type Props = {
   survey: SurveyType;
   quizBlock?: QuizBlock;
   countryOptions?: string[];
+  /**
+   * Блок уже стоит внутри .container — свой не добавляем. На страницах из
+   * конструктора все блоки обёрнуты контейнером, и второй давал бы
+   * двойной отступ: квиз вставал бы уже соседних блоков
+   */
+  nested?: boolean;
 };
 
-const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
+const Survey = async ({
+  lang,
+  survey,
+  quizBlock,
+  countryOptions,
+  nested
+}: Props) => {
   // Ссылки мессенджеров для финального экрана квиза берём из контактов футера
   const messengers = quizBlock ? await getQuizMessengers(lang) : undefined;
 
@@ -26,10 +38,9 @@ const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
     (quizBlock?.sidePanelTitle || "Что придёт в ответ") && sidePanelItems.length
   );
 
-  return (
-    <section className={styles.survey}>
-      <div className="container">
-        <p className={styles.title}>{survey.title}</p>
+  const body = (
+    <>
+      {survey.title && <p className={styles.title}>{survey.title}</p>}
         <div
           className={`${styles.surveyWrapper} ${
             hasSidePanel ? styles.withSidePanel : ""
@@ -103,7 +114,12 @@ const Survey = async ({ lang, survey, quizBlock, countryOptions }: Props) => {
             </aside>
           )}
         </div>
-      </div>
+    </>
+  );
+
+  return (
+    <section className={nested ? styles.nestedSection : undefined}>
+      {nested ? body : <div className="container">{body}</div>}
     </section>
   );
 };

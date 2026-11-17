@@ -42,6 +42,14 @@ type Props = {
   policy?: Policy;
 };
 
+/**
+ * Форма внутри блока временно скрыта. На страницах подряд шли три формы:
+ * плашка с мессенджерами, эта форма и квиз — человек видел три призыва
+ * заполнить поля один за другим. Код формы не удалён: чтобы вернуть,
+ * достаточно поставить здесь true.
+ */
+const SHOW_FORM = false;
+
 const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -118,6 +126,7 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
         )}
       </div>
 
+      {SHOW_FORM && (
       <form className={styles.form} onSubmit={handleSubmit}>
         {block.formTitle && (
           <p className={styles.formTitle}>{block.formTitle}</p>
@@ -229,6 +238,7 @@ const LeadMagnetBlock: FC<Props> = ({ block, lang, policy }) => {
           </p>
         )}
       </form>
+      )}
     </section>
   );
 };
