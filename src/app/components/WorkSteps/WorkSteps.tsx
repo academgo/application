@@ -27,12 +27,15 @@ const DEFAULT_TELEGRAM = "https://t.me/infoacademgo";
 const PIN_MIN_WIDTH = "(min-width: 1024px)";
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 
-// Во сколько раз блок проходится быстрее базовой скорости «один экран
-// прокрутки на шаг». Делится не вся высота обёртки, а только её
-// прокручиваемая часть: первый экран блок просто стоит закреплённым и пути
-// анимации не добавляет, двигают её только оставшиеся (N-1) экранов. Если
-// поделить всю высоту, ускорение выйдет больше заявленного.
-const SCROLL_SPEED = 1.2;
+// Сколько пикселей прокрутки отводится на один шаг. Раньше считали экранами
+// («один экран на шаг»), и на ноутбуке блок растягивался на три с половиной
+// экрана: восемь сотен пикселей прокрутки ради одной смены карточки.
+// Теперь величина не зависит от высоты экрана и читается напрямую
+const SCROLL_PER_STEP = 400;
+
+// Запасная высота обёртки до первого замера: столько же, сколько даст
+// расчёт, но без знания высоты сцены
+const FALLBACK_STAGE = 420;
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   chat: FaRegComments,
@@ -69,6 +72,23 @@ const stepDigit = (step: WorkStep, index: number) =>
   step.number?.match(/\d+/)?.[0] || String(index + 1);
 
 const clamp01 = (value: number) => Math.min(Math.max(value, 0), 1);
+
+/**
+ * Геометрия закреплённой сцены: на сколько она отступает от верха экрана
+ * (значение top из CSS) и сколько пикселей прокрутки приходится на всю
+ * анимацию. Одна функция на отслеживание прокрутки и на переход по клику —
+ * иначе клик садится мимо шага.
+ */
+const geometry = (wrap: HTMLDivElement) => {
+  const sticky = wrap.firstElementChild as HTMLElement | null;
+  const offset = sticky
+    ? parseFloat(getComputedStyle(sticky).top) || 0
+    : 0;
+  const stickyHeight = sticky?.offsetHeight ?? 0;
+  const travel = Math.max(wrap.offsetHeight - stickyHeight - offset, 0);
+
+  return { offset, travel, top: wrap.getBoundingClientRect().top + window.scrollY };
+};
 
 /**
  * Как показывать действие шага:
@@ -171,12 +191,44 @@ const WorkSteps = ({ block }: Props) => {
   const total = steps.length;
 
   const wrapRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
   const scrollFrame = useRef(0);
+
+  // Высота закреплённой сцены замеряется, а не задаётся: она зависит от
+  // самой высокой карточки, а та — от текста в админке
+  const [stickyHeight, setStickyHeight] = useState(FALLBACK_STAGE);
+  const [stageHeight, setStageHeight] = useState(FALLBACK_STAGE);
+  // Отступ сцены от верха экрана: задан в CSS через высоту шапки, но в
+  // расчёт высоты обёртки его нужно добавить, иначе путь выйдет короче
+  const [stickyOffset, setStickyOffset] = useState(0);
   // Непрерывное положение по шагам: 0 — начало первого шага, total — конец
   // последнего. Каждому шагу достаётся ровно одна единица, поэтому у
   // последнего остаётся свой кусок прокрутки и он успевает побыть на экране
   // до того, как закрепление отпустит
   const [flow, setFlow] = useState(0);
+
+  // Замер высоты сцены: от неё зависят и высота обёртки, и длина пути,
+  // который карточка проезжает снизу
+  useEffect(() => {
+    const sticky = stickyRef.current;
+    const stage = stageRef.current;
+    if (!sticky || !stage) return;
+
+    const measure = () => {
+      setStickyHeight(sticky.offsetHeight);
+      setStageHeight(stage.offsetHeight);
+      setStickyOffset(parseFloat(getComputedStyle(sticky).top) || 0);
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(sticky);
+    observer.observe(stage);
+
+    return () => observer.disconnect();
+  }, [total]);
 
   useEffect(() => {
     if (!total) return;
@@ -189,10 +241,12 @@ const WorkSteps = ({ block }: Props) => {
       const node = wrapRef.current;
 
       if (node && wide.matches && !calm.matches) {
+        const { travel, offset } = geometry(node);
         const rect = node.getBoundingClientRect();
-        // Сколько контейнер уже прокручен мимо закреплённой сцены
-        const travel = node.offsetHeight - window.innerHeight;
-        const passed = travel > 0 ? clamp01(-rect.top / travel) : 0;
+        // Путь считается от момента, когда сцена прилипла под шапкой, а не
+        // от верхней кромки экрана: иначе последняя карточка не успевает
+        // досчитаться до того, как закрепление отпустит
+        const passed = travel > 0 ? clamp01((offset - rect.top) / travel) : 0;
         setFlow(passed * total);
       }
 
@@ -202,7 +256,7 @@ const WorkSteps = ({ block }: Props) => {
     frame = requestAnimationFrame(tick);
 
     return () => cancelAnimationFrame(frame);
-  }, [total]);
+  }, [total, stickyHeight]);
 
   // Прокрутка по клику брошена, если ушли со страницы на полпути
   useEffect(() => () => cancelAnimationFrame(scrollFrame.current), []);
@@ -225,9 +279,8 @@ const WorkSteps = ({ block }: Props) => {
     const node = wrapRef.current;
     if (!node) return;
 
-    const top = node.getBoundingClientRect().top + window.scrollY;
-    const travel = Math.max(node.offsetHeight - window.innerHeight, 0);
-    const stepEnd = top + ((index + 1) / total) * travel;
+    const { offset, travel, top } = geometry(node);
+    const stepEnd = top - offset + ((index + 1) / total) * travel;
 
     const from = window.scrollY;
     const distance = Math.ceil(stepEnd) - 1 - from;
@@ -311,9 +364,13 @@ const WorkSteps = ({ block }: Props) => {
       <div
         ref={wrapRef}
         className={styles.pinWrap}
-        style={{ height: `${100 + ((total - 1) * 100) / SCROLL_SPEED}vh` }}
+        // Высота обёртки — сама сцена плюс путь прокрутки. Путь задан в
+        // пикселях на шаг, поэтому длина блока не растёт вместе с экраном
+        style={{
+          height: `${stickyHeight + stickyOffset + total * SCROLL_PER_STEP}px`
+        }}
       >
-        <div className={styles.pinSticky}>
+        <div ref={stickyRef} className={styles.pinSticky}>
           <div className="container">
             <div className={styles.split}>
               <div className={styles.rail}>
@@ -361,14 +418,17 @@ const WorkSteps = ({ block }: Props) => {
 
               {/* Колода: карточки выезжают снизу и ложатся одна на другую,
                   из-под верхней видны кромки предыдущих */}
-              <div className={styles.stage}>
+              <div ref={stageRef} className={styles.stage}>
                 {steps.map((step, index) => {
                   // Первая карточка лежит на месте с самого начала: ехать ей
                   // неоткуда, до неё шагов нет
                   const arrival =
                     index === 0 ? 1 : clamp01((flow - index) / ARRIVAL_SHARE);
                   const rest = index * 18;
-                  const y = (1 - arrival) * 560 + arrival * rest;
+                  // Путь выезда — высота сцены: карточка приходит ровно
+                  // из-под её нижней кромки. Фиксированное число при
+                  // невысокой сцене давало рывок
+                  const y = (1 - arrival) * (stageHeight + 40) + arrival * rest;
 
                   return (
                     <div
