@@ -26,6 +26,24 @@ type ContactLink = {
   link: string;
 };
 
+/** Пункт колонки «Страны» в футере: либо страна, либо произвольная ссылка */
+export type FooterCountryLink = {
+  _key: string;
+  label?: string;
+  link?: string;
+  country?: {
+    _id: string;
+    title: string;
+    hubPage?: {
+      _type?: string;
+      slug?: Record<string, { current?: string } | undefined>;
+      parentPage?: {
+        slug?: Record<string, { current?: string } | undefined>;
+      } | null;
+    } | null;
+  } | null;
+};
+
 export type Footer = {
   _type: "footer";
   _id: string;
@@ -40,6 +58,8 @@ export type Footer = {
   adress: string;
   navLinks: NavLink[];
   countriesTitle?: string;
+  /** Колонка «Страны»: свой порядок футера, независимый от мега-меню */
+  countryLinks?: FooterCountryLink[];
   navTitle?: string;
   contactsTitle?: string;
   partnersLabel?: string;

@@ -164,6 +164,8 @@ const footer = {
       of: [
         {
           type: "object",
+          name: "footerCountryLink",
+          title: "Пункт колонки",
           fields: [
             defineField({
               name: "label",
@@ -183,8 +185,58 @@ const footer = {
       name: "countriesTitle",
       title: "Countries column title",
       type: "string",
+      description: "Заголовок колонки со странами"
+    }),
+    defineField({
+      name: "countryLinks",
+      title: "Колонка «Страны»: список и порядок",
+      type: "array",
       description:
-        "Заголовок колонки со странами (список стран берётся из документов Country)"
+        "Порядок задаётся перетаскиванием. Пункт — либо страна (название и ссылка возьмутся с её страницы), либо произвольная ссылка, например «Сравнить страны». Если список пуст, выводятся все страны в порядке мега-меню, как было раньше",
+      of: [
+        {
+          type: "object",
+          name: "footerCountryLink",
+          title: "Пункт колонки",
+          fields: [
+            defineField({
+              name: "country",
+              title: "Страна",
+              type: "reference",
+              to: [{ type: "country" }],
+              description:
+                "Для обычного пункта. Название и адрес берутся со страницы страны"
+            }),
+            defineField({
+              name: "label",
+              title: "Своя подпись",
+              type: "string",
+              description:
+                "Необязательно для страны — заменит её название. Для произвольной ссылки обязательно"
+            }),
+            defineField({
+              name: "link",
+              title: "Своя ссылка",
+              type: "string",
+              description:
+                "Заполняйте, только если это не страна: например /ru/ucheba-za-rubezhom"
+            })
+          ],
+          preview: {
+            select: {
+              label: "label",
+              countryTitle: "country.title",
+              link: "link"
+            },
+            prepare({ label, countryTitle, link }) {
+              return {
+                title: label || countryTitle || link || "Пункт не заполнен",
+                subtitle: countryTitle ? "страна" : link || "не заполнено"
+              };
+            }
+          }
+        }
+      ]
     }),
     defineField({
       name: "navTitle",
@@ -224,6 +276,8 @@ const footer = {
       of: [
         {
           type: "object",
+          name: "footerCountryLink",
+          title: "Пункт колонки",
           fields: [
             defineField({
               name: "title",

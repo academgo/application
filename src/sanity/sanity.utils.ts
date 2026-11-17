@@ -377,6 +377,16 @@ export async function getFooterByLang(lang: string): Promise<Footer> {
     adress,
     navLinks,
     countriesTitle,
+    countryLinks[]{
+      _key,
+      label,
+      link,
+      "country": country->{
+        _id,
+        title,
+        hubPage->{ _type, slug, parentPage->{ slug } }
+      }
+    },
     navTitle,
     contactsTitle,
     partnersLabel,

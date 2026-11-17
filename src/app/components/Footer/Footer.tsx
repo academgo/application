@@ -9,6 +9,7 @@ import Consultation from "../Consultation/Consultation";
 import MessengerCtaSection from "../MessengerCtaSection/MessengerCtaSection";
 import FooterRating from "../FooterRating/FooterRating";
 import { getSocialIcon } from "@/lib/socialIcons";
+import { pageHref } from "@/lib/pageHref";
 
 type Props = {
   params: { lang: string };
@@ -47,7 +48,30 @@ const Footer = async ({ params }: Props) => {
   ]);
 
   const texts = fallbackTexts(params.lang);
-  const countryLinks = (countries || []).filter(country => country.hubHref);
+
+  // Колонка «Страны». Если в документе футера задан свой список — выводим
+  // его: порядок там независимый от мега-меню в шапке, и помимо стран в
+  // него можно положить произвольную ссылку вроде «Сравнить страны».
+  // Пока список не заполнен, работает прежнее поведение: все страны
+  // в порядке поля Order, то есть как в шапке
+  const customCountryLinks = (data.countryLinks || [])
+    .map(item => {
+      const href = item.link || pageHref(params.lang, item.country?.hubPage);
+      const label = item.label || item.country?.title || "";
+      return { key: item._key, href, label };
+    })
+    .filter(item => item.href && item.label);
+
+  const countryLinks =
+    customCountryLinks.length > 0
+      ? customCountryLinks
+      : (countries || [])
+          .filter(country => country.hubHref)
+          .map(country => ({
+            key: country._id,
+            href: country.hubHref,
+            label: country.title
+          }));
   const navLinks = data.navLinks || [];
   const contactLinks = data.contactLinks || [];
 
@@ -125,12 +149,12 @@ const Footer = async ({ params }: Props) => {
                   </h2>
                   <ul className={styles.columnList}>
                     {countryLinks.map(country => (
-                      <li key={country._id}>
+                      <li key={country.key}>
                         <Link
-                          href={country.hubHref}
+                          href={country.href}
                           className={styles.columnLink}
                         >
-                          {country.title}
+                          {country.label}
                         </Link>
                       </li>
                     ))}
