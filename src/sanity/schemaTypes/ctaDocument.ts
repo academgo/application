@@ -2,54 +2,54 @@ import { defineField } from "sanity";
 
 const ctaDocument = {
   name: "ctaDocument",
-  title: "Плашка в мессенджер",
+  title: "Messenger card",
   type: "document",
   description:
-    "Плашка с кнопкой в мессенджер — та же, что на финальном экране квиза. " +
-    "Один документ на язык: меняете здесь — меняется на всех страницах, где стоит этот блок.",
+    "Card with a messenger button — the same one as on the final quiz screen. " +
+    "One document per language: edit it here and it changes on every page that uses it.",
   fields: [
     defineField({
       name: "title",
-      title: "Название для списка",
+      title: "Name for the list",
       type: "string",
-      description: "Видно только в админке, например «Плашка после квиза, RU»",
+      description: "Admin only, for example «Плашка после квиза, RU»",
       validation: Rule => Rule.required()
     }),
 
     defineField({
       name: "eyebrow",
-      title: "Надзаголовок",
+      title: "Eyebrow",
       type: "string",
-      description: "Мелкая строка над заголовком"
+      description: "Small line above the heading"
     }),
 
     defineField({
       name: "heading",
-      title: "Заголовок",
+      title: "Heading",
       type: "string",
       description:
-        "Можно подставить страну страницы: {country} даёт «Венгрия», {countryIn} — «в Венгрию»"
+        "The country of the page can be inserted: {country} gives «Венгрия», {countryIn} gives «в Венгрию»"
     }),
 
     defineField({
       name: "description",
-      title: "Описание",
+      title: "Description",
       type: "text",
       rows: 3,
       description:
-        "Подстановка страны работает и здесь: {country} и {countryIn}"
+        "The country placeholders work here too: {country} and {countryIn}"
     }),
 
     defineField({
       name: "mode",
-      title: "Какие кнопки показывать",
+      title: "Which buttons to show",
       type: "string",
       initialValue: "both",
       options: {
         list: [
-          { title: "Одна кнопка — Telegram", value: "telegram" },
-          { title: "Одна кнопка — WhatsApp", value: "whatsapp" },
-          { title: "Две кнопки — Telegram и WhatsApp", value: "both" }
+          { title: "One button — Telegram", value: "telegram" },
+          { title: "One button — WhatsApp", value: "whatsapp" },
+          { title: "Two buttons — Telegram and WhatsApp", value: "both" }
         ],
         layout: "radio"
       }
@@ -57,14 +57,14 @@ const ctaDocument = {
 
     defineField({
       name: "telegramLabel",
-      title: "Подпись кнопки Telegram",
+      title: "Telegram button label",
       type: "string",
       hidden: ({ parent }: any) => parent?.mode === "whatsapp"
     }),
 
     defineField({
       name: "telegramLink",
-      title: "Ссылка на Telegram",
+      title: "Telegram link",
       type: "url",
       hidden: ({ parent }: any) => parent?.mode === "whatsapp",
       validation: Rule => Rule.uri({ scheme: ["http", "https"] })
@@ -72,32 +72,32 @@ const ctaDocument = {
 
     defineField({
       name: "whatsappLabel",
-      title: "Подпись кнопки WhatsApp",
+      title: "WhatsApp button label",
       type: "string",
       hidden: ({ parent }: any) => parent?.mode === "telegram"
     }),
 
     defineField({
       name: "whatsappLink",
-      title: "Ссылка на WhatsApp",
+      title: "WhatsApp link",
       type: "url",
       hidden: ({ parent }: any) => parent?.mode === "telegram",
-      description: "Если пусто, берётся ссылка на WhatsApp из контактов футера",
+      description: "Empty — the WhatsApp link from the footer contacts is used",
       validation: Rule => Rule.uri({ scheme: ["http", "https"] })
     }),
 
     defineField({
       name: "note",
-      title: "Примечание под кнопкой",
+      title: "Note under the button",
       type: "string"
     }),
 
     defineField({
       name: "showSocials",
-      title: "Показывать иконки соцсетей под кнопкой",
+      title: "Show social icons under the button",
       type: "boolean",
       initialValue: true,
-      description: "Иконки и ссылки берутся из контактов футера"
+      description: "Icons and links are taken from the footer contacts"
     }),
 
     defineField({

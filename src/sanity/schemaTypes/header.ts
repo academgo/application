@@ -94,45 +94,45 @@ const header = {
     }),
     defineField({
       name: "ctaLabel",
-      title: "Кнопка в шапке",
+      title: "Header button",
       type: "string",
       description:
-        "Текст оранжевой кнопки справа в шапке. Открывает окно с мессенджерами. Пусто — подставится «Оценить шансы» / «Check chances». На телефонах кнопка не выводится"
+        "Label of the orange button on the right. Opens the messenger popup. Empty — «Оценить шансы» / «Check chances» is used. Not shown on phones"
     }),
     defineField({
       name: "countriesPromo",
-      title: "Карточка в меню стран",
+      title: "Countries menu promo",
       type: "object",
       description:
-        "Карточка справа в мега-меню «Учёба за рубежом». Поля идут сверху вниз так же, как на сайте. Пустое поле — подставится текст по умолчанию, блок не пропадёт",
+        "Card on the right of the «Учёба за рубежом» mega menu. The fields below follow the same order as on the site. An empty field falls back to a default text, the card does not disappear",
       fields: [
         defineField({
           name: "label",
-          title: "Подпись над заголовком",
+          title: "Label",
           type: "string",
-          description: "Сейчас: «Telegram-бот»"
+          description: "Currently: «Telegram-бот»"
         }),
-        defineField({ name: "title", title: "Заголовок", type: "string" }),
+        defineField({ name: "title", title: "Title", type: "string" }),
         defineField({
           name: "text",
-          title: "Описание",
+          title: "Text",
           type: "text",
           rows: 3
         }),
-        defineField({ name: "buttonText", title: "Текст кнопки", type: "string" }),
+        defineField({ name: "buttonText", title: "Button text", type: "string" }),
         defineField({
           name: "link",
-          title: "Ссылка кнопки",
+          title: "Link",
           type: "string",
           description:
-            "Пусто — кнопка ведёт на Telegram из блока Contact links ниже"
+            "Empty — the button goes to the Telegram contact from Contact links below"
         }),
         defineField({
           name: "icon",
-          title: "Иконка",
+          title: "Icon",
           type: "image",
           description:
-            "Иконка мессенджера рядом с подписью. Пусто — берётся из контакта Telegram в блоке Contact links ниже"
+            "Messenger icon next to the label. Empty — taken from the Telegram contact in Contact links below"
         })
       ]
     }),

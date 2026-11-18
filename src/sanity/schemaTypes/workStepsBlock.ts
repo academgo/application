@@ -3,34 +3,48 @@ import { defineField, defineArrayMember } from "sanity";
 
 /** Иконки берутся из набора в коде — загружать картинки не нужно */
 export const WORK_STEP_ICONS = [
-  { title: "Консультация (облачко)", value: "chat" },
-  { title: "Документ", value: "document" },
-  { title: "Зачисление (диплом)", value: "diploma" },
-  { title: "Паспорт", value: "passport" },
-  { title: "Галочка", value: "check" },
-  { title: "Самолёт", value: "plane" },
-  { title: "Дом", value: "home" }
+  { title: "Consultation (chat bubble)", value: "chat" },
+  { title: "Document", value: "document" },
+  { title: "Admission (diploma)", value: "diploma" },
+  { title: "Passport", value: "passport" },
+  { title: "Check mark", value: "check" },
+  { title: "Plane", value: "plane" },
+  { title: "House", value: "home" }
 ];
+
+/**
+ * На главной блок лежит полем документа, в странице — элементом массива.
+ * Вставленный в страницу блок показывает шаги с главной, поэтому поля
+ * там скрыты: пустые строки выглядели как недоделанный блок.
+ */
+const insertedInPage = ({ parent, value }: any) =>
+  Boolean(parent?._key) &&
+  (value === undefined ||
+    value === null ||
+    value === "" ||
+    (Array.isArray(value) && value.length === 0));
 
 const workStepsBlock = {
   name: "workStepsBlock",
-  title: "Этапы работы",
+  title: "Work steps",
   type: "object",
   description:
-    "Компактная инструкция «как мы работаем». Между шагами идёт бегущая строка с номером и названием шага. Оставьте поля пустыми — страница покажет те же шаги, что на главной; заполните «Шаги» — страница покажет свои.",
+    "Short «how we work» guide. A marquee with the step number and title runs between the steps. Inserted into a page, the block shows the steps from the homepage.",
   fields: [
     defineField({
       name: "heading",
-      title: "Заголовок блока",
+      title: "Block heading",
       type: "text",
       rows: 2,
-      description: "Выводится заголовком второго уровня"
+      description: "Rendered as a second level heading",
+      hidden: insertedInPage
     }),
 
     defineField({
       name: "steps",
-      title: "Шаги",
+      title: "Steps",
       type: "array",
+      hidden: insertedInPage,
       of: [
         defineArrayMember({
           type: "object",
@@ -38,56 +52,56 @@ const workStepsBlock = {
           fields: [
             defineField({
               name: "number",
-              title: "Номер",
+              title: "Number",
               type: "string",
-              description: "Попадёт в бегущую строку: «шаг 1»"
+              description: "Goes into the marquee: «шаг 1»"
             }),
             defineField({
               name: "title",
-              title: "Название шага",
+              title: "Step title",
               type: "string",
-              description: "Тоже попадёт в бегущую строку"
+              description: "Goes into the marquee as well"
             }),
             defineField({
               name: "icon",
-              title: "Иконка",
+              title: "Icon",
               type: "string",
               initialValue: "document",
               options: { list: WORK_STEP_ICONS }
             }),
             defineField({
               name: "text",
-              title: "Описание",
+              title: "Description",
               type: "text",
               rows: 3,
-              description: "Одно-два предложения, не больше"
+              description: "One or two sentences, no more"
             }),
             defineField({
               name: "bullets",
-              title: "Пункты",
+              title: "Bullet points",
               type: "array",
               of: [{ type: "string" }],
-              description: "Короткие строки, по три-четыре на шаг"
+              description: "Short lines, three or four per step"
             }),
             defineField({
               name: "footnote",
-              title: "Подпись в нижней полоске",
+              title: "Footnote in the bottom bar",
               type: "string",
               description:
-                "Короткая строка слева от кнопки: срок этапа, условие, что угодно по делу"
+                "Short line left of the button: how long the step takes, a condition, anything to the point"
             }),
             defineField({
               name: "buttonText",
-              title: "Подпись кнопки",
+              title: "Button label",
               type: "string",
-              description: "Если пусто, кнопки у шага не будет"
+              description: "Empty — the step has no button"
             }),
             defineField({
               name: "buttonLink",
-              title: "Ссылка кнопки",
+              title: "Button link",
               type: "url",
               description:
-                "Если пусто, а подпись задана, кнопка ведёт в Telegram по умолчанию",
+                "Empty while the label is set — the button goes to Telegram by default",
               validation: Rule => Rule.uri({ scheme: ["http", "https"] })
             })
           ],
@@ -97,16 +111,16 @@ const workStepsBlock = {
         })
       ],
       validation: Rule =>
-        Rule.max(6).warning("Больше шести шагов — это уже не инструкция")
+        Rule.max(6).warning("More than six steps is no longer a guide")
     })
   ],
   preview: {
-    select: { heading: "heading", first: "steps.0.title" },
+    select: { heading: "heading", key: "_key" },
     prepare: (selection: Record<string, unknown>) => ({
-      title: "Этапы работы",
-      subtitle:
-        (selection.heading as string) ||
-        (selection.first ? "Свои шаги" : "Шаги — как на главной")
+      title: "Work steps",
+      subtitle: selection.key
+        ? "Steps — same as on the homepage"
+        : (selection.heading as string) || "No heading"
     })
   }
 };

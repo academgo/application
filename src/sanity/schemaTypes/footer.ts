@@ -13,27 +13,27 @@ const footer = {
     // cousultation block
     defineField({
       name: "ctaDocument",
-      title: "Плашка в мессенджер над футером",
+      title: "Messenger card above the footer",
       type: "reference",
       to: [{ type: "ctaDocument" }],
       description:
-        "Если заполнено, над футером вместо блока с формой показывается плашка с кнопками в Telegram и WhatsApp."
+        "When set, the block with the form above the footer is replaced by a card with Telegram and WhatsApp buttons."
     }),
     defineField({
       name: "popupCtaDocument",
-      title: "Плашка во всплывающем окне",
+      title: "Messenger card in the popup",
       type: "reference",
       to: [{ type: "ctaDocument" }],
       description:
-        "Окно, которое открывается кнопками «Начнем с бесплатной консультации» по всему сайту. Если не выбрано, показывается та же плашка, что над футером."
+        "The popup opened by the buttons across the site. Empty — the card above the footer is used."
     }),
     defineField({
       name: "headerCtaDocument",
-      title: "Плашка во всплывающем окне кнопки «Оценить шансы»",
+      title: "Messenger card in the header button popup",
       type: "reference",
       to: [{ type: "ctaDocument" }],
       description:
-        "Кнопка в шапке объясняет, что дальше будет бот, поэтому текст у её окна свой. Пусто — подставится «Плашка во всплывающем окне»"
+        "The header button promises a bot, so its popup has its own text. Empty — «Messenger card in the popup» is used"
     }),
     defineField({
       name: "consultationBlock",

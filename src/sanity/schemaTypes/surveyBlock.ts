@@ -64,7 +64,7 @@ const surveyBlock = defineType({
           title: "Quiz Block (свои вопросы для этой страницы)",
           type: "quizBlock",
           description:
-            "Вопросы только для этой страницы. Показывается, когда поле Quiz выше пустое: пока общий квиз выбран, читается он, и правки здесь на сайт не попадают",
+            "Questions for this page only. Shown while the Quiz field above is empty: as long as a shared quiz is selected, that one is used and edits here never reach the site",
           hidden: ({ parent }) => Boolean(parent?.quizDocument)
         })
       ]

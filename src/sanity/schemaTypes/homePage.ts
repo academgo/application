@@ -284,10 +284,10 @@ export default defineType({
     }),
     defineField({
       name: "countriesBlock",
-      title: "Направления (плитка стран)",
+      title: "Countries Block",
       type: "countriesBlock",
       description:
-        "Плитка стран на главной. Этот же блок можно вставить на любую страницу через Main Content: там он наследует тексты отсюда, пока его поля пустые"
+        "The destinations tile on the homepage. The same block can be inserted into any page through Main Content: there it takes its texts from here"
     }),
     defineField({
       name: "universitiesBlock",
@@ -673,7 +673,7 @@ export default defineType({
       title: "Quiz Block (свои вопросы для главной)",
       type: "quizBlock",
       description:
-        "Вопросы только для главной. Показывается, когда поле Quiz выше пустое: пока общий квиз выбран, читается он, и правки здесь на сайт не попадают",
+        "Questions for the homepage only. Shown while the Quiz field above is empty: as long as a shared quiz is selected, that one is used and edits here never reach the site",
       hidden: ({ document }) => Boolean(document?.quizDocument)
     }),
     defineField({
