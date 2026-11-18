@@ -399,7 +399,33 @@ const NavLinks: React.FC<Props> = ({
           <FiArrowRight aria-hidden="true" />
         </Link>
       )}
-      {countries.map(country => (
+      {countries.map(country => {
+        // Та же подпись, что в оранжевой пилюле на десктопе. На телефоне
+        // десять пилюль столбиком спорили бы с названиями стран, поэтому
+        // здесь это вторая строка серым, без плашки
+        const badge = getBadge(country.badge, country.code, params.lang);
+
+        const label = (
+          <>
+            {country.flagUrl && (
+              <Image
+                src={country.flagUrl}
+                alt=""
+                width={24}
+                height={18}
+                className={styles.countryFlag}
+              />
+            )}
+            <span className={styles.countryMobileText}>
+              <span className={styles.countryMobileName}>{country.title}</span>
+              {badge && (
+                <span className={styles.countryMobileBadge}>{badge}</span>
+              )}
+            </span>
+          </>
+        );
+
+        return (
         <div className={styles.countryMobileItem} key={country._id}>
           <div className={styles.countryMobileHeading}>
             {country.hubHref ? (
@@ -408,30 +434,10 @@ const NavLinks: React.FC<Props> = ({
                 className={styles.countryMobileTitle}
                 onClick={closeMenu}
               >
-                {country.flagUrl && (
-                  <Image
-                    src={country.flagUrl}
-                    alt=""
-                    width={24}
-                    height={18}
-                    className={styles.countryFlag}
-                  />
-                )}
-                {country.title}
+                {label}
               </Link>
             ) : (
-              <span className={styles.countryMobileTitle}>
-                {country.flagUrl && (
-                  <Image
-                    src={country.flagUrl}
-                    alt=""
-                    width={24}
-                    height={18}
-                    className={styles.countryFlag}
-                  />
-                )}
-                {country.title}
-              </span>
+              <span className={styles.countryMobileTitle}>{label}</span>
             )}
             {country.menuLinks.length > 0 && (
               <button
@@ -480,7 +486,8 @@ const NavLinks: React.FC<Props> = ({
             </MobileCollapse>
           )}
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 
