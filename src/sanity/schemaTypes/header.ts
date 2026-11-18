@@ -101,31 +101,38 @@ const header = {
     }),
     defineField({
       name: "countriesPromo",
-      title: "Countries menu promo",
+      title: "Карточка в меню стран",
       type: "object",
       description:
-        "Карточка справа в мега-меню стран. Если заголовок не заполнен, блок не выводится и ссылки занимают всю ширину",
+        "Карточка справа в мега-меню «Учёба за рубежом». Поля идут сверху вниз так же, как на сайте. Пустое поле — подставится текст по умолчанию, блок не пропадёт",
       fields: [
         defineField({
           name: "label",
-          title: "Label",
+          title: "Подпись над заголовком",
           type: "string",
-          description: "Подпись над заголовком: «Telegram-бот»"
+          description: "Сейчас: «Telegram-бот»"
         }),
-        defineField({ name: "title", title: "Title", type: "string" }),
+        defineField({ name: "title", title: "Заголовок", type: "string" }),
         defineField({
           name: "text",
-          title: "Text",
+          title: "Описание",
           type: "text",
           rows: 3
         }),
-        defineField({ name: "buttonText", title: "Button text", type: "string" }),
-        defineField({ name: "link", title: "Link", type: "string" }),
+        defineField({ name: "buttonText", title: "Текст кнопки", type: "string" }),
+        defineField({
+          name: "link",
+          title: "Ссылка кнопки",
+          type: "string",
+          description:
+            "Пусто — кнопка ведёт на Telegram из блока Contact links ниже"
+        }),
         defineField({
           name: "icon",
-          title: "Icon",
+          title: "Иконка",
           type: "image",
-          description: "Иконка мессенджера рядом с подписью"
+          description:
+            "Иконка мессенджера рядом с подписью. Пусто — берётся из контакта Telegram в блоке Contact links ниже"
         })
       ]
     }),
