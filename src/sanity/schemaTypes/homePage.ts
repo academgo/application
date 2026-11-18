@@ -669,7 +669,10 @@ export default defineType({
     defineField({
       name: "quizBlock",
       title: "Quiz Block (свои вопросы для главной)",
-      type: "quizBlock"
+      type: "quizBlock",
+      description:
+        "Вопросы только для главной. Показывается, когда поле Quiz выше пустое: пока общий квиз выбран, читается он, и правки здесь на сайт не попадают",
+      hidden: ({ document }) => Boolean(document?.quizDocument)
     }),
     defineField({
       name: "workSteps",

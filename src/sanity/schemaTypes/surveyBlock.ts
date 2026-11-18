@@ -62,7 +62,10 @@ const surveyBlock = defineType({
         defineField({
           name: "quizBlock",
           title: "Quiz Block (свои вопросы для этой страницы)",
-          type: "quizBlock"
+          type: "quizBlock",
+          description:
+            "Вопросы только для этой страницы. Показывается, когда поле Quiz выше пустое: пока общий квиз выбран, читается он, и правки здесь на сайт не попадают",
+          hidden: ({ parent }) => Boolean(parent?.quizDocument)
         })
       ]
     })

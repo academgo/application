@@ -120,12 +120,12 @@ const dedupe = docs => {
  * в коде. Элементы массивов адресуем по _key: позиция может измениться,
  * ключ — нет.
  */
-const walk = (node, basePath, found) => {
+const walk = (node, basePath, found, parent) => {
   if (Array.isArray(node)) {
     for (const item of node) {
       if (!item || typeof item !== "object") continue;
       const key = item._key;
-      walk(item, key ? `${basePath}[_key=="${key}"]` : basePath, found);
+      walk(item, key ? `${basePath}[_key=="${key}"]` : basePath, found, parent);
     }
     return;
   }
@@ -134,13 +134,13 @@ const walk = (node, basePath, found) => {
 
   if (node._type) {
     found[node._type] = found[node._type] || [];
-    found[node._type].push({ path: basePath, node });
+    found[node._type].push({ path: basePath, node, parent });
   }
 
   for (const [field, value] of Object.entries(node)) {
     if (field.startsWith("_")) continue;
     if (value && typeof value === "object") {
-      walk(value, basePath ? `${basePath}.${field}` : field, found);
+      walk(value, basePath ? `${basePath}.${field}` : field, found, node);
     }
   }
 };
@@ -231,8 +231,11 @@ const main = async () => {
     const found = {};
     walk(doc, "", found);
 
-    for (const { path: at, node } of found.quizBlock || []) {
+    for (const { path: at, node, parent } of found.quizBlock || []) {
       if (!at) continue;
+      // Собственные вопросы страницы не читаются, пока рядом выбран общий
+      // квиз: заполнять там что-либо бессмысленно, правки туда не попадут
+      if (parent?.quizDocument) continue;
       fill(
         `${at}.sidePanelTitle`,
         node.sidePanelTitle,
