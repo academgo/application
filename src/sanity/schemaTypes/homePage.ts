@@ -284,8 +284,10 @@ export default defineType({
     }),
     defineField({
       name: "countriesBlock",
-      title: "Countries Block",
-      type: "countriesBlock"
+      title: "Направления (плитка стран)",
+      type: "countriesBlock",
+      description:
+        "Плитка стран на главной. Этот же блок можно вставить на любую страницу через Main Content: там он наследует тексты отсюда, пока его поля пустые"
     }),
     defineField({
       name: "universitiesBlock",

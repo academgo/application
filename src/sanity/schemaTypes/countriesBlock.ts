@@ -17,42 +17,42 @@ const countriesBlock = {
 
       defineField({
         name: "eyebrow",
-        title: "Eyebrow",
+        title: "Надзаголовок",
         type: "string",
         description:
           "Короткая надпись над заголовком: «Направления» / «Destinations»"
       }),
       defineField({
         name: "title",
-        title: "Title",
+        title: "Заголовок",
         type: "string"
       }),
       defineField({
         name: "titleHighlight",
-        title: "Title highlight",
+        title: "Выделенная часть заголовка",
         type: "string"
       }),
       defineField({
         name: "description",
-        title: "Description",
+        title: "Описание",
         type: "text",
         rows: 3
       }),
       defineField({
         name: "cardLinkLabel",
-        title: "Card link label",
+        title: "Подпись ссылки на карточке",
         type: "string",
         description:
           "Текст ссылки в карточке страны: «Подробнее» / «Learn more»"
       }),
       defineField({
         name: "compareLabel",
-        title: "Compare link label",
+        title: "Подпись ссылки на сравнение",
         type: "string"
       }),
       defineField({
         name: "compareLink",
-        title: "Compare link",
+        title: "Ссылка на сравнение",
         type: "string",
         description: "Ссылка на страницу сравнения стран"
       }),
@@ -65,7 +65,7 @@ const countriesBlock = {
       }),
       defineField({
         name: "maxCards",
-        title: "How many countries to show",
+        title: "Сколько карточек показывать",
         type: "number",
         initialValue: 6,
         description:
@@ -74,18 +74,26 @@ const countriesBlock = {
       }),
       defineField({
         name: "allLabel",
-        title: "All countries button label",
+        title: "Подпись кнопки под плиткой",
         type: "string",
         description:
           "Текст кнопки под плиткой: «Все страны» / «All destinations». Пустое поле — кнопки нет"
       }),
       defineField({
         name: "allLink",
-        title: "All countries link",
+        title: "Ссылка кнопки под плиткой",
         type: "string",
         description: "Куда ведёт кнопка под плиткой"
       })
-  ]
+  ],
+  preview: {
+    select: { heading: "title" },
+    prepare: (selection: Record<string, unknown>) => ({
+      title: "Направления (плитка стран)",
+      subtitle:
+        (selection.heading as string) || "Тексты и порядок — как на главной"
+    })
+  }
 };
 
 export default countriesBlock;

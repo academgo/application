@@ -17,7 +17,7 @@ const workStepsBlock = {
   title: "Этапы работы",
   type: "object",
   description:
-    "Компактная инструкция «как мы работаем». Между шагами идёт бегущая строка с номером и названием шага.",
+    "Компактная инструкция «как мы работаем». Между шагами идёт бегущая строка с номером и названием шага. Оставьте поля пустыми — страница покажет те же шаги, что на главной; заполните «Шаги» — страница покажет свои.",
   fields: [
     defineField({
       name: "heading",
@@ -99,7 +99,16 @@ const workStepsBlock = {
       validation: Rule =>
         Rule.max(6).warning("Больше шести шагов — это уже не инструкция")
     })
-  ]
+  ],
+  preview: {
+    select: { heading: "heading", first: "steps.0.title" },
+    prepare: (selection: Record<string, unknown>) => ({
+      title: "Этапы работы",
+      subtitle:
+        (selection.heading as string) ||
+        (selection.first ? "Свои шаги" : "Шаги — как на главной")
+    })
+  }
 };
 
 export default workStepsBlock;
