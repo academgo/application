@@ -36,7 +36,7 @@ const DEFAULT_COLUMNS: Array<keyof CountryComparison> = [
  */
 const DEFAULT_LABELS: Record<
   "ru" | "en",
-  Record<keyof CountryComparison | "country", string>
+  Record<keyof CountryComparison | "country" | "yes" | "no", string>
 > = {
   ru: {
     country: "Страна",
@@ -46,7 +46,9 @@ const DEFAULT_LABELS: Record<
     visa: "Виза",
     workRights: "Работа во время учёбы",
     degreeRecognition: "Признание диплома",
-    medicineInEnglish: "Медицина на английском"
+    medicineInEnglish: "Медицина на английском",
+    yes: "да",
+    no: "нет"
   },
   en: {
     country: "Country",
@@ -56,7 +58,9 @@ const DEFAULT_LABELS: Record<
     visa: "Visa",
     workRights: "Work while studying",
     degreeRecognition: "Degree recognition",
-    medicineInEnglish: "Medicine in English"
+    medicineInEnglish: "Medicine in English",
+    yes: "yes",
+    no: "no"
   }
 };
 
@@ -79,7 +83,9 @@ const CountriesCompareBlock: FC<Props> = async ({ block, lang }) => {
     if (column === "medicineInEnglish") {
       // Незаполненное поле — это нет данных, а не отрицательный ответ
       if (typeof value !== "boolean") return "—";
-      return value ? labels.yes || "да" : labels.no || "нет";
+      return value
+        ? labels.yes || defaultLabels.yes
+        : labels.no || defaultLabels.no;
     }
 
     return (value as string) || "—";

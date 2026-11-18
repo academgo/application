@@ -34,9 +34,12 @@ const Survey = async ({
   // заголовка и пунктов квиз остаётся по центру, как было раньше
   const sidePanelItems = quizBlock?.sidePanelItems ?? [];
   const sidePanelStats = quizBlock?.sidePanelStats ?? [];
-  const hasSidePanel = Boolean(
-    (quizBlock?.sidePanelTitle || "Что придёт в ответ") && sidePanelItems.length
-  );
+  // Заголовок панели: из админки, иначе по языку страницы. Раньше запасной
+  // текст был только русским и на английских страницах выводился как есть
+  const sidePanelTitle =
+    quizBlock?.sidePanelTitle ||
+    (lang === "ru" ? "Что придёт в ответ" : "What you will get");
+  const hasSidePanel = sidePanelItems.length > 0;
 
   const body = (
     <>
@@ -71,7 +74,7 @@ const Survey = async ({
                   <span className={styles.sideIcon} aria-hidden="true">
                     <FaTelegram />
                   </span>
-                  {quizBlock!.sidePanelTitle || "Что придёт в ответ"}
+                  {sidePanelTitle}
                 </p>
 
                 <ol className={styles.sideList}>
