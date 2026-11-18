@@ -1,6 +1,7 @@
 "use client";
 import React, { FC, useState, useEffect, useRef } from "react";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import styles from "./CountNumber.module.scss";
 
 type Props = {
   children: string | number;
@@ -53,9 +54,18 @@ const CountNumber: FC<Props> = ({ children }) => {
 
   return (
     <p ref={ref}>
-      {prefix}
-      {count}
-      {suffix}
+      {/* Невидимая копия конечного значения держит ширину, пока крутится
+          счётчик: иначе текст рядом с числом едет по мере набора цифр */}
+      <span className={styles.slot}>
+        <span className={styles.ghost} aria-hidden="true">
+          {raw}
+        </span>
+        <span className={styles.live}>
+          {prefix}
+          {count}
+          {suffix}
+        </span>
+      </span>
     </p>
   );
 };
