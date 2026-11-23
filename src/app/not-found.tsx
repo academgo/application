@@ -1,12 +1,20 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { headers } from "next/headers";
 import NotFoundPageComponent from "./components/NotFoundPageComponent/NotFoundPageComponent";
 import { getNotFoundPageByLang } from "@/sanity/sanity.utils";
 import { defaultLocale, locales } from "@/i18n.config";
 
-const inter = Inter({ subsets: ["latin"], display: "swap", preload: false });
+// Тот же локальный файл, что и в основном макете: в сборку не должно
+// попадать ни одного запроса в интернет
+const inter = localFont({
+  src: "./fonts/Inter-latin-variable.woff2",
+  weight: "100 900",
+  display: "swap",
+  preload: false,
+  adjustFontFallback: "Arial"
+});
 
 export const metadata: Metadata = {
   title: "404 — Academgo"
