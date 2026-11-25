@@ -8,10 +8,19 @@ export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const LOGO_URL =
   "https://cdn.sanity.io/images/19hn716s/production/8045a404151f6af68d6964abcda08bd5c5e78946-1159x231.png";
 
-// Только проверенные ссылки: Instagram — со страницы контактов, Telegram —
-// из шапки. Телефон не указываем, пока не подтверждён верный номер WhatsApp.
-const SAME_AS = [
+// Только проверенные ссылки. Профили в соцсетях у русской и английской
+// версий разные, поэтому и список разный: иначе на английских страницах
+// поисковику подсовывается русский аккаунт. Телефон не указываем, пока
+// не подтверждён верный номер WhatsApp.
+const SAME_AS_RU = [
   "https://www.instagram.com/academgo",
+  "https://t.me/infoacademgo"
+];
+
+const SAME_AS_EN = [
+  "https://www.instagram.com/academgo.abroad",
+  "https://www.tiktok.com/@academgo.abroad",
+  "https://www.youtube.com/@academgo.abroad",
   "https://t.me/infoacademgo"
 ];
 
@@ -54,7 +63,7 @@ const OrganizationSchema: FC<Props> = ({ lang }) => {
     knowsAbout: STUDY_COUNTRIES.map(country =>
       isEnglish ? `Study in ${country.en}` : `Учёба: ${country.ru}`
     ),
-    sameAs: SAME_AS
+    sameAs: isEnglish ? SAME_AS_EN : SAME_AS_RU
   };
 
   return (
