@@ -46,6 +46,10 @@ export type Header = {
   description: string;
   /** подпись оранжевой кнопки справа в шапке */
   ctaLabel?: string;
+  mobileCta?: {
+    title?: string;
+    text?: string;
+  };
   navLinks: navLink[];
   countriesPromo?: CountriesPromo;
   contactLinks: contactLink[];

@@ -291,6 +291,7 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
     logoMobileActive,
     description,
     ctaLabel,
+    mobileCta,
     navLinks,
     countriesPromo,
     contactLinks,

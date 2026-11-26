@@ -37,14 +37,17 @@ const Header = async ({ translations, params }: Props) => {
     buttonText: isRu ? "Перейти в Telegram" : "Open Telegram"
   };
 
-  // Нижняя плашка мобильного меню
+  // Нижняя плашка мобильного меню. Тексты правятся в документе шапки,
+  // при пустых полях подставляются значения по языку — чтобы плашка не
+  // осталась без слов, если поле случайно очистят
   const mobileCta = {
-    title: isRu
-      ? "Оценить шансы на поступление?"
-      : "Check your admission chances?",
+    title:
+      data.mobileCta?.title ||
+      (isRu ? "Оценить шансы на поступление?" : "Check your admission chances?"),
     // Без названия мессенджера: под текстом две кнопки, Telegram
     // и WhatsApp, и упоминание одного из них вводило в заблуждение
-    text: isRu ? "Напишите нашему боту" : "Message our bot"
+    text:
+      data.mobileCta?.text || (isRu ? "Напишите нашему боту" : "Message our bot")
   };
 
   // Оранжевая кнопка справа. Текст правится в документе шапки

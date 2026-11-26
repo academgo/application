@@ -100,6 +100,27 @@ const header = {
         "Label of the orange button on the right. Opens the messenger popup. Empty — «Оценить шансы» / «Check chances» is used. Not shown on phones"
     }),
     defineField({
+      name: "mobileCta",
+      title: "Bot card in the mobile menu",
+      type: "object",
+      description:
+        "Card at the bottom of the burger menu, phones only. The Telegram and WhatsApp buttons under it use the links from Contact links below. An empty field falls back to a default text",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string",
+          description: "Currently: «Оценить шансы на поступление?»"
+        }),
+        defineField({
+          name: "text",
+          title: "Text",
+          type: "string",
+          description: "Currently: «Напишите нашему боту»"
+        })
+      ]
+    }),
+    defineField({
       name: "countriesPromo",
       title: "Countries menu promo",
       type: "object",

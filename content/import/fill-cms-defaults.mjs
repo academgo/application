@@ -60,6 +60,16 @@ const TEXTS = {
       buttonText: "Open Telegram"
     }
   },
+  mobileCta: {
+    ru: {
+      title: "Оценить шансы на поступление?",
+      text: "Напишите нашему боту"
+    },
+    en: {
+      title: "Check your admission chances?",
+      text: "Message our bot"
+    }
+  },
   heroVideoButton: { ru: "Как мы работаем", en: "How we work" },
   quizSidePanel: { ru: "Что придёт в ответ", en: "What you will get" },
   compareYes: { ru: "да", en: "yes" },
@@ -215,6 +225,22 @@ const main = async () => {
       }
 
       if (promoChanged) set.countriesPromo = promo;
+
+      // Плашка с ботом внизу бургер-меню
+      const ctaText = TEXTS.mobileCta[L];
+      const currentCta = doc.mobileCta || {};
+      const mobile = { ...currentCta, _type: currentCta._type || "object" };
+      let mobileChanged = false;
+
+      for (const [field, value] of Object.entries(ctaText)) {
+        if (!blank(currentCta[field])) continue;
+        mobile[field] = value;
+        mobileChanged = true;
+        log.push(`    плашка с ботом в меню, ${field}: пусто → «${value}»`);
+        filled += 1;
+      }
+
+      if (mobileChanged) set.mobileCta = mobile;
     }
 
     // ------------------------------------------------------- главная
